@@ -1,3 +1,4 @@
 # Table of contents
 
-* [Page 1](README.md)
+* [This is an example project](README.md)
+* [Another example](another-example.md)
