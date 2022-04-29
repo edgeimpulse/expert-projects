@@ -1,5 +1,4 @@
-# This is an example project
+# Welcome
 
-Example text
+This is the landing page for [docs.edgeimpulse.com/experts/](https://app.gitbook.com/o/sFuY9TdTT07QHwgM7yVS/s/EJB5OaeYjM5VSFEKLEFz/)
 
-![](.gitbook/assets/2feddf6-heatmap2-bb.jpg)
