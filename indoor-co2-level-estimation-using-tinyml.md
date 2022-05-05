@@ -8,19 +8,19 @@ description: >-
 
 ![](.gitbook/assets/\_pRaYamMBrP.png)
 
-### Problem Overview <a href="#toc--problem-0" id="toc--problem-0"></a>
+### Problem Overview
 
 It has been almost two and half years since the COVID-19 pandemic started. After multiple vaccines and numerous tests, we are slowly going back to our old life; for me, it's going back to the office, seeing people and organising face to face meetings (along with video calls, of course). Even though we are going back to our old lives, COVID is far from over, and to prevent and monitor infection, we have specific arrangements in place. One such arrangement is CO2 monitors in an indoor environment. One study suggests that we can predict the infection risk by observing a CO2 level in an indoor environment\[1]. A higher level of CO2 means poor ventilation and/or higher occupancy, thus a higher infection risk.
 
 Can we predict a higher infection risk using any other technique? Let us explore our options.
 
-### Solution <a href="#toc--my-solution-1" id="toc--my-solution-1"></a>
+### Solution
 
 My solution uses a TinyML based algorithm to detect and count the people in an indoor environment. The algorithm will be deployed on a microcontroller. The microcontroller will capture an image or stream of images using a camera and then perform inference on the device to count people.
 
 The device can record the occupancy level locally or send it to a remote machine, possibly a server, for further evaluation. After counting the number of people in an indoor environment, we can do all sorts of things. For example, we can calculate the approximate CO2 level in the room, the distance b/w people to predict the infection risk \[2], etc. In this project, I will focus on CO2 level estimation.
 
-### Hardware <a href="#toc---hardware-2" id="toc---hardware-2"></a>
+### Hardware
 
 The hardware I am proposing for this project is pretty simple. It consists of
 
@@ -29,7 +29,7 @@ The hardware I am proposing for this project is pretty simple. It consists of
 
 This project is powered by a TinyML algorithm prepared using [Edge Impulse](https://www.edgeimpulse.com); therefore, it is not limited to just one type of hardware. We can deploy it on all the [supported devices](https://docs.edgeimpulse.com/docs/development-boards/fully-supported-development-boards) as well as on your smartphone!
 
-### Software <a href="#toc---software-3" id="toc---software-3"></a>
+### Software
 
 #### **1.** **Dataset**
 
@@ -65,7 +65,7 @@ This section contains a step-by-step guide to downloading and running the softwa
 * Follow [this](https://docs.edgeimpulse.com/docs/tutorials/running-your-impulse-locally/running-your-impulse-openmv) edge impulse guide to flash the firmware (edge\_impulse\_firmware\_arduino\_portenta.bin) on the Arduino Portenta H7 using the OpenMV IDE.
 * Open the ei\_object\_detection.py and run it in the OpenMV IDE.
 
-### How does it work? <a href="#toc----how-does-it-work-4" id="toc----how-does-it-work-4"></a>
+### How does it work?
 
 ![System overview](.gitbook/assets/image\_IysCnHHdsi.png)
 
@@ -77,7 +77,7 @@ CO2_level = CO2_level + (0.02556 * people_count)
 
 The average human exhales about 2.3 pounds of carbon dioxide on an average day \[4], and the magic number 0.02556 comes by dividing 2.3 by 24x60 (minutes in a day) and converting it into ounces. The equation calculates the amount of CO2 in ounces per minute. The person detection model can be used with any other application for example occupancy detection etc. The system then repeats this process again.
 
-### Demos <a href="#toc---demo-5" id="toc---demo-5"></a>
+### Demos
 
 The testing accuracy of this model is 86.4% when tested with the PIROPO dataset. But that is not the final test of this model. It should perform well when introduced to a new environment, and that is exactly what I did. I used this model on the Arduino Portenta H7 with the vision shield to detect myself in my living room. The model has never seen me nor my living room before. Let's see how well it performs.
 
@@ -103,13 +103,13 @@ Person Sitting on a Chair
 
 In the above test, I wanted to see the system's performance when I am sitting on a chair. It works excellent when it sees me from my side but it is not detecting me when I am facing the camera. I think it is because, in my training data, all samples where a person is sitting on a chair capture their side profile and not the front profile. It can be improved by using datasets which contain a person sitting on a chair and facing toward the camera.
 
-### Conclusion <a href="#toc---conclusion-6" id="toc---conclusion-6"></a>
+### Conclusion
 
 Looking at the live testing performance of this model, it is clear that the model is working quite well but has some room for improvement. Considering that the inference is performed on a Microcontroller with 240x240 image data, I am happy with the results. As a next step, I will try to improve its capability as well as accuracy by using diverse training data.
 
 The CO2 level estimation is a simple task given the person detection model has good accuracy and repeatability. The next step for this application would be to improve the estimation by also considering the flow of CO2 out of an indoor space.
 
-### Reference <a href="#toc---reference-7" id="toc---reference-7"></a>
+### Reference
 
 * \[1] [https://journals.sagepub.com/doi/10.1177/1420326X211043564](https://journals.sagepub.com/doi/10.1177/1420326X211043564)
 * \[2] [https://www.sciencedirect.com/science/article/pii/S221067072100069X](https://www.sciencedirect.com/science/article/pii/S221067072100069X)
