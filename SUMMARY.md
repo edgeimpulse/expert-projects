@@ -2,3 +2,4 @@
 
 * [Welcome](README.md)
 * [Indoor CO2 Level Estimation Using TinyML](indoor-co2-level-estimation-using-tinyml.md)
+* [Hand Gesture Recognition using TinyML on OpenMV](hand-gesture-recgnition-using-tinyml-on-openmv.md)
