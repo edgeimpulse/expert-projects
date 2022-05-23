@@ -28,10 +28,13 @@ This project is being built from scratch and will use an OpenMV microcontroller 
  - INDEX, contains 30 images of index finger
  - TWO, contains 30 images of hand showing two fingers
  - SUPERB, contains 30 images of superb
+ 
 To create a dataset using OpenMV IDE, firstly connect OpenMV to your laptop using the USB cable. Click on the connect button in order to connect to the default data acquisition program. Once successfully connected, you can start taking images of the object that will be saved in the defined class folder.
+
 Figure 2 represents the steps to follow to create a dataset directory. Figure 3 represents the dataset folder with each class consisting of images with a unique ID.
 ![Figure 2: Dataset creation using OpenMV IDE](.gitbook/assets/hand-gesture-recognition/openmv-ide.jpg)
 ![Figure 3: Index class representation without label](.gitbook/assets/hand-gesture-recognition/openmv-index-class.jpg)
+
 Once the dataset is created, all images would be uploaded to Edge Impulse for labeling. Figure 4 represents the Edge Impulse platform on how to upload the data for labelling before it processes. Figure 5 represents the labeled image for class horns.
 ![Figure 4: Uploading data into Edge Impulse platform](.gitbook/assets/hand-gesture-recognition/ei-data-upload.jpg)
 ![Figure 5: Labeling of horns class image](.gitbook/assets/hand-gesture-recognition/ei-labeling.jpg)
