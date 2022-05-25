@@ -8,6 +8,7 @@ Created By:
 Wamiq Raza 
 
 Public Project Link:
+https://studio.edgeimpulse.com/public/84373/latest
 
 ![](.gitbook/assets/hand-gesture-recognition/intro.jpg)
 

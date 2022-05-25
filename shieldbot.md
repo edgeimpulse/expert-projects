@@ -1,4 +1,14 @@
-#Shield Bot
+---
+description: An autonomous security robot that listens for suspicious sounds, then goes on patrol to look for intruders.
+---
+
+# Shield Bot Autonomous Security Robot
+
+Created By:
+Nick Bild 
+
+Public Project Link:
+https://studio.edgeimpulse.com/public/106503/latest
 
 ![Shield Bot](.gitbook/assets/shieldbot/shieldbot-1.jpg)
 
