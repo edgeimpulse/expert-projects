@@ -10,7 +10,7 @@ Swapnil Verma
 Public Project Link:
 [https://studio.edgeimpulse.com/public/93652/latest](https://studio.edgeimpulse.com/public/93652/latest)
 
-![](.gitbook/assets/_pRaYamMBrP.png)
+![](.gitbook/assets/indoor-co2.jpg)
 
 ### Problem Overview
 
@@ -43,7 +43,9 @@ In this project, the dataset I am using is a subset of the PIROPO database \[3].
 
 The dataset contains multiple sequences recorded in the two indoor rooms using a perspective camera.
 
-![Indoor Environment 1](.gitbook/assets/1.png) ![Indoor Environment 2](.gitbook/assets/2.png)
+![Indoor Environment 1](.gitbook/assets/indoor-1.jpg)
+
+![Indoor Environment 2](.gitbook/assets/indoor-2.jpg)
 
 The original PIROPO database contains perspective as well as omnidirectional camera images.
 
@@ -57,7 +59,9 @@ I used this feature to label _people_ in the PIROPO images. I then divided the d
 
 Training and testing are done using above mentioned PIROPO dataset. I used the [FOMO](https://www.edgeimpulse.com/blog/announcing-fomo-faster-objects-more-objects) architecture by the Edge Impulse to train this model. To prepare a model using FOMO, please follow this [link](https://docs.edgeimpulse.com/docs/tutorials/counting-objects-using-fomo).
 
-![Training statistics](.gitbook/assets/1.1.png) ![Model testing results](.gitbook/assets/2.1.png)
+![Training statistics](.gitbook/assets/training.jpg)
+
+![Model testing results](.gitbook/assets/testing.jpg)
 
 The training F1 score of my model is 91.6%, and the testing accuracy is 86.42%. For live testing, I deployed the model by building openMV firmware and flashed that firmware using the OpenMV IDE. A video of live testing performed on Arduino Portenta H7 is attached in the Demo section below.
 
@@ -71,7 +75,7 @@ This section contains a step-by-step guide to downloading and running the softwa
 
 ### How does it work?
 
-![System overview](.gitbook/assets/image\_IysCnHHdsi.png)
+![System overview](.gitbook/assets/how-it-works.jpg)
 
 This system is quite simple. The Vision shield (or any camera) captures a 240x240 image of the environment and passes it to the FOMO model prepared using Edge Impulse. This model then identifies the people in the image and passes the number of people to the CO2 level estimation function every minute. The function then estimates the amount of CO2 using the below formula.
 
