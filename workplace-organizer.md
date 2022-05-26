@@ -129,3 +129,151 @@ Once we have plenty of photos (we have collected around 115 pictures for our use
 After that, you will see them in the **Data acquisition** panel.
 
 ![]()
+
+### Processing the data - Creating bounding boxes
+
+Next, navigate to the **Labeling queue** and start drawing bounding boxes around the 3D printed markers. Even if it might feel cumbersome at first, Edge Impulse will start auto-labeling the object it recognizes, greatly speeding up the process.
+
+![]()
+
+### Creating the impulse
+
+After all the labeling is done, click on **Create Impulse**, under the **Impulse design** panel. For the input block, select **Images** as input, select **image** as processing block, and **Object detection** as learning block.
+
+![]()
+
+### Generate Features
+
+Next step, click on **Save Impulse** and move over to the **Image** field under the **Impulse design** panel. Wait for the parameters to be generated and click on **Save parameters** to move on to the **Generate features** tab, where you will click on the **Generate features** button. After the job is done, you can visualize your dataset in 3D, in the feature explorer tab. This is one of the most useful tools to use from the Edge Impulse platform as it can let you quickly validate whether your data is well clustered.
+
+![]()
+
+### Training the model
+
+Moving on to the model training, we recommend leaving the default settings on, and just beginning the training.
+
+![]()
+
+### Validating the model
+
+This is another great feature that allows you to run the inference on the Test data pool of images, that were kept apart from the training data. After clicking on **Classify all**, you will be prompted with the model testing results, which represents the percentage of all samples with precision score over 80%.
+
+![]()
+
+### Deploying the model on the edge
+
+To run the inference on the target, issue the following command and select the project containing the model you wish to deploy:
+
+`edge-impulse-linux-runner --clean`
+
+Once the model downloads, access the URL provided in your serial monitor to watch the live video feed and see the model in action in a browser:
+
+![]()
+
+If you get to this point and the outcome is the desired one, good job! If not, you might want to revisit training the model and labeling more pictures to improve the detection rate.
+
+Now for this system to run unattended in a real-world use case, we imagine the Jetson would run the inference on boot automatically at the end of each shift to check the presence/absence of tools and send a notification if something is not right. Now, this can be done in a number of ways depending on the current infrastructure and desired outcome. For this use case, we have decided to create a service to start the model on boot without a monitor or a keyboard and execute it after each working shift.
+
+Now, to use the system we have just created in an unattended mode we have to employ the Edge Impulse Python SDK and a few other Linux tools. When we are using Python we like to work in a virtual environment. Yes, we like to keep our software workplace in the same tidy manner as our hardware workbench :)
+
+Create a directory in which you will store all the components needed to run the model on the edge. We have created a folder in our home directory called EdgeImpulse.
+
+```
+mkdir EdgeImpulse
+cd EdgeImpulse
+sudo apt-get install python3-pip libatlas-base-dev libportaudio2 libportaudiocpp0 portaudio19-dev
+sudo apt-get install python3 -m pip install --upgrade pip
+pip3 install virtualenv six
+python3 -m virtualenv -p python3 env
+source env/bin/activate
+python3 -m pip install edge_impulse_linux
+```
+
+Next up, we must download a local version of the model we have just created using the Edge Impulse platform.
+
+`edge-impulse-linux-runner --download modelfile.eim`
+
+Replace modelfile.eim with the name of your project, in our case, the command would look like this:
+
+`edge-impulse-linux-runner --download WORKPLACEORGANIZER.eim`
+
+![]()
+
+You can find the model name under the **Deployment** tab, written in parentheses at the top of the page.
+
+Next up, navigate to [https://github.com/edgeimpulse/linux-sdk-python/tree/master/examples/image](https://github.com/edgeimpulse/linux-sdk-python/tree/master/examples/image) and download **classify.py** and **device_patches.py** and store them in the same folder with the other components.
+
+Let’s run the inference using Python by issuing the following command:
+
+`python3 classify-image.py path-to-modelfile.eim`
+
+In our case, the command looks like this:
+
+`python3 classify.py WORKPLACEORGANIZER.eim`
+
+![]()
+
+Things should be looking something like this.
+
+All that remains would be a Linux service that starts on boot, calls this script at a predefined hour, when a shift ends. Let’s say, every weekday at 17:00 pm.
+
+As you can see below the script file and the timer file and their location on disk (it’s important to use `sudo` and place it at the respective locations so it can be used as a systemd service).
+
+Run this command to create the service file:
+
+`sudo nano /etc/systemd/system/classify.service`
+
+And here is the content:
+
+```
+[Unit]
+Description=Classify Service
+After=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/zalmotek1/EdgeImpulse
+Environment=PYTHONPATH=/home/zalmotek1/EdgeImpulse
+ExecStart=/home/zalmotek1/EdgeImpulse/env/bin/python3 /home/zalmotek1/EdgeImpulse/classify.py /home/zalmotek1/EdgeImpulse/WORKPLACEORGANIZER.eim
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Run this command to create the timer file: 
+`sudo nano /etc/systemd/system/classify_countdown.timer`
+
+And here is content:
+```
+[Unit]
+Description=Schedule running the classify on a time basis
+
+[Timer]
+OnCalendar=Mon,Tue,Wed,Thu,Fri *-*-* 17:00:00
+Unit=classify.service
+
+[Install]
+WantedBy=timers.target
+WantedBy=multi-user.target
+```
+
+To enable this services you must run the following commands:
+```
+sudo systemctl daemon-reload
+sudo systemctl enable classify.service
+sudo systemctl enable classify_countdown.service
+sudo systemctl start classify_countdown.timer
+sudo systemctl start classify.service
+```
+
+To check on the services you can run:
+`sudo systemctl status classify.service` and `sudo systemctl status classify_countdown.timer`
+
+## Conclusion
+
+Computer vision technologies hold tremendous potential for both practical and theoretical applications. The simple fact that machines are now able to "see" in some capacity allows us to explore new frontiers in computer science, robotics, artificial intelligence, and more.
+
+Using the above methodology you can quickly adapt to other tool setups or things you want to keep an eye on by training models on Edge Impulse and NVIDIA Jetson. Keep your workplace clean and your workflow lean!
+
+If you need assistance in deploying your own solutions or more information about the tutorial above please [reach out to us](https://edgeimpulse.com/contact)!
+
