@@ -1,5 +1,5 @@
 ---
-description: An autonomous security robot that listens for suspicious sounds, then goes on patrol to look for intruders.
+description: A Workplace Organizer project that uses computer vision for detecting missing tools in their placeholder.
 ---
 
 # Workplace Organizer with NVIDIA Jetson Nano 2GB
@@ -8,15 +8,15 @@ Created By:
 -- 
 
 Public Project Link:
-[]()
+[Coming Soon]()
+
+![](.gitbook/assets/workplace-organizer/workplace-organizer-intro.jpg)
 
 ## Intro
 
 Having an organized workplace allows the workers to have greater efficiency in their activities, directly impacting their productivity. 
 
 When you are in an environment where people work multiple shifts and must share the same set of tools, there are a number of challenges that arise. By interviewing a few facility managers, we have found out that the most prominent problem is that employees do not return the tools in their designated space at the end of a shift, causing increased anxiety and delays in the activity of the following shift, since they must find the missing tools or replacements for them.
-
-![]()
 
 ## Our Solution
 
@@ -48,21 +48,21 @@ The winner in our opinion is number 3 so let’s get on with it and show you how
 
 NVIDIA Jetson Nano 2GB DevKit has a quick get-started guide [here](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-2gb-devkit) that, based on your operating system, will help you write the OS on an SD card and start the system. We also recommend having an enclosure for the Jetson to protect it from all sorts of nefarious events. In this tutorial, we have found the [reComputer](https://www.seeedstudio.com/re-computer-case-p-4465.html) case to be a good fit.
 
-![]()
+![](.gitbook/assets/workplace-organizer/jetson-1.jpg)
 
-![]()
+![](.gitbook/assets/workplace-organizer/jetson-2.jpg)
 
 Usually, tools in the industrial environment are stored either horizontally, in drawers, or vertical, on panels, in designated spots. We will use the vertical panel setup from our workshop to develop the solution (IKEA Skadis pegboard and custom-made 3D printed supports - you can find the link [here](https://www.thingiverse.com/thing:2853261) if you like them), the difference, if you have a horizontal setup, would be the camera placement position.
 
-![]()
+![](.gitbook/assets/workplace-organizer/tools-1.jpg)
 
 We initially designed and 3D printed some tokens that perfectly fit in the pegboard slots. They print very quickly and are reusable. We did quite a bit of experimentation to find out what shape and color yield the best results. Firstly, we have tried using red and blue oval pegs. Unsurprisingly, this yielded poor results because they blended too well with the patterned background. Next up, we have decided to use colored geometric shapes. The best results, by far, were obtained with blue triangles, and to top it all off, a great jump in the model’s accuracy was gained by slightly scaling and rotating the triangles (without modifying their aspect ratio). You can find the 3D files that were most successful [here](https://www.myminifactory.com/object/3d-print-edge-impulse-ikea-skadis-markers-216427). 
 
-![]()
+![](.gitbook/assets/workplace-organizer/3d-print.jpg)
 
-![]()
+![](.gitbook/assets/workplace-organizer/3d-print-2.jpg)
 
-![]()
+![](.gitbook/assets/workplace-organizer/3d-print-3.jpg)
 
 ## Software Setup
 
@@ -78,19 +78,19 @@ The first step towards building your TinyML Model is creating a new Edge Impulse
 
 Once logged in to your Edge Impulse account, you will be greeted by the Project Creation screen.
 
-![]()
+![](.gitbook/assets/workplace-organizer/dashboard.jpg)
 
 Click on **Create new project**, give it a meaningful name, select **Developer** as your desired project type and press **Create new project**.
 
-![]()
+![](.gitbook/assets/workplace-organizer/dashboard-2.jpg)
 
 Afterward, select **Images** as the type of data you wish to use.
 
-![]()
+![](.gitbook/assets/workplace-organizer/dashboard-3.jpg)
 
 Due to the possibility of having to detect more than 1 marker in the image, we will pick **Classify multiple objects** when asked what you want to detect.
 
-![]()
+![](.gitbook/assets/workplace-organizer/dashboard-4.jpg)
 
 ### Connecting the device
 
@@ -128,37 +128,37 @@ Once we have plenty of photos (we have collected around 115 pictures for our use
 
 After that, you will see them in the **Data acquisition** panel.
 
-![]()
+![](.gitbook/assets/workplace-organizer/dataset.jpg)
 
 ### Processing the data - Creating bounding boxes
 
 Next, navigate to the **Labeling queue** and start drawing bounding boxes around the 3D printed markers. Even if it might feel cumbersome at first, Edge Impulse will start auto-labeling the object it recognizes, greatly speeding up the process.
 
-![]()
+![](.gitbook/assets/workplace-organizer/labeling.jpg)
 
 ### Creating the impulse
 
 After all the labeling is done, click on **Create Impulse**, under the **Impulse design** panel. For the input block, select **Images** as input, select **image** as processing block, and **Object detection** as learning block.
 
-![]()
+![](.gitbook/assets/workplace-organizer/impulse.jpg)
 
 ### Generate Features
 
 Next step, click on **Save Impulse** and move over to the **Image** field under the **Impulse design** panel. Wait for the parameters to be generated and click on **Save parameters** to move on to the **Generate features** tab, where you will click on the **Generate features** button. After the job is done, you can visualize your dataset in 3D, in the feature explorer tab. This is one of the most useful tools to use from the Edge Impulse platform as it can let you quickly validate whether your data is well clustered.
 
-![]()
+![](.gitbook/assets/workplace-organizer/features.jpg)
 
 ### Training the model
 
 Moving on to the model training, we recommend leaving the default settings on, and just beginning the training.
 
-![]()
+![](.gitbook/assets/workplace-organizer/training.jpg)
 
 ### Validating the model
 
 This is another great feature that allows you to run the inference on the Test data pool of images, that were kept apart from the training data. After clicking on **Classify all**, you will be prompted with the model testing results, which represents the percentage of all samples with precision score over 80%.
 
-![]()
+![](.gitbook/assets/workplace-organizer/validating.jpg)
 
 ### Deploying the model on the edge
 
@@ -168,7 +168,7 @@ To run the inference on the target, issue the following command and select the p
 
 Once the model downloads, access the URL provided in your serial monitor to watch the live video feed and see the model in action in a browser:
 
-![]()
+![](.gitbook/assets/workplace-organizer/testing.jpg)
 
 If you get to this point and the outcome is the desired one, good job! If not, you might want to revisit training the model and labeling more pictures to improve the detection rate.
 
@@ -197,7 +197,7 @@ Replace modelfile.eim with the name of your project, in our case, the command wo
 
 `edge-impulse-linux-runner --download WORKPLACEORGANIZER.eim`
 
-![]()
+![](.gitbook/assets/workplace-organizer/deploying.jpg)
 
 You can find the model name under the **Deployment** tab, written in parentheses at the top of the page.
 
@@ -211,7 +211,7 @@ In our case, the command looks like this:
 
 `python3 classify.py WORKPLACEORGANIZER.eim`
 
-![]()
+![](.gitbook/assets/workplace-organizer/deployed.jpg)
 
 Things should be looking something like this.
 
