@@ -8,7 +8,7 @@ Created By:
 Nick Bild 
 
 Public Project Link:
-https://studio.edgeimpulse.com/public/106503/latest
+[https://studio.edgeimpulse.com/public/106503/latest](https://studio.edgeimpulse.com/public/106503/latest)
 
 ![Shield Bot](.gitbook/assets/shieldbot/shieldbot-1.jpg)
 
