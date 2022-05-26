@@ -10,7 +10,7 @@ Swapnil Verma
 Public Project Link:
 [https://studio.edgeimpulse.com/public/93652/latest](https://studio.edgeimpulse.com/public/93652/latest)
 
-![](.gitbook/assets/indoor-co2.jpg)
+![Indoor CO2](.gitbook/assets/indoor-co2.jpg)
 
 ### Problem Overview
 

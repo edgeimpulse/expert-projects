@@ -2,6 +2,8 @@
 
 * [Welcome](README.md)
 
+* [Workplace Organizer with NVIDIA Jetson Nano](workplace-organizer.md)
+
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
 * [Brushless DC Motor Anomaly Detection](brushless-dc-motor-anomaly-detection)
 * [Indoor CO2 Level Estimation Using TinyML](indoor-co2-level-estimation-using-tinyml.md)

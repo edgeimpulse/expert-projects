@@ -12,10 +12,10 @@ Public Project Link:
 
 *Learn how to sample data from a motor controller and apply machine learning to receive predictive maintenance alerts.*
 
-![](https://hackster.imgix.net/uploads/attachments/1444547/_G48pNNvlME.blob?auto=compress,format&w=900&h=675&fit=min)
+![Header](https://hackster.imgix.net/uploads/attachments/1444547/_G48pNNvlME.blob?auto=compress,format&w=900&h=675&fit=min)
 
 ## Background
-![](https://user-images.githubusercontent.com/63222803/169644868-a92809d4-af89-47fc-b3c4-b20237d3cbd1.gif)
+![In Action](https://user-images.githubusercontent.com/63222803/169644868-a92809d4-af89-47fc-b3c4-b20237d3cbd1.gif)
 
 Brushless DC (BLDC) motors' high performance and efficiency have made them one of the most popular options for industrial / robotics applications. In order to drive BLDC motors a dedicated motor controller is needed, and there exist many controller manufacturers like ODrive and Roboteq, to name a couple.
 
