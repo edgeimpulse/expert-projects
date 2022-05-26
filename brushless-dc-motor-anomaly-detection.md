@@ -10,6 +10,8 @@ Avi Brown
 Public Project Link:
 [Coming Soon](http://)
 
+![Header](.gitbook/assets/brushless-header.jpg)
+
 *Learn how to sample data from a motor controller and apply machine learning to receive predictive maintenance alerts.*
 
 ![Header](https://hackster.imgix.net/uploads/attachments/1444547/_G48pNNvlME.blob?auto=compress,format&w=900&h=675&fit=min)
