@@ -1,12 +1,16 @@
 ---
-description: >-
-  This project tries to estimate the CO2 level in an indoor environment by
-  counting the person in that environment using TinyML. -- Swapnil Verma
+description: This project tries to estimate the CO2 level in an indoor environment by counting the people in that environment using TinyML.
 ---
 
 # Indoor CO2 Level Estimation Using TinyML
 
-![](.gitbook/assets/\_pRaYamMBrP.png)
+Created By:
+Swapnil Verma 
+
+Public Project Link:
+[https://studio.edgeimpulse.com/public/93652/latest](https://studio.edgeimpulse.com/public/93652/latest)
+
+![](.gitbook/assets/_pRaYamMBrP.png)
 
 ### Problem Overview
 
