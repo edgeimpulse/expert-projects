@@ -8,7 +8,7 @@ Created By:
 Adam Taylor 
 
 Public Project Link:
-[https://studio.edgeimpulse.com/public/84373/latest](https://studio.edgeimpulse.com/public/84373/latest)
+[Coming Soon](https://studio.edgeimpulse.com/)
 
 ![](.gitbook/assets/blind-spot-detection/intro.jpg)
 
