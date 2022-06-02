@@ -5,8 +5,10 @@
 * [Workplace Organizer with NVIDIA Jetson Nano](workplace-organizer.md)
 * [Cyclist Blind Spot Detection](cyclist-blind-spot-detection.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
+* [ROS2 + Edge Impulse, Part 1: Pub/Sub Node in Python](ros2-part1-pubsub-node.md)
 * [Brushless DC Motor Anomaly Detection](brushless-dc-motor-anomaly-detection.md)
 * [Indoor CO2 Level Estimation Using TinyML](indoor-co2-level-estimation-using-tinyml.md)
 * [Hand Gesture Recognition using TinyML on OpenMV](hand-gesture-recgnition-using-tinyml-on-openmv.md)
 * [EdenOff: Anticipate Power Outages with Machine Learning](edenoff-anticipate-power-outages.md)
+* [Delivered Parcel Detection with Computer Vision](parcel-detection.md)
 
