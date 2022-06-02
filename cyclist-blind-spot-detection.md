@@ -5,8 +5,7 @@ description: This project demonstrates low cost detection of cyclists in a blind
 # Cyclist Blind Spot Detection with a Himax WE-I Plus
 
 Created By:
-Adam Taylor
-Adam Fry 
+Adam Taylor, Adam Fry 
 
 Public Project Link:
 [https://studio.edgeimpulse.com/public/108632/latest](https://studio.edgeimpulse.com/public/108632/latest)
