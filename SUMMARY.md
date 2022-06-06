@@ -11,4 +11,5 @@
 * [Hand Gesture Recognition using TinyML on OpenMV](hand-gesture-recgnition-using-tinyml-on-openmv.md)
 * [EdenOff: Anticipate Power Outages with Machine Learning](edenoff-anticipate-power-outages.md)
 * [Delivered Package Detection with Computer Vision](parcel-detection.md)
+* [Faulty Lithium-Ion Cell Identification in Battery Packs](faulty-lithium-ion-cell-identification.md)
 
