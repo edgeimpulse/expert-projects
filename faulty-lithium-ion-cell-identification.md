@@ -74,7 +74,7 @@ Once the datasets are uploaded, then in the "Create impulse" section change the 
 
 Next, in Feature Explorer, we can see the generated raw features of thermal data.
 
-![]()
+![](.gitbook/assets/lithium-ion/features.jpg)
 
 ## Neural Network Configuration
 
@@ -89,8 +89,12 @@ Then I have included couple of 2D conversion layers with pool layers, followed b
 ## Deployment
 
 In the Deployment section , select Arduino code and download the firmware package.
+
+![](.gitbook/assets/lithium-ion/deployment-1.jpg)
  
 Then add the Zip file as a Library in Arduino IDE.
+
+![](.gitbook/assets/lithium-ion/deployment-2.jpg)
 
 Once it is added, download the final application code from [this GitHub link](https://github.com/Manivannan-maker/FaultyCellIdentification), and flash it to the Wio Terminal.
 
@@ -100,11 +104,22 @@ In a model training, 100% accuracy is achieved, and in model testing 87.5% accur
 
 ![](.gitbook/assets/lithium-ion/accuracy.jpg)
 
-![](.gitbook/assets/lithium-ion/testing.jpg)
+In normal case, when all the battery in the pack is operating in normal temperature.
+
+![](.gitbook/assets/lithium-ion/normal.jpg)
+
+In a faulty battery condition, the model will predict the cell location index and display it with a predicted value. In this particular setup, a faulty cell is placed in location 5 and discharged for 1 hour.  The cell gets overheated, and the model predicts the overheated cell location, number 5 in this battery pack.
+
+![](.gitbook/assets/lithium-ion/faulty-1.jpg)
+
+If you cannot create a faulty cell for testing, you can simulate it using this method. Place a heated soldering iron on top of (near, but do not touch!) a battery cell, or move the soldering iron from across the battery pack from cell 1 to cell 6 in the pack. The model will predict the overheated cell locations as 1 to 6, as the soldering iron moves from 1 to 6. By adding the heat from the soldering iron, you can simulate the faulty battery condition and test it.
+
+![](.gitbook/assets/lithium-ion/faulty-2.jpg)
+
+## Schematics 
 
 ![](.gitbook/assets/lithium-ion/schematics.jpg)
 
-## Summary 
+## Summary
 
-xxx
-
+This project demonstrated a cheap and effective way to use computer vision and thermal imaging using the Wio Terminal, to identify lithium ion battery cells that are overheating, in more granular fashion than would be normally possible.  This is a prototype of course, but could be used in robotics, automated warehouse and forklift devices, electric vehicles, or other places where batteries are arranged into packs.
