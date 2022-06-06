@@ -10,9 +10,9 @@ Avi Brown
 Public Project Link:
 [https://studio.edgeimpulse.com/public/108508/latest](https://studio.edgeimpulse.com/public/108508/latest)
 
-### Full code for this project can be found [here](https://github.com/avielbr/edge-impulse/tree/main/ros2/ei_ros2)
+https://www.youtube.com/embed/0SabLvJqSaM
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0SabLvJqSaM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+### Full code for this project can be [found here](https://github.com/avielbr/edge-impulse/tree/main/ros2/ei_ros2)
 
 ### Background
 
