@@ -8,7 +8,7 @@ Created By:
 Manivannan Sivan 
 
 Public Project Link:
-[]()
+[https://studio.edgeimpulse.com/public/102553/latest](https://studio.edgeimpulse.com/public/102553/latest)
 
 ![](.gitbook/assets/lithium-ion/intro.jpg)
 
