@@ -12,11 +12,13 @@ Public Project Link:
 
 ![](.gitbook/assets/lithium-ion/intro.jpg)
 
-A working demo of my prototype is added in the YouTube link below.
-
 ## Faulty Lithium ion Cell BMS Pack
 
-This prototype uses a Wio Terminal and Edge Impulse to predict overheated faulty cells in a BMS pack. For this project, I used an MLX 90640 Thermal Camera with the Wio Terminal to collect the thermal data of a BMS pack.
+This prototype uses a Wio Terminal and Edge Impulse to predict overheated faulty cells in a BMS pack. For this project, I used an MLX 90640 Thermal Camera with the Wio Terminal to collect thermal data from a BMS pack.
+
+A working demo of my prototype is available on YouTube here:
+
+{% embed url="https://www.youtube.com/watch?v=0fzT5PdRwiQ" %}
 
 ## Problem Statement
 

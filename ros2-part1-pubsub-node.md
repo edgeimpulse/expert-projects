@@ -10,7 +10,7 @@ Avi Brown
 Public Project Link:
 [https://studio.edgeimpulse.com/public/108508/latest](https://studio.edgeimpulse.com/public/108508/latest)
 
-https://www.youtube.com/embed/0SabLvJqSaM
+{% embed url="https://www.youtube.com/watch?v=0SabLvJqSaM" %}
 
 ### Full code for this project can be [found here](https://github.com/avielbr/edge-impulse/tree/main/ros2/ei_ros2)
 
