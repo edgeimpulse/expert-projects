@@ -10,6 +10,10 @@ Simone Salerno
 Public Project Link:
 [Coming Soon]()
 
+![](.gitbook/assets/sparkfun-tof.jpg)
+
+## Introduction
+
 Human-Computer Interfaces come in many shapes and sizes in our everyday life. We're greatly accustomed to point-and-click devices, touchscreens and voice commands.
 
 In recent years (and even more since the beginning of the pandemic), touchless interfaces have grown in popularity and have proven to work well in different use-cases:
@@ -189,7 +193,7 @@ Keeping this in mind, we will design our Impulse as follows:
   - Flatten
   - Output layer
 
-  ![Impulse design](https://eloquentarduino.com/edge-impulse/tof/impulse.png)
+![Impulse design](https://eloquentarduino.com/edge-impulse/tof/impulse.png)
 
 You are free to edit the above topology as you see fit. On my own dataset, it achieved 99% accuracy on the validation set.
 
