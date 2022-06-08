@@ -3,6 +3,7 @@
 * [Welcome](README.md)
 
 * [Workplace Organizer with NVIDIA Jetson Nano](workplace-organizer.md)
+* [Recyclable Materials Sorter with NVIDIA Jetson Nano](recyclable-materials-sorter.md)
 * [Cyclist Blind Spot Detection](cyclist-blind-spot-detection.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
 * [ROS2 + Edge Impulse, Part 1: Pub/Sub Node in Python](ros2-part1-pubsub-node.md)
