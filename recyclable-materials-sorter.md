@@ -20,11 +20,9 @@ Some device models accept only one type of recyclable container like aluminum ca
 
 We at Zalmotek have built a prototype for such a machine that is able to automatically process and sort glass bottles, PETs, and aluminum cans.
 
-![](.gitbook/assets/recyclable-materials-sorter/intro.jpg)
+![](.gitbook/assets/recyclable-materials-sorter/device-1.jpg)
 
 You might not know this, but there is no sensor for plastic or glass. While some **capacitive sensors** can accurately differentiate metals and glass from plastic, for the rest you have to combine other indirect sensor capabilities to narrow the decision in establishing what type of item is in the detector area. For example, **reflective light sensors** shine through glass and some plastic bottles, but not through metal. And **inductive sensors** are great for detecting aluminum cans, but not plastic and glass. We ended up using a combination of 5 sensors on our prototype (1 x inductive, 1 x reflective, and 2 x capacitive sensors calibrated at different thresholds) and our success rate is somewhere at 70%. Not bad for a prototype, but the main problem is that it will forever stay like this unless we employ Machine Learning and Computer Vision to improve the success rate.
-
-![](.gitbook/assets/recyclable-materials-sorter/device-1.jpg)
 
 ![](.gitbook/assets/recyclable-materials-sorter/device-2.jpg)
 
@@ -190,5 +188,5 @@ Not all recycling is created equal. Selective recycling, also known as "source s
 
 For these reasons, selective recycling is a useful way to reduce waste and promote sustainability and automating it is the only efficient way to go about it.
 
-If you need assistance in deploying your own solutions or more information about the tutorial above please [reach out to us](https://edgeimpulse.com/contact)
+If you need assistance in deploying your own solutions or more information about the tutorial above please [reach out to us](https://edgeimpulse.com/contact).
 
