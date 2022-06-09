@@ -5,10 +5,10 @@ description: A Workplace Organizer project that uses computer vision for detecti
 # Workplace Organizer with NVIDIA Jetson Nano 2GB
 
 Created By:
-Zalmotek 
+[Zalmotek](https://zalmotek.com)
 
 Public Project Link:
-[Coming Soon]()
+[https://studio.edgeimpulse.com/public/89360/latest](https://studio.edgeimpulse.com/public/89360/latest)
 
 ![](.gitbook/assets/workplace-organizer/workplace-organizer-intro.jpg)
 
