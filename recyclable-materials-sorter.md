@@ -5,10 +5,10 @@ description: Use computer vision and an Nvidia Jetson Nano to improve the accura
 # Recyclable Materials Sorter with NVIDIA Jetson Nano 2GB
 
 Created By:
-Zalmotek 
+[Zalmotek](https://zalmotek.com) 
 
 Public Project Link:
-[Coming Soon]()
+[https://studio.edgeimpulse.com/public/89338/latest/](https://studio.edgeimpulse.com/public/89338/latest/)
 
 ![](.gitbook/assets/recyclable-materials-sorter/intro.jpg)
 

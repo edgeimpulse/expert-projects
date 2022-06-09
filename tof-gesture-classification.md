@@ -8,7 +8,7 @@ Created By:
 Simone Salerno 
 
 Public Project Link:
-[Coming Soon]()
+[https://studio.edgeimpulse.com/public/94474/latest](https://studio.edgeimpulse.com/public/94474/latest)
 
 ![](.gitbook/assets/sparkfun-tof.jpg)
 
