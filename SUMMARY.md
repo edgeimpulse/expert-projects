@@ -14,3 +14,4 @@
 * [Delivered Package Detection with Computer Vision](parcel-detection.md)
 * [Faulty Lithium-Ion Cell Identification in Battery Packs](faulty-lithium-ion-cell-identification.md)
 * [8x8 ToF Gesture Classification](tof-gesture-classification.md)
+* [Detecting Worker Accidents with Acoustic Sensing AI](detecting-worker-accidents-with-AI.md)
