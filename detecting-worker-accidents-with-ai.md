@@ -1,5 +1,5 @@
 ---
-description: An Acoustic Sensing project that uses audio classification on a Syntiant TinyML board to listen for keywords, and even take action via GPIO.
+description: An Acoustic Sensing project that uses audio classification on a Syntiant TinyML board to listen for keywords, and take action via GPIO.
 ---
 
 # Detecting Worker Accidents with Acoustic Sensing AI
@@ -10,7 +10,7 @@ Solomon Githu
 Public Project Link:
 [https://studio.edgeimpulse.com/public/111611/latest](https://studio.edgeimpulse.com/public/111611/latest)
 
-![](.gitbook/assets/detecting-worker-accidents-with-AI.jpg)
+![]()
 
 ## Industrial Automation Inefficiencies Towards Accident Detection
 
