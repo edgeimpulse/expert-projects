@@ -10,8 +10,6 @@ Solomon Githu
 Public Project Link:
 [https://studio.edgeimpulse.com/public/111611/latest](https://studio.edgeimpulse.com/public/111611/latest)
 
-![]()
-
 ## Industrial Automation Inefficiencies Towards Accident Detection
 
 The International Labor Organization estimates that there are over 1 million work-related fatalities each year and millions of workers suffer from workplace accidents.  However, even as technology advancements have improved worker safety in many industries, some accidents involving workers and machines remain undetected as they occur, possibly even leading to fatalities. This is because of the limitations in Machine Safety Systems. Safety sensors, controllers, switches and other machine accessories have been able to provide safety measures during accidents but some events remain undetected by these systems.
