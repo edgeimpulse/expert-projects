@@ -10,13 +10,11 @@ Manivannan Sivan
 Public Project Link:
 [https://studio.edgeimpulse.com/public/107293/latest](https://studio.edgeimpulse.com/public/107293/latest)
 
-![](.gitbook/assets/iv-drip/intro.jpg)
-
 ## Project Demo
 
 {% embed url="https://www.youtube.com/watch?v=xFzX1vdE-k8" %}
 
-## Problem statement
+## Problem Statement
 
 An empty IV bag can pose several issues, both medical and operational:
 
@@ -33,7 +31,7 @@ The prototype for this project will classify the IV fluid level into three categ
 
 This simple categorization can allow for the output or results of this model to be integrated via communication protocols like BLE or LoRa, to stream the results to a central system in a hospital. The nursing staff can monitor the IV fluid levels of all patients in one place. Hence, it can save a lot of effort and time going to monitor or check the fluid level of each individually.
 
-![]()
+![](.gitbook/assets/iv-drip/intro.jpg)
 
 In this prototype hardware setup, the Portenta H7 with Vision Shield is placed 15cm from the IV drips fluid.  Then, connect the Portenta to the host system, and type the below command.
 
