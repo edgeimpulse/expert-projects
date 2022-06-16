@@ -15,3 +15,4 @@
 * [Faulty Lithium-Ion Cell Identification in Battery Packs](faulty-lithium-ion-cell-identification.md)
 * [8x8 ToF Gesture Classification](tof-gesture-classification.md)
 * [Detecting Worker Accidents with Audio Classification](detecting-worker-accidents-with-ai.md)
+* [IV Drip Fluid-Level Monitoring](iv-drip-fluid-level-monitoring.md)
