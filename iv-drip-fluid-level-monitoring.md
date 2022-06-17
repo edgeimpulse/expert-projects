@@ -1,5 +1,5 @@
 ---
-description: A TinyML model using Edge Impulse and the Wio Terminal to predict faulty lithium ion cells in a BMS pack.
+description: Using computer vision to classify the fluid level in an IV Drip bag with an Arduino Portenta H7 + Vision Shield.
 ---
 
 # IV Drip Fluid-Level Monitoring 
@@ -12,7 +12,7 @@ Public Project Link:
 
 ## Project Demo
 
-{% embed url="https://www.youtube.com/watch?v=xFzX1vdE-k8" %}
+{% embed url="https://www.youtube.com/watch?v=4W37gOTlnjk" %}
 
 ## Problem Statement
 
