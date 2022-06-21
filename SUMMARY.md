@@ -4,6 +4,7 @@
 
 * [Workplace Organizer with NVIDIA Jetson Nano](workplace-organizer.md)
 * [Recyclable Materials Sorter with NVIDIA Jetson Nano](recyclable-materials-sorter.md)
+* [Predictive Maintenance with Nordic Thingy:91](predictive-maintenance-with-nordic-thingy-91.md)
 * [Cyclist Blind Spot Detection](cyclist-blind-spot-detection.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
 * [ROS2 + Edge Impulse, Part 1: Pub/Sub Node in Python](ros2-part1-pubsub-node.md)
@@ -16,3 +17,4 @@
 * [8x8 ToF Gesture Classification](tof-gesture-classification.md)
 * [Detecting Worker Accidents with Audio Classification](detecting-worker-accidents-with-ai.md)
 * [IV Drip Fluid-Level Monitoring](iv-drip-fluid-level-monitoring.md)
+* [Food Irradiation Dose Detection](food-irradiation-detection.md)
