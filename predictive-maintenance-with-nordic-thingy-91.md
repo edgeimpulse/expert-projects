@@ -59,13 +59,13 @@ First thing first, to collect our dataset, we must upload the Thingy:91 firmware
 
 ![](.gitbook/assets/predictive-maintenance-with-nordic-thingy-91/flash.jpg)
 
-1. Click on Select Device, select Thingy:91 and once returned to the programmer screen, make sure that Enable MCUboot is checked.
+5. Click on Select Device, select Thingy:91 and once returned to the programmer screen, make sure that Enable MCUboot is checked.
 
 ![](.gitbook/assets/predictive-maintenance-with-nordic-thingy-91/programmer.jpg)
 
-1. In the Programmer navigation bar, click Select device.
-1. In the menu on the right, click **Add HEX file > Browse**, and select the firmware.hex file from the firmware previously downloaded at step 3.
-Scroll down in the menu on the right to Device and click **Write**:
+6. In the Programmer navigation bar, click Select device.
+7. In the menu on the right, click **Add HEX file > Browse**, and select the firmware.hex file from the firmware previously downloaded at step 3.
+8. Scroll down in the menu on the right to Device and click **Write**:
 
 ![](.gitbook/assets/predictive-maintenance-with-nordic-thingy-91/firmware-1.jpg)
 
@@ -331,4 +331,6 @@ While reactive and preventive maintenance require constant effort from the suppo
 
 ![](.gitbook/assets/predictive-maintenance-with-nordic-thingy-91/conclusion.jpg)
 
+The Nordic Thingy:91 is a very good development kit for rapid prototyping offering a good number of sensors and several connectivity options making it a good candidate for many use cases both industrial or even home automation related. It's also a good choice if you are not too hardware savvy or lack the tools to assemble/test electronic modules. The recipe presented above can be quickly modified and customized to enable the monitoring of other various environmental properties that you want to keep an eye on.
 
+If you need assistance in deploying your own solutions or more information about the tutorial above please [reach out to us](https://edgeimpulse.com/contact)!
