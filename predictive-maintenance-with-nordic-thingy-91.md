@@ -59,13 +59,13 @@ First thing first, to collect our dataset, we must upload the Thingy:91 firmware
 
 ![](.gitbook/assets/predictive-maintenance-with-nordic-thingy-91/flash.jpg)
 
-5. Click on Select Device, select Thingy:91 and once returned to the programmer screen, make sure that Enable MCUboot is checked.
+Click on Select Device, select Thingy:91 and once returned to the programmer screen, make sure that Enable MCUboot is checked.
 
 ![](.gitbook/assets/predictive-maintenance-with-nordic-thingy-91/programmer.jpg)
 
-6. In the Programmer navigation bar, click Select device.
-7. In the menu on the right, click **Add HEX file > Browse**, and select the firmware.hex file from the firmware previously downloaded at step 3.
-8. Scroll down in the menu on the right to Device and click **Write**:
+1. In the Programmer navigation bar, click Select device.
+1. In the menu on the right, click **Add HEX file > Browse**, and select the firmware.hex file from the firmware previously downloaded at step 3.
+1. Scroll down in the menu on the right to Device and click **Write**:
 
 ![](.gitbook/assets/predictive-maintenance-with-nordic-thingy-91/firmware-1.jpg)
 
