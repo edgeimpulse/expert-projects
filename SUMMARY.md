@@ -18,3 +18,4 @@
 * [Detecting Worker Accidents with Audio Classification](detecting-worker-accidents-with-ai.md)
 * [IV Drip Fluid-Level Monitoring](iv-drip-fluid-level-monitoring.md)
 * [Food Irradiation Dose Detection](food-irradiation-detection.md)
+* [Arduin-Row, a TinyML Rowing Machine Coach](arduin-row-tinyml-rowing-machine-coach.md)
