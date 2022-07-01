@@ -19,3 +19,4 @@
 * [IV Drip Fluid-Level Monitoring](iv-drip-fluid-level-monitoring.md)
 * [Food Irradiation Dose Detection](food-irradiation-detection.md)
 * [Arduin-Row, a TinyML Rowing Machine Coach](arduin-row-tinyml-rowing-machine-coach.md)
+* [Refrigerator Predictive Maintenance](refrigerator-predictive-maintenance.md)
