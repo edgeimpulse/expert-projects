@@ -184,7 +184,7 @@ To closely examine a classified sample, click on the three dots on a sample and 
 
 That will open a classification result page where you can scroll through the data points to evaluate individual classification window and their anomaly score. This page also has helpful graphs for visualising raw, pre-processed and classified samples.
 
-![Classification Result](.gitbook/assets/refrigerator-predictive-maintenance/classificationresult.mp4)
+![Classification Result](.gitbook/assets/refrigerator-predictive-maintenance/classification-results.gif)
 
 As you can see from the above *classification result*, the ML model has absolutely nailed the classification. It is correctly detecting anomalous data from a combined sample.
 
