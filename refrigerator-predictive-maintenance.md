@@ -180,7 +180,7 @@ As you can see from the *model testing* image above that the ML model is perform
 
 To closely examine a classified sample, click on the three dots on a sample and select *show classification*.
 
-![Show Classification](.gitbook/assets/refrigerator-predictive-maintenance/classification.mp4)
+![Show Classification](.gitbook/assets/refrigerator-predictive-maintenance/classification.gif)
 
 That will open a classification result page where you can scroll through the data points to evaluate individual classification window and their anomaly score. This page also has helpful graphs for visualising raw, pre-processed and classified samples.
 
