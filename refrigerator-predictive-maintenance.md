@@ -180,11 +180,11 @@ As you can see from the *model testing* image above that the ML model is perform
 
 To closely examine a classified sample, click on the three dots on a sample and select *show classification*.
 
-![Show Classification](https://hackster.imgix.net/uploads/attachments/1461365/screen_recording_2022-06-26_at_19_06_57_sYgOD0Gxjf.gif?auto=compress&gifq=35&w=740&h=555&fit=max&fm=mp4)
+![Show Classification](.gitbook/assets/refrigerator-predictive-maintenance/classification.mp4)
 
 That will open a classification result page where you can scroll through the data points to evaluate individual classification window and their anomaly score. This page also has helpful graphs for visualising raw, pre-processed and classified samples.
 
-![Classification Result](https://hackster.imgix.net/uploads/attachments/1461366/screen_recording_2022-06-26_at_19_24_06_K91V9jlzuF.gif?auto=compress&gifq=35&w=740&h=555&fit=max&fm=mp4)
+![Classification Result](.gitbook/assets/refrigerator-predictive-maintenance/classificationresult.mp4)
 
 As you can see from the above *classification result*, the ML model has absolutely nailed the classification. It is correctly detecting anomalous data from a combined sample.
 
