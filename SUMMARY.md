@@ -20,3 +20,4 @@
 * [Food Irradiation Dose Detection](food-irradiation-detection.md)
 * [Arduin-Row, a TinyML Rowing Machine Coach](arduin-row-tinyml-rowing-machine-coach.md)
 * [Refrigerator Predictive Maintenance](refrigerator-predictive-maintenance.md)
+* [Acoustic Pipe Leak Detection](acoustic-pipe-leak-detection.md)
