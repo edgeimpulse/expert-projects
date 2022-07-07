@@ -1,5 +1,5 @@
 ---
-description: Using xxxxxx.
+description: Using an Arduino Portenta H7 to listen for and classify the flow of water in a pipe.
 ---
 
 # TinyML Acoustic Pipe Leakage Detection 
