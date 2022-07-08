@@ -22,3 +22,4 @@
 * [Refrigerator Predictive Maintenance](refrigerator-predictive-maintenance.md)
 * [Acoustic Pipe Leak Detection](acoustic-pipe-leak-detection.md)
 * [Worker Safety Monitoring with Nvidia Jetson Nano](worker-safety-monitoring.md)
+* [Bhopal 84, Detect Harmful Gases](detect-harmful-gases.md))
