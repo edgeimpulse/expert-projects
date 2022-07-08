@@ -8,7 +8,7 @@ Created By:
 Roni Bandini 
 
 Public Project Link:
-[https://studio.edgeimpulse.com/public/90995/latest](https://studio.edgeimpulse.com/public/90995/latest)
+[https://studio.edgeimpulse.com/public//latest](https://studio.edgeimpulse.com/public//latest)
 
 ## Project Demo
 
@@ -92,7 +92,6 @@ If you want to use another pin for the Buzzer
 `# define pinBuzzer 2`
 
 If you want to use more readings for min, max and average
-
 `int   measuresNumber=4;`
 
 If you want to change the measure timeframe
@@ -100,7 +99,6 @@ If you want to change the measure timeframe
 
 If you want to change the percentage to identify the gases
 `float scoreLimit=0.8;`
-
 
 ## Using Bhopal 84
 
