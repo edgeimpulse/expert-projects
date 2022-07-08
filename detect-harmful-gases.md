@@ -8,7 +8,7 @@ Created By:
 Roni Bandini 
 
 Public Project Link:
-[https://studio.edgeimpulse.com/public//latest](https://studio.edgeimpulse.com/public//latest)
+[https://studio.edgeimpulse.com/public/114438/latest](https://studio.edgeimpulse.com/public/114438/latest)
 
 ## Project Demo
 
@@ -109,6 +109,7 @@ The prototype is able to detect normal air conditions, a regular gas and a harmf
 ## Links
 
 Source code: [https://github.com/ronibandini/bhopal84](https://github.com/ronibandini/bhopal84)
+
 3d parts: [https://www.thingiverse.com/thing:5420469](https://www.thingiverse.com/thing:5420469)
 
 
