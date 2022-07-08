@@ -2,8 +2,8 @@
 
 * [Welcome](README.md)
 
-* [Workplace Organizer with NVIDIA Jetson Nano](workplace-organizer.md)
-* [Recyclable Materials Sorter with NVIDIA Jetson Nano](recyclable-materials-sorter.md)
+* [Workplace Organizer with Nvidia Jetson Nano](workplace-organizer.md)
+* [Recyclable Materials Sorter with Nvidia Jetson Nano](recyclable-materials-sorter.md)
 * [Predictive Maintenance with Nordic Thingy:91](predictive-maintenance-with-nordic-thingy-91.md)
 * [Cyclist Blind Spot Detection](cyclist-blind-spot-detection.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
@@ -21,3 +21,4 @@
 * [Arduin-Row, a TinyML Rowing Machine Coach](arduin-row-tinyml-rowing-machine-coach.md)
 * [Refrigerator Predictive Maintenance](refrigerator-predictive-maintenance.md)
 * [Acoustic Pipe Leak Detection](acoustic-pipe-leak-detection.md)
+* [Worker Safety Monitoring with Nvidia Jetson Nano](worker-safety-monitoring.md)
