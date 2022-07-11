@@ -8,7 +8,7 @@ Created By:
 Wamiq Raza 
 
 Public Project Link:
-[https://studio.edgeimpulse.com/public/xxxxxx/latest](https://studio.edgeimpulse.com/public/xxxxxx/latest)
+[Coming Soon]()
 
 ## Project Demo
 
@@ -40,7 +40,7 @@ The computerized categorization of illnesses using photographs has piqued the in
 
 ## Dataset Description
 
-The dataset is of leaf images taken in the field in different districts in Uganda by the Makerere AI lab in collaboration with the National Crops Resources Research Institute (NaCRRI), the national body in charge of research in agriculture in Uganda [1]. The Figure 1 shows an example of each three classes and their correspondence label. The data is of leaf images representing 3 classes: the healthy class of images, and two disease classes including Angular Leaf Spot and Bean Rust diseases. In total 600images were taken from dataset, 200 images for each class.
+The dataset is of leaf images taken in the field in different districts in Uganda by the Makerere AI Lab in collaboration with the National Crops Resources Research Institute (NaCRRI), the national body in charge of research in agriculture in Uganda [1]. Figure 1 shows an example of each of three classes and their corresponding label. The data is of leaf images representing 3 classes: the healthy class of images, and two disease classes including Angular Leaf Spot and Bean Rust diseases. In total 600 images were taken from the dataset; 200 images for each class.
 
 ![Figure 1: Dataset images with respect to its class label](.gitbook/assets/bean-leaf-classification/dataset.jpg)
 
@@ -112,9 +112,13 @@ In this project, we the approach used by author in paper “Energy-Efficient Inf
 ## References
 
 [1] [https://github.com/AI-Lab-Makerere/ibean](https://github.com/AI-Lab-Makerere/ibean)
+
 [2] [https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/sony-spresense](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/sony-spresense)
+
 [3] (PDF) [Energy-Efficient Inference on the Edge Exploiting TinyML Capabilities for UAVs](https://www.researchgate.net/publication/355781811_Energy-Efficient_Inference_on_the_Edge_Exploiting_TinyML_Capabilities_for_UAVs) (researchgate.net)
+
 [4] RAZE. Tello. 2019. Available online: [https://www.ryzerobotics.com/kr/tello](https://www.ryzerobotics.com/kr/tello)  (accessed on 06 June 2022)
+
 [5] [https://developer.sony.com/develop/spresense/buy-now](https://developer.sony.com/develop/spresense/buy-now)
 
 
