@@ -10,9 +10,13 @@ Naveen Kumar
 Public Project Link:
 [Coming Soon]()
 
-![Cover Image](.gitbook/assets/surface-crack-detection/cover.gif)
+## Project Demo
+
+{% embed url="https://www.youtube.com/watch?v=vJc4BwoOB2U" %}
 
 ## Overview
+
+![Cover Image](.gitbook/assets/surface-crack-detection/cover.gif)
 
 A 50-year-old bridge collapsed in Pittsburgh (Pennsylvania) on January 28, 2022. There is only one reason why a sturdy structure such as a concrete bridge could suddenly collapse: wear and tear.
 
@@ -534,10 +538,6 @@ Also, the reTerminal front panel buttons (in the above image) are used for the f
 - **F1** button: to toggle heat map
 - **F2** button: to toggle center crop (zoom in) the preview image
 - **O** button: to close the app
-
-## Inferencing Demo
-
-[![Demo](https://img.youtube.com/vi/vJc4BwoOB2U/0.jpg)](https://www.youtube.com/watch?v=vJc4BwoOB2U)
 
 ## Conclusion
 This project showcases an industrial use case for surface crack detection which can be used for predictive maintenance. The project has the following key characteristics.
