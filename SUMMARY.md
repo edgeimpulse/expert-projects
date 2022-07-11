@@ -6,6 +6,7 @@
 * [Recyclable Materials Sorter with Nvidia Jetson Nano](recyclable-materials-sorter.md)
 * [Predictive Maintenance with Nordic Thingy:91](predictive-maintenance-with-nordic-thingy-91.md)
 * [Cyclist Blind Spot Detection](cyclist-blind-spot-detection.md)
+* [Surface Crack Detection with Seeed reTerminal](surface-crack-detection.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
 * [ROS2 + Edge Impulse, Part 1: Pub/Sub Node in Python](ros2-part1-pubsub-node.md)
 * [Brushless DC Motor Anomaly Detection](brushless-dc-motor-anomaly-detection.md)
