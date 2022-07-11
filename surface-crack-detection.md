@@ -113,7 +113,7 @@ Now go to the **Impulse Design** > **Transfer Learning** page and choose the Neu
 
 The pre-trained model outputs the class prediction probabilities. To get the class activation map, we need to modify the model and make it a multi-output model. To customize the model, we need to switch to **Keras (expert) mode**.
 
-![Switch Expert Mode](surface-crack-detection/switch_expert_mode.png)
+![Switch Expert Mode](.gitbook/assets/surface-crack-detection/switch_expert_mode.png)
 
 We can modify the generated code in the text editor as shown below.
 
