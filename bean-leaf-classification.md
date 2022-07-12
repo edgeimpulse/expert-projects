@@ -46,29 +46,29 @@ The dataset is of leaf images taken in the field in different districts in Ugand
 
 ## Hardware and Connectivity Description
 
-Sony Spresense main boards, Extension board, Spresense camera, a USB micro cable, UAVs were used in this project. Sony Spresense is a small, but powerful development board with a 6 core Cortex-M4F microcontroller and integrated GPS, and a wide variety of add-on modules including an extension board with headphone jack, SD card slot and microphone pins, a camera board, a sensor board with accelerometer, pressure, and geomagnetism sensors, and Wi-Fi board - and it's fully supported by Edge Impulse [2].
+The Sony Spresense main board, Extension board, Spresense camera, a USB-micro cable, and UAVs were used in this project. The Sony Spresense is a small, but powerful development board with a 6 core Cortex-M4F microcontroller and integrated GPS, and a wide variety of add-on modules including an extension board with headphone jack, SD card slot and microphone pins, a camera board, a sensor board with accelerometer, pressure, and geomagnetism sensors, and Wi-Fi board - and it's fully supported by Edge Impulse [2].
  
-Drones, in the form of both Remotely Piloted Aerial Systems (RPAS) and unmanned aerial vehicles (UAV), are increasingly being used to revolutionize many existing applications. The Internet of Things (IoT) is becoming more ubiquitous every day, thanks to the widespread adoption and integration of mobile robots into IoT ecosystems [3]. As a basis for the development of our autonomous system, DJI Tello was chosen due to its easy programmability and wide availability. The Tello drone [4] has a maximum flight time of up to 13 minutes, a weight of about 80 g (with propellers and battery), and dimensions of 98 mm x 92.5 mm x 41 mm. It mounts 3-inch propellers and has a built-in WIFI 802.11n 2.4 G module. As for the TinyML platform, Sony Spresense microcontroller [5] was chosen, which acted as a decision unit shown in Figure 2. The platform is a small, low power microcontroller that enables the easy and intuitive implementation of image processing applications. It can be programmed using high-level Python scripts (Micro-Python).
+Drones, in the form of both Remotely Piloted Aerial Systems (RPAS) and unmanned aerial vehicles (UAV), are increasingly being used to revolutionize many existing applications. The Internet of Things (IoT) is becoming more ubiquitous every day, thanks to the widespread adoption and integration of mobile robots into IoT ecosystems [3]. As a basis for the development of our autonomous system, the [DJI Tello](https://store.dji.com/product/tello?vid=38421) was chosen due to its easy programmability and wide availability. The Tello drone [4] has a maximum flight time of up to 13 minutes, a weight of about 80 g (with propellers and battery), and dimensions of 98 mm x 92.5 mm x 41 mm. It mounts 3-inch propellers and has a built-in WIFI 802.11n 2.4ghz module. As for the TinyML platform, the Sony Spresense microcontroller [5] was chosen, which acted as a decision unit shown in Figure 2. The platform is a small, low power microcontroller that enables the easy and intuitive implementation of image processing applications. It can be programmed using high-level Python scripts (MicroPython).
 
 ![Figure 2: Sony Spresense main board, extension board and camera](.gitbook/assets/bean-leaf-classification/spresense.jpg)
 
-For connectivity I follow the same approached used in [3] by authors and the block diagram shown in Figure 3 represent the flow the only difference is that instead of the with connectivity in this project UAVs was integrated with USB cable.
+For connectivity I follow the same approach used in "Energy-Efficient Inference on the Edge Exploiting TinyML Capabilities for UAVs" [3] by the authors and the block diagram shown in Figure 3 represents the workflow. The only difference is that instead of the wireless connectivity, in this project the UAVs were integrated with the USB cable.
 
 ![Figure 3: Block diagram](.gitbook/assets/bean-leaf-classification/workflow.jpg)
 
 ## Data Acquisition
 
-First, on the Project Dashboard, we have set Labeling method to “Bounding boxes (object detection)” but in our case it was split into three different classes which and no labelling was required. To add more images to the dataset, Edge Impulse has an [Uploader](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-uploader#upload-data-from-the-studio) that enables different ways of adding data to your project.
+First, on the Project Dashboard, we have set Labeling method to "Bounding boxes (object detection)" but in our case it was split into three different classes and no labeling was required. To add more images to the dataset, Edge Impulse has an [Uploader](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-uploader#upload-data-from-the-studio) that enables different ways of adding data to your project.
 
 ## Impulse Design
 
 Our dataset is ready to train our model. This requires two important features: a processing block and learning block. Documentation on Impulse Design can be found [here](https://docs.edgeimpulse.com/docs/edge-impulse-studio/create-impulse).
 
-We first click” Create Impulse”. Here, set image width and heigh to 96x96; and Resize mode to Squash. The Processing block is set to “Image” and the Learning block is “Transfer Learning (Images). Click ‘Save Impulse’ to use this configuration. We have used 96x96 image size to lower RAM usage shown in Figure 4.
+We first click "Create Impulse". Here, set image width and heigh to 96x96; and Resize mode to Squash. The Processing block is set to "Image" and the Learning block is "Transfer Learning (Images)". Click 'Save Impulse' to use this configuration. We have used a 96x96 image size to lower the RAM usage, shown in Figure 4.
 
 ![Figure 4: Create impulse figure with image input range, transfer learning and output class](.gitbook/assets/bean-leaf-classification/impulse.jpg)
 
-Next was processing block “Image” and set Color depth to RGB. "Save parameters", and this will open the “Generate Features” tab. On the window ‘Generate features’, we click the “Generate features” button. Upon completion we see a 3D representation of our dataset. These blocks that will be passed into the neural network the visualization can be seen in Figure 5.
+Next, on the "Image" processing block, set Color depth to RGB. "Save parameters", and this will open the "Generate Features" tab. On the window 'Generate features', we click the "Generate features" button. Upon completion we see a 3D representation of our dataset. These is what will be passed into the neural network, and the visualization can be seen in Figure 5.
 
 ![Figure 5: Generated feature representation](.gitbook/assets/bean-leaf-classification/feature-explorer.jpg)
 
@@ -76,7 +76,7 @@ Next was processing block “Image” and set Color depth to RGB. "Save paramete
 
 To train a model, MobileNetV1 96x96 0.2 algorithm was then used. As MobileNetV1 is a unique machine learning approach that extends object classification to devices with limited processing power, it allows you to count things, locate objects in an image, and track numerous objects in real time while consuming less computing power. Dataset visualization and separability of the classes is presented in Figure 6. Even after rescaling and color conversions, image features have a high dimensionality that prevents suitable visualization. Each image was resized to 96 x96 pixels, in addition to that, data augmentation technique was applied.
 
-The number of epochs is the number of times the entire dataset is passed through the neural network during training. There is no ideal number for this, it depends on the data in total. The model was run for 60 epochs with learning rate 0.001 with the dataset split into training, validation, and testing.
+The number of epochs is the number of times the entire dataset is passed through the neural network during training. There is no ideal number for this, it depends on the data in total. The model was run for 60 epochs, with learning rate set to 0.001 with the dataset split into training, validation, and testing.
 
 After introducing a dynamic quantization from a 32-bit floating point to an 8-bit integer, the resulting optimized model showed a significant reduction in size (106.3K). The onboard inference time was reduced to 183 msec and the use of RAM was limited to 225.6K, with an accuracy after the post-training validation of 78%. The model confusion matrix and on a mobile device performance can be seen in Figure 6.
 
@@ -84,30 +84,33 @@ After introducing a dynamic quantization from a 32-bit floating point to an 8-bi
 
 ## Model Testing
 
-When training our model, we used 80% of the data in our dataset the remaining 20% is used to test the accuracy of the model in classifying unseen data. We need to verify that our model has not overfit, by testing it on new data. If your model performs poorly, then it means that it overfit. Click “Model testing” then “classify all”. Our current model has an accuracy of 76% can be seen in Figure 7.
+When training our model, we used 80% of the data in our dataset. The remaining 20% is used to test the accuracy of the model in classifying unseen data. We need to verify that our model has not overfit, by testing it on new data. If your model performs poorly, then it means that it overfit. Click "Model testing" then "classify all". Our current model has an accuracy of 76%, as can be seen in Figure 7.
 
 ![Figure 7: Model testing using Edge Impulse framework](.gitbook/assets/bean-leaf-classification/model-testing.jpg)
 
 ## Model deployment on Sony Spresense
 
-In order to deploy a model on a microcontroller we must build firmware using the Edge Impulse platform. Figure 8 represents the steps for Sony Spresense with red bounding boxes. Impulses can be deployed as a C++ library. You can include this package in your own application to run the impulse locally. We will have seven files in the zip folder from Edge Impulse.
+In order to deploy a model on a microcontroller we must build firmware using the Edge Impulse platform. Figure 8 represents the steps for the Sony Spresense with red bounding boxes. Impulses can be deployed as a C++ library and included in your own application, or full firmware with the model included can be downloaded. Choosing the firmware version, a Zip file is created and a download is generated.
 
-After downloading the zip folder unzip, as shown in Figure 9. Click on any flash command – operating in my case it was window.
+After downloading, unzip the file, as shown in Figure 9. Click on the `flash` command that corresponds to your operating system.  In my case, this was Windows.
 
-Go through this [post](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/sony-spresense) from Edge Impulse official in order to know how to connect Sony Spresense with Edge Impulse website.
+{% hint style="info" %}
+Go through this [post](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/sony-spresense) from Edge Impulse official in order to know how to connect Sony Spresense to your computer.
+{% endhint %}
 
 ![Figure 8: Post quantization model deployment](.gitbook/assets/bean-leaf-classification/deployment.jpg)
 
 ![Figure 9: Flash command](.gitbook/assets/bean-leaf-classification/flash-1.jpg)
 
-A window terminal will pop up as shown in Figure 10 wait for it once it finishes the processing open a new terminal and run a command **edge-impulse-run-impulse –continuous**. The prediction score for every class can be seen in Figure 11 and in video.
+A Terminal will open as shown in Figure 10. Wait for it to finish processing and flashing the board, then open a new Terminal and run the command `**edge-impulse-run-impulse –continuous**`. The prediction score for every class can be seen, as shown in Figure 11 and in the YouTube video.
 
 ![Figure 10: Flash command terminal output](.gitbook/assets/bean-leaf-classification/flash-2.jpg)
 
 ![Figure 11: Flash command terminal output with class prediction](.gitbook/assets/bean-leaf-classification/flash-3.jpg)
 
 ## Conclusion
-In this project, we the approach used by author in paper “Energy-Efficient Inference on the Edge Exploiting TinyML Capabilities for UAVs “to endow drones with a larger autonomy and intelligence thanks to the integration of a joint flight and mission control embedded system. Thanks to the adoption of a powerful lightweight processing architecture, a suitably designed ML inference engine and Edge Impulse, the system implemented an edge computing solution that enabled the achievement of sophisticated mission goals.
+
+In this project, we build upon the approach used by the author of "Energy-Efficient Inference on the Edge Exploiting TinyML Capabilities for UAVs" to endow drones with a larger autonomy and intelligence thanks to the integration of a joint flight and mission control embedded system. Thanks to the adoption of a powerful lightweight processing architecture, a suitably designed ML inference engine and Edge Impulse, the system implemented an edge computing solution that enabled the achievement of sophisticated mission goals.
 
 ## References
 
