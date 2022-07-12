@@ -34,11 +34,11 @@ The **CNN** (convolutional neural networks) with **GAP** (Global Average Pooling
 
 ## Hardware Setup
 
-Since I wanted a compact and portable hardware setup, we will be using Seeed reTerminal which comes with an LCD and buttons in a compact form. It is powered by a Raspberry Pi 4 Compute Module with 4 GB RAM which would be sufficient for this proof-of-concept project. We would need Raspberry Pi Camera V2 and an acrylic mount for it.
+Since I wanted a compact and portable hardware setup, we will be using [Seeed reTerminal](https://www.seeedstudio.com/reterminal-with-cm4-p-4904.html) which comes with an LCD and buttons in a compact form. It is powered by a Raspberry Pi 4 Compute Module with 4 GB RAM which would be sufficient for this proof-of-concept project. We would need Raspberry Pi Camera V2 and an acrylic mount for it.
 
 ![Hardware](.gitbook/assets/surface-crack-detection/hardware.jpeg)
 
-We would need to open the back cover of the reTerminal to access the 15-pin FPC camera connector. Please follow the step-by-step instructions here: https://wiki.seeedstudio.com/reTerminal.
+We would need to open the back cover of the reTerminal to access the 15-pin FPC camera connector. Please follow the step-by-step instructions here: [https://wiki.seeedstudio.com/reTerminal](https://wiki.seeedstudio.com/reTerminal).
 
 ![FPC](.gitbook/assets/surface-crack-detection/fpc_label.jpeg)
 
@@ -47,7 +47,7 @@ The camera is connected using the FPC ribbon cable and attached to the reTermina
 ![with Camera](.gitbook/assets/surface-crack-detection/reterminal_with_cam.jpeg)
 
 ## Setup Development Environment
-The reTerminal comes with 32-bit Raspberry Pi OS but We will be using 64-bit Raspberry Pi OS for better performance. Please follow the instructions here to flash the 64-bit Raspberry Pi OS: https://wiki.seeedstudio.com/reTerminal-FAQ.
+The reTerminal comes with 32-bit Raspberry Pi OS but We will be using 64-bit Raspberry Pi OS for better performance. Please follow the instructions here to flash the 64-bit Raspberry Pi OS: [https://wiki.seeedstudio.com/reTerminal-FAQ](https://wiki.seeedstudio.com/reTerminal-FAQ).
 
 To install the python packages which we will be using in the inferencing code, execute the commands below.
 
@@ -65,15 +65,15 @@ The datasets were downloaded from the Mendeley Data (Concrete Crack Images for C
 
 To differentiate crack and non-crack surface images from the other natural world scenes, 25,000 randomly sampled images for 80 object categories from the COCO-Minitrain, a subset of the COCO train2017 dataset, were downloaded. The data can be accessed from the links below.
 
-- **Surface Crack Dataset:** https://data.mendeley.com/datasets/5y9wdsg2zt/2
-- **COCO-Minitrain dataset**: https://github.com/giddyyupp/coco-minitrain
+- **Surface Crack Dataset:** [https://data.mendeley.com/datasets/5y9wdsg2zt/2](https://data.mendeley.com/datasets/5y9wdsg2zt/2)
+- **COCO-Minitrain dataset**: [https://github.com/giddyyupp/coco-minitrain](https://github.com/giddyyupp/coco-minitrain)
 
 ## Uploading data to Edge Impulse Studio
 We need to create a new project to upload data to Edge Impulse Studio.
 
 ![New Project](.gitbook/assets/surface-crack-detection/new_project.png)
 
-The data is uploaded using the Edge Impulse CLI. Please follow the instructions to install the CLI here: https://docs.edgeimpulse.com/docs/cli-installation.
+The data is uploaded using the Edge Impulse CLI. Please follow the instructions to install the CLI here: [https://docs.edgeimpulse.com/docs/cli-installation](https://docs.edgeimpulse.com/docs/cli-installation).
 
 The downloaded images are labeled into 3 classes and saved into the directories with the label name.
 
@@ -230,6 +230,7 @@ Now click the **Start Training** button and wait around 30 minutes until trainin
 ![Confusion Matrix](.gitbook/assets/surface-crack-detection/confusion_matrix.png)
 
 ## Model Deployment
+
 Currently, **Edge Impulse for Linux** SDK does not support a multi-output model so we will be using the compiled TensorFlow Lite runtime for inferencing. This interpreter-only package is a fraction of the size of the complete TensorFlow package and includes the bare minimum code required to run inferences with TensorFlow Lite. To accelerate the inferencing, the TFLite interpreter can be used with **XNNPACK** which is a highly optimized library of neural network inference operators for ARM, and other platforms. To enable **XNNPACK** for 64-bit Raspberry Pi OS, we need to build the TFLite Runtime Python package from the source. We will need to execute the following commands on a faster Debian/Ubuntu Linux machine with Docker to cross-compile and build the package.
 
 ```
@@ -242,7 +243,7 @@ $ sed -i '30a apt-get update && apt-get install -y dirmngr' tensorflow/tools/ci_
 $ sed -i -e 's/xenial/bionic/g' tensorflow/tools/ci_build/install/install_pi_python3x_toolchain.sh
 ```
 
-To enable **XNNPACK** for the floating-point (F32) and quantized (INT8) models, add the lines below (shown in the bold) to the tensorflow/lite/tools/pip_package/build_pip_package_with_bazel.sh file.
+To enable **XNNPACK** for the floating-point (F32) and quantized (INT8) models, add the lines below (shown in the bold) to the `tensorflow/lite/tools/pip_package/build_pip_package_with_bazel.sh` file.
 
 ```
 aarch64)
@@ -518,7 +519,7 @@ The application implements multithreading to use all available 4-cores on the Ra
 ![Workflow Diagram](.gitbook/assets/surface-crack-detection/workflow.png)
 
 ## The Desktop App
-The inferencing script is executed by clicking on the Desktop App icon which is created by adding an ei.desktop file at the /home/pi/Desktop directory.
+The inferencing script is executed by clicking on the Desktop App icon which is created by adding an `ei.desktop` file at the `/home/pi/Desktop` directory.
 
 ```
 [Desktop Entry]
@@ -542,12 +543,12 @@ Also, the reTerminal front panel buttons (in the above image) are used for the f
 ## Conclusion
 This project showcases an industrial use case for surface crack detection which can be used for predictive maintenance. The project has the following key characteristics.
 
-- Customize the pre-trained transfer learning model in the Edge Impulse Studio expert mode
+- Customize the pre-trained transfer learning model in the Edge Impulse Studio Expert Mode
 - Demonstrate use of a multi-output model trained using Edge Impulse
 - Runtime heat-map visualization to localize the detected cracks.
 - Multi-threaded application to increase FPS
 - A scalable and portable solution
 
-Although the project was created using a Raspberry Pi 4 Compute Module, it can be ported easily to higher specs edge devices for improved FPS and real-time detection.
+Although the project was created using a Raspberry Pi 4 Compute Module, it can be ported easily to higher-spec edge devices for improved FPS and real-time detection.
 
 
