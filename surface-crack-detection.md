@@ -8,7 +8,7 @@ Created By:
 Naveen Kumar 
 
 Public Project Link:
-[Coming Soon]()
+[https://studio.edgeimpulse.com/public/119583/latest](https://studio.edgeimpulse.com/public/119583/latest)
 
 ## Project Demo
 
