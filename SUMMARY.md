@@ -2,9 +2,11 @@
 
 * [Welcome](README.md)
 
+
 * [Workplace Organizer with Nvidia Jetson Nano](workplace-organizer.md)
 * [Recyclable Materials Sorter with Nvidia Jetson Nano](recyclable-materials-sorter.md)
 * [Predictive Maintenance with Nordic Thingy:91](predictive-maintenance-with-nordic-thingy-91.md)
+* [Occupancy Sensing with SiLabs EFR32MG24](occupancy-sensing-with-silabs.md)
 * [Cyclist Blind Spot Detection](cyclist-blind-spot-detection.md)
 * [Surface Crack Detection with Seeed reTerminal](surface-crack-detection.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
