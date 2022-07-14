@@ -1,5 +1,5 @@
 ---
-description: xxx
+description: Using the SiLabs xG24 to determine if a room is occupied or empty.
 ---
 
 # Occupancy Sensing with SiLabs EFR32MG24 
@@ -229,13 +229,9 @@ Predictions (DSP: 188 ms., Classification: 4 ms., Anomaly: 0 ms.):
     EmptyRoom: 	0.002031
 ```
     
-### Option 2: Exporting the Impulse as a C++ library with SLCC(Simplicity Studio Component file) and building the binary locally
+### Option 2: Exporting the Impulse as a C++ library with SLCC (Simplicity Studio Component file) and building the binary locally
 
 Edge Impulse offers its users the possibility to export the model as a C++ library that contains all the signal processing blocks, learning blocks, configurations, and SDK needed to integrate the model ub your own custom application. Moreover, in the case of the xG24 devkit, it also provides the Simplicity Studio Component file.
-
-All assembled and ready to test!
-
-![](.gitbook/assets/occupancy-sensing-with-silabs/intro-2.jpg)
 
 ## Conclusion
 
