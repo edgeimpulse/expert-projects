@@ -27,3 +27,4 @@
 * [Worker Safety Monitoring with Nvidia Jetson Nano](worker-safety-monitoring.md)
 * [Bhopal 84, Detect Harmful Gases](detect-harmful-gases.md)
 * [Bean Leaf Classification with Sony Spresense](bean-leaf-classification.md)
+* [Oil Tank Measurement and Delivery Improvement Using Computer Vision](oil-tank-gauge-monitoring.md)
