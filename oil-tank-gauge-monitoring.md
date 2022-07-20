@@ -42,7 +42,7 @@ Okay, so what's the big deal?
 
 **No heat during cold** - On the other hand, if consumption is high suddenly and tank empty, there would not be any oil to heat the house. This can be very challenging and life threatening as well.
 
-With **real time reading of oil tank**, delivery company can schedule the delivery precisely when it's needed. This will eliminate unwanted visit to the resident reducing delivery cost and less CO2 emission.
+With **real time reading of oil tanks**, delivery companies can schedule the delivery precisely when it's needed. This will eliminate unwanted visits to the resident, reducing delivery cost and lower CO2 emissions.
 
 ## How AI On The Edge Can Help?
 
