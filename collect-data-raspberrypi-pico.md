@@ -7,9 +7,6 @@ description: Collect audio data for your machine learning model on Raspberry Pi 
 Created By:
 Alex Wulff
 
-Public Project Link:
-[]()
-
 ![](.gitbook/assets/pico-collect/img_3512_RJ8fdfmh7U.jpg)
 
 - - - -
@@ -73,10 +70,9 @@ Replace `infile` with the path to the base-64 data output by screen, and `outfil
 Once the program is done, you’ll have a finished audio file. You can play this with any media player. Give it a try—if all goes well, you should be able to hear your voice!
 
 ## Deploying a Machine Learning Model
-# NEEDS LINK
 You can now follow the rest of Edge Impulse’s tutorial for training your model. Everything else, including all the tips, applies! Make sure you have enough training data, have a balanced dataset, use enough classes, etc.
 
-For instructions on how to deploy a keyword spotting model on Pico, check out my project that uses Pico as the brains of a voice-activated lighting controller. In that project I use this code to collect data, and then show how to use the deployed model to control your projects!
+For instructions on how to deploy a keyword spotting model on Pico, check out [my project](https://docs.edgeimpulse.com/experts/voice-activated-led-controller) that uses Pico as the brains of a voice-activated lighting controller. In that project I use this code to collect data, and then show how to use the deployed model to control your projects!
 
 
 

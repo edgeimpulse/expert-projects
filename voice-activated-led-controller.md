@@ -7,10 +7,7 @@ description: Build a voice-activated LED light strip controller on the cheap wit
 Created By:
 Alex Wulff
 
-Public Project Link:
-[]()
-
-![](.gitbook/assets/pico-voice/img_3512_RJ8fdfmh7U.jpg)
+![](.gitbook/assets/pico-voice/cropped.jpg)
 
 ## Project Overview
 {% embed url="https://www.youtube.com/watch?v=ebFyFq7sX_k" %}
@@ -50,8 +47,7 @@ Also ensure that you select a power supply that can deliver a suitable amount of
 Assembling this project should take less than 5 minutes on a breadboard. One important thing to note is that you should not tie the microphone to the 5V output from the power supply—instead, make sure it’s connected to the Pico’s 3V regulator. With the lights attached on, the 5V power supply is very noisy.
 
 ## Step 2: Collecting Training Data
-# NEEDS LINK
-The Edge Impulse Studio only supports collecting data from Pico at a relatively low sample rate, so we need to use some custom code to collect training data. See this tutorial for information on how to collect data from the Pico’s AGC, upload it to Edge Impulse, and train a machine learning model on it.
+The Edge Impulse Studio only supports collecting data from Pico at a relatively low sample rate, so we need to use some custom code to collect training data. See [this tutorial](https://docs.edgeimpulse.com/experts/collect-data-raspberrypi-pico) for information on how to collect data from the Pico’s AGC, upload it to Edge Impulse, and train a machine learning model on it.
 
 You’ll need two keywords for this project. I used “start” and “stop”. When the lights are off, “start” will turn them on. When the lights are on and you say “start” again, the lights will cycle to a new lighting mode. Saying “stop” when the lights are on will turn them off. It took me a few tries to get my model working well, so don’t get discouraged if your system doesn’t work well at first!
 
