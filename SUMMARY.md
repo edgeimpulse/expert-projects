@@ -27,3 +27,6 @@
 * [Worker Safety Monitoring with Nvidia Jetson Nano](worker-safety-monitoring.md)
 * [Bhopal 84, Detect Harmful Gases](detect-harmful-gases.md)
 * [Bean Leaf Classification with Sony Spresense](bean-leaf-classification.md)
+* [Collect Data for Keyword Spotting with Raspberry Pi Pico and Edge Impuls](collect-data-raspberrypi-pico.md)
+* [Voice-Activated LED Strip for $10: Raspberry Pi Pico and Edge Impulse](voice-activated-led-controller.md)
+
