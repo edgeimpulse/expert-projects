@@ -7,6 +7,9 @@ description: Collect audio data for your machine learning model on Raspberry Pi 
 Created By:
 [Alex Wulff](https://www.alexwulff.com/)
 
+Public Project Link:
+[https://studio.edgeimpulse.com/public/117150/latest](https://studio.edgeimpulse.com/public/117150/latest)
+
 ![](.gitbook/assets/pico-collect/img_3512_RJ8fdfmh7U.jpg)
 
 ## Project Overview

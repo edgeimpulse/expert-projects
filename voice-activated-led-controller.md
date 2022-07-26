@@ -7,6 +7,9 @@ description: Build a voice-activated LED light strip controller on the cheap wit
 Created By:
 [Alex Wulff](https://www.alexwulff.com/)
 
+Public Project Link:
+[https://studio.edgeimpulse.com/public/117150/latest](https://studio.edgeimpulse.com/public/117150/latest)
+
 ![](.gitbook/assets/pico-voice/cropped.jpg)
 
 ## Project Overview
