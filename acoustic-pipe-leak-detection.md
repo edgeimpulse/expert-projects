@@ -12,7 +12,7 @@ Public Project Link:
 
 ## Project Demo
 
-{% embed url="https://www.youtube.com/watch?v=XYZ" %}
+{% embed url="https://www.youtube.com/watch?v=EzDfbBDurm4" %}
 
 ## Impact of Leakages in Pipes
 
