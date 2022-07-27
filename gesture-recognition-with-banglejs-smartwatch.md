@@ -8,7 +8,7 @@ Created By:
 Thomas Vikström 
 
 Public Project Link:
-[https://studio.edgeimpulse.com/public/107049/latest](https://studio.edgeimpulse.com/public/107049/latest)
+[Coming Soon](https://studio.edgeimpulse.com/)
 
 ![](.gitbook/assets/banglejs/intro.jpeg)
 
