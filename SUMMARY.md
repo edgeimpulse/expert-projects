@@ -7,6 +7,7 @@
 * [Recyclable Materials Sorter with Nvidia Jetson Nano](recyclable-materials-sorter.md)
 * [Predictive Maintenance with Nordic Thingy:91](predictive-maintenance-with-nordic-thingy-91.md)
 * [Occupancy Sensing with SiLabs EFR32MG24](occupancy-sensing-with-silabs.md)
+* [Analog Meter Reading with Arduino Nicla Vision](analog-meter-reading-with-nicla-vision.md)
 * [Cyclist Blind Spot Detection](cyclist-blind-spot-detection.md)
 * [Surface Crack Detection with Seeed reTerminal](surface-crack-detection.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
