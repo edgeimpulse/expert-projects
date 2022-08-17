@@ -1,5 +1,5 @@
 ---
-description: xxxxxxxxxx.
+description: An audio classification project that can identify snoring, deployed to a smartphone.
 ---
 
 # Snoring Detection on a Smart Phone 
@@ -58,11 +58,11 @@ Next click on the ‘Generate features’ button, which then processes the entir
 
 ![Figure 7: Generate features](.gitbook/assets/snoring-detection-on-smartphone/generate-features.jpg)
 
-We can now proceed to setup and train our neural network on the NN Classifier page. The default neural network works well for continuous sound. Snoring detection is more complicated, so we will configure a richer network using 2D convolution across the spectrogram of each window. 2D convolution processes the audio spectrogram in a similar way to image classification. Refer to NN classifier section in my project for the architecture structure.
+We can now proceed to setup and train our neural network on the NN Classifier page. The default neural network works well for continuous sound. Snoring detection is more complicated, so we will configure a richer network using 2D convolution across the spectrogram of each window. 2D convolution processes the audio spectrogram in a similar way to image classification. Refer to the "NN classifier" section in my project for the architecture structure.
 
 ## Model Training and Results
 
-To train the model the number of epochs was set to 100, the leaning rate assigned after serval trail is 0.005 the overall dataset was split into 80% training and 20% validation set. The number of epochs is the number of times the entire dataset is passed through the neural network during training. There is no ideal number for this, and it depends on the data. In Figure 8 we can see the feature explorer for correct and incorrect classification of both classes.
+To train the model the number of epochs was set to 100, the leaning rate assigned after serval trials is 0.005, and the overall dataset was split into 80% training and 20% validation set. The number of epochs is the number of times the entire dataset is passed through the neural network during training. There is no ideal number for this, and it depends on the data. In Figure 8 we can see the feature explorer for correct and incorrect classification of both classes.
 
 ![Figure 8: Feature explorer](.gitbook/assets/snoring-detection-on-smartphone/feature-explorer.jpg)
 
