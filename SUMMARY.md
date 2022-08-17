@@ -32,4 +32,4 @@
 * [Voice-Activated LED Strip for $10: Raspberry Pi Pico and Edge Impulse](voice-activated-led-controller.md)
 * [Oil Tank Measurement and Delivery Improvement Using Computer Vision](oil-tank-gauge-monitoring.md)
 * [Gesture Recognition with a Bangle.js Smartwatch](gesture-recognition-with-banglejs-smartwatch.md)
-
+* [Adaptable Vision Counters for Smart Industries](adaptable-vision-counters.md)
