@@ -14,7 +14,7 @@ Public Project Link:
 
 {% embed url="https://vimeo.com/737906235" %}
 
-![](.gitbook/assets/adaptable-vision-counters/IMG_1520.jpg)
+![](.gitbook/assets/adaptable-vision-counters/IMG_1520.JPG)
 
 Automatic counting machines are very essential for correct packing in manufacturing industries. Currently, industries count either mechanically or through weight. Mechanical counting is restricted by size and shape of the product and it is often time-consuming.
 
@@ -54,9 +54,9 @@ In this case, we are counting the multiple parts such as Washers and Bolts
 
 ## Software  
 
-## Object detection Model Training
+## Object Detection Model Training
 
-![](.gitbook/assets/adaptable-vision-counters/Logo.png)
+![](.gitbook/assets/adaptable-vision-counters/EI_Logo.png)
 
 Edge Impulse is one of the leading development platforms for machine learning on edge devices, free for developers and trusted by enterprises. Here we are using FOMO to build a machine learning model that can recognize the products. Then we deploy the system on the Raspberry Pi 4B.
 
@@ -64,7 +64,7 @@ Edge Impulse is one of the leading development platforms for machine learning on
 
 Every machine learining project starts with data collection. A goood collection of data is one of the major factors that influences the performance of the model. Make sure you have a wide range of perspectives and zoom levels of the items that are offered in the stores. You may take data from any device or development board, or upload your own datasets, for data acquisition. As we have our own dataset, we are uploading them using the Data Acquisition tab.
 
-![](.gitbook/assets/adaptable-vision-counters/Data Acquisition.png)
+![](.gitbook/assets/adaptable-vision-counters/Data_Acquisition.png)
 
 Simply navigate to the Data acquisition tab and select a file to upload. After that, give it a label and upload it to the training area. The Edge Impulse will only accept JPG or PNG image files. Convert it to JPG or PNG format using the internet converters if you have any other formats.
 
@@ -72,9 +72,9 @@ In our case we have four labels - *Washer, Faulty Washer, Lollipop, Bolt*. We ha
 
 This is our counting setup (Just attached the Adaptable counter on the top of a small wooden plank)
 
-![](.gitbook/assets/adaptable-vision-counters/IMG_1526.JPG)
+![](.gitbook/assets/adaptable-vision-counters/IMG_1526.jpg)
 
-## Labelling Data
+## Labeling Data
 
 You may view all of your dataset's unlabeled data in the labeling queue. Adding a label to an object is as simple as dragging a box around it. We attempt to automate this procedure by running an object tracking algorithm in the background in order to make life a little easier. If you have the same object in multiple photos we thus can move the boxes for you and you just need to confirm the new box. Drag the boxes, then click Save labels. Continue doing this until your entire dataset has been labeled.
 
@@ -84,7 +84,7 @@ You may view all of your dataset's unlabeled data in the labeling queue. Adding 
 
 ## Designing an Impulse
 
-![](.gitbook/assets/adaptable-vision-counters/Create Impulse.png)
+![](.gitbook/assets/adaptable-vision-counters/Impulse_design.png)
 
 With the training set in place, you can design an impulse. An impulse takes the raw data, adjusts the image size, uses a preprocessing block to manipulate the image, and then uses a learning block to classify new data. Preprocessing blocks always return the same values for the same input (e.g. convert a color image into a grayscale one), while learning blocks learn from past experiences.
 
@@ -94,7 +94,7 @@ In the studio go to Create impulse, set the image width and image height to **96
 
 Then in the image tab, you can see the raw and processed features of every image. You can use the options to switch between 'RGB' and 'Grayscale' mode. As we are using **FOMO** change the color depth to **Grayscale** and click Save parameters.
 
-This will send you to the Feature generation screen. Here you'll
+This will send you to the Feature generation screen. Here you'll:
 * Resize all the data
 * Apply the processing block on all this data.
 * Create a visualization of your complete dataset.
@@ -102,7 +102,7 @@ This will send you to the Feature generation screen. Here you'll
 
 Afterward the **Feature explorer** will load. This is a plot of all the data in your dataset. Because images have a lot of dimensions we run a process called 'dimensionality reduction on the dataset before visualizing this. Here the 307200 features are compressed down to just 3 and then clustered based on similarity. Even though we have little data you can already see the clusters forming and can click on the dots to see which image belongs to which dot.
 
-![](.gitbook/assets/adaptable-vision-counters/Feature Generation.png)
+![](.gitbook/assets/adaptable-vision-counters/Feature_Generation.png)
 
 With all data processed it's time to start training a neural network. Neural networks are a set of algorithms, modeled loosely after the human brain, that is designed to recognize patterns. The network that we're training here will take the image data as an input, and try to map this to one of the three classes.
 
@@ -112,13 +112,13 @@ To configure the transfer learning model, click Object detection in the menu on 
 
 In this case we are using FOMO algorithm to train the model. So change the object detection model to **FOMO (Faster Objects, More Objects) MobileNetV2 0.35** and change the neural network settings as shown in the image. Now Start training. After the model is done you'll see accuracy numbers below the training output. We have now trained our model with a training accuracy of 96.7%, pretty good.
 
-![](.gitbook/assets/adaptable-vision-counters/Training Accuracy.png)
+![](.gitbook/assets/adaptable-vision-counters/Training_Accuracy.png)
 
 With the model trained let's try it out on some test data. When collecting the data we split the data up between training and a testing dataset. The model was trained only on the training data, and thus we can use the data in the testing dataset to validate how well the model will work in the real world. This will help us ensure the model has not learned to overfit the training data, which is a common occurrence.
 
 To validate your model, go to **Model testing** and select **Classify all**. Here we hit 87.5% accuracy, which is great for a model with so little data.
 
-![](.gitbook/assets/adaptable-vision-counters/Testing Accuracy.png)
+![](.gitbook/assets/adaptable-vision-counters/Testing_Accuracy.png)
 
 To see classification in detail, click the three dots next to an item, and select Show classification. This brings you to the Live classification screen with much more details on the file (you can also capture new data directly from your development board from here). This screen can help you determine why items were misclassified.
 
@@ -146,11 +146,11 @@ Then select the test mode, so we can update the data without any authentication
 
 ![](.gitbook/assets/adaptable-vision-counters/security_roles.jpg)
 
-This is our realtime database
+This is our realtime database:
 
 ![](.gitbook/assets/adaptable-vision-counters/rtdb.jpg)
 
-For use with only user based authentication we can create the following configuration and that should be added in our python code
+For use with only user based authentication we can create the following configuration and that should be added in our Python code
 
 ```json
 import pyrebase
@@ -169,13 +169,13 @@ Then add the apikey, authDomain and databaseURL (You can find all these in proje
 
 A webpage is created using HTML, CSS and JS to display the count in realtime. The data updated in the Firebase is reflected in the webpage in realtime. The webpage displays **Recent Count** when the counting process is halted and displays **Current Count** whenever the counting process is going on.
 
-![](.gitbook/assets/adaptable-vision-counters/Recent.png)
+![](.gitbook/assets/adaptable-vision-counters/recent.png)
 
-![](.gitbook/assets/adaptable-vision-counters/Current.png)
+![](.gitbook/assets/adaptable-vision-counters/current_count.png)
 
 ## Code  
 
-The entire code and assets are given in the [github repository](https://github.com/CodersCafeTech/Adaptable-Industrial-Counter.git).
+The entire code and assets are given in the [GitHub repository](https://github.com/CodersCafeTech/Adaptable-Industrial-Counter.git).
 
 ## Hardware   
 
@@ -183,9 +183,9 @@ The entire code and assets are given in the [github repository](https://github.c
 
 ![](.gitbook/assets/adaptable-vision-counters/IMG_1508_1.jpg)
 
-The Raspberry Pi4 B is the brain of the system.This Raspberry Pi 4 is integrated with a 64 bit quad core cortex-A72 ARMv8, broadcom BCM2711 and runs at a speed of 1.5GHz. So the counting can be done in an efficient way.
+The Raspberry Pi4 B is the brain of the system.This Raspberry Pi 4 is integrated with a 64 bit quad-core Cortex-A72 ARMv8, Broadcom BCM2711 and runs at a speed of 1.5GHz. So the counting can be done in an efficient way.
 
-This tiny computer is fully supported by Edge Impulse.  For setting up the Raspberry pi with the Edge Impulse please have a look [here](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-cpu-gpu-targets/raspberry-pi-4).
+This tiny computer is fully supported by Edge Impulse.  For setting up the Raspberry Pi with the Edge Impulse please have a look [here](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-cpu-gpu-targets/raspberry-pi-4).
 
 ### Camera Module
 
@@ -197,10 +197,10 @@ The board itself is tiny, at around 25mm x 23mm x 8mm. It also weighs just over 
 
 The sensor itself has a native resolution of 5 megapixels and has a fixed focus lens onboard. In terms of still images, the camera is capable of 2592 x 1944 pixel static images, and also supports 1080p30, 720p60 and 640x480p60/90 video.  This is well enough for our application.
 
-* ### Power adapter 
+### Power adapter 
 
-![](.gitbook/assets/adaptable-vision-counters/IMG_1524.jpg)
+![](.gitbook/assets/adaptable-vision-counters/IMG_1524.JPG)
 
-For powering up the system we used 5V 2A adapter. In this case we don't have any power hungry peripherals,So 2A current would be enough. If you have 3A supply, please go for that.
+For powering up the system we used 5V 2A adapter. In this case we don't have any power hungry peripherals, so 2A current is enough. If you have 3A supply, please go for that.
 
 For the sake of convienence we also used a acrylic case for setting up all the hardware.
