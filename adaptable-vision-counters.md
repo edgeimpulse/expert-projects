@@ -70,7 +70,7 @@ Simply navigate to the Data acquisition tab and select a file to upload. After t
 
 In our case we have four labels - *Washer, Faulty Washer, Lollipop, Bolt*. We have uploaded all the collected data for these four different classes. Therefore, the computer will only recognize these items while counting. You must upload the dataset of other objects if you wish to recognize any other objects. The more data that neural networks have access to, the better their ability to recognize the object.
 
-This is our counting setup (Just attached the Adaptable counter on the top of a small wooden plank)
+This is our counting setup (Just attached the Adaptable counter on the top of a small wooden plank):
 
 ![](.gitbook/assets/adaptable-vision-counters/IMG_1526.jpg)
 
@@ -86,13 +86,11 @@ You may view all of your dataset's unlabeled data in the labeling queue. Adding 
 
 ![](.gitbook/assets/adaptable-vision-counters/Impulse_design.png)
 
-With the training set in place, you can design an impulse. An impulse takes the raw data, adjusts the image size, uses a preprocessing block to manipulate the image, and then uses a learning block to classify new data. Preprocessing blocks always return the same values for the same input (e.g. convert a color image into a grayscale one), while learning blocks learn from past experiences.
-
-For this system, we'll use the 'Images' preprocessing block. This block takes in the color image, optionally makes the image grayscale, and then turns the data into a features array. Then we'll use a 'Transfer Learning' learning block, which takes all the images in and learns to distinguish between the two ('Washer', 'Bolt') classes.
+With the training set in place, it is time to design the "impulse". An impulse is actually a machine learning pipeline for generating features from the input data. If you want to learn more about impulses, you can read more [here](https://docs.edgeimpulse.com/docs/edge-impulse-studio/impulse-design).
 
 In the studio go to Create impulse, set the image width and image height to **96px**, the **resize mode** to **Fit the shortest axis**, and add the **Images** and **Object Detection (Images)** blocks. Then click Save impulse.
 
-Then in the image tab, you can see the raw and processed features of every image. You can use the options to switch between 'RGB' and 'Grayscale' mode. As we are using **FOMO** change the color depth to **Grayscale** and click Save parameters.
+Then in the image tab, you can see the raw and processed features of every image. You can use the options to switch between 'RGB' and 'Grayscale' mode. As we are using **FOMO**, change the color depth to **Grayscale** and click Save parameters.
 
 This will send you to the Feature generation screen. Here you'll:
 * Resize all the data
@@ -100,49 +98,40 @@ This will send you to the Feature generation screen. Here you'll:
 * Create a visualization of your complete dataset.
 * Click Generate features to start the process.
 
-Afterward the **Feature explorer** will load. This is a plot of all the data in your dataset. Because images have a lot of dimensions we run a process called 'dimensionality reduction on the dataset before visualizing this. Here the 307200 features are compressed down to just 3 and then clustered based on similarity. Even though we have little data you can already see the clusters forming and can click on the dots to see which image belongs to which dot.
+After generating the features for our data, we can see the individual measurable properties of the data represented in a 3-dimensional space. The below figure shows the features generated from our dataset. The generated features are well distinguishable.
 
 ![](.gitbook/assets/adaptable-vision-counters/Feature_Generation.png)
 
-With all data processed it's time to start training a neural network. Neural networks are a set of algorithms, modeled loosely after the human brain, that is designed to recognize patterns. The network that we're training here will take the image data as an input, and try to map this to one of the three classes.
+Now it's time to start training the machine learning model. Generating a machine learning model from scratch requires great time and effort.  Instead, we will use a technique called "transfer learning" which uses a pre-trained model on our data. That way we can create an accurate machine learning model, with fewer data inputs. Head over to the Object detection tab for the model generation.
 
-It's very hard to build a good working computer vision model from scratch, as you need a wide variety of input data to make the model generalize well, and training such models can take days on a GPU. To make this easier and faster we are using transfer learning. This lets you piggyback on a well-trained model, only retraining the upper layers of a neural network, leading to much more reliable models that train in a fraction of the time and work with substantially smaller datasets.
+In this case we are using the FOMO algorithm to train the model. So change the object detection model to **FOMO (Faster Objects, More Objects) MobileNetV2 0.35** and change the neural network settings as shown in the image. FOMO is a novel machine learning algorithm created by Edge Impulse, specifically designed for highly constrained devices. It works very well with the Raspberry Pi 4.
 
-To configure the transfer learning model, click Object detection in the menu on the left. Here you can select the base model (the one selected by default will work, but you can change this based on your size requirements), and set the rate at which the network learns.
-
-In this case we are using FOMO algorithm to train the model. So change the object detection model to **FOMO (Faster Objects, More Objects) MobileNetV2 0.35** and change the neural network settings as shown in the image. Now Start training. After the model is done you'll see accuracy numbers below the training output. We have now trained our model with a training accuracy of 96.7%, pretty good.
+Now start training. After the model is done you'll see accuracy numbers below the training output. We have now trained our model with a training accuracy of 96.7%, pretty good.
 
 ![](.gitbook/assets/adaptable-vision-counters/Training_Accuracy.png)
-
-With the model trained let's try it out on some test data. When collecting the data we split the data up between training and a testing dataset. The model was trained only on the training data, and thus we can use the data in the testing dataset to validate how well the model will work in the real world. This will help us ensure the model has not learned to overfit the training data, which is a common occurrence.
 
 To validate your model, go to **Model testing** and select **Classify all**. Here we hit 87.5% accuracy, which is great for a model with so little data.
 
 ![](.gitbook/assets/adaptable-vision-counters/Testing_Accuracy.png)
 
-To see classification in detail, click the three dots next to an item, and select Show classification. This brings you to the Live classification screen with much more details on the file (you can also capture new data directly from your development board from here). This screen can help you determine why items were misclassified.
-
-With the impulse designed, trained, and verified you can deploy this model back to your device. This makes the model run without an internet connection, minimizes latency, and runs with minimum power consumption. Edge Impulse can package up the complete impulse - including the preprocessing steps, neural network weights, and classification code - in a single C++ library or model file that you can include in your embedded software. 
-
-
 ### Firebase (set-up)       
 
-Firebase is a mobile and web application development platform. Firebase frees developers to focus on crafting fantastic user experiences. You don’t need to manage servers. You don’t need to write APIs. Firebase is your server, your API, and your data store, all written so generically that you can modify it to suit most needs. In our project, we use Firebase real-time database to instantly post and retrieve data so that there is no time delay.
+In our project, we use Firebase, a real-time database to instantly post and retrieve data, so that there is no time delay. Here we used the **Pyrebase** library which is a Python wrapper for Firebase.
 
-For installing the pyrebase, run the following command:
+To install Pyrebase, run the following command:
 `pip install pyrebase`
     
 Pyrebase is written for Python 3 and may not work correctly with Python 2.
 
-First we created a project in the database
+First we created a project in the database:
 
 ![](.gitbook/assets/adaptable-vision-counters/firebasee_projectcreation.jpg)
 
-Then head over to the Build section and create a realtime database
+Then head over to the Build section and create a realtime database:
 
 ![](.gitbook/assets/adaptable-vision-counters/db_creation.jpg)
 
-Then select the test mode, so we can update the data without any authentication
+Then select test mode, so we can update the data without any authentication:
 
 ![](.gitbook/assets/adaptable-vision-counters/security_roles.jpg)
 
@@ -150,7 +139,7 @@ This is our realtime database:
 
 ![](.gitbook/assets/adaptable-vision-counters/rtdb.jpg)
 
-For use with only user-based authentication we can create the following configuration and that should be added in our Python code:
+For use with only user-based authentication we can create the following configuration, that should be added in our Python code:
 
 ```json
 import pyrebase
@@ -163,11 +152,11 @@ config = {
 firebase = pyrebase.initialize_app(config)
 ```
 
-Then add the apikey, authDomain and databaseURL (You can find all these in project settings). Then we can store the values in the realtime database.
+Then add the apikey, authDomain and databaseURL (You can find all these in the project settings). Then we can store the values in the realtime database.
 
 ### Website
 
-A webpage is created using HTML, CSS and JS to display the count in realtime. The data updated in Firebase is reflected in the webpage in realtime. The webpage displays **Recent Count** when the counting process is halted and displays **Current Count** whenever the counting process is going on.
+A webpage is created using HTML, CSS and JS to display the count in realtime. The data updated in Firebase is reflected in the webpage in realtime. The webpage displays **Recent Count** when the counting process is halted, and displays **Current Count** whenever the counting process is going on.
 
 ![](.gitbook/assets/adaptable-vision-counters/recent.png)
 
@@ -175,7 +164,7 @@ A webpage is created using HTML, CSS and JS to display the count in realtime. Th
 
 ## Code  
 
-The entire code and assets are given in the [GitHub repository](https://github.com/CodersCafeTech/Adaptable-Industrial-Counter.git).
+The entire code and assets are provided in the [GitHub repository](https://github.com/CodersCafeTech/Adaptable-Industrial-Counter.git).
 
 ## Hardware   
 
@@ -183,19 +172,15 @@ The entire code and assets are given in the [GitHub repository](https://github.c
 
 ![](.gitbook/assets/adaptable-vision-counters/IMG_1508_1.jpg)
 
-The Raspberry Pi4 B is the brain of the system.This Raspberry Pi 4 is integrated with a 64 bit quad-core Cortex-A72 ARMv8, Broadcom BCM2711 and runs at a speed of 1.5GHz. So the counting can be done in an efficient way.
+The Raspberry Pi 4B is the brain of the system. The Raspberry Pi 4 has a 64 bit quad-core Cortex-A72 ARMv8 processor (the Broadcom BCM2711) and runs at a speed of 1.5GHz. So the counting can be done in an efficient way.
 
-This tiny computer is fully supported by Edge Impulse.  For setting up the Raspberry Pi with the Edge Impulse please have a look [here](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-cpu-gpu-targets/raspberry-pi-4).
+This tiny computer is fully supported by Edge Impulse. For setting up the Raspberry Pi with Edge Impulse please have a look [here](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-cpu-gpu-targets/raspberry-pi-4).
 
 ### Camera Module
 
 ![](.gitbook/assets/adaptable-vision-counters/IMG_1510_1.jpg)
 
-This Raspberry Pi Camera Module is a custom-designed add-on for Raspberry Pi. It attaches to Raspberry Pi by way of one of the two small sockets on the board's upper surface. This interface uses the dedicated CSI interface, which was designed especially for interfacing with cameras. The CSI bus is capable of extremely high data rates, and it exclusively carries pixel data.
-
-The board itself is tiny, at around 25mm x 23mm x 8mm. It also weighs just over 3g, making it perfect for mobile or other applications where size and weight are important. It connects to Raspberry Pi by way of a short flexible ribbon cable. The camera connects to the BCM2835 processor on the Pi via the CSI bus, a higher bandwidth link that carries pixel data from the camera back to the processor. This bus travels along the ribbon cable that attaches the camera board to the Pi.
-
-The sensor itself has a native resolution of 5 megapixels and has a fixed focus lens onboard. In terms of still images, the camera is capable of 2592 x 1944 pixel static images, and also supports 1080p30, 720p60 and 640x480p60/90 video.  This is well enough for our application.
+This Raspberry Pi Camera Module is a custom-designed add-on for Raspberry Pi. It can be easily attached to the Raspberry Pi 4 with flex cables. It has a resolution of 5 megapixels and has a fixed focus lens onboard. In terms of still images, the camera is capable of 2592 x 1944 pixel static images, and also supports 1080p30, 720p60 and 640x480p60/90 video. This is well enough for our application.
 
 ### Power adapter 
 
