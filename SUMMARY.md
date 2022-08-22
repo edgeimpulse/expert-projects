@@ -33,3 +33,4 @@
 * [Oil Tank Measurement and Delivery Improvement Using Computer Vision](oil-tank-gauge-monitoring.md)
 * [Gesture Recognition with a Bangle.js Smartwatch](gesture-recognition-with-banglejs-smartwatch.md)
 * [Snoring Detection on a Smart Phone](snoring-detection-on-smartphone.md)
+* [Adaptable Vision Counters for Smart Industries](adaptable-vision-counters.md)
