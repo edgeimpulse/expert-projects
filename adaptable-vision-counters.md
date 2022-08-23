@@ -182,7 +182,7 @@ This tiny computer is fully supported by Edge Impulse. For setting up the Raspbe
 
 This Raspberry Pi Camera Module is a custom-designed add-on for Raspberry Pi. It can be easily attached to the Raspberry Pi 4 with flex cables. It has a resolution of 5 megapixels and has a fixed focus lens onboard. In terms of still images, the camera is capable of 2592 x 1944 pixel static images, and also supports 1080p30, 720p60 and 640x480p60/90 video. This is well enough for our application.
 
-### Power adapter 
+### Power Adapter 
 
 ![](.gitbook/assets/adaptable-vision-counters/IMG_1524.JPG)
 
