@@ -34,3 +34,4 @@
 * [Gesture Recognition with a Bangle.js Smartwatch](gesture-recognition-with-banglejs-smartwatch.md)
 * [Snoring Detection on a Smart Phone](snoring-detection-on-smartphone.md)
 * [Adaptable Vision Counters for Smart Industries](adaptable-vision-counters.md)
+* [Bike Rearview Radar](bike-rearview-radar.md)
