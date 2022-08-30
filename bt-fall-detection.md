@@ -8,7 +8,7 @@ Created By:
 Roni Bandini 
 
 Public Project Link:
-[https://studio.edgeimpulse.com/public/114438/latest](https://studio.edgeimpulse.com/public/114438/latest)
+[https://studio.edgeimpulse.com/public/130968/latest](https://studio.edgeimpulse.com/public/130968/latest)
 
 ## Project Demo
 
