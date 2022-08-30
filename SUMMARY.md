@@ -35,3 +35,5 @@
 * [Snoring Detection on a Smart Phone](snoring-detection-on-smartphone.md)
 * [Adaptable Vision Counters for Smart Industries](adaptable-vision-counters.md)
 * [Bike Rearview Radar](bike-rearview-radar.md)
+* [Bluetooth Fall Detection](bt-fall-detection.md)
+* [Safeguarding Packages During Transit with AI](secure-packages-with-ai.md)
