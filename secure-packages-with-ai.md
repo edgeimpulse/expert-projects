@@ -177,7 +177,7 @@ const firebaseConfig = {
 };
 ```
 
-## 12. Web Interface
+## 11. Web Interface
 
 The web interface is designed in such a way that it can reflect all the events updated in the Firebase database. The insecure handling events are updated in the Firebase directly from the Nano 33 BLE Sense and other shipping updates can be updated using an API.
 
