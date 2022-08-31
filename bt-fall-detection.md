@@ -56,7 +56,7 @@ All of the code for this project, including both the Client script file and the 
 
 ![](.gitbook/assets/bt-fall-detection/3d-case.jpg)
 
-The device will work without a case of course, but, to make it more convenient to wear and to hold all the pieces in place, two parts should be 3D printed and a strap should be attached. The Gcode files for this particular design can be [downloaded here](https://www.thingiverse.com/thing:5478745)
+The device will work without a case of course, but, to make it more convenient to wear and to hold all the pieces in place, two parts should be 3D printed and a strap should be attached. The Gcode files for this particular design can be [downloaded here](https://www.thingiverse.com/thing:5478745).
 
 ## Server Setup
 
@@ -72,7 +72,7 @@ Start scanning for bluetooth packets from the Arduino with:
 
 ![](.gitbook/assets/bt-fall-detection/server-setup.jpg)
 
-Other scripts included are: clearDatabase.py (removes all database records), and chart.py (creates a chart rendered from all of the database records).
+Other scripts included are: `clearDatabase.py` (removes all database records), and `chart.py` (creates a chart rendered from all of the database records).
 
 ![](.gitbook/assets/bt-fall-detection/fall-report.jpg)
 
