@@ -46,7 +46,7 @@ Prepare the Raspberry Pi, connect via SSH, install dependencies, and the Edge Im
 
 ### Data Collection:
 
-For the image collection, I took some pictures using the USB webcam using the Raspberry Pi that’s connected to the Edge Impulse Studio, and some other pictures are taken from a smartphone camera. The position and orientation of the items are shifted between pictures to help the ML model recognize the object later in the process.
+For the image collection, I took some pictures using the USB webcam attached to the Raspberry Pi that’s connected to the Edge Impulse Studio, and some other pictures are taken from a smartphone camera. The position and orientation of the items are shifted between pictures to help the ML model recognize the object later in the process.
 
 ![](.gitbook/assets/smart-cashier/01_screenshot.PNG)
 
