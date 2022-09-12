@@ -22,29 +22,29 @@ In this project I’m taking advantage of [Edge Impulse's FOMO](https://www.edge
 
 ![](.gitbook/assets/smart-cashier/00_hero.JPG)
 
-### Hardware Components:
+### Hardware Components
 
  - Raspberry Pi 4 Model B 
  - USB webcam
  - LCD Display 16 x 2
 
-### Software/Apps & Online Services:
+### Software/Apps & Online Services
 
  - Edge Impulse Studio 
  - Raspberry Pi OS
  - Terminal
 
-### Others:
+### Others
 
  - 3D printed case for Pi4
 
 ## Steps
 
-### Preparation:
+### Preparation
 
 Prepare the Raspberry Pi, connect via SSH, install dependencies, and the Edge Impulse for Linux CLI. Follow [this guide](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-cpu-gpu-targets/raspberry-pi-4) for extra details.
 
-### Data Collection:
+### Data Collection
 
 For the image collection, I took some pictures using the USB webcam attached to the Raspberry Pi that’s connected to the Edge Impulse Studio, and some other pictures are taken from a smartphone camera. The position and orientation of the items are shifted between pictures to help the ML model recognize the object later in the process.
 
@@ -52,7 +52,7 @@ For the image collection, I took some pictures using the USB webcam attached to 
 
 The photos are taken using a tripod so that the size of the objects placed on the table will not change too much when it’s captured in an image. (This is especially important for the FOMO algorithm; FOMO doesn’t perform well with different object sizes). The total dataset size input is 408 pictures of the items, which consists of 8 different objects (snacks).
 
-### Data Labeling:
+### Data Labeling
 
 Click on Labeling with Bounding-Boxes method, and choose Raspberry Pi 4 for latency calculations.
 
@@ -62,7 +62,7 @@ Then Upload your images, and then drag a box around each object and label it dep
 
 ![](.gitbook/assets/smart-cashier/03_Train_Test_Split.png)
 
-### Train and Build Model:
+### Train and Build Model
 
 Create an Impulse with 160x160 pixels and Grayscale parameter, and choose Image and Object Detection blocks. Choose FOMO (MobileNet V2 0.35) which will produce 8 layer outputs (Cadbury, Mentos, Indomie, KitKat, etc.) with a pretty accurate result. After testing is done, we can check the video stream from the Raspberry Pi via a browser by using the `edge-impulse-linux-runner`. If the camera is performing as expected, then the model is ready to be deployed to the Raspberry Pi 4
 
@@ -78,7 +78,7 @@ The Python program I created utilizes the `.eim` file from the training result, 
 
 ![](.gitbook/assets/smart-cashier/07_TestData_Results.png)
 
-### Deploy and Build the Python Program:
+### Deploy and Build the Python Program
 
 ```
             for res, img in runner.classifier(videoCaptureDeviceId):
@@ -112,7 +112,7 @@ The Python program I created utilizes the `.eim` file from the training result, 
                         break
 ```
 
-## Summary:
+## Summary
 
 This project is an example of how embedded object detection can be the solution for a real-world problem. The Smart Cashier can identify objects, quantity of objects, and the total price of objects almost instantly.  And beacuse it is running locally using a single board computer, no cloud connectivity is needed.
 
