@@ -155,7 +155,7 @@ When running our model we can see live classification of what the Raspberry Pi c
 
 Below is a screenshot of live classification running on the Raspberry Pi 4 and the model successfully detecting 3 missing holes on a PCB.
 
-![Pi4 live classification](.gitbook/assets/identifying-pcb-defects/img19_screenshot__Inference_on_Pi4.png)
+![Pi4 live classification](.gitbook/assets/identifying-pcb-defects/img19_screenshot_Inference_on_Pi4.png)
 
 On the Raspberry Pi 4 the model has a latency of ~ 1500ms which equals to ~ 1 fps. In an industrial setup with many PCBs to be inspected the Raspberry Pi 4 won't be the ideal hardware to run this model. A better hardware can be the Jetson Nano dev kit which is fully supported by Edge Impulse and has a GPU accelerated processor (NVIDIA Tegra) targeted at edge AI applications. Documentation on setting up a Jetson Nano can be found [here](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-cpu-gpu-targets/nvidia-jetson-nano) .
 
