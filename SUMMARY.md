@@ -9,6 +9,7 @@
 * [Occupancy Sensing with SiLabs EFR32MG24](occupancy-sensing-with-silabs.md)
 * [Analog Meter Reading with Arduino Nicla Vision](analog-meter-reading-with-nicla-vision.md)
 * [Cyclist Blind Spot Detection](cyclist-blind-spot-detection.md)
+* [Azure Machine Learning with Kubernetes Compute and Edge Impulse](azure-machine-learning-EI.md)
 * [Surface Crack Detection with Seeed reTerminal](surface-crack-detection.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
 * [ROS2 + Edge Impulse, Part 1: Pub/Sub Node in Python](ros2-part1-pubsub-node.md)
