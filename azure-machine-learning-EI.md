@@ -10,7 +10,7 @@ Attila Tokes
 GitHub Repo:
 [https://github.com/attila-tokes/edge-impulse-expert-projects/tree/main/azure-ml-voice-to-text](https://github.com/attila-tokes/edge-impulse-expert-projects/tree/main/azure-ml-voice-to-text)
 
-##Intro
+## Intro
 
 **Edge ML** enables developers to run Machine Learning (ML) on Internet of Things (IoT) and Edge devices. This offers many advantages, such as reduced power consumption, low latency, reduced bandwidth, and increased privacy. 
 
