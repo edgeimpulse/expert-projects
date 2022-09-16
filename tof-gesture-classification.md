@@ -10,7 +10,7 @@ Simone Salerno
 Public Project Link:
 [https://studio.edgeimpulse.com/public/94474/latest](https://studio.edgeimpulse.com/public/94474/latest)
 
-![](.gitbook/assets/sparkfun-tof.jpg)
+![](.gitbook/assets/sparkfun-tof/sparkfun-tof.jpg)
 
 ## Introduction
 
@@ -193,7 +193,7 @@ Keeping this in mind, we will design our Impulse as follows:
   - Flatten
   - Output layer
 
-![Impulse design](https://eloquentarduino.com/edge-impulse/tof/impulse.png)
+![Impulse design](.gitbook/assets/sparkfun-tof/impulse.png)
 
 You are free to edit the above topology as you see fit. On my own dataset, it achieved 99% accuracy on the validation set.
 
