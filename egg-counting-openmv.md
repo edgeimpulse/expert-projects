@@ -269,9 +269,9 @@ As shown below, the web application consists of one folder and five files:
 
 
 - /assets
-- - class.php
-- - icon.png
-- - index.css
+  - class.php
+  - icon.png
+  - index.css
 - get_data.php
 - index.php
 
@@ -1361,11 +1361,11 @@ After running the *Poultry_Feeder_and_Unhatched_Egg_Tracker.ino* file on WizFi36
 
 ## Further Discussions
 
-By applying object detection models trained on captured coop images in tracking unhatched eggs and detecting the poultry feeder status automatically, we can achieve to:
+By applying object detection models trained on captured coop images in tracking unhatched eggs and detecting the poultry feeder status automatically, we can:
 
 🐤🥚 mitigate strenuous workload while logging the daily produced eggs and applying a regular feeding schedule,
 
-🐤🥚 maintain the high poultry health status,
+🐤🥚 maintain a high poultry health status,
 
 🐤🥚 maximize egg quality and quantity,
 
