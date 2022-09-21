@@ -41,3 +41,4 @@
 * [Smart Cashier with FOMO on a Raspberry Pi](smart-cashier.md)
 * [Identifying PCB Defects with Machine Learning](identifying-pcb-defects.md)
 * [Counting Eggs with Computer Vision](egg-counting-openmv.md)
+* [Gunshot Audio Classification](gunshot-audio-classification.md)
