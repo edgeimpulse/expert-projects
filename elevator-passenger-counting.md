@@ -1,5 +1,5 @@
 ---
-description: Automatic FOMO-based objects counting using computer vision and a web app.
+description: Automatic FOMO-based people counting using computer vision to increase elevator safety.
 ---
 
 # Elevator Passenger Counting Using Computer Vision 
@@ -14,7 +14,7 @@ Public Project Link:
 
 {% embed url="https://youtu.be/yD8CJGDpgfY" %}
 
-![](.gitbook/assets/elevator-passenger-counting/IMG_2204.JPG)
+![](.gitbook/assets/elevator-passenger-counting/IMG_2204.jpg)
 
 ## Story   
 As elevators become more and more indispensable in people's lives, safety has become more of a concern. Overloading is an important contributing factor to elevator accidents. Most existing elevators use weight sensors to determine the total load in an elevator, and those systems can sometimes fail. Additionally, their maintenance is expensive.
