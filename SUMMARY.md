@@ -13,6 +13,7 @@
 * [Surface Crack Detection with Seeed reTerminal](surface-crack-detection.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
 * [ROS2 + Edge Impulse, Part 1: Pub/Sub Node in Python](ros2-part1-pubsub-node.md)
+* [ROS2 + Edge Impulse, Part 2: MicroROS](ros2-part2-microros.md)
 * [Brushless DC Motor Anomaly Detection](brushless-dc-motor-anomaly-detection.md)
 * [Indoor CO2 Level Estimation Using TinyML](indoor-co2-level-estimation-using-tinyml.md)
 * [Hand Gesture Recognition using TinyML on OpenMV](hand-gesture-recgnition-using-tinyml-on-openmv.md)
