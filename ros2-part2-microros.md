@@ -10,7 +10,7 @@ Avi Brown
 Public Project Link:
 [https://studio.edgeimpulse.com/public/124223/latest](https://studio.edgeimpulse.com/public/124223/latest)
 
-{% embed url="https://www.youtube.com/watch?v=23eRmUJdBPs" %}
+{% embed url="https://www.youtube.com/watch?v=_M7Wv-3yFLA" %}
 
 ### Full code for this project can be found [here](https://github.com/avielbr/micro_ros_ei)
 
