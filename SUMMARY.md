@@ -44,3 +44,4 @@
 * [Counting Eggs with Computer Vision](egg-counting-openmv.md)
 * [Gunshot Audio Classification](gunshot-audio-classification.md)
 * [Elevator Passenger Counting Using Computer Vision](elevator-passenger-counting.md)
+* [Smart Baby Swing](smart-baby-swing.md)
