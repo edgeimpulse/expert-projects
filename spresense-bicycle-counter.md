@@ -40,6 +40,7 @@ However these models I trained from these dataset did not work well. While the i
 Luckily Edge Impulse makes it easy to [collect your own dataset](https://docs.edgeimpulse.com/docs/development-platforms/using-your-mobile-phone) using a smart phone and their web app. In order to bootstrap my model with images of cyclists, I walked around town and took pictures of the different riders, as well as similar photos with no cyclist present. After about 100 images or so, I labeled all of the images with bicycles in them. For the images I captured, I tried to make sure the cyclist took up a lot of the frame to help make sure the model had enough data to train on. The photos were taken in an area near where I would be placing the sensor, so the backgrounds were representative of what the sensor would see. When I trained the model on this data set, I ended with a model that was a lot more accurate. Of course with 100 images it was still far from perfect but it was good enough to deploy in a sensor and begin automatically collecting images to help further grow a data set.
 
 ![examples of detected objects](.gitbook/assets/spresense-bicycle-counter/good_work.gif)
+
 *These are all the objects the sensor detected during a day, with a range of confidence*
 
 While you can build an initial vision model using images from the internet or captured using your phone, it is important to eventually incorporate images from the actual camera sensor. The cameras in smartphones work amazingly well - they are almost always perfectly exposed, color corrected and in focus. The images captured by the camera modules found in sensors do not compare. The sensor may also be placed in a way that gives it a very different perspective than you would get from a phone. The sensor maybe much lower or higher - and since the sensor is capturing images at random intervals, there is a good chance the object being detected will not be centered, and maybe cut-off or occluded. 
@@ -49,6 +50,7 @@ In order to augment my dataset with real world photos, I had my sensor save phot
 ## Building a Sensor
 
 ![Sensor](.gitbook/assets/spresense-bicycle-counter/IMG_4905.jpeg)
+
 To build the sensor I started with a medium size case from [Polycase](https://www.polycase.com/wh-04). The case was easy to open and close but is also waterproof and has mounting hardware which after a quick trip to the hardware store made it easy to mount to a sign post. One of the stop signs on my street was nicely positioned and provided an angle where you could observe both the bike lane and the road. I drilled a small hole in the cover of the case and used superglue to position two screws to the cover. This let me mount the camera board to the cover of the case. Using a piece of packing tape I simply positioned the Dev board over the camera. I fastened a large LiPo battery to the main section of the case and connected the two together using a JST push button on and off switch. In the future I would love to build a better mounting frame, but my 3D design skills are not at that level yet.
 
 ## The Software
