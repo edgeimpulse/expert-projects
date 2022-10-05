@@ -151,7 +151,3 @@ The Arduino Portenta is connected to the 5v DC Relay module. The Common pin in t
 
 After the wiring is complete, you can test it in real time. I have played the baby crying sound on my phone and after few seconds, the baby swing rocker started to swing. The YouTube video embedded above demonstrates the working demo of this prototype.
 
-
-
-
-
