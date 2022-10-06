@@ -8,7 +8,7 @@ Created By:
 Luke Berndt 
 
 Public Project Link:
-[Coming Soon]()
+[https://studio.edgeimpulse.com/public/133736/latest](https://studio.edgeimpulse.com/public/133736/latest)
 
 ![](.gitbook/assets/spresense-bicycle-counter/IMG_4906.jpeg)
 
