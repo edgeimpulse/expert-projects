@@ -20,7 +20,7 @@ Public Project Link:
 
 ## Introduction
 
-[](.gitbook/assets/ai-patient-assistance/intro.jpg)
+![](.gitbook/assets/ai-patient-assistance/intro.jpg)
 
 When hospitals are busy it may not always be possible for staff to be close when help is needed, especially if the hospital is short staffed. To ensure that patients are looked after promptly, hospital staff need a way to be alerted when a patient is in discomfort or needs attention from a doctor or nurse.
 
@@ -53,7 +53,7 @@ Head over to [Edge Impulse](https://www.edgeimpulse.com) and create your account
 ### Create New Project
 Your first step is to create a new project. From the project selection/creation you can create a new project.
 
-![Create Edge Impulse project](.gitbook/assets/ai-patient-assistance/new-project.jpg)
+![Create Edge Impulse project](.gitbook/assets/ai-patient-assistance/new-project.png)
 
 Enter a **project name**, select **Developer** and click **Create new project**.
 
