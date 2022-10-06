@@ -146,7 +146,7 @@ Now we are going to create our network and train our model.
 
 Head to the **Create Impulse** tab and change the window size to 2000ms. Next click **Add processing block** and select **Audio (MFCC)**, then click **Add learning block** and select **Clasification (Keras)**.
 
-![Created Impulse(https://usercdn.edgeimpulse.com/project140923/b170999abd8e66835b3669c358282ff57b4ac56ef42153c184512096db93a775)
+![Created Impulse](https://usercdn.edgeimpulse.com/project140923/b170999abd8e66835b3669c358282ff57b4ac56ef42153c184512096db93a775)
 
 Now click **Save impulse**.
 
@@ -192,8 +192,7 @@ You will see the output of the testing in the output window, and once testing is
 
 ### On Device Testing
 
-![Live testing](assets/images/live-testing-doctor.jpg "Live testing")
-](https://usercdn.edgeimpulse.com/project140923/ad225bf5d660945bbdb52ef1d88db6c670fecd5911e376ade48c9f62297900c8)
+![Live testing](https://usercdn.edgeimpulse.com/project140923/ad225bf5d660945bbdb52ef1d88db6c670fecd5911e376ade48c9f62297900c8)
 
 Now we need to test how the model works on our device. Use the **Live classification** feature to record some samples for clasification. Your model should correctly identify the class for each sample.
 
