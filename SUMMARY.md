@@ -46,3 +46,4 @@
 * [Elevator Passenger Counting Using Computer Vision](elevator-passenger-counting.md)
 * [Smart Baby Swing](smart-baby-swing.md)
 * [Bicycle Counting with a Sony Spresense](spresense-bicycle-counter.md)
+* [AI-Powered Patient Assistance](ai-patient-assistance.md)
