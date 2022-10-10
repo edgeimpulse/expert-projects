@@ -47,3 +47,4 @@
 * [Smart Baby Swing](smart-baby-swing.md)
 * [Bicycle Counting with a Sony Spresense](spresense-bicycle-counter.md)
 * [AI-Powered Patient Assistance](ai-patient-assistance.md)
+* [Applying EEG Data to Machine Learning, Part 1](eeg-data-control-games.md)
