@@ -28,9 +28,7 @@ The objective of this  tutorial is to show how you, by using a Muse EEG-device, 
 
 As a gentle introduction to the concept of human and machine communication, the first part shows how to use Muse's *built-in* blink detection functionality and the second part shows how you can use Machine Learning (ML) with Edge Impulse (EI) to be able to expand the game. And while this is just playing a simple game by blinking, there is a lot happening in the area of connecting brain and machine. Research in BCI-technology (Brain Computer Interface) has enabled tasks earlier believed impossible to become reality. One example of this is when patients suffering from ALS had a [brain implant inserted](https://www.bloomberg.com/news/articles/2022-07-18/brain-computer-interface-company-implants-new-type-of-device?leadSource=uverify%20wall) into a blood vessel in their brains, and after some training were able to communicate e.g. through WhatsApp messages. 
 
-Once you understand the benefits and limitations of using EEG-data from a consumer-based device, you can yourself step up and try to control external devices like robots by using eye-blinks or perhaps even by thinking!  
-<br/>
-<br/>  
+Once you understand the benefits and limitations of using EEG-data from a consumer-based device, you can yourself step up and try to control external devices like robots by using eye-blinks or perhaps even by thinking!
 
 ---------------
 ## What is EEG?
@@ -44,9 +42,7 @@ Professional or clinical EEG-devices are typically equipped with between 16 to 6
 ![](.gitbook/assets/eeg-data-part-1/intro-3.jpg)
 
 Muse EEG-devices are focused on consumers and they have four EEG-electrodes, two at the forehead, two behind the ears. In addition they also have an accelerometer/gyroscope, and newer models include a PPG-sensor which  measures blood flow, breathing rhytm, and heart rate. In this tutorial however are  only signals from EEG-electrodes being used.  
-<br/>
-<br/>  
-  
+
 ---------------
 ## Prerequisites
 
@@ -57,14 +53,12 @@ To be able to reproduce examples found in this tutorial, you'll need:
  - A computer able to run Python + WiFi
 	 - only PC/Win10 tested although Mac and Linux computers are expected to work
  - Python 3.x  
-<br/>  
 
 ---------------
 ## Data flow
 
 The data flow for both Part 1 and Part 2 is:
 **Your brain &rarr; Muse &rarr; Bluetooth &rarr; Phone/Mind Monitor &rarr; WiFi &rarr; Computer**  
-<br/>
 
 ---------------
 ## Preparations
@@ -82,8 +76,6 @@ The data flow for both Part 1 and Part 2 is:
 **Computer**
 
  - You might need to allow the computer's firewall to allow traffic through port 5000.  
-<br/>
-<br/>   
 
 ---------------
 ## Part 1 - play Pong by blinking, no ML involved
@@ -105,8 +97,6 @@ As mentioned earlier, this version is not using machine learning at all. Instead
  ## Game play instructions
  - See [Game play instructions, common for both Part 1 and Part 2](https://github.com/baljo/Muse-EEG/blob/main/Project1.md#game-play-instructions-common-for-both-part-1-and-part-2)  
  
-<br/>
-<br/>  
 
 ---------------
 ## Part 2 - play Pong by blinking, using ML
@@ -131,7 +121,6 @@ While this is not as complex as brain surgery (:smirk:), it is still a bit more 
 	- [Collect OSC-data.py](https://github.com/baljo/Muse-EEG/blob/main/Collect%20OSC-data.py) which you will use for collecting data
 	- [Blink Pong with ML](https://github.com/baljo/Muse-EEG/blob/main/Blink%20Pong%20with%20ML.py) which is the game itself
 
-
 ### Detailed instructions
 
 In this chapter you will get detailed instructions from start to end how to collect data, train a model, and test it in practice. While not necessarily every click and detail is listed, you should with normal computer proficiency be able to follow and replicate the steps.
@@ -143,8 +132,7 @@ In this chapter you will get detailed instructions from start to end how to coll
 ![](.gitbook/assets/eeg-data-part-1/muse.jpg)
 
  - Wait until the horseshoe in MindMonitor has disappeared and the graph lines for all sensors have calmed down like in the picture. You might need to wait a few minutes to acquire good signals, but it's possible to speed up the process a bit by moisturing the sensors with e.g. a wet finger. 
- - Start streaming from Mind Monitor by clicking on the button showed in the picture  
-<br/>
+ - Start streaming from Mind Monitor by clicking on the button showed in the picture
 
  **1. Collect EEG-data**
 
@@ -163,7 +151,6 @@ In this chapter you will get detailed instructions from start to end how to coll
 - Next time you'll see `Noise` for 2 seconds. During this time you should **not** blink, just relax. 
 - The program will record each event in a separate CSV-file. So if you've blinked 100 times and created brain noise 100 times, you'll end up with 200 files of 2 seconds each. 
 - It is necessarily not easy to concentrate for a long time, so you are recommended to take a break every now and then. Based on experience, it is also good to remove the EEG-device when not recording and, if you have a longer break, turn it off to save battery. Additionally, next time you use your device it will inevitable be in a slightly different place on your head, and as a result you will probably get a more robust ML-model when recording data.  
-<br/>
 
 **2. Create a project and upload EEG-data to Edge Impulse**
 - Head over to [Edge Impulse](https://www.edgeimpulse.com/). If you are new to EI, you are recommended to take a look at their great [Getting started](https://docs.edgeimpulse.com/docs/) instructions.
@@ -171,7 +158,6 @@ In this chapter you will get detailed instructions from start to end how to coll
 	- Select `Data acquisition` and click the icon labeled `Upload existing data`
 	- Use default settings
 	- Upload the files you've recorded in the previous step.   
-<br/>
 
 **3. Create a model, train, and test it**
 
@@ -180,11 +166,9 @@ In this section you will first create a ML-model, then train it, and finally tes
 **Create a model**
 - Click `Create an impulse` and fill in the `Time series data` as shown in the picture. While the length of the samples are in fact 2000 ms (= 2 seconds), I've found that using 20 ms (as in 20 lines for each sample) works at least as good.
 - Add the processing block `Raw data` and let all axes be checkmarked. You can later try to find which axes do not impact much or at all for your model and uncheck them, but then you also need to modify the line `expected_samples = 20` in `Blink Pong with ML.py` accordingly. This is explained more detailed in the code itself.
-- Add the learning block `Classification (Keras)`, in this tutorial you will have only 2 output features: `1` and `Noise`, but if you want to create an event for double blinks, feel free to record events with e.g. `2` as well, like in the picture.  
+- Add the learning block `Classification (Keras)`, in this tutorial you will have only 2 output features: `1` and `Noise`, but if you want to create an event for double blinks, feel free to record events with e.g. `2` as well, like in the picture.
 
 ![](.gitbook/assets/eeg-data-part-1/impulse.jpg)
-<br/>
-<br/>
 
 - Click `Save impulse` and `Raw data` on the left hand menu
 	- You will see a graph of one of the samples as well as the raw features.
@@ -195,9 +179,7 @@ In this section you will first create a ML-model, then train it, and finally tes
 
 - Click `Generate features`
 	- This processes the samples
-	- After a while you will see a graph in the Feature explorer. This gives you a view of how well your data can be clustered into different groups. In an ideal situation all similar samples would be clustered into same group with a clear distinction between groups. If that's not the case, no worries at this point, the neural network algorithm will in many cases still be able to do a very good job!  
-	<br/>
-<br/>  
+	- After a while you will see a graph in the Feature explorer. This gives you a view of how well your data can be clustered into different groups. In an ideal situation all similar samples would be clustered into same group with a clear distinction between groups. If that's not the case, no worries at this point, the neural network algorithm will in many cases still be able to do a very good job!
 
 **Train the neural network**
 
@@ -211,8 +193,6 @@ Here you will train the neural network and analyse its performance.
 - Click on `Start training`
 	- Within a few minutes, depending on the number of labels and data quantity you have, the training will finish.
 - The graph shows the training performance and accuracy. While 100 % looks like a perfect score, it isn't necessary so. The reason is that the network might perform poorly in real situations when confronted with sample data not seen before.  
-<br/>
-<br/>
 
 **Test the model in Edge Impulse**
 
@@ -224,10 +204,6 @@ In this step you will see how well the model performs with data it has not seen 
 - Click on `Classify all`
 	- This will run the test samples through the trained model
 - After just a short while, depending on the amount of test samples and model complexity, you will get a performance report. Unless you have lots of data or a perfect model, the performance is seldom 100 %. Depending on your use case and what performance you require, you might need to go back a few steps by collecting more and different data, or by tweaking the parameters, to reach your minimum expectations.    
-<br/>
-<br/>  
-<br/>
-<br/>  
 
 **4. Download the trained Tensorflow ML-model to your computer**
 
@@ -236,7 +212,6 @@ Here you will download the trained model to your computer.
 - Scroll down to the section `Download block output` and click on the icon next to `NN Classifier model	TensorFlow Lite (float32)`
 - Save the file to a folder of your choice (and which you remember as you'll need it soon!)
 	- The file will get the name `ei-[ your project name ]-nn-classifier-tensorflow-lite-float32-model.lite`. Although you can rename it if you really want to, why not save your brain cells to more important stuff :smirk:  
-<br/>
 
 **5. Plug the model into your game and test it**
 
@@ -260,9 +235,6 @@ This can be the most rewarding - or most frustrating - phase in the whole proces
 		- By unchecking some of the axes in the `Create an impulse` step, you will also reduce the data needing processing and the time it takes. As earlier mentioned, and as also explained in the code itself, you then need to change the variable `expected_samples` from 20 to something else. If you e.g. reduce the axes from 20 to 10, you would put 10 in this variable.
 	- In the [Github repo](https://github.com/baljo/Muse-EEG/tree/main/Models) you'll find a `.lite`-file trained by the author. You can try the game using this, without the need to record own EEG-data, but don't be surprised if it doesn't give good results, brains tend to be different...
 
-<br/>
-<br/>  
-
 ---------------
 ## Game play instructions, common for both Part 1 and Part 2
 
@@ -278,10 +250,9 @@ This can be the most rewarding - or most frustrating - phase in the whole proces
 	 - Next blink will move the paddle in the other direction
  - The score increases when you manage to hit the ball and decreases when you fail.
  - An intermittent message is shown whenever you blink or clench your jaw. Note that jaw clenches are  only available in Part 1, and they are not linked to any action in the game, that is left up to you to implement!  
-<br/>
 
 ---------------
-## FINAL COMMENTS
+## Final Comments
 
 That's it! Hopefully you were successful in training and recognising eye blinks with your EEG-device. Hopefully it also inspires you to try to improve the performance, e.g. by collecting more samples, by collecting more event types or by tweaking the different parameters and settings in Edge Impulse. And finally, when you have understood the possibilities and limitations with a consumer-based EEG-device, why not challenge yourself with something more advanced than the Pong-game!
 
