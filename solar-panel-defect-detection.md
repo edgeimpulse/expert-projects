@@ -160,8 +160,5 @@ When complete, press the Reset button once. Finally, open a terminal and run the
 This TinyML model based on FOMO is able to identify cracks in solar panels. One of the key advantages is that it can run on constrained devices like microcontrollers, due to the use of Edge Impulse FOMO. This model can also be ported to other devices such as Sony Spresense, ESP–EYE, or larger systems like an Nvidia Jetson Nano.
 
 
-![](.gitbook/assets/solar-panel-defect-detection/intro.jpg)
-![](.gitbook/assets/solar-panel-defect-detection/intro.jpg)
-
 
 
