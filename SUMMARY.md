@@ -50,3 +50,4 @@
 * [Applying EEG Data to Machine Learning, Part 1](eeg-data-control-games.md)
 * [ESD Protection using Computer Vision](esd-protection-using-computer-vision.md)
 * [Solar Panel Defect Detection with FOMO on an Arduino Portenta](solar-panel-defect-detection.md)
+* [Automated Label Inspection With FOMO](label-inspection.md)
