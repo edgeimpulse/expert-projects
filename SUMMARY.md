@@ -51,3 +51,4 @@
 * [ESD Protection using Computer Vision](esd-protection-using-computer-vision.md)
 * [Solar Panel Defect Detection with FOMO on an Arduino Portenta](solar-panel-defect-detection.md)
 * [Automated Label Inspection With FOMO](label-inspection.md)
+* [Warehouse Shipment Monitoring using a Thunderboard Sense 2](warehouse-shipment-monitoring.md)
