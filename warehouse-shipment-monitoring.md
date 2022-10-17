@@ -10,6 +10,8 @@ Manivannan Sivan
 Public Project Link:
 [https://studio.edgeimpulse.com/public/142224/latest](https://studio.edgeimpulse.com/public/142224/latest)
 
+![](.gitbook/assets/warehouse-shipment-monitoring/thunderboard.jpg)
+
 ## Problem Statement
 
 Monitoring fragile objects during shipment require more time, care, labor effort, and infrastructure support.
