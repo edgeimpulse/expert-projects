@@ -2,7 +2,7 @@
 description: With some physics and a TinyML model, add weight prediction to a pallet-wrapping machine.
 ---
 
-# Real-time Stretch-film Machine: Weight Scale and Predictive Maintenance 
+# Smarter Factory: Real-time Stretch-film Machine Weight Scale and Predictive Maintenance 
 
 Created By:
 Simone Salerno 
