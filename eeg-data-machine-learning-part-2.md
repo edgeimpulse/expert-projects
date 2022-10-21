@@ -1,18 +1,18 @@
 ---
-description: Use a consumer-grade EEG device to control and manipulate a simple video game by using TinyML.
+description: Use a consumer-grade EEG device to control and manipulate a computer application, select letters, choose images, and communicate via thought.
 ---
 
-# Using EEG-data and Machine Learning to Control Games 
+# Using EEG-data and Machine Learning to Communicate via Computer Applications 
 
 Created By:
 Thomas Vikstrom 
 
 Public Project Link:
-[https://studio.edgeimpulse.com/public/136580/latest](https://studio.edgeimpulse.com/public/136580/latest)
+[https://studio.edgeimpulse.com/public/134934/latest](https://studio.edgeimpulse.com/public/134934/latest)
 
 ## Project Demo
 
-{% embed url="https://www.youtube.com/watch?v=lKLFVqofdu8" %}
+{% embed url="https://www.youtube.com/watch?v=OwcoYQL4VEU" %}
 
 ## GitHub Repo
 
