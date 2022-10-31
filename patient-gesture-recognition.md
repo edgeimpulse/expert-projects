@@ -60,11 +60,15 @@ To get any support from caretakers, the patient can use this gesture.
 For gesture - "Help", I have just tapped my hand on the flat surface gently with 1 second delay.
 Let's say for each second, I have done one tap action. I have collected 2 minutes of "Help" data for training and 20 seconds of data for testing.
 
+![](.gitbook/assets/patient-gesture-recognition/help.gif)
+
 ![](.gitbook/assets/patient-gesture-recognition/data-acquisition.jpg)
 
 ### Emergency
 
 For "Emergency" action, I have continuously tapped the finger with a SiLabs board on a flat surface for five times without any delay.  I repeated this process for about 2 minutes to collect enough training data, and another 20 seconds for testing data.
+
+![](.gitbook/assets/patient-gesture-recognition/emergency.gif)
 
 ![](.gitbook/assets/patient-gesture-recognition/data-acquisition-2.jpg)
 
@@ -73,6 +77,8 @@ For "Emergency" action, I have continuously tapped the finger with a SiLabs boar
 For basic needs like water, food etc. the patient can use this gesture to communicate.  This helps caretakers understand the needs in advance and bring water to them.
 
 Lift the hand slightly from the surface, and move it sideways left and right a few times. Again, I have collected 2 minutes of data for model training, and 20 seconds data for testing.
+
+![](.gitbook/assets/patient-gesture-recognition/water.gif)
 
 ![](.gitbook/assets/patient-gesture-recognition/data-acquisition-3.jpg)
 
