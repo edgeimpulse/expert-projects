@@ -139,6 +139,8 @@ detectionLimit=0.90
 model = "rpi3cam-linux-armv7-v7.eim
 ```
 
+![](.gitbook/assets/ml-knob-eye/hardware-2.jpg)
+
 ## Conclusion
 
 ML Knob Eye is an example of Machine Learning used to interface analog equipment with the digital world. Big industrial knobs, gauges and panels are even easier to read than small console knobs, so the possibilities with the extracted data are endless: reporting, alerting, using the data to create new ML models, sending alerts and triggering applications and complex scripts, to name a few.
