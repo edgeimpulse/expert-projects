@@ -19,7 +19,7 @@ Some hospital patients, elderly people, or patients require constant monitoring 
 
 ## TinyML Solution
 
-I have created a wearable using a Silabs Thunderboard Sense 2, which can be fitted to the patient’s finger. The patient can call the caretakers by tapping their finger, or rotating it, and the tinyML model running on the hardware will predict the gesture and communicate to the caretakers through BLE communication. The caretakers can get notified in the Light Blue Application on their devices.
+I have created a wearable using a SiLabs Thunderboard Sense 2, which can be fitted to the patient’s finger. The patient can call the caretakers by tapping their finger, or rotating it, and the tinyML model running on the hardware will predict the gesture and communicate to the caretakers through BLE communication. The caretakers can get notified in the Light Blue Application on their devices.
 
 ![Wearable Prototype](.gitbook/assets/patient-gesture-recognition/prototype.jpg)
 
