@@ -56,4 +56,4 @@
 * [Warehouse Shipment Monitoring using a Thunderboard Sense 2](warehouse-shipment-monitoring.md)
 * [Upgrade a Stretch-film Machine: Weight Scale and Predictive Maintenance](stretch-film-machine.md)
 * [Patient Communication with Gesture Recognition](patient-gesture-recognition.md)
-
+* [Knob Eye: Monitor Analog Dials and Knobs with Computer Vision](ml-knob-eye.md)
