@@ -1,5 +1,5 @@
 ---
-description: .
+description: Researching the relationship between temperature, humidity, and asthma with wearable tech on the Arduino Nicla x K-Way smart jacket.
 ---
 
 # Arduino x K-Way - Environmental Asthma Risk Assessment
