@@ -10,10 +10,6 @@ Manivannan Sivan
 Public Project Link:
 [https://studio.edgeimpulse.com/public/148375/latest](https://studio.edgeimpulse.com/public/148375/latest)
 
-## Project Demo
-
-{% embed url="https://www.youtube.com/watch?v=" %}
-
 ## Problem Statement
 
 Working in manufacturing can put a lot of stress on a worker's body. Depending on the worker’s role in the production process, they might experience issues related to cramped working conditions, heavy lifting, or repetitive stress.
