@@ -11,6 +11,7 @@
 * [Cyclist Blind Spot Detection](cyclist-blind-spot-detection.md)
 * [Azure Machine Learning with Kubernetes Compute and Edge Impulse](azure-machine-learning-EI.md)
 * [Surface Crack Detection with Seeed reTerminal](surface-crack-detection.md)
+* [Arduino x KWay - Environmental Asthma Risk Assessment](arduino-kway-environmental-risk-assessment.md))
 * [Smart Smoke Alarm Using Thermal Imaging](smart-smoke-alarm.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
 * [ROS2 + Edge Impulse, Part 1: Pub/Sub Node in Python](ros2-part1-pubsub-node.md)
