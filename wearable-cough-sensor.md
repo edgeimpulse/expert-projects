@@ -10,13 +10,14 @@ Eivind Holt
 Public Project Link:
 [https://studio.edgeimpulse.com/public/105885/latest](https://studio.edgeimpulse.com/public/105885/latest)
 
+GitHub Repository:
+[https://github.com/eivholt/cough-monitor](https://github.com/eivholt/cough-monitor)
+
 ## Project Demo
 
 {% embed url="https://www.youtube.com/watch?v=pWH8ScdJfb8" %}
 
 ## Intro
-
-![Photo: Marthe Mølstre](.gitbook/assets/wearable-cough-sensor/1E3A3953.jpg)
 
 This wearable device detects and reports user's coughs. This can be useful in treatment of patients suffering from chronic obstructive pulmonary disease, COPD, a group of diseases that cause airflow blockage and breathing-related problems. The increase in number and intensity of coughs can indicate ineffective treatment. Real-time monitoring enables caregivers to intervene at an early stage.
 
@@ -138,7 +139,7 @@ The model was printed using a Formlabs 3 SLA 3D printer, with rigid Formlabs Gra
 
 ![PreForm](.gitbook/assets/wearable-cough-sensor/preform.jpg)
 
-![Ever expanding IoT lab. Photo: Sebastian Loraas](.gitbook/assets/wearable-cough-sensor/foto_sebastian_loraas_eivind_dips.jpg)
+![Ever expanding IoT lab. Photo: Sebastian Loraas](.gitbook/assets/wearable-cough-sensor/Foto_Sebastian_Loraas_Eivind_DIPS.jpg)
 
 Completed prints undergo an IPA wash to remove excess resin and finally post cure in a UV-light chamber. What remains is to snip off support material, sand any uneven surfaces and glue together parts. Now the device could finally be assembled and tested.
 
