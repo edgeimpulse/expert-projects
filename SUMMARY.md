@@ -61,3 +61,4 @@
 * [Location Identification using Sound](location-sound.md)
 * [Posture Detection for Worker Safety](worker-safety-posture-detection.md)
 * [Environmental Noise Classification with a Nordic Thingy:53](environmental-noise-classification.md)
+* [Wearable Cough Sensor and Monitoring](wearable-cough-sensor.md)
