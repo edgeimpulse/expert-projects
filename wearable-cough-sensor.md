@@ -56,8 +56,6 @@ A model was trained to distinguish intense coughs from other sounds. An Arduino 
 
 ![Sensor data in patient's medical record, DIPS Arena, used in Norwegian hospitals](.gitbook/assets/wearable-cough-sensor/arena-cough.jpg)
 
-*Sensor data in patient's medical record, DIPS Arena, used in Norwegian hospitals.*
-
 ## Edge Impulse
 
 [Edge Impulse](https://www.edgeimpulse.com/) is the leading development platform for machine learning on edge devices and it's free for use by developers. The [documentation](https://docs.edgeimpulse.com/docs) is some of the best I have experienced in my two decades as a professional developer. I also wish to recommend the book [TinyML Cookbook by Gian Marco Iodice](https://www.amazon.com/TinyML-Cookbook-artificial-intelligence-ultra-low-power/dp/180181497X) as a practical, project based introduction to TinyML and Edge Impulse. I will highlight some particulars of my application. You may explore my [project here](https://studio.edgeimpulse.com/public/105885/latest).
@@ -107,19 +105,19 @@ Next I used the nRF Android app on my phone as a gateway between the device and 
 ## Energy consumption profiling
 I didn't spend a whole lot of time profiling and optimizing this project, as I would be moving to different hardware in the next iteration. Remember, the current implementation is simultaniously buffering audio from the microphone and performing inference. The key to long battery life is 1) energy efficient hardware and 2) as much down time (deep sleep) as possible. I did however make sure it could perform continuous inference for a few days. The [Otii Arc by Qoitech](https://www.qoitech.com/products/) is an excellent tool for profiling projects like this. Please see my other projects at Hackster and element 14 for more in-depth tutorials.
 
-![Otii Arc](.gitbook/assets/wearable-cough-sensor/arduino-nano.png)
+![Otii Arc](.gitbook/assets/wearable-cough-sensor/arduino-nano.jpg)
 
 ## Energy source
 
 I used lithium polymer batteries for compact size and ease of recharging. I only had spare 500 mAh batteries available, shipping options for assorted batteries by air is limited. To extend battery life I connected two in parallel by soldering 3 JSH female connectors. Warning: This wiring is subjectable to short circuit and is only connected under supervision. This gives twice the capacity while keeping the voltage at the same level.
 
-![Batteries connected in parallel](.gitbook/assets/wearable-cough-sensor/cough-monitor_bb.png)
+![Batteries connected in parallel](.gitbook/assets/wearable-cough-sensor/cough-monitor_bb.jpg)
 
 ## Electronics work
 
 I made the mistake of assuming I would have to connect more components to the Arduino Nano via a protoboard. On a whim I ordered the Nano with pre-soldered headers. This only took up space and I had to undergo the tedious work of removing the headers by hand using a regular soldering iron. Sacrificing the headers by snipping them every other pin greatly eased the required finger acrobatics.
 
-![](.gitbook/assets/wearable-cough-sensor/20220531_102614.jpg "Ready for assembly.")
+![Ready for assembly](.gitbook/assets/wearable-cough-sensor/20220531_102614.jpg)
 
 The only other thing I did was solder a female JSH battery connector to pins VIN and GND. This would serve as my battery connection, and subsequently the device's on/off toggle.
 
@@ -171,7 +169,7 @@ I plan to move from BLE to LoRaWAN or NB-IoT for transmissions. This way patient
 
 I have had the opportunity to demonstrate the device to clinicians both in person and at expositions and it has received praise, suggestions for further features and use in additional conditions. This project has also spawned several other ideas for wearables in e-health.
 
-![Eagerly awaiting to enter the stage at DIPS Forum 2022. Photo: Marthe Mølstre](.gitbook/assets/wearable-cough-sensor/1e3a3955.jpg)
+![Eagerly awaiting to enter the stage at DIPS Forum 2022. Photo: Marthe Mølstre](.gitbook/assets/wearable-cough-sensor/1E3A3955.jpg)
 
 ## Disclosure
 
