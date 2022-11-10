@@ -1,5 +1,5 @@
 ---
-description: A sample project demonstrating how to use the Nordic Thingy:53 and the Edge Impulse App to perform environmental noise classification.
+description: An exploration into using Machine Learning to better monitor a patient coughing, to improve medical outcomes.
 ---
 
 # Wearable Cough Sensor using Edge Impulse
@@ -62,7 +62,7 @@ A model was trained to distinguish intense coughs from other sounds. An Arduino 
 
 A model was trained using 394 labeled audio samples of intense coughs, a total of 2 minutes and 34 seconds. An almost equal amount of audio samples of less intense coughs, sneezes, clearing of throat, speech and general sounds was also labeled, 253 samples, 2 minutes and 38 seconds. All samples were captured using the Arduino Nano, positioned at the intended spot for wear.
 
-![Edge Impulse Studio data](.gitbook/assets/wearable-cough-sensor/ei-data1.jpg)
+![Edge Impulse Studio data](.gitbook/assets/wearable-cough-sensor/EI-data1.jpg)
 
 My coughs lasts around 200 milliseconds. I sampled 10 seconds of repeated coughing with short pauses, then split and trimmed the samples to remove silence.
 
@@ -103,6 +103,7 @@ Next I used the nRF Android app on my phone as a gateway between the device and 
 ![Phone acts as gateway between device and nRF Cloud](.gitbook/assets/wearable-cough-sensor/nrfcloud01.jpg)
 
 ## Energy consumption profiling
+
 I didn't spend a whole lot of time profiling and optimizing this project, as I would be moving to different hardware in the next iteration. Remember, the current implementation is simultaniously buffering audio from the microphone and performing inference. The key to long battery life is 1) energy efficient hardware and 2) as much down time (deep sleep) as possible. I did however make sure it could perform continuous inference for a few days. The [Otii Arc by Qoitech](https://www.qoitech.com/products/) is an excellent tool for profiling projects like this. Please see my other projects at Hackster and element 14 for more in-depth tutorials.
 
 ![Otii Arc](.gitbook/assets/wearable-cough-sensor/arduino-nano.jpg)
@@ -137,7 +138,7 @@ The model was printed using a Formlabs 3 SLA 3D printer, with rigid Formlabs Gra
 
 ![PreForm](.gitbook/assets/wearable-cough-sensor/preform.jpg)
 
-![Ever expanding IoT lab. Photo: Sebastian Loraas](img/foto_sebastian_loraas_eivind_dips.jpg)
+![Ever expanding IoT lab. Photo: Sebastian Loraas](.gitbook/assets/wearable-cough-sensor/foto_sebastian_loraas_eivind_dips.jpg)
 
 Completed prints undergo an IPA wash to remove excess resin and finally post cure in a UV-light chamber. What remains is to snip off support material, sand any uneven surfaces and glue together parts. Now the device could finally be assembled and tested.
 
