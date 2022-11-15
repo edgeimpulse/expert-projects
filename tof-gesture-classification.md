@@ -50,7 +50,7 @@ On the software side, you need to install a couple of Arduino libraries:
 1. [SparkFun_VL53L5CX_Arduino_Library](https://github.com/sparkfun/SparkFun_VL53L5CX_Arduino_Library) for direct access to the VL53L5CX sensor
 2. [EloquentArduino library](https://github.com/eloquentarduino/EloquentArduino) for high level VL53L5CX data manipulation
 
-![EloquentArduino library installation](https://res.cloudinary.com/dltmvmpuz/image/upload/w_800,f_auto/eloquentarduino.com/blog/eloquent-arduino-2.0.6.png)
+![EloquentArduino library installation](.gitbook/assets/sparkfun-tof/eloquent-arduino-2.0.6.jpeg)
 
 You can find both of them in the Arduino Library Manager.
 
@@ -193,7 +193,7 @@ Keeping this in mind, we will design our Impulse as follows:
   - Flatten
   - Output layer
 
-![Impulse design](.gitbook/assets/sparkfun-tof/impulse.png)
+![Impulse design](.gitbook/assets/sparkfun-tof/impulse-design.jpg)
 
 You are free to edit the above topology as you see fit. On my own dataset, it achieved 99% accuracy on the validation set.
 
