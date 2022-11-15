@@ -55,7 +55,7 @@ Once the dataset is collected we are able to create the Edge Impulse project.
 
 The first thing do is log into your [Edge Impulse account](https://www.edgeimpulse.com) and create a new project. 
 
-![](.gitbook/assets/blind-spot-detection/dashboard-1.jpg
+![](.gitbook/assets/blind-spot-detection/dashboard-1.jpg)
 
 Once the project is created we need to get started working on it. I had a work experience student with me this week from the local high school. He helped me create the dataset and train the model, we were able to work collaboratively on the project due to Edge Impulse's new collaboration feature.
 
