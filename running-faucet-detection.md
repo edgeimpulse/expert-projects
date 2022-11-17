@@ -11,7 +11,6 @@ Public Project Link:
 [https://studio.edgeimpulse.com/public/119084/latest](https://studio.edgeimpulse.com/public/119084/latest)
 
 GitHub Repository:
-
 [https://github.com/metanav/running_faucet_detection_blues_wireless](https://github.com/metanav/running_faucet_detection_blues_wireless)
 
 ## Project Demo
