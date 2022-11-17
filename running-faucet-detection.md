@@ -21,7 +21,7 @@ GitHub Repository:
 
 Poor memory is only one of the many unpleasant experiences that accompany old age and these problems can have far-reaching implications on the comfort and security of seniors. Dementia is one of the most common neurological problems associated with the elderly. Imagine a case of seniors leaving the faucet on. The kind of water damage that might ensue is simply unimaginable. Not to mention lots of safety concerns such as electrocution and drowning. Also, sometimes kids or even adults forget to stop the faucet after use. It also adds up to your monthly water usage bills. According to the US EPA, leaving a faucet on for just five minutes wastes ten gallons of water. In this project, I have built a proof-of-concept of an AIoT (Artificial intelligence of things) device that can detect running faucets using a microphone and send an alert notification message.
 
-### Hardware Selection
+## Hardware Selection
 
 This project requires a low-powered, reliable, and widely available yet cost-effective cellular network radio to send alert messages to the phone and cloud. I will be using a [Blues Wireless Notecard ](https://blues.io/products/notecard/)(for Cellular connectivity) and a [Blues Wireless Notecarrier-B](https://shop.blues.io/products/carr-b), a carrier board for the Notecard.
 
@@ -37,7 +37,7 @@ The schematics are given below.
 
 ![](.gitbook/assets/running-faucet-detection/schematics.jpg)
 
-### Model creation and training
+## Model creation and training
 
 We will use Edge Impulse Studio to train and build a TensorFlow Lite model. We need to create an account and create a new project at [https://studio.edgeimpulse.com. ](https://studio.edgeimpulse.com./)We are using a prebuilt dataset for detecting whether a faucet is running based on audio. It contains 15 minutes of data sampled from a microphone at 16KHz over the following two classes:
 
@@ -87,13 +87,13 @@ After finalizing the architecture, we can start training which will take a coupl
 
 For such a small dataset 99.2% accuracy is pretty good so we will use this model.
 
-### Testing
+## Testing
 
 We can test the model on the test datasets by going to the **Model testing** page and clicking on the **Classify all** button. The model has 91.24% accuracy on the test datasets, so we are confident that the model should work in a real environment.
 
 ![](.gitbook/assets/running-faucet-detection/testing_results.jpg)
 
-### Deployment
+## Deployment
 
 The Edge Impulse Studio and Blues Wireless Notecard both support Arduino libraries, so we will choose the **Create Library** > **Arduino library** option on the Deployment page. For the **Select optimizations** option, we will choose **Enable EON Compiler**, which reduces the memory usage of the model. Also, we will opt for the Quantized (Int8) model. Now click the **Build** button, and in a few seconds, the library bundle will be downloaded to your local computer.
 
@@ -125,7 +125,7 @@ The JSONata expression is given below that formats the JSON payload to a Twilio 
 )
 ```
 
-### Running Inferencing
+## Running Inferencing
 
 Please follow the instructions [here](https://www.arduino.cc/en/software) to download and install Arduino IDE. After installation, open the Arduino IDE and install the board package for the Seeed XIAO nRF52840 Sense by going to **Tools** > **Board** > **Boards Manager**. Search the board package as shown below and install it.
 
@@ -476,7 +476,7 @@ $ git clone https://github.com/metanav/running_faucet_detection_blues_wireless.g
 
 Import the library bundle running_faucet_blues_wireless_inferencing*.zip* using the menu **Sketch** > **Include Library** > **Add.ZIP Library** in the Arduino IDE. Open the inferencing sketch *notecard_nano_ble_sense_running_faucet_detection*.ino and compile/upload the firmware to the connected Seeed XIAO nRF52840 Sense board. We can monitor the inferencing output and Notecard debug logs using the **Tools** > **Serial Monitor** with a baud rate of 115200 bps.
 
-### Casing
+## Casing
 
 For protection, the device is placed inside a plastic box that can be mounted on a wall.
 
@@ -486,7 +486,7 @@ The flexible cellular antenna is stuck to the side of the box.
 
 ![](.gitbook/assets/running-faucet-detection/inside_box_closed.jpeg)
 
-### Conclusion
+## Conclusion
 
 Although this proof-of-concept device is used in the house with a wall outlet, it can be powered using batteries. Being equipped with cellular connectivity, it can be installed in those areas where there is no WiFi network. This is an easy-to-use and convenient device that respects users' privacy by running the inferencing at the edge and sending alert notifications on time.
 
