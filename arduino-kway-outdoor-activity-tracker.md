@@ -1,5 +1,5 @@
 ---
-description: .
+description: A wearable Nicla Sense ME that can measure both the environment, and your outdoor activities using machine learning.
 ---
 
 # Arduino x K-Way - Outdoor Activity Tracker 
