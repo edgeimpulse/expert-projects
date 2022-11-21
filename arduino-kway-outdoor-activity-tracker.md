@@ -8,6 +8,7 @@ Created By:
 [Zalmotek](https://zalmotek.com) 
 
 Public Project Links:
+
 [Weather Prediction Model](https://studio.edgeimpulse.com/public/137821/latest)
 
 [Activity Tracking Model](https://studio.edgeimpulse.com/public/137840/latest)
@@ -15,11 +16,15 @@ Public Project Links:
 GitHub Repository:
 [https://github.com/Zalmotek/edge-impulse-arduino-k-way-outdoor-activity-tracker](https://github.com/Zalmotek/edge-impulse-arduino-k-way-outdoor-activity-tracker)
 
-![](.gitbook/assets/arduino-kway-outdoor-activity-tracker/1.jpg)
+## Project Demo
+
+{% embed url="https://youtu.be/ALD_1P6ujZY" %}
 
 ## Intro
 
 Hiking is a great way to get outdoors and enjoy some fresh air. However, keeping track of your progress can be challenging, and that's where an outdoor activity tracker comes in handy. A hiking wearable device provides some valuable functions that can make your hike more enjoyable and safe. It can track things like how many steps you've taken, your walking speed, and even the weather conditions.
+
+![](.gitbook/assets/arduino-kway-outdoor-activity-tracker/1.jpg)
  
 In this tutorial, we'll show you how to build a smart hiking wearable using the [Arduino Nicla Sense ME](https://store.arduino.cc/products/nicla-sense-me) board paired with the weather-resistant [K-Way jacket](https://www.k-way.com/products/jackets-woman-le-vrai-3-0-claudette-black-pure-k005if0-usy).
 
