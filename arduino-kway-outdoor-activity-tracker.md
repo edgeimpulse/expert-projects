@@ -9,6 +9,7 @@ Created By:
 
 Public Project Links:
 [Weather Prediction Model](https://studio.edgeimpulse.com/public/137821/latest)
+
 [Activity Tracking Model](https://studio.edgeimpulse.com/public/137840/latest)
 
 GitHub Repository:
