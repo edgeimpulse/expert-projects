@@ -7,8 +7,12 @@ description: A wearable Nicla Sense ME that can measure both the environment, an
 Created By:
 [Zalmotek](https://zalmotek.com) 
 
-Public Project Link:
-[Coming Soon]()
+Public Project Links:
+[Weather Prediction Model](https://studio.edgeimpulse.com/public/137821/latest)
+[Activity Tracking Model](https://studio.edgeimpulse.com/public/137840/latest)
+
+GitHub Repository:
+[https://github.com/Zalmotek/edge-impulse-arduino-k-way-outdoor-activity-tracker](https://github.com/Zalmotek/edge-impulse-arduino-k-way-outdoor-activity-tracker)
 
 ![](.gitbook/assets/arduino-kway-outdoor-activity-tracker/1.jpg)
 
@@ -81,7 +85,7 @@ Next, go to Tools > Board > Arduino Mbed OS Nicla Boards and select the Nicla Se
 
 #### Data collection
 
-Download the Edge Impulse ingestion sketch from here and upload it to your board. 
+Download the Edge Impulse ingestion sketch from [here](https://github.com/Zalmotek/edge-impulse-arduino-k-way-outdoor-activity-tracker) and upload it to your board. 
 
 We will collect data for three classes: 
 
@@ -171,7 +175,7 @@ nicla::leds.begin();
 nicla::leds.setColor(red);
 ```
 
-You can find the full code and the trained model here.
+You can find the full code and the trained model [here](https://github.com/Zalmotek/edge-impulse-arduino-k-way-outdoor-activity-tracker).
 
 ### Training the activity tracking model
 
@@ -179,7 +183,7 @@ You can find the full code and the trained model here.
 
 Create a separate project on Edge Impulse and give it a name.
 
-Download the Edge Impulse ingestion sketch from here and upload it to your board. 
+Download the Edge Impulse ingestion sketch from [here](https://github.com/Zalmotek/edge-impulse-arduino-k-way-outdoor-activity-tracker) and upload it to your board. 
 
 Again, we will use the Data Forwarder to collect data, so run the following command from a terminal:
 
@@ -264,7 +268,7 @@ Click on the newly created thing and add variables for the metrics you want to m
 
 ![](.gitbook/assets/arduino-kway-outdoor-activity-tracker/30.jpg)
 
-With the Arduino IoT Cloud configured, we can now start sending data from our device. To do this, download this project (which is an adaptation based on [this](https://docs.arduino.cc/tutorials/nicla-sense-me/cli-tool)) and add the Arduino_BHY2 folder to your Arduino libraries. Go to Examples > Arduino_BHY2 > App and upload this sketch to your device.
+With the Arduino IoT Cloud configured, we can now start sending data from our device. To do this, download [this project](https://github.com/Zalmotek/edge-impulse-arduino-k-way-outdoor-activity-tracker) (which is an adaptation based on [this](https://docs.arduino.cc/tutorials/nicla-sense-me/cli-tool)) and add the Arduino_BHY2 folder to your Arduino libraries. Go to Examples > Arduino_BHY2 > App and upload this sketch to your device.
 
 Now go to nicla-sense-me-fw-main/bhy-controller/src/ and run:
 
