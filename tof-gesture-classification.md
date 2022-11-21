@@ -440,8 +440,6 @@ You will find that there is a lag when you switch gesture: this is because the b
 
 After the buffer fills with all data from the current gesture, the model will pick it up.
 
-[[@todo add demo video here]]
-
 ## Conclusion
 
 This project described two different kinds of gesture classification with Time of Flight technology:
