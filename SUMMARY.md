@@ -63,6 +63,5 @@
 * [Posture Detection for Worker Safety](worker-safety-posture-detection.md)
 * [Environmental Noise Classification with a Nordic Thingy:53](environmental-noise-classification.md)
 * [Wearable Cough Sensor and Monitoring](wearable-cough-sensor.md)
-* [Monitoring Checkout Lines with Computer Vision](monitoring-checkout-lines.md)
 * [Running Faucet Detection with a Seeed XIAO Sense + Blues Cellular](running-faucet-detection.md)
 * [Vandalism Detection via Audio Classification](vandalism-detection-audio-classification.md)
