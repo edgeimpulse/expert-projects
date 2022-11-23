@@ -14,6 +14,7 @@ Public Project Links:
 [Activity Tracking Model](https://studio.edgeimpulse.com/public/137840/latest)
 
 GitHub Repository:
+
 [https://github.com/Zalmotek/edge-impulse-arduino-k-way-outdoor-activity-tracker](https://github.com/Zalmotek/edge-impulse-arduino-k-way-outdoor-activity-tracker)
 
 ## Project Demo

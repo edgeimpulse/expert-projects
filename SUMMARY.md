@@ -65,3 +65,4 @@
 * [Wearable Cough Sensor and Monitoring](wearable-cough-sensor.md)
 * [Running Faucet Detection with a Seeed XIAO Sense + Blues Cellular](running-faucet-detection.md)
 * [Vandalism Detection via Audio Classification](vandalism-detection-audio-classification.md)
+* [TinyML Digital Counter for Electric Metering System](tinyml-digital-counter-openmv.md)
