@@ -66,3 +66,4 @@
 * [Monitoring Checkout Lines with Computer Vision](monitoring-checkout-lines.md)
 * [Running Faucet Detection with a Seeed XIAO Sense + Blues Cellular](running-faucet-detection.md)
 * [Vandalism Detection via Audio Classification](vandalism-detection-audio-classification.md)
+* [TinyML Digital Counter for Electric Metering System](tinyml-digital-counter-openmv.md)
