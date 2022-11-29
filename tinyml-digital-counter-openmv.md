@@ -5,15 +5,12 @@ description: A computer vision project that uses an OpenMV H7+ to perform LCD di
 # TinyML Digital Counter for Electric Metering System
 
 Created By:
-
 [George Igwegbe](https://www.linkedin.com/in/george-igwegbe/), [Martins Awojide](https://www.linkedin.com/in/martinsawojide/) 
 
 Public Project Link:
-
 [https://studio.edgeimpulse.com/public/136141/latest](https://studio.edgeimpulse.com/public/136141/latest)
 
 GitHub Repository:
-
 [https://github.com/gigwegbe/tinyml-digital-counter-for-metering](https://github.com/gigwegbe/tinyml-digital-counter-for-metering)
 
 ## Project Demo
