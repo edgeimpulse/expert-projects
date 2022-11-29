@@ -2,14 +2,19 @@
 
 * [Welcome](README.md)
 
+Featured Case Studies
 
-* [Workplace Organizer with Nvidia Jetson Nano](workplace-organizer.md)
-* [Recyclable Materials Sorter with Nvidia Jetson Nano](recyclable-materials-sorter.md)
-* [Predictive Maintenance with Nordic Thingy:91](predictive-maintenance-with-nordic-thingy-91.md)
-* [Occupancy Sensing with SiLabs EFR32MG24](occupancy-sensing-with-silabs.md)
-* [Analog Meter Reading with Arduino Nicla Vision](analog-meter-reading-with-nicla-vision.md)
+* [Workplace Organizer - Nvidia Jetson Nano](workplace-organizer.md)
+* [Recyclable Materials Sorter - Nvidia Jetson Nano](recyclable-materials-sorter.md)
+* [Predictive Maintenance - Nordic Thingy:91](predictive-maintenance-with-nordic-thingy-91.md)
+* [Occupancy Sensing - SiLabs EFR32MG24](occupancy-sensing-with-silabs.md)
+* [Analog Meter Reading - Arduino Nicla Vision](analog-meter-reading-with-nicla-vision.md)
+* [Gas Detection in the Oil and Gas Industry - Thingy:91](gas-detection-thingy-91.md)
 * [Arduino x K-Way - Outdoor Activity Tracker](arduino-kway-outdoor-activity-tracker.md)
 * [Arduino x K-Way - Environmental Asthma Risk Assessment](arduino-kway-environmental-risk-assessment.md)
+
+Machine Learning Prototype Projects
+
 * [Smart Smoke Alarm Using Thermal Imaging](smart-smoke-alarm.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
 * [Cyclist Blind Spot Detection](cyclist-blind-spot-detection.md)
