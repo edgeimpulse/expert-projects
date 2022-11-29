@@ -2,7 +2,7 @@
 
 * [Welcome](README.md)
 
-Featured Case Studies
+## Featured Case Studies
 
 * [Workplace Organizer - Nvidia Jetson Nano](workplace-organizer.md)
 * [Recyclable Materials Sorter - Nvidia Jetson Nano](recyclable-materials-sorter.md)
@@ -13,7 +13,7 @@ Featured Case Studies
 * [Arduino x K-Way - Outdoor Activity Tracker](arduino-kway-outdoor-activity-tracker.md)
 * [Arduino x K-Way - Environmental Asthma Risk Assessment](arduino-kway-environmental-risk-assessment.md)
 
-Machine Learning Prototype Projects
+## Machine Learning Prototype Projects
 
 * [Smart Smoke Alarm Using Thermal Imaging](smart-smoke-alarm.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)

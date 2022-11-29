@@ -1,5 +1,5 @@
 ---
-description: A .
+description: Using a Nordic Thingy:91 to detect the presence of gases such as CO2, CO, and Isopropanol.
 ---
 
 # Gas Detection in the Oil and Gas Industry - Thingy:91 
@@ -51,7 +51,7 @@ This is advantageous when the area in which the sensor is placed is inaccessible
 
 ![](.gitbook/assets/gas-detection-thingy-91/intro-2.jpg)
 
-2. As a wearable.
+1. As a wearable.
 
 By using it as a wearable, it will be able to detect gas leakages in the proximity of the employees that wear it. This is a great way of overcoming the space density problem, as it will monitor the air quality in the near vicinity of the employees, ensuring that they will not find themselves in an environment that might be dangerous for their health. Depending on the gasses that pose the greatest danger, the height at which the device must be placed varies. 
 
