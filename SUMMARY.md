@@ -71,3 +71,4 @@
 * [Running Faucet Detection with a Seeed XIAO Sense + Blues Cellular](running-faucet-detection.md)
 * [Vandalism Detection via Audio Classification](vandalism-detection-audio-classification.md)
 * [TinyML Digital Counter for Electric Metering System](tinyml-digital-counter-openmv.md)
+* [Corrosion Detection with Seeed reTerminal](corrosion-detection-reterminal.md)
