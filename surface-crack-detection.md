@@ -1,5 +1,5 @@
 ---
-description: A computer vision system that detects and localizes the surface cracks in concrete structures for  predictive maintenance.
+description: A computer vision system that detects and localizes the surface cracks in concrete structures for predictive maintenance.
 ---
 
 # Surface Crack Detection and Localization 
