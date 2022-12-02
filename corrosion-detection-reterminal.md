@@ -22,7 +22,7 @@ A promising way to overcome the aforementioned drawbacks is to develop an artifi
 
 Requirements to build this project are a [Seeed Studio reTerminal with Raspberry Pi](https://www.seeedstudio.com/ReTerminal-with-CM4-p-4904.html) and a [Raspberry Pi Camera Module V2](https://www.raspberrypi.com/products/camera-module-v2/), a dataset, and Edge Impulse platform in order to develop the TinyML model and deploy it on the device. The rest of tutorial is Divided into three sections, section 1 is reTerminal hardware configurations, in second section the model development part is explained, and in last section the deployment and Edge Impulse CLI process are described.
 
-## 1. reTerminal Configuration
+## reTerminal Configuration
 
 The reTerminal is an HMI device built around the Raspberry Pi Compute Module 4 (CM4) with a 1.5GHz quad-core Cortex-A72 CPU and a 5-inch IPS capacitive multi-touch screen with a resolution of 1280 x 720. It has enough RAM (4GB) to multitask and enough eMMC storage (32GB) to install an operating system, allowing for quick startup times and an enjoyable overall experience. It has dual-band 2.4GHz/5GHz Wi-Fi and Bluetooth 5.0 BLE for wireless networking.
 
