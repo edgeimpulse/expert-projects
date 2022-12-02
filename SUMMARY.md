@@ -12,6 +12,7 @@
 * [Gas Detection in the Oil and Gas Industry - Thingy:91](gas-detection-thingy-91.md)
 * [Arduino x K-Way - Outdoor Activity Tracker](arduino-kway-outdoor-activity-tracker.md)
 * [Arduino x K-Way - Environmental Asthma Risk Assessment](arduino-kway-environmental-risk-assessment.md)
+* [Illegal Logging Detection - Syntiant TinyML](illegal-logging-detection-syntiant.md)
 
 ## Machine Learning Prototype Projects
 
