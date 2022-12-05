@@ -1,5 +1,5 @@
 ---
-description: Use TinyML to listen for the sound of illegal logging and send SMS notifications if a chainsaw is heard.
+description: Use TinyML to listen for the sound of illegal logging, and send SMS notifications if a chainsaw is heard.
 ---
 
 # Illegal Logging Detection in the Forest - Syntiant TinyML
