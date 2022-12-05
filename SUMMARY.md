@@ -73,3 +73,4 @@
 * [Vandalism Detection via Audio Classification](vandalism-detection-audio-classification.md)
 * [TinyML Digital Counter for Electric Metering System](tinyml-digital-counter-openmv.md)
 * [Corrosion Detection with Seeed reTerminal](corrosion-detection-reterminal.md)
+* [Automated Inventory Management with Computer Vision](automated-inventory-management.md)
