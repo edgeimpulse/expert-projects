@@ -2,7 +2,7 @@
 description: Using a XIAO ESP32C3 to monitor temperature, humidity, and pressure to help aid in dairy manufacturing processes.
 ---
 
-# AI-assisted Monitoring of Dairy Manufacturing Conditions
+# AI-Assisted Monitoring of Dairy Manufacturing Conditions
 
 Created By:
 Kutluhan Aktar

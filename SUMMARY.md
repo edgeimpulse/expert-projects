@@ -74,4 +74,4 @@
 * [TinyML Digital Counter for Electric Metering System](tinyml-digital-counter-openmv.md)
 * [Corrosion Detection with Seeed reTerminal](corrosion-detection-reterminal.md)
 * [Automated Inventory Management with Computer Vision](automated-inventory-management.md)
-* [AI-assisted Monitoring of Dairy Manufacturing Conditions](dairy-manufacturing-with-ai.md)
+* [AI-Assisted Monitoring of Dairy Manufacturing Conditions](dairy-manufacturing-with-ai.md)
