@@ -75,4 +75,4 @@
 * [Corrosion Detection with Seeed reTerminal](corrosion-detection-reterminal.md)
 * [Automated Inventory Management with Computer Vision](automated-inventory-management.md)
 * [AI-Assisted Monitoring of Dairy Manufacturing Conditions](dairy-manufacturing-with-ai.md)
-* [Predictive Maintenance With Sound](predictive-maintenance-with-sound.md)
+* [Predictive Maintenance Using Audio Classification](predictive-maintenance-with-sound.md)
