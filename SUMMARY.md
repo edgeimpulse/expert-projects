@@ -13,6 +13,7 @@
 * [Arduino x K-Way - Outdoor Activity Tracker](arduino-kway-outdoor-activity-tracker.md)
 * [Arduino x K-Way - Environmental Asthma Risk Assessment](arduino-kway-environmental-risk-assessment.md)
 * [Illegal Logging Detection - Syntiant TinyML](illegal-logging-detection-syntiant.md)
+* [Smart Appliance Control Using Voice Commands - Nordic Thingy:53](smart-appliance-voice-commands.md)
 
 ## Machine Learning Prototype Projects
 
