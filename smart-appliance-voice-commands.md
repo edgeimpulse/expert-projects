@@ -1,5 +1,5 @@
 ---
-description: xxx
+description: Using a Nordic Semi Thingy:53 with Keyword Spotting to turn an ordinary device into a smart appliance.
 ---
 
 # Smart Appliance Control Using Voice Commands - Nordic Thingy:53
