@@ -81,6 +81,8 @@ edge-impulse-run-impulse
 
 Alternatively, you can write a boolean `1` to the characteristic to start the inference on the board. Checkout the .gif for how to do it on an xG24:
 
+<img src=".gitbook/assets/gesture-recognition-on-silabs-xg24/lightblue-tb2.gif" height="50%">
+
 ![](.gitbook/assets/gesture-recognition-on-silabs-xg24/lightblue-tb2.gif)
 
 Then move your finger to create the gesture pattern that you trained, and you should see a notification on your phone.
