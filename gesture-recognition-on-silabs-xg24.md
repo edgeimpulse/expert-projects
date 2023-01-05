@@ -81,7 +81,7 @@ edge-impulse-run-impulse
 
 Alternatively, you can write a boolean `1` to the characteristic to start the inference on the board. Checkout the .gif for how to do it on an xG24:
 
-<img src=".gitbook/assets/gesture-recognition-on-silabs-xg24/lightblue-tb2.gif" height="50%">
+<img src=".gitbook/assets/gesture-recognition-on-silabs-xg24/lightblue-tb2.gif" align="center" height="50%">
 
 Then move your finger to create the gesture pattern that you trained, and you should see a notification on your phone.
 
@@ -105,7 +105,7 @@ Now you can use Simplicity Studio 5 to flash the `.hex` file to the xG24 as show
 
 Once the flashing is done, again use the LightBlue app to connect to your board, and test gestures once again as you did for the Thunderboard Sense 2.
 
-<img src=".gitbook/assets/gesture-recognition-on-silabs-xg24/lightblue-xg24.gif" height="50%">
+<img src=".gitbook/assets/gesture-recognition-on-silabs-xg24/lightblue-xg24.gif" align="center" height="50%">
 
 If all goes well, your same gestures should be recognized and inferencing is performed on the xG24 in the same manner as the Thunderboard Sense 2, with no additional model training or dataset manipulation needed! This makes upgrading existing projects from the Thunderboard to the xG24 extremely simple. 
 
