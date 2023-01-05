@@ -10,8 +10,6 @@ Solomon Githu
 Public Project Link:
 [https://studio.edgeimpulse.com/public/166649/latest](https://studio.edgeimpulse.com/public/166649/latest)
 
-![](.gitbook/assets/monitoring-checkout-lines-rzv2l/intro.jpg)
-
 ## Monitoring checkout lines with Computer Vision
 
 No one likes waiting in lines! Research shows that people wait in lines three to five days a year. Long queues at supermarkets cause shopper fatigue, reduce the customer experience and can lead to cart abandonment.
