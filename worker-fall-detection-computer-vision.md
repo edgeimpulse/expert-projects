@@ -1,5 +1,5 @@
 ---
-description: xxxxxxxxxx.
+description: Mount a camera in an industrial or manufacturing location to detect worker falls with computer vision.
 ---
 
 # Fall Detection using Computer Vision for Industrial Workers 
@@ -21,7 +21,7 @@ In the manufacturing and construction industries, workers face serious health an
 
 As a solution to this, we are developing a device that can quickly detect falls in a monitored area and alert a designated person with the specific area or position of the fall.
 
-The device consists of a Raspberry Pi 4 and a camera module, running with a FOMO model that is capable of detecting the fall down in real-time. Each incident can be written to a database and can be displayed in a web dashboard, so the safety manager can easily check the current safety status in a monitored facility.
+The device consists of a Raspberry Pi 4 and a camera module, running with a FOMO model that is capable of detecting the fall down in real-time. 
 
 At the implementation level, this FOMO-based machine learning model can be applied to the video output from cameras which are installed in a monitored area.
 
