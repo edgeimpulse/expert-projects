@@ -45,19 +45,19 @@ The ESP-01 is used for adding WiFi capability to the device, because the Arduino
   
 ## Data Acquisition
    
-One of the most important parts of any machine learning model is its dataset. Edge Impulse offers us two options to create our dataset: either direct uploading of files, or recording data from actual the device itself. For this project we chose to record data with the device itself, because as a prototype, the data will be limited. A second reason to record data with the device itself is that it can improve accuracy. To get started connecting the Nano 33 BLE Sense to Edge Impulse, you can have a look at this [tutorial](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/arduino-nano-33-ble-sense).    
+One of the most important parts of any machine learning model is its dataset. Edge Impulse offers us two options to create our dataset: either direct uploading of files, or recording data from actual the device itself. For this project we chose to record data with the device itself, because as a prototype, the data will be limited. A second reason to record data with the device itself is that it can improve accuracy. To get started connecting the Nano 33 BLE Sense to Edge Impulse, you can have a look at this [tutorial](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/arduino-nano-33-ble-sense).
 
 In this scenario, we have only two classes **Glass Break**, and **Noise**. Glass breaking sounds that we have used are from the vivid online resources and the major noise datasets are from the **Microsoft Scalable Noisy Speech Dataset (MS-SNSD)**. We also included the natural noise in the room, apart from the **MS-SNSD** data.
 
-The sound recording was done for **20** seconds at a **16KHz** sampling rate. Something to keep in mind is that you must keep the sampling rate the same between your training dataset and your deployment device. If you are training with **44.1Khz** sound, you need to downsample it to 16KHz when you are ready to deploy to the Arduino.  
+The sound recording was done for **20** seconds at a **16KHz** sampling rate. Something to keep in mind is that you must keep the sampling rate the same between your training dataset and your deployment device. If you are training with **44.1Khz** sound, you need to downsample it to 16KHz when you are ready to deploy to the Arduino.
 
 We collected around 10 minutes of data and split it between Training and a Test set. In the Training data we split the samples to **2s**, otherwise the inferencing will fail because the BLE Sense has a limited amount of memory to handle the data.
 
-![](.gitbook/assets/vandalism-detection-audio-classification/data-acquistion.jpg)       
+![](.gitbook/assets/vandalism-detection-audio-classification/data-acquistion.jpg)
      
 ## Impulse Design    
 
-This is our Impulse, which is the machine learning pipeline termed by the Edge Impulse.
+This is our Impulse, which is the machine learning pipeline termed by Edge Impulse.
 
 ![](.gitbook/assets/vandalism-detection-audio-classification/impulse-design.jpg) 
 
