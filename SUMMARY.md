@@ -80,3 +80,4 @@
 * [Patient Gesture Recognition on the SiLabs xG24](gesture-recognition-on-silabs-xg24.md)
 * [Monitoring Retail Checkout Lines with Computer Vision on the RZ/V2L](monitoring-checkout-lines-rzv2l.md)
 * [Fall Detection using Computer Vision for Industrial Workers](worker-fall-detection-computer-vision.md)
+* [Fluid Leak Detection With a Flowmeter and AI](fluid-leak-detection-with-flowmeter-and-ai.md)
