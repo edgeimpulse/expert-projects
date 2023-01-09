@@ -34,19 +34,16 @@ Overall, fluid leakage in industrial pipelines is a serious issue with far-reach
 
 As a proposed solution to the issue of fluid leakage in industrial pipelines, we propose the use of artificial intelligence (AI) and machine learning. With this approach, flow rate sensor data is used to detect leaks in pipelines using machine learning algorithms that analyze changes in flow rates and identify deviations from normal patterns that may indicate a leak. This type of AI technology has the potential to significantly improve our ability to detect and respond to fluid leaks in industrial pipelines, helping to prevent undetected leaks from causing damage. In addition, the use of machine learning allows these systems to improve over time, becoming more accurate and reliable at detecting leaks. By leveraging these technologies, we can more effectively protect the environment and human health, and minimize the costs associated with leaks and their cleanup.
 
----
 ## Hardware Requirements
 
 * [Seeed Wio Terminal](https://www.seeedstudio.com/Wio-Terminal-p-4509.html)
 * [Water Flow Sensor](https://www.dfrobot.com/product-1517.html)
 
----
 ## Software Requirements
 
 * [Edge Impulse](https://edgeimpulse.com)
 * [Arduino IDE](https://www.arduino.cc/en/software)
 
----
 ## Hardware Setup 
 
 The development board used in this project is the **Seeed Wio Terminal**. The reason why we used this development board in this project is that is a complete system equipped with Screen + Development Board + Input/Output Interface + Enclosure.
@@ -69,7 +66,6 @@ This is the flow setup and it's pretty simple. Two pipes are attached to the inl
 
 ![](.gitbook/assets/fluid-leak-detection-with-flowmeter-and-ai/flow-setup.jpg)
 
----
 ## Software Setup
 
 To set up your Seeed Wio Terminal for Edge Impulse, you can follow this [guide](https://wiki.seeedstudio.com/Wio-Terminal-TinyML-EI-1/). But we are using an alternative method to collect data. In our method, the data is collected as CSV files and uploaded to Edge Impulse. And then we proceed to the TinyML model generation as usual.
@@ -132,7 +128,7 @@ Now we have a well-functioning model. Let's test its performance with some previ
 
 Amazing! We have got 100% testing accuracy. So our model is ready for deployment.
 
-## 4. Deployment
+### 4. Deployment
 
 From the **Deployment** tab, build an **Arduino Library**. You can enable optimisations with EON Compiler if you like, but is optional.
 
@@ -146,7 +142,6 @@ Modify the `static_buffer.ino` located at **File > Examples > Your Project Name 
 
 ![](.gitbook/assets/fluid-leak-detection-with-flowmeter-and-ai/code.png)
 
----
 ## Final Output
 
 After the deployment, now we have a system consisting of a Wio Terminal, Flow Rate Sensor, and AI model that can detect a possible leak in the pipeline. The three modes of output are shown below.
@@ -157,7 +152,6 @@ After the deployment, now we have a system consisting of a Wio Terminal, Flow Ra
 
 ![](.gitbook/assets/fluid-leak-detection-with-flowmeter-and-ai/leak.jpg)
 
----
 ## Code
 
 The entire assets for this project are available in this [GitHub repository](https://github.com/CodersCafeTech/Fluid-Leakage-Detection-With-AI).
