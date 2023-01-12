@@ -1,5 +1,5 @@
 ---
-description: Keep track of the items in a shopping basket using computer vision and an OpenMV Cam.
+description: Keep track of the items in a shopping basket using computer vision and an OpenMV Cam H7.
 ---
 
 # Smart Grocery Cart Using Computer Vision 

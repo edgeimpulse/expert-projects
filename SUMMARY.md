@@ -82,4 +82,5 @@
 * [Fall Detection using Computer Vision for Industrial Workers](worker-fall-detection-computer-vision.md)
 * [Fluid Leak Detection With a Flowmeter and AI](fluid-leak-detection-with-flowmeter-and-ai.md)
 * [Smart Grocery Cart Using Computer Vision](smart-grocery-cart-with-computer-vision.md)
+* [Driver Drowsiness Detection With FOMO](driver-drowsiness-detection-with-computer-vision.md)
 
