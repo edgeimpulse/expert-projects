@@ -83,4 +83,5 @@
 * [Fluid Leak Detection With a Flowmeter and AI](fluid-leak-detection-with-flowmeter-and-ai.md)
 * [Smart Grocery Cart Using Computer Vision](smart-grocery-cart-with-computer-vision.md)
 * [Driver Drowsiness Detection With FOMO](driver-drowsiness-detection-with-computer-vision.md)
+* [TinyML for Gastroscopic Image Processing](tinyml-gastroscopic-image-processing.md)
 
