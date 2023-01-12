@@ -1,5 +1,5 @@
 ---
-description: xxxxxxxxxxxxxx.
+description: A proof-of-concept project to demonstrate the use of TinyML in gastroscopic disease identification and diagnosis.
 ---
 
 # TinyML for Gastroscopic Image Processing 
@@ -8,7 +8,7 @@ Created By:
 Wamiq Raza 
 
 Public Project Link:
-[https://studio.edgeimpulse.com/public//latest](https://studio.edgeimpulse.com/public//latest)
+[Coming Soon]()
 
 ## Introduction
 
