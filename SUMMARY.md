@@ -84,5 +84,5 @@
 * [Smart Grocery Cart Using Computer Vision](smart-grocery-cart-with-computer-vision.md)
 * [Driver Drowsiness Detection With FOMO](driver-drowsiness-detection-with-computer-vision.md)
 * [TinyML for Gastroscopic Image Processing](tinyml-gastroscopic-image-processing.md)
-* [](pharmaceutical-pill-defect-detection.md)
+* [Pharmaceutical Pill Quality Control and Defect Detection](pharmaceutical-pill-defect-detection.md)
 
