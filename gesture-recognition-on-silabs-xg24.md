@@ -2,7 +2,7 @@
 description: Take an existing Edge Impulse model built for the Thunderboard Sense 2, and prepare it for use on the SiLabs xG24 board.
 ---
 
-# Porting a Gesture Recognition Project from the SiLabs Thunderboard Sense 2 to xG24 
+# Porting a Gesture Recognition Project from the SiLabs Thunderboard Sense 2 to xG24 Dev Kit
 
 Created By:
 Mithun Das 
@@ -45,7 +45,7 @@ That will bring you to the below popup modal. Enter a name for your project, and
 
 ![](.gitbook/assets/gesture-recognition-on-silabs-xg24/clone.png)
 
-The project will be duplicated from Mani, into your own Edge Impulse Studio. You can verify by looking at the project name you entered earlier. Now if you navigate to "Create impulse" from left pane, you will notice how the model was created originally.
+The project will be duplicated from Mani, into your own Edge Impulse Studio. You can verify by looking at the project name you entered earlier. Now if you navigate to "Create impulse" from the left menu, you will see how the model was created originally.
 
 ![](.gitbook/assets/gesture-recognition-on-silabs-xg24/create-impulse.png)
 
@@ -53,19 +53,19 @@ As you can see, the model was created based on 3-axis accelerometer data. The Wi
 
 ![](.gitbook/assets/gesture-recognition-on-silabs-xg24/retrain.png)
 
-Next, navigate to "Retrain model" from the left menu and click on "Start training". At this point, you may like to collect more data and train the model with your own gesture movement, or add additional gestures.
+Next, navigate to "Retrain model" from the left menu and click on "Start training". Alternatively, you can also collect more data and train the model with your own gesture movement, or add additional gestures.
 
-Follow this [Thunderboard Sense 2 documentation](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/silabs-thunderboard-sense-2) to connect your board to the Edge Impulse Studio and capture data. Once you are done with collecting additional data, retrain the model.
+If you are going to add new data, you can follow this [Thunderboard Sense 2 documentation](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/silabs-thunderboard-sense-2) to connect your board to the Edge Impulse Studio and capture data. Once you are done with collecting additional data, you will need to retrain the model of course.
 
 ## Deploy And Test
 
-Navigate to the "Deployment" page from the left pane, select "SiLabs Thunderboard Sense 2" under "Build firmware", then click on the "Build" button, which will build your model and download a `.bin` file used to flash to the board.
+When you are done retraining, navigate to the "Deployment" page from the left menu, select "SiLabs Thunderboard Sense 2" under "Build firmware", then click on the "Build" button, which will build your model and download a `.bin` file used to flash to the board.
 
 ![](.gitbook/assets/gesture-recognition-on-silabs-xg24/deployment-tb2.png)
 
 ![](.gitbook/assets/gesture-recognition-on-silabs-xg24/firmware-tb2.png)
 
-If not already connected, connect the Thunderboard Sense 2 to your computer via a USB cable. You should see a drive named `TB004` appear. Drag and drop the `.bin` file downloaded in the previous step to the drive. If you see any errors like below, you'll need to use "Simplicity Studio 5" to flash the application instead.
+If not already connected, go ahead and connect the Thunderboard Sense 2 to your computer via a USB cable. You should see a drive named `TB004` appear. Drag and drop the `.bin` file downloaded in the previous step to the drive. If you see any errors like below, you'll need to use "Simplicity Studio 5" to flash the application, instead.
 
 ![](.gitbook/assets/gesture-recognition-on-silabs-xg24/error.png)
 
@@ -83,17 +83,17 @@ Alternatively, you can write a boolean `1` to the characteristic to start the in
 
 <img src=".gitbook/assets/gesture-recognition-on-silabs-xg24/lightblue-tb2.gif" align="center" height="50%">
 
-Then move your finger to create the gesture pattern that you trained, and you should see a notification on your phone.
+To test if the model is working accurately, move your finger to recreate the gesture pattern that you (or Manivannan!) trained, and you should see a notification on your phone.
 
 ![](.gitbook/assets/gesture-recognition-on-silabs-xg24/notification.png)
 
-Well, now you have learned how to clone a Public Edge Impulse project, capture more data, and deploy to a Thunderboard Sense 2 directly.
+At this point, you have learned how to clone a Public Edge Impulse project, capture more data, and deploy to a Thunderboard Sense 2 directly.
 
-## Deploy To xG24 Dev Kit
+## Deploy To the xG24 Dev Kit
 
-Now, we will explore how we can deploy the same model on Silabs xG24 hardware instead.
+Now, we will explore how we can deploy the same model to the newer Silabs xG24 hardware instead.  Keep in mind that there are some upgrades and differences between the Thunderboard Sense 2 and the xG24, and the not all of the sensors themselves are identical (some are though).  For this project specifically, the original work done by Manivannan recorded data from the Thunderboard's IMU, but the xG24 has a 6-axis IMU.  So, we should recollect new data to take advantage of this and ensure our data is applicable.  If your use-case is simple enough that new data won't data won't be needed, the sensor you are using is identical between the boards, or that your data collection and model creation steps built a model that is still reliable you might be able to skip this. 
 
-Actually, you can deploy the model straight to an xG24 without making any changes to the model itself. You only need to revisit the "Deployment" tab in the Edge Impulse Studio, select "SiLabs xG24 Dev Kit" under Build firmware, and Build.
+If your data is indeed simple enough, you can deploy the model straight to an xG24 without making any changes to the model itself. You only need to revisit the "Deployment" tab in the Edge Impulse Studio, select "SiLabs xG24 Dev Kit" under Build firmware, and Build.  For the sake of demonstration we will give it a try in this project, though as mentioned the upgrade from 3-axis to 6-axis data really should be investigated, but the sensor itself is identical between the boards so our data should still be valid.  We'll give it a try.
 
 ![](.gitbook/assets/gesture-recognition-on-silabs-xg24/deployment-xg24.png)
 
@@ -107,7 +107,7 @@ Once the flashing is done, again use the LightBlue app to connect to your board,
 
 <img src=".gitbook/assets/gesture-recognition-on-silabs-xg24/lightblue-xg24.gif" align="center" height="50%">
 
-If all goes well, your same gestures should be recognized and inferencing is performed on the xG24 in the same manner as the Thunderboard Sense 2, with no additional model training or dataset manipulation needed! This makes upgrading existing projects from the Thunderboard to the xG24 extremely simple. 
+Once deployed, your same gestures should be recognized and inferencing is performed on the xG24 in the same manner as the Thunderboard Sense 2, with no additional model training or dataset manipulation needed! This makes upgrading existing projects from the Thunderboard to the xG24 extremely simple when the data and sensor output are comparable and you confirm the sensor is the same part number. Again, you'll need to cross check the datasheets, but you may find you can take a Thunderboard Sense 2 project and deploy it directly to the xG24.  
 
 One final note is that in this project, the xG24 is roughly twice as fast as the Thunderboard Sense 2 running the same model:
 
