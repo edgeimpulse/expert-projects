@@ -8,7 +8,7 @@ Created By:
 Wamiq Raza 
 
 Public Project Link:
-[Coming Soon]()
+[https://studio.edgeimpulse.com/public/163127/latest](https://studio.edgeimpulse.com/public/163127/latest)
 
 ## Introduction
 
