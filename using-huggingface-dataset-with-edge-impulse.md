@@ -8,7 +8,7 @@ Created By:
 Arijit Das 
 
 Public Project Link:
-[Coming Soon]()
+[https://studio.edgeimpulse.com/public/166286/latest/](https://studio.edgeimpulse.com/public/166286/latest/)
 
 ![](.gitbook/assets/using-huggingface-dataset/cover.png)
 
@@ -105,7 +105,7 @@ Edge Impulse supports model deployment for a wide variety of devices. There are 
 
 The Documentation for each device is [located here](https://docs.edgeimpulse.com/docs/development-platforms/fully-supported-development-boards), and because the instructions vary depending upon your chosen board, you'll want to follow the official Docs.
 
-For a quick way to see if everything is working, you can actually deploy straight to your smartphone or tablet.  Here I've deployed it on aiPhone and iPad using my previous project documentation.
+For a quick way to see if everything is working, you can actually deploy straight to your smartphone or tablet.  Here I've deployed it on an iPhone and iPad using my [previous project documentation](https://www.hackster.io/arijit_das_student/design-develop-deploy-ml-powered-mobile-apps-in-an-hour-3d189e).
 
 ![](.gitbook/assets/using-huggingface-dataset/impulse-running.jpeg)
 
