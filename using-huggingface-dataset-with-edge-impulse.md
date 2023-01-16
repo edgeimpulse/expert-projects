@@ -107,7 +107,7 @@ The Documentation for each device is [located here](https://docs.edgeimpulse.com
 
 For a quick way to see if everything is working, you can actually deploy straight to your smartphone or tablet.  Here I've deployed it on aiPhone and iPad using my previous project documentation.
 
-![](.gitbook/assets/using-huggingface-dataset/impulse-running.jpg)
+![](.gitbook/assets/using-huggingface-dataset/impulse-running.jpeg)
 
 ## Conclusion
 
