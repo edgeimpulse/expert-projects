@@ -1,4 +1,3 @@
-
 ---
 description: Use curated datasets from Hugging Face to help build a machine learning model with Edge Impulse.
 ---
@@ -23,9 +22,9 @@ Hugging Face Datasets are a library of high quality datasets curated by ML resea
 
 First, open the dataset on the Hugging Face website. Next, download it to your local computer by following the instructions shown when clicking on the "Use in dataset library" option on the right side of the page.
 
-![](.gitbook/assets/using-huggingface-dataset/huggingface-beans-1.jpg)
+![](.gitbook/assets/using-huggingface-dataset/huggingface-beans-1.png)
 
-![](.gitbook/assets/using-huggingface-dataset/huggingface-beans-2.jpg)
+![](.gitbook/assets/using-huggingface-dataset/huggingface-beans-2.png)
 
 Open a terminal or command line on your machine, and run the code shown in the detailed view of the dataset:
 
@@ -108,7 +107,7 @@ The Documentation for each device is [located here](https://docs.edgeimpulse.com
 
 For a quick way to see if everything is working, you can actually deploy straight to your smartphone or tablet.  Here I've deployed it on aiPhone and iPad using my previous project documentation.
 
-![](.gitbook/assets/using-huggingface-dataset/impulse-running.jpg)
+![](.gitbook/assets/using-huggingface-dataset/impulse-running.jpeg)
 
 ## Conclusion
 
