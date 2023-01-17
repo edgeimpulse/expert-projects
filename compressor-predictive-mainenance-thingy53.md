@@ -213,25 +213,25 @@ An alternative and easy way of quickly deploying the model on the edge is using 
 1. Launch the application and login with your Edge Impulse credentials.
 1. Select your Predictive Maintenance project from the list:
 
-<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/23.jpg" align="center" height="50%">
+    <img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/23.jpg" align="center" height="50%">
 
-4. Navigate to the Devices tab and connect to the Thingy:53:
+1. Navigate to the Devices tab and connect to the Thingy:53:
 
-<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/24.jpg" align="center" height="50%">
+    <img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/24.jpg" align="center" height="50%">
 
-5. Navigate to the Data tab and press **Connect**. You will see the status on the button changing from **Connect** to **Disconnect**.
+1. Navigate to the Data tab and press **Connect**. You will see the status on the button changing from **Connect** to **Disconnect**.
 
-<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/25.jpg" align="center" height="50%">
+    <img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/25.jpg" align="center" height="50%">
 
-6. Navigate to the deployment tab and press **Deploy**.
+1. Navigate to the deployment tab and press **Deploy**.
 
-<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/26.jpg" align="center" height="50%">
+    <img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/26.jpg" align="center" height="50%">
 
-<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/27.jpg" align="center" height="50%">
+    <img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/27.jpg" align="center" height="50%">
 
-7. In the **Inferencing** tab, you will see the results of the Edge Impulse model you have flashed on the device:
+1. In the **Inferencing** tab, you will see the results of the Edge Impulse model you have flashed on the device:
 
-<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/28.jpg" align="center" height="50%">
+    <img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/28.jpg" align="center" height="50%">
 
 ### EON Compiler and Resource Optimization
 
