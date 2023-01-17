@@ -16,7 +16,7 @@ An electronic device that is intended to function on a user's body is considered
 
 Sound classification is one of the most widely used applications of Machine Learning.  A new use case for wearables is an environmental audio monitor for individuals with hearing disabilities. This is a wearable device that has a computer which can listen to the environment sounds and classify them. In this project, I focused on giving tactile feedback when vehicle sounds are detected. The Machine Learning model can detect ambulance and firetruck sirens as well as cars honking. When these vehicles are detected, the device then gives a vibration pulse which can be felt by the person wearing the device. This use case can be revolutionary for people who have hearing problems and even deaf people. To keep people safe from being injured, the device can inform them when there is a car, ambulance or firetruck nearby so that they can identify it and move out of the way.
 
-![Cover Image](.gitbook/assets/environmental-audio-monitoring-syntiant-tinyml/img1-cover.png)
+![Cover Image](.gitbook/assets/environmental-audio-monitoring-syntiant-tinyml/img1_cover.png)
 
 I used [Edge Impulse Platform](https://edgeimpulse.com/) to train my model and deploy it to the [Syntiant TinyML board](https://www.syntiant.com/tinyml). This is a tiny development board with a microphone and accelerometer, USB host microcontroller and an always-on Neural Decision Processor™, featuring ultra low-power consumption, a fully connected neural network architecture, and supported by Edge Impulse.
 
