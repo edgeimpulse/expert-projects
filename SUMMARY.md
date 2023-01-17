@@ -86,3 +86,4 @@
 * [TinyML for Gastroscopic Image Processing](tinyml-gastroscopic-image-processing.md)
 * [Pharmaceutical Pill Quality Control and Defect Detection](pharmaceutical-pill-defect-detection.md)
 * [Using Hugging Face Datasets in Edge Impulse](using-huggingface-dataset-with-edge-impulse.md)
+* [Environmental Audio Monitoring Wearable with Syntiant TinyML Board](environmental-audio-monitoring-syntiant-tinyml.md)
