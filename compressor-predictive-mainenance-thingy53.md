@@ -1,5 +1,5 @@
 ---
-description: Using a Nordic Thingy:53 to monitor the vibration and perform predictive maintenance on an industrial compressor.
+description: Using a Nordic Thingy:53 to monitor vibrations and perform predictive maintenance on an industrial compressor.
 ---
 
 # Industrial Compressor Predictive Maintenance - Thingy:53 
@@ -78,11 +78,11 @@ The Nordic nRF Edge Impulse iPhone and Android apps will work with new Thingy:53
 
 The firmware of Thingy:53 needs to be updated before it can be connected to the Edge Impulse project. Launch the **nRF Programmer mobile application** after downloading it from Apple Store or Google Play. You will be presented with several available firmware that can be uploaded on the board.
 
-![](.gitbook/assets/compressor-predictive-mainenance-thingy53/4.jpg)
+<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/4.jpg" align="center" height="50%">
 
 Select the **Edge Impulse** application and tap **Download**. Afterward, hit **Install**. A list with all the nearby devices will show up and you must select the Thingy:53 board that you wish to program.
 
-![](.gitbook/assets/compressor-predictive-mainenance-thingy53/5.jpg)
+<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/5.jpg" align="center" height="50%">
 
 With the firmware updated, connect the Thingy:53 board to a computer that has the edge-impulse-cli suite installed, turn it on, launch a terminal and issue the following command:
 
@@ -205,33 +205,33 @@ Connect the board to your computer when the impulse has been uploaded, open a Te
 $edge-impulse-run-impulse
 ```
 
-### Upload the Impulse via Android/IoS App
+### Upload the Impulse via Android/iOS App
 
 An alternative and easy way of quickly deploying the model on the edge is using the **Nordic nRF Edge Impulse** app for iPhone or Android:
 
 1. Download and install the application from Google Play/Apple Store.
-2. Launch the application and login with your Edge Impulse credentials.
-3. Select your Predictive Maintenance project from the list:
+1. Launch the application and login with your Edge Impulse credentials.
+1. Select your Predictive Maintenance project from the list:
 
-![](.gitbook/assets/compressor-predictive-mainenance-thingy53/23.jpg)
+<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/23.jpg" align="center" height="50%">
 
-4. Navigate to the Devices tab and connect to the Thingy:53:
+1. Navigate to the Devices tab and connect to the Thingy:53:
 
-![](.gitbook/assets/compressor-predictive-mainenance-thingy53/24.jpg)
+<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/24.jpg" align="center" height="50%">
 
-5. Navigate to the Data tab and press **Connect**. You will see the status on the button changing from **Connect** to **Disconnect**.
+1. Navigate to the Data tab and press **Connect**. You will see the status on the button changing from **Connect** to **Disconnect**.
 
-![](.gitbook/assets/compressor-predictive-mainenance-thingy53/25.jpg)
+<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/25.jpg" align="center" height="50%">
 
-6. Navigate to the deployment tab and press deploy.
+1. Navigate to the deployment tab and press **Deploy**.
 
-![](.gitbook/assets/compressor-predictive-mainenance-thingy53/26.jpg)
+<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/26.jpg" align="center" height="50%">
 
-![](.gitbook/assets/compressor-predictive-mainenance-thingy53/27.jpg)
+<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/27.jpg" align="center" height="50%">
 
-7. In the **Inferencing** tab, you will see the results of the Edge Impulse model you have flashed on the device:
+1. In the **Inferencing** tab, you will see the results of the Edge Impulse model you have flashed on the device:
 
-![](.gitbook/assets/compressor-predictive-mainenance-thingy53/28.jpg)
+<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/28.jpg" align="center" height="50%">
 
 ### EON Compiler and Resource Optimization
 
@@ -247,7 +247,7 @@ Usually, microcontroller targets have less than 128K of RAM and implicitly, have
 
 ## Conclusion
 
-![](.gitbook/assets/compressor-predictive-mainenance-thingy53/31.jpg)
+<img src=".gitbook/assets/compressor-predictive-mainenance-thingy53/31.jpg" align="center" height="50%">
 
 By employing IoT devices powered by machine learning algorithms running on the edge, predictive maintenance is closer to becoming a common practice in industrial environments, making it cheaper, more accessible and more powerful than ever. While simple in their principle of operation, predictive maintenance systems improve the Overall Equipment Effectiveness and positively impact the equipment Remaining Useful Life (RUL). 
 
