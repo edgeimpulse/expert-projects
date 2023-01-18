@@ -9,7 +9,7 @@
 * [Predictive Maintenance - Nordic Thingy:91](predictive-maintenance-with-nordic-thingy-91.md)
 * [Occupancy Sensing - SiLabs EFR32MG24](occupancy-sensing-with-silabs.md)
 * [Analog Meter Reading - Arduino Nicla Vision](analog-meter-reading-with-nicla-vision.md)
-* [Gas Detection in the Oil and Gas Industry - Thingy:91](gas-detection-thingy-91.md)
+* [Gas Detection in the Oil and Gas Industry - Nordic Thingy:91](gas-detection-thingy-91.md)
 * [Arduino x K-Way - Outdoor Activity Tracker](arduino-kway-outdoor-activity-tracker.md)
 * [Arduino x K-Way - Environmental Asthma Risk Assessment](arduino-kway-environmental-risk-assessment.md)
 * [Smart Appliance Control Using Voice Commands - Nordic Thingy:53](smart-appliance-voice-commands.md)

@@ -83,11 +83,11 @@ edge-impulse-uploader --label healthy --category training path/to/a/file/*.jpg
 
 ![](.gitbook/assets/using-huggingface-dataset/upload-2.png)
 
-Repeat this process for each different class of data in the dataset: Angular Leaf Spot and Bean Rust in our case, but if you are using a different dataset you might have more classes. We won't make use of "Validation" images, they're not needed with Edge Impulse. It is important to make note of the difference between Training and Testing, however. **Training** is the data that will be used in the creation of the machine learning model.  Testing is data that is left aside and used **after** the model has been built, to verify and "test" if the model can make accurate predictions on data is has not seen before.  The **Testing** data is NOT used in the model creation process.
+Repeat this process for each different class of data in the dataset: Angular Leaf Spot and Bean Rust in our case, but if you are using a different dataset you might have more classes. We won't make use of "Validation" images, they're not needed with Edge Impulse. It is important to make note of the difference between Training and Testing, however. **Training** is the data that will be used in the creation of the machine learning model.  Testing is data that is left aside and used **after** the model has been built, to verify and "test" if the model can make accurate predictions on data it has not seen before.  The **Testing** data is NOT used in the model creation process.
 
 ## Creating and Testing the Model
 
-With the data uploaded to the Edge Impulse Studio, we can start training our model. I'm using MobileNet V2 160x160 0.75, with a training cycle of 20 epochs, and a learning rate of 0.0005. I'm able to acheive 91% accuracy, which is great (unoptimized float32).
+With the data uploaded to the Edge Impulse Studio, we can start training our model. I'm using MobileNet V2 160x160 0.75, with a training cycle of 20 epochs, and a learning rate of 0.0005. I'm able to achieve 91% accuracy, which is great (unoptimized float32).
 
 ![](.gitbook/assets/using-huggingface-dataset/model-output.png)
 
