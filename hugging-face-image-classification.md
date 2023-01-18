@@ -1,5 +1,5 @@
 ---
-description: xxxxxxxxxxxx
+description: Leveraging open-source Hugging Face Image Datasets for use in an Edge Impulse computer vision project.
 ---
 
 # How to Use a Hugging Face Image Classification Dataset with Edge Impulse
@@ -115,10 +115,7 @@ Once it has finished running, you will see your Model training performance.  You
 
 ## Conclusion 
 
-At this point, you have now have a trained machine learning model ready to use in your edge AI project, courtesy of an open-source dataset hosted and provided by Hugging Face and their community.  These steps can be applied to make use of other Hugging Face datasets, additional Classes can be added, or the type of project could be altered to object detection, etc.  Of course, we haven't deployed the model onto a physical device in this tutorial as we are more concerned with the image curation process from Hugging Face, but information on running your model on a device is [located here](https://docs.edgeimpulse.com/docs/edge-impulse-studio/deployment), so be sure to give it a read.
-
-
-
+At this point, you now have a trained machine learning model ready to use in your edge AI project, courtesy of an open-source dataset hosted and provided by Hugging Face and their community.  These steps can be applied to make use of other Hugging Face datasets, additional Classes can be added, or the type of project could be altered to object detection, etc.  Of course, we haven't deployed the model onto a physical device in this tutorial as we are more concerned with the image curation process from Hugging Face, but information on running your model on a device is [located here](https://docs.edgeimpulse.com/docs/edge-impulse-studio/deployment), so be sure to give it a read.
 
 ## Project Demo
 
