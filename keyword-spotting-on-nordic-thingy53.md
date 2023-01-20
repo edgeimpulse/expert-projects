@@ -120,7 +120,7 @@ After successfully deploying the model to the device, we can start our inferenci
 
 This video shows real-time inferencing in the Thingy:53.
 
-{% embed url="https://www.youtube.com/watch?v= t7e6X09e0P8" %}
+{% embed url="https://www.youtube.com/watch?v=t7e6X09e0P8" %}
 
 ## Conclusion
 
