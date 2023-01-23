@@ -109,8 +109,6 @@ In a seperate test, I deployed a [FOMO](https://docs.edgeimpulse.com/docs/edge-i
 
 ![Downloading FOMO .eim](.gitbook/assets/counting-retail-inventory-rzv2l/img11-downloading-fomo-eim.png)
 
-![Camera Feed FOMO](.gitbook/assets/counting-retail-inventory-rzv2l/img12-camera-feed-fomo.png)
-
 ## A Smart Application to Count Shelf Items
 
 Using the `.eim` executable and the [Edge Impulse Python SDK](https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/edge-impulse-for-linux#sdks), I developed a Web application using [Flask](https://flask.palletsprojects.com/en/2.2.x/) that counts the number bottles and box drinks in a camera frame. The counts are then displayed on a webpage in real-time. 
