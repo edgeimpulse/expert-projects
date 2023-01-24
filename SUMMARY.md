@@ -15,6 +15,7 @@
 * [Smart Appliance Control Using Voice Commands - Nordic Thingy:53](smart-appliance-voice-commands.md)
 * [Illegal Logging Detection - Syntiant TinyML](illegal-logging-detection-syntiant.md)
 * [Industrial Compressor Predictive Maintenance - Nordic Thingy:53](compressor-predictive-mainenance-thingy53.md)
+* [Air Quality Monitoring with Sipeed Longan Nano - RISC-V Gigadevice](air-quality-monitoring-sipeed-longan-nano-riscv.md)
 
 ## Machine Learning Prototype Projects
 
