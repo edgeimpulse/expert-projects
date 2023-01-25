@@ -128,13 +128,13 @@ This sensor can detect Carbon Monoxide (CO).
 
 All of the sensors map the concentration of the measured gasses to an analog voltage and have to be powered from 3.3 VDC. The following table presents the wiring connections and the schematic depicts the pinout of the Sipeed Longan Nano V1.1.
 
-| Sensors | Board |
-| GND (all sensors) | GND |
-| VCC (all sensors) | 3.3V |
-| AO (MQ-3) | PB1 |
-| AO (MQ-5) | PA7 |
-| AO (MQ-8) | PB0 |
-| AO (MiCS 5524) | PA6 |
+Sensors --> Board
+GND (all sensors) --> GND
+VCC (all sensors) --> 3.3V
+AO (MQ-3) --> PB1
+AO (MQ-5) --> PA7
+AO (MQ-8) --> PB0
+AO (MiCS 5524) --> PA6
 
 ![](.gitbook/assets/air-quality-monitoring-sipeed-longan-nano-riscv/10.png)
 
@@ -142,10 +142,10 @@ To debug the Longan Nano, we must use a USB to TTL adapter. This will allow us t
 
 ![](.gitbook/assets/air-quality-monitoring-sipeed-longan-nano-riscv/11.jpg)
 
-| TTL to USB Converter | Longan Nano
-| GND | GND |
-| TX | RX |
-| RX | TX |
+TTL to USB Converter --> Longan Nano
+GND --> GND
+TX --> RX
+RX --> TX
 
 ## Software Setup
 
@@ -428,7 +428,7 @@ While gas sensors are important for ensuring safety in confined spaces and for r
 
 While gas sensors are crucial for assuring safety in confined spaces and reducing pollution, they may also be employed in a variety of different settings outside of industry. Gas sensors can be used in homes to identify leaks and enhance energy efficiency,  in transportation to monitor engine performance and minimize emissions and in the wild as an early wildfire detection system.
 
-Due to the fact that simple “if” based conditions that trigger when gas concentration pass an arbitrary defined threshold, using an Edge Impulse model may prove beneficial by reducing the reaction time and implicitly, the exposure time of employees at the said damaging agents.
+Due to the fact that simple "if" based conditions that trigger when gas concentration pass an arbitrary defined threshold, using an Edge Impulse model may prove beneficial by reducing the reaction time and implicitly, the exposure time of employees at the said damaging agents.
 
 If you need assistance in deploying your own solutions or more information about the tutorial above please reach out to us!
 
