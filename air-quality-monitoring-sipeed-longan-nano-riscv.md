@@ -21,17 +21,17 @@ GitHub Repository:
 
 Poor air quality in industrial environments can reduce productivity and raise the risk of accidents. That's why it's critical for industrial facilities to regularly evaluate air quality, guaranteeing that their staff is healthy and productive by doing so. Typical Air Quality dimensions that must be monitored include CO, CO2, H2, volatile organic compounds (VOC), and volatile sulphuric compounds, depending on the specific activity that is taking place within the facility.
 
-Moreover, managers may ensure that workers stay healthy at work by establishing suitable ventilation systems that reduce outside pollution levels to levels that are not harmful to employees while still keeping interior settings clean. When stated concentrations surpass a specific level, a traditional Air Quality monitoring system will sound an alarm. The downside of such a system is that it will only react after the threshold is surpassed, warning employees that they will be exposed to the harmful substance for a longer period of time.
+Moreover, managers may ensure that workers stay healthy at work by establishing suitable ventilation systems that reduce outside pollution to levels that are not harmful to employees while still keeping interior settings clean. When stated concentrations surpass a specific level, a traditional Air Quality monitoring system will sound an alarm. The downside of such a system is that it will only react **after** the threshold is surpassed, warning employees that they **have been** exposed to the harmful substance for a period of time.
 
 ![](.gitbook/assets/air-quality-monitoring-sipeed-longan-nano-riscv/2.jpg)
 
 ## Our Solution
 
-We have developed a prototype that uses a Sipeed Longan Nano V1.1- RISC-V Gigadevice and gas sensors to detect trends in the variation of air quality dimensions by creating a Machine Learning model in Edge Impulse and deploying it on the device to trigger an alarm if they are headed towards a critical level. This will allow for swift intervention to prevent the air quality from reaching hazardous levels.
+We have developed a prototype that uses a Sipeed Longan Nano V1.1 with a RISC-V Gigadevice microprocessor and gas sensors to detect trends in the variation of air quality dimensions by creating a Machine Learning model in Edge Impulse and deploying it on the device to trigger an alarm if they are headed towards a critical level. This will allow for swift intervention to prevent the air quality from reaching hazardous levels.
 
 ## Hardware Requirements
 
-- [SIPEED LONGAN NANO V1.1- RISC-V](https://www.digikey.com/en/products/detail/seeed-technology-co-ltd/102991574/15277447)
+- [SIPEED LONGAN NANO V1.1 - RISC-V](https://www.digikey.com/en/products/detail/seeed-technology-co-ltd/102991574/15277447)
 - [Adafruit MiCS5524 CO, Alcohol and VOC Gas Sensor Breakout](https://www.adafruit.com/product/3199)
 - [MQ-3 - Alcohol Sensor](https://components101.com/sensors/mq-3-alcohol-gas-sensor)
 - [MQ-5 METHANE GAS SENSOR MODULE](https://www.smart-prototyping.com/MQ-5-Methane-Gas-Sensor-Module.html)
@@ -47,15 +47,15 @@ We have developed a prototype that uses a Sipeed Longan Nano V1.1- RISC-V Gigade
 
 ## Hardware Setup
 
-The Sipeed Longan Nano v1.1 is an updated development board based on the GD32VF103CBT6 MCU chip. The board has built-in 128KB Flash and 32KB SRAM, providing ample space for students, engineers, and geek enthusiasts to tinker with the new-generation RISC-V processors. The board also features a micro USB port, allowing users to easily connect the board to their computer for programming and debugging. In addition, the board has an on-board JTAG interface, making it easy to work with various development tools. Overall, the Sipeed Longan Nano v1.1 is a convenient and affordable option for those who want to explore the world of RISC-V processors. Besides the programming ports and IOs, the development board includes two user-customizable buttons and a small screen making debugging and real-time information really easy to show locally. 
+The Sipeed Longan Nano v1.1 is an updated development board based on the Gigadevices GD32VF103CBT6 MCU chip. The board has a built-in 128KB Flash and 32KB SRAM, providing ample space for students, engineers, and geek enthusiasts to tinker with the new-generation RISC-V processors. The board also features a micro USB port, allowing users to easily connect the board to their computer for programming and debugging. In addition, the board has an on-board JTAG interface, making it easy to work with various development tools. Overall, the Sipeed Longan Nano v1.1 is a convenient and affordable option for those who want to explore the world of RISC-V processors. Besides the programming ports and IOs, the development board includes two user-customizable buttons and a small screen making debugging and real-time information really easy to show locally. 
 
-The GD32VF103 is a 32-bit general-purpose microcontroller based on the RISC-V core that offers an excellent blend of processing power, low power consumption, and peripheral set. This device operates at 108 MHz with zero wait states for Flash accesses to achieve optimum efficiency. It has 128 KB of on-chip Flash memory and 32 KB of SRAM memory. Two APB buses link a wide range of improved I/Os and peripherals. The device has up to two 12-bit ADCs, two 12-bit DACs, four general 16-bit timers, two basic timers, two I2Ss, two CANs, and a USBFS, as well as standard and advanced communication interfaces: up to three SPIs, two I2Cs, three USARTs, two UARTs, two I2Ss, two CANs, and a USBFS. An Enhancement Core-Local Interrupt Controller (ECLIC), SysTick timer, and additional debug features are also intimately tied with the RISC-V processor core.
+The GD32VF103 is a 32-bit general-purpose microcontroller based on a RISC-V core that offers an excellent blend of processing power, low power consumption, and peripheral set. This device operates at 108 MHz with zero wait states for Flash accesses to achieve optimum efficiency. It has 128 KB of on-chip Flash memory and 32 KB of SRAM memory. Two APB buses link a wide range of improved I/Os and peripherals. The device has up to two 12-bit ADCs, two 12-bit DACs, four general 16-bit timers, two basic timers, as well as standard and advanced communication interfaces: up to three SPIs, two I2Cs, three USARTs, two UARTs, two I2Ss, two CANs, and a USBFS. An Enhancement Core-Local Interrupt Controller (ECLIC), SysTick timer, and additional debug features are also intimately tied with the RISC-V processor core.
 
 The gadgets require a 2.6V to 3.6V power source and can function in temperatures ranging from –40°C to +85 °C. Several power-saving modes allow for the optimization of wakeup latency and power consumption, which is an important factor when creating low-power applications.
 
 The GD32VF103 devices are well-suited for a broad range of linked applications, particularly in industrial control, motor drives, power monitor and alarm systems, consumer and portable equipment, POS, vehicle GPS, LED display, and so on.
 
-Features
+**Features**
 
 - Memory configurations are flexible, with up to 128KB on-chip Flash memory and up to 32KB SRAM memory.
 - A wide range of improved I/Os and peripherals are linked to two APB buses.
@@ -79,7 +79,7 @@ Gas sensors are electronic devices that detect and identify different types of g
 
 The MQ gas sensor series are based on the Metal Oxide Semiconductor (MOS) technology, and they function by measuring the change in electrical resistance of a metal oxide film when it is exposed to certain gasses. They have been used by makers for quite a while now, and that is advantageous because they are easy to read (most of the time just an analog pin will suffice) and the options of tracked gasses are quite diverse.
 
-Here are the variants we found so far so you can mix and match them for your own use case:
+Here are the variants we found so far, so you can mix and match them for your own use case:
 
 ```
 MQ-2 - Methane, Butane, LPG, smoke
@@ -151,11 +151,11 @@ RX --> TX
 
 ### Edge Impulse CLI Installation
 
-The Edge Impulse CLI is a suite of tools that enables you to control local devices, synchronize data for devices without internet connection and most importantly, collect data from a device over a serial connection and forward it to the Edge Impulse Platform.
+The Edge Impulse CLI is a suite of tools that enables you to control local devices, synchronize data for devices without an internet connection, and most importantly, collect data from a device over a serial connection and forward it to the Edge Impulse Platform.
 
 Edge Impulse provides comprehensive official documentation regarding the [installation process](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation) of the Edge Impulse CLI tools.
 
-Let’s move on to setting up our development environment.
+Let's move on to setting up our development environment.
 
 ### PlatformIO Configuration
 
@@ -177,7 +177,7 @@ If you are a Linux user, you must also install `udev` rules for PlatformIO suppo
 
 ### Data Acquisition Firmware
 
-With PlatformIO set up, Clone the following [GitHub repository](https://github.com/Zalmotek/EdgeImpulse_air_quality_monitoring_with_SIPEED_LONGAN_NANO_RISC-V_Gigadevice) in your default projects folder.
+With PlatformIO set up, clone the following [GitHub repository](https://github.com/Zalmotek/EdgeImpulse_air_quality_monitoring_with_SIPEED_LONGAN_NANO_RISC-V_Gigadevice) in your default projects folder.
 
 Click on Files, Open folder, select [LonganAnalogRead](https://github.com/Zalmotek/EdgeImpulse_air_quality_monitoring_with_SIPEED_LONGAN_NANO_RISC-V_Gigadevice/tree/main/LonganAnalogRead) and open it. 
 
@@ -215,10 +215,9 @@ void loop() {
 }
 ```
 
-Fundamentally, what this firmware does is read the gas sensors wired up to analog pins PA6, PA7, PB0 and PB1 and prints them on a 115200 baud rate serial, separated by comma.
+Fundamentally, what this firmware does is read the gas sensors wired up to analog pins PA6, PA7, PB0, and PB1 and prints them on a 115200 baud rate serial, separated by comma.
 
-To read the serial output, we have used Picocom, a terminal emulation program.
-To open up the serial, run the following command in terminal:
+To read the serial output, we have used Picocom, a terminal emulation program.  To open up the serial console, run the following command in terminal:
 
 `picocom -b 115200 -r -l /dev/ttyUSB0`
 
@@ -254,11 +253,11 @@ If you navigate to the **Devices** tab, you will see your newly defined device w
 
 ### Acquiring Training Data
 
-For this particular use case, we will be training a model to detect 2 dangerous situations that may occur in an automobile painting facility: an alcohol leakage and a methane gas leakage. Both of those can be dangerous and detrimental to employees' health.
+For this particular use case, we will be training a model to detect 2 dangerous situations that may occur in an automobile painting facility: an alcohol leakage and a methane gas leakage. Both of those can be dangerous and hazardous to employees' health.
 
 Navigate to the **Data Acquisition** screen. Notice that on the right side of the screen the device is present, with the 4 axes we have previously defined in the terminal and the auto-detected data acquisition frequency. Select a sample length of 10 seconds, give the label a name, and **Start sampling**. 
 
-When building the dataset, keep in mind that machine learning leverages data, so when creating a new class(defined by a label), try to record at least 2-3 minutes of data.
+When building the dataset, keep in mind that machine learning leverages data, so when creating a new class (defined by a label), try to record at least 2-3 minutes of data.
 
 ![](.gitbook/assets/air-quality-monitoring-sipeed-longan-nano-riscv/17.png)
 
@@ -266,7 +265,7 @@ After a sample is collected successfully, it will be displayed in the raw data t
 
 ![](.gitbook/assets/air-quality-monitoring-sipeed-longan-nano-riscv/18.jpg)
 
-Also, remember to collect some samples for the testing data set in order to ensure a distribution of at least 85%-15% distribution between the training and testing set sizes.
+Also, remember to collect some samples for the **Testing** data set in order to ensure a distribution of at least 85%-15% distribution between the Training and Testing set sizes.
 
 ### Designing an Impulse
 
@@ -294,15 +293,15 @@ The training output will be displayed to you once the program is completed. Our 
 
 ![](.gitbook/assets/air-quality-monitoring-sipeed-longan-nano-riscv/22.png)
 
-The Data Explorer provides a visual representation of the dataset and it helps in visualizing the misclassified methane leakage points that are being placed in close proximity to the Alcohol Leakage points.
+The Data Explorer provides a visual representation of the dataset and it helps in visualizing the misclassified Methane leakage points that are being placed in close proximity to the Alcohol Leakage points.
 
 ![](.gitbook/assets/air-quality-monitoring-sipeed-longan-nano-riscv/23.png)
 
 ### Model Testing
 
-A great way of going about testing our model is to navigate to the **Model Testing** tab. You will be presented with the samples stored in the Testing data pool. Click on **Classify all** to run all this data through your impulse.
+A great way of going about testing our model is to navigate to the **Model Testing** tab. You will be presented with the samples stored in the Testing data pool. Click on **Classify all** to run all this data through your Impulse.
 
-The model testing tab provides the user the ability to test out and optimize the model before going through the effort of deploying it back on the edge. The possibility of going back and adding training data, tweaking the DSP and Learning block, and fine-tuning the model shaves off an enormous amount of development time when creating an edge computing application.
+The Model testing tab provides the user the ability to test out and optimize the model before going through the effort of deploying it back on the edge. The possibility of going back and adding Training data, tweaking the DSP and Learning block, and fine-tuning the model shaves off an enormous amount of development time when creating an edge computing application.
 
 ## Deploying the Model as Arduino Library
 
@@ -420,15 +419,13 @@ void ei_printf(const char *format, ...) {
 
 ## Conclusion
 
-By selecting the proper sensors for your use case and training the model accordingly, you may develop an accurate bespoke gas tracker using the methods mentioned above. The Gigadevice processor is a powerhouse, and we believe it is underutilized in this application. However, given the price and capabilities of the development board, it is a good buy, with room to grow for other applications as RISC V processors gain popularity in industry, academia, and among hobbyists.
+By selecting the proper sensors for your use case and training the model accordingly, you may develop an accurate bespoke gas tracker using the methods mentioned above. The Gigadevice processor is a powerhouse, and we believe it is underutilized in this application. However, given the price and capabilities of the development board, it is a good buy, with room to grow for other applications as RISC-V processors gain popularity in industry, academia, and among hobbyists.
 
 While gas sensors are important for ensuring safety in confined spaces and for reducing environmental pollution they have many other places where they can be used besides industry. In the home, gas sensors can be used to detect leaks and to improve energy efficiency. In transportation, gas sensors can be used to monitor engine performance and to reduce emissions. In the wild they can be used to prevent wildfires as a part of an early detection system. The sensors are placed in an area and monitor the air for combustible gasses.
 
 ![](.gitbook/assets/air-quality-monitoring-sipeed-longan-nano-riscv/26.jpg)
 
-While gas sensors are crucial for assuring safety in confined spaces and reducing pollution, they may also be employed in a variety of different settings outside of industry. Gas sensors can be used in homes to identify leaks and enhance energy efficiency,  in transportation to monitor engine performance and minimize emissions and in the wild as an early wildfire detection system.
-
-Due to the fact that simple "if" based conditions that trigger when gas concentration pass an arbitrary defined threshold, using an Edge Impulse model may prove beneficial by reducing the reaction time and implicitly, the exposure time of employees at the said damaging agents.
+Due to the fact that simple "if" based conditions that trigger when gas concentration pass an arbitrary defined threshold, using an Edge Impulse model may prove beneficial by reducing the reaction time and implicitly, the exposure time of employees in these situations.
 
 If you need assistance in deploying your own solutions or more information about the tutorial above please reach out to us!
 
