@@ -2,11 +2,11 @@
 
 * [Welcome](README.md)
 
-## Featured Case Studies
+## Featured Machine Learning Projects
 
+* [Predictive Maintenance - Nordic Thingy:91](predictive-maintenance-with-nordic-thingy-91.md)
 * [Workplace Organizer - Nvidia Jetson Nano](workplace-organizer.md)
 * [Recyclable Materials Sorter - Nvidia Jetson Nano](recyclable-materials-sorter.md)
-* [Predictive Maintenance - Nordic Thingy:91](predictive-maintenance-with-nordic-thingy-91.md)
 * [Occupancy Sensing - SiLabs EFR32MG24](occupancy-sensing-with-silabs.md)
 * [Analog Meter Reading - Arduino Nicla Vision](analog-meter-reading-with-nicla-vision.md)
 * [Gas Detection in the Oil and Gas Industry - Nordic Thingy:91](gas-detection-thingy-91.md)
@@ -17,8 +17,9 @@
 * [Industrial Compressor Predictive Maintenance - Nordic Thingy:53](compressor-predictive-mainenance-thingy53.md)
 * [Air Quality Monitoring with Sipeed Longan Nano - RISC-V Gigadevice](air-quality-monitoring-sipeed-longan-nano-riscv.md)
 
-## Machine Learning Prototype Projects
+## Prototype and Concept Projects
 
+* [Wearable Cough Sensor and Monitoring](wearable-cough-sensor.md)
 * [Smart Smoke Alarm Using Thermal Imaging](smart-smoke-alarm.md)
 * [Shield Bot Autonomous Security Robot](shieldbot.md)
 * [Cyclist Blind Spot Detection](cyclist-blind-spot-detection.md)
@@ -71,7 +72,6 @@
 * [Location Identification using Sound](location-sound.md)
 * [Posture Detection for Worker Safety](worker-safety-posture-detection.md)
 * [Environmental Noise Classification with a Nordic Thingy:53](environmental-noise-classification.md)
-* [Wearable Cough Sensor and Monitoring](wearable-cough-sensor.md)
 * [Running Faucet Detection with a Seeed XIAO Sense + Blues Cellular](running-faucet-detection.md)
 * [Vandalism Detection via Audio Classification](vandalism-detection-audio-classification.md)
 * [TinyML Digital Counter for Electric Metering System](tinyml-digital-counter-openmv.md)
