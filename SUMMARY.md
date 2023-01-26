@@ -92,3 +92,5 @@
 * [Environmental Audio Monitoring Wearable with Syntiant TinyML Board](environmental-audio-monitoring-syntiant-tinyml.md)
 * [Keyword Spotting on the Nordic Thingy:53](keyword-spotting-on-nordic-thingy53.md)
 * [Counting Retail Inventory with Computer Vision on the RZ/V2L](counting-retail-inventory-rzv2l.md)
+* [Fire Detection Using Sensor Fusion and TinyML](fire-detection-with-arduino-and-tinyml.md)
+* [Use Computer Vision on a TI TDA4VM to Deter Shoplifting](deter-shoplifting-with-computer-vision.md)
