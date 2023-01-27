@@ -114,7 +114,11 @@ As mentioned, we built a feature that will send a notification to a user if a **
 
 ## Hardware   
 
-The complete hardware unit consists of the Arduino Nano 33 BLE Sense, power adapter, and an ESP-01. The ESP-01 is used to add WiFi connectivity to the Arduino.
+The complete hardware unit consists of the Arduino Nano 33 BLE Sense, power adapter, and an ESP-01. The ESP-01 is used to add WiFi connectivity to the Arduino. This component handles sending email alerts over a designated WiFi connection. This occurs via serial communication between the Arduino and ESP-01. In order to establish this communication, we first need to upload the necessary code to both the ESP-01 and the Arduino, which can be found in the GitHub repository linked below. Afterwards, we connected the components according to this schematic:
+
+![](.gitbook/assets/fire-detection-with-arduino-and-tinyml/schematic.jpg)
+
+This is the final hardware setup for the project:
 
 ![](.gitbook/assets/fire-detection-with-arduino-and-tinyml/hardware.jpg)
 
