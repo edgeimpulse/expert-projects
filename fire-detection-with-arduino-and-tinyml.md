@@ -120,7 +120,7 @@ The complete hardware unit consists of the Arduino Nano 33 BLE Sense, power adap
 
 This is the final hardware setup for the project:
 
-![](.gitbook/assets/fire-detection-with-arduino-and-tinyml/hardware.jpg)
+![](.gitbook/assets/fire-detection-with-arduino-and-tinyml/hardware.png)
 
 ## Code   
 
