@@ -1,0 +1,111 @@
+{
+  "replacementPatterns": [
+    {
+      "pattern": "^#",
+      "replacement": "/#"
+    },
+    {
+      "pattern": "^\\_",
+      "replacement": "_"
+    },
+    {
+      "pattern": "^&quot;",
+      "replacement": ""
+    },
+    {
+      "pattern": "^\"",
+      "replacement": ""
+    },
+    {
+      "pattern": "&quot;(.*?)&quot;",
+      "replacement": ""
+    },
+    {
+      "pattern": "^/",
+      "replacement": "/github/workspace/"
+    }
+  ],
+  "ignorePatterns": [
+    {
+      "pattern": "/https://www.st.com/en/ecosystems/x-nucleo-iks02a1.html/"
+    },
+    {
+      "pattern": "/https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK/Download#infotabs/"
+    },
+    {
+      "pattern": "/https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d/"
+    },
+    {
+      "pattern": "https://studio.edgeimpulse.com/v1"
+    },
+    {
+      "pattern": "/https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF52840-DK/8593726/"
+    },
+    {
+      "pattern": "^https://www.digikey.com"
+    },
+    {
+      "pattern": "https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK/Download#infotabs"
+    },
+    {
+      "pattern": "https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Command-Line-Tools/Download"
+    },
+    {
+      "pattern": "^https://developer.sony.com"
+    },
+    {
+      "pattern": "https://support.apple.com/en-us/HT211861"
+    },
+    {
+      "pattern": "https://gcc.gnu.org/"
+    },
+    {
+      "pattern": "https://github.com/edgeimpulse/example-standalone-inferencing-cmake"
+    },
+    {
+      "pattern": "^https://www.chip1stop.com/"
+    },
+    {
+      "pattern": "http://localhost:4446"
+    },
+    {
+      "pattern": "http://localhost:8082"
+    },
+    {
+      "pattern": "^https://www.arducam.com/"
+    },
+    {
+      "pattern": "^https://studio.edgeimpulse.com/public/17972/"
+    },
+    {
+      "pattern": "^https://www2.mouser.com"
+    },
+    {
+      "pattern": "https://www.edgeimpulse.com/blog/collect-sensor-data-straight-from-your-web-browser"
+    },
+    {
+      "pattern": "https://arxiv.org/abs/1801.04381"
+    },
+    {
+      "pattern": "https://devzone.nordicsemi.com/f/nordic-q-a/81695/no-matching-trait-found/338941?focus=true"
+    },
+    {
+      "pattern": "https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads"
+    },
+    {
+      "pattern": "https://github.com/edgeimpulse/firmware-synaptics-ka10000"
+    },
+    {
+      "pattern": "https://alifsemi.com/downloads/AAPN0002"
+    },
+    {
+      "pattern": "https://www.cplusplus.com/reference/cmath"
+    },
+    {
+      "pattern": "https://www.gnu.org/software/make"
+    },
+    {
+      "pattern": "https://apps.apple.com/us/app/nrf-edge-impulse/id1557234087"
+    }
+  ]
+}
