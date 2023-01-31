@@ -105,7 +105,7 @@ In my case I got a latency of 250ms which is around 4 FPS. There are a couple of
 
 The choice of the large image size is due to the fact that the images from a store shelf have various objects. Reducing the image input size would mean that meaningful data is distorted which can decrease the training and test performance of the model.
 
-In a seperate test, I deployed a [FOMO](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/object-detection/fomo-object-detection-for-constrained-devices) model to the RZ/V2L. This model, with an image input size of 48x48px, was found to have a latency of 5ms which is around 200 FPS. Impressive!
+In a separate test, I deployed a [FOMO](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/object-detection/fomo-object-detection-for-constrained-devices) model to the RZ/V2L. This model, with an image input size of 48x48px, was found to have a latency of 5ms which is around 200 FPS. Impressive!
 
 ![Downloading FOMO .eim](.gitbook/assets/counting-retail-inventory-rzv2l/img11-downloading-fomo-eim.png)
 
@@ -119,7 +119,7 @@ For the counting process, the application only shows the counts from the object 
 
 ![Application GIF](.gitbook/assets/counting-retail-inventory-rzv2l/ai-in-inventory-monitoring.gif)
 
-In a retail store, this application can be used with the surveillance cameras that see the various shelves. Another image source can be cameras mounted on shopping carts enabling views of where the surveillance cameras can't see. A manager can then be monitoring the inventory from the Web application and take any required actions if products are missing from their spaces or a count reaches a minumum threshold.
+In a retail store, this application can be used with the surveillance cameras that see the various shelves. Another image source can be cameras mounted on shopping carts enabling views of where the surveillance cameras can't see. A manager can then be monitoring the inventory from the Web application and take any required actions if products are missing from their spaces or a count reaches a minimum threshold.
 
 ![Cameras in Supermarket](.gitbook/assets/counting-retail-inventory-rzv2l/img14-cameras-in-retail.png)
 

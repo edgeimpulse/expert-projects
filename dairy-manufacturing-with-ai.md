@@ -26,7 +26,7 @@ Even though yogurt production and manufacturing look like a simple task, achievi
 - Milk Temperature
 - Yogurt Culture (Starter) Amount (Weight)
 
-In this regard, most companies employ food (chemical) additives while mass-producing yogurt to maintain its freshness, taste, texture, and appearance. Depending on the production method, yogurt additives can include diluents, water, artificial flavorings, rehashed starch, sugar, and gelatine.
+In this regard, most companies employ food (chemical) additives while mass-producing yogurt to maintain its freshness, taste, texture, and appearance. Depending on the production method, yogurt additives can include dilutents, water, artificial flavorings, rehashed starch, sugar, and gelatine.
 
 In recent years, due to the surge in food awareness and apposite health regulations, companies were coerced into changing their yogurt production methods or labeling them conspicuously on the packaging. Since people started to have a penchant for consuming more healthy and organic (natural) yogurt, it became a necessity to prepare prerequisites precisely for yogurt production without any additives. However, unfortunately, organic (natural) yogurt production besets some local dairies since following strict requirements can be expensive and demanding for small businesses trying to gain a foothold in the dairy industry.
 
@@ -46,7 +46,7 @@ After completing my data set, I built my artificial neural network model (ANN) w
 
 After training and testing my neural network model, I deployed and uploaded the model on XIAO ESP32C3. Therefore, the device is capable of detecting precise yogurt consistency levels (classes) by running the model independently.
 
-Since I wanted to allow the user to get updates and control the device remotely, I decided to build a complementing Blynk application for this project: The Blynk dashboard displays the recent sensor readings transferred from XIAO ESP32C3, makes XIAO ESP32C3 run the neural network model, and shows the prediction result followingly.
+Since I wanted to allow the user to get updates and control the device remotely, I decided to build a complementing Blynk application for this project: The Blynk dashboard displays the recent sensor readings transferred from XIAO ESP32C3, makes XIAO ESP32C3 run the neural network model, and shows the prediction result.
 
 Lastly, to make the device as sturdy and robust as possible while operating in a dairy, I designed a dairy-themed case with a sliding (removable) front cover (3D printable).
 
