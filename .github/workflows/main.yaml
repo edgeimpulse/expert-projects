@@ -1,0 +1,25 @@
+name: Expert Projects CI
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  markdown-link-check:
+    name: Check for dead links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Markdown links check
+        uses: ruzickap/action-my-markdown-link-checker@v1
+        with:
+          verbose: true
+  markdown-spellcheck:
+    name: Check spelling
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: rojopolis/spellcheck-github-actions@0.22.1
+        name: Spellcheck
