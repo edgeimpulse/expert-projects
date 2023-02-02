@@ -12,6 +12,7 @@
 * [Gas Detection in the Oil and Gas Industry - Nordic Thingy:91](gas-detection-thingy-91.md)
 * [Arduino x K-Way - Outdoor Activity Tracker](arduino-kway-outdoor-activity-tracker.md)
 * [Arduino x K-Way - Environmental Asthma Risk Assessment](arduino-kway-environmental-risk-assessment.md)
+* [Arduino x K-Way - Gesture Recognition for Hiking](arduino-kway-gesture-recognition-weather.md)
 * [Smart Appliance Control Using Voice Commands - Nordic Thingy:53](smart-appliance-voice-commands.md)
 * [Illegal Logging Detection - Syntiant TinyML](illegal-logging-detection-syntiant.md)
 * [Industrial Compressor Predictive Maintenance - Nordic Thingy:53](compressor-predictive-mainenance-thingy53.md)
