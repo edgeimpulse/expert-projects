@@ -33,7 +33,7 @@ In this tutorial I will show you how I got a Hugging Face Image Classification d
 
 3. For this project, I chose to use this dataset [https://huggingface.co/datasets/Bingsu/Human_Action_Recognition](https://huggingface.co/datasets/Bingsu/Human_Action_Recognition)
 
-    ![](.gitbook/assets/hugging-face-image-classification/human-action.png)
+    ![](.gitbook/assets/hugging-face-image-classification/human-actions.png)
 
 4. There are a few important things to note on this page:
 
