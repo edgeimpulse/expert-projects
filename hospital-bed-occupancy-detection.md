@@ -18,7 +18,7 @@ Hospitals can benefit greatly from the use of modern technologies and automation
 
 ## Solution
 
-Using the built in sensors of the Arduino Nano 33 BLE Sense and the Edge Impulse platform, beds can be monitored to see if they are occupied or not, meaning that hospital staff can know in real-time whether or not they have room for a patient, and exactly where the free beds are. This project is a proof of concept to show how Edge Impulse can be used to train a custom neural network, which can be deployed to an Arduino Nano 33 BLE Sense.
+Using the built-in sensors of the Arduino Nano 33 BLE Sense and the Edge Impulse platform, beds can be monitored to see if they are occupied or not, meaning that hospital staff can know in real-time whether or not they have room for a patient, and exactly where the free beds are. This project is a proof of concept to show how Edge Impulse can be used to train a custom neural network, which can be deployed to an Arduino Nano 33 BLE Sense.
 
 ## Hardware
 
@@ -39,6 +39,7 @@ Using the built in sensors of the Arduino Nano 33 BLE Sense and the Edge Impulse
 Head over to [Edge Impulse](https://www.edgeimpulse.com) and create your account or login. Once logged in you will be taken to the project selection/creation page.
 
 ### Create New Project
+
 Your first step is to create a new project. From the project selection/creation you can create a new project.
 
 ![Create Edge Impulse project](.gitbook/assets/hospital-bed-occupancy-detection/1-Create-Project.jpg "Create Edge Impulse project")
@@ -62,11 +63,11 @@ This process is documented on the [Edge Impulse Website](https://docs.edgeimpuls
 - [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation)
 - [Arduino CLI](https://arduino.github.io/arduino-cli/latest/)
 
-Once the dependencies are installed, connect your device to your computer and press the **RESET** button twice to enter into bootloader mode, the yellow LED should now be pulsating.
+Once the dependencies are installed, connect your device to your computer and press the **RESET** button twice to enter into bootloader mode, the yellow LED should now be flashing.
 
-Now download the the [latest Edge Impulse firmware](https://cdn.edgeimpulse.com/firmware/arduino-nano-33-ble-sense.zip) and unzip it, then double click on the relevant script for your OS either `flash_windows.bat`, `flash_mac.command` or `flash_linux.sh`.
+Now download the [latest Edge Impulse firmware](https://cdn.edgeimpulse.com/firmware/arduino-nano-33-ble-sense.zip) and unzip it, then double click on the relevant script for your OS, either `flash_windows.bat`, `flash_mac.command` or `flash_linux.sh`.
 
-Once the firmware has been flashed you will should see the output above, hit enter to close command prompt/terminal.
+Once the firmware has been flashed you should see the output above, hit `Enter` to close command prompt/terminal.
 
 Open a new command prompt/terminal, and enter the following command:
 
@@ -84,11 +85,11 @@ Follow the instructions to log in to your Edge Impulse account.
 
 ![Device connected to Edge Impulse](.gitbook/assets/hospital-bed-occupancy-detection/5-Arduino-connected.jpg "Device connected to Edge Impulse")
 
-Once complete head over to the devices tab of your project and you should see the connected device.
+Once complete head over to the *Devices* tab of your project and you should see the connected device.
 
 ## Data Acquisition
 
-We are going to create our own dataset, using the built in sensors on the Arduino Nano 33 BLE Sense. We are going to collect data that will allow us to train a machine learning model that can detect sitting down on a bed, standing up, and idle state.
+We are going to create our own dataset, using the built-in sensors on the Arduino Nano 33 BLE Sense. We are going to collect data that will allow us to train a machine learning model that can detect sitting down on a bed, standing up, and idle state.
 
 We will use the **Record new data** feature on Edge Impulse to record around 35 samples of each class.
 
@@ -196,7 +197,7 @@ Once the library is built, you will be able to download it to a location of your
 
 Once you have downloaded the library, open up Arduino IDE, click **Sketch** -> **Include library** -> **Upload .ZIP library...**, navigate to the location of your library, upload it and then restart the IDE.
 
-### Arduino BLE33 Sense Fusion
+### Arduino BLE 33 Sense Fusion
 
 Open the IDE again and go to **File** -> **Examples**, scroll to the bottom of the list, go to **Hospital_Bed_Occupancy_Detection_inferencing** -> **nano_ble33_sense** -> **nano_ble33_sense_fusion**.
 
@@ -209,7 +210,7 @@ Once the script opens you will see:
 #include <Arduino_APDS9960.h> //Click here to get the library: http://librarymanager/All#Arduino_APDS9960
 ```
 
-You need to click on each of the library links and install them before you can compile the program and upload. Once you have done this upload the script, open up serial monitor and you will see the output from the program.
+You need to click on each of the library links and install them before you can compile the program and upload. Once you have done this, upload the script to the board, open up Serial Monitor, and you will see the output from the program.
 
 ![Classifications](.gitbook/assets/hospital-bed-occupancy-detection/18-Arduino-IDE-classifications.jpg "Classifications")
 
@@ -227,5 +228,5 @@ This will create a snapshot of your existing model that we can come back to at a
 
 ## Conclusion
 
-Here we have shown how the Edge Impulse platform combined with the power of the Arduino Nano 33 BLE Sense can be used to create a simple solution that could help hospitals become more efficient.
+Here we have shown how the Edge Impulse platform combined with the power of the Arduino Nano 33 BLE Sense can be used to create a simple solution that could help hospitals become more efficient.  Further work could include more recognized motions or movements, toggling of LEDs or lights via a pin on the Nano 33, or notification systems leveraging bluetooth to talk to an application or dashboard.
 
