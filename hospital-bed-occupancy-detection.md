@@ -18,7 +18,7 @@ Hospitals can benefit greatly from the use of modern technologies and automation
 
 ## Solution
 
-Using the built in sensors of the Arduino Nano 33 BLE SENSE and the Edge Impulse platform, beds can be monitored to see if they are occupied or not, meaning that hospital staff can know in real-time whether or not they have room for a patient, and exactly where the free beds are. This project is a proof of concept to show how Edge Impulse can be used to train a custom neural network, which can be deployed to an Arduino Nano 33 BLE Sense.
+Using the built in sensors of the Arduino Nano 33 BLE Sense and the Edge Impulse platform, beds can be monitored to see if they are occupied or not, meaning that hospital staff can know in real-time whether or not they have room for a patient, and exactly where the free beds are. This project is a proof of concept to show how Edge Impulse can be used to train a custom neural network, which can be deployed to an Arduino Nano 33 BLE Sense.
 
 ## Hardware
 
@@ -164,7 +164,7 @@ You will see the output of the testing in the output window, and once testing is
 
 ### On Device Testing
 
-Before we deploy the software to the Nano 33 BLE SENSE, lets test using the Edge Impulse platform whilst connected to the board. For this to work make sure your device is currently connected.
+Before we deploy the software to the Nano 33 BLE Sense, lets test using the Edge Impulse platform whilst connected to the board. For this to work make sure your device is currently connected.
 
 ![Live testing: Idle](.gitbook/assets/hospital-bed-occupancy-detection/16-live-testing-idle.jpg "Live testing: Idle")
 
@@ -172,7 +172,7 @@ Before we deploy the software to the Nano 33 BLE SENSE, lets test using the Edge
 
 ![Live testing: Occupied](.gitbook/assets/hospital-bed-occupancy-detection/16-model-testing.jpg "Live testing: Occupied")
 
-Use the **Live classification** feature to record some samples for clasification from the Nano BLE SENSE. Your model should correctly identify the class for each sample.
+Use the **Live classification** feature to record some samples for clasification from the Nano BLE Sense. Your model should correctly identify the class for each sample.
 
 ## Deployment
 
