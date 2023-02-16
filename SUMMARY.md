@@ -95,3 +95,4 @@
 * [Counting Retail Inventory with Computer Vision on the RZ/V2L](counting-retail-inventory-rzv2l.md)
 * [Fire Detection Using Sensor Fusion and TinyML](fire-detection-with-arduino-and-tinyml.md)
 * [Use Computer Vision on a TI TDA4VM to Deter Shoplifting](deter-shoplifting-with-computer-vision.md)
+* [Hospital Bed Occupancy Detetction with TinyML](hospital-bed-occupancy-detection.md)
