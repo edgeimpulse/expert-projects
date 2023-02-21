@@ -8,12 +8,12 @@ Created By:
 Thomas Vikstrom 
 
 Public Project Link:
-
 [https://studio.edgeimpulse.com/public/183564/latest](https://studio.edgeimpulse.com/public/183564/latest)
 
 GitHub Repo:
-
 [https://github.com/baljo/fall_detection](https://github.com/baljo/fall_detection)
+
+## Intro
 
 This project will showcase how the K-Way jacket & Arduino Nicla Sense ME device, together with a smartwatch, can be used to detect falls and call for assistance in case needed.
 
