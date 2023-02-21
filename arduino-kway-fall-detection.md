@@ -22,7 +22,7 @@ This project will showcase how the K-Way jacket & Arduino Nicla Sense ME device,
 
 In Finland, with a population of 5.5 million, the yearly mortality rate due to accidental falls is around 1,200 people. Approximately 50% of the mortal falls take place indoors, and 50% outdoor. The reasons for the falls are varying, but what is clear is that the older a person gets, the higher the risk is that she/he will fall, and secondly that the fall might be fatal. Falling is the most common accidental cause of death for people over 65 years in Finland *(source ukkinstituutti.fi)*. In addition to the deaths, the total amount of 390,000 yearly falls *(source Red Cross)* are leading to human suffering and health care costs for the society.
 
- ![](fall_det_01.png)
+ ![](.gitbook/assets/arduino-kway-fall-detection/fall_det_01.png)
 
 As the population overall gets older and older, it is thus of increasing importance to be able to reduce the risk of falling and getting hurt. But in those cases where the accident anyhow happens, and the person is severely hurt or in worst case unconscious, it is crucial to get assistance as quickly as possible. For people living with family members or in a home for elderly, a shout for help might be enough, but when living alone it might take hours, or even days, until someone notices something is amiss. While a fall indoors can certainly be fatal, a fall outdoors during the darkest winter, or in the sparsely populated countryside, significantly increases the risk of a fatal outcome.
 
@@ -34,7 +34,7 @@ Many existing fall detection systems use signals from **accelerometers**, someti
 
 Apart from accelerometers, it is also possible to use e.g. **barometers** to sense if a person suddenly has dropped a meter or more. Barometers sense the air pressure, and as the air pressure is higher closer to the ground, one only needs grade school mathematics to create a bare bones fall detection system this way. Easiest is to first convert air pressure to altitude in **meters**, and then use e.g. this formula `previous altitude in meters - current altitude in meters`, and if the difference is higher than e.g. 1.2 meters within 1-2 seconds, a fall might have happened. With barometers the data frequency does often not need to be as high as with accelerometers, and only one parameter (air pressure=altitude) is recorded. One major drawback is the rate of false positives (a fall detected where no fall occured). These might happen because of quick changes in air pressure, e.g. someone opening or closing a door in a confined space like a car, someone shouting, sneezing, coughing close to the sensor etc.
 
-![](fall_det_05.png)
+![](.gitbook/assets/arduino-kway-fall-detection/fall_det_05.png)
 
 Some modern and more expensive smartwatches, e.g. Apple Watch, already have in-built fall detection systems, that can automatically call for help in case a fall has been detected, and the person has been immobile for a minute or so. In case the watch has cellular connectivity, it does not even neeed to be paired to a smart phone.
 
@@ -44,7 +44,7 @@ In this TinyML project I showcase how the K-Way jacket and Arduino Nicla Sense M
 
 To demonstrate how a detected fall could result in an emergency call, I connected the Nicla via Bluetooth to my Bangle.js 2 smartwatch. Bangle is an affordable open-source based smartwatch aimed for users with a low budget or who want to develop software themselves using Espruino, a Javascript-based language. In a real scenario, Nicla would be connected directly either to a smartphone or smartwatch with cellular connectivity, but as that was out of scope for this project, I instead simulate an emergency call being made from the Bangle watch.
 
-![](fall_det_02.png)
+![](.gitbook/assets/arduino-kway-fall-detection/fall_det_02.png)
 
 ## Data Gathering
 
@@ -61,13 +61,13 @@ I thus held Nicla in one hand and my laptop in the other and started walking and
 
 Through a heuristical approach I found out that the optimal window size and increase is 500 ms when the frequency is 100 Hz. I also found the spectral analysis to be working well with anomaly detection
 
- ![](fall_det_04.png)
+ ![](.gitbook/assets/arduino-kway-fall-detection/fall_det_04.png)
 
 ## Anomaly Detection in Edge Impulse
 
 As this ML model was new to me, it was easiest to train it using the default settings. While I'm quite sure the model might be further tuned and optimized, especially after collecting more data and from different activities, the trained model was again of surprisingly good quality considering the few minutes I'd spent on it.
 
- ![](fall_det_04_2.png)
+ ![](.gitbook/assets/arduino-kway-fall-detection/fall_det_04_2.png)
 
 ## Deployment to Nicla
 
@@ -87,13 +87,13 @@ The following pictures show the fall detection process:
 - The Bangle watch also shows a fall is detected, starts counting down to zero
 - If the screen has not been touched - indicating the user is immobile, an emergency call is made
 
-![](fall_det_07.png)
+![](.gitbook/assets/arduino-kway-fall-detection/fall_det_07.png)
 
-![](fall_det_08.png)
+![](.gitbook/assets/arduino-kway-fall-detection/fall_det_08.png)
 
-![](fall_det_09.png)
+![](.gitbook/assets/arduino-kway-fall-detection/fall_det_09.png)
 
-![](fall_det_10.png)
+![](.gitbook/assets/arduino-kway-fall-detection/fall_det_10.png)
 
 ## Conclusions
 
