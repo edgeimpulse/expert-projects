@@ -18,7 +18,6 @@ Public Project Link:
 
 [https://github.com/baljo/Muse-EEG](https://github.com/baljo/Muse-EEG)
 
-
 ## Objective
 The objective of this  tutorial is to show how you, by using a Muse EEG-device, can communicate with the outer world through a computer app. To be precise, this is without moving your limbs or touching the computer at all, instead you "just" need to concentrate! 
 

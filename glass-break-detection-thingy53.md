@@ -75,13 +75,13 @@ New Thingy:53 devices will function with the Nordic nRF Edge Impulse iPhone and 
 
 Before connecting it to the Edge Impulse project, the firmware of the Thingy:53 must be updated. Download the **nRF Programmer** mobile application for Android or iOS and launch it. You will be prompted with a number of available samples.
 
-![](.gitbook/assets/glass-break-detection-thingy53/5.jpg)
+<img src=".gitbook/assets/glass-break-detection-thingy53/5.jpg" align="center" height="50%">
 
 Select the **Edge Impulse** application, select the version of the sample from the drop-down menu and tap **Download**.
 
 When that is done, tap **Install**. A list with the nearby devices will appear and you must select your development board from the list. Once that is done, the upload process will begin.
 
-![](.gitbook/assets/glass-break-detection-thingy53/6.jpg)
+<img src=".gitbook/assets/glass-break-detection-thingy53/6.jpg" align="center" height="50%">
 
 With the firmware updated, connect the Thingy:53 board to a computer that has the edge-impulse-cli suite installed, turn it on, launch a terminal and run:
 
@@ -171,23 +171,23 @@ Another way of deploying the model on the edge is using the **Nordic nRF Edge Im
 2. Launch it and login with your edgeimpulse.com credentials.
 3. Select your project from the list
 
-![](.gitbook/assets/glass-break-detection-thingy53/16.jpg)
+<img src=".gitbook/assets/glass-break-detection-thingy53/16.jpg" align="center" height="50%">
 
 Navigate to the Devices tab and connect to the Thingy:53
 
-![](.gitbook/assets/glass-break-detection-thingy53/17.jpg)
+<img src=".gitbook/assets/glass-break-detection-thingy53/17.jpg" align="center" height="50%">
 
 Navigate to the **Data** tab and press **connect**. You will see the status on the button changing from Connect to Disconnect.
 
-![](.gitbook/assets/glass-break-detection-thingy53/18.jpg)
+<img src=".gitbook/assets/glass-break-detection-thingy53/18.jpg" align="center" height="50%">
 
 Navigate to the **deployment** tab and press **deploy**.
 
-![](.gitbook/assets/glass-break-detection-thingy53/19.jpg)
+<img src=".gitbook/assets/glass-break-detection-thingy53/19.jpg" align="center" height="50%">
 
 In the **inferencing** tab, you will see the results of the Edge Impulse model you have flashed on the device:
 
-![](.gitbook/assets/glass-break-detection-thingy53/20.jpg)
+<img src=".gitbook/assets/glass-break-detection-thingy53/20.jpg" align="center" height="50%">
 
 ## Conclusion
 
