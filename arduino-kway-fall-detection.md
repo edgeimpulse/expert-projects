@@ -1,5 +1,5 @@
 ---
-description: Train a TinyML model to detect the motion of falling down, then connect via Bluetooth to make an emergency call.
+description: Train a TinyML model to detect the motion of falling down, then connect via Bluetooth to make an emergency call
 ---
 
 # Arduino x K-Way - TinyML Fall Detection
