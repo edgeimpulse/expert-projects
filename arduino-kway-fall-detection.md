@@ -8,9 +8,10 @@ Created By:
 Thomas Vikstrom 
 
 Public Project Link:
+
 [https://studio.edgeimpulse.com/public/183564/latest](https://studio.edgeimpulse.com/public/183564/latest)
 
-## GitHub Repo
+GitHub Repo:
 
 [https://github.com/baljo/fall_detection](https://github.com/baljo/fall_detection)
 
