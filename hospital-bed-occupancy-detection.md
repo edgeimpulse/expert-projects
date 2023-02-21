@@ -10,9 +10,9 @@ Created By:
 Public Project Link:
 [https://studio.edgeimpulse.com/public/181529/latest](https://studio.edgeimpulse.com/public/181529/latest)
 
-## Introduction
-
 ![](.gitbook/assets/ai-patient-assistance/intro.jpg)
+
+## Introduction
 
 Hospitals can benefit greatly from the use of modern technologies and automation. As hospitals continue to struggle through lack of staff, they need to explore ways that tasks can be automated to free up their valuable human resources. AI is one technology that can play a huge role in the automation of hospitals, and with platforms such as Edge Impulse and low cost embedded devices, automation can be implemented easily, and at low cost. 
 

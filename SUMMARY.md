@@ -17,6 +17,7 @@
 * [Illegal Logging Detection - Syntiant TinyML](illegal-logging-detection-syntiant.md)
 * [Industrial Compressor Predictive Maintenance - Nordic Thingy:53](compressor-predictive-mainenance-thingy53.md)
 * [Air Quality Monitoring with Sipeed Longan Nano - RISC-V Gigadevice](air-quality-monitoring-sipeed-longan-nano-riscv.md)
+* [Glass Window Break Detection - Nordic Thingy:53](glass-break-detection-thingy53.md)
 
 ## Prototype and Concept Projects
 
