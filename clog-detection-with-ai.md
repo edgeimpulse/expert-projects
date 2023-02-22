@@ -98,7 +98,7 @@ By breaking the data down into smaller chunks, we can more easily identify trend
 
 ![](.gitbook/assets/clog-detection-with-ai/clog.png)
 
-After dividing our flow rate data into smaller samples as described above, we have further split the dataset into two distinct subsets: a training dataset and a testing dataset. This process is known as data partitioning, and it is an essential step in the model creation process. 
+After dividing our flow rate data into smaller samples as described above, we have further split the dataset into two distinct subsets: a **training** dataset and a **testing** dataset. This process is known as data partitioning, and it is an essential step in the model creation process. 
 
 ![](.gitbook/assets/clog-detection-with-ai/train-test-split.png)
 
@@ -106,7 +106,7 @@ By separating the data into these two subsets, we can use the training dataset t
 
 ### 2. Impulse Design
 
-An impulse is a specialized machine learning pipeline designed to extract useful information from raw data and use it to make predictions or classify new data. The process of creating an impulse typically involves three main stages: signal processing, feature extraction, and learning.
+An impulse is a specialized machine learning pipeline designed to extract useful information from raw data and use it to make predictions or classify new data. The process of creating an impulse typically involves three main stages: **signal processing**, **feature extraction**, and **learning**.
 
 During the signal processing stage, the raw data is cleaned and organized in a format that is more suitable for analysis. This may involve removing noise or other extraneous information, and may also involve preprocessing the data in some way to make it more useful for the next stage of the process.
 
@@ -138,7 +138,7 @@ Now that we have extracted and prepared our features, we are ready to move on to
 
 Through a process of trial and error, we experimented with different combinations of parameters until we were able to achieve a training accuracy that met our standards. This process involved adjusting the number of neurons in the hidden layer, the learning rate, and the number of epochs, among other things. Ultimately, we were able to find a set of parameters that resulted in a model with desired training accuracy which is shown in the figure.
 
-![NN Settings.png](https://usercdn.edgeimpulse.com/project141205/274125866c0c09e6cc8f481b012b4b61914bcb328aad41b1dee986a38149dbee)
+![](.gitbook/assets/clog-detection-with-ai/nn-settings.png)
 
 After training the model for a total of 70 cycles with a learning rate of 0.002, we were able to produce an output model with 100% training accuracy and a loss of 0.03. 
 
@@ -148,7 +148,7 @@ This level of accuracy is extremely high, indicating that our model is capable o
 
 ### 4. Model Testing
 
-Having trained and fine-tuned our model to achieve a high level of accuracy, we are now ready to test its performance on some previously unseen data. To do this, we will navigate to the Model Testing tab and use the Classify All feature to evaluate the model's performance.
+Having trained and fine-tuned our model to achieve a high level of accuracy, we are now ready to test its performance on some previously unseen data. To do this, we will navigate to the **Model Testing** tab and use the **Classify All** feature to evaluate the model's performance.
 
 By applying the model to a new set of data, we can determine whether it is capable of accurately predicting flow rate patterns and classifying the data into one of three categories. If the model performs well on this test data, we can be confident that it will be able to provide useful and reliable insights when applied to real-world situations.
 
@@ -158,17 +158,17 @@ Upon running the test, we were pleased to see that the model performed exception
 
 ### 5. Deployment
 
-Now that we have created and tested a well-functioning model for predicting and classifying flow rate patterns in industrial pipelines, we are ready to deploy it to an **Arduino Library**. 
+Now that we have created and tested a well-functioning model for predicting and classifying flow rate patterns in industrial pipelines, we are ready to deploy it as an **Arduino Library**. 
 
 ![](.gitbook/assets/clog-detection-with-ai/deployment.png)
 
 To do this, we will navigate to the **Deployment** tab and follow the instructions provided there to build an **Arduino Library** for our model.
 
-![](.gitbook/assets/clog-detection-with-ai/eon.png)
-
 During the process of building the library, we have the option of enabling optimizations with the **EON Compiler**. This feature allows us to further improve the performance of our model by optimizing the code for efficient execution on the device. While this is an optional step, it can be useful for increasing the speed and efficiency of our model, particularly if we plan to use it in resource-constrained environments.
 
-After completing the process of building an Arduino library for our model, we will be presented with a zip file containing the model itself, as well as a number of examples demonstrating how to use the model in various contexts. To add the library to the Arduino Integrated Development Environment (IDE), we can simply navigate to **Sketch > Include Library > Add .ZIP Library** in the IDE, and select the ZIP file produced by the build process. This will install the library and make it available for use in our Arduino projects.
+![](.gitbook/assets/clog-detection-with-ai/eon.png)
+
+After completing the process of building an Arduino library for our model, we will be presented with a .zip file containing the model itself, as well as a number of examples demonstrating how to use the model in various contexts. To add the library to the Arduino Integrated Development Environment (IDE), we can simply navigate to **Sketch > Include Library > Add .ZIP Library** in the IDE, and select the .zip file produced by the build process. This will install the library and make it available for use in our Arduino projects.
 
 ![](.gitbook/assets/clog-detection-with-ai/arduino-ide.jpg)
 
@@ -180,7 +180,7 @@ This will open the `static_buffer.ino` file in the editor window, allowing us to
 
 ![](.gitbook/assets/clog-detection-with-ai/code.png)
 
-Dynamic inferencing involves making predictions or classifications in real-time as new data is received, so we will need to modify the code to allow for real-time data processing and prediction. This may involve adding code to handle incoming data streams, applying machine learning algorithms to the data, and making predictions or classifications based on the results. We may also need to make other modifications to the code to support dynamic inferencing, depending on the specific requirements of our application. Once we have made the necessary changes to the code, we can save the modified file and use it to perform dynamic inferencing with our model, providing valuable insights for industrial pipeline management. The code for our project is available in the below GitHub repository.
+Dynamic inferencing involves making predictions or classifications in real-time as new data is received, so we will need to modify the code to allow for real-time data processing and prediction. This may involve adding code to handle incoming data streams, applying machine learning algorithms to the data, and making predictions or classifications based on the results. We may also need to make other modifications to the code to support dynamic inferencing, depending on the specific requirements of our application. Once we have made the necessary changes to the code, we can save the modified file and use it to perform inferencing with our model, providing valuable insights for industrial pipeline management. The code for our project is available in the below GitHub repository.
 
 ## Code
 
@@ -188,5 +188,5 @@ All of the assets for this project, including the code, documentation, and any o
 
 ## Conclusion
 
-This project uses a flowmeter to measure the rate of flow of a liquid through a pipe, then predicts if a clog is detected using a machine learning algorithm that has been deployed on a Seeed Wio Terminal.
+This project uses a flowmeter to measure the rate of flow of a liquid through a pipe, then predicts if a clog is detected using a machine learning algorithm that has been deployed on a Seeed Wio Terminal.  Followup work could include the development of an application or dashboard to render the time-series data from the flowmeter, highlight possible clogs or reduced flow readings, or integrate into a larger pipeline management system.
 
