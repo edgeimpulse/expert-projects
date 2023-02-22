@@ -11,6 +11,7 @@ Public Project Link:
 [https://studio.edgeimpulse.com/public/183564/latest](https://studio.edgeimpulse.com/public/183564/latest)
 
 GitHub Repo:
+
 [https://github.com/baljo/fall_detection](https://github.com/baljo/fall_detection)
 
 ## Intro
@@ -23,7 +24,7 @@ This project will showcase how the K-Way jacket & Arduino Nicla Sense ME device,
 
 In Finland, with a population of 5.5 million, the yearly mortality rate due to accidental falls is around 1,200 people. Approximately 50% of the mortal falls take place indoors, and 50% outdoor. The reasons for the falls are varying, but what is clear is that the older a person gets, the higher the risk is that she/he will fall, and secondly that the fall might be fatal. Falling is the most common accidental cause of death for people over 65 years in Finland *(source ukkinstituutti.fi)*. In addition to the deaths, the total amount of 390,000 yearly falls *(source Red Cross)* are leading to human suffering and health care costs for the society.
 
- ![](.gitbook/assets/arduino-kway-fall-detection/fall_det_01.png)
+![](.gitbook/assets/arduino-kway-fall-detection/fall_det_01.png)
 
 As the population overall gets older and older, it is thus of increasing importance to be able to reduce the risk of falling and getting hurt. But in those cases where the accident anyhow happens, and the person is severely hurt or in worst case unconscious, it is crucial to get assistance as quickly as possible. For people living with family members or in a home for elderly, a shout for help might be enough, but when living alone it might take hours, or even days, until someone notices something is amiss. While a fall indoors can certainly be fatal, a fall outdoors during the darkest winter, or in the sparsely populated countryside, significantly increases the risk of a fatal outcome.
 
@@ -39,7 +40,7 @@ Apart from accelerometers, it is also possible to use e.g. **barometers** to sen
 
 Some modern and more expensive smartwatches, e.g. Apple Watch, already have in-built fall detection systems, that can automatically call for help in case a fall has been detected, and the person has been immobile for a minute or so. In case the watch has cellular connectivity, it does not even neeed to be paired to a smart phone.
 
-# Project Introduction
+## Project Introduction
 
 In this TinyML project I showcase how the K-Way jacket and Arduino Nicla Sense ME device are, together with the Bangle.js smartwatch, used to detect falls and simulate a call for assistance in case needed. K-Way is an iconic brand, known by many for their waterproof clothes. Nicla Sense ME is a tiny low-power device suitable for indoor or outdoor activities. Sensors included are accelerometer, magnetometer, air quality sensor, temperature sensor, humidity sensor, air pressure sensor, Bluetooth connectivity etc. All this on a stamp-sized PCB!
 
@@ -62,13 +63,13 @@ I thus held Nicla in one hand and my laptop in the other and started walking and
 
 Through a heuristical approach I found out that the optimal window size and increase is 500 ms when the frequency is 100 Hz. I also found the spectral analysis to be working well with anomaly detection
 
- ![](.gitbook/assets/arduino-kway-fall-detection/fall_det_04.png)
+![](.gitbook/assets/arduino-kway-fall-detection/fall_det_04.png)
 
 ## Anomaly Detection in Edge Impulse
 
 As this ML model was new to me, it was easiest to train it using the default settings. While I'm quite sure the model might be further tuned and optimized, especially after collecting more data and from different activities, the trained model was again of surprisingly good quality considering the few minutes I'd spent on it.
 
- ![](.gitbook/assets/arduino-kway-fall-detection/fall_det_04_2.png)
+![](.gitbook/assets/arduino-kway-fall-detection/fall_det_04_2.png)
 
 ## Deployment to Nicla
 
@@ -83,6 +84,7 @@ Until now, most steps in the process had been pretty straightforward with only s
 To be able to simulate an emergency call being made, I created a simple Javascript program on the smartwatch. This program connects through BLE to Nicla and receives the anomaly score. Once the score is over 50, the watch will react by turning on the LCD and displaying `FALL DETECTED!`. After a few seconds a counter will decrease from 10 to 0, and if the wearer has not touched the display when the counter turns to zero, the watch is simulating an emergency call to a predefined number chosen by the user.
 
 The following pictures show the fall detection process:
+
 - A fall is registered (= an anomaly detected) - in this case due to shaking the Nicla device, the LED blinks in red colour
 - Nicla sends the anomaly score to the Bangle watch through BLE
 - The Bangle watch also shows a fall is detected, starts counting down to zero
