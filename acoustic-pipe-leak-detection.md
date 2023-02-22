@@ -8,7 +8,7 @@ Created By:
 Manivannan Sivan 
 
 Public Project Link:
-[https://studio.edgeimpulse.com/public/111978/latest](https://studio.edgeimpulse.com/public/111978/latest)
+[https://studio.edgeimpulse.com/public/111978](https://studio.edgeimpulse.com/public/111978)
 
 ## Project Demo
 

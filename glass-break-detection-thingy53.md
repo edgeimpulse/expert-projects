@@ -9,7 +9,7 @@ Created By:
 
 Public Project Link:
 
-[https://studio.edgeimpulse.com/studio/139844/latest](https://studio.edgeimpulse.com/studio/139844/latest)
+[https://studio.edgeimpulse.com/studio/139844](https://studio.edgeimpulse.com/studio/139844)
 
 ## Introduction
 
