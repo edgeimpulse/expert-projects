@@ -99,3 +99,4 @@
 * [Use Computer Vision on a TI TDA4VM to Deter Shoplifting](deter-shoplifting-with-computer-vision.md)
 * [Hospital Bed Occupancy Detetction with TinyML](hospital-bed-occupancy-detection.md)
 * [Pipeline Clog Detection with a Flowmeter and TinyML](clog-detection-with-ai.md)
+* [Retail Image Classification with a Jetson Nano](retail-image-classification-jetson-nano.md)
