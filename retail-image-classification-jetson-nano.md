@@ -14,7 +14,7 @@ Public Project Link:
 
 ## Introduction
 
-Even with the current limitations of Artificial Intelligence, it is still a very useful tool, and many tasks can be automated can be automated with the technology. As more tasks become automated, human resources are freed up, allowing them to spend more time focusng on what really matters to businesses, their customers. 
+Even with the current limitations of Artificial Intelligence, it is still a very useful tool, and many tasks can be automated with the technology. As more tasks become automated, human resources are freed up, allowing them to spend more time focusng on what really matters to businesses: their customers. 
 
 The retail industry is a prime example of an industry that can be automated through the use of Artificial Intelligence, the Internet of Things, and Robotics.
 
@@ -37,11 +37,12 @@ Computer Vision is a very popular field of Artificial Intelligence, with many po
 Head over to [Edge Impulse](https://www.edgeimpulse.com) and create your account or login. Once logged in you will be taken to the project selection/creation page.
 
 ### Create New Project
-Your first step is to create a new project. From the project selection/creation you can create a new project.
+
+Your first step is to create a new project.
 
 ![Create Edge Impulse project](.gitbook/assets/retail-image-classification-jetson-nano/1-create-project.jpg "Create Edge Impulse project")
 
-Enter a **project name**, select **Developer** or **Enterprise** and click **Create new project**.
+Enter a **project name**, select **Developer** or **Enterprise**, and click **Create new project**.
 
 ![Choose project type](.gitbook/assets/retail-image-classification-jetson-nano/2-choose-project-type.jpg "Choose project type")
 
@@ -72,7 +73,7 @@ Follow the instructions to log in to your Edge Impulse account.
 
 ![Device connected to Edge Impulse](.gitbook/assets/retail-image-classification-jetson-nano/3a-device-connected.jpg "Device connected to Edge Impulse")
 
-Once complete head over to the devices tab of your project and you should see the connected device.
+Once complete, head over to the **Devices** tab of your project and you should see the connected device.
 
 ## Dataset
 
@@ -92,7 +93,7 @@ Once you have completed these steps, you should be able to see and filter your u
 
 ## Create Impulse
 
-Now we are going to create our network and train our model.
+Now we are going to create our neural network and train our model.
 
 ![Add processing block](.gitbook/assets/retail-image-classification-jetson-nano/9-impulse-design-processing-block.jpg "Add processing block")
 
@@ -154,7 +155,7 @@ Before we deploy the software to the NVIDIA Jetson Nano, lets test using the Edg
 
 ![Live testing: Chilli](.gitbook/assets/retail-image-classification-jetson-nano/16-live-testing-chilli.jpg "Live testing")
 
-Use the **Live classification** feature to record some samples for clasification from the webcam connected to the Jetson Nano. Your model should correctly identify the class for each sample.
+Use the **Live classification** feature to record some samples for clasification from the webcam connected to the Jetson Nano. Your model should be able to correctly identify the class for each sample.  If you are not getting accurate detections, you may need to provide more data samples, or fine tune the training parameters to increase your accuracy.  First, you will want to save a **Version** though.
 
 ## Versioning
 
@@ -168,18 +169,18 @@ This will create a snapshot of your existing model that we can come back to at a
 
 ## Deployment
 
-Now we will deploy the software directly to the NVIDIA Jetson Nano. To do this simply head to terminal on your Jetson Nano, and enter:
+Now we will deploy the software directly to the NVIDIA Jetson Nano. To do this simply head to the terminal on your Jetson Nano, and enter:
 
 ```
 edge-impulse-linux-runner
 ```
 
-This will then download the software and execute the program. Keep an eye out for a message that gives you a URL to view the results in your browser.
+This will then download the built model from Edge Impulse and start local inferencing on the Nano. Keep an eye out for a message that gives you a URL to view the results in your browser.
 
-![Versions](.gitbook/assets/retail-image-classification-jetson-nano/18-testing-live-apple.jpg "Versions")
+![Live Inferencing](.gitbook/assets/retail-image-classification-jetson-nano/18-testing-live-apple.jpg "Live Inferencing")
 
 ## Conclusion
 
-Here we have created a simple but effective solution for classifiying various fruits and vegetables using computer vision powered on an NVIDIA Jetson Nano, powered by Edge Impulse. 
+Here we have created a simple but effective solution for classifiying various fruits and vegetables using computer vision powered on an NVIDIA Jetson Nano, using Edge Impulse. 
 
 You can train a network with your own images, or build off the model and training data provided in this tutorial.
