@@ -9,7 +9,7 @@ Created By:
 
 Public Project Link:
 
-[https://studio.edgeimpulse.com/studio/110000/latest](https://studio.edgeimpulse.com/studio/110000/latest)
+[https://studio.edgeimpulse.com/public/110000/latest](https://studio.edgeimpulse.com/public/110000/latest)
 
 GitHub Repository:
 

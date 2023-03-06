@@ -19,6 +19,7 @@
 * [Industrial Compressor Predictive Maintenance - Nordic Thingy:53](compressor-predictive-mainenance-thingy53.md)
 * [Air Quality Monitoring with Sipeed Longan Nano - RISC-V Gigadevice](air-quality-monitoring-sipeed-longan-nano-riscv.md)
 * [Glass Window Break Detection - Nordic Thingy:53](glass-break-detection-thingy53.md)
+* [Methane Monitoring in Mines - Silabs xG24 Dev Kit](methane-monitoring-silabs-xg24.md)
 
 ## Prototype and Concept Projects
 
