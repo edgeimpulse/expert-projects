@@ -101,3 +101,4 @@
 * [Hospital Bed Occupancy Detetction with TinyML](hospital-bed-occupancy-detection.md)
 * [Pipeline Clog Detection with a Flowmeter and TinyML](clog-detection-with-ai.md)
 * [Retail Image Classification with a Jetson Nano](retail-image-classification-jetson-nano.md)
+* [Smart Factory Prototype with Texas Instruments TDA4VM](smart-factory-with-tda4vm.md)
