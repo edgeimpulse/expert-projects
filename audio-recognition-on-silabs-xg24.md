@@ -13,9 +13,10 @@ Public Project:
 ## Intro
 
 This project focuses on how to port the existing audio recognition project built with thunderboard-sense-2 to the latest [EFR32MG24](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-socs). For demostration we would be porting [Manivannan Sivan's](https://www.hackster.io/manivannan) had created a project ["Vehicle Predictive Maintenance"](https://www.hackster.io/manivannan/vehicle-predictive-maintenance-cf2ee3) 
-which is Edge Impulse based TinyML model to predict various vehicle failures like faulty drive shaft, Brake pad noises. Check out his work for more information.
+which is an Edge Impulse based TinyML model to predict various vehicle failures like faulty drive shaft, Brake pad noises. Check out his work for more information.
 
-Since, the audio sensor in thunderboard-sense-2 board and xG24 are the same (TDK InvenSense ICS-43434) ideally we're not required to collect any new data from xg24-devkit for model to work properly.
+Since, the audio sensor on the Thunderboard Sense 2 board and the xG24 are the same (TDK InvenSense ICS-43434) ideally we're not required to collect any new data from xg24-devkit for model to work properly.
+
 However, note has to be traken the xG24 has two microphones phones placed at the edged of the board. 
 In this project, I am going to walk you through how you can clone his Public Edge Impulse project for thunderboard-sense-2 board, build it for xG24, test it out, deploy to the newer SiLabs xG24 device instead.
 
@@ -66,6 +67,7 @@ configure you desired paramters and edge impulse tuner should come up with sugge
 ![](.gitbook/assets/audio-recognition-on-silabs-xg24/EON_tuner.jpg)
 
 Next, navigate to "Classification" tab from the left menu and click on "Start training". 
+
 ![](.gitbook/assets/audio-recognition-on-silabs-xg24/Training.jpg)
 
 Alternatively, you can also collect more data and train the model to identify other audio classes. You need to follow this guide:
@@ -78,32 +80,38 @@ Rather than deploying the model and then testing it on the hardware, with this f
 This saves time and effort before hand. 
 
 For the supported edge impulse board we can directly download the base edge impulse firmware and we can directly record audio data from the target.
+
 Please follow the tutorial to get the latest firmware and connect the xG24 to the edge impulse studio:
 ["Edge Impulse xG24 Dev Kit Guide"](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/silabs-xg24-devkit)
 
 Once done, you can select the device name, select the sensor as "Microphone", sample length and the sampling frequency (ideally equally to collected samples).
+
 ![](.gitbook/assets/audio-recognition-on-silabs-xg24/Live_Classification.jpg)
 
 Alternatively you can use ["Web Usb"](https://www.edgeimpulse.com/blog/collect-sensor-data-straight-from-your-web-browser) to collect data, if you don't want to install any tools.
 
 ## Deploy
+
 When you are done retraining, navigate to the "Deployment" tab from the left menu, select "SiLabs xG24 Dev Kit" under "Build firmware", then click on the "Build" button at the bottom of the page. 
+
 This will build your model and download a .zip file containing a `.hex` file and instructions.
 
 ![](.gitbook/assets/audio-recognition-on-silabs-xg24/deploy.jpg)
 
-With thunder board sense the deploymend could be done through directly dragging and dropping in the usb driver TB004. However, for xG24 we have to use simplicity commander to
-upload the firmware to the board. You would need to first connect the xG24 board the PC. Mark the COM port for the board, ideally should pop up as J-Link UART port. 
+With thunder board sense the deploymend could be done through directly dragging and dropping in the usb driver TB004. However, for xG24 we have to use simplicity commander to upload the firmware to the board. You would need to first connect the xG24 board the PC. Mark the COM port for the board, ideally should pop up as J-Link UART port.
+
 Now open the Simplicity Commander tool and connect the board. Once connected, select the "flash" option on the left and then select the downloaded .hex file and flash it on to the board.
 
 https://user-images.githubusercontent.com/45755431/223307262-30fa606c-8448-47f6-9889-bb488f6fb934.mp4
 
-To star the inferenceing run the fowlling command in you terminal:
+To start the inferencing run the fowlling command in your terminal:
+
 ```
 edge-impulse-run-impulse
 ```
 
 Note that this is updated command supported by edge impulse cli, hence you would need to update your edge-impulse-cli version to get this running and avoid packages mismatch as shown below:
+
 ![](.gitbook/assets/audio-recognition-on-silabs-xg24/update_npm_to_connect_to_edge_impulse.jpg)
 
 Now your model should recognize the same audio data and inferencing on different hardware platform xG24 dev kit, with little to no modifications to actual data or to the model architecture.
