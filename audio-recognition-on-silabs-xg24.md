@@ -2,12 +2,12 @@
 description: Take an existing Edge Impulse model built for the Thunderboard Sense 2, and prepare it for use on the SiLabs xG24 board.
 ---
 
-# Porting a Audio Recognition Project from the SiLabs Thunderboard Sense 2 to xG24 Dev Kit
+# Porting an Audio Recognition Project from the SiLabs Thunderboard Sense 2 to xG24 Dev Kit
 
 Created By:
 Pratyush Mallick 
 
-Public Project (to Clone):
+Public Project:
 [https://studio.edgeimpulse.com/public/66064/latest](https://studio.edgeimpulse.com/public/66064/latest)
 
 ## Intro

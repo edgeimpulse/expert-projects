@@ -20,6 +20,7 @@
 * [Air Quality Monitoring with Sipeed Longan Nano - RISC-V Gigadevice](air-quality-monitoring-sipeed-longan-nano-riscv.md)
 * [Glass Window Break Detection - Nordic Thingy:53](glass-break-detection-thingy53.md)
 * [Methane Monitoring in Mines - Silabs xG24 Dev Kit](methane-monitoring-silabs-xg24.md)
+* [Creating Synthetic Data with Nvidia Omniverse Replicator](nvidia-omniverse-replicator.md)
 
 ## Prototype and Concept Projects
 
@@ -84,6 +85,7 @@
 * [AI-Assisted Monitoring of Dairy Manufacturing Conditions](dairy-manufacturing-with-ai.md)
 * [Predictive Maintenance Using Audio Classification](predictive-maintenance-with-sound.md)
 * [Porting a Gesture Recognition Project from the SiLabs Thunderboard Sense 2 to xG24](gesture-recognition-on-silabs-xg24.md)
+* [Porting an Audio Project from the SiLabs Thunderboard Sense 2 to xG24](audio-recognition-on-silabs-xg24.md)
 * [Monitoring Retail Checkout Lines with Computer Vision on the RZ/V2L](monitoring-checkout-lines-rzv2l.md)
 * [Fall Detection using Computer Vision for Industrial Workers](worker-fall-detection-computer-vision.md)
 * [Fluid Leak Detection With a Flowmeter and AI](fluid-leak-detection-with-flowmeter-and-ai.md)
