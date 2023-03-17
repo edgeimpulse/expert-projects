@@ -192,9 +192,9 @@ This resulted in the following Generated Dataset:
     <td><img src=".gitbook/assets/nvidia-omniverse-replicator/annotating_image.png"></td>
     <td><img src=".gitbook/assets/nvidia-omniverse-replicator/image_in_queue.png"></td>
   </tr>
- </table>
+</table>
 
-We uploaded the generated images to Edge Impulse Studio, where we annotated the dataset into different classes. We carefully annotated each dataset version and trained using the <strong>Yolov5</strong> object detection model. We tried a couple of input sizes ranging from 320, 512 and 1024 pixels before settling with <strong>320</strong>. Edge Impulse provided an excellent version control system for models, which enabled us to track model performance across different dataset versions and hyperparameters.
+We uploaded the generated images to Edge Impulse Studio, where we annotated the dataset into different classes. We carefully annotated each dataset version and trained using the <strong>Yolov5</strong> object detection model. We tried a couple of input sizes ranging from 320, 512 and 1024 pixels before settling on <strong>320 pixels</strong>. Edge Impulse provided an excellent version control system for models, which enabled us to track model performance across different dataset versions and hyperparameters.
 
  <table>
   <tr>
@@ -207,44 +207,33 @@ We uploaded the generated images to Edge Impulse Studio, where we annotated the 
   </tr>
  </table>
 
-Version Control in Edge Impulse |
---- |
-![](.gitbook/assets/nvidia-omniverse-replicator/version_control.gif) |
+![Version Control in Edge Impulse](.gitbook/assets/nvidia-omniverse-replicator/version_control.gif)
 
 ### Testing of Object Detection Models with Real Objects
 
 We used the Edge Impulse CLI tool to evaluate the model's accuracy by downloading, building and running the model locally. A Logitech C920 webcam streamed the live video of objects on a table from 50 cm to 80 cm from the camera. The position of the camera remains fixed during the experiment. The clips below show that the trained model does not generalize well to real-world objects. Thus we needed to improve the model by uploading, annotating and training the model with the V2 dataset.
 
-V1 failure - model failed to identify objects |
---- | 
-![](.gitbook/assets/nvidia-omniverse-replicator/v1_1.gif) |
+![V1 failure - model failed to identify objects](.gitbook/assets/nvidia-omniverse-replicator/v1_1.gif)
 
 We observed improved model performance when trained with the V2 dataset. The model could identify various objects distinctly, although the model failed when we changed the objects' orientations. Thus, we trained the model with the remaining V3 dataset to mitigate these issues and increase other hyperparameters, such as epochs from 500 to 2000. We also tested the performance of our object detector on real objects with different background textures, and the model performed well in these conditions.
-V2 success - model can identify objects |
---- |
-![](.gitbook/assets/nvidia-omniverse-replicator/v2_1.gif) |
 
-V2 failure - model failed to identify objects in different orientations |
---- |
-![](.gitbook/assets/nvidia-omniverse-replicator/v2_2.gif) |
+![V2 success - model can identify objects](.gitbook/assets/nvidia-omniverse-replicator/v2_1.gif)
 
+![V2 failure - model failed to identify objects in different orientations](.gitbook/assets/nvidia-omniverse-replicator/v2_2.gif)
 
 After several cycles of iterating over various hyperparameters, we got a model that generalizes well across different orientations.
-V3 success - model can identify objects in different orientations   |
---- | 
-![](.gitbook/assets/nvidia-omniverse-replicator/v3_2.gif) |
+ 
+![V3 success - model can identify objects in different orientations](.gitbook/assets/nvidia-omniverse-replicator/v3_2.gif)
 
-V3 success - model can identify different materials |
---- | 
-![](.gitbook/assets/nvidia-omniverse-replicator/different_material.gif) |
-
+![V3 success - model can identify different materials](.gitbook/assets/nvidia-omniverse-replicator/different_material.gif)
 
 The core idea behind the data-centric approach to solving ML problems is to create more data around the failure points of the model. We improved the model by iteratively improving the data generation, especially in areas where the model had previously failed.
+
 ![](.gitbook/assets/nvidia-omniverse-replicator/variation_position.gif)
 
 ## Conclusion
 
-In this work, we learned how the domain randomization approach helps generate quality and well-generalized datasets for the object detection task. We also demonstrated the effectiveness of data-centric machine learning workflow in improving the model performance. Although this work is restricted to visual problems, we can extend domain randomization to other sensors such as lidar, accelerometer, and ultrasonic sensors.
+In this work, we learned how the Domain Randomization approach helps generate quality and well-generalized datasets for an object detection task. We also demonstrated the effectiveness of data-centric machine learning workflows in improving  model performance. Although this work is restricted to visual problems, we can extend domain randomization to other sensors such as lidar, accelerometer, and ultrasonic sensors as well.
 
 ## Reference
 - [Project on Edge Impulse](https://studio.edgeimpulse.com/public/187851/latest)
