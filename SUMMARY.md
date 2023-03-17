@@ -20,7 +20,7 @@
 * [Air Quality Monitoring with Sipeed Longan Nano - RISC-V Gigadevice](air-quality-monitoring-sipeed-longan-nano-riscv.md)
 * [Glass Window Break Detection - Nordic Thingy:53](glass-break-detection-thingy53.md)
 * [Methane Monitoring in Mines - Silabs xG24 Dev Kit](methane-monitoring-silabs-xg24.md)
-* []()
+* [Creating Synthetic Data with Nvidia Omniverse Replicator](nvidia-omniverse-replicator.md)
 
 ## Prototype and Concept Projects
 
