@@ -1,8 +1,8 @@
 ---
-description: A computer vision system that detects and localizes surface cracks in concrete structures for predictive maintenance, using a TI SK-TDA4VM.
+description: A computer vision system that detects and localizes surface cracks in concrete structures for predictive maintenance, using a TI SK-TDA4VM Starter Kit.
 ---
 
-# Surface Crack Detection and Localization using Texas Instruments SK-TDA4VM
+# Surface Crack Detection and Localization using Texas Instruments TDA4VM
 
 Created By:
 Naveen Kumar 
