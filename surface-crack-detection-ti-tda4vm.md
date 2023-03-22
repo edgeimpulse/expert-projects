@@ -34,7 +34,7 @@ The **CNN** (convolutional neural networks) with **GAP** (Global Average Pooling
 
 ## Hardware Setup
 
-Since we wanted to use compact and portable yet powerful hardware, we will be using a Texas Instruments SK-TDA4VM starter kit for edge AI vision systems. It is powered by a TDA4VM processor that enables 8 TOPS of deep learning performance and hardware-accelerated edge AI processing. Also, we would need a USB web camera and a monitor (for displaying inferencing results).
+Since we wanted to use compact and portable yet powerful hardware, we will be using a Texas Instruments SK-TDA4VM Starter Kit for edge AI vision systems. It is powered by a TDA4VM processor that enables 8 TOPS of deep learning performance and hardware-accelerated edge AI processing. Also, we would need a USB web camera and a monitor (for displaying inferencing results).
 
 ![Hardware](.gitbook/assets/surface-crack-detection-ti-tda4vm/hardware.jpeg)
 
@@ -58,15 +58,16 @@ The datasets were downloaded from Mendeley Data (Concrete Crack Images for Class
 
 To differentiate crack and non-crack surface images from the other natural world scenes, 25,000 randomly sampled images for 80 object categories from the COCO-Minitrain, a subset of the COCO train2017 dataset, were downloaded. The data can be accessed from the links below.
 
-- **Surface Crack Dataset:** https://data.mendeley.com/datasets/5y9wdsg2zt/2
-- **COCO-Minitrain dataset**: https://github.com/giddyyupp/coco-minitrain
+- **Surface Crack Dataset:** [https://data.mendeley.com/datasets/5y9wdsg2zt/2](https://data.mendeley.com/datasets/5y9wdsg2zt/2)
+- **COCO-Minitrain dataset**: [https://github.com/giddyyupp/coco-minitrain](https://github.com/giddyyupp/coco-minitrain)
 
 ## Uploading data to Edge Impulse Studio
+
 We need to create a new project to upload data to Edge Impulse Studio.
 
 <img src=".gitbook/assets/surface-crack-detection-ti-tda4vm/new_project.png" alt="New Project" style="zoom: 50%;" />
 
-The data is uploaded using the Edge Impulse CLI. Please follow the instructions to install the CLI here: https://docs.edgeimpulse.com/docs/cli-installation.
+The data is uploaded using the Edge Impulse CLI. Please follow the instructions to install the CLI here: [https://docs.edgeimpulse.com/docs/cli-installation](https://docs.edgeimpulse.com/docs/cli-installation).
 
 The downloaded images are labeled into 3 classes and saved into the directories with the label name.
 
@@ -232,7 +233,7 @@ We will be using the **Processor SDK Linux for Edge AI** for compilation and inf
 
 ![tflrt_work_flow](.gitbook/assets/surface-crack-detection-ti-tda4vm/tflrt_work_flow.png)
 
-To infer a DNN, SDK expects the DNN (TFLite model) and associated artifacts generated during the compilation process. Now execute the compilation script (compile.py) given below. The script uses a few calibration images borrowed from the training datasets.
+To infer a DNN, SDK expects the DNN (TFLite model) and associated artifacts generated during the compilation process. Now execute the compilation script (`compile.py`) given below. The script uses a few calibration images borrowed from the training datasets.
 
 ```Pyt
 import os
@@ -461,7 +462,7 @@ For the live demonstration in the field, we used a portable monitor with a built
 
 This project showcases an industrial use case for surface crack detection which can be used for predictive maintenance. The project has the following key characteristics.
 
-- Customize the pre-trained transfer learning model in the Edge Impulse Studio expert mode
+- Customize the pre-trained transfer learning model in the Edge Impulse Studio Expert Mode
 - Demonstrate the use of a multi-output model trained using Edge Impulse
 - Runtime heat-map visualization to localize the detected cracks.
 - A scalable and portable solution
