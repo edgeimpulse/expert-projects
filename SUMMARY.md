@@ -105,3 +105,4 @@
 * [Retail Image Classification with a Jetson Nano](retail-image-classification-jetson-nano.md)
 * [Smart Factory Prototype with Texas Instruments TDA4VM](smart-factory-with-tda4vm.md)
 * [Surface Crack Detection and Localization with Texas Instruments TDA4VM](surface-crack-detection-ti-tda4vm.md)
+* [AI-Assisted Air Quality Monitoring with a DFRobot Firebeetle ESP32](air-quality-monitoring-firebeetle-esp32.md)
