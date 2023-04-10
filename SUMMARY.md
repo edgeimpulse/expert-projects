@@ -21,6 +21,7 @@
 * [Glass Window Break Detection - Nordic Thingy:53](glass-break-detection-thingy53.md)
 * [Methane Monitoring in Mines - Silabs xG24 Dev Kit](methane-monitoring-silabs-xg24.md)
 * [Creating Synthetic Data with Nvidia Omniverse Replicator](nvidia-omniverse-replicator.md)
+* [Container Counting with a Nicla Vision & FOMO](container-counting-nicla-vision.md)
 
 ## Prototype and Concept Projects
 
