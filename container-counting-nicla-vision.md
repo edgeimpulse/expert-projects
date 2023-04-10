@@ -1,5 +1,5 @@
 ---
-description: xxxxxxx.
+description: Use an Arduino Nicla Vision to identify containers with TinyML, and send a count of the detected objects to a cloud dashboard.
 ---
 
 # Counting Containers with an Arduino Nicla Vision and FOMO
