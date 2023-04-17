@@ -14,29 +14,29 @@ Public Project Link:
 
 ## Overview
 
-Falls are a major health concern for older people. The number of fall-related deaths increased significantly in recent years, of which around 80% involved persons aged over 65 years. Falls can result in physical and psychological trauma, especially for the elderly. To improve the quality of life of our seniors this project presents the development of a fall-detection wearable device. The main aim of this project is to showcase a working demo of an edge AI device that uses a Transformer-based model.
+Falls are a major health concern for older people. The number of fall-related deaths increased significantly in recent years, of which around 80% of the involved persons are age 65 or older. Falls can result in physical and psychological trauma, especially for the elderly. To improve the quality of life of our seniors this project presents the development of a fall-detection wearable device. The main aim of this project is to showcase a working demo of an edge AI device that uses a Transformer-based model.
 
-## What is a Transformer model?
+## What is a Transformer Model?
 
-A Transformer is a deep learning model that adopts the mechanism of self-attention, differentially weighting the significance of each part of the input data.  Self-attention, sometimes called intra-attention is an attention mechanism relating different positions of a single sequence to compute a representation of the sequence. Like recurrent neural networks (RNNs), transformers are designed to process sequential input data with applications for tasks such as translation and text summarization. However, unlike RNNs, transformers process the entire input all at once. The ChatGPT, a large language model, also uses Transformer blocks in its architecture. In this project, the Transformer model is applied to time-series data instead of natural language. 
+A Transformer is a deep learning model that adopts the mechanism of self-attention, differentially weighting the significance of each part of the input data.  Self-attention, sometimes called intra-attention is an attention mechanism relating different positions of a single sequence to compute a representation of the sequence. Like recurrent neural networks (RNNs), transformers are designed to process sequential input data with applications for tasks such as translation and text summarization. However, unlike RNNs, transformers process the entire input all at once. ChatGPT, a large language model, also uses Transformer blocks in its architecture. In this project, the Transformer model is applied to time-series data instead of natural language. 
 
 ## Hardware Selection
 
-This project requires a low-powered yet capable MCU to run a Transformer model with a reasonable inferencing rate. The Arduino Giga R1 is a good fit for our purpose since it has a powerful MCU with plenty of memory size.  Also, we will be using the SeeedStudio Grove 3-axis accelerometer (ADXL345) and a proto-board shield to connect the accelerometer firmly to the development board.
+This project requires a low-powered yet capable MCU to run a Transformer model with a reasonable inferencing rate. The Arduino Giga R1 is a good fit for our purpose since it has a powerful MCU with plenty of memory.  Also, we will be using the SeeedStudio Grove 3-axis accelerometer (ADXL345) and a proto-board shield to connect the accelerometer firmly to the development board.
 
 ![Hardware](.gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/hardware.jpeg)
 
 ## Development Environment 
 
-We will be using Edge Impulse Studio for model creation and training. We would need to sign up for a free account at https://studio.edgeimpulse.com and create a project to get started. 
+We will be using Edge Impulse Studio for model creation and training. You'll need to sign up for a free account at [https://studio.edgeimpulse.com](https://studio.edgeimpulse.com) and create a project to get started. 
 
-## Training dataset
+## Training Dataset
 
-Collecting data for different kinds of activities of daily living (ADL) and falls is a time-consuming and laborious task. It needs many people from different age groups and requires a lot of man-hours to curate the datasets. Fortunately, there are many high-quality public datasets available for similar kinds of data. We have used the **SisFall: A Fall and Movement Dataset**, which is a dataset of falls and ADL acquired with an accelerometer. The dataset contains 19 types of ADLs and 15 types of falls. It includes acceleration and rotation data from 38 volunteers divided into two groups: 23 adults between 19 and 30 years old, and 15 elderly people between 60 and 75 years old. Data were acquired with three sensors (2 accelerometers and 1 gyroscope) at a frequency sample of 200 Hz. For this project, We are using acceleration data from one of the sensors. Also, I am using the same accelerometer ADXL345 with the same configuration which was used for data collection. The datasets are available in the raw format and can be downloaded from the link given in the paper below.
+Collecting data for different kinds of activities of daily living (ADL) and falls is a time-consuming and laborious task. It needs many people from different age groups and requires a lot of man-hours to curate the datasets. Fortunately, there are many high-quality public datasets available for similar kinds of data. We have used the **SisFall: A Fall and Movement Dataset**, which is a dataset of falls and ADL acquired with an accelerometer. The dataset contains 19 types of ADLs and 15 types of falls. It includes acceleration and rotation data from 38 volunteers divided into two groups: 23 adults between 19 and 30 years old, and 15 elderly people between 60 and 75 years old. Data was acquired with three sensors (2 accelerometers and 1 gyroscope) at a frequency sample of 200 Hz. For this project, We are using acceleration data from one of the sensors. Also, I am using the same accelerometer (ADXL345) with the same configuration which was used for data collection. The datasets are available in the raw format and can be downloaded from the link given in the paper below.
 
 [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5298771/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5298771/)
 
-The data sample is given below. Only the first 3 columns are used which are 3-axis accelerometer data from the ADXL345 sensor.
+A sample of the data is shown below. Only the first 3 columns are used, which are 3-axis accelerometer data from the ADXL345 sensor.
 
 ```
 34,-259, -74, -38, 20, -3, 50,-987,-132;
@@ -62,17 +62,17 @@ Range: 16 (+-16g)
 Acceleration [g]: [ ( 2 * Range ) / ( 2 ^ Resolution ) ] * raw_acceleration
 ```
 
-## Uploading data to Edge Impulse Studio 
+## Uploading Data to Edge Impulse Studio 
 
 We need to create a new project to upload data to Edge Impulse Studio.
 
 <img src=".gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/new_project.png" alt="new_project" style="zoom:50%;" />
 
-Also, we would need the API and HMAC keys for the Edge Impulse Studio project to generate signatures for the data acquisition format. We can copy the keys from the **Dashboard** > **Keys** [tab] at Edge Impulse Studio dashboard.
+Also, we need the API and HMAC keys for the Edge Impulse Studio project to generate signatures for the data acquisition format. We can copy the keys from the **Dashboard** > **Keys** [tab] in the Edge Impulse Studio dashboard.
 
 ![API_keys](.gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/api_keys.png)
 
-The accelerometer data are divided into two classes, **ADL** and **FALL**, and are converted to m/s^2 before uploading to the Edge Impulse Studio. Below is the Python script that converts the raw accelerometer data into the data acquisition JSON format required by the Edge Impulse studio.
+The accelerometer data is divided into two classes, **ADL** and **FALL**, and are converted to m/s^2 before uploading to the Edge Impulse Studio. Below is the Python script that converts the raw accelerometer data into the data acquisition JSON format required by the Edge Impulse Studio.
 
 ```
 python
@@ -156,7 +156,7 @@ if __name__ == "__main__":
             fout.write(encoded)
 ```
 
-To execute the script above save it to *format.py* and run the commands below. It is assumed that the SisFall dataset has been downloaded to the SisFall_dataset directory.
+To execute the script above save it to `format.py` and run the commands below. It is assumed that the SisFall dataset has been downloaded to the `SisFall_dataset` directory.
 
 ```
 sh
@@ -164,7 +164,7 @@ $ mkdir data
 $ python3 format.py
 ```
 
-The converted data acquisition JSON is shown below. The sample rate is reduced to 50 Hz which is sufficient to predict fall events and also helps in reducing the model size, therefore interval_ms is set to 20 (ms).
+The converted data acquisition JSON is shown below. The sample rate is reduced to 50 Hz which is sufficient to predict fall events and also helps in reducing the model size, therefore `interval_ms` is set to 20 (ms).
 
 ```
 {
@@ -214,7 +214,7 @@ The converted data acquisition JSON is shown below. The sample rate is reduced t
 }
 ```
 
-The data is uploaded using the Edge Impulse CLI. Please follow the instructions to install the CLI here: https://docs.edgeimpulse.com/docs/cli-installation.
+The data is uploaded using the Edge Impulse CLI. Please follow the instructions to install the CLI here: [https://docs.edgeimpulse.com/docs/cli-installation](https://docs.edgeimpulse.com/docs/cli-installation).
 
 The JSON files are prefixed with the label name (e.g. FALL.F10_SA07_R01.json) by the script above so that the label name is inferred automatically by the CLI. The command below is used to upload all JSON files to training datasets.
 
@@ -225,7 +225,7 @@ $ edge-impulse-uploader --category training data/*.json
 
 We could have used **--category split** to automatically split the data into training and testing datasets, but we need to segment the sample so it is uploaded there for convenience. We can see the uploaded datasets on the Edge Impulse Studio's **Data Acquisition** page.
 
-![datasets](.gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/datasets.png)
+![Datasets](.gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/datasets.png)
 
 The uploaded **FALL** event data have mixed motion events before and after the fall event which are removed by splitting the segments. The **ADL** category data are used without any modifications.
 
@@ -333,7 +333,7 @@ if __name__ == "__main__":
     logging.info("Finished")
 ```
 
-To execute the script above save it to a segments.py file and run the command below.
+To execute the script above save it to a `segments.py` file and run the command below.
 
 ```
 sh
@@ -354,13 +354,13 @@ Next, go to the **Impulse Design** > **Raw Data** page and click the **Save para
 
 <img src=".gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/raw_features.png" alt="raw_data" style="zoom:50%;" />
 
-Clicking on the **Save parameters** button redirects to another page where we should click on the **Generate Feature** button. It usually takes a couple of minutes to complete feature generation.
+Clicking on the **Save parameters** button redirects to another page where we should click on the **Generate Feature** button. It usually takes a couple of minutes to complete Feature generation.
 
 <img src=".gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/generate_feature.png" alt="generate_feature" style="zoom:50%;" />
 
-In the case of the Raw data processing block, the feature generation does not change the data. It divides them into given windows size only. In the image below, we can see the Raw features and the Processed features are the same.
+In the case of the Raw data processing block, the Feature generation does not change the data. It divides them into given windows size only. In the image below, we can see the Raw features and the Processed features are the same.
 
-![raw_data](.gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/raw_data.png)
+![Raw_data](.gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/raw_data.png)
 
  We can see the complete view of all data on the **Dashboard** > **Data Explorer** page.
 
@@ -374,7 +374,7 @@ To define the neural network architecture,  go to the **Impulse Design** > **Cla
 
 ## Model Creation and Training
 
-The key building block of a Transformer model is the Keras[ MultiHeadAttention](https://keras.io/api/layers/attention_layers/multi_head_attention/) layer. As part of a recent release the Edge Impulse SDK now supports this layer. The Transformer based models are usually large models. The Arduino Giga R1 WiFi has 1 MB RAM divided into 2 cores (M7/M4). The main core (M7) has 512 KB RAM. To fit the model into the available memory with other overheads we needed to slim down the architecture by defining 1 transformer block with 2 attention heads (size = 64). Also, reducing the dimension (units) of the penultimate Dense layer helps in keeping the model size within the limits. The aforementioned hyperparameters have been chosen after many training trials and keeping the optimal model size without losing much accuracy. 
+The key building block of a Transformer model is the Keras [MultiHeadAttention](https://keras.io/api/layers/attention_layers/multi_head_attention/) layer. As part of a recent release the Edge Impulse SDK now supports this layer. The Transformer based models are usually large models. The Arduino Giga R1 WiFi has 1 MB RAM divided into 2 cores (M7/M4). The main core (M7) has 512 KB RAM. To fit the model into the available memory with other overheads we needed to slim down the architecture by defining 1 transformer block with 2 attention heads (size = 64). Also, reducing the dimension (units) of the penultimate Dense layer helps in keeping the model size within the limits. The aforementioned hyperparameters have been chosen after many training trials and keeping the optimal model size, without losing much accuracy. 
 
 The 4000ms of 3-axis accelerometer raw time-series data are fed into the Input layer. We have added a Normalize layer with pre-calculated mean and variance for each channel from the training datasets. The Transformer model is capable to learn features from the raw time series data while training.
 
@@ -429,8 +429,6 @@ Trainable params: 8,464
 Non-trainable params: 0
 ___________________________________________________________________________________________
 ```
-
-
 
 The complete training code is given below.
 
@@ -541,11 +539,11 @@ Now click the **Build** button, and in a few seconds the library bundle will be 
 
 ## Run Inferencing
 
-Please follow the instructions [here ](https://www.arduino.cc/en/software)to download and install Arduino IDE. After installation, open the Arduino IDE and install the board package for the **Arduino Giga R1 WiFi** by going to **Tools** > **Board** > **Boards Manager**. Search the board package as shown below and install it.
+Please follow the instructions [here](https://www.arduino.cc/en/software) to download and install the Arduino IDE. After installation, open the Arduino IDE and install the board package for the **Arduino Giga R1 WiFi** by going to **Tools** > **Board** > **Boards Manager**. Search the board package as shown below and install it.
 
-![board_manager](.gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/board_manager.png)
+![Board_manager](.gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/board_manager.png)
 
-After the board package installation is completed, choose the **Arduino Giga R1** from **Tools** > **Board** >  **Arduino Mbed OS Giga boards** menu and select the serial port of the connected board from **Tools** > **Port** menu. 
+After the board package installation is completed, choose the **Arduino Giga R1** from **Tools** > **Board** >  **Arduino Mbed OS Giga boards** menu and select the serial port of the connected board from the **Tools** > **Port** menu. 
 
 Below is the Arduino sketch for inferencing. For continuous motion event detection, the application uses two threads on the MCU's main core , one for inferencing and another for data sampling so that no events should miss.
 
@@ -685,14 +683,14 @@ void loop()
 }
 ```
 
-To run the inferencing sketch, import the downloaded library bundle using the menu **Sketch** > **Include Library** > **Add.ZIP Library** in the Arduino IDE. Create a new sketch with the code above and compile/upload the firmware to the connected Arduino Giga R1 board. We can monitor the inferencing output using the **Tools** > **Serial Monitor** with a baud rate of 115200 bps. The inferencing rate is **142ms** which is pretty impressive.
+To run the inferencing sketch, import the downloaded library bundle using the menu **Sketch** > **Include Library** > **Add.ZIP Library** in the Arduino IDE. Create a new Sketch with the code above and compile/upload the firmware to the connected Arduino Giga R1 board. We can monitor the inferencing output using **Tools** > **Serial Monitor** with a baud rate of 115200 bps. The inferencing rate is **142ms** which is pretty impressive.
 
 ## Demo
 
-Although the Arduino Giga R1 WiFi has onboard WiFi and Bluetooth chip which can be used to send out alert notifications, for demo purposes, whenever a fall event is detected the onboard red LED turns on. The device is mounted on a belt and worn at the waist. The accelerometer orientation is kept the same (Y-axis downward and Z-axis coming out from the wearer) as when the training data was collected.
+Although the Arduino Giga R1 WiFi has an onboard WiFi and Bluetooth chip which can be used to send out alert notifications, for demo purposes, whenever a fall event is detected the onboard red LED turns on. The device is mounted on a belt and worn at the waist. The accelerometer orientation is kept the same (Y-axis downward and Z-axis coming out from the wearer) as when the training data was collected.
 
-![Demo](https://img.youtube.com/vi/wPJF7lJrIWw/0.jpg)(https://www.youtube.com/watch?v=wPJF7lJrIWw)
+{% embed url="https://www.youtube.com/watch?v=wPJF7lJrIWw" %}
 
 ## Conclusion 
 
-This project presents a proof-of-concept device that is easy to use for elderly people. This project also showcases that a Transformer based neural network can be used to solve complex problems without any signal processing, and can be run on inexpensive, low-powered,  and resource-constrained devices. 
+This project presents a proof-of-concept device that is easy to use for elderly people. This project also showcases that a Transformer-based neural network can be used to solve complex problems without any signal processing, and can be run on inexpensive, low-powered, and resource-constrained devices. 
