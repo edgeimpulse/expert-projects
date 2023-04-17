@@ -372,6 +372,8 @@ To define the neural network architecture,  go to the **Impulse Design** > **Cla
 
 <img src=".gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/neural_network_expert_mode.png" alt="neural_network_expert_mode" style="zoom:50%;" />
 
+<img src=".gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/model.png" alt="new_project" style="zoom:50%;" />
+
 ## Model Creation and Training
 
 The key building block of a Transformer model is the Keras [MultiHeadAttention](https://keras.io/api/layers/attention_layers/multi_head_attention/) layer. As part of a recent release the Edge Impulse SDK now supports this layer. The Transformer based models are usually large models. The Arduino Giga R1 WiFi has 1 MB RAM divided into 2 cores (M7/M4). The main core (M7) has 512 KB RAM. To fit the model into the available memory with other overheads we needed to slim down the architecture by defining 1 transformer block with 2 attention heads (size = 64). Also, reducing the dimension (units) of the penultimate Dense layer helps in keeping the model size within the limits. The aforementioned hyperparameters have been chosen after many training trials and keeping the optimal model size, without losing much accuracy. 
