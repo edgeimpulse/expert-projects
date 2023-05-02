@@ -107,6 +107,6 @@
 * [Smart Factory Prototype with Texas Instruments TDA4VM](smart-factory-with-tda4vm.md)
 * [Surface Crack Detection and Localization with Texas Instruments TDA4VM](surface-crack-detection-ti-tda4vm.md)
 * [AI-Assisted Air Quality Monitoring with a DFRobot Firebeetle ESP32](air-quality-monitoring-firebeetle-esp32.md)
-* [The SiLabs xG24 Plus Arducam - Sorting Cards with Computer Vision and Robotics - Part 1](silabs-xg24-card-sorting-and-robotics-1.md)
-* [The SiLabs xG24 Plus Arducam - Sorting Cards with Computer Vision and Robotics - Part 2](silabs-xg24-card-sorting-and-robotics-2.md)
+* [The SiLabs xG24 Plus Arducam - Sorting Objects with Computer Vision and Robotics - Part 1](silabs-xg24-card-sorting-and-robotics-1.md)
+* [The SiLabs xG24 Plus Arducam - Sorting Objects with Computer Vision and Robotics - Part 2](silabs-xg24-card-sorting-and-robotics-2.md)
 * [Fall Detection using a Transformer Model with Arduino Giga R1 WiFi](fall-detection-with-transformers-arduino-giga-r1.md)
