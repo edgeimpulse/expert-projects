@@ -370,7 +370,9 @@ In the case of the Raw data processing block, the Feature generation does not ch
 
 To define the neural network architecture,  go to the **Impulse Design** > **Classifier** page and click on the **Switch to Keras(expert) mode** as shown below.
 
-<img src=".gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/neural_network_expert_mode.png" alt="neural_network_expert_mode" style="zoom:50%;" />
+<img src=".gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/neural_network_expert_mode.png" alt="neural_network_expert_mode" style="zoom:50%;" />  
+
+<br />
 
 <img src=".gitbook/assets/fall-detection-with-transformers-arduino-giga-r1/model.png" alt="new_project" style="zoom:50%;" />
 
