@@ -192,8 +192,8 @@ Regardless of if you are using the robot to sort cards or solid waste, the deplo
                 label = inference()
 ```
 
-    * If you have used different labels than in these tutorials, please adjust the labels in the program `labels = ["back:", "black:", "no_card:", "red:"]`. Remember they have to be in alphabetical order, also remember to put the colon symbol `(:)` at the end of each label!
-    * Both programs are parsing the serial stream coming from the xG24 device and stripping away everything apart from the prediction and probability. This part was more challenging to program than I'd thought, partly as the program can start "midstream", partly due to the speed of the serial transmission. Here's how the serial stream might look like, i.e. same as when running `edge-impulse-run-impulse` from a command prompt:
+* If you have used different labels than in these tutorials, please adjust the labels in the program `labels = ["back:", "black:", "no_card:", "red:"]`. Remember they have to be in alphabetical order, also remember to put the colon symbol `(:)` at the end of each label!
+* Both programs are parsing the serial stream coming from the xG24 device and stripping away everything apart from the prediction and probability. This part was more challenging to program than I'd thought, partly as the program can start "midstream", partly due to the speed of the serial transmission. Here's how the serial stream might look like, i.e. same as when running `edge-impulse-run-impulse` from a command prompt:
     
 ```
         Predictions (DSP: 11 ms., Classification: 216 ms., Anomaly: 0 ms.):
