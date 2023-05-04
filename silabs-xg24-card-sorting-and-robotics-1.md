@@ -2,7 +2,7 @@
 description: Getting started with the SiLabs xG24 and an Arducam to identify cards with computer vision and TinyML, for later use in a robotics sorting project
 ---
 
-# The SiLabs xG24 and Arducam - Sorting Cards with Computer Vision and Robotics - Part 1
+# The SiLabs xG24 and Arducam - Sorting Objects with Computer Vision and Robotics - Part 1
 
 Created By:
 Thomas Vikstrom 

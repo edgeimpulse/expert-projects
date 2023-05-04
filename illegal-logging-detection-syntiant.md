@@ -17,7 +17,7 @@ Illegal logging is a major environmental issue worldwide. It not only destroys f
 
 One way to combat this problem is through the use of machine learning algorithms that can detect chainsaw noise and be deployed on battery-powered devices, such as sensors in the forest. This allows for real-time monitoring of illegal logging activity, which can then be quickly addressed.
 
-### The Challenge
+## The Challenge
 
 Detecting illegal logging is therefore essential for both environmental and economic reasons. However, it is difficult to detect illegal logging activity due to the vastness of forested areas, as it often takes place in remote and hard-to-reach areas. Traditional methods such as ground patrols are often ineffective, and satellite imagery can be expensive and time-consuming to analyze. 
 
@@ -25,7 +25,7 @@ Detecting illegal logging is therefore essential for both environmental and econ
 
 When combined with satellite data, ML can be used to quickly and cost-effectively identify areas where illegal logging is taking place. By deploying sensors in the forest, they are able to detect illegal logging activity in real time. In addition, by providing data on where illegal logging is taking place, they are helping to better target enforcement efforts. This information can then be used to deploy ground patrols or take other actions to stop illegal activity. In this way, ML can play a vital role in protecting forests and ensuring that timber is harvested legally.
 
-### Our Solution
+## Our Solution
 
 ![](.gitbook/assets/illegal-logging-detection-syntiant/2.jpg)
  
