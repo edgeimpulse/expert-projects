@@ -83,8 +83,8 @@ The optical sensor of this module can measure the density of turbid water and th
     - [PCB lid](https://github.com/baljo/Tongue/blob/main/3D%20Model/STL-files/PCB%20lid.stl)
     - [Tongue top](https://github.com/baljo/Tongue/blob/main/3D%20Model/STL-files/Tongue_top.stl)
     - [Tongue bottom](https://github.com/baljo/Tongue/blob/main/3D%20Model/STL-files/Tongue_bottom.stl)
-- I used TPU-filament (from CCTree) for the first time and was surprised that it worked without issues on my budget Bowden-tube equipped 3D-printer. I did though not dare to go full speed (100 mm/s), instead used a moderate 50 mm/s, and a temperature of 220 °C. Print with high quality, I chose the max quality of 100 microns (0.1 mm), which made the printer working for hours with each part. 
-- No support is needed, a brim or raft is though recommended. TPU-filament sticks better to the print bed than PLA, so a heated bed is probably not necessary, my printer is anyhow not having one.
+- I used TPU-filament (from CCTree) for the first time and was surprised that it worked without issues on my budget Bowden-tube equipped 3D-printer. I did not dare to go full speed (100 mm/s), instead I used a moderate 50 mm/s, and a temperature of 220 °C. Print with high quality, I chose the max quality of 100 microns (0.1 mm), which made the printer work for hours with each part. 
+- No support is needed, a brim or raft is recommended though. TPU-filament sticks better to the print bed than PLA, so a heated bed is probably not necessary, my printer does not have one.
 - The "tongue" is split in two parts, the bottom part is not strictly needed, but provides some protection when the equipment is not in use, and makes it look more like a real tongue! If you are printing with very flexible TPU-material, you might want to make the bottom part a tad thicker than in the design files.
 
 ![](.gitbook/assets/liquid-classification-tinyml/IMG_3242_resized.jpg)
@@ -101,7 +101,7 @@ To be able to gather data, and later to test the setup in practice, you need to 
     - If using the battery chassis, and you want to see the battery status: [SparkFun BQ27441-G1A LiPo Fuel Gauge Arduino Library](https://github.com/sparkfun/SparkFun_BQ27441_Arduino_Library/tree/master) 
     - Visit [Seeed_Arduino_Linechart](https://github.com/Seeed-Studio/Seeed_Arduino_Linechart) and download the entire repo to your local drive. Then add the .ZIP-file as above
 
-# Data Collection Process
+## Data Collection Process
 
 To collect data using Edge Impulse, there's only a few steps to take:
 
@@ -125,12 +125,12 @@ To collect data using Edge Impulse, there's only a few steps to take:
 - Your device should now be visible on the right side.
 - Use a sample length of 10000 ms (= 10 seconds), the frequency is automatically 5 Hz as you forced it to be in the preparation steps.
 - The first label you should record data for is `air` that is, do not immerse the sensors in any liquid, just keep them in the air.
-    - It is often necessary to have a label that serves as *other* or *background*. In this case the label `air` is even "hard coded" in the program, but the program will technically work fine even if you don't use `air` as label.
+    - It is often necessary to have a label that serves as *other* or *background*. In this case the label `air` is even "hard coded" in the program, but the program will technically work fine even if you don't use `air` as the label.
 - Click on `Start sampling` to collect data, I collected roughly 6 minutes of data for each label, but I recommend you start with a minute or so for each label. Machine learning is most often an iterative process, so start small and adjust if needed.
 - When collecting data from liquids, ensure the sensors are immersed deep enough.
     - Check the animation in the beginning of this tutorial, the liquids are very close to the glass rims.
     - Name the liquids, preferably with a shortish label as they will be displayed on the WIO Terminal later.
-    - Try to collect roughly same amount of data for each liquid.
+    - Try to collect roughly the same amount of data for each liquid.
 
 **Important**
 
@@ -157,12 +157,12 @@ After collecting some data you are now ready to build and train a ML model:
 
 - Select `Classifier` from the menu
 - Change the settings as in the picture, most important changes are the Dense layers and the Dropout rate, but feel free to play around with other settings.
-- The unoptimized float32 model will with these settings be very tiny, so there's no need to profile an quantized int8 model.
+- The unoptimized float32 model with these settings will be very tiny, so there's no need to profile an quantized int8 model.
     - In my case the int8 accuracy has actually been extremely poor and useless, I haven't though investigated why, as the float32 model works just fine.
 - Click on `Start training`, unless you have lots of data and/or a very huge neural network, the training will in this case take just a few minutes.
 - Depending on your data quality/quantity and your model settings, you might or might not achieve a satisfying accuracy.
     - If you get a very poor accuracy with the unoptimized float32 model, you might need to collect more data, but in this case you should also check that the turbidity sensor (the wider one), really is immersed enough in the liquid, otherwise the optics might "see" only air.
-    - After you have collected new data, click on `Retrain model`. This way you don't need to yourself generate new features.
+    - After you have collected new data, click on `Retrain model`. This way you don't need to generate new features.
 
 ![](.gitbook/assets/liquid-classification-tinyml/EI-08.jpg)
 
@@ -217,11 +217,11 @@ As mentioned earlier, the quantized int8 model performs extremely poorly and is 
 
 In addition, I have not tested the model with different concentrations, and suspect it might struggle with very diluted liquids. To overcome this potential issue, one would need to collect data from liquids with different dilutations and retrain the model. Do also note that there most probably are completely different liquids that happen to have same characteristics as measured by the two sensors used. When both sensors measure similar values, even from completely different liquids, the liquids will from the model point of view be one and the same. This problem can be overcome by using "sensor fusion" that is, adding more or different type of sensors like e.g. gas sensors for scenting. With WIO Terminal and Grove-components this should actually be quite easy to do.
 
-Despite above mentioned potential shortcomings, I was positively surprised that the model as such worked perfectly and consistently.
+Despite the above mentioned potential shortcomings, I was positively surprised that the model as such worked perfectly and consistently.
 
 ## Conclusion
 
-In this project you've learned how to build a functioning ML project able to classify different liquids with a good or hopefully perfect accuracy. You are recommended to explore this more and take it a step further by adding more and different types of sensors, and especially try to find use cases where this type of technology can make a difference.
+In this project you've learned how to build a functioning ML project able to classify different liquids with a good, or hopefully perfect accuracy. You are recommended to explore this more and take it a step further by adding more and different types of sensors, and especially try to find use cases where this type of technology can make a difference.
 
 ![](.gitbook/assets/liquid-classification-tinyml/Tongue_inferencing2.gif)
 
