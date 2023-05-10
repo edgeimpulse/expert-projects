@@ -111,3 +111,4 @@
 * [The SiLabs xG24 Plus Arducam - Sorting Objects with Computer Vision and Robotics - Part 1](silabs-xg24-card-sorting-and-robotics-1.md)
 * [The SiLabs xG24 Plus Arducam - Sorting Objects with Computer Vision and Robotics - Part 2](silabs-xg24-card-sorting-and-robotics-2.md)
 * [Fall Detection using a Transformer Model with Arduino Giga R1 WiFi](fall-detection-with-transformers-arduino-giga-r1.md)
+* [Liquid Classification with TinyML](liquid-classification-tinyml.md)
