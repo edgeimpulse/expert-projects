@@ -114,3 +114,4 @@
 * [Liquid Classification with TinyML](liquid-classification-tinyml.md)
 * [Edge Impulse API Usage Sample Application - Jetson Nano Trainer](api-sample-application-jetson-nano.md)
 * [Object Detection and Visualization with the Seeed Studio Grove Vision AI Module](object-detection-ubidots-seeed-grove-ai.md)
+* [AI-Assisted Pipeline Diagnostics and Inspection with mmWave Radar](ai-pipeline-inspection-mmwave.md)
