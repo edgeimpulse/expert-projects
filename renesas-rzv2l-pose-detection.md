@@ -19,9 +19,9 @@ You will see how Edge Impulse allows you to use DRP-AI in as a little as a few c
 
 Renesas is a leading producer of a variety of specialized Microprocessor and Microcontroller solutions which are found at the heart of many industrial and consumers systems.
 
-Their RZ family of Microprocessors includes a range of Arm Cortex A based multicore models targeting a wide range of applications from, industrial networking(RZ/N) and real time control (RZ/T), to general purpose/HMI and graphics applications (RZ/A, RZ/G) and finally AI based computer vision applications (RZ/V).
+Their RZ family of Microprocessors includes a range of Arm Cortex-A based multicore models targeting a wide range of applications from, industrial networking (RZ/N) and real time control (RZ/T), to general purpose/HMI and graphics applications (RZ/A, RZ/G) and finally AI-based computer vision applications (RZ/V).
 
-At the heart of the AI focused RZ/V MPU series is Renesas’ own DRP-AI ML accelerator. DRP-AI is a low power high performance ML accelerator that was designed around Renesas Dynamic Reconfigurable (DRP) processor technology originally created to accelerate computer vision applications with DRP being especially useful in speeding up pre and post processing of image data in a computer vision pipeline. 
+At the heart of the AI focused RZ/V MPU series is Renesas’ own DRP-AI ML accelerator. DRP-AI is a low power high performance ML accelerator that was designed around Renesas Dynamic Reconfigurable Processor (DRP) technology originally created to accelerate computer vision applications with DRP being especially useful in speeding up pre and post processing of image data in a computer vision pipeline. 
 
 A traditional CPU has fixed data paths and algorithms are implemented by instructions or software written by a developer to manipulate how these fixed data paths are used.  DRP is a form of reprogrammable hardware that is able to change its processing data paths during run time.  This capability is referred to as its Dynamic Reconfiguration feature which enables DRP to provide the optimal hardware based implementation of an algorithm adapting its computing path ways to implement the algorithm in the most efficient way possible. The data path configuration that is loaded into the DRP specifies the operations and interconnections that the DRP will implement in hardware. DRP contains a Finite State Machine known as a State Transition Controller (STC) that manages the data path configuration in hardware and allows for changing out of data path configurations during run time.
 
@@ -245,7 +245,7 @@ Edge Impulse will make it easy for you to build different cases and deploy a new
 
 ## Summary
 
-Renesas has created a low power highly performant and novel ML accelerator in the form of DRP-AI. The DRP-AI is provided as part of the RZ/V series of Arm Cortex A MPU’s which were developed for AI based vision applications, offering a wide variety of peripherals to suit most applications from B2B to B2C. 
+Renesas has created a low power highly performant and novel ML accelerator in the form of DRP-AI. The DRP-AI is provided as part of the RZ/V series of Arm Cortex-A MPU’s which were developed for AI based vision applications, offering a wide variety of peripherals to suit most applications from B2B to B2C. 
 
 DRP AI is a full ML accelerator that exploits the dynamically configurable capabilities which Renesas has designed to allow the hardware to effectively adapt itself in real time to the ML model being executed thereby accelerating the inference process while also consuming a lower amount of power than other solutions such GPU’s.
 
