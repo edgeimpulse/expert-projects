@@ -25,7 +25,7 @@ At the heart of the AI focused RZ/V MPU series is Renesas’ own DRP-AI ML accel
 
 A traditional CPU has fixed data paths and algorithms are implemented by instructions or software written by a developer to manipulate how these fixed data paths are used.  DRP is a form of reprogrammable hardware that is able to change its processing data paths during run time.  This capability is referred to as its Dynamic Reconfiguration feature which enables DRP to provide the optimal hardware based implementation of an algorithm adapting its computing path ways to implement the algorithm in the most efficient way possible. The data path configuration that is loaded into the DRP specifies the operations and interconnections that the DRP will implement in hardware. DRP contains a Finite State Machine known as a State Transition Controller (STC) that manages the data path configuration in hardware and allows for changing out of data path configurations during run time.
 
-![Dynamic Reconfiguration of Data Paths](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%201.png)
+![Dynamic Reconfiguration of Data Paths](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled1.png)
 
 Changing of hardware configurations between different data path configuration is referred to as *context switching* meaning that the hardware adapts in real time to the computing needs of complex algorithms. DRP works like an FPGA except instead of being programmed once during the development phase, it is being dynamically reconfigured in real time by the STC to ensure its constantly adapting to the to the processing requirements of the algorithm. This provides runtime configuration capabilities that are somewhat limited on ASICS and FPGA’s.
 
@@ -33,7 +33,7 @@ Thanks to the other Dynamic Loading feature of DRP it is also able to load an en
 
 This is best illustrated with an example, in this case a traditional computer vision image processing pipeline that is seeking to extract edges as features from input images. The pipeline is shown below with DRP capabilities included.  In this particular example the hardware is configured to implement Median filters for noise reduction, then perform edge detection using the Canny Edge Detection function and finally threshold detection to clean up the edges. 
 
-![Dynamic Loading for Computer Vision Acceleration with DRP](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%202.png)
+![Dynamic Loading for Computer Vision Acceleration with DRP](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled2.png)
 
 The input frame is fed to a Median filter with the Dynamic Loading capability being used to load a complete set of configurations for implementing the Median filter function in the DRP (Step 1). The image is then processed by what is effectively a hardware implementation of the Median filter with all the processing steps of the filter being executed by having the internal Finite State Machine load different data path configurations.
 
@@ -45,29 +45,29 @@ These functions would traditionally be performed in CPU but DRP results in perfo
 
 While DRP itself was developed for image processing acceleration on its own can it can improve DNN inference by accelerating the operations found in pre processing and feature extraction. Renesas further enhanced DRP to include a configurable high speed Multiply Accumulate (MAC) hardware unit for use with AI.  The combination of DRP with the AI-MAC unit results in the full DNN accelerator that Renesas calls DRP-AI.
 
-![AI MAC found in DRP-AI](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%203.png)
+![AI MAC found in DRP-AI](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled3.png)
 
 The MAC implementation in DRP-AI has also been especially designed to reduce power consumption by reusing data in operations such as in the convolution kernels that usually waste memory bandwidth and power by fetching the same data repeatedly. Another novel feature is that DRP-AI can anticipate 0 valued weights which occur frequently in DNN models due the way the RELU activation function clamps all negative numbers to 0. By being able anticipate these in real time unnecessary operations can be eliminated further reducing power consumption. To further improve inference latency and reduce power DRP-AI also has a mechanism to schedule operations to occur in the most efficient away reducing memory access and increasing processing throughput for the your model.
 
 The DRP component of the DRP-AI accelerator is also able to boost performance of operations such as pooling in addition to feature extraction and various operations found in a Convolutional Neural Network.
 
-![DRP-AI Operation](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%204.png)
+![DRP-AI Operation](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled4.png)
 
 All of this translates into DRP-AI being a DNN accelerator that is not only fast but also uses very little power and doesn’t require heatsinks and extensive cooling as compared to GPU’s. 
 
-DRP-AI brings low power tinyML like characteristics to Edge applications while allowing you run complex unconstrained models with more parameters such as YOLO using less power than other competing solutions.   
+DRP-AI brings low power tinyML like characteristics to Edge applications while allowing you run complex unconstrained models with more parameters such as YOLO using less power than other competing solutions.
 
-![DRP-AI vs alternatives](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%205.png)
+![DRP-AI vs alternatives](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled5.png)
 
 ## Hardware Support for DRP-AI
 
 DRP-AI is built into the RZ/V MPU family which includes a range of models designed for image processing, AI and general purposes applications with new parts being added in future.
 
-![RZ/V Series Product Roadmap](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%206.png)
+![RZ/V Series Product Roadmap](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled6.png)
 
 The RZ/V2L is designed to optimize its performance for AI-powered and computer vision applications. It includes DRP-AI that is capable of processing complex calculations and neural network processing tasks in real-time, making it ideal for applications such as object recognition, speech recognition, and predictive maintenance. 
 
-![RZ/V2L Architecture](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%207.png)
+![RZ/V2L Architecture](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled7.png)
 
 The RZ/V2L also includes a Cortex M33 MCU for real time interfacing making it a hybrid MPU/MCU solution, an Arm Mali GPU and a host of peripheral interfaces covering a wide range of applications.
 
@@ -77,7 +77,7 @@ The RZ/V2L also includes a Cortex M33 MCU for real time interfacing making it a 
 
 The Renesas RZ/V2L Evaluation Kits comes in the form a SMARC v2.1 Module that has the RZ/V2L and supporting hardware bundled together with a SMARC carrier board that provides Dual Gigabit Ethernet, MIPI Camera, MicroHDMI, CAN, PMOD and audio interfaces.  The RZ/V2L Evaluation kit also runs Yocto Linux and is geared towards product developers and professional applications. 
 
-![Renesas RZ/V2L Evaluation Kit](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%208.png)
+![Renesas RZ/V2L Evaluation Kit](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled8.png)
 
 There is also a MIPI camera bundled with the kit but any suitable MIPI camera can be used. Currently Edge Impulse provides direct board support for the RZ/V2L Evaluation Kit.
 
@@ -85,7 +85,7 @@ There is also a MIPI camera bundled with the kit but any suitable MIPI camera ca
 
 The Avnet RZBoard V2L is an alternative option also based on the RZ/V2L that is ideal for quick prototyping and rapid deployments and comes in the form of a cost effective Single Board Computer with the Raspberry Pi form factor. It also includes Bluetooth and WiFi connectivity over and above the GigaBit Ethernet for a wide variety of AIoT applications.
 
-![Avnet RZBoard V2L](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%209.png)
+![Avnet RZBoard V2L](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled9.png)
 
 The RZBoard does not have all the features of the Renesas Eval kit but is useful for deployments and most common scenarios where you would use a SBC and can actually act as a drop in replacement for similar SBC’s especially when ML acceleration is required. 
 
@@ -99,7 +99,7 @@ There is a lot of things happening behind the scenes within the DRP-AI accelerat
 
 DRP-AI Translator adds an additional step into your ML Ops workflow and  takes ONNX models as input and then converts the model into the necessary components needed to configure and instruct the DRP and AI MAC found within DRP-AI.
 
-![DRP-AI Translator](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2010.png)
+![DRP-AI Translator](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled10.png)
 
 DRP-AI Translator also performs model optimization and setups up the DRP-AI hardware execute the model provided. 
 
@@ -107,19 +107,19 @@ DRP-AI Translator also performs model optimization and setups up the DRP-AI hard
 
 DRP-AI TVM performs a similar function and incorporates DRP-AI into a Apache TVM framework which is a aims to unify the model compiling and deployment pipeline across various hardware and ML Frameworks. The TVM framework is able to convert models from a wider range of frameworks including TensorFlow and PyTorch. TVM may not produce the most optimized conversions for DRP-AI and the DRP-AI Translator tool on its own results in the highest performance. 
 
-![DRP-AI Translator vs DRP_AI TVM](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2011.png)
+![DRP-AI Translator vs DRP_AI TVM](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled11.png)
 
 ### Working with DRP-AI Translator
 
 To directly utilize DRP-AI Translator the process requires additional configuration files to be provided with the ONNX model files to enable DRP AI to create the necessary configuration files to setup the DRP-AI hardware to execute your model. The additional input files are created in YAML and you need to provide Pre and Post Processing definition files together with an address map:
 
-![DRP-AI configuration files](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2012.png)
+![DRP-AI configuration files](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled12.png)
 
 The DRP-AI Translator tool then generates many output files which include the various configuration for the DRP-AI to implement your model and these files need to be incorporated in your final application.
 
 The figure below shows a summary of the input files provided and the resultant output files which then need to implemented into your application.
 
-![DRP-AI Translator files](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2013.png)
+![DRP-AI Translator files](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled13.png)
 
 The input files themselves require and understanding of the model input and output layers and they are prepared in YAML format. In addition while DRP-AI Translator simplifies and abstracts the underlying workings of of the DRP-AI hardware it still requires an understanding the configuration process and most of most of these output files and how to work with them. There is documentation that is over 80 pages long detailing how to create the configurations to convert your models using DRP-AI Translator.
 
@@ -131,19 +131,19 @@ Edge Impulse includes built in DRP-AI support for YOLOv5 and Edge Impulse’s ow
 
 With Edge Impulse’s support of DRP-AI all of this is done behind the scenes with DRP-AI Translator and the associated configurations taking place in the back for the supported models. There is no need to work with the configuration files or read and understand lengthy manuals or understand the whole process of working with DRP-AI Translator and the associated input and output files. All that is needed is a few clicks to add DRP-AI support to existing or new models.
 
-![DRP-AI Translator vs Edge Impulse](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2014.png)
+![DRP-AI Translator vs Edge Impulse](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled14.png)
 
 ### Model Creation for DRP-AI
 
 To add DRP-AI support in your ML projects with Edge Impulse, all that is needed is to select the Renesas RZ/V2L (with DRP-AI accelerator) target from the Target selection menu in the Edge Impulse Studio. This invoke the DRP-AI Translator tool and input file generation automatically behind the scenes while also ensuring it works with your custom model.
 
-![Enabling DRP-AI in Edge Impulse Studio](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2015.png)
+![Enabling DRP-AI in Edge Impulse Studio](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled15.png)
 
 Selecting this target works for both Image Classification and Object Detection (FOMO) and YOLO. 
 
 When using FOMO you can use the standard FOMO model however for YOLO there is a special YOLO training block for DRP-AI that needs to be selected. Once you have made those selections your workflow proceeds as per normal in Edge Impulse
 
-![YOLO for DRP-AI in Edge Impulse Studio](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2016.png)
+![YOLO for DRP-AI in Edge Impulse Studio](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled16.png)
 
 This allows developers to transparently leverage  the benefits of DRP-AI and instead be focused on the final application. This is in line with Edge Impulse’s philosophy of enabling developers at all skill levels to build production ready ML based applications as quickly and easily as possible.
 
@@ -153,13 +153,13 @@ Once you have completed the process of building your model the next step is to a
 
 You will ultimately want to deploy the model into a custom application on your own custom application and the two choices you have are to use the C++ DRP-AI Library for embedding in a custom C++ application or the EIM deployment.
 
-![](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2017.png)
+![](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled17.png)
 
 The DRP-AI C++ library is based on Edge Impulse’s standard C++ SDK library and contains the DRP-AI acceleration configuration built in making it easy for developers to use the SDK in their code with DRP-AI through the same API that is used across all platforms. The DRP-AI C++ library can be dropped into your application without you needing understand the underlying configuration.
 
 Edge Impulse has a created an a packaged executable called an EIM (Edge Impulse Model) that is essentially a Linux executable that wraps up your model and all associated feature processing and acceleration into one executable which is accessed via a simple Inter process Communication Interface (IPC). You can easily pass your input data to this executable via the IPC interface and the receive the results via the same interface.
 
-![EIM usage](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2018.png)
+![EIM usage](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled18.png)
 
 The EIM DRP-AI deployment is easily accessible from the Edge Impulse Studio by selecting the Renesas RZ/V option under Build Firmware. This automatically results an EIM download. The EIM file can then be copied to your RZ/V2L board and called from your C++, Python, NodeJS or GoLang application.
 
@@ -169,7 +169,7 @@ Not only do both of these options provide you flexibility for most applications 
 
 Both Object Detection and Image Classification can be used on their own however it is useful to combine them together where the Object Detector first locates specific objects in a frame and then Classifier is used to further classify an object into different categories. This requires the Object Detector to run first then the output of the Object Detector is passed to the Classifier. The output being Object Detection Bounding boxes with a classification label.
 
-![Two Stage AI Vision Pipeline](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2019.png)
+![Two Stage AI Vision Pipeline](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled19.png)
 
 In this example such an implementation is provided as Python based Web Application that you can modify for your own use. The web application supports EIM and allows you to specify an Object Detection model built as an EIM as the first stage and similarly a Classification model built as an EIM as the second stage. The output of the Object Detector are bounding boxes for all the objects detected in the scene. Each of these bounding boxes are or objects are cropped out of the original frame and transformed to match the aspect ratio of the Transfer Learning object classification input layer which then classifies each object detected. 
 
@@ -205,11 +205,11 @@ The application can be run as just a single stage (YOLO Object Detection only) o
 
 A possible use case of this is to detect product quality where a candy Detection Model was trained together with a classification model to detect the quality of the candy. 
 
-![Two Stage pipeline used for Candy Classification (QC Application)](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2020.png)
+![Two Stage pipeline used for Candy Classification (QC Application)](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled20.png)
 
 Power consumption figures are shown running on an actual RZ/V2L Eval Kit measuring the current draw through the primary power source without a USB UART cable connected. These figures are under test conditions with board being set to use 5V power via the USB-C Power Input
 
-![](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2021.png)
+![](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled21.png)
 
 As can be seen the power current draw for YOLOv5 Object Detection is under 500mA in total whereas Image Classification is just under 400mA whereas the board draws just under 300mA while idle with a single user logged in via SSH. This shows the phenomaly low power operation of DRP-AI which also does not require any heatsinks to be attached to the RZ/V2L MPU.
 
@@ -217,11 +217,11 @@ As can be seen the power current draw for YOLOv5 Object Detection is under 500mA
 
 Edge Impulse has created a feature processing block that contains a pretrained PoseNet model. This Posenet block produces body keypoints as features from input images instead of producing raw scaled image data features as is normally image classification models. To train this model you need to capture images of different poses and label the images according to the poses.
 
-![](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2022.png)
+![](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled22.png)
 
 The generated keypoints are fed to a normal classifier instead of an Transfer Learning (image classifier) and the classifier learns to associate sets of keypoints with poses according to the labels.
 
-![](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2023.png)
+![](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled23.png)
 
 Provided the labels were correctly done the classifier learns to detect different kinds of poses. This is very useful for working with pose models to actually classify types of poses and figure out activities being performed by by people detected in a scene.
 
@@ -237,7 +237,7 @@ An example web based application written in Python with Flask is available (sour
 
 The output of the Object Detection step draws a bounding box with the label shown on the left in this case a PERSON was detected. The second stage classifier shows the output of the classification in this case using the PoseNet pipeline showing a person POINTING.
 
-![](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled%2024.png)
+![](.gitbook/assest/renesas-rzv2l-pose-detection/Untitled24.png)
 
 The exact same application was use as the Candy Detection above by simply substituting EIM’s. 
 
