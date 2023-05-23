@@ -399,7 +399,7 @@ $ cd vehicle_detection_brainchip_edge_impulse
 $ python3 main.py
 ```
 
-The inferencing results can be accessed at http://<ip-address>:8080 using a web browser. The application also displays the model summary mapped on the Akida PCIe neural processor on the console.
+The inferencing results can be accessed at http://ip-address:8080 using a web browser. The application also displays the model summary mapped on the Akida PCIe neural processor on the console.
 
 ```
 Available devices: ['PCIe/NSoC_v2/0']
