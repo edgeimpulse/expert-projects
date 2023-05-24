@@ -23,7 +23,6 @@
 * [Methane Monitoring in Mines - Silabs xG24 Dev Kit](methane-monitoring-silabs-xg24.md)
 * [Creating Synthetic Data with Nvidia Omniverse Replicator](nvidia-omniverse-replicator.md)
 * [Container Counting with a Nicla Vision & FOMO](container-counting-nicla-vision.md)
-* [Traffic Monitoring using the Brainchip Akida Neuromorphic Processor](brainchip-akida-traffic-monitoring.md)
 
 ## Prototype and Concept Projects
 
