@@ -20,7 +20,7 @@ Most manufacturers have a quality inspection process for separating defective pr
 
 In this project I implemented the approach of computer vision based cast inspection. I trained a YOLOv5 object detection model using [Edge Impulse platform](https://edgeimpulse.com/) and deployed it to the [Renesas RZ/V2L Evaluation Board Kit](https://www.edgeimpulse.com/blog/edge-impulse-launches-official-support-for-the-renesas-rzv2l-evaluation-board). A [Google Coral camera](https://coral.ai/products/camera/) first takes a top view image of a submersible pump impeller moving on a conveyor belt. An application running on the Renesas RZ/V2L then classifies if the impeller is good or defective. The time per inference is around 63 milliseconds, which gives around 16 frames per second (fps). This low latency during inference can be related to the fact that the Renesas RZ/V2L board is designed for vision AI applications, due to it's powerful hardware acceleration through its Dynamically Reconfigurable Processor (DRP) and multiply-accumulate unit (AI-MAC).
 
-![Project setup](.gitbook/assets/renesas-rzv2l-product-quality-inspection/img1-project-setup.png)
+![Project setup](.gitbook/assets/renesas-rzv2l-product-quality-inspection/img16-picture-Renesas-support.JPEG)
 
 ## Components and Hardware Configuration
 
@@ -174,7 +174,7 @@ Afterwards, I also designed and 3D printed a support for the Renesas RZ/V2L Eval
 
 ![Renesas RZ/V2L EVK support](.gitbook/assets/renesas-rzv2l-product-quality-inspection/img16-picture-Renesas-support.JPEG)
 
-![Renesas RZ/V2L EVK support_2](.gitbook/assets/renesas-rzv2l-product-quality-inspection/img17-picture-Renesas-support_2.JPEG)
+![Renesas RZ/V2L EVK support_2](.gitbook/assets/renesas-rzv2l-product-quality-inspection/img17-picture-Renesas-support-2.JPEG)
 
 Finally, I printed some 3cm wide submersible pump impeller images from the testing dataset. As the conveyor belt is moving, the Google Coral camera takes a picture of the printed images and the results are shown on the WebApp.
 
