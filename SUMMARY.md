@@ -117,4 +117,4 @@
 * [AI-Assisted Pipeline Diagnostics and Inspection with mmWave Radar](ai-pipeline-inspection-mmwave.md)
 * [Renesas RZ/V2L DRP-AI Pose Detection](renesas-rzv2l-pose-detection.md)
 * [Computer Vision for Product Quality Inspection with Renesas RZ/V2L](renesas-rzv2l-product-quality-inspection.md)
-* [](renesas-ra6m5-getting-started.md)
+* [Renesas CK-RA6M5 Cloud Kit - Getting Started with Machine Learning](renesas-ra6m5-getting-started.md)
