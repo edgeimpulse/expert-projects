@@ -172,7 +172,3 @@ And, that's it. I hope this Getting Started Guide will be useful for you when us
 If you have any questions, please check out the [Edge Impulse Forum](https://forum.edgeimpulse.com/).
 
 
-> Edge Impulse Public Project Link - [Renesas CK-RA6M5 Getting Started](https://studio.edgeimpulse.com/public/233106/latest)
-
-
-
