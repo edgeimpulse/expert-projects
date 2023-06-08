@@ -10,7 +10,7 @@ Roni Bandini
 Public Project Link:
 [https://studio.edgeimpulse.com/public/222158/latest](https://studio.edgeimpulse.com/public/222158/latest)
 
-![](.gitbook/assets/ti-tda4vm-posture-enforcer/cover.jpg)
+![](.gitbook/assets/ti-tda4vm-posture-enforcer/data-collection.jpg)
 
 ## Intro
 
