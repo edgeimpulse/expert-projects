@@ -14,7 +14,7 @@ Public Project Link:
 
 ## Intro
 
-Certain machines used for leather craftsmen involve continuous, repetitive tasks like hard pressing. Not using the correct posture while using this equipment may cause musculoskeletal disorders affecting the muscles, tendons, ligaments, joints, peripheral nerves and supporting blood vessels in the body. During a training phase, a supervisor could teach the correct posture, but after training is complete, constantly verifying and enforcing could be expensive and not viable. 
+Certain machines used by leather craftsmen involve continuous, repetitive tasks like hard pressing. Not using the correct posture while using this equipment may cause musculoskeletal disorders affecting the muscles, tendons, ligaments, joints, peripheral nerves and supporting blood vessels in the body. During a training phase, a supervisor could teach the correct posture, but after training is complete, constantly verifying and enforcing could be expensive and not viable. 
 
 Is it possible to develop an automatic system to constantly monitor a craftsman's posture? Is this problem a good fit for Machine Learning?
 
