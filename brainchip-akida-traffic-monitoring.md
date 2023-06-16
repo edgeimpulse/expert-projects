@@ -16,7 +16,7 @@ A highly efficient computer-vision system that can detect moving vehicles with g
 
 <img src=".gitbook/assets/brainchip-akida-traffic-monitoring/cover.png" alt="cover" style="zoom:67%;" />
 
-By capturing moving vehicle images, aerial cameras can provide real-time information about traffic conditions, which is beneficial for governments and planners to manage traffic and enhance urban mobility. Detecting moving vehicles with low-powered devices is still a challenging task. In this project, we are going to tackle this problem using a Brainchip Akida neural network accelerator.
+By capturing moving vehicle images, aerial cameras can provide information about traffic conditions, which is beneficial for governments and planners to manage traffic and enhance urban mobility. Detecting moving vehicles with low-powered devices is still a challenging task. We are going to tackle this problem using a Brainchip Akida neural network accelerator.
 
 ## Hardware Selection
 
@@ -24,7 +24,7 @@ In this project, we'll utilize BrainChip’s [Akida Development Kit](https://sho
 
 ![Hardware Kit](.gitbook/assets/brainchip-akida-traffic-monitoring/hardware_kit.jpeg)
 
-The kit consists of a Raspberry Pi Compute Module 4 IO Board, a Raspberry Pi Compute Module 4 with Wi-Fi and 8 GB RAM, and an Akida PCie board. The disassembled kit is shown below. 
+The kit consists of an Akida PCie board, a Raspberry Pi Compute Module 4 with Wi-Fi and 8 GB RAM, and a Raspberry Pi Compute Module 4 I/O Board. The disassembled kit is shown below. 
 
 ![Hardware Unassembled](.gitbook/assets/brainchip-akida-traffic-monitoring/hardware_unassembled.jpeg)
 
@@ -34,7 +34,9 @@ The Akida PCIe board can be connected to the Raspberry Pi Compute Module 4 IO Bo
 
 ## Setting up the Development Environment
 
-After powering on the Akida development kit using the provided wall power adapter, we need to log in using an SSH connection. By default the kit comes with Ubuntu 20.04.5 LTS with preinstalled Akida PCIe drivers and the Raspberry Pi Compute Module 4 Wi-FI is preconfigured as AP (access point) mode. To proceed with the setup, a few Python packages must be installed. This requires an internet connection that can be easily set up, by connecting to the home router through LAN. In my situation, I utilized a USB-C to LAN adapter to connect it to my Macbook and enabled internet sharing.
+After powering on the Akida development kit, we need to log in using an SSH connection. The kit comes with Ubuntu 20.04 LTS and Akida PCIe drivers preinstalled. Furthermore, the Raspberry Pi Compute Module 4 Wi-Fi is preconfigured in Access Point (AP) mode. 
+
+Completing the setup requires the installation of a few Python packages, which requires an internet connection.  This internet connection to the Raspberry Pi 4 can be established through wired LAN. In my situation, I used internet sharing on my Macbook with a USB-C to LAN adapter to connect the Raspberry Pi 4 to my Macbook.
 
 To log in and install packages execute the following commands. The password is *brainchip* for the user *ubuntu*.
 
@@ -48,7 +50,7 @@ $ pip3 install Flask
 
 ## Data Collection
 
-Making moving traffic video using a drone is not permitted in my area so we will be using a license-free video downloaded from pexels.com (credit: Taryn Elliott).  We have extracted every 5th frame from the video using the Python script below.
+Capturing video of moving traffic using a drone is not permitted in my area so I used a license-free video from pexels.com (credit: Taryn Elliot). For our demo input images, we extracted every 5th frame from the pexels.com video using the Python script below.
 
 ```
 python
@@ -80,11 +82,11 @@ if __name__ == '__main__':
                 break
 ```
 
-To train and build our model, we will utilize the Edge Impulse Studio. To begin, we must create an account and initiate a new project at [https://studio.edgeimpulse.com](https://studio.edgeimpulse.com).
+We will use Edge Impulse Studio to build and train our demo model. This requires us to create an account and initiate a new project at https://studio.edgeiimpulse.com.
 
 ![New Project](.gitbook/assets/brainchip-akida-traffic-monitoring/new_project.png)
 
-We can upload the extracted image dataset to the Edge Impulse Studio project using the Edge Impulse CLI Uploader. To install Edge Impulse CLI,  follow the instructions provided in the link: [https://docs.edgeimpulse.com/docs/cli-installation](https://docs.edgeimpulse.com/docs/cli-installation). 
+To upload the demo input images extracted from the pexels.com video into the demo Edge Impulse project, we will use the Edge Impulse CLI Uploader. Follow the instructions at the link: https://docs.edgeimpulse.com/docs/cli-installation to install the Edge Impulse CLI on your host computer.. 
 
 Execute the command below to upload the dataset.
 
@@ -92,7 +94,7 @@ Execute the command below to upload the dataset.
 $ edge-impulse-uploader --category split images/*.jpg
 ```
 
-The above command will split the datasets into Train and Test datasets. After uploading is finished we can see the data on the Data Acquisition page.
+The command above will upload the demo input images to Edge Impulse Studio and split them into "Training" and "Testing" datasets. Once the upload completes, the demo input datasets are visible on the Data Acquisition page within Edge Impulse Studio..
 
 ![Data Acquisition](.gitbook/assets/brainchip-akida-traffic-monitoring/data_aquisition.png)
 
@@ -102,7 +104,7 @@ Now we can label the data with bounding boxes in the **Labeling queue** tab as s
 
 ## Model training
 
-Go to the **Impulse Design** > **Create Impulse** page, click **Add a processing block**, and then choose **Image**, which preprocesses and normalizes image data, and optionally allows you to choose the color depth. Also, on the same page, click **Add a learning block**, and choose **Object Detection (Images) - BrainChip Akida™** which fine-tunes a pre-trained object detection model specialized for the BrainChip AKD1000 PCIe board. This specialized model permits the use of a 224x224 image size, which is the size we are currently utilizing. Now click on the **Save Impulse** button.
+Go to the **Impulse Design** > **Create Impulse** page, click **Add a processing block**, and then choose **Image**.  This preprocesses and normalizes image data, and optionally allows you to choose the color depth. Also, on the same page, click **Add a learning block**, and choose **Object Detection (Images) - BrainChip Akida™** which fine-tunes a pre-trained object detection model specialized for the BrainChip AKD1000 PCIe board. This specialized model permits the use of a 224x224 image size, which is the size we are currently utilizing. Now click on the **Save Impulse** button.
 
 ![Impulse Design](.gitbook/assets/brainchip-akida-traffic-monitoring/impulse_design.png)
 
@@ -122,7 +124,7 @@ The FOMO model uses an architecture similar to a standard image classification m
 
 ![Grid](.gitbook/assets/brainchip-akida-traffic-monitoring/grid.jpeg)
 
-For localization, it cuts off the last layers of the classification model and replaces this layer with a per-region class probability map, and subsequently applies a custom loss function that forces the network to fully preserve the locality in the final layer which essentially gives us a heat map of vehicle locations. FOMO works on the constraining assumption that all the bounding boxes are square and have a fixed size and the objects are spread over the output grid. In the aerial view images, vehicles look similar in size hence FOMO works quite well.  
+For localization, it cuts off the last layers of the classification model and replaces this layer with a per-region class probability map, and subsequently applies a custom loss function that forces the network to fully preserve the locality in the final layer.  This essentially gives us a heat map of vehicle locations. FOMO works on the constraining assumption that all of the bounding boxes are square, have a fixed size, and the objects are spread over the output grid. In the aerial view images, vehicles look similar in size hence FOMO works quite well.
 
 ## Confusion Matrix 
 
@@ -138,7 +140,7 @@ On the **Model testing** page, click on the **Classify All** button which will i
 
 ## Deployment
 
-Since we will be using Akida Python SDK to run inferencing, we need to download the Meta TF model (underlined in red color in the image below) from the Edge Impulse Studio's **Dashboard**. After downloading, copy the *ei-object-detection-metatf-model.fbz* model file to the Akida development kit using command below.
+We will be using Akida Python SDK to run inferencing, thus we will need to download the Meta TF model (underlined in red color in the image below) from the Edge Impulse Studio's **Dashboard**. After downloading, copy the *ei-object-detection-metatf-model.fbz* model file to the Akida development kit using command below.
 
 ```
 $ scp ei-object-detection-metatf-model.fbz ubuntu@<ip-address>:/home/ubuntu
@@ -391,7 +393,7 @@ if __name__ == '__main__':
 
 ## Run Inferencing
 
-To run the application login to the Akida development kit and execute the commands below.
+To run the application, login to the Akida development kit and execute the commands below.
 
 ```
 $ git clone https://github.com/metanav/vehicle_detection_brainchip_edge_impulse.git
@@ -437,7 +439,7 @@ conv2d_1 (Conv.)         [28, 28, 2]     (1, 1, 32, 2)     1
 ________________________________________________________________
 ```
 
-As we can see there is no Softmax layer at the end of the model which is removed during model conversion since the Akida neural processor does not support them. In the application code, we need to apply a softmax implementation (from the scipy package) to the inferencing output to get the classes' probabilities. 
+Notice there is no Softmax layer at the end of the model. That layer has been removed during model conversion to run on the Akida processor. The Softmax operation is performed in the application code, rather than in the model.. 
 
 ## Demo
 
