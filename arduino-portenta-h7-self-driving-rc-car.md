@@ -12,7 +12,7 @@ Public Project Link:
 
 ## Introduction
 
-As a teacher, I wanted a long-term project for students who were willing to do extra work and who showed an interest in both Arduino microcontrollers and Computer Vision Machine Learning. We took an off-the-shelf RC car, and converted it to be controlled by an Arduino Portenta H7, and then trained an Edge Impulse FOMO Vision model to create a self-driving RoboCar that can follow a path of target objects. This high-level, long-term project is great for students who want a harder-than-normal challenge.
+As a teacher, I wanted a long-term project for students who were willing to do extra work and who showed an interest in both Arduino microcontrollers and Computer Vision / Machine Learning. We took an off-the-shelf RC car, and converted it to be controlled by an Arduino Portenta H7, and then trained an Edge Impulse FOMO Vision model to create a self-driving RoboCar that can follow a path of target objects. This high-level, long-term project is great for students who want a harder-than-normal challenge.
 
 We picked a specific RC car, the "[RC Pro Shredder](https://bchobbies.com/products/shredder112scale4wdbrushedmonstertruck)", as it did not use a brushless motor (the programming of brushless motors has extra complexity). We also needed a big motor driver, a servo motor (the Shredder steering motor is a DC motor with a potentiometer), connectors, USB cable and USB battery pack, as well as the ability to 3D Print large objects.  See the BOM and price list at the bottom of this post.
 
