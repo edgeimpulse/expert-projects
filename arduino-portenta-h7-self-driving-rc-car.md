@@ -8,7 +8,7 @@ Created By:
 Jeremy Ellis 
 
 Public Project Link:
-[Coming Soon]()
+[https://studio.edgeimpulse.com/public/183125](https://studio.edgeimpulse.com/public/183125/latest)
 
 ## Introduction
 
