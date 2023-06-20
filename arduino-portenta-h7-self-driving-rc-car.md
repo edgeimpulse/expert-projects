@@ -32,15 +32,15 @@ First, you need to purchase the parts required to build the car. Check out the B
 
 #### List of suggested first-time purchases:
 
-      1. [RC-Pro Shredder](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN
-      2. [WSD1302 Plug Set](https://www.rcsuperstore.com/ws-deans-2-pin-ultra-plug-set-one-male-one-female-included/) 2 sets  $2.99 USD
-      3. [Bullet Connectors](https://www.amazon.com/AIRIC-Bullet-Connectors-Insulated-Terminals/dp/B08ZSQZCCR?th=1) only need 2 female bullet connectors this is a set of 50 for  $11.99 USD
-      4. [Big VNH5019 Motor Driver Carrier](https://www.pololu.com/product/1451) $44.95 USD 
-      5. [3 Wire Servo ](https://www.rcpro.ca/collections/shredder/products/shredder-3-wires-19gram-metal-gear-servo)  $24.99 CDN
-      6. [Arduino Portenta H7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD 
-      7. [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD
-      8. [Waveshare 1.5inch OLED Module](https://www.waveshare.com/1.5inch-oled-module.htm) $12.99 USD
-      9. USB-C cable, USB battery pack, microSD card. A 3D printer would be useful.
+ - [RC-Pro Shredder](https://www.rcpro.ca/collections/shredder/products/shredder) $189.99 CDN
+ - [WSD1302 Plug Set](https://www.rcsuperstore.com/ws-deans-2-pin-ultra-plug-set-one-male-one-female-included/) 2 sets  $2.99 USD
+ - [Bullet Connectors](https://www.amazon.com/AIRIC-Bullet-Connectors-Insulated-Terminals/dp/B08ZSQZCCR?th=1) only need 2 female bullet connectors this is a set of 50 for  $11.99 USD
+ - [Big VNH5019 Motor Driver Carrier](https://www.pololu.com/product/1451) $44.95 USD 
+ - [3 Wire Servo ](https://www.rcpro.ca/collections/shredder/products/shredder-3-wires-19gram-metal-gear-servo)  $24.99 CDN
+ - [Arduino Portenta H7](https://store-usa.arduino.cc/products/portenta-h7)  $103.40 USD 
+ - [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE) $63.25 USD
+ - [Waveshare 1.5inch OLED Module](https://www.waveshare.com/1.5inch-oled-module.htm) $12.99 USD
+ - USB-C cable, USB battery pack, microSD card. A 3D printer would be useful.
 
 ### 2. Test Vehicle
 
@@ -120,13 +120,13 @@ If using the optional (but very useful for debugging) WaveShare grayscale 128 x 
   * yellow (sck) to D9, 
   * orange (cs) to D7, 
   * green (dc) to D6, 
-  * white (reset) not needed  
+  * white (reset) not needed
 
 Run the code and observe your model, to determine if it works. This [file: dot229-128x128-gray-oled.ino](https://github.com/hpssjellis/portenta-pro-community-solutions/blob/main/examples/dot2-portenta-h7-with-accessories/dot22-actuators/dot229-128x128-gray-oled/dot229-128x128-gray-oled.ino) can be used just to test the WaveShare OLED with the Portenta.
 
 ### 9. Vehicle Modifications
 
-Remove the 5-wire servo that comes with the Shredder car, and attach the 3-wire servo. The ball joints are a bit difficult to replace. You can test the servo <---> Portenta connection with this [code: [dot221-servo.ino](https://github.com/hpssjellis/portenta-pro-community-solutions/blob/main/examples/dot2-portenta-h7-with-accessories/dot22-actuators/dot221-servo/dot221-servo.ino). The connections are:
+Remove the 5-wire servo that comes with the Shredder car, and attach the 3-wire servo. The ball joints are a bit difficult to replace. You can test the servo <--> Portenta connection with this [code: dot221-servo.ino](https://github.com/hpssjellis/portenta-pro-community-solutions/blob/main/examples/dot2-portenta-h7-with-accessories/dot22-actuators/dot221-servo/dot221-servo.ino). The connections are:
   
    * servo red to 6V battery positive
    * servo ground (brown or black) to 6V battery negative
@@ -178,7 +178,7 @@ I hope you enjoyed this difficult project, it involved connecting an Arduino Por
  - [Arduino Portenta H7](https://store-usa.arduino.cc/products/portenta-h7)
  - [Arduino LoRa Vision Shield](https://store-usa.arduino.cc/products/arduino-portenta-vision-shield-lora%C2%AE)
  - [10 pack of 40-pin male-female headers](https://www.amazon.ca/Pieces-2-54mm-Single-Female-Header/dp/B08CMNRXJ1)
- - [1.5inch OLED Display Module 128x128](https://www.amazon.ca/dp/B079KRC9X3
+ - [1.5inch OLED Display Module 128x128](https://www.amazon.ca/dp/B079KRC9X3)
  - USB-C Cable, USB Battery Pack, microSD Card
 
 
