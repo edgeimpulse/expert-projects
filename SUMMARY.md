@@ -120,3 +120,4 @@
 * [Computer Vision for Product Quality Inspection with Renesas RZ/V2L](renesas-rzv2l-product-quality-inspection.md)
 * [Renesas CK-RA6M5 Cloud Kit - Getting Started with Machine Learning](renesas-ra6m5-getting-started.md)
 * [TI TDA4VM - Correct Posture Detection and Enforcement](ti-tda4vm-posture-enforcer.md)
+* [Build a Path-Following, Self-Driving Vehicle Using an Arduino Portenta H7 and Computer Vision](arduino-portenta-h7-self-driving-rc-car.md)
