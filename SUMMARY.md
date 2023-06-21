@@ -24,6 +24,7 @@
 * [Creating Synthetic Data with Nvidia Omniverse Replicator](nvidia-omniverse-replicator.md)
 * [Container Counting with a Nicla Vision & FOMO](container-counting-nicla-vision.md)
 * [Traffic Monitoring using the Brainchip Akida Neuromorphic Processor](brainchip-akida-traffic-monitoring.md)
+* [Community Guide – Using Edge Impulse with Nvidia DeepStream](nvidia-deepstream-community-guide.md)
 
 ## Prototype and Concept Projects
 
