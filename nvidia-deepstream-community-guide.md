@@ -142,10 +142,14 @@ This requires a transpose to be added to the input tensor to accept input images
 To convert the model from TensorFlow Lite to ONNX with the correct input shape for DeepStream requires the use of **"tf2onnx"**:
 
 ```
-python -m tf2onnx.convert --inputs-as-nchw x_input --opset 13 --tflite gen.tflite --output edgeimpulse_classify.onnx
+python -m tf2onnx.convert --inputs-as-nchw serving_default_x:0 --opset 13 --tflite class.lite --output edgeimpulse_candy_classify.onnx
 ```
 
-Its important to note the `--inputs-as-nchw x_input` parameter that adds the transpose to the named input layer. The input layer name must be included for this to be correctly applied. Edge Impulse automatically names the input layer for all image classification models as `x_input`. If the input layer name is not included then the model will not execute and give errors related to the input format not being correct.
+Its important to note the `--inputs-as-nchw serving_default_x:0` parameter that adds the transpose to the named input layer. The input layer name must be included for this to be correctly applied. Note that older Edge Impulse Classification exports may have the input tensor named as `x_input`. If yours is named `x_input`, the command will need to be modified to reflect `inputs-as-nchw x_input`, otherwise the model input won’t be changed. The exact input layer name can be determined using Netron.
+
+The result of the conversion should yield results similar to the following:
+
+![](.gitbook/assets/nvidia-deepstream-community-guide/conversion.jpg)
 
 ### 4. DeepStream Gst-nvinfer Integration
 
@@ -162,6 +166,14 @@ To use as a SGIE to classify the output of a PGIE Object Detector set the `proce
 ```
 process-mode=2 #SGIE
 ```
+
+The label file needs to contain the list of text labels separated by semicolons. The labels should be in the same order as shown in the Edge Impulse Studio when viewing the Impulse configuration by looking in the output features.
+
+![](.gitbook/assets/nvidia-deepstream-community-guide/impulse.jpg)
+
+Alternatively, the labels can be found in the Edge Impulse C++ SDK in the `ei_classifier_inferencing_categories` array in the `model_variables.h` header file.
+
+![](.gitbook/assets/nvidia-deepstream-community-guide/labels.jpg)
 
 This approach requires the ONNX model be in an accessible path on your system, and automatically builds the TensorRT as an **Engine** file after running. This is the simplest approach, only requiring the `.onnx` file.
 
