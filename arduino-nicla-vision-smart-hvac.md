@@ -132,7 +132,7 @@ The code for the Arduino Nano peripheral *Nano_SmartHVAC_I2C_Peripheral.ino* can
 
 Here is a quick prototype video showing the project:
 
-{% embed url="https://youtube.com/shorts/DnW0lFKFCdk" %}
+{% embed url="www.youtube.com/watch?v=DnW0lFKFCdk" %}
 
 ## Conclusion
 
@@ -140,4 +140,4 @@ Finally, we have successfully implemented this object detection model on an Ardu
 
 Complete demo video showing the project:
 
-{% embed url="https://youtu.be/QgQMWRZAlcY" %}
+{% embed url="www.youtube.com/watch?v=QgQMWRZAlcY" %}
