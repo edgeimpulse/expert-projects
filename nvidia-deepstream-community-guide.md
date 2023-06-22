@@ -99,6 +99,8 @@ Once training is complete, Edge Impulse allows you to export the YOLOv5 model di
 
 ## Image Classification — DeepStream
 
+With the Edge Impulse data upload and labeling completed, the next step is to build a computer vision model.
+
 ### 1. Build and Train Model
 
 Select the Transfer Learning classification model, which is already pretrained on a larger dataset. This speeds up the training process, allowing you to quickly train your own model that will rapidly converge on your dataset. 
