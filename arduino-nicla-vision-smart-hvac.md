@@ -132,11 +132,12 @@ The code for the Arduino Nano peripheral *Nano_SmartHVAC_I2C_Peripheral.ino* can
 
 Here is a quick prototype video showing the project:
 
-{% embed url="https://youtube.com/shorts/DnW0lFKFCdk %}
+{% embed url="https://youtube.com/shorts/DnW0lFKFCdk" %}
 
 ## Conclusion
 
 Finally, we have successfully implemented this object detection model on an Arduino Nicla Vision, and use the data captured from the camera to automatically control the HVAC system's fan power intensity and display the occupancy number and power meter for each zone. I believe this Proof of Concept project can be implemented in a real-world HVAC system, so that the goal of optimizing room temperature and saving energy can be achieved for a better, more sustainable future.
 
-Complete demo video showing the project: 
-{% embed url="https://youtu.be/QgQMWRZAlcY %}
+Complete demo video showing the project:
+
+{% embed url="https://youtu.be/QgQMWRZAlcY" %}
