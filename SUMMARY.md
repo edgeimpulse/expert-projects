@@ -25,6 +25,7 @@
 * [Container Counting with a Nicla Vision & FOMO](container-counting-nicla-vision.md)
 * [Traffic Monitoring using the Brainchip Akida Neuromorphic Processor](brainchip-akida-traffic-monitoring.md)
 * [Community Guide – Using Edge Impulse with Nvidia DeepStream](nvidia-deepstream-community-guide.md)
+* [Smart HVAC System with an Arduino Nicla Vision](arduino-nicla-vision-smart-hvac.md)
 
 ## Prototype and Concept Projects
 
