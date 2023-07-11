@@ -91,6 +91,7 @@
 * [Predictive Maintenance Using Audio Classification](predictive-maintenance-with-sound.md)
 * [Porting a Gesture Recognition Project from the SiLabs Thunderboard Sense 2 to xG24](gesture-recognition-on-silabs-xg24.md)
 * [Porting an Audio Project from the SiLabs Thunderboard Sense 2 to xG24](audio-recognition-on-silabs-xg24.md)
+* [Porting a Posture Detection Project from the SiLabs Thunderboard Sense 2 to xG24](silabs-xg24-posture-detection.md)
 * [Monitoring Retail Checkout Lines with Computer Vision on the RZ/V2L](monitoring-checkout-lines-rzv2l.md)
 * [Fall Detection using Computer Vision for Industrial Workers](worker-fall-detection-computer-vision.md)
 * [Fluid Leak Detection With a Flowmeter and AI](fluid-leak-detection-with-flowmeter-and-ai.md)
