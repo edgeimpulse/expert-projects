@@ -10,7 +10,7 @@ Jackline Tum
 Public Project:
 [https://studio.edgeimpulse.com/public/239865/latest](https://studio.edgeimpulse.com/public/239865/latest)
 
-![](MEDIA/edgeimpulse.png)
+![](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/edgeimpulse.png)
 
 ## Introduction
 
@@ -28,11 +28,11 @@ In this tutorial we will perform wound classification to distinguish between a b
 
 An Arduino Portenta is a great fit for our use case because it is a powerful board that has two processors, a **Cortex M7** running 480 MHZ and a **Cortex M4** running at 240 MHZ. Both the the processors share the on-chip peripherals and can run Tensorflow Lite and Micropython, which we’ll need to deploy our model.
 
-![Fig 1: Portenta H7](MEDIA/portenta.jpg)
+![Fig 1: Portenta H7](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/portenta.jpg)
 
 The Vision Shield has an ultra low power camera , with 320 x 320 pixel resolution and support for QVGA which captures images for inference. 
 
-![Fig 2: Vision Shield](MEDIA/vision-shield.jpg)
+![Fig 2: Vision Shield](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/vision-shield.jpg)
 
 #### Hardware Requirements    
 
@@ -60,25 +60,25 @@ Connect the Board to your computer with a USB-C cable.
 
 Open your Arduino IDE, make sure your board is connected, then click **Files** > **Examples** > **STM_32H747_System** > **STM_32H747_manageBootloader** .
 
-![Update Bootloader](MEDIA/arduino-bootloader.png)
+![Update Bootloader](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/arduino-bootloader.png)
 
 A new window with a sketch to update bootloaders for different Arduino boards pops up.
 
-![Update Bootloader](MEDIA/bootloader.PNG)
+![Update Bootloader](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/bootloader.PNG)
 
 Compile and upload the Sketch, and when done **Double press the reset button** on the board. The built-in green LED will start fading in and out.
 
 Open your OpenMV IDE, and click on the **Connect** Icon.
 
-![OpenMV CONNECT](MEDIA/CONNECT.PNG)
+![OpenMV CONNECT](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/CONNECT.PNG)
 
 A screen will appear with the message **A board in DFU mode was detected**. Select the "Install the latest release firmware". This will install the latest openMV firmware in the development board. Optionaly, leave the "Erase all files" option as it is and click **OK**. 
 
-![OpenMV CONNECT](MEDIA/install-latest-firmware.png)
+![OpenMV CONNECT](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/install-latest-firmware.png)
 
 The green LED will flash as the firmware is being updated. Once the process ends, a **DFU update complete** message appears on the screen. 
 
-![OpenMV CONNECT](MEDIA/firmware-update-complete.PNG)
+![OpenMV CONNECT](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/firmware-update-complete.PNG)
 
 With this process completed the Portenta Board is now connected to OpenMV IDE and ready for deployment. 
 
@@ -112,7 +112,7 @@ Create an account on [Edge Impulse](https://edgeimpulse.com/) if you haven't yet
 
 Because we want to deploy our model to our device and not collect data, select **Upload Model**. If you have an existing testing set, you can upload the images with the Existing data tab.
 
-![Upload Model](MEDIA/upload-model.PNG)
+![Upload Model](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/upload-model.PNG)
 
 Upload the  model in any of the formats accepted by Edge Impulse platform. Select the **Target device** and perform profiling for it.
 
@@ -120,29 +120,29 @@ Profiling lets us know how much of the device resources our model will use up on
 
 Alternatively, select to **Profile** for a range of devices to get information on how the model will perform on other devices.
 
-![Upload Model](MEDIA/Upload-TFModel.PNG)
+![Upload Model](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/Upload-TFModel.PNG)
 
 Once the model is uploaded, set the model configurations. The **Model input** is the image input shape that was set when training the model. In this case, the input shape accepted by the model is an image with 96 x 96 resolution. The model output is **Classification** and then we enter the class labels. We have two classes, **bruise** and **diabetic**. Save the model and head to the **Deployment** tab.
 
-![Upload Model](MEDIA/step2.PNG)
+![Upload Model](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/step2.PNG)
 
 These are the **Profiling** results. The model uses 338.7KB of RAM and 573.6KB of Flash memory.
 
-![Profiling Model](MEDIA/device-perfomance.PNG)
+![Profiling Model](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/device-perfomance.PNG)
 
 We can check the model behavior by uploading a test image. We use an image that was not used during the training process in order to better identify how the model performs with unseen data. 
 
-![Test Model](MEDIA/test-model.PNG)
+![Test Model](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/test-model.PNG)
 
 The model performs well on one image. We then upload a set of images as Test images to further test the model perfomance before deploying the model on Arduino Portenta.
 
 From the **Dashboard**, head to the **Data acquisition** tab, and upload a set of images as test data.
 
-![Test Model](MEDIA/test-data.PNG)
+![Test Model](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/test-data.PNG)
 
 From the Dashboard, head to the **Model testing** tab and click **Classify all** to see how the model performs.
 
-![Test Model](MEDIA/classifyall.PNG)
+![Test Model](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/classifyall.PNG)
 
 The model perfomance is quite satisfactory and we can now deploy to our target device. 
 
@@ -150,15 +150,15 @@ There are different ways to  deploy a model to the Arduino Portenta H7: as an ar
 
 In this tutorial we will deploy to the Portenta as an OpenMV library. Head to the **Deployment tab**, search for the OpenMV  library and click **Build**.
 
-![Deploy Model](MEDIA/OPENMV-LIBRARY.PNG)
+![Deploy Model](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/OPENMV-LIBRARY.PNG)
 
 Once downloaded, extract the `.zip` file and copy the **.tflite** file and **labels.txt** file from the extracted folder to the connected Arduino Portenta. 
 
-![Portenta Disk](MEDIA/portenta-disk.PNG)
+![Portenta Disk](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/portenta-disk.PNG)
 
 Open the **ei_classify** python script from the OpenMV IDE. 
 
-![OpenMV IDE](MEDIA/openMVIDE.PNG)
+![OpenMV IDE](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/openMVIDE.PNG)
 
 Click  **Connect** and the Impulse will now be running on the Arduino Portenta. Aim it at set of images and the classification results will get printed on the serial terminal.
 
@@ -170,11 +170,11 @@ sensor.set_pixformat(sensor.GRAYSCALE)    # Set pixel format to RGB565 (or GRAYS
 
 Here is a sample **bruise** classification:
 
-![Bruise Classification](MEDIA/bruise.png)
+![Bruise Classification](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/bruise.png)
 
 And a sample **diabetic wound** classification:
 
-![Diabetic Classification](MEDIA/diabetic.png)
+![Diabetic Classification](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/diabetic.png)
 
 ## Conclusion
 
@@ -186,13 +186,11 @@ With **Bring Your Own Model** on Edge Impulse, ML engineers can build robust, st
 
 This project is **Public**, you can clone and modify it for your own use case, as well as further optimize it.
 
-![Project Setup](MEDIA/VIDEO.gif)
+![Project Setup](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/VIDEO.gif)
 
 ## Credits
 
 1. *Anisuzzaman, D.M., Patel, Y., Rostami, B. et al. Multi-modal wound classification using wound image and location by deep neural network. Sci Rep 12, 20057 (2022). https://doi.org/10.1038/s41598-022-21813-0*
 
 2. *https://www.kaggle.com/datasets/yasinpratomo/wound-dataset*
-
-
 
