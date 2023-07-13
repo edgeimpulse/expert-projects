@@ -8,7 +8,7 @@ Created By:
 Jackline Tum 
 
 Public Project:
-[https://studio.edgeimpulse.com/public/239865/latest](https://studio.edgeimpulse.com/public/239865/latest)
+[https://studio.edgeimpulse.com/public/240673/latest](https://studio.edgeimpulse.com/public/240673/latest)
 
 ![](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/edgeimpulse.png)
 
