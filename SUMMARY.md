@@ -125,3 +125,4 @@
 * [TI TDA4VM - Correct Posture Detection and Enforcement](ti-tda4vm-posture-enforcer.md)
 * [Build a Path-Following, Self-Driving Vehicle Using an Arduino Portenta H7 and Computer Vision](arduino-portenta-h7-self-driving-rc-car.md)
 * [Using a "Bring Your Own Model" Image Classifier for Wound Identification](arduino-portenta-h7-byom-wound-classification.md)
+* [TI CC1352P Launchpad - Getting Started with Machine Learning](ti-cc1352p-getting-started.md)
