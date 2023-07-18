@@ -22,6 +22,7 @@
 * [Glass Window Break Detection - Nordic Thingy:53](glass-break-detection-thingy53.md)
 * [Methane Monitoring in Mines - Silabs xG24 Dev Kit](methane-monitoring-silabs-xg24.md)
 * [Creating Synthetic Data with Nvidia Omniverse Replicator](nvidia-omniverse-replicator.md)
+* [NVIDIA Omniverse - Synthetic Data Generation For Edge Impulse Projects](nvidia-omniverse-synthetic-data.md)
 * [Container Counting with a Nicla Vision & FOMO](container-counting-nicla-vision.md)
 * [Traffic Monitoring using the Brainchip Akida Neuromorphic Processor](brainchip-akida-traffic-monitoring.md)
 * [Community Guide – Using Edge Impulse with Nvidia DeepStream](nvidia-deepstream-community-guide.md)
