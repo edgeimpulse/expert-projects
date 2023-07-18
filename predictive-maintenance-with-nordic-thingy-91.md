@@ -54,7 +54,7 @@ First thing first, to collect our dataset, we must upload the Thingy:91 firmware
  
 1. Install the latest version of [nRF Connect for Desktop](https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop) from the official source on your OS of choice. 
 1. Install [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation). This is a suite of tools that is used to control local devices, act as a proxy to synchronize data for devices that are not connected to the internet and to facilitate uploading and converting local files.
-1. Afterwards, [download the latest Edge Impulse firmware](https://cdn.edgeimpulse.com/firmware/nordic-thingy91.zip) and extract the archive somewhere convenient.
+1. Afterwards, [download the latest Edge Impulse firmware](https://cdn.edgeimpulse.com/firmware/thingy91.zip) and extract the archive somewhere convenient.
 1. Turn on the Thingy:91 while pressing on the multi-function button placed in the middle of the board. Release the button, connect it to the PC, launch nRF Connect for Desktop and open the Programmer.
 
 ![](.gitbook/assets/predictive-maintenance-with-nordic-thingy-91/flash.jpg)
