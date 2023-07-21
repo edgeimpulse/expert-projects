@@ -27,6 +27,7 @@
 * [Traffic Monitoring using the Brainchip Akida Neuromorphic Processor](brainchip-akida-traffic-monitoring.md)
 * [Community Guide – Using Edge Impulse with Nvidia DeepStream](nvidia-deepstream-community-guide.md)
 * [Smart HVAC System with an Arduino Nicla Vision](arduino-nicla-vision-smart-hvac.md)
+* [MLOps with Edge Impulse and Azure IoT Edge](mlops-azure-iot-edge.md)
 
 ## Prototype and Concept Projects
 
