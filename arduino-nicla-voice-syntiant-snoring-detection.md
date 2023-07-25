@@ -10,10 +10,6 @@ Naveen Kumar
 Public Project Link:
 [https://studio.edgeimpulse.com/public/226454/latest](https://studio.edgeimpulse.com/public/226454/latest)
 
-## Project Demo
-
-{% embed url="https://www.youtube.com/watch?v=skkFovHQMdQ" %}
-
 ## Overview
 
 ![](.gitbook/assets/arduino-nicla-voice-syntiant-snoring-detection/cover.jpeg)
@@ -281,7 +277,7 @@ Match: NN0:snoring
 
 When classifying audio, it is recommended to analyze multiple windows of data and calculate the average of the results. This approach can provide better accuracy compared to relying on individual results alone. To detect snoring events, the application maintains a circular buffer of the last 10 inferencing results. If three snoring events are detected, the haptic feedback motor will vibrate for a few seconds. During the demo, the motor vibration appears to be moderate. However, the user can still feel the vibration while using the pillow.
 
-{% embed url="https://www.youtube.com/watch?v=skkFovHQMdQ" %}
+{% embed url="https://www.youtube.com/watch?v=9jKJgnxQAnQ" %}
 
 ## Conclusion
 
