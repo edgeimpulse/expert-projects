@@ -112,7 +112,7 @@ Connect your Muse device to your computer, start BlueMuse, and use this MuseLSL 
 
 Use Edge Impulse's CSV Wizard to configure the CSV-file import. This wizard walks you through the process by using one of your recorded files as an example, so it's very easy and straightforward to use. As mentioned before, I've myself used samples of 2 seconds each, and blinked accordingly, but feel free to experiment with smaller or larger samples. Keep in mind though that the larger the sample window is, the longer it will take before the intended action (turn left or right) is taken. You probably don't want to wait 10 seconds after you've asked the robot to turn left before it finally turns!
 
-![](Images/EI-05_2.jpg)
+![](.gitbook/assets/eeg-data-machine-learning-part-3/EI-05_2.jpg)
 
 ## Training and Building the Model
 
@@ -120,20 +120,20 @@ Use Edge Impulse's CSV Wizard to configure the CSV-file import. This wizard walk
 
 Again, this is quite straightforward in Edge Impulse, you need to create an Impulse by selecting a few parameters. In this project I experimented with a few alternatives, with and without sliding windows, but found out that a sample window of 2 seconds, using Spectral Analysis as processing block, and Classification as learning block was optimal. As there are in practice no memory or latency constraints when using a computer compared to using a microcontroller, there's no need to try to optimize memory usage or processing time.
 
-![](Images/EI-08.jpg)
+![](.gitbook/assets/eeg-data-machine-learning-part-3/EI-08.jpg)
 
 ### Configuring Spectral Features
 
 The following configuration is what I found to be optimal for this use case. Whenever you change any of these, do remember to change the same setting in the Python program as well.
 - Click on `Save parameters` and in next screen `Generate features`.
 
-![](Images/EI-10.jpg)
+![](.gitbook/assets/eeg-data-machine-learning-part-3/EI-10.jpg)
 
 ### Training the Model
 
 After some experimentation I found the optimal Neural network settings to be 2 dense layers of 20 and 40 neurons each, with a dropout rate of 0.25 to reduce the risk of overfitting the model exactly to the underlying data. As a computer later will run inferencing, there's no need to create an Int8 quantized model. As the results show, the training performance in this case is 100 %.
 
-![](Images/EI-13.jpg)
+![](.gitbook/assets/eeg-data-machine-learning-part-3/EI-13.jpg)
 
 ### Testing the Model
 
@@ -141,13 +141,13 @@ Before deploying the model to the target device, it is strongly recommended that
 
 In this project the test results were quite good with an accuracy of 88%, so I decided this was good enough to start testing the model in practice. If this were a project to be deployed to end users, the accuracy would probably need to be much higher.
 
-![](Images/EI-15.jpg)
+![](.gitbook/assets/eeg-data-machine-learning-part-3/EI-15.jpg)
 
 ## Model Deployment
 
 First part is in this case extremely simple, just head over to `Dashboard` and download the `TensorFlow Lite (float32)` model. This model file should be copied to same directory as where the Python program is.
 
-![](Images/EI-17.jpg)
+![](.gitbook/assets/eeg-data-machine-learning-part-3/EI-17.jpg)
 
 Second part is to check the Python program (EEG-robot.py) and ensure you have correct configuration:
 - Around row 82 you'll find the below code, change the model_path to the exact name of the file you just downloaded
