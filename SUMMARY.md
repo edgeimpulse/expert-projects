@@ -74,6 +74,7 @@
 * [AI-Powered Patient Assistance](ai-patient-assistance.md)
 * [Applying EEG Data to Machine Learning, Part 1](eeg-data-machine-learning-part-1.md)
 * [Applying EEG Data to Machine Learning, Part 2](eeg-data-machine-learning-part-2.md)
+* [Applying EEG Data to Machine Learning, Part 3](eeg-data-machine-learning-part-3.md)
 * [ESD Protection using Computer Vision](esd-protection-using-computer-vision.md)
 * [Solar Panel Defect Detection with FOMO on an Arduino Portenta](solar-panel-defect-detection.md)
 * [Automated Label Inspection With FOMO](label-inspection.md)

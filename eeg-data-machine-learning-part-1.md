@@ -2,7 +2,7 @@
 description: Use a consumer-grade EEG device to control and manipulate a simple video game by using TinyML.
 ---
 
-# Using EEG-data and Machine Learning to Control Games 
+# Using EEG Data and Machine Learning to Control Games 
 
 Created By:
 Thomas Vikstrom 
@@ -18,9 +18,8 @@ Public Project Link:
 
 [https://github.com/baljo/Muse-EEG](https://github.com/baljo/Muse-EEG)
 
-
 ## Objective
-The objective of this  tutorial is to show how you, by using a Muse EEG-device, can control a simple Pong game just by blinking your eyes.  
+The objective of this  tutorial is to show how you, by using a Muse EEG-device, can control a simple Pong game just by blinking your eyes.
 
 ## Introduction
 
