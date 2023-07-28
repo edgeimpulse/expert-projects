@@ -1,5 +1,5 @@
 ---
-description: Use a consumer-grade EEG device to control and manipulate a computer application, select letters, choose images, and communicate via thought.
+description: Use a consumer-grade EEG device to control and maneuver a small autonomous robot via brain activity and machine learning.
 ---
 
 # Using EEG Data and Machine Learning to Navigate a Robot
@@ -8,15 +8,15 @@ Created By:
 Thomas Vikstrom 
 
 Public Project Link:
-[https://studio.edgeimpulse.com/public/134934/latest](https://studio.edgeimpulse.com/public/134934/latest)
+[https://studio.edgeimpulse.com/public/238114/latest](https://studio.edgeimpulse.com/public/238114/latest)
 
 ## Project Demo
 
-{% embed url="https://www.youtube.com/watch?v=OwcoYQL4VEU" %}
+{% embed url="https://www.youtube.com/watch?v=2H93Vl-FZVk" %}
 
 ## GitHub Repo
 
-[https://github.com/baljo/Muse-EEG](https://github.com/baljo/Muse-EEG)
+[https://github.com/baljo/EEG-Robot](https://github.com/baljo/EEG-Robot)
 
 ## Introduction
 
