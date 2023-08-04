@@ -131,3 +131,4 @@
 * [TI CC1352P Launchpad - Getting Started with Machine Learning](ti-cc1352p-getting-started.md)
 * [Snoring Detection with Syntiant NDP120 Neural Decision Processor on Nicla Voice](arduino-nicla-voice-syntiant-snoring-detection.md)
 * [Sensecap A1101 - Soil Quality Detection Using AI and LoRaWAN](sensecap-a1101-lorawan-soil-quality.md)
+* [Acute Lymphoblastic Leukaemia Classifier](ai-leukemia-classifier.md)
