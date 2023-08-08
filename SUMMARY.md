@@ -105,6 +105,7 @@
 * [Using Hugging Face Datasets in Edge Impulse](using-huggingface-dataset-with-edge-impulse.md)
 * [How to Use a Hugging Face Image Classification Dataset with Edge Impulse](hugging-face-image-classification.md)
 * [Environmental Audio Monitoring Wearable with Syntiant TinyML Board](environmental-audio-monitoring-syntiant-tinyml.md)
+* [Environmental Audio Monitoring Wearable with Syntiant TinyML Board - Part 2](environmental-audio-monitoring-syntiant-tinyml-part-2.md)
 * [Keyword Spotting on the Nordic Thingy:53](keyword-spotting-on-nordic-thingy53.md)
 * [Counting Retail Inventory with Computer Vision on the RZ/V2L](counting-retail-inventory-rzv2l.md)
 * [Fire Detection Using Sensor Fusion and TinyML](fire-detection-with-arduino-and-tinyml.md)
