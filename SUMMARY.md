@@ -133,3 +133,4 @@
 * [Snoring Detection with Syntiant NDP120 Neural Decision Processor on Nicla Voice](arduino-nicla-voice-syntiant-snoring-detection.md)
 * [Sensecap A1101 - Soil Quality Detection Using AI and LoRaWAN](sensecap-a1101-lorawan-soil-quality.md)
 * [Acute Lymphoblastic Leukemia Classifier](ai-leukemia-classifier.md)
+* [Smart Diaper Prototype with an Arduino Nicla Sense ME](arduino-nicla-sense-smart-diaper.md)
