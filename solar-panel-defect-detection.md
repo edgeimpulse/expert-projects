@@ -79,7 +79,7 @@ Then go to *Labeling queue* in the *Data acquisition* section to draw bounding b
 
 ![](.gitbook/assets/solar-panel-defect-detection/labeling.jpg)
 
-You can read more about the Labeling queue at this link:  [(https://docs.edgeimpulse.com/docs/edge-impulse-studio/data-acquisition/labeling-queue)]((https://docs.edgeimpulse.com/docs/edge-impulse-studio/data-acquisition/labeling-queue))
+You can read more about the Labeling queue at this link:  [https://docs.edgeimpulse.com/docs/edge-impulse-studio/data-acquisition/labeling-queue](https://docs.edgeimpulse.com/docs/edge-impulse-studio/data-acquisition/labeling-queue)
 
 In the Labelling queue, all the raw images are shown, and we need to drag and drop the markings and label the cracks.
 
