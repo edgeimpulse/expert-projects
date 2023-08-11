@@ -46,7 +46,7 @@ This action will copy all the collected data, generated features, and model para
  
 Now if you navigate to "Create impulse" from the left menu, you will see how the model was created originally.
 
-![](.gitbook/assets/audio-recognition-on-silabs-xg24/edge_impulse_design.png)
+![](.gitbook/assets/audio-recognition-on-silabs-xg24/edge_impulse_design.jpg)
 
 As you can see, the model was created based on audio data sampled at 16KhZ. As mentioned, because the audio microphones used on the both board boards are the same, we're not required to collect any additional data from the new board. 
 
