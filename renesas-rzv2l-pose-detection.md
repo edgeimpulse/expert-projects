@@ -177,7 +177,7 @@ The 2 stage pipeline runs sequentially and the more objects detected the more cl
 
 While this pipeline can be deployed to any Linux board that supports EIM, it can be used with DRP-AI on the Renesas RZ/V2L Eval kit or RZ/Board leveraging the highly performant and low power DRP-AI by selecting these options in Edge Impulse Studio as shown earlier. By deploying to the RZ/V2L you will achieve the lowest power consumption vs framerate against any of the other supported platforms. YOLO Object Detection also ensures you get the level of performance needed for demanding applications.
 
-The application consists of two files [app.py](http://app.py) which contains the main 2 stage pipeline and web server and [eim.py](http://eim.py) which is a custom Python SDK for using EIM’s in your own application
+The application consists of two files `app.py` which contains the main 2 stage pipeline and web server and `eim.py` which is a custom Python SDK for using EIM’s in your own application
 
 To configure the application various configuration options are available in the Application Configuration Options section near the top of the application:
 

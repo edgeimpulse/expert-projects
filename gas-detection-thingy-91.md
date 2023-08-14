@@ -106,7 +106,7 @@ If you are going to be using a Linux computer for this application, make sure to
 sudo apt install screen
 ```
 
-Afterwards, download the official [Edge Impulse Nordic Thingy:91 firmware](https://cdn.edgeimpulse.com/firmware/nordic-thingy91.zip) and extract it.
+Afterwards, download the official [Edge Impulse Nordic Thingy:91 firmware](https://cdn.edgeimpulse.com/firmware/thingy91.zip) and extract it.
 
 Next up, make sure the board is turned off and connect it to your computer. Put the board in MCUboot mode by pressing the multi-function button placed in the middle of the device and with the button pressed, turn the board on. 
 

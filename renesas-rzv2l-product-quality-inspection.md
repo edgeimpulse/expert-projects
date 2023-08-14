@@ -110,7 +110,7 @@ ssh root@smarc-rzv2l
 
 Note: if the `smarc-rzv2l` hostname is not identified on your network, you can use the board's local IP address instead.
 
-![RZ/V2L with camera](.gitbook/assets/renesas-rzv2l-product-quality-inspection/img10-RZ_V2L-with-camera.JPG)
+![RZ/V2L with camera](.gitbook/assets/renesas-rzv2l-product-quality-inspection/img10-RZ-V2L-with-camera.JPG)
 
 To run the model locally on the RZ/V2L we can run the command `edge-impulse-linux-runner` which lets us log in to our Edge Impulse account and select a project. The model will be downloaded and inference will start automatically.
 

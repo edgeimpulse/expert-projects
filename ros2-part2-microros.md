@@ -87,7 +87,7 @@ To add it to your MicroROS environment, navigate to the MicroROS Arduino library
 ~/Arduino/libraries/micro_ros_arduino-2.0.5-humble/extras/library_generation/extra_packages
 ```
 
-Paste the directory there, **return to the main** `micro_ros_arduino-2.0.5-humble` **directory,** and use the docker commands from [this part](micro_ros_arduino-2.0.5-humble) of the MicroROS Arduino readme:
+Paste the directory there, **return to the main** `micro_ros_arduino-2.0.5-humble` **directory,** and use the docker commands from [this part](https://github.com/micro-ROS/micro_ros_arduino) of the MicroROS Arduino readme:
 
 ```
 docker pull microros/micro_ros_static_library_builder:humble

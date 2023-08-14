@@ -1193,7 +1193,7 @@ After generating training and testing samples successfully, I uploaded them to m
 
 ![image](.gitbook/assets/food-irradiation/edge_set_2.png)
 
-![image](.gitbook/assets/food-irradiation/edge_set_3.PNG)
+![image](.gitbook/assets/food-irradiation/edge_set_3.png)
 
 :hash: Then, choose the data category (training or testing) and select *Infer from filename* under *Label* to deduce labels from file names automatically.
 

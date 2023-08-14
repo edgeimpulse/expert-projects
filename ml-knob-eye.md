@@ -71,7 +71,7 @@ To start the training, a good number of pictures with variations of the knob in 
 
 You can download a sample data acquisition script, and the recording script from:
 
-[https://github.com/ronibandini/MlKnobReading](https://github.com/ronibandini/MlKnobReading)
+[https://github.com/ronibandini/MLAnalogKnobReading](https://github.com/ronibandini/MLAnalogKnobReading)
 
 Place the camera in the 3d printed arm, around 10cm over the knob, with good lighting. Place the knob in the "Minimum" (low) position. Then on the Raspberry Pi, run:
 

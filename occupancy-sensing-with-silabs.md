@@ -52,7 +52,7 @@ A very important mention concerning privacy is that we will use the microphones 
 
  - [Simplicity Commander](https://community.silabs.com/s/article/simplicity-commander?language=en_US) - a utility that provides command line and GUI access to the debug features of EFM32 devices. It enables us to flash the firmware on the device.
  - The [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation) - A suite of tools that will enable you to control the xG24 Kit without being connected to the internet and ultimately, collect raw data and trigger in-system inferences
- - The [base firmware image provided by Edge Impulse](https://cdn.edgeimpulse.com/firmware/silabs-xg24-devkit.bin) - enables you to connect your SiLabs kit to your project and do data acquisition straight from the online platform.
+ - The [base firmware image provided by Edge Impulse](https://cdn.edgeimpulse.com/firmware/silabs-xg24.zip) - enables you to connect your SiLabs kit to your project and do data acquisition straight from the online platform.
  
 ## Hardware Setup
 

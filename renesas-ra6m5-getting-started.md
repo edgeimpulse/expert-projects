@@ -84,7 +84,7 @@ To begin, you'll need to create an Edge Impulse account and a project in the Edg
 The next step is connecting our Renesas CK-RA6M5 board to the Edge Impulse Studio, so we can ingest sensor data for the machine learning model. Please follow the below steps to do so:
 
 - Connect the Renesas CK-RA6M5 board to the computer by following the steps mentioned in the _Quick Start_ section.
-- Open a terminal or command prompt and type `edge-impulse-daemon`. The [Edge Impulse daemon](https://docs.edgeimpulse.com/docs/Edge Impulse-cli/cli-daemon) will start and prompt for user credentials.
+- Open a terminal or command prompt and type `edge-impulse-daemon`. The [Edge Impulse daemon](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-daemon) will start and prompt for user credentials.
 - After providing user credentials, it will prompt you to select an Edge Impulse project. Please navigate and select the project created in the previous steps, using the arrow keys.
 
 ![Daemon](.gitbook/assets/renesas-ra6m5-getting-started/daemon.jpg)
