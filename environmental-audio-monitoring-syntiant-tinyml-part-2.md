@@ -31,7 +31,7 @@ Software components:
 
 Hardware components:
 - [3D printed components for the wearable](https://www.printables.com/model/511919-syntiant-tinyml-wearable)
-- [Syntiant TinyML board](https://www.digikey.com/en/products/detail/syntiant-corp/SYNTIANT-TINYML/15293343?s=N4IgTCBcDaIM4E8B2AXAlgQ1SAugXyA)
+- [Syntiant TinyML board](https://www.digikey.com/en/products/detail/syntiant-corp/SYNTIANT-TINYML/15293343)
 - [Vibration motor module](https://www.amazon.com/ZYM119-Vibration-Switch-Vibrator-Circuit/dp/B09M84JF6B/ref=sr_1_5?crid=1JOJC8SZS6KR7&keywords=vibration+motor+module&qid=1683818656&sprefix=vibration+motor+module%27%2Caps%2C941&sr=8-5)
 - [3.7V LiPo battery](https://www.adafruit.com/product/1578). I used one with 500mAh
 - Veroboard/stripboard

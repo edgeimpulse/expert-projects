@@ -82,7 +82,7 @@ if __name__ == '__main__':
                 break
 ```
 
-We will use Edge Impulse Studio to build and train our demo model. This requires us to create an account and initiate a new project at https://studio.edgeiimpulse.com.
+We will use Edge Impulse Studio to build and train our demo model. This requires us to create an account and initiate a new project at https://studio.edgeimpulse.com.
 
 ![New Project](.gitbook/assets/brainchip-akida-traffic-monitoring/new_project.png)
 
