@@ -92,7 +92,7 @@ Since the commanded motor velocity is constantly changing, so is the motor power
 
 ## Streaming our data to the Edge Impulse studio
 
-Assuming you've gone through the [Getting Started guide](https://docs.edgeimpulse.com/docs) and have [made an account](https://docs.edgeimpulse.com/login?redirect_uri=/docs) with Edge Impulse, go ahead and make a new project.
+Assuming you've gone through the [Getting Started guide](https://docs.edgeimpulse.com/docs) and have [made an account](https://docs.edgeimpulse.com/docs) with Edge Impulse, go ahead and make a new project.
 
 Following the [guide](https://docs.edgeimpulse.com/docs/cli-data-forwarder) for using Edge Impulse's data forwarder we should see our virtual device appear when we click **Data**  **acquisition**:
 

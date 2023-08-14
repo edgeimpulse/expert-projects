@@ -81,7 +81,7 @@ In this project, we have built a developed recognition model based on a FOMO alg
 ## Reference
 1. [https://www.edgeimpulse.com/](https://www.edgeimpulse.com)
 2. Memo, L. Minto, P. Zanuttigh, "Exploiting Silhouette Descriptors and Synthetic Data for Hand Gesture Recognition", STAG: Smart Tools & Apps for Graphics, 2015
-3. [FOMO: Object detection for constrained devices - Edge Impulse Documentation](https://docs.edgeimpulse.com/docs/tutorials/fomo-object-detection-for-constrained-devices)
+3. [FOMO: Object detection for constrained devices - Edge Impulse Documentation](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/object-detection/fomo-object-detection-for-constrained-devices)
 4. [OpenMV Cam H7 Plus | OpenMV](https://openmv.io/products/openmv-cam-h7-plus)
 5. [https://docs.edgeimpulse.com/docs/tutorials/running-your-impulse-locally/running-your-impulse-openmv](https://docs.edgeimpulse.com/docs/tutorials/running-your-impulse-locally/running-your-impulse-openmv)
 

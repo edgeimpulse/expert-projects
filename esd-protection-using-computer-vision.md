@@ -22,7 +22,7 @@ Public Project Link:
 
 ![](.gitbook/assets/esd-protection-using-computer-vision/intro.jpg)
 
-As part of the Edge Impulse Expert Network, Seeed Studio graciously provided some [reComputer Jetson-10-1-H0's](https://wiki.seeedstudio.com/reComputer_getting_started/) to develop sample projects and run the hardware through its paces.
+As part of the Edge Impulse Expert Network, Seeed Studio graciously provided some [reComputer Jetson-10-1-H0's](https://wiki.seeedstudio.com/reComputer_Jetson_Series_Initiation/) to develop sample projects and run the hardware through its paces.
 
 The Seeed reComputer uses a Jetson Nano 4GB with 16GB eMMC (more on that later) housed in a really slick case. It already comes loaded with Jetpack 4.6 and Ubuntu 18.04 LTS and is essentially ready to go out of the box.
 
