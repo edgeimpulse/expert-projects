@@ -61,6 +61,4 @@ By building a security camera on top of a robot, a single camera can cover a lar
 
 The machine learning models were very simple to build and train using Edge Impulse's slick interface. They performed very well in my tests, consistently detecting audio anomalies and people. In the future, I would like to enhance Shield Bot's navigation abilities. While on patrol, the robot drives until it encounters an object, then turns in a different direction and continues on. I would like to involve computer vision in this process so that the robot can intelligently cover a space in the most efficient manner.
 
-The source code for Shield Bot is available here:  [https://drive.google.com/file/d/16_m-E8TxYmJd3IJF4O6vGs-WlBiBXWyL/view?usp=sharing](https://drive.google.com/file/d/16_m-E8TxYmJd3IJF4O6vGs-WlBiBXWyL/view?usp=sharing)
-
 Link to video:  [https://www.youtube.com/watch?v=aZt6PIywaTQ](https://www.youtube.com/watch?v=aZt6PIywaTQ)
