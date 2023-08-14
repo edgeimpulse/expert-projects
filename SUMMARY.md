@@ -26,8 +26,8 @@
 * [Container Counting with a Nicla Vision & FOMO](container-counting-nicla-vision.md)
 * [Traffic Monitoring using the Brainchip Akida Neuromorphic Processor](brainchip-akida-traffic-monitoring.md)
 * [Community Guide – Using Edge Impulse with Nvidia DeepStream](nvidia-deepstream-community-guide.md)
-* [Smart HVAC System with an Arduino Nicla Vision](arduino-nicla-vision-smart-hvac.md)
 * [MLOps with Edge Impulse and Azure IoT Edge](mlops-azure-iot-edge.md)
+* [Smart HVAC System with a Sony Spresense](sony-spresense-smart-hvac-system.md)
 
 ## Prototype and Concept Projects
 
@@ -134,3 +134,4 @@
 * [Sensecap A1101 - Soil Quality Detection Using AI and LoRaWAN](sensecap-a1101-lorawan-soil-quality.md)
 * [Acute Lymphoblastic Leukemia Classifier](ai-leukemia-classifier.md)
 * [Smart Diaper Prototype with an Arduino Nicla Sense ME](arduino-nicla-sense-smart-diaper.md)
+* [Smart HVAC System with an Arduino Nicla Vision](arduino-nicla-vision-smart-hvac.md)
