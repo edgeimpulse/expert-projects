@@ -57,7 +57,7 @@ I used this feature to label _people_ in the PIROPO images. I then divided the d
 
 #### **2. Training and Testing**
 
-Training and testing are done using above mentioned PIROPO dataset. I used the [FOMO](https://www.edgeimpulse.com/blog/announcing-fomo-faster-objects-more-objects) architecture by the Edge Impulse to train this model. To prepare a model using FOMO, please follow this [link](https://docs.edgeimpulse.com/docs/tutorials/counting-objects-using-fomo).
+Training and testing are done using above mentioned PIROPO dataset. I used the [FOMO](https://www.edgeimpulse.com/blog/announcing-fomo-faster-objects-more-objects) architecture by the Edge Impulse to train this model. To prepare a model using FOMO, please follow this [link](https://docs.edgeimpulse.com/docs/tutorials/object-detection/detect-objects-using-fomo).
 
 ![Training statistics](.gitbook/assets/training.jpg)
 
