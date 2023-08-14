@@ -1375,5 +1375,5 @@ By applying object detection models trained on captured coop images in tracking 
 
 ## References
 
-[^1] Soltanmoradi MG, Seidavi A, Dadashbeiki M, Laudadio V, Centoducati G, Tufarelli V., *Influence of Feeding Frequency and Timetable on Egg Parameters and Reproductive Performance in Broiler Breeder Hens*, Avian Biology Research, vol. 7, no. 3, Aug. 2014, pp. 153–159, *https://doi.org/10.3184/175815514X14025828753279*
+[^1] Soltanmoradi MG, Seidavi A, Dadashbeiki M, Laudadio V, Centoducati G, Tufarelli V., *Influence of Feeding Frequency and Timetable on Egg Parameters and Reproductive Performance in Broiler Breeder Hens*, Avian Biology Research, vol. 7, no. 3, Aug. 2014, pp. 153–159, *https://journals.sagepub.com/doi/10.3184/175815514X14025828753279*
 

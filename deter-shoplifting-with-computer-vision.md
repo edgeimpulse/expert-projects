@@ -118,7 +118,7 @@ boundingBoxes 1ms. [{"height":8,"label":"bag","value":0.6636818647384644,"width"
 boundingBoxes 1ms. [{"height":8,"label":"bag","value":0.545727550983429,"width":8,"x":64,"y":24}]
 ```
 
-On our laptop or desktop machine, connecting with a browser to the device IP and port 4912 (for example, http://deviceIP:4912) we can see inferences in real time. 
+On our laptop or desktop machine, connecting with a browser to the device IP and port 4912 (for example, http://<deviceIP>:4912) we can see inferences in real time. 
 
 ![](.gitbook/assets/deter-shoplifting-with-computer-vision/inferencing.jpg)
 
