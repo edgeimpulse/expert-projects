@@ -44,7 +44,7 @@ We will use Edge Impulse Studio to train and build a TensorFlow Lite model. We n
 - **Faucet** - faucet is running, with a variety of background activities.
 - **Noise** - just background activities.
 
-We can import this dataset to the Edge Impulse Studio project using the Edge Impulse CLI Uploader. Please follow the instructions here to install Edge Impulse CLI: [https://docs.edgeimpulse.com/docs/cli-installation. T](https://docs.edgeimpulse.com/docs/cli-installation.)he datasets can be downloaded from here: https://cdn.edgeimpulse.com/datasets/faucet.zip.
+We can import this dataset to the Edge Impulse Studio project using the Edge Impulse CLI Uploader. Please follow the instructions here to install Edge Impulse CLI: [https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation).  The datasets can be downloaded from here: [https://cdn.edgeimpulse.com/datasets/faucet.zip](https://cdn.edgeimpulse.com/datasets/faucet.zip).
 
 ```
 $ unzip faucet.zip
@@ -99,7 +99,7 @@ The Edge Impulse Studio and Blues Wireless Notecard both support Arduino librari
 
 ### Set up Blues Wireless Notecard and Notehub
 
-Before starting to run the application we should set up the Notecard. Please see the easy-to-follow quick-start guide [here](https://dev.blues.io/quickstart/notecard-quickstart/notecard-and-notecarrier-b/) to set up a Notecard with a Notecarrier-B to test that everything works as expected. The application code does the Notecard setup at boot-up to make sure it is always in the known state. We also need to set up Notehub, which is a cloud service that receives data from the Notecard and allows us to manage the device, and route that data to our cloud apps and services. We can create a free account at [https://notehub.io/sign-up, ](https://notehub.io/sign-up)and after successful login, we can create a new project.
+Before starting to run the application we should set up the Notecard. Please see the easy-to-follow quick-start guide [here](https://dev.blues.io/quickstart/notecard-quickstart/notecard-and-notecarrier-b/) to set up a Notecard with a Notecarrier-B to test that everything works as expected. The application code does the Notecard setup at boot-up to make sure it is always in the known state. We also need to set up Notehub, which is a cloud service that receives data from the Notecard and allows us to manage the device, and route that data to our cloud apps and services. We can create a free account at [https://notehub.io/sign-up, ](https://notehub.io/)and after successful login, we can create a new project.
 
 ![](.gitbook/assets/running-faucet-detection/notehub_create_new_project.jpg)
 
