@@ -195,7 +195,7 @@ def dome_lights(num=1):
 rep.randomizer.register(dome_lights)
 ```
 
-For more information about using lights with Replicator, you can check out the [NVIDIA documentation](https://docs.omniverse.nvidia.com/app_code/prod_materials-and-rendering/lighting.html).
+For more information about using lights with Replicator, you can check out the [NVIDIA documentation](https://docs.omniverse.nvidia.com/materials-and-rendering/latest/lighting.html).
 
 ### Fruits 
 
@@ -245,7 +245,7 @@ camera2 = rep.create.camera(
 render_product2 = rep.create.render_product(camera2, (512, 512))
 ```
 
-For more information about using cameras with Replicator, you can check out the [NVIDIA documentation](https://docs.omniverse.nvidia.com/app_isaacsim/prod_materials-and-rendering/cameras.html).
+For more information about using cameras with Replicator, you can check out the [NVIDIA documentation](https://docs.omniverse.nvidia.com/materials-and-rendering/latest/cameras.html).
 
 ### Basic Writer
 
