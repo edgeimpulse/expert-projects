@@ -37,7 +37,7 @@ The project is a proof of concept (PoC) using a 1:50 scale model with an office 
 
 ![](.gitbook/assets/sony-spresense-smart-hvac-system/image20.jpg)
 
-![](.gitbook/assets/sony-spresense-smart-hvac-system/image18.jpg)
+![](.gitbook/assets/sony-spresense-smart-hvac-system/image18.png)
 
 ![](.gitbook/assets/sony-spresense-smart-hvac-system/image21.jpg)
 
@@ -125,8 +125,10 @@ Finally, we have successfully implemented this object detection model on an Sony
 
 ## Resources
 
-Additional 3D-printed case design for Sony Spresense for this project:
+Additional 3D-printed case design for Sony Spresense and the office configuration for this project can be found in the GitHub repo at [https://github.com/Jallson/Smart_HVAC/tree/main/3d_files](https://github.com/Jallson/Smart_HVAC/tree/main/3d_files):
 
 ![](.gitbook/assets/sony-spresense-smart-hvac-system/image22.png)
 
 ![](.gitbook/assets/sony-spresense-smart-hvac-system/image23.png)
+
+
