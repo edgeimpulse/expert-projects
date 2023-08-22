@@ -93,13 +93,39 @@ Edge Impulse provides a few versions of YOLOv5 that have been optimized for use 
 
 ![](.gitbook/assets/nvidia-deepstream-community-guide/choose-yolo5.jpg)
 
-Training of the model is then done in the same way as other object detector projects in Edge Impulse. Documentation is located here: [https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/object-detection](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/object-detection)
+Training of the model is then done in the same way as other object detection projects in Edge Impulse. Documentation is located here: [https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/object-detection](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/object-detection)
 
 ### 2. Export YOLOv5 ONNX
 
-Once training is complete, Edge Impulse allows you to export the YOLOv5 model directly into ONNX format, which also has the correct NCHW input layer.
+Once training is complete, Edge Impulse allows you to export the YOLOv5 model directly into ONNX format, which also has the correct NCHW input layer. This saves the conversion to ONNX step, as its already done for the YOLOv5 model.
 
 ![](.gitbook/assets/nvidia-deepstream-community-guide/export-onnx.jpg)
+
+### 3. Deepstream Gst-Nvinfer Integration – YOLOv5 Model
+
+The Gst-nvinfer plugin outputs data in a standardized format that can be consumed by downstream plugins. This consists of _gst-buffer_ that Gstreamer uses to pass data between plugins, as well as Nvidia's own metadata structures that provide information about the results of the model inference. In the case of object detection, a relevant structure is _NvDsObjectMeta_ which contains the bounding box information in the form of the bounding box location, width and height amongst other relevant information for downstream plugins.
+
+The output tensor format of YOLO varies depending on the specific implementation and model version, but I'll describe a common format used in YOLOv3 as an example.
+
+In YOLOv3, the output tensor is a 3D array with dimensions **[batch_size, grid_size, grid_size * num_anchors, num_classes + 5]**. Since this is not compatible with DeepStream NvDsObectMeta structure, a custom output parser needs to be implemented. Fortunately Nvidia provides an SDK that allows you to create custom output parsers to support any kind of output format. Nvidia also provides an implementation for YOLOv2 and YOLOv3 and its variants, however Edge Impulse uses the later YOLOv5.
+
+The included repo contains an implementation of a custom output parser that works with Edge Impulse's YOLO, which is based on [https://github.com/marcoslucianops/DeepStream-Yolo](https://github.com/marcoslucianops/DeepStream-Yolo).
+
+In order to use the custom output parser it needs to be built, which can be done from the command line on your Nvidia appliance. However, CUDA versions vary by Jetpack version, and this needs to be specified using the `CUDA_VER` environment variable. The output is a .so file that then needs to be added to the Gst-nvinfer plugin configuration file using the _custom-lib-path_ parameter. The custom bounding box parsing function also needs to be specified with the _parse-bbox-func-name_ parameter. In this case the repo provides this function, called _NvDsInferParseYolo_.  The next section will cover the process of configuring the Gst-nvinfer plugin.
+
+The Gst-Nvinfer plugin is configured by means of a plain text file which specifies all the relevant parameters required to run a model with Deepstream and TensorRT behind the scenes. This file needs to be referenced from the Deepstream Application either as a Primary GPU Inference Engine (PGIE) where it is the first Inference to take place in the pipeline or as Secondary GPU Inference Engine (SGIE) where it’s the performing secondary inference on the output of a PGIE upstream.
+
+Object Detection (in this case the YOLOv5 model built in Edge Impulse) is usually the first instance of Gst-nvinfer, i.e. the PGIE.
+
+The minimal working version of a PGIE using the Edge Impulse YOLOv5 ONNX export is shown below:
+
+![](.gitbook/assets/nvidia-deepstream-community-guide/minimal-pgie.jpg)
+
+All paths are relative to the configuration file which can be created in a text editor and placed where it can be referenced by your application, which could either be a custom Python or C++ application or a DeepStream Reference app and sample apps.
+
+The batch size is set to `1` in the above example, and this matches the batch size of the model. In addition the custom output parser is also specified. The model color format is also set to match the format in your Impulse’s image preprocessing/feature block.
+
+The provided repo contains a precompiled output parser ready to run on a Jetson Nano (Jetpack 4.6). The label file needs to be edited to replace the labels with your own label names. The label names can match the label names in your Impulse's final block in the same order. YOLO uses a label file format where each label is separated by a new line. For a single object type only one entry is sufficient.
 
 ## Image Classification — DeepStream
 
@@ -137,6 +163,8 @@ The next step requires the TFlite model to be in the TFLite Flatbuffers format (
 carray2bin.py
 ```
 
+_carray2bin.py_ is a python script that allows you to convert binary data payloads of c arrays to a bin file, and is provided in the /utils folder of the provided repo.
+
 Note that this method is useful if you only have accesss to the C/C++ or Arduino Library export, if the export was built as **Unoptimized (float32)** as described above. 
 
 ### 3. Convert Model to ONNX
@@ -163,13 +191,11 @@ The result of the conversion should yield results similar to the following:
 
 ### 4. DeepStream Gst-nvinfer Integration
 
-The **Gst-nvinfer** plugin is configured by means of a plain text file which specifies all the relevant parameters required run a model with DeepStream (and TensorRT behind the scenes). This file needs to be referenced from the DeepStream Application either as a Primary GPU Inference Engine (PGIE) where it is the first Inference to take place in the pipeline, or as Secondary GPU Inference Engine (SGIE) where it's performing secondary inference on the output of a PGIE upstream. 
+The second stage classifier instance of Gst-nvinfer (SGIE) typically receives the bounding box and optional tracking information from the upstream object detector. This is where the power of DeepStream enables the creation of applications that can perform fine-grained analysis on a scene by further classifying individual objects.
 
-Depending on primary or secondary mode and the required inference batch sizes, there are slight configuration differences. 
+To run an Edge Impulse model from the ONNX file produced in the prior steps, the following configuration is required at a minimum for a SGIE.
 
-To run an Edge Impulse model from the ONNX file produced in the prior steps, the following configuration is required at a minimum for a PGIE.
-
-![](.gitbook/assets/nvidia-deepstream-community-guide/pgie.jpg)
+![](.gitbook/assets/nvidia-deepstream-community-guide/minimal-sgie.jpg)
 
 To use as a SGIE to classify the output of a PGIE Object Detector set the `process-mode` to `2`:
 
