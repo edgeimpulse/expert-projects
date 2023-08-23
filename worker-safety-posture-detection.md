@@ -12,7 +12,7 @@ Public Project Link:
 
 ## Problem Statement
 
-Working in manufacturing can put a lot of stress on a worker's body. Depending on the worker’s role in the production process, they might experience issues related to cramped working conditions, heavy lifting, or repetitive stress.
+Working in manufacturing can put a lot of stress on a worker's body. Depending on the worker's role in the production process, they might experience issues related to cramped working conditions, heavy lifting, or repetitive stress.
 
 Poor posture is another issue that can cause problems for the health of those who work in manufacturing. Along with that, research suggests that making efforts to improve posture among manufacturing employees can lead to significant increases in production. Workers can improve their posture by physical therapy, or simply by being more mindful during their work day.
 
@@ -32,7 +32,7 @@ Lifting can be another issue affecting the posture of those who work in manufact
 
 ## TinyML Solution
 
-I have created a wearable device using a [SiLabs Thunderboard Sense 2](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/silabs-thunderboard-sense-2) which can be fitted to a worker’s waist. The worker can do their normal activities, and the TinyML model running on the hardware will predict the posture and communicate to the worker through BLE communication. The worker can get notified in the Light Blue App on their phone or smartwatch.
+I have created a wearable device using a [SiLabs Thunderboard Sense 2](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/silabs-thunderboard-sense-2) which can be fitted to a worker's waist. The worker can do their normal activities, and the TinyML model running on the hardware will predict the posture and communicate to the worker through BLE communication. The worker can get notified in the Light Blue App on their phone or smartwatch.
 
 ![](.gitbook/assets/worker-safety-posture-detection/bluetooth-app.jpg)
 
@@ -44,7 +44,7 @@ I have trained a model with several different postures, so that it can classify 
 1. Incorrect Sitting Posture
 1. Walking
 
-Now let’s see how I trained the model and tested on real hardware in detail.
+Now let's see how I trained the model and tested on real hardware in detail.
 
 ## Data Acquisition
 
@@ -88,11 +88,11 @@ For lifting objects off the ground, the correct posture is to squat down to the 
 
 ![](.gitbook/assets/worker-safety-posture-detection/lifting-correct.jpg)
 
-I have collected the "squat" type data for around two minutess for model training, and 20 seconds of data for model testing.
+I have collected the "squat" type data for around two minutes for model training, and 20 seconds of data for model testing.
 
 ![](.gitbook/assets/worker-safety-posture-detection/data-lifting-correct.jpg)
 
-### Inorrect Lifting Posture
+### Incorrect Lifting Posture
 
 For incorrect lifting ("bent over") data, I have collected 2 minutes 30 seconds of data for model training, and another 30 seconds of data for model testing.
 

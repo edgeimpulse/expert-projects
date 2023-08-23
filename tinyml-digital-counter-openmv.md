@@ -19,13 +19,13 @@ GitHub Repository:
 
 ## Story
 
-Ever had this brilliant idea to sprinkle a dash of IoT on a system only to be stopped in your tracks because the system is from ages bygone? Well, you are not alone in this quagmire, a number of brownfield projects have an all too common constraint. The systems are either from times before the age of the internet or the OEM does not appreciate unsanctioned tinkering in their ‘business’. Throughout the year, I have been pondering ways to track my power consumption without taking a stroll out of my apartment, drag myself down a flight of stairs and peep, in shock, at the nearly zero credit points left on my pre-paid electric meter. I really wanted a way to get that data, with less stress and at my beck and call.
+Ever had this brilliant idea to sprinkle a dash of IoT on a system only to be stopped in your tracks because the system is from ages bygone? Well, you are not alone in this quagmire, a number of brownfield projects have an all too common constraint. The systems are either from times before the age of the internet or the OEM does not appreciate unsanctioned tinkering in their 'business'. Throughout the year, I have been pondering ways to track my power consumption without taking a stroll out of my apartment, drag myself down a flight of stairs and peep, in shock, at the nearly zero credit points left on my pre-paid electric meter. I really wanted a way to get that data, with less stress and at my beck and call.
 
 ![](.gitbook/assets/tinyml-digital-counter-openmv/1_header.jpg)
 
-Luckily, a form of display is everybody’s favorite (Boomers and Gen X’ers alike; the architect of legacy tech) giving us a unique opportunity to grab that all elusive data in a non-intrusive way: *and if you go the TinyML fashion, a low-cost solution.* Anyone in the know can affirm that the cost of this approach pales in comparison to the alternative–overhaul of the old system in part or whole.
+Luckily, a form of display is everybody's favorite (Boomers and Gen X'ers alike; the architect of legacy tech) giving us a unique opportunity to grab that all elusive data in a non-intrusive way: *and if you go the TinyML fashion, a low-cost solution.* Anyone in the know can affirm that the cost of this approach pales in comparison to the alternative–overhaul of the old system in part or whole.
 
-Most systems provide the output of process parameters in form of a display; analog or digital. [Peter Warden’s blog](https://petewarden.com/2021/02/28/how-screen-scraping-and-tinyml-can-turn-any-dial-into-an-api/) on “How screen scraping and TinyML can turn any dial into an API” provides a brilliant treatise on handling this problem. This work attempts to do for digital displays what [Brandon Satrom](https://www.hackster.io/brandonsatrom/monitor-the-analog-world-with-tinyml-fd59c4) implemented for analog displays, albeit with a different setup, hardware, and software choices.
+Most systems provide the output of process parameters in form of a display; analog or digital. [Peter Warden's blog](https://petewarden.com/2021/02/28/how-screen-scraping-and-tinyml-can-turn-any-dial-into-an-api/) on “How screen scraping and TinyML can turn any dial into an API” provides a brilliant treatise on handling this problem. This work attempts to do for digital displays what [Brandon Satrom](https://www.hackster.io/brandonsatrom/monitor-the-analog-world-with-tinyml-fd59c4) implemented for analog displays, albeit with a different setup, hardware, and software choices.
 
 ![Screen Scraping: Analog vs Digital](.gitbook/assets/tinyml-digital-counter-openmv/2_analog_v_digital.jpg)
 
@@ -65,7 +65,7 @@ Recall that these steps were just necessary to understand the workings of the pr
 
 ![Screen Segmentation for Digit Cropping](.gitbook/assets/tinyml-digital-counter-openmv/5_screens.jpg)
 
-Having sorted out the process of image capture and cropping for digit recognition, I began the data collection stage of the project. The duration of the collection was based on the constraints namely the battery power of the cells and the board’s internal memory (32Mb). For some reason, my particular board was not accepting an SDCard, and all the scrolling through MicroPython and OpenMV forums did not help! I intentionally placed a limit on data collection to control the quality of images gotten–*which were taken during daytime*–and the mAh value of the power source in use.
+Having sorted out the process of image capture and cropping for digit recognition, I began the data collection stage of the project. The duration of the collection was based on the constraints namely the battery power of the cells and the board's internal memory (32Mb). For some reason, my particular board was not accepting an SDCard, and all the scrolling through MicroPython and OpenMV forums did not help! I intentionally placed a limit on data collection to control the quality of images gotten–*which were taken during daytime*–and the mAh value of the power source in use.
 
 The whole data collection process generated 3260 digit data for training. The choice was made to manually label the data set for improved accuracy. I did this by selecting and moving individual images to folders labelled 0 to 9. A verification step was included in the later stage to handle errors in labelling–*FYI, I had 3 labelling errors in all.*
 
@@ -79,7 +79,7 @@ At this juncture, it was time to have fun with Edge Impulse Studio. Considering 
 
 ![Subsequent Attempt with 3 Dense Layers](.gitbook/assets/tinyml-digital-counter-openmv/9_dense.jpg)
 
-The model was generated by Edge Impulse Studio in a `tflite` file format and it was transferred to the OpenMV board on the initial setup rig. Since the metering device was placed at a detached location from the apartment, a WiFi range extender was set up to enable communication between the OpenMV’s WiFi Shield and the platform of choice. Essentially, the OpenMV device which houses the model does the computing and sends the live data via MQTT to a dashboard *(in this case Adafruit IO)* allowing for real-time updates of the credit point pending on the meter. Mission accomplished!
+The model was generated by Edge Impulse Studio in a `tflite` file format and it was transferred to the OpenMV board on the initial setup rig. Since the metering device was placed at a detached location from the apartment, a WiFi range extender was set up to enable communication between the OpenMV's WiFi Shield and the platform of choice. Essentially, the OpenMV device which houses the model does the computing and sends the live data via MQTT to a dashboard *(in this case Adafruit IO)* allowing for real-time updates of the credit point pending on the meter. Mission accomplished!
 
 ![Screen Scraping in Action](.gitbook/assets/tinyml-digital-counter-openmv/10_gif.gif)
 

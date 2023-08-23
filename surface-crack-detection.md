@@ -92,7 +92,7 @@ $ edge-impulse-uploader --category split  --label unknown  unknown/*.jpg
 
 We can see the uploaded datasets on the Edge Impulse Studio's Data Acquisition page.
 
-![Data Aquisition](.gitbook/assets/surface-crack-detection/data_aquisition.png)
+![Data Acquisition](.gitbook/assets/surface-crack-detection/data_aquisition.png)
 
 ## Training
 Go to the **Impulse Design** > **Create Impulse** page, click **Add a processing block**, and then choose **Image**, which preprocesses and normalizes image data, and optionally reduces the color depth. Also, on the same page, click **Add a learning block**, and choose **Transfer Learning (Images)**, which fine-tunes a pre-trained image classification model on the data. We are using a 160x160 image size. Now click on the **Save Impulse** button.

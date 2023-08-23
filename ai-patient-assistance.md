@@ -96,7 +96,7 @@ Once complete head over to the devices tab of your project and you should see th
 
 We are going to create our own dataset, using the built in microphone on the Arduino Nano 33 BLE Sense. We are going to collect data that will allow us to train a machine learning model that can detect the words/phrases **Doctor**, **Nurse**, and **Help**.
 
-We will use the **Record new data** feature on Edge Impulse to record 15 sets of 10 utterences of each of our keywords, and then we will split them into individual samples.
+We will use the **Record new data** feature on Edge Impulse to record 15 sets of 10 utterances of each of our keywords, and then we will split them into individual samples.
 
 Ensuring your device is connected to the Edge Impulse platform, head over to the **Data Aqcquisition** tab to continue.
 
@@ -146,7 +146,7 @@ Now we are going to create our network and train our model.
 
 ![Add processing block](.gitbook/assets/ai-patient-assistance/processing-block.jpg)
 
-Head to the **Create Impulse** tab and change the window size to 2000ms. Next click **Add processing block** and select **Audio (MFCC)**, then click **Add learning block** and select **Clasification (Keras)**.
+Head to the **Create Impulse** tab and change the window size to 2000ms. Next click **Add processing block** and select **Audio (MFCC)**, then click **Add learning block** and select **Classification (Keras)**.
 
 ![Created Impulse](.gitbook/assets/ai-patient-assistance/impulse-2.jpg)
 
@@ -196,17 +196,17 @@ You will see the output of the testing in the output window, and once testing is
 
 ![Live testing](.gitbook/assets/ai-patient-assistance/testing-3.jpg)
 
-Now we need to test how the model works on our device. Use the **Live classification** feature to record some samples for clasification. Your model should correctly identify the class for each sample.
+Now we need to test how the model works on our device. Use the **Live classification** feature to record some samples for classification. Your model should correctly identify the class for each sample.
 
-## Performance Callibration
+## Performance Calibration
 
-![Performance Callibration](.gitbook/assets/ai-patient-assistance/calibration.jpg)
+![Performance Calibration](.gitbook/assets/ai-patient-assistance/calibration.jpg)
 
-Edge Impulse has a great new feature called **Performance Callibration**, or **PerfCal**. This feature allows you to run a test on your model and see how well it will perform in the real world. The system will create a set of post processing configurations for you to choose from. These configurations help to minimize either false activations or false rejections
+Edge Impulse has a great new feature called **Performance Calibration**, or **PerfCal**. This feature allows you to run a test on your model and see how well it will perform in the real world. The system will create a set of post processing configurations for you to choose from. These configurations help to minimize either false activations or false rejections
 
 ![Turn on perfcal](.gitbook/assets/ai-patient-assistance/calibration-2.jpg)
 
-Once you turn on perfcal, you will see a new tab in the menu called **Performance callibration**. Navigate to the perfcal page and you will be met with some configuration options.
+Once you turn on perfcal, you will see a new tab in the menu called **Performance calibration**. Navigate to the perfcal page and you will be met with some configuration options.
 
 ![Perfcal settings](.gitbook/assets/ai-patient-assistance/calibration-3.jpg)
 
@@ -214,7 +214,7 @@ Select the **Noise** class from the drop down, and check the Unknown class in th
 
 ![Perfcal configs](.gitbook/assets/ai-patient-assistance/calibration-4.jpg)
 
-The system will provide a number of configs for you to choose from. Choose the one that best suits your needs and click **Save selected config**. This config will be deployed to your device once you download and install the libray on your device.
+The system will provide a number of configs for you to choose from. Choose the one that best suits your needs and click **Save selected config**. This config will be deployed to your device once you download and install the library on your device.
 
 ## Versioning
 

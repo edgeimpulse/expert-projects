@@ -61,7 +61,7 @@ The major steps that need to be followed for the model development are:
 
 For data acquisition, I have collected the real images of solar panels with cracks using the Arduino Portenta H7 and Vision Shield.
 
-To connect the Portenta for the first time, follow the below setps:
+To connect the Portenta for the first time, follow the below steps:
 
 1. Download the zip file [https://cdn.edgeimpulse.com/firmware/arduino-portenta-h7.zip](https://cdn.edgeimpulse.com/firmware/arduino-portenta-h7.zip)
 1. Press the Reset button twice to put the device into "boot loader" mode
@@ -75,7 +75,7 @@ Now the Portenta is connected to the Edge Impulse account. I have placed the sol
 
 Go to the *Data Acquisition* section in Edge Impulse and [capture images](https://docs.edgeimpulse.com/docs/edge-impulse-studio/data-acquisition).
 
-Then go to *Labeling queue* in the *Data acquisition* section to draw bounding boxes aroung the cracks in the collected images.
+Then go to *Labeling queue* in the *Data acquisition* section to draw bounding boxes around the cracks in the collected images.
 
 ![](.gitbook/assets/solar-panel-defect-detection/labeling.jpg)
 

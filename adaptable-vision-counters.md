@@ -22,7 +22,7 @@ Weight based counting assumes that each part has the exact same weight and uses 
 
 Consider if there are a higher number of defective parts, we can assume that something might be wrong with the production units.  This data can also be used to improve the quality of production and thus industry can make more products in less time.  So our adaptable counters are evolving as a solution to the world's accurate and flexible counting needs.
 
-The Adaptable Counter is a device consisting of a Rapsberry Pi 4 and camera module, and the counting process is fully powered by FOMO. So it can count faster and more accurately than any other method. Adaptable counters are integrated with a cool looking website.
+The Adaptable Counter is a device consisting of a Raspberry Pi 4 and camera module, and the counting process is fully powered by FOMO. So it can count faster and more accurately than any other method. Adaptable counters are integrated with a cool looking website.
 
 ## Use-Cases    
 
@@ -36,7 +36,7 @@ In this case, we are counting defective and non-defective washers.
 
 ### 2. Counting in Motion    
 
-In this case, we are counting bolts and washers and faulty washers passing through the conveyer belt.
+In this case, we are counting bolts and washers and faulty washers passing through the conveyor belt.
 
 ![](.gitbook/assets/adaptable-vision-counters/IMG_1678.jpg)
 
@@ -62,7 +62,7 @@ Edge Impulse is one of the leading development platforms for machine learning on
 
 ### Data Acquisition
 
-Every machine learining project starts with data collection. A goood collection of data is one of the major factors that influences the performance of the model. Make sure you have a wide range of perspectives and zoom levels of the items that are being collected. You may take data from any device or development board, or upload your own datasets, for data acquisition. As we have our own dataset, we are uploading them using the Data Acquisition tab.
+Every machine learning project starts with data collection. A good collection of data is one of the major factors that influences the performance of the model. Make sure you have a wide range of perspectives and zoom levels of the items that are being collected. You may take data from any device or development board, or upload your own datasets, for data acquisition. As we have our own dataset, we are uploading them using the Data Acquisition tab.
 
 ![](.gitbook/assets/adaptable-vision-counters/Data_Acquisition.png)
 
@@ -188,4 +188,4 @@ This Raspberry Pi Camera Module is a custom-designed add-on for Raspberry Pi. It
 
 For powering up the system we used a 5V 2A adapter. In this case we don't have any power hungry peripherals, so 2A current is enough. If you have 3A supply, please go for that.
 
-For the sake of convienence we also used a acrylic case for setting up all the hardware.
+For the sake of convenience we also used a acrylic case for setting up all the hardware.

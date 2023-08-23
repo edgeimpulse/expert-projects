@@ -102,7 +102,7 @@ Then next step is deployment to the hardware.
 
 ## Deployment
 
-Once the testing is complete, go to the "Deployment" option and select *Build firmware* -> *Arduino Portenta H7* to create a downloadble firmware to flash to the board. I have chosen Quantised (Int8). In Edge Impulse, there is also an option to use the EON compiler for reducing resources and improving accuracy, as well as lower latency.
+Once the testing is complete, go to the "Deployment" option and select *Build firmware* -> *Arduino Portenta H7* to create a downloadable firmware to flash to the board. I have chosen Quantized (Int8). In Edge Impulse, there is also an option to use the EON compiler for reducing resources and improving accuracy, as well as lower latency.
 
 ![](.gitbook/assets/smart-baby-swing/eon-compiler.jpg)
 
@@ -141,7 +141,7 @@ The application code will activate the baby swing rocker for 20 seconds, wheneve
 
 ## Hardware Integration
 
-The Arduino Portenta is connected to the 5v DC Relay module. The Common pin in the relay is connected to the Gnd of the battery and NO pin in the relay is connected to the Gnd of the motor in the baby swing rocker whereas the Vcc of the motor is connected directly to the Battery +ve terminal.
+The Arduino Portenta is connected to the 5v DC Relay module. The Common pin in the relay is connected to the Gnd of the battery and NO pin in the relay is connected to the Gnd of the motor in the baby swing rocker whereas the Vcc of the motor is connected directly to the Battery positve terminal.
 
 ![](.gitbook/assets/smart-baby-swing/hardware.jpg)
 

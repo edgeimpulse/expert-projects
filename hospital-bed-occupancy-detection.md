@@ -2,7 +2,7 @@
 description: Use machine learning and an Arduino Nano BLE Sense to monitor bed occupancy in hospitals or care facilities.
 ---
 
-# Hospital Bed Occupancy Detetction with TinyML 
+# Hospital Bed Occupancy Detection with TinyML 
 
 Created By:
 [Adam Milton-Barker](https://www.adammiltonbarker.com/) 
@@ -173,7 +173,7 @@ Before we deploy the software to the Nano 33 BLE Sense, lets test using the Edge
 
 ![Live testing: Occupied](.gitbook/assets/hospital-bed-occupancy-detection/16-model-testing.jpg "Live testing: Occupied")
 
-Use the **Live classification** feature to record some samples for clasification from the Nano BLE Sense. Your model should correctly identify the class for each sample.
+Use the **Live classification** feature to record some samples for classification from the Nano BLE Sense. Your model should correctly identify the class for each sample.
 
 ## Deployment
 
