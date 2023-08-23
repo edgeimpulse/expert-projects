@@ -231,7 +231,7 @@ Predictions (DSP: 188 ms., Classification: 4 ms., Anomaly: 0 ms.):
     
 ### Option 2: Exporting the Impulse as a C++ library with SLCC (Simplicity Studio Component file) and building the binary locally
 
-Edge Impulse offers its users the possibility to export the model as a C++ library that contains all the signal processing blocks, learning blocks, configurations, and SDK needed to integrate the model ub your own custom application. Moreover, in the case of the xG24 devkit, it also provides the Simplicity Studio Component file.
+Edge Impulse offers its users the possibility to export the model as a C++ library that contains all the signal processing blocks, learning blocks, configurations, and SDK needed to integrate the model in your own custom application. Moreover, in the case of the xG24 devkit, it also provides the Simplicity Studio Component file.
 
 ## Conclusion
 

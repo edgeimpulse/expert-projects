@@ -34,7 +34,7 @@ This tutorial is increasing the difficulty level compared to Part 1, which only 
 
 As mentioned in Part 1, there is a lot of research related to interfacing brain and machine. Patients suffering from ALS (a progressive nervous system disease) have through _invasive_ brain implants been able to communicate with the outer world. 
 
-_Non-invasive_ methods have successfully been used for similar purposes as is done in this tutorial. E.g. [Andrea Kübler and Donatella Mattia](https://www.sciencedirect.com/topics/medicine-and-dentistry/sensorimotor-rhythm) describe how Sensorimotor Rhytm-based (SMR) devices were by test participants used to navigate a remote robot through a labyrinth or to spell using a virtual keyboard.
+_Non-invasive_ methods have successfully been used for similar purposes as is done in this tutorial. E.g. [Andrea Kübler and Donatella Mattia](https://www.sciencedirect.com/topics/medicine-and-dentistry/sensorimotor-rhythm) describe how Sensorimotor Rhythm-based (SMR) devices were by test participants used to navigate a remote robot through a labyrinth or to spell using a virtual keyboard.
 
 The main difference between aforementioned types of clinical EEG-research and this tutorial, is that the first ones are typically using professional EEG-devices with between 16 - 128+ electrodes, while a consumer-based EEG-device like Muse is only having 4 electrodes. More electrodes means both more data as well as data from different brain regions. Especially for SMR-events, electrodes close to the sensorimotor cortex (think top of your skull) are essential, as the signals they measure are closer to the area generating limb movement signals. This in comparison to Muse electrodes which are behind the ears and at the forehead, and are quite far away from the sensorimotor cortex. To improve the situation when using Muse-devices, it is possible to connect an extra electrode to the USB-port, for DIY-persons [this is a comprehensive write-up](https://hackaday.io/project/162169-muse-eeg-headset-making-extra-electrode) on how to build one, and [this conversation](https://openbci.com/forum/index.php?p=/discussion/2634/micro-usb-electrode-options-for-muse-extra-electrode-port) also provides some further info. In this tutorial however, no extra electrode is used, instead the goal is to try to collect more data and of higher quality. 
 
@@ -110,7 +110,7 @@ In this chapter you will get detailed instructions from start to end on how to c
 
  ![](.gitbook/assets/eeg-data-part-2/MindMonitor_stream_cropped.jpg)
 
- - Wait until the horseshoe in MindMonitor has disappeared and the graph lines for all sensors have calmed down like in the picture. You might need to wait a few minutes to acquire good signals, but it's possible to speed up the process a bit by moisturing the sensors with e.g. a wet finger. 
+ - Wait until the horseshoe in MindMonitor has disappeared and the graph lines for all sensors have calmed down like in the picture. You might need to wait a few minutes to acquire good signals, but it's possible to speed up the process a bit by moistening the sensors with e.g. a wet finger. 
 	- Especially in this tutorial it is very important to have excellent signals, so do not compromise on them!
  - Start streaming from Mind Monitor by clicking on the button showed in the picture
 
@@ -262,7 +262,7 @@ EEG-data in both this and the previous tutorial is  put into frequency bands by 
 
 As earlier mentioned, by using an additional electrode, you might be able to get data closer to the sensorimotor cortex, and as a result increase the performance of the ML-model.
 
-Another idea - that I'm myself interested in trying - is to use the "health" bars as a biofeedback mechanism to record more data, and supposedly more correct data. In practice the Mind Reader app would itself be used for recording data, but recording is done only when a confidence treshold (e.g. 60 %) is reached. So, if e.g. the event was classified to be `Left` with a confidence level of 65 %, the EEG-data recorded for the classification would be stored and imported into Edge Impulse to retrain the ML-model. By repeating this a few times, the resulting ML-model is expected to provide higher accuracy.
+Another idea - that I'm myself interested in trying - is to use the "health" bars as a biofeedback mechanism to record more data, and supposedly more correct data. In practice the Mind Reader app would itself be used for recording data, but recording is done only when a confidence threshold (e.g. 60 %) is reached. So, if e.g. the event was classified to be `Left` with a confidence level of 65 %, the EEG-data recorded for the classification would be stored and imported into Edge Impulse to retrain the ML-model. By repeating this a few times, the resulting ML-model is expected to provide higher accuracy.
 
 ---------------
 ## Conclusion

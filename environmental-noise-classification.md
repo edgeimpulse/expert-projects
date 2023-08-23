@@ -106,7 +106,7 @@ Most of the test samples were correctly classified. We only have a couple of mis
 
 ## Deploying the Model on the Thingy:53
 
-Building an deploying an embedded application including machine learning use to in envolve a couple of steps. With the Thingy:53 and Edge Impulse this become much easier.
+Building an deploying an embedded application including machine learning used to involve a couple of steps. With the Thingy:53 and Edge Impulse this become much easier.
 
 We just need to go to the Deployment tab, and hit Deploy. The model will automatically start building:
 
