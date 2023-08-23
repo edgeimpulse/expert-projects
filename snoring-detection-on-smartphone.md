@@ -62,7 +62,7 @@ We can now proceed to setup and train our neural network on the NN Classifier 
 
 ## Model Training and Results
 
-To train the model, the number of epochs was set to 100, the leaning rate assigned after serval trials is 0.005, and the overall dataset was split into 80% training and 20% validation set. The number of epochs is the number of times the entire dataset is passed through the neural network during training. There is no ideal number for this, and it depends on the data. In Figure 8 we can see the feature explorer for correct and incorrect classification of both classes.
+To train the model, the number of epochs was set to 100, the leaning rate assigned after several trials is 0.005, and the overall dataset was split into 80% training and 20% validation set. The number of epochs is the number of times the entire dataset is passed through the neural network during training. There is no ideal number for this, and it depends on the data. In Figure 8 we can see the feature explorer for correct and incorrect classification of both classes.
 
 ![Figure 8: Feature explorer](.gitbook/assets/snoring-detection-on-smartphone/feature-explorer.jpg)
 
