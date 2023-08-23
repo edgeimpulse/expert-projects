@@ -134,7 +134,7 @@ From the **Deployment** tab, build an **Arduino Library**. You can enable optimi
 
 ![](.gitbook/assets/fluid-leak-detection-with-flowmeter-and-ai/deployment.png)
 
-The build will output a `.zip` file containing the model and some examples. Add the library to the **Adruino IDE** using Sketch > Include Library > Add .ZIP library
+The build will output a `.zip` file containing the model and some examples. Add the library to the **Arduino IDE** using Sketch > Include Library > Add .ZIP library
 
 ![](.gitbook/assets/fluid-leak-detection-with-flowmeter-and-ai/arduino-ide.png)
 

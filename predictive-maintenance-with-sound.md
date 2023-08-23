@@ -1,5 +1,5 @@
 ---
-description: A proof-of-concept that uses an Arduino to listen for anomolies in the sound of a running motor.
+description: A proof-of-concept that uses an Arduino to listen for anomalies in the sound of a running motor.
 ---
 
 # Predictive Maintenance Using Audio Classification 
@@ -14,7 +14,7 @@ Public Project Link:
 
 Every manufacturing environment is equipped with machines. For a better-performing manufacturing unit, the health of machines plays a major role and hence maintenance of the machines is important. We have three strategies of maintenance namely - Preventive maintenance, Corrective maintenance, and Predictive maintenance.
 
-If you want to find the best balance between preventing failures and avoiding over-maintenance, Predictive Mainenance (PdM) is the way to go. Equip your factory with relatively affordable sensors to track temperature, vibrations, and motion data, use predictive techniques to schedule maintenance when a failure is about to occur, and you'll see a nice reduction in operating costs.
+If you want to find the best balance between preventing failures and avoiding over-maintenance, Predictive Maintenance (PdM) is the way to go. Equip your factory with relatively affordable sensors to track temperature, vibrations, and motion data, use predictive techniques to schedule maintenance when a failure is about to occur, and you'll see a nice reduction in operating costs.
 
 In the newest era of technology, teaching computers to make sense of the acoustic world is now a hot research topic. So in this project, we use sound to do some predictive maintenance using an Arduino Nano 33 BLE Sense.
 

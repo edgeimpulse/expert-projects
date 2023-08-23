@@ -30,7 +30,7 @@ Consequently, models trained in a single domain are brittle and often fail when 
 
 > The purpose of domain randomization is to provide enough simulated variability at training time such that at test time the model is able  to generalize to real-world data.” - Tobin et al, Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real  World, 2017
 
-![Domain Randomization for Transfering Deep Neural Networks - source: Tobin et al, 2017)](.gitbook/assets/nvidia-omniverse-replicator/research-domain-rand.jpg)
+![Domain Randomization for Transferring Deep Neural Networks - source: Tobin et al, 2017)](.gitbook/assets/nvidia-omniverse-replicator/research-domain-rand.jpg)
 
 Nvidia Replicator enables us to perform Domain Randomization. The Replicator is one module within the Omniverse family, and it offers tools and workflow to generate data for various computer vision and non-visual tasks. The Replicator is a highly interoperable tool that integrates with over 40+ modelling/rendering applications across different verticals. The seamless integration is possible thanks to Pixar's Universal Scene Description (USD), which serves as a protocol for various applications such as Blender, 3DMax, Maya, Revit, C4D etc., to work with the Nvidia Replicator.
 

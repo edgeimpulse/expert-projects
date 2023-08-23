@@ -60,7 +60,7 @@ Once I had the model saved to Jetson reComputer, I started coding. This is where
 
 As I mentioned before, the Edge Impulse Python SDK is really straightforward to use in my opinion. Along with the [Advantech sample code](https://github.com/edgeimpulse/workshop-advantech-jetson-nano/tree/main/code_samples/inference) that I mentioned earlier, I really had a great framework in place. If Edge Impulse and Advantech offer the course again this year, I highly recommend taking it.
 
-I coded options to read in live video from the attached CSI camera, or streaming via RSTP. Both options worked well for me. I had a third option for reading in video files for testing archived video. I had some minor issues getting camera drivers working (nanocamera ended up working for me) but once I was through those, it was really fun and straightforward. You can see a couple videos below.
+I coded options to read in live video from the attached CSI camera, or streaming via RTSP. Both options worked well for me. I had a third option for reading in video files for testing archived video. I had some minor issues getting camera drivers working (nanocamera ended up working for me) but once I was through those, it was really fun and straightforward. You can see a couple videos below.
 
 {% embed url="https://www.youtube.com/watch?v=ivLA7CuNENU" %}
 

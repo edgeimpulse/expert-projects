@@ -2,7 +2,7 @@
 description: Use a Nicla Sense ME attached to the sleeve of a K-way jacket for gesture recognition and bad weather prediction
 ---
 
-# Arduino x K-Way - Gesture Recognition and Weather Prediciton for Hiking 
+# Arduino x K-Way - Gesture Recognition and Weather Prediction for Hiking 
 
 Created By:
 Justin Lutz 
@@ -38,7 +38,7 @@ Ideally, there would be a pouch on the armsleeve to slide the Nicla Sense ME int
 
 ![](.gitbook/assets/arduino-kway-gesture-recognition-weather/wrist.jpg)
 
-To complete this project I used my go-to source, Edge Impulse, to ingest raw data, develop a model, and export it as an Arduino library. I [followed this tutorial](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/arduino-nicla-sense-me) on the Nicla Sense ME from Edge Impulse to get up and running. The Edge Impulse-provided `nicla_sense_ingestion.ino` sketch was used to collect the raw accelometer data. I created 3 classes: idle (no movement), walking, and checkpoint. The **Checkpoint** class was essentially me drawing the letter "C" in the air to tell the app to mark a checkpoint on the map while out on a hike.
+To complete this project I used my go-to source, Edge Impulse, to ingest raw data, develop a model, and export it as an Arduino library. I [followed this tutorial](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/arduino-nicla-sense-me) on the Nicla Sense ME from Edge Impulse to get up and running. The Edge Impulse-provided `nicla_sense_ingestion.ino` sketch was used to collect the raw accelerometer data. I created 3 classes: idle (no movement), walking, and checkpoint. The **Checkpoint** class was essentially me drawing the letter "C" in the air to tell the app to mark a checkpoint on the map while out on a hike.
 
 You of course could add additional gestures if you wanted to expand the functionality of the jacket and Nicla Sense ME (an "S" for "selfie" maybe?). Even with just 15 minutes of data (split between Training and Test), there was great clustering of class data:
 

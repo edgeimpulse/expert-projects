@@ -88,12 +88,12 @@ Veff = (((VeffD - 420.76) / -90.24) * -210.2) + 210.2;
  ## Software
  
  - Install HTS221 library. Even when this is an on board module, the HTS221 library is required. Go to Sketch > Include Library > Manage Libraries > Search HTS221
- - Download this ZIP file > Add vía Sketch > Add Zip.
+ - Download this ZIP file > Add via Sketch > Add Zip.
  - Download the .ino file > load it into Arduino BLE 33 > connect the Arduino using micro USB cable, and upload
 
 Regarding code settings:
 
-**Threesold** is used to compare against **result.classification[ix].value** for failure dataset. See below:
+**Threshold** is used to compare against **result.classification[ix].value** for failure dataset. See below:
 
 ```
 float threesold=0.85;

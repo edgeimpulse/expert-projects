@@ -12,7 +12,7 @@ Public Project:
 
 ## Intro
 
-This project focuses on how to port an existing audio recognition project built with a SiLabs Thunderboard Sense 2, to the latest [EFR32MG24](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-socs) as used in the newer SiLabs xG24 Dev Kit. For demostration purposes, we will be porting [Manivannan Sivan's](https://www.hackster.io/manivannan) ["Vehicle Predictive Maintenance"](https://www.hackster.io/manivannan/vehicle-predictive-maintenance-cf2ee3) project, which is an Edge Impulse based TinyML model to predict various vehicle failures like faulty drive shaft and brake-pad noises. Check out his work for more information.
+This project focuses on how to port an existing audio recognition project built with a SiLabs Thunderboard Sense 2, to the latest [EFR32MG24](https://www.silabs.com/wireless/zigbee/efr32mg24-series-2-socs) as used in the newer SiLabs xG24 Dev Kit. For demonstration purposes, we will be porting [Manivannan Sivan's](https://www.hackster.io/manivannan) ["Vehicle Predictive Maintenance"](https://www.hackster.io/manivannan/vehicle-predictive-maintenance-cf2ee3) project, which is an Edge Impulse based TinyML model to predict various vehicle failures like faulty drive shaft and brake-pad noises. Check out his work for more information.
 
 The audio sensor on the Thunderboard Sense 2 and the xG24 Dev Kit are the same (TDK InvenSense ICS-43434), so ideally we're not required to collect any new data using the xG24 Dev Kit for the model to work properly.  Had the audio sensor been a different model, it would most likely be necessary to capture a new dataset.
 
@@ -56,16 +56,16 @@ You can follow the guide below to go through the process, if you are interested 
  
 > ["Edge Impulse xG24 Dev Kit Guide"](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/silabs-xg24-devkit).
 
-With default value of Window Size (10s) and Window Increase (500 ms), the processiong block will throw an error, as represented below:
+With default value of Window Size (10s) and Window Increase (500 ms), the processing block will throw an error, as represented below:
 
 ![](.gitbook/assets/audio-recognition-on-silabs-xg24/frame_stride_error.jpg)
 
-This is because some of the features in Edge Impulse's processing block have been updated since this project was created, so you need to update some of the paramaters in the Timer Series block such as Window Size and Window Increase,
+This is because some of the features in Edge Impulse's processing block have been updated since this project was created, so you need to update some of the parameters in the Timer Series block such as Window Size and Window Increase,
 or increase the frame stride parameter in the MFE processing block. This is what my updated window parameters look like:
 
 ![](.gitbook/assets/audio-recognition-on-silabs-xg24/window_increase_updated.jpg)
 
-If you added some new data and are not sure of the model design, then the [EON tuner](https://docs.edgeimpulse.com/docs/edge-impulse-studio/eon-tuner) can come to the rescue. You just have to select the target device as SiLabs EFR32MG24 (Cortex-M33 78MHz) and configure your desired paramters, then the Eon tuner will come up with suggested architetures which you can use.
+If you added some new data and are not sure of the model design, then the [EON tuner](https://docs.edgeimpulse.com/docs/edge-impulse-studio/eon-tuner) can come to the rescue. You just have to select the target device as SiLabs EFR32MG24 (Cortex-M33 78MHz) and configure your desired parameters, then the Eon tuner will come up with suggested architectures which you can use.
 
 ![](.gitbook/assets/audio-recognition-on-silabs-xg24/EON_tuner.jpg)
 
@@ -117,7 +117,7 @@ Note that this is a newer command supported by the Edge Impulse CLI, hence you m
 
 Now your model should be running, and recognize the same audio data and perform inferencing on the newer xG24 Dev Kit hardware, with little to no modifications to actual data or to the model architecture.
 
-This higlights the platform agnostic nature of Edge Impulse, and was possible in this case because the audio sensor on both the Thunderboard and xG24 are the same. However, you would need do your own due diligence for migrating projects built with other sensor data such as humidity/temperature, or the light sensor, as those do vary between the boards.
+This highlights the platform agnostic nature of Edge Impulse, and was possible in this case because the audio sensor on both the Thunderboard and xG24 are the same. However, you would need do your own due diligence for migrating projects built with other sensor data such as humidity/temperature, or the light sensor, as those do vary between the boards.
 
 One final note is that in this project, the xG24 is roughly 2x as fast as the Thunderboard Sense 2 in running the DSP,  and 8x faster in running the inference:
 
