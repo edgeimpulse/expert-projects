@@ -108,10 +108,6 @@ For deployment, navigate to the **Deployment** tab, select **Arduino Library** a
 
 ![](.gitbook/assets/predictive-maintenance-with-sound/deployment.png)
 
-## Code
-
-The entire assets for this project are given in this [GitHub repository](https://github.com/CodersCafeTech/Predictive-Maintenance-With-Sound).
-
 ## Final Product
 
 Nano 33 BLE Sense along with an LED is enclosed in a 3D printed case, which is our final product. The device is capable of identifying acoustic anomalies in a machine and alerts the user using the alert LED.

@@ -129,7 +129,7 @@ The provided repo contains a precompiled output parser ready to run on a Jetson 
 
 ## Image Classification — DeepStream
 
-Image classification is a more generalized use of computer vision, instead of trying to identify an object at a specific location within an image and drawing a bounding-box around it, instead image classification attemps to simply categorize a full image based on what the model has been trained to identify. A simple example could be thought of as, "this is a picture of an apple", or, "this is a picture of an airplane".
+Image classification is a more generalized use of computer vision, instead of trying to identify an object at a specific location within an image and drawing a bounding-box around it, instead image classification attempts to simply categorize a full image based on what the model has been trained to identify. A simple example could be thought of as, "this is a picture of an apple", or, "this is a picture of an airplane".
 
 ### 1. Build and Train Model
 
@@ -165,7 +165,7 @@ carray2bin.py
 
 _carray2bin.py_ is a python script that allows you to convert binary data payloads of c arrays to a bin file, and is provided in the /utils folder of the provided repo.
 
-Note that this method is useful if you only have accesss to the C/C++ or Arduino Library export, if the export was built as **Unoptimized (float32)** as described above. 
+Note that this method is useful if you only have access to the C/C++ or Arduino Library export, if the export was built as **Unoptimized (float32)** as described above. 
 
 ### 3. Convert Model to ONNX
 
@@ -215,7 +215,7 @@ This approach requires the ONNX model be in an accessible path on your system, a
 
 After the first run, the TensorRT is created as an `.engine` file.  To prevent rebuilding on subsequent runs, the ONNX file can be commented out and the .engine file can instead be directly referenced. This will prevent rebuilding the engine on each run, saving time.
 
-The major limitation of automatic conversion of the model is that it works with implicit batching, where the batch size is 1, ignorin the batch dimension in the model. This may not be ideal when you need to perform inference on batches of images, to take advantage of the hardware batch inference capabilities.
+The major limitation of automatic conversion of the model is that it works with implicit batching, where the batch size is 1, ignoring the batch dimension in the model. This may not be ideal when you need to perform inference on batches of images, to take advantage of the hardware batch inference capabilities.
 
 ## Dynamic Batching
 

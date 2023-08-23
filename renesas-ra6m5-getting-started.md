@@ -113,7 +113,7 @@ Edge Impulse provides multiple options for [data acquisition](https://docs.edgei
 
 ![Data Collection Process](.gitbook/assets/renesas-ra6m5-getting-started/data-collection.gif)
 
-When enough samples are collected, [balance the data](https://docs.edgeimpulse.com/docs/Edge Impulse-studio/data-acquisition#dataset-train-test-split-ratio) and if required [clean the data](https://docs.edgeimpulse.com/docs/Edge Impulse-studio/data-acquisition#cropping-samples) as well.
+When enough samples are collected, [balance the data](https://docs.edgeimpulse.com/docs/edge-impulse-studio/data-acquisition#dataset-train-test-split-ratio) and if required [clean the data](https://docs.edgeimpulse.com/docs/edge-impulse-studio/data-acquisition#cropping-samples) as well.
 
 ![Dataset Train/Test Split](.gitbook/assets/renesas-ra6m5-getting-started/split.jpg)
 
@@ -137,7 +137,7 @@ Click on the _Save parameters_ button, then navigate to the _Generate features_ 
 
 ![Classifier Design](.gitbook/assets/renesas-ra6m5-getting-started/classifier-design.jpg)
 
-- Once the training is complete, please navigate to the [Model testing](https://docs.edgeimpulse.com/docs/Edge Impulse-studio/model-testing) tab, and click _Classify all_ button.
+- Once the training is complete, please navigate to the [Model testing](https://docs.edgeimpulse.com/docs/edge-impulse-studio/model-testing) tab, and click _Classify all_ button.
 
 ![Model Testing](.gitbook/assets/renesas-ra6m5-getting-started/model-testing.jpg)
 
@@ -149,7 +149,7 @@ After testing is finished, the Edge Impulse Studio will show the model accuracy,
 
 In this step, we will deploy our prepared model to the Renesas CK-RA6M5 board, so we can perform inference locally on the board.
 
-- Please navigate to the [Deployment](https://docs.edgeimpulse.com/docs/Edge Impulse-studio/deployment) tab, select the Renesas CK-RA6M5 board using the search bar, and click on the _Build_ button.
+- Please navigate to the [Deployment](https://docs.edgeimpulse.com/docs/edge-impulse-studio/deployment) tab, select the Renesas CK-RA6M5 board using the search bar, and click on the _Build_ button.
 
 ![Deployment Tab](.gitbook/assets/renesas-ra6m5-getting-started/deployment.jpg)
 

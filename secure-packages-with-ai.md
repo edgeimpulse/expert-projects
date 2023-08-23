@@ -71,7 +71,7 @@ Machine learning begins with the data you provide. It is crucial to gather clean
 
 As it will directly impact the result of your model, be sure to obtain data from a reputable source. Good data is pertinent, has few duplicated and missing information, and accurately represents all of the classifications and subcategories that are there.
 
-As we are building a motion recognition model, we are collecting the acceleromter data from the IMU. 
+As we are building a motion recognition model, we are collecting the accelerometer data from the IMU. 
 
 To collect the data, navigate to the **Data Acquisition** tab. 
 
@@ -83,7 +83,7 @@ We embedded the Arduino Nano 33 BLE Sense on a cushion to collect the required d
 
 ![](.gitbook/assets/secure-packages-with-ai/Data-Collection-Setup.jpg)
 
-## 4. Data Preperation
+## 4. Data Preparation
 
 Finally, we have 28 minutes of accelerometer data. The data is collected under 5 different classes - Hard Fall, Vigorous Shaking, Throwing, Normal Carrying, Idle. 
 
