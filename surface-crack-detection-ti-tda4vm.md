@@ -86,7 +86,7 @@ $ edge-impulse-uploader --category split  --label unknown  unknown/*.jpg
 
 We can see the uploaded datasets on the Edge Impulse Studio's **Data Acquisition** page.
 
-![Data Aquisition](.gitbook/assets/surface-crack-detection-ti-tda4vm/data_aquisition.png)
+![Data Acquisition](.gitbook/assets/surface-crack-detection-ti-tda4vm/data_acquisition.png)
 
 ## Training
 

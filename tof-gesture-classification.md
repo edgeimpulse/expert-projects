@@ -31,7 +31,7 @@ There are many types available in the market, but this project employs a [VL53L5
 The main objective of this project is to **recognize user gestures** from the sensor imaging data. The gestures can either be:
 
 1. of "fixed" length, like a swipe (Project A)
-2. or continous motion, like waving your hand (Project B)
+2. or continuous motion, like waving your hand (Project B)
 
 Both of these sub-projects share most of the code and application logic, so it's probably best not to not to skip any sections in this tutorial.
 
@@ -279,11 +279,11 @@ The `FloatCircularBuffer` is a data structure that holds an array where you can 
 
 By allocating a buffer of `EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE` items, you are always sure that the impulse model will get the exact number of features it needs to perform inference.
 
-That completes the Fixed-Length Gesure Project.  You can have a look at a video of this project, here:
+That completes the Fixed-Length Gesture Project.  You can have a look at a video of this project, here:
 
 [[@todo add demo video here]]
 
-The next project follows the same guidelines of this one, but implements a few changes that allow you to perform gesture inference on *continous* data, instead of discrete as this one.
+The next project follows the same guidelines of this one, but implements a few changes that allow you to perform gesture inference on *continuous* data, instead of discrete as this one.
 
 One main change is the introduction of a **voting mechanism** to make more robust predictions in sequence.
   
@@ -356,7 +356,7 @@ For example, it would be pretty normal that while performing gesture A, you see 
 
 Our main goal is to eliminate those spot, isolated predictions.
 
-A naive but effective strategy is to use a *running voting scheme*: every time a new prediction is made, we check the last few ones. If the latest agrees with the others, we can be more confident that it is accurate (**this only applies in this case of continous motion!**).
+A naive but effective strategy is to use a *running voting scheme*: every time a new prediction is made, we check the last few ones. If the latest agrees with the others, we can be more confident that it is accurate (**this only applies in this case of continuous motion!**).
 
 The EloquentArduino library has such a voting scheme.
 
@@ -445,7 +445,7 @@ After the buffer fills with all data from the current gesture, the model will pi
 This project described two different kinds of gesture classification with Time of Flight technology:
 
  1. Fixed-length gesture
- 2. Continous-motion gesture
+ 2. Continuous-motion gesture
 
 These same concepts will apply to other kind of classification problems, as well.  For example, gesture classification from accelerometer and gyroscope data.
 

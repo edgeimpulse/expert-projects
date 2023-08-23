@@ -23,7 +23,7 @@ One of the major cause of these incidents is driver visibility. It is difficult 
 
 ![](.gitbook/assets/blind-spot-detection/blind-spot.jpg)
 
-Of course, it would be better for a system which would alert the driver that a cyclist was in thier blind spot. This led to me thinking about how it could possibly be achieved, and retrofit into vehicles. Ideally the system would be low cost, small, capable of operating off a battery, and able to give a fast and timely warning to the driver. And, the system needs to be nearly self contained.
+Of course, it would be better for a system which would alert the driver that a cyclist was in their blind spot. This led to me thinking about how it could possibly be achieved, and retrofit into vehicles. Ideally the system would be low cost, small, capable of operating off a battery, and able to give a fast and timely warning to the driver. And, the system needs to be nearly self contained.
 
 My idea was to use a little camera, which would be able to raise an indication or alert to the driver that there was a cyclist in the blind spot. Ideally, this would be audible such that the driver could not fail to see it. For this reason I chose the Himax WE-I Plus camera from SparkFun. This device includes a simple grey-scale VGA camera, and has the ability to break out GPIO such that a buzzer or other warning could be generated.
 

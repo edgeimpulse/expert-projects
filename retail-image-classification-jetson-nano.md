@@ -14,7 +14,7 @@ Public Project Link:
 
 ## Introduction
 
-Even with the current limitations of Artificial Intelligence, it is still a very useful tool, and many tasks can be automated with the technology. As more tasks become automated, human resources are freed up, allowing them to spend more time focusng on what really matters to businesses: their customers. 
+Even with the current limitations of Artificial Intelligence, it is still a very useful tool, and many tasks can be automated with the technology. As more tasks become automated, human resources are freed up, allowing them to spend more time focusing on what really matters to businesses: their customers. 
 
 The retail industry is a prime example of an industry that can be automated through the use of Artificial Intelligence, the Internet of Things, and Robotics.
 
@@ -85,7 +85,7 @@ In this example we will use images from the Apples, Bananas, Chillis and Broccol
 
 ![Upload data](.gitbook/assets/retail-image-classification-jetson-nano/5-data-upload.jpg "Upload data")
 
-Once downloaded, uzip the data and navigate to the **Train** folder. Then proceed to upload the contents of **Train/Apples**, **Train/Bananas**, **Train/Chillis** and **Train/Brocolli**. Make sure to select **Automatically split between training and testing**, and enter the correct label.
+Once downloaded, unzip the data and navigate to the **Train** folder. Then proceed to upload the contents of **Train/Apples**, **Train/Bananas**, **Train/Chillis** and **Train/Brocolli**. Make sure to select **Automatically split between training and testing**, and enter the correct label.
 
 ![Uploaded data](.gitbook/assets/retail-image-classification-jetson-nano/6-uploaded-data.jpg "Uploaded data")
 
@@ -155,7 +155,7 @@ Before we deploy the software to the NVIDIA Jetson Nano, lets test using the Edg
 
 ![Live testing: Chilli](.gitbook/assets/retail-image-classification-jetson-nano/16-live-testing-chilli.jpg "Live testing")
 
-Use the **Live classification** feature to record some samples for clasification from the webcam connected to the Jetson Nano. Your model should be able to correctly identify the class for each sample.  If you are not getting accurate detections, you may need to provide more data samples, or fine tune the training parameters to increase your accuracy.  First, you will want to save a **Version** though.
+Use the **Live classification** feature to record some samples for classification from the webcam connected to the Jetson Nano. Your model should be able to correctly identify the class for each sample.  If you are not getting accurate detections, you may need to provide more data samples, or fine tune the training parameters to increase your accuracy.  First, you will want to save a **Version** though.
 
 ## Versioning
 
@@ -181,6 +181,6 @@ This will then download the built model from Edge Impulse and start local infere
 
 ## Conclusion
 
-Here we have created a simple but effective solution for classifiying various fruits and vegetables using computer vision powered on an NVIDIA Jetson Nano, using Edge Impulse. 
+Here we have created a simple but effective solution for classifying various fruits and vegetables using computer vision powered on an NVIDIA Jetson Nano, using Edge Impulse. 
 
 You can train a network with your own images, or build off the model and training data provided in this tutorial.

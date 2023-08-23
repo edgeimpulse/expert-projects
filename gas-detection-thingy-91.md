@@ -175,7 +175,7 @@ To create this data set, we have exposed the gas sensor to various gasses that m
 
 To simulate increased concentrations of CO2, we have used a simple set-up that employs baking soda (Sodium Bicarbonate) and vinegar (Acetic Acid). By combining those 2 elements in a confined environment, the CO2 resulting from their reaction, being heavier than air, would spill from the container in which the reaction takes place and get picked up by the Nordic Thingy:91.
 
-To simulate an increased concentration of carbon monoxide, we have exposed the Thingy:91 board to wood smoke. Smoke is fundamentally a complex mixture of fine particles and nocive compounds in a gaseous state like polycyclic aromatic hydrocarbons, nitrogen oxides, sulfur oxides, and carbon monoxide.
+To simulate an increased concentration of carbon monoxide, we have exposed the Thingy:91 board to wood smoke. Smoke is fundamentally a complex mixture of fine particles and compounds in a gaseous state like polycyclic aromatic hydrocarbons, nitrogen oxides, sulfur oxides, and carbon monoxide.
 
 Finally, to get a reading specific to an alcohol leakage, we have exposed the gas sensor to a bottle of 97% concentration Isopropanol. Being a very volatile compound, it quickly evaporates and is easily picked up by VOC sensors.
 
@@ -229,7 +229,7 @@ When you click “Start training”, the process will be assigned to a cluster a
 
 When building a machine learning model, what we aim for is a high Accuracy and a low Loss. **Accuracy** is the percentage of predictions for a given sample where the predicted value coincides with the actual value, and **Loss** is the total of all errors made for all samples in the validation set.
 
-The confusion matrix presents the percent of samples that were miscategorised and the Data explorer offers a visual representation of the classified samples. It is clearly noticeable that the amount of “Normal” samples wrongly classified as Gas_Leak is greater than the number of Gas_Leak data points categorized as “Normal”. For this particular application, this is not a problem because the model will lean towards triggering a false positive and warn the user that there might be a problem, rather than passing a real gas leak as normal environmental conditions.
+The confusion matrix presents the percent of samples that were miscategorized and the Data explorer offers a visual representation of the classified samples. It is clearly noticeable that the amount of “Normal” samples wrongly classified as Gas_Leak is greater than the number of Gas_Leak data points categorized as “Normal”. For this particular application, this is not a problem because the model will lean towards triggering a false positive and warn the user that there might be a problem, rather than passing a real gas leak as normal environmental conditions.
 
 ### Model Testing
 
