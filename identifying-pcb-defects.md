@@ -18,7 +18,7 @@ This project aims to look at three defects on a PCB and how machine learning can
 
 While working on this project I built various models with MobileNetV2 SSD FPN-Lite 320x320, FOMO and YOLOv5 each with different parameters to achieve the best result. At the end, I settled on FOMO because it achieved a much better detection compared to the other models.
 
-Therefore to build our Machine Learning model, we will use [FOMO](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/object-detection/fomo-object-detection-for-constrained-devices) and afterwards delploy the model to a Raspberry Pi 4B with the 8 megapixel V2.1 camera module.
+Therefore to build our Machine Learning model, we will use [FOMO](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/object-detection/fomo-object-detection-for-constrained-devices) and afterwards deploy the model to a Raspberry Pi 4B with the 8 megapixel V2.1 camera module.
 
 ## Quick Start
 
@@ -28,7 +28,7 @@ Alternatively, to create a similar project, follow these steps after creating a 
 
 ## Data Acquisition
 
-The dataset used in this project was sourced from [Kaggle PCB Defects dataset](https://www.kaggle.com/datasets/akhatova/pcb-defects). This dataset consisits of 1366 PCB images with 6 kinds of defects. However for this demo, we will only use 3 kinds (missing hole, open circuit and short circuit) for our detection. This is because the annotations for this dataset are in XML format but the [Edge Impulse Uploader](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-uploader#bounding-boxes) requires a bounding_boxes.labels file with the bounding boxes in a unique JSON structure. For this project demo we will have to draw bounding boxes for all our images, therefore the need to reduce our dataset size.
+The dataset used in this project was sourced from [Kaggle PCB Defects dataset](https://www.kaggle.com/datasets/akhatova/pcb-defects). This dataset consists of 1366 PCB images with 6 kinds of defects. However for this demo, we will only use 3 kinds (missing hole, open circuit and short circuit) for our detection. This is because the annotations for this dataset are in XML format but the [Edge Impulse Uploader](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-uploader#bounding-boxes) requires a bounding_boxes.labels file with the bounding boxes in a unique JSON structure. For this project demo we will have to draw bounding boxes for all our images, therefore the need to reduce our dataset size.
 
 There are 9 PCBs used for this dataset. To create the dataset with the defects, artificial defects were added to the PCB images at various locations and saved as multiple images. These are high resolution images, which is a key factor in this object detection as lower resolution images reduce the useful information for object detection, which will in turn reduce the accuracy of a model.
 
@@ -123,7 +123,7 @@ After training with FOMO and analyzing the results, I decided to train another m
 
 To train a YOLOv5 model on this custom dataset, I built a YOLOv5 model on my local computer using [Edge Impulse custom learning blocks Documentation](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/adding-custom-learning-blocks) and pushed it to my Edge Impulse account. This model was trained with various training cycles and learning rates. 
 
-With 100 training cycles (epochs) and a learning rate of 0.01, The precision score of this model was not accepatable at 0.0%. FOMO has obviously performed much better compared to this model.
+With 100 training cycles (epochs) and a learning rate of 0.01, The precision score of this model was not acceptable at 0.0%. FOMO has obviously performed much better compared to this model.
 
 ![YOLOv5 model training](.gitbook/assets/identifying-pcb-defects/img16_screenshot_YOLOv5_training.png)
 
@@ -135,7 +135,7 @@ This performance could be one of the limitations of YOLOv5 whereby it struggles 
 
 ## Deploying to a Raspberry Pi 4
 
-To deploy our model to the Raspbery Pi we first have to flash the Raspberry Pi OS image to an SD card, install Edge Impulse dependancies on the Raspberry Pi and connect a camera to the Pi. I used the 8 megapixel V2 camera module for capturing the images. Edge Impulse has [documentation](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-cpu-gpu-targets/raspberry-pi-4) on how to setup the Raspberry Pi to connect to Edge Impulse studio and also deploying your model to the Pi.
+To deploy our model to the Raspberry Pi we first have to flash the Raspberry Pi OS image to an SD card, install Edge Impulse dependencies on the Raspberry Pi and connect a camera to the Pi. I used the 8 megapixel V2 camera module for capturing the images. Edge Impulse has [documentation](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-cpu-gpu-targets/raspberry-pi-4) on how to setup the Raspberry Pi to connect to Edge Impulse studio and also deploying your model to the Pi.
 
 After setting up the Raspberry Pi, we can run the command `edge-impulse-linux` to select our project from the Raspberry Pi then run the command `edge-impulse-linux-runner` to run our model. 
 
@@ -152,7 +152,7 @@ On the Raspberry Pi 4 the model has a latency of ~1500ms which equals to ~1 fps.
 
 ## Conclusion
 
-This project has shown that we can move closer to zero manufacturing defects on bare PCBs by intergrating Machine Learning for visual inspection.  An interesting future project could be to extend the object detection to multi-layered PCBs and use Deep Learning models for better performance.
+This project has shown that we can move closer to zero manufacturing defects on bare PCBs by integrating Machine Learning for visual inspection.  An interesting future project could be to extend the object detection to multi-layered PCBs and use Deep Learning models for better performance.
 
 FOMO performed best for this object detection since it is flexible and very fast.  With FOMO we used image inputs of 1024x1024, which is the highest input size compared to YOLOv5 and MobileNetV2 SSD FPN-Lite 320x320.  This enabled our small objects to still retain their useful information for detection.  With Edge Impulse, developing ML models and deploying them has always been easy.  The [Versioning](https://forum.edgeimpulse.com/t/you-can-now-version-your-projects/671) feature really helped me save my projects with different models and be able to restore the entire project with dataset and models.
 
