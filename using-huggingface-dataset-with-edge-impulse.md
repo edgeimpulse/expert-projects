@@ -14,7 +14,7 @@ Public Project Link:
 
 ## Intro to Hugging Face
 
-The Hugging Face Hub is a large machine learning community and platform with over 18,000 open-source and publically available datasets, over 120,000 created models, and applications (called Spaces) that leverage AI to perform a task. This open and community-centric approach allows people to easily collaborate and build ML projects together. The Hub is a central place where anyone can explore, experiment, and work together to build projects with machine learning.
+The Hugging Face Hub is a large machine learning community and platform with over 18,000 open-source and publicly available datasets, over 120,000 created models, and applications (called Spaces) that leverage AI to perform a task. This open and community-centric approach allows people to easily collaborate and build ML projects together. The Hub is a central place where anyone can explore, experiment, and work together to build projects with machine learning.
 
 Hugging Face Datasets are a library of high quality datasets curated by ML researchers and professionals. We will be using the [beans dataset from Hugging Face Datasets](https://huggingface.co/datasets/beans) in this project, and we'll upload it to Edge Impulse to use for AI model training and then for deployment on an edge device.
 

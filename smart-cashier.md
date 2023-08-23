@@ -114,5 +114,5 @@ The Python program I created utilizes the `.eim` file from the training result, 
 
 ## Summary
 
-This project is an example of how embedded object detection can be the solution for a real-world problem. The Smart Cashier can identify objects, quantity of objects, and the total price of objects almost instantly.  And beacuse it is running locally using a single board computer, no cloud connectivity is needed.
+This project is an example of how embedded object detection can be the solution for a real-world problem. The Smart Cashier can identify objects, quantity of objects, and the total price of objects almost instantly.  And because it is running locally using a single board computer, no cloud connectivity is needed.
 

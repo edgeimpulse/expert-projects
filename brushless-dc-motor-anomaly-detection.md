@@ -55,7 +55,7 @@ In future tutorials we will explore the use of **classification models** to reco
 
 What can motor power data tell us?
 
-> Ohm's law tells us that **power = current * voltage**, therefore tracking a motor's power consumption allows us to consider the behavior of both current and voltage concurrently. A popular method used to monitor motor behavior is "Instantaneous Power Signature Analysis", or IPSA. Essentially a motor's power is analyzed in the frequency domain in order to uncover external interferance - whether mechanical or electrical. You can read more about IPSA in this academic article:  
+> Ohm's law tells us that **power = current * voltage**, therefore tracking a motor's power consumption allows us to consider the behavior of both current and voltage concurrently. A popular method used to monitor motor behavior is "Instantaneous Power Signature Analysis", or IPSA. Essentially a motor's power is analyzed in the frequency domain in order to uncover external interference - whether mechanical or electrical. You can read more about IPSA in this academic article:  
 > [Predictive Maintenance by Electrical Signature Analysis to Induction Motors. 10.5772/48045. Bonaldi, E.L. & Oliveira, Levy & Borges da Silva, Jonas & Lambert-Torres, Germano & SILVA, L.E.. (2012).](https://www.researchgate.net/publication/279854639_Predictive_Maintenance_by_Electrical_Signature_Analysis_to_Induction_Motors) [page 500].
 
 **In this tutorial we will be using spectral analysis to generate features for our anomaly detection model.**
@@ -104,7 +104,7 @@ Let's set our motor in motion (as shown in the video above) and click "**Start s
 
 ## Creating an impulse
 
-It's time to create an **impulse**, which is comprised of a series of configuration / processing blocks. First up is setting the **type** of data we're using, which in this case is "Time series data". This block will split our long samples into shorter windows. Next we decide what type of **processing** we want performed on our data. In this tutorial we'll be using "Spectral analysis", which looks at the behavior of the signals in the frequency doman.. Finally we decide what sort of **neural network** we want to feed the results of the spectral analysis to. For this we will select "**Anomaly detection (K-means)**":
+It's time to create an **impulse**, which is comprised of a series of configuration / processing blocks. First up is setting the **type** of data we're using, which in this case is "Time series data". This block will split our long samples into shorter windows. Next we decide what type of **processing** we want performed on our data. In this tutorial we'll be using "Spectral analysis", which looks at the behavior of the signals in the frequency domain. Finally we decide what sort of **neural network** we want to feed the results of the spectral analysis to. For this we will select "**Anomaly detection (K-means)**":
 
 ![](https://hackster.imgix.net/uploads/attachments/1441960/image_p7gPXmW23O.png?auto=compress,format&w=740&h=555&fit=max)
 

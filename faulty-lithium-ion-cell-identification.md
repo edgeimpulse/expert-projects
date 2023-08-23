@@ -22,7 +22,7 @@ A working demo of my prototype is available on YouTube here:
 
 ## Problem Statement
 
-In an existing BMS pack, a temperature sensor is integrated with each cell pack, consiting of 14 cells, for identifying an overheated cell pack. But there is no system to identify an individual faulty cell that is overheating in a BMS pack.
+In an existing BMS pack, a temperature sensor is integrated with each cell pack, consisting of 14 cells, for identifying an overheated cell pack. But there is no system to identify an individual faulty cell that is overheating in a BMS pack.
 
 ![Existing BMS pack architecture](.gitbook/assets/lithium-ion/diagram-1.jpg)
 
@@ -52,7 +52,7 @@ In this prototype, 6 lithium-ion cells are connected to the load (Rheostat) and 
 
 ![](.gitbook/assets/lithium-ion/prototype.jpg)
 
-## Alogorithm
+## Algorithm
 
 The MLX90640 sends 32x24 thermal data to the Wio Terminal through I2C. Since this project focuses on identifying an overheated cell in the pack, I have used simple filtering logic to filter out the normal cell temperature by setting it to zero. 
 

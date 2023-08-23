@@ -92,7 +92,7 @@ You can think of Code as an IDE for building advanced 3D design and simulation t
 
 ![Script Editor](.gitbook/assets/nvidia-omniverse-synthetic-data/script-editor.jpg)
 
-Within Omniverse™ Code there is a feature called `Script Editor`. This editor allows us to load Python code into the IDE and execute it. This makes it very easy for us to set up our scenes and manipluate our assets.
+Within Omniverse™ Code there is a feature called `Script Editor`. This editor allows us to load Python code into the IDE and execute it. This makes it very easy for us to set up our scenes and manipulate our assets.
 
 #### Assets
 
@@ -131,7 +131,7 @@ FRUIT = {
 }
 ```
 
-You should set the `basepath` variable to the path to the project root on your machine. If you are using Linux you will need to modify any path in the code as the paths have backslashes for directory seperators. For the `dataset` variable you can use the following to generate your dataset:
+You should set the `basepath` variable to the path to the project root on your machine. If you are using Linux you will need to modify any path in the code as the paths have backslashes for directory separators. For the `dataset` variable you can use the following to generate your dataset:
 
 - **All** Will generate a dataset that includes images of all the fruit types on the table.
 - **Apple** Will generate a dataset that includes images of apples on the table. 
@@ -142,7 +142,7 @@ Together, these images will make up our entire dataset.
 
 ### Table
 
-The first function we come to in the code will create the table. Here we create the table from the USD file in the settings, ensure that items do not fall through it by using `rep.physics.collider()`, adds mass to the object with `rep.physics.mass(mass=100)`, and then modifies the pose which includes `position` and `rotation`. Finally we register the randomnizer.
+The first function we come to in the code will create the table. Here we create the table from the USD file in the settings, ensure that items do not fall through it by using `rep.physics.collider()`, adds mass to the object with `rep.physics.mass(mass=100)`, and then modifies the pose which includes `position` and `rotation`. Finally we register the randomizer.
 
 ```
 def table():
@@ -288,7 +288,7 @@ rep.orchestrator.run()
 
 ![Generate Data](.gitbook/assets/nvidia-omniverse-synthetic-data/generate-data.jpg)
 
-Now we have explored the code and updated our settings, it is time to run the code and generate our dataset. Ensuring Omniverse™ Code is openend, copy the contents of `omniverse.py` and paste it into the script editor. Once you have done this press the `Run` button, or `ctrl + enter`.
+Now we have explored the code and updated our settings, it is time to run the code and generate our dataset. Ensuring Omniverse™ Code is opened, copy the contents of `omniverse.py` and paste it into the script editor. Once you have done this press the `Run` button, or `ctrl + enter`.
 
 Remember to change the `dataset` variable to the relevant class and run the script for each of the 3 classes. 
 
