@@ -12,7 +12,7 @@ Public Project Link:
 
 ## Introduction
 
-We utilize metal objects crafted from iron and steel in our everyday lives. When these materials are exposed to moisture, there is a risk of corrosion occuring. Corrosion is a chemical process that destroys the surface of metals, as a result of chemical and electrochemical reactions caused by environmental circumstances. This leads to a loss of metallic components, which may contribute to diminished efficiency in the metal part's end-use applications. This reduces the life of metallic parts and can increase maintenance costs. The study of corrosion growth aids in the development of preventative strategies to avert such losses.
+We utilize metal objects crafted from iron and steel in our everyday lives. When these materials are exposed to moisture, there is a risk of corrosion occurring. Corrosion is a chemical process that destroys the surface of metals, as a result of chemical and electrochemical reactions caused by environmental circumstances. This leads to a loss of metallic components, which may contribute to diminished efficiency in the metal part's end-use applications. This reduces the life of metallic parts and can increase maintenance costs. The study of corrosion growth aids in the development of preventative strategies to avert such losses.
 
 In this project the idea is to perform a demonstration on detecting corrosion, using TinyML. In heavy industries such as transportation, mining, construction, ship building, etc, corrosion remains a serious risk of operational safety. The cost associated with inadequate protection against corrosion can be huge. A lot of these industries rely on visual inspection of industrial environments by humans. However, in some cases, these industrial environments can be in remote or adverse conditions, thereby putting humans at risk. Additionally, the process of detecting and analyzing different types of corrosion is also subject to interpretation by humans. Using Deep Learning, it is possible to reduce and, in many cases, even remove the subjectivity. By using vehicles, such as robots or drones, it is possible to automate the process of inspection of such industrial environments. This can reduce risks to humans, as well as control costs for such operations. In this demonstration, we're proposing to build a deep learning model, using an edge AI device based upon the [Seeed Studio reTerminal](https://www.seeedstudio.com/ReTerminal-with-CM4-p-4904.html). And we'll integrate this with a webcam for you to visualize such corroded parts.
 
@@ -45,7 +45,7 @@ reTerminal comes with Raspberry Pi OS pre-installed out-of-the-box.  Be sure to 
 
 Once you have setup the hardware, the next step is to upload images into the Edge Impulse Studio and begin training a machine learning model.
 
-## Model Developement
+## Model Development
 
 ### Dataset
 
@@ -57,7 +57,7 @@ Rust is the most common form of corrosion. Rusting is oxidation of iron in the p
 
 Once the dataset is uploaded, we are ready to train our model. This requires two important features: a processing block and a learning block. Documentation on Impulse Design can be [found here](https://docs.edgeimpulse.com/docs/edge-impulse-studio/create-impulse).
 
-We first click "Create Impulse". Here, set image width and heigh to 96x96; and Resize mode to Squash. The Processing block is set to "Image" and the Learning block is "Transfer Learning (Images)". Click 'Save Impulse' to use this configuration as shown in below figure. We have used a 96x96 image size to lower the RAM usage, presented in [3]. Higher resolution images will cause a subsequent increase in RAM usage when running the model.
+We first click "Create Impulse". Here, set image width and height to 96x96; and Resize mode to Squash. The Processing block is set to "Image" and the Learning block is "Transfer Learning (Images)". Click 'Save Impulse' to use this configuration as shown in below figure. We have used a 96x96 image size to lower the RAM usage, presented in [3]. Higher resolution images will cause a subsequent increase in RAM usage when running the model.
 
 ![](.gitbook/assets/corrosion-detection-reterminal/impulse.jpg)
 

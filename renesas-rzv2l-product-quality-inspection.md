@@ -100,7 +100,7 @@ I chose this as an acceptable performance and proceeded to deploy the model to t
 
 ## Deploying the Model to a Renesas RZ/V2L
 
-The Renesas RZ/V2L Evaluation Kit comes with the Renesas RZ/V2L board and a 5-megapixel Google Coral camera. To setup the board, Edge Impulse has [documentation](https://docs.edgeimpulse.com/renesas/development-platforms/officially-supported-cpu-gpu-targets/renesas-rz-v2l) that shows how to prepare the Linux image, install [Edge Impulse for Linux](https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/edge-impulse-for-linux), and finally connecte the board to the Edge Impulse Studio. 
+The Renesas RZ/V2L Evaluation Kit comes with the Renesas RZ/V2L board and a 5-megapixel Google Coral camera. To setup the board, Edge Impulse has [documentation](https://docs.edgeimpulse.com/renesas/development-platforms/officially-supported-cpu-gpu-targets/renesas-rz-v2l) that shows how to prepare the Linux image, install [Edge Impulse for Linux](https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/edge-impulse-for-linux), and finally connected the board to the Edge Impulse Studio. 
 
 After the Renesas RZ/V2L board has been setup we can SSH into the board through an ethernet connection between a development computer and the board, or the board and a router. To SSH into the RZ/V2L we can run the following terminal/Command prompt command on a computer:
 

@@ -74,7 +74,7 @@ Our data consists of four classes: **Ink Smudges, Ink Spill, Die Cutting and Inv
 
 We have collected 20 images belonging to each class and uploaded them using the **Data Uploader**. Label them from the **Labelling Queue** and split them into Training and Testing sets, in the ratio of 80:20, which forms a good dataset to start model training.  More images is better, but 20 is enough to get started with.
 
-### 2. Impulse Architechture
+### 2. Impulse Architecture
 
 We are using FOMO as our object detection model, which performs better with 96 X 96 pixel images, so we set our image width and height to 96px. Keeping **Resize Mode** to **Fit shortest axis**, add an **Image** processing block and an **Object Detection (Images)** learning block to the impulse.
 
