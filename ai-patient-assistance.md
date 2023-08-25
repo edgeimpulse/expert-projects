@@ -98,7 +98,7 @@ We are going to create our own dataset, using the built in microphone on the Ard
 
 We will use the **Record new data** feature on Edge Impulse to record 15 sets of 10 utterances of each of our keywords, and then we will split them into individual samples.
 
-Ensuring your device is connected to the Edge Impulse platform, head over to the **Data Aqcquisition** tab to continue.
+Ensuring your device is connected to the Edge Impulse platform, head over to the **Data Acquisition** tab to continue.
 
 ![Data acquisition](.gitbook/assets/ai-patient-assistance/data-acquisition.jpg)
 

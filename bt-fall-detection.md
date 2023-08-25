@@ -38,7 +38,7 @@ If you want to train your own fall model, go to the Edge Impulse Studio and log 
 
 Design an Impulse with a 1500ms window size, 150ms window increase, and 100HZ frequency. Add Spectral Analysis with just 3 axis: accx, accy, accz. Choose Keras classification and 2 output features: Stand and Fall. For the Neural Network training, 50 training cycles with a 0.0005 learning rate, Autobalance the dataset, and 20% validation worked fine. 
 
-After model testing, go to the Deplyment page and export an Arduino Library (which will contain your Machine Learning Model). Then import this library (Zip file) inside the Arduino IDE Sketch by selecting Include, Add Zip.
+After model testing, go to the Deployment page and export an Arduino Library (which will contain your Machine Learning Model). Then import this library (Zip file) inside the Arduino IDE Sketch by selecting Include, Add Zip.
 
 ![](.gitbook/assets/bt-fall-detection/device.jpg)
 

@@ -35,7 +35,7 @@ Since I decided to log the detection results on a MySQL database and inform the 
 
 Since OpenMV Cam H7 does not provide Wi-Fi or BLE connectivity, I employed WizFi360-EVB-Pico to communicate with OpenMV Cam H7 and transfer the detection results to the web application. WizFi360-EVB-Pico is a budget-friendly development board based on Raspberry Pi RP2040 and enables Wi-Fi connectivity with the integrated WizFi360 Wi-Fi module. Also, I connected a DHT22 temperature and humidity sensor to WizFi360-EVB-Pico to log and get informed of the current weather condition of my coop (cage) in addition to the detection results.
 
-Lastly, to make the device as robust, sturdy, and compact as possible while experimenting with it in my quail coop (cage), I designed a quail-themed and coop-compatible case with a sliding front cover and a moveable camera handle (3D printable).
+Lastly, to make the device as robust, sturdy, and compact as possible while experimenting with it in my quail coop (cage), I designed a quail-themed and coop-compatible case with a sliding front cover and a movable camera handle (3D printable).
 
 So, this is my project in a nutshell 😃
 
@@ -71,9 +71,9 @@ In the following steps, you can find more detailed information on coding, captur
 
 ## Step 1: Designing and printing a quail-themed and coop-compatible case
 
-Since I focused on building a user-friendly and accessible device compatible with a wire quail coop (cage) in this project, I decided to design a robust and compact case allowing the user to attach the device to the wire cage via hooks and capture coop images effortlessly. To avoid overexposure to dust and prevent loose wire connections, I added a sliding front cover to the case. Then, I designed a separate moveable camera handle to capture coop images at different angles with OpenMV Cam H7. Also, I decided to adorn the sliding front cover with a quail logo and the OpenMV icon so as to highlight the poultry theme gloriously.
+Since I focused on building a user-friendly and accessible device compatible with a wire quail coop (cage) in this project, I decided to design a robust and compact case allowing the user to attach the device to the wire cage via hooks and capture coop images effortlessly. To avoid overexposure to dust and prevent loose wire connections, I added a sliding front cover to the case. Then, I designed a separate movable camera handle to capture coop images at different angles with OpenMV Cam H7. Also, I decided to adorn the sliding front cover with a quail logo and the OpenMV icon so as to highlight the poultry theme gloriously.
 
-I designed the main case, its sliding front cover, and the moveable camera handle in Autodesk Fusion 360. You can download their STL files below.
+I designed the main case, its sliding front cover, and the movable camera handle in Autodesk Fusion 360. You can download their STL files below.
 
 ![image](.gitbook/assets/egg-counting-openmv/model_1.png)
 
@@ -193,7 +193,7 @@ After completing breadboard connections and adjustments successfully, I made the
 
 After printing all parts (models), I fastened all components except OpenMV Cam H7 to their corresponding slots on the main case via the hot glue gun.
 
-Then, I attached OpenMV Cam H7 to the separate moveable handle allowing capturing coop images at different angles.
+Then, I attached OpenMV Cam H7 to the separate movable handle allowing capturing coop images at different angles.
 
 Finally, I placed the sliding front cover via its dents.
 

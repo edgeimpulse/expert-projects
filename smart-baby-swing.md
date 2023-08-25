@@ -141,7 +141,7 @@ The application code will activate the baby swing rocker for 20 seconds, wheneve
 
 ## Hardware Integration
 
-The Arduino Portenta is connected to the 5v DC Relay module. The Common pin in the relay is connected to the Gnd of the battery and NO pin in the relay is connected to the Gnd of the motor in the baby swing rocker whereas the Vcc of the motor is connected directly to the Battery positve terminal.
+The Arduino Portenta is connected to the 5v DC Relay module. The Common pin in the relay is connected to the Gnd of the battery and NO pin in the relay is connected to the Gnd of the motor in the baby swing rocker whereas the Vcc of the motor is connected directly to the Battery positive terminal.
 
 ![](.gitbook/assets/smart-baby-swing/hardware.jpg)
 
