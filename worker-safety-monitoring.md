@@ -16,7 +16,7 @@ Public Project Link:
 
 A study by the British Safety Council reveals that nearly 80% of workers work in unsafe environments and on-site deaths are 20 times higher in India than those in Britain[1]. Nearly 48,000 workers die in the country due to occupational accidents, out of which 24.2% is recorded in the construction industry[2]. 
 
-Since the majority of the workforce belongs to the bottom of the social pyramid, any injury and resultant expenditure adds to their financial burden, having a negative impact on their quality of life. This necessitatse an urgent need for better industrial safety systems and risk assessment technologies across all construction sites.
+Since the majority of the workforce belongs to the bottom of the social pyramid, any injury and resultant expenditure adds to their financial burden, having a negative impact on their quality of life. This necessitates an urgent need for better industrial safety systems and risk assessment technologies across all construction sites.
 
 “Increasingly high noncompliance with PPE protocols is an alarming trend and a serious threat to worker health and safety,” said Gina, manufacturing segment marketing manager for Kimberly-Clark Professional. “Whether this is a result of economic conditions, a flawed approach to safety programs, younger workers who are more inclined to take greater risks or some other reason, it’s essential that workers wear PPE when it is required. PPE protects workers against injury, but it will not work if workers fail to use it and use it properly.”
 
@@ -62,7 +62,7 @@ In Model training, I have selected FOMO (Faster Objects, More Objects) MobileNet
 
 ### Accuracy
 
-The model accuracy is 91.7%.  But, the Helmet dataset only acheived 71.4% accuracy. Let's figure out why.
+The model accuracy is 91.7%.  But, the Helmet dataset only achieved 71.4% accuracy. Let's figure out why.
 
 ![](.gitbook/assets/worker-safety-monitoring/accuracy.jpg)
 
@@ -86,7 +86,7 @@ This will start the inferencing locally on the Jetson.
 
 ## Application in Industries
 
-In Industrial areas, some specific work locations may needs an employee to wear Safety Goggles, but in other locations they may be required to wear a helmet and safety reflective jacket. Requirment may vary by specific job site, and even zone within a site. 
+In Industrial areas, some specific work locations may needs an employee to wear Safety Goggles, but in other locations they may be required to wear a helmet and safety reflective jacket. Requirements may vary by specific job site, and even zone within a site. 
 
 Now that we have a deployed model, we need to write some application code to determine the expected gear to be used by workers in a particular area. 
 

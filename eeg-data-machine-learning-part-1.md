@@ -40,7 +40,7 @@ Professional or clinical EEG-devices are typically equipped with between 16 to 6
 
 ![](.gitbook/assets/eeg-data-part-1/intro-3.jpg)
 
-Muse EEG-devices are focused on consumers and they have four EEG-electrodes, two at the forehead, two behind the ears. In addition they also have an accelerometer/gyroscope, and newer models include a PPG-sensor which  measures blood flow, breathing rhytm, and heart rate. In this tutorial however are  only signals from EEG-electrodes being used.  
+Muse EEG-devices are focused on consumers and they have four EEG-electrodes, two at the forehead, two behind the ears. In addition they also have an accelerometer/gyroscope, and newer models include a PPG-sensor which  measures blood flow, breathing rhythm, and heart rate. In this tutorial however are  only signals from EEG-electrodes being used.  
 
 ---------------
 ## Prerequisites
@@ -130,7 +130,7 @@ In this chapter you will get detailed instructions from start to end how to coll
 
 ![](.gitbook/assets/eeg-data-part-1/muse.jpg)
 
- - Wait until the horseshoe in MindMonitor has disappeared and the graph lines for all sensors have calmed down like in the picture. You might need to wait a few minutes to acquire good signals, but it's possible to speed up the process a bit by moisturing the sensors with e.g. a wet finger. 
+ - Wait until the horseshoe in MindMonitor has disappeared and the graph lines for all sensors have calmed down like in the picture. You might need to wait a few minutes to acquire good signals, but it's possible to speed up the process a bit by moistening the sensors with e.g. a wet finger. 
  - Start streaming from Mind Monitor by clicking on the button showed in the picture
 
  **1. Collect EEG-data**

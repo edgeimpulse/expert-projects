@@ -211,7 +211,7 @@ Power consumption figures are shown running on an actual RZ/V2L Eval Kit measuri
 
 ![](.gitbook/assets/renesas-rzv2l-pose-detection/Untitled21.png)
 
-As can be seen the power current draw for YOLOv5 Object Detection is under 500mA in total whereas Image Classification is just under 400mA whereas the board draws just under 300mA while idle with a single user logged in via SSH. This shows the phenominal low power operation of DRP-AI which also does not require any heatsinks to be attached to the RZ/V2L MPU.
+As can be seen the power current draw for YOLOv5 Object Detection is under 500mA in total whereas Image Classification is just under 400mA whereas the board draws just under 300mA while idle with a single user logged in via SSH. This shows the phenomenal low power operation of DRP-AI which also does not require any heatsinks to be attached to the RZ/V2L MPU.
 
 ### Pose Detection on Renesas RZ/V2L with DRP-AI
 
