@@ -162,7 +162,7 @@ Follow the steps given to you and then head to the devices tab on your new proje
 
 ### Data
 
-You should have followed the steps above and all of your training and testing data is in the relavant directories. The program will now loop through your data and send it to the Edge Impulse platform.
+You should have followed the steps above and all of your training and testing data is in the relevant directories. The program will now loop through your data and send it to the Edge Impulse platform.
 
 ```
 ** Data ingestion type is local
@@ -188,7 +188,7 @@ Next the program will create the Impulse for you, including all required blocks.
 
 ![Edge Impulse Jetson Nano Trainer](.gitbook/assets/api-sample-application-jetson-nano/studio-feature-generation.jpg)
 
-The next step the program will take is to generate the features for your dataset. This will start a job and the platform will send socket messages to the program to let it know the job has been completed and to continue. While this is happenening you can navigate to  `Impulse Design` -> `Image` -> `Generate Features` where you will see the feautures being generated.
+The next step the program will take is to generate the features for your dataset. This will start a job and the platform will send socket messages to the program to let it know the job has been completed and to continue. While this is happening you can navigate to  `Impulse Design` -> `Image` -> `Generate Features` where you will see the features being generated.
 
 Once the platform informs the program that the features have been created, training will begin.
 

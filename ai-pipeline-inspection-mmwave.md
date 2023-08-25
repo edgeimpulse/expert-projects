@@ -2033,7 +2033,7 @@ By applying neural network models trained on pipeline diagnostic classes in dete
 
 ## References
 
-[^1] Ahmed Sachit Hashim, Bogdan Grămescu, Constantin Niţu, *PIPE CRACKS DETECTION METHODS – A REVIEW*, International Journal of Mechatronics and Applied Mechanics, 2018, Issue 3, *https://ijomam.com/wp-content/uploads/2017/02/pag.-114-119_PIPE-CRACKS-DETECTION-METHODS.pdf*
+[^1] Ahmed Sachit Hashim, Bogdan Gramescu, Constantin Nitu, *PIPE CRACKS DETECTION METHODS – A REVIEW*, International Journal of Mechatronics and Applied Mechanics, 2018, Issue 3, *https://ijomam.com/wp-content/uploads/2017/02/pag.-114-119_PIPE-CRACKS-DETECTION-METHODS.pdf*
 
 [^2] Prabhat Sharma, Bambam Kumar, Dharmendra Singh, *Novel Adaptive Buried Nonmetallic Pipe Crack Detection Algorithm for Ground Penetrating Radar*, Progress In Electromagnetics Research M, Vol. 65, 79-90, 2018, *doi:10.2528/PIERM17101002*
 

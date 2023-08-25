@@ -79,7 +79,7 @@ You can either divide data into test and train sets while uploading or do it at 
 
 ### Training
 
-After preparing the dataset, we need to [design an impulse](https://docs.edgeimpulse.com/docs/edge-impulse-studio/impulse-design). The Edge Iimpulse documentation explains the impulse design in great detail so please check out their documentation page to learn about impulse design.
+After preparing the dataset, we need to [design an Impulse](https://docs.edgeimpulse.com/docs/edge-impulse-studio/impulse-design). The Edge Impulse documentation explains the Impulse design in great detail so please check out their documentation page to learn about Impulse design.
 
 ![Impulse Design](.gitbook/assets/gunshot-audio-classification/training.jpg)
 

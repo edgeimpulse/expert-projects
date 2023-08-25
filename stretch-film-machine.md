@@ -27,7 +27,7 @@ circuitry or retrofit the machine.
 
 Instead, we can use a "plug-in", external device that only consists of an accelerometer and a microcontroller.
 
-And as we'll see shortly, this external device can even add predictive maintenance capabilites to the machine by pro-actively identifying malfunctions from the data and patterns collected.
+And as we'll see shortly, this external device can even add predictive maintenance capabilities to the machine by pro-actively identifying malfunctions from the data and patterns collected.
 
 
 ## The Rationale
@@ -259,7 +259,7 @@ As with all Machine Learning projects, the more data you collect, the better. I 
 
 For each weight on the machine, follow these procedures:
 
- 1. Put the microntroller board on the platform and turn it on
+ 1. Put the microcontroller board on the platform and turn it on
  2. Put the weight on the platform
  3. Start the machine and let it go for a few seconds (so it reaches its normal speed)
  4. Run the Python script and wait for the data collection to complete
@@ -277,11 +277,11 @@ Edge Impulse allows for 3 different tasks:
  - Regression
  - Anomaly detection
 
-In our case, we want to model a *continous* relation between the input (IMU data) and the output (weight), so it is a 'regression' task.
+In our case, we want to model a *continuous* relation between the input (IMU data) and the output (weight), so it is a 'regression' task.
 
 More specifically, this is a time-series regression task, so we will need to window our data and extract spectral features from it. This is most often the case when working with time series data.
 
-The window duration depends on the working speed of your machine. My advicce here is to go with a large duration, because we expect the rotation to not be very fast: if your window is too short, it won't contain much variation in data.
+The window duration depends on the working speed of your machine. My advice here is to go with a large duration, because we expect the rotation to not be very fast: if your window is too short, it won't contain much variation in data.
 
 Nevertheless, this is mostly a trial-and-error process. Since Edge Impulse makes it so easy to experiment with different configurations, start with a reasonable value of 3-5 seconds and then tune based on the accuracy feedback.
 
@@ -462,4 +462,4 @@ This should then render the predicted weight on the 7-segment display.
 
 ## Conclusion
 
-This project aims to add machine learning to a traditional industrial machine, making it smarter and also adding predictive maintenance capabilites as well. Using only a microcontroller and an IMU, we were able to add weight estimation for pallets, and can identify when the rotational speed (force) of a motor is inconsistent with predicted values.
+This project aims to add machine learning to a traditional industrial machine, making it smarter and also adding predictive maintenance capabilities as well. Using only a microcontroller and an IMU, we were able to add weight estimation for pallets, and can identify when the rotational speed (force) of a motor is inconsistent with predicted values.
