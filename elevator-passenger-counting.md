@@ -88,7 +88,7 @@ Here is our Neural Network training settings and architecture for generating the
 
 We only changed the training cycle from **60** to **70**. Further increasing a training cycle or learning rate can overfit the data, so we stuck to this.
 
-For the Neural Network architecture, we used **FOMO (MobileNet V2 0.35)**. The results are great, acheiving a bit over 95% accuracy for the model (using quantized int version).
+For the Neural Network architecture, we used **FOMO (MobileNet V2 0.35)**. The results are great, achieving a bit over 95% accuracy for the model (using quantized int version).
 
 ![](.gitbook/assets/elevator-passenger-counting/Model_output.jpg)
 
@@ -168,4 +168,4 @@ There is a wide variety of options available and they are shown below.
 
 This device can be easily integrated and installed in an elevator, making it so that the elevator will only start when the passenger count is in the permissible range. 
 
-To reduce the cost of the unit, we can also try using an ESP32-EYE or similar microcontroller unit, instead of the Nicla Vision, thought the quality and capablility will need to be tested similar to how the Nicla was evaluated.
+To reduce the cost of the unit, we can also try using an ESP32-EYE or similar microcontroller unit, instead of the Nicla Vision, though the quality and capability will need to be tested similar to how the Nicla was evaluated.

@@ -31,7 +31,7 @@ There are many different methane monitoring systems on the market, but choosing 
 
 1. **The type of work environment**: Methane monitors come in a variety of shapes and sizes, each designed for a specific type of work environment. You will need to choose a methane monitor that is designed for use in the type of workplace where it will be used. For example, personal portable gas monitors are designed to be worn by individual workers, while fixed gas monitors are designed to be placed in a specific location.
 
-2. **The size of the workplace**: The size of the workplace will determine how many methane monitors you will need. For example, a small mine might only require a few fixed gas monitors, while a large mine might require dozens of personal porta- Pre-process signal: This block is used to filter and normalize the data from the methane sensor.
+2. **The size of the workplace**: The size of the workplace will determine how many methane monitors you will need. For example, a small mine might only require a few fixed gas monitors, while a large mine might require dozens.
 
 3. **The methane concentration**: The level of methane present in the workplace will determine how often the methane monitor needs to be used. For example, in a workplace with a high concentration of methane, the monitor may need to be used more frequently than in a workplace with a low concentration of methane.
 

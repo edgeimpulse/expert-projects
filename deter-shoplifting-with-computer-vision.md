@@ -57,11 +57,11 @@ Next, go to the Labeling Queue. Drag a Bounding Box around the location of the b
 
 ## Model Training
 
-With the data all uploaded and labeled, go to **Impulse Design**. An Impulse is a machine learning pipeline. In the first block, select Image Data if it is not already chosen, and set the image width and height to 96 pixes, and Fir shortest axis. Next, choose Image for the Processing block. Then Object Detection in the Learning block. You can learn more about block choices here: [https://docs.edgeimpulse.com/docs/edge-impulse-studio/impulse-design](https://docs.edgeimpulse.com/docs/edge-impulse-studio/impulse-design).
+With the data all uploaded and labeled, go to **Impulse Design**. An Impulse is a machine learning pipeline. In the first block, select Image Data if it is not already chosen, and set the image width and height to 96 pixels, and Fit shortest axis. Next, choose Image for the Processing block. Then Object Detection in the Learning block. You can learn more about block choices here: [https://docs.edgeimpulse.com/docs/edge-impulse-studio/impulse-design](https://docs.edgeimpulse.com/docs/edge-impulse-studio/impulse-design).
 
 ![](.gitbook/assets/deter-shoplifting-with-computer-vision/impulse.jpg)
 
-Save the Impulse and move on to Parameters, then next move on to Generate features. Generating features will give you a vidual representation of your data, and you should be able to notice the data is clustered.
+Save the Impulse and move on to Parameters, then next move on to Generate features. Generating features will give you a visual representation of your data, and you should be able to notice the data is clustered.
 
 Move on to Object Detection on the left menu, and you can select the options to begin training your model.  I went with 60 cycles, a 0.01 Learning Rate, set aside 20% of my data for Validation, and chose to enable Data Augmentation. You can click the **Start Training** button to begin the process.
 
@@ -87,7 +87,7 @@ $ npm install -g --unsafe-perm edge-impulse-linux
 
 Follow the prompts to login to your account, and select the Project to connect to.
 
-Back in the Edge Impulse Studio, click on Deployment on the left menu, and you will find all of the methods for building firmware and libraries. In this case, select Texas Instruments, TIDL-RT-Library, and download the `.zip` file that gets gererated. That file is going to be needed on the TDA4VM board, so you could use SFTP to place it onto the board, or perhaps just use a USB drive and copy the file from your laptop or desktop PC, onto the USB stick, then place the USB stick into the TDA4VM board and copy it from USB to the local filesystem.
+Back in the Edge Impulse Studio, click on Deployment on the left menu, and you will find all of the methods for building firmware and libraries. In this case, select Texas Instruments, TIDL-RT-Library, and download the `.zip` file that gets generated. That file is going to be needed on the TDA4VM board, so you could use SFTP to place it onto the board, or perhaps just use a USB drive and copy the file from your laptop or desktop PC, onto the USB stick, then place the USB stick into the TDA4VM board and copy it from USB to the local filesystem.
 
 ![](.gitbook/assets/deter-shoplifting-with-computer-vision/deployment.jpg)
 
