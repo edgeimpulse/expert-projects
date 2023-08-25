@@ -50,7 +50,7 @@ After the training is complete, the **Live classification** page allows us to te
 
 In order to deploy the model on a microcontroller, the model is converted to a `.tflite` file then deployed on the MCU. Here in our case, we must build firmware using the Edge Impulse platform.  We're going to use two different platforms for the sake of testing, the OpenMV Cam H7 and a Sony Spresense. Impulses can also be deployed as a C++ library and can be included in your own application to run the impulse locally.
 
-To use the model on the OpenMV Cam H7, copy the `.tflite` and label file from the folder that is downloaded from the **Deployment** page. Next, paste it into the OpenMV drive that get's mounted on your computer when the OpenMV Cam is attached via USB. Open the python script file in the OpenMV IDE and start inference. 
+To use the model on the OpenMV Cam H7, copy the `.tflite` and label file from the folder that is downloaded from the **Deployment** page. Next, paste it into the OpenMV drive that gets mounted on your computer when the OpenMV Cam is attached via USB. Open the python script file in the OpenMV IDE and start inference. 
 
 For the Sony Spresense, unzip the downloaded file that is provided on the **Deployment** page, and click on the `flash` command that corresponds to your operating system. In my case, this was Windows. A Terminal will open and it will begin flashing the board, then open a new Terminal and run the command **edge-impulse-run-impulse –continuous** as shown in the below image.
 

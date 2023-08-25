@@ -75,7 +75,7 @@ Open your OpenMV IDE, and click on the **Connect** Icon.
 
 ![OpenMV CONNECT](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/CONNECT.PNG)
 
-A screen will appear with the message **A board in DFU mode was detected**. Select the "Install the latest release firmware". This will install the latest openMV firmware in the development board. Optionaly, leave the "Erase all files" option as it is and click **OK**. 
+A screen will appear with the message **A board in DFU mode was detected**. Select the "Install the latest release firmware". This will install the latest openMV firmware in the development board. Optionally, leave the "Erase all files" option as it is and click **OK**. 
 
 ![OpenMV CONNECT](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/install-latest-firmware.png)
 
@@ -105,7 +105,7 @@ In this project, we leverage Bring Your Own Model (BYOM) capabilities offered by
 
 The model training process took place on Google Colab. We utilize Transfer Learning with a MobileNet architecture and TensorFlow framework. By using the pre-trained MobileNetV2, we can benefit from its high-performance feature extraction capabilities while training on the wound dataset.
 
-We then optimize the model for edge deployment by applying **Post Training Quantization**, a technique that reduces the model size without significant loss in accuracy. This technique aids in minimizing the memory footprint and storage requirements of the model while maintaining its perfomance. 
+We then optimize the model for edge deployment by applying **Post Training Quantization**, a technique that reduces the model size without significant loss in accuracy. This technique aids in minimizing the memory footprint and storage requirements of the model while maintaining its performance. 
 
 Once the model is trained and optimized, we converted it to the TensorFlow Lite format, which is compatible with the Edge Impulse Platform. We saved and downloaded the model for further use. Find all the [code on GitHub](https://github.com/tum-jackie/Wound-Classification-with-Edge-Impulse/tree/main) with the necessary steps, including training, quantization, conversion, and saving, to enable the deployment of the Model to Edge Impulse Platform. 
 
@@ -131,13 +131,13 @@ Once the model is uploaded, set the model configurations. The **Model input** is
 
 These are the **Profiling** results. The model uses 338.7KB of RAM and 573.6KB of Flash memory.
 
-![Profiling Model](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/device-perfomance.PNG)
+![Profiling Model](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/device-performance.png)
 
 We can check the model behavior by uploading a test image. We use an image that was not used during the training process in order to better identify how the model performs with unseen data. 
 
 ![Test Model](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/test-model.PNG)
 
-The model performs well on one image. We then upload a set of images as Test images to further test the model perfomance before deploying the model on Arduino Portenta.
+The model performs well on one image. We then upload a set of images as Test images to further test the model performance before deploying the model on Arduino Portenta.
 
 From the **Dashboard**, head to the **Data acquisition** tab, and upload a set of images as test data.
 
@@ -147,7 +147,7 @@ From the Dashboard, head to the **Model testing** tab and click **Classify all**
 
 ![Test Model](.gitbook/assets/arduino-portenta-h7-byom-wound-classification/classifyall.PNG)
 
-The model perfomance is quite satisfactory and we can now deploy to our target device. 
+The model performance is quite satisfactory and we can now deploy to our target device. 
 
 There are different ways to  deploy a model to the Arduino Portenta H7: as an arduino library, an OpenMV library, firmware, or a C++ library.
 
@@ -183,7 +183,7 @@ And a sample **diabetic wound** classification:
 
 In this project, we have seen how it is possible to leverage AI-powered cameras to classify wounds, which offers a great advantage in reducing the time taken to diagnose wounds as well as reduce cost associated with the process.
 
-This project could be scaled further by sending the inference results over a web platform for results to be conveniently accessed by clinicians. This enables accurate administration of treatment to patients regardless of their location and  mitigates the severe effects of misdiagnosis, leading to improved human health, especially in rural areas without local expertise. Adding more dataset images in order to improve the model perfomance on diabetic wound classification would also be helpful.
+This project could be scaled further by sending the inference results over a web platform for results to be conveniently accessed by clinicians. This enables accurate administration of treatment to patients regardless of their location and  mitigates the severe effects of misdiagnosis, leading to improved human health, especially in rural areas without local expertise. Adding more dataset images in order to improve the model performance on diabetic wound classification would also be helpful.
 
 With **Bring Your Own Model** on Edge Impulse, ML engineers can build robust, state of the art models and deploy to edge devices. This creates a huge opportunity to solve challenges with Machine Learning and deploy to suitable hardware devices.
 

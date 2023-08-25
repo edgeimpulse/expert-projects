@@ -38,7 +38,7 @@ We have only two classes in this project: **No Fire** and **Fire**. For the **No
 
 ![](.gitbook/assets/fire-detection-with-arduino-and-tinyml/data-explorer.jpg)
 
-This tool is very useful for quickly looking for outliers and discrepencies in your labels and data points.
+This tool is very useful for quickly looking for outliers and discrepancies in your labels and data points.
 
 # Impulse Design 
  
@@ -46,7 +46,7 @@ This is our machine learning pipeline, known as an **Impulse**
 
 ![](.gitbook/assets/fire-detection-with-arduino-and-tinyml/impulse.jpg)
 
-For the Processing block we used **Spectral analysis** and for the Learning block we used **Classification**. Other options such as **Flatten** and **Raw Data** are also available as Processing blocks. Each Proceessing block has it's features and uses, if you need to dive into that, you can find [information covering each of them here](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks).
+For the Processing block we used **Spectral analysis** and for the Learning block we used **Classification**. Other options such as **Flatten** and **Raw Data** are also available as Processing blocks. Each Processing block has it's features and uses, if you need to dive into that, you can find [information covering each of them here](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks).
 
 These are our Spectral Analysis parameters of **Filter** and **Spectral power**.  We didn't use any filter for the raw data.
 
@@ -58,7 +58,7 @@ The below image shows the **Generated features** for the collected data, and we 
 
 ## Model Training
 
-After sucessfully extracting the features from the DSP block, it's time to train the machine learning model.
+After successfully extracting the features from the DSP block, it's time to train the machine learning model.
 
 Here are our Neural Network settings and architecture, which work very well for our data.
 
@@ -70,7 +70,7 @@ After training, we achieved 98% validation accuracy for the data, so the model s
 
 ![](.gitbook/assets/fire-detection-with-arduino-and-tinyml/training-output.jpg)
 
-The **Confusion matrix** is a great tool for evaluating the model, as you can see below, 2.1% of the data samples are missclassified as **No Fire**.
+The **Confusion matrix** is a great tool for evaluating the model, as you can see below, 2.1% of the data samples are misclassified as **No Fire**.
 
 ![](.gitbook/assets/fire-detection-with-arduino-and-tinyml/confusion-matrix.jpg)
 

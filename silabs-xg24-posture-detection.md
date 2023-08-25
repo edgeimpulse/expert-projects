@@ -12,7 +12,7 @@ Public Project:
 
 ## Introduction
 
-In this project I'm going to walkthough how to port an exisiting project developed on the SiLabs Thunderboard Sense 2, to SiLabs' newer and more powerful xG24 development board. 
+In this project I'm going to walkthrough how to port an existing project developed on the SiLabs Thunderboard Sense 2, to SiLabs' newer and more powerful xG24 development board. 
 
 The original project was developed by [Manivnnan Sivan](https://www.hackster.io/manivannan) to detect correct / incorrect posture of manufacturing workers using a wearable belt.
 
@@ -24,7 +24,7 @@ I will walk you through how you can clone his Public Edge Impulse project, deplo
 
 You can find more about the project here in the original project documentation, [Worker Safety Posture Detection](https://docs.edgeimpulse.com/experts/prototype-and-concept-projects/worker-safety-posture-detection). 
 
-The project is intended to help workers in manufaturing. They work in conditions that can put a lot of stress on their bodies. Depending on the worker's role in the production process, they might experience issues related to cramped working conditions, heavy lifting, or repetitive stress.
+The project is intended to help workers in manufacturing. They work in conditions that can put a lot of stress on their bodies. Depending on the worker's role in the production process, they might experience issues related to cramped working conditions, heavy lifting, or repetitive stress.
 
 Poor posture can cause problems for the health of those who work in manufacturing. Along with that, research suggests that making efforts to improve posture among manufacturing employees can lead to significant increases in production. Workers can improve their posture by physical therapy, or simply by being more mindful during their work day.
 
@@ -32,7 +32,7 @@ Poor posture can cause problems for the health of those who work in manufacturin
 
 ## Running the Project on Thunderboard Sense 2
 
-Before porting, we need to run the project on the existing platform to understand how it's run and familiarize ourselves with it's paramters. So let's get started.
+Before porting, we need to run the project on the existing platform to understand how it's run and familiarize ourselves with it's parameters. So let's get started.
 
 ### Installing Dependencies
 
@@ -45,7 +45,7 @@ Before you proceed further, there are few other software packages you need to in
 
 Go to the Edge Impulse project page using the [link here](https://studio.edgeimpulse.com/public/148375/latest), and clone it. 
 
-Click **Clone** on the right corner buttton to create a copy of the project.
+Click **Clone** on the right corner button to create a copy of the project.
  
 ![](.gitbook/assets/silabs-xg24-posture-detection/clone-step1.png)
 
@@ -57,7 +57,7 @@ Done, the project is successfully cloned into your Edge Impulse account:
 
 ![](.gitbook/assets/silabs-xg24-posture-detection/clone-step3.png)
 
-As we clone the project, it will be loaded with dataset collected by Manivnnan. 
+As we clone the project, it will be loaded with the dataset collected by Manivannan. 
 
 ![](.gitbook/assets/silabs-xg24-posture-detection/clone-step4.png)
 
@@ -105,7 +105,7 @@ Done, we can now open the LightBlue mobile app to run and see the inference:
 
 ![](.gitbook/assets/silabs-xg24-posture-detection/runonSense2.jpg)
 
-Alternativly you can run it on a computer, if you dont't have access to a phone. Run the command below to see if the tinyML model is inferencing. 
+Alternatively you can run it on a computer, if you don't have access to a phone. Run the command below to see if the tinyML model is inferencing. 
 
 `edge-impulse-run-impulse`
 
@@ -173,7 +173,7 @@ Now, we can build the model and deploy to the xG24. For the build, we need to ch
 
 ![](.gitbook/assets/silabs-xg24-posture-detection/xG24BuildModel.png)
 
-After genrating the `.bin` file, we need to use [Simplicity Commander](https://community.silabs.com/s/article/simplicity-commander) to flash your xG24 Dev Kit with this firmware. To do this, first select your board from the dropdown list on the top left corner:
+After generating the `.bin` file, we need to use [Simplicity Commander](https://community.silabs.com/s/article/simplicity-commander) to flash your xG24 Dev Kit with this firmware. To do this, first select your board from the dropdown list on the top left corner:
 
 ![](.gitbook/assets/silabs-xg24-posture-detection/xg24-dk-commander-select-board.webp)
 
@@ -185,23 +185,23 @@ Next, we can use the LightBlue mobile app to run and see the inference.
 
 ![](.gitbook/assets/silabs-xg24-posture-detection/xG24App.jpg)
 
-Alternatively, we can run on computer as we did for the Thunderboard Sense 2, if you dont't have access to a phone. Run the command below to see if the tinyML model is inferencing. 
+Alternatively, we can run on computer as we did for the Thunderboard Sense 2, if you don't have access to a phone. Run the command below to see if the tinyML model is inferencing. 
 
 `edge-impulse-run-impulse`
 
 ![](.gitbook/assets/silabs-xg24-posture-detection/xg24_inference.png)
 
-Awesome, we have now sucessfully ported a project from Thunderboard Sense 2 to the xG24 Dev Kit! 
+Awesome, we have now successfully ported a project from Thunderboard Sense 2 to the xG24 Dev Kit! 
 
 ## Conclusion
 
-We can see here, the xG24 does a faster classfication of these tinyML datasets without compromising the accuracy. 
+We can see here, the xG24 does a faster classification of these tinyML datasets without compromising the accuracy. 
 
-Here you can see the comparison data, and we can see **91.1765%** increased inferencing speed in the NN Classfier, while the RAM and Flash usage are the same. 
+Here you can see the comparison data, and we can see **91.1765%** increased inferencing speed in the NN Classifier, while the RAM and Flash usage are the same. 
 
 ![](.gitbook/assets/silabs-xg24-posture-detection/model-optimization_time.png)
 
-Similar results are acheived in the field data when we are inferencing the live data stream. Here we can see a 92.3077% increase in speed in the classification, which is more than what was calculated in the model optimization. 
+Similar results are achieved in the field data when we are inferencing the live data stream. Here we can see a 92.3077% increase in speed in the classification, which is more than what was calculated in the model optimization. 
 
 ![](.gitbook/assets/silabs-xg24-posture-detection/InferenceTime.png)
 

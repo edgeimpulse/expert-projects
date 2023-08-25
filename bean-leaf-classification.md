@@ -64,7 +64,7 @@ First, on the Project Dashboard, we have set Labeling method to "Bounding boxes 
 
 Our dataset is ready to train our model. This requires two important features: a processing block and learning block. Documentation on Impulse Design can be found [here](https://docs.edgeimpulse.com/docs/edge-impulse-studio/create-impulse).
 
-We first click "Create Impulse". Here, set image width and heigh to 96x96; and Resize mode to Squash. The Processing block is set to "Image" and the Learning block is "Transfer Learning (Images)". Click 'Save Impulse' to use this configuration. We have used a 96x96 image size to lower the RAM usage, shown in Figure 4.
+We first click "Create Impulse". Here, set image width and height to 96x96; and Resize mode to Squash. The Processing block is set to "Image" and the Learning block is "Transfer Learning (Images)". Click 'Save Impulse' to use this configuration. We have used a 96x96 image size to lower the RAM usage, shown in Figure 4.
 
 ![Figure 4: Create impulse figure with image input range, transfer learning and output class](.gitbook/assets/bean-leaf-classification/impulse.jpg)
 

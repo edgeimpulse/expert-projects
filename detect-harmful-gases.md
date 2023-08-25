@@ -68,7 +68,7 @@ Processing block will be raw data with all axis checked. For classification use 
 
 In Raw Data you can see all values for regular and harmful inside every windows size. Then you have to click Generate Features.
 
-For NN Classifier use 60 training cycles, 0.0005 Learning Rate, Validation 20 and Autobalance dataset. Add an extra layer Droput Rate 0.1 Click Start Training and check if you get good accuracy. 
+For NN Classifier use 60 training cycles, 0.0005 Learning Rate, Validation 20 and Autobalance dataset. Add an extra layer Dropout Rate 0.1 Click Start Training and check if you get good accuracy. 
 
 If you are ok with results you can go to Model Testing and check the performance with new data. If there are lots of readings with wrong classification you should check again data acquisition procedure. 
 

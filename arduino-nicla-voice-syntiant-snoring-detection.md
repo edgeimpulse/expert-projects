@@ -72,7 +72,7 @@ $ edge-impulse-uploader --category split --label z_openset downsampled/non-snori
 
 To ensure accurate prediction, the Syntiant NDP chips necessitate a negative class that should not be predicted. For the datasets without snoring, the **z_openset** class label is utilized to ensure that it appears last in alphabetical order. By using the commands provided, the datasets are divided into **Training** and **Testing** samples. Access to the uploaded datasets can be found on the **Data Acquisition** page of the Edge Impulse Studio.
 
-![Data Aquisition](.gitbook/assets/arduino-nicla-voice-syntiant-snoring-detection/data_aquisition.png)
+![Data Acquisition](.gitbook/assets/arduino-nicla-voice-syntiant-snoring-detection/data_acquisition.png)
 
 ## Model Training
 

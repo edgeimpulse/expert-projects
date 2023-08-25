@@ -18,11 +18,11 @@ GitHub Repo: [Edge Impulse Acute Lymphoblastic Leukemia Classifier](https://gith
 
 Acute Lymphoblastic Leukemia (ALL), also known as acute lymphocytic leukemia, is a cancer that affects the lymphoid blood cell lineage. It is the most common leukemia in children, and it accounts for 10-20% of acute leukemias in adults. The prognosis for both adult and especially childhood ALL has improved substantially since the 1970s. The 5-year survival is approximately 95% in children. In adults, the 5-year survival varies between 25% and 75%, with more favorable results in younger than in older patients.
 
-Since 2018 I have worked on numerous projects exploring the use of AI for medical diagnostics, in particular, leukemia. In 2018 my grandfather was diagnosed as terminal with Actue Myeloid leukemia one month after an all clear blood test completely missed the disease. I was convinced that there must have been signs of the disease that were missed in the blood test, and began a research project with the goals of utilizing Artificial Intelligence to solve early detection of leukemia. The project grew to a non-profit association in Spain and is now a UK community interest company.
+Since 2018 I have worked on numerous projects exploring the use of AI for medical diagnostics, in particular, leukemia. In 2018 my grandfather was diagnosed as terminal with Acute Myeloid leukemia one month after an all clear blood test completely missed the disease. I was convinced that there must have been signs of the disease that were missed in the blood test, and began a research project with the goals of utilizing Artificial Intelligence to solve early detection of leukemia. The project grew to a non-profit association in Spain and is now a UK community interest company.
 
 ## Investigation
 
-One of the objectives of our mission is to experiment with different types of AI, different frameworks/programming languages, and hardwares. This project aims to show researchers the potential of the Edge Impulse platform and the NVIDIA Jetson Nano to quickly create and deploy prototypes for medical diagnosis research.
+One of the objectives of our mission is to experiment with different types of AI, different frameworks/programming languages, and hardware. This project aims to show researchers the potential of the Edge Impulse platform and the NVIDIA Jetson Nano to quickly create and deploy prototypes for medical diagnosis research.
 
 ## Hardware
 
@@ -38,7 +38,7 @@ One of the objectives of our mission is to experiment with different types of AI
 
 ## Dataset
 
-For this project we are going to use the [Acute Lymphoblastic Leukemia (ALL) image dataset](https://www.kaggle.com/datasets/mehradaria/leukemia). Acute Lymphoblastic Leukemia can be either T-lineage, or B-lineage. This datset includes 4 classes: Benign, Early Pre-B, Pre-B, and Pro-B Acute Lymphoblastic Leukemia.
+For this project we are going to use the [Acute Lymphoblastic Leukemia (ALL) image dataset](https://www.kaggle.com/datasets/mehradaria/leukemia). Acute Lymphoblastic Leukemia can be either T-lineage, or B-lineage. This dataset includes 4 classes: Benign, Early Pre-B, Pre-B, and Pro-B Acute Lymphoblastic Leukemia.
 
 Pre-B Lymphoblastic Leukemia, or precursor B-Lymphoblastic leukemia, is a very aggressive type of leukemia where there are too many B-cell lymphoblasts in the bone marrow and blood. B-cell lymphoblasts are immature white blood cells that have not formed correctly. The expressions ("early pre-b", "pre-b" and "pro-b") are related to the differentiation of B-cells. We can distinguish the different phases based on different cell markers expression, although this is complex because the "normal profile" may be altered in malignant cells.
 
@@ -62,7 +62,7 @@ Now it is time to import your data. You should have already downloaded the datas
 
 ![Upload data](.gitbook/assets/ai-leukemia-classifier/5-upload-data.jpg)
 
-Once downloaded head over the to **Data aquisition** in Edge Impulse Studio, click on the **Add data** button and then **Upload data**.
+Once downloaded head over the to **Data acquisition** in Edge Impulse Studio, click on the **Add data** button and then **Upload data**.
 
 ![Uploading data](.gitbook/assets/ai-leukemia-classifier/6-data-uploading.jpg)
 
@@ -112,7 +112,7 @@ Let's see how the model performs on unseen data. Head over to the **Model testin
 
 You will see the output of the testing in the output window, and once testing is complete you will see the results. In our case we can see that we have achieved 91.67% accuracy on the unseen data.
 
-## Jeston Nano Setup
+## Jetson Nano Setup
 
 Now we are ready to set up our Jetson Nano project.
 
@@ -166,7 +166,7 @@ The code has been provided for you in the `classifier.py` file. To run the class
 python3 classifier.py
 ```
 
-You should see similar to the following output. In our case, our model performed exceptionally well at classifying the variuous stages of leukemia, only classifying 3 samples out of 14 incorrectly.
+You should see similar to the following output. In our case, our model performed exceptionally well at classifying the various stages of leukemia, only classifying 3 samples out of 14 incorrectly.
 
 ```
 Loaded runner for "Edge Impulse Experts / Acute Lymphoblastic Leukemia Classifier"
