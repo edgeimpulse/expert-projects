@@ -107,7 +107,7 @@ If everything is OK, then we can test the model. Go to Model Testing on the left
 
 ![](.gitbook/assets/sony-spresense-smart-hvac-system/image15.png)
 
-You should have the Arduino IDE installed on your computer for the following step. On the navigation menu, choose **Deployment** on the left, search for and select Arduino Library in the Selected Deployment box, and then click **Build** Once the Edge Impulse Arduino Library is built, downloaded and unzipped, you should download the *spresense_camera_smartHVAC_oled.ino* code which [can be found here](https://github.com/Jallson/Smart_HVAC/blob/main/spresense_camera_smartHVAC_oled.ino) and place it inside the unzipped folder from Edge Impulse. Once the *.ino* code is inside Edge Impulse unzipped folder, move it to your Arduino folder on your computer. Now you can upload the *.ino* code to your Spresense board via the Arduino IDE.
+You should have the Arduino IDE installed on your computer for the following step. On the navigation menu, choose **Deployment** on the left, search for and select Arduino Library in the Selected Deployment box, and then click **Build**. Once the Edge Impulse Arduino Library is built, downloaded and unzipped, you should download the *spresense_camera_smartHVAC_oled.ino* code which [can be found here](https://github.com/Jallson/Smart_HVAC/blob/main/spresense_camera_smartHVAC_oled.ino) and place it inside the unzipped folder from Edge Impulse. Once the *.ino* code is inside Edge Impulse unzipped folder, move it to your Arduino folder on your computer. Now you can upload the *.ino* code to your Spresense board via the Arduino IDE.
 
 ![](.gitbook/assets/sony-spresense-smart-hvac-system/image19.png)
 

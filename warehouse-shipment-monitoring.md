@@ -85,7 +85,7 @@ Back in the Studio, move approximately 30 seconds of data from each category to 
 
 ![](.gitbook/assets/warehouse-shipment-monitoring/train-test.jpg)
 
-After data collection is completed, now go the Iimpulse settings and select Raw data in Processing. A Window size of 3000ms and Window increase of 500 ms is good.
+After data collection is completed, now go the Impulse settings and select Raw data in Processing. A Window size of 3000ms and Window increase of 500 ms is good.
 
 ![](.gitbook/assets/warehouse-shipment-monitoring/impulse.jpg)
 

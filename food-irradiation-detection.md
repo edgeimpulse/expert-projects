@@ -36,7 +36,7 @@ After completing my data set and creating samples, I built my artificial neural 
 
 After training and testing my neural network model, I deployed and uploaded the model on Beetle ESP32-C3. Therefore, the device is capable of detecting precise food irradiation dose levels (classes) by running the model independently without any additional procedures.
 
-Lastly, to make the device as robust and compact as possible while experimenting with a motley collection of foods, I designed a Hulk-inspired structure with a moveable visible light sensor handle (3D printable).
+Lastly, to make the device as robust and compact as possible while experimenting with a motley collection of foods, I designed a Hulk-inspired structure with a movable visible light sensor handle (3D printable).
 
 So, this is my project in a nutshell 😃
 
@@ -74,9 +74,9 @@ In the following steps, you can find more detailed information on coding, loggin
 
 ## Step 1: Designing and printing a Hulk-inspired structure
 
-Since this project is for detecting irradiation doses of foods treated with ionizing radiation, I got inspired by the most prominent fictional Gamma radiation expert, Bruce Banner (aka, The Incredible Hulk), to design a unique structure so as to create a robust and compact device flawlessly operating while collecting data from foods. To collect data with the visible light sensor at different angles, I added a moveable handle to the structure, including a slot and a hook for hanging the sensor.
+Since this project is for detecting irradiation doses of foods treated with ionizing radiation, I got inspired by the most prominent fictional Gamma radiation expert, Bruce Banner (aka, The Incredible Hulk), to design a unique structure so as to create a robust and compact device flawlessly operating while collecting data from foods. To collect data with the visible light sensor at different angles, I added a movable handle to the structure, including a slot and a hook for hanging the sensor.
 
-I designed the structure and its moveable handle in Autodesk Fusion 360. You can download their STL files below.
+I designed the structure and its movable handle in Autodesk Fusion 360. You can download their STL files below.
 
 ![image](.gitbook/assets/food-irradiation/model_1.PNG)
 
@@ -100,7 +100,7 @@ Then, I sliced all 3D models (STL files) in Ultimaker Cura.
 
 ![image](.gitbook/assets/food-irradiation/model_8.PNG)
 
-Since I wanted to create a solid structure for this device with a moveable handle and complement the Hulk theme gloriously, I utilized these PLA filaments:
+Since I wanted to create a solid structure for this device with a movable handle and complement the Hulk theme gloriously, I utilized these PLA filaments:
 
 - eMarble Natural
 - Peak Green
@@ -202,7 +202,7 @@ After completing sensor connections and adjustments on breadboards successfully,
 
 After printing all parts (models), I fastened all components except the visible light sensor to their corresponding slots on the structure via the hot glue gun.
 
-Then, I attached the visible light sensor to the moveable handle and hung it via its slot in the structure.
+Then, I attached the visible light sensor to the movable handle and hung it via its slot in the structure.
 
 ![image](.gitbook/assets/food-irradiation/connections_1.jpg)
 
@@ -1067,7 +1067,7 @@ After uploading and running the code for collecting data and transmitting data p
 - F1 (405 - 425 nm)
 - CPM (Counts per Minute)
 
-☢:bento: The device allows the user to collect visible light (color) data at different angles with the moveable handle.
+☢:bento: The device allows the user to collect visible light (color) data at different angles with the movable handle.
 
 ![image](.gitbook/assets/food-irradiation/collect_1.jpg)
 

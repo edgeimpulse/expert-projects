@@ -54,7 +54,7 @@ Next, we annotate the images and label a parcel in each image.
 
 We can now use our dataset to train our model. This requires two important features: a processing block and learning block. Documentation on Impulse Design can be found [here](https://docs.edgeimpulse.com/docs/edge-impulse-studio/create-impulse).
 
-We first click ”Create Impulse”. Here, set image width and heigh to 96x96; and Resize mode to Squash. The Processing block is set to “Image” and the Learning block is “Object Detection (images)”. Click ‘Save Impulse’ to use this configuration.
+We first click ”Create Impulse”. Here, set image width and height to 96x96; and Resize mode to Squash. The Processing block is set to “Image” and the Learning block is “Object Detection (images)”. Click ‘Save Impulse’ to use this configuration.
 
 Since the ESP-EYE is resource-constrained device (4MB flash and 8MB PSRAM), we have used 96x96 image size to lower RAM usage. 
 

@@ -77,7 +77,7 @@ YOLOv5 is therefore the best option to use with DeepStream. The workflow is the 
 
 Image models, including object detection, are machine learning models focused on visual data, as opposed to models focused on audio and sound, or sensor data coming from analog or digital measuring devices.
 
-Image models built with Edge Impulse use raw pixels as input features. The input image is scaled down to reduce the model input layer size, in order to maintain processing throughput on lower-powered hardware. With DeepStream you are only limited by the power of the chosen Nvdia platform to run the model on. The resolution and input layer size can be made larger, and experimentation for each platform is useful to determine the best choice.
+Image models built with Edge Impulse use raw pixels as input features. The input image is scaled down to reduce the model input layer size, in order to maintain processing throughput on lower-powered hardware. With DeepStream you are only limited by the power of the chosen Nvidia platform to run the model on. The resolution and input layer size can be made larger, and experimentation for each platform is useful to determine the best choice.
 
 In addition to resolution, the model can be trained on RGB colour or Grayscale. Edge Impulse takes care of removing the alpha channel and allows you to select the input resolution and colour depth. Grayscale is ideal for tinyML applications due to the limited performance of most hardware, but on Nvidia hardware, color images can be utilized. 
 
