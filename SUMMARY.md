@@ -134,3 +134,4 @@
 * [Acute Lymphoblastic Leukemia Classifier](ai-leukemia-classifier.md)
 * [Smart Diaper Prototype with an Arduino Nicla Sense ME](arduino-nicla-sense-smart-diaper.md)
 * [Smart HVAC System with an Arduino Nicla Vision](arduino-nicla-vision-smart-hvac.md)
+* [SonicSight AR - Sound Classification with Feedback on an Augmented Reality Display](particle-photon-2-sonicsight-ar.md)

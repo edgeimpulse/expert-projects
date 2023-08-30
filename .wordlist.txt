@@ -1761,6 +1761,8 @@ miscategorized
 Longan
 Sipeed
 Gigadevice
+Gigadevices
+USART
 addon
 CBT
 ADCs
@@ -1778,3 +1780,4 @@ Hexane
 VDC
 AO
 scpcom
+SonicSight
