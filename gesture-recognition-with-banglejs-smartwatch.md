@@ -1,14 +1,14 @@
 ---
-description: Teach your smartwatch to recognize different movements and motions of your watch hand.
+description: >-
+  Teach your smartwatch to recognize different movements and motions of your
+  watch hand.
 ---
 
-# Gesture Recognition with a Bangle.js Smartwatch 
+# Gesture Recognition with a Bangle.js Smartwatch
 
-Created By:
-Thomas Vikström 
+Created By: Thomas Vikström
 
-Public Project Link:
-[https://studio.edgeimpulse.com/public/77262/latest](https://studio.edgeimpulse.com/public/77262/latest)
+Public Project Link: [https://studio.edgeimpulse.com/public/77262/latest](https://studio.edgeimpulse.com/public/77262/latest)
 
 ![](.gitbook/assets/banglejs/intro.jpeg)
 
@@ -22,21 +22,20 @@ In this tutorial you will learn how to get started with Machine Learning on your
 
 ### Hardware
 
-* [Bangle JS, version 1 or 2](https://shop.espruino.com/banglejs2
+* \[Bangle JS, version 1 or 2]\(https://shop.espruino.com/banglejs2
   * Theoretically the Bangle Emulator might work as well, but you can’t of course collect real accelerometer or heart rate data with an emulator!
 * Computer with Bluetooth (BLE)
-* Get the watch up and running by following these [guidelines](https://banglejs.com/start)
-… and connected by these [guidelines](https://www.espruino.com/Quick+Start+BLE#banglejs)
+* Get the watch up and running by following these [guidelines](https://banglejs.com/start) … and connected by these [guidelines](https://www.espruino.com/Quick+Start+BLE#banglejs)
 
 ### Software
 
 * Create an Edge Impulse account for free [here](https://www.edgeimpulse.com/)
 * [Python](https://www.python.org/downloads/)
-   * used to split a file with samples into separate .CSV-files for importing into Edge Impulse
-   * not strictly necessary, but very useful if you want to collect lots of samples
-   * for information about how to install or use Python, check e.g. [Python documentation](https://www.python.org/doc/)
-   * Notepad, Notepad++, Excel etc. can also be used to manually split files, not feasible with lots of samples
-   
+  * used to split a file with samples into separate .CSV-files for importing into Edge Impulse
+  * not strictly necessary, but very useful if you want to collect lots of samples
+  * for information about how to install or use Python, check e.g. [Python documentation](https://www.python.org/doc/)
+  * Notepad, Notepad++, Excel etc. can also be used to manually split files, not feasible with lots of samples
+
 ## Preparation
 
 * Install the app `Gesture Test` on your watch from the [Bangle App Loader](https://banglejs.com/apps/#gesture)
@@ -46,16 +45,16 @@ In this tutorial you will learn how to get started with Machine Learning on your
 This part will guide you how to use your watch to collect multiple samples for one gesture type at a time.
 
 1. Pair your computer with the watch using Espruino Web IDE
-2. Paste the below *Gesture collection code* into the *right side* in Espruino Web IDE (adapted from [this code](https://github.com/gfwilliams/workshop-nodeconfeu2019/blob/master/step4.md#getting-more-data))
-    * the code will create a text file in the watch memory
+2. Paste the below _Gesture collection code_ into the _right side_ in Espruino Web IDE (adapted from [this code](https://github.com/gfwilliams/workshop-nodeconfeu2019/blob/master/step4.md#getting-more-data))
+   * the code will create a text file in the watch memory
 3. Name the event you are going to collect samples for by changing the line `event="left";`
-    * use e.g. `event="left";` for twitching your watch hand left and later on `event="right";` for the opposite direction
-    * upload the code to **RAM**. Do **not** upload this code to flash or storage, you might in worst case need to reset the watch completely.
-4. Perform the gesture 
-    * repeat the gesture *many* times, the more the merrier!
-       * wait a second between each
-    * the gesture collecting code will append each sample to the .CSV-file
-    * a graph will also be shown on your watch screen
+   * use e.g. `event="left";` for twitching your watch hand left and later on `event="right";` for the opposite direction
+   * upload the code to **RAM**. Do **not** upload this code to flash or storage, you might in worst case need to reset the watch completely.
+4. Perform the gesture
+   * repeat the gesture _many_ times, the more the merrier!
+     * wait a second between each
+   * the gesture collecting code will append each sample to the .CSV-file
+   * a graph will also be shown on your watch screen
 5. Repeat steps 3-4 above, remember to change `event="<gesture>";` where `<gesture>` is the hand movement you will collect
 6. The devil is in the details, do not e.g. remove the seemingly insignificant semi-colon `;` !
 
@@ -107,8 +106,9 @@ This part will guide you how to transfer the .CSV-files from your watch to your 
 ## Split .CSV-files using Python
 
 This part will guide you how to split the .CSV-files you've downloaded from your watch into separate .CSV-files. The reason for this is that Edge Impulse requires one .CSV-file per sample.
-1.  Copy the below Python code (shamelessly copied from [Stackoverflow](https://stackoverflow.com/questions/546508/how-can-i-split-a-file-in-python)) into your favourite Python editor.
-2.  Replace the path on the second line (starting with `PATENTS = ...`) with the full path and filename for the first file you want to split. I.e. the file you downloaded in previous steps.
+
+1. Copy the below Python code (shamelessly copied from [Stackoverflow](https://stackoverflow.com/questions/546508/how-can-i-split-a-file-in-python)) into your favourite Python editor.
+2. Replace the path on the second line (starting with `PATENTS = ...`) with the full path and filename for the first file you want to split. I.e. the file you downloaded in previous steps.
 3. Run the code in your Python editor
    * The program will search for the string `'timestamp, x, y, z'` in the original file and for each time (= sample) it finds, create a new file.
    * If you don't use Python, you'd need to split the file for each sample using some other method, manual or automatic. Remember that the samples aren't all of the same size so the amount of rows will vary.
@@ -148,32 +148,31 @@ split_file(PATENTS)
 
 ## Use Edge Impulse for Machine Learning
 
-In this part you will learn how to upload the sample files you've created earlier, create a machine learning model, train and finally analyse it. This tutorial will only cover the  essential steps needed for Bangle.js. To learn more about Edge Impulse, see e.g. [getting started](https://docs.edgeimpulse.com/docs/getting-started) and [continuous motion recognition](https://docs.edgeimpulse.com/docs/continuous-motion-recognition).
+In this part you will learn how to upload the sample files you've created earlier, create a machine learning model, train and finally analyse it. This tutorial will only cover the essential steps needed for Bangle.js. To learn more about Edge Impulse, see e.g. [getting started](https://docs.edgeimpulse.com/docs/getting-started) and [continuous motion recognition](https://docs.edgeimpulse.com/docs/continuous-motion-recognition).
 
-###  Log in and create a project
+### Log in and create a project
 
 * Log in to [Edge Impulse](https://www.edgeimpulse.com/), using the credentials for the free account you created in the beginning.
 * Create a new project and give it a name, why not Bangle.js
-* Select `Accelerometer data ` when asked for the  type of data you are dealing with.
+* Select `Accelerometer data` when asked for the type of data you are dealing with.
 * Click `Let's get started`
 
 ### Upload sample data
 
 * Select `Data acquisition` from the left hand menu
-* Click on the icon labeled `Upload existing data` 
+* Click on the icon labeled `Upload existing data`
 * Click on `Choose files`
   * Navigate to the folder you used to store the .CSV-files (e.g. c:\temp)
   * Select **all** the sample files that were created earlier, but **not** the original files you downloaded from your watch. I.e. select only the .CSV-files with a number at the end of the file name, e.g. `left.1.csv (StorageFile)-0.csv`.
   * You can also upload smaller batches at a time
   * `Automatically split between training and testing` and `Infer from filename` should both be selected
 * Click `Begin upload` - this will now quickly upload the files to your project.
-    * The upload process is shown on the right side, if everything goes well, you should at the end see a message like this: `Done. Files uploaded successful: 85. Files that failed to upload: 0.
-Job completed`
+  * The upload process is shown on the right side, if everything goes well, you should at the end see a message like this: `Done. Files uploaded successful: 85. Files that failed to upload: 0. Job completed`
 * Take a look at a sample by selecting any row
-    
-![Upload sample data](.gitbook/assets/banglejs/EI_15.png)
 
-* Notice that the labels (``left`` and ``right`` in this example) were automatically inferred from the filenames you used.
+![Upload sample data](.gitbook/assets/banglejs/EI\_15.png)
+
+* Notice that the labels (`left` and `right` in this example) were automatically inferred from the filenames you used.
 * Always strive to get a roughly similar amount of samples for each gesture. You can see the balance in the pie graph on the left.
 * Also notice that Edge Impulse split the sample files so that approximately 80 % will be used for training and 20 % for testing purposes.
 * Through the four small icons you can filter your data, select multiple items, upload more data or see a slightly more detailed list view. With the help of these you can e.g. mass delete many files at a time.
@@ -188,38 +187,40 @@ An impulse takes raw data, uses signal processing to extract features, and then 
 * Add the `Classification (Keras)` learning block
 * Click `Save Impulse`
 
-![Create impulse](.gitbook/assets/banglejs/EI_19.png)
+![Create impulse](.gitbook/assets/banglejs/EI\_19.png)
 
 * Note that you often need to tweak one or several of the settings, this is depending on what you want to achieve and the quality & quantity of your data.
 
 ### Generate features
 
 * Click `Raw data` from the left hand menu
-    * You will see a graph of one of the samples as well as the raw features.
+  * You will see a graph of one of the samples as well as the raw features.
 * In this case you don't need to change anything, so click `Save parameters` which will take you to the second tab.
 * Click `Generate features`
-    * This processes the samples
-	* After a while you will see a graph in the `Feature explorer`. This gives you a 3D view of  how well your data can be clustered into different groups. In an ideal situation all similar samples should be clustered into same group with a clear distinction between groups. If that's not the case, no worries at this point, the neural network algorithm will in many cases still be able to do a very good job!
-	
-![Feature Explorer](.gitbook/assets/banglejs/EI_24.png)
+  * This processes the samples
+  * After a while you will see a graph in the `Feature explorer`. This gives you a 3D view of how well your data can be clustered into different groups. In an ideal situation all similar samples should be clustered into same group with a clear distinction between groups. If that's not the case, no worries at this point, the neural network algorithm will in many cases still be able to do a very good job!
+
+![Feature Explorer](.gitbook/assets/banglejs/EI\_24.png)
 
 #### Train the neural network
 
 Here you will train the neural network and analyse its performance.
+
 * Click `NN Classifier` from the left hand menu
 * Change the `Number of training cycles` to 100. This is another parameter to tweak, the higher this number is, the longer time the training will take, but also the better the network will perform, at least until it can't improve anymore.
 * Click on `Start training`
 * Within a few minutes, depending on the number of labels and data quantity you have, the training will finish.
 * The graph shows the training performance and accuracy. While 100 % looks like a perfect score, it isn't necessary so. The reason is that the network might perform poorly in real situations when confronted with sample data not seen before.
 
-![Training Performance](.gitbook/assets/banglejs/EI_28.png)
+![Training Performance](.gitbook/assets/banglejs/EI\_28.png)
 
 ### Download the trained model
 
 Here you will download the trained model to your computer.
+
 * Click `Dashboard` from the left hand menu
-* Scroll down to the section `Download block output` and click on the icon next to `NN Classifier model	TensorFlow Lite (int8 quantized)`
-   * The *float32* model might sometimes perform slightly better than the *int8* model, but it requires more memory and might cause Bangle.js to crash because of this.
+* Scroll down to the section `Download block output` and click on the icon next to `NN Classifier model TensorFlow Lite (int8 quantized)`
+  * The _float32_ model might sometimes perform slightly better than the _int8_ model, but it requires more memory and might cause Bangle.js to crash because of this.
 * Save the file to a folder of your choice
 
 ## Deployment
@@ -230,14 +231,14 @@ This part will guide you how to transfer the model file from your computer to Ba
 
 * In Espruino Web IDE, click the Storage icon (4 discs) in the middle of the screen
 
-![Upload File](.gitbook/assets/banglejs/Bang_05.png)
+![Upload File](.gitbook/assets/banglejs/Bang\_05.png)
 
 * Click `Upload a file`
 * Select the model file you downloaded from Edge Impulse
 * Change the filename to `.tfmodel` and click `Ok`
 * Create a text file, e.g. with Notepad
-   * Write the event names in alphabetical order, separated by commas, e.g. `left,right`
-   * Save the file to a folder of your choice
+  * Write the event names in alphabetical order, separated by commas, e.g. `left,right`
+  * Save the file to a folder of your choice
 * In Espruino Web IDE, click the Storage icon (4 discs) in the middle of the screen
 * Select the file you just created
 * Change the filename to `.tfnames` and click `Ok`
@@ -246,11 +247,10 @@ This part will guide you how to transfer the model file from your computer to Ba
 
 Finally you will be able to test how well the trained model performs in real life! Just a few steps left.
 
-* Paste the below code into the *right side* in Espruino Web IDE
+* Paste the below code into the _right side_ in Espruino Web IDE
 * Upload the code to **RAM**
-   * This short program will trigger your watch to sense movements and try to recognise which movement it was.
-   * The recognised movement, e.g. `left` or `right`, will be shown in the left window in Espruino Web IDE as well as on your watch display.
-
+  * This short program will trigger your watch to sense movements and try to recognise which movement it was.
+  * The recognised movement, e.g. `left` or `right`, will be shown in the left window in Espruino Web IDE as well as on your watch display.
 
 ```
 Bangle.on('aiGesture',(gesture,raw)=>print(gesture,raw));
@@ -259,7 +259,6 @@ Bangle.on('aiGesture',(gesture)=>{
   E.showMessage(gesture);
   setTimeout(()=>g.clear(), 1000);
 });
-
 ```
 
 ## Final Comments

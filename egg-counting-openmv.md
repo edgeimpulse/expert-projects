@@ -2,19 +2,17 @@
 description: Using computer vision to monitor a bird's egg production using an OpenMV Cam.
 ---
 
-# Counting Eggs with Computer Vision 
+# Counting Eggs with Computer Vision
 
-Created By:
-Kutluhan Aktar
+Created By: Kutluhan Aktar
 
-Public Project Link:
-[https://studio.edgeimpulse.com/public/134829/latest](https://studio.edgeimpulse.com/public/134829/latest)
+Public Project Link: [https://studio.edgeimpulse.com/public/134829/latest](https://studio.edgeimpulse.com/public/134829/latest)
 
-![](.gitbook/assets/egg-counting-openmv/sandbox_1.jpg)
+![](.gitbook/assets/egg-counting-openmv/sandbox\_1.jpg)
 
 ## Description
 
-In poultry reproductive flocks, it is essential to achieve a large number of eggs with solid structure, optimal morphological composition, and interior quality. Also, these traits have a significant impact on the egg’s biological value determining the development stages of the embryo. However, the egg quality is determined based on many traits important for global egg production: and depends on many factors, including the diet, age of hens, and the feeding schedule. According to the latest experiments, the best performance by breeder hens is obtained by controlling their body weight by restricting their feed intake. A rationed feed is generally provided in a strict feeding schedule each morning and is expected to be consumed in about 4 hours. Since poultry eating habits and calcium consumption are related to their diurnal rhythm and time of ovulation to a lesser extent, it is crucial to follow a regular feeding schedule to maintain the high poultry health status and maximize egg quality[^1].
+In poultry reproductive flocks, it is essential to achieve a large number of eggs with solid structure, optimal morphological composition, and interior quality. Also, these traits have a significant impact on the egg’s biological value determining the development stages of the embryo. However, the egg quality is determined based on many traits important for global egg production: and depends on many factors, including the diet, age of hens, and the feeding schedule. According to the latest experiments, the best performance by breeder hens is obtained by controlling their body weight by restricting their feed intake. A rationed feed is generally provided in a strict feeding schedule each morning and is expected to be consumed in about 4 hours. Since poultry eating habits and calcium consumption are related to their diurnal rhythm and time of ovulation to a lesser extent, it is crucial to follow a regular feeding schedule to maintain the high poultry health status and maximize egg quality\[^1].
 
 Even though there are various nutrition and management factors affecting egg production and quality, the feeding schedule proportional to cage density affects egg production considerably since hens can stop laying eggs intrinsically when they notice a sporadic feeding schedule or paltry feed. Hence, applying a regular and nutritional feeding regimen helps hens lay eggs abundantly.
 
@@ -26,8 +24,8 @@ To recognize eggs in the coop (cage) and track the poultry feeder status accurat
 
 After completing my data set by taking pictures of the produced eggs and the poultry feeder in my quail coop, I built my object detection model with Edge Impulse to recognize (count) the produced eggs and track the poultry feeder status: OK or EMPTY. I utilized [Edge Impulse FOMO](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/object-detection/fomo-object-detection-for-constrained-devices) (Faster Objects, More Objects) algorithm to train my model, which is a novel machine learning algorithm that brings object detection to highly constrained devices. Since Edge Impulse is nearly compatible with all microcontrollers and development boards, I had not encountered any issues while uploading and running my model on OpenMV Cam H7. As labels, I appended two main classes to the file names while capturing and storing pictures:
 
-- Egg
-- Feeder
+* Egg
+* Feeder
 
 After training and testing my object detection (FOMO) model, I deployed and uploaded the model on OpenMV Cam H7 as an OpenMV firmware. Therefore, the device is capable of counting the produced eggs and tracking the poultry feeder status by running the model independently without any additional procedures.
 
@@ -43,31 +41,31 @@ In the following steps, you can find more detailed information on coding, captur
 
 🎁🎨 Huge thanks to [DFRobot](https://www.dfrobot.com/?tracking=60f546f8002be) for sponsoring these products:
 
-⭐ LattePanda 3 Delta 864 | [Inspect](https://www.dfrobot.com/product-2594.html?tracking=60f546f8002be) 
+⭐ LattePanda 3 Delta 864 | [Inspect](https://www.dfrobot.com/product-2594.html?tracking=60f546f8002be)
 
-⭐ DFRobot 8.9" 1920x1200 IPS Touch Display | [Inspect](https://www.dfrobot.com/product-2007.html?tracking=60f546f8002be) 
+⭐ DFRobot 8.9" 1920x1200 IPS Touch Display | [Inspect](https://www.dfrobot.com/product-2007.html?tracking=60f546f8002be)
 
 🎁🎨 Huge thanks to WIZnet for providing me with a [WizFi360-EVB-Pico](https://docs.wiznet.io/Product/Open-Source-Hardware/wizfi360-evb-pico/).
 
 🎁🎨 Also, huge thanks to [Creality](https://store.creality.com/) for sending me a [Creality CR-200B 3D Printer](https://www.creality.com/products/cr-200b-3d-printer).
 
-![image](.gitbook/assets/egg-counting-openmv/home_2.jpg)
+![image](.gitbook/assets/egg-counting-openmv/home\_2.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/home_4.jpg)
+![image](.gitbook/assets/egg-counting-openmv/home\_4.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/collect_2.jpg)
+![image](.gitbook/assets/egg-counting-openmv/collect\_2.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/collect_5.jpg)
+![image](.gitbook/assets/egg-counting-openmv/collect\_5.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/gif_collect.gif)
+![image](.gitbook/assets/egg-counting-openmv/gif\_collect.gif)
 
-![image](.gitbook/assets/egg-counting-openmv/run_model_2.jpg)
+![image](.gitbook/assets/egg-counting-openmv/run\_model\_2.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/gif_run.gif)
+![image](.gitbook/assets/egg-counting-openmv/gif\_run.gif)
 
-![image](.gitbook/assets/egg-counting-openmv/app_6.png)
+![image](.gitbook/assets/egg-counting-openmv/app\_6.png)
 
-![image](.gitbook/assets/egg-counting-openmv/whatsapp_message_3.jpg)
+![image](.gitbook/assets/egg-counting-openmv/whatsapp\_message\_3.jpg)
 
 ## Step 1: Designing and printing a quail-themed and coop-compatible case
 
@@ -75,42 +73,42 @@ Since I focused on building a user-friendly and accessible device compatible wit
 
 I designed the main case, its sliding front cover, and the movable camera handle in Autodesk Fusion 360. You can download their STL files below.
 
-![image](.gitbook/assets/egg-counting-openmv/model_1.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_1.png)
 
-![image](.gitbook/assets/egg-counting-openmv/model_2.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_2.png)
 
-![image](.gitbook/assets/egg-counting-openmv/model_3.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_3.png)
 
-![image](.gitbook/assets/egg-counting-openmv/model_4.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_4.png)
 
-![image](.gitbook/assets/egg-counting-openmv/model_5.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_5.png)
 
-![image](.gitbook/assets/egg-counting-openmv/model_6.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_6.png)
 
-![image](.gitbook/assets/egg-counting-openmv/model_7.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_7.png)
 
-![image](.gitbook/assets/egg-counting-openmv/model_8.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_8.png)
 
 Then, I sliced all 3D models (STL files) in Ultimaker Cura.
 
-![image](.gitbook/assets/egg-counting-openmv/model_9.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_9.png)
 
-![image](.gitbook/assets/egg-counting-openmv/model_10.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_10.png)
 
-![image](.gitbook/assets/egg-counting-openmv/model_11.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_11.png)
 
 In addition to the mentioned parts, I also designed a complementing sand bath for my quail cage. Since quails usually choose to lay eggs in the sand, I utilized this sand bath to contain the produced eggs while capturing coop images to train my object detection model. You can also download its STL file below.
 
-![image](.gitbook/assets/egg-counting-openmv/model_s_1.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_s\_1.png)
 
-![image](.gitbook/assets/egg-counting-openmv/model_s_2.png)
+![image](.gitbook/assets/egg-counting-openmv/model\_s\_2.png)
 
 Note: The pictures above are for demonstrating the sliced models: I needed to split some models to make them compatible with the CR-200B build size (200 x 200 x 200 mm).
 
 Since I wanted to create a solid structure conforming with quails' natural habitat and avoid shiny color themes which can trigger quails to attack the case, I utilized these PLA filaments:
 
-- Bone White
-- ePLA-Matte Almond Yellow
+* Bone White
+* ePLA-Matte Almond Yellow
 
 Finally, I printed all parts (models) with my Creality CR-200B 3D Printer. It is my first fully-enclosed FDM 3D printer, and I must say that I got excellent prints effortlessly with the CR-200B :)
 
@@ -120,33 +118,33 @@ According to my experience, there are only two downsides of the CR-200B: relativ
 
 :hash: Before the first use, remove unnecessary cable ties and apply grease to the rails.
 
-![image](.gitbook/assets/egg-counting-openmv/cr_200b_set_1.jpg)
+![image](.gitbook/assets/egg-counting-openmv/cr\_200b\_set\_1.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/cr_200b_set_2.jpg)
+![image](.gitbook/assets/egg-counting-openmv/cr\_200b\_set\_2.jpg)
 
 :hash: Test the nozzle and hot bed temperatures.
 
-![image](.gitbook/assets/egg-counting-openmv/cr_200b_set_3.jpg)
+![image](.gitbook/assets/egg-counting-openmv/cr\_200b\_set\_3.jpg)
 
-:hash: Go to *Settings ➡ Leveling* and adjust four predefined points by utilizing the leveling nuts.
+:hash: Go to _Settings ➡ Leveling_ and adjust four predefined points by utilizing the leveling nuts.
 
-![image](.gitbook/assets/egg-counting-openmv/cr_200b_set_4.jpg)
+![image](.gitbook/assets/egg-counting-openmv/cr\_200b\_set\_4.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/cr_200b_set_5.jpg)
+![image](.gitbook/assets/egg-counting-openmv/cr\_200b\_set\_5.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/cr_200b_set_6.jpg)
+![image](.gitbook/assets/egg-counting-openmv/cr\_200b\_set\_6.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/cr_200b_set_7.jpg)
+![image](.gitbook/assets/egg-counting-openmv/cr\_200b\_set\_7.jpg)
 
 :hash: Finally, attach the spool holder and feed the extruder with the filament.
 
-![image](.gitbook/assets/egg-counting-openmv/cr_200b_set_8.jpg)
+![image](.gitbook/assets/egg-counting-openmv/cr\_200b\_set\_8.jpg)
 
-:hash: Since the CR-200B is not officially supported by Cura, select the Ender-3 profile and change the build size to 200 x 200 x 200 mm. Also, to compensate for the nozzle placement, set the *Nozzle offset X* and *Y* values to -10 mm on the *Extruder 1* tab.
+:hash: Since the CR-200B is not officially supported by Cura, select the Ender-3 profile and change the build size to 200 x 200 x 200 mm. Also, to compensate for the nozzle placement, set the _Nozzle offset X_ and _Y_ values to -10 mm on the _Extruder 1_ tab.
 
-![image](.gitbook/assets/egg-counting-openmv/cr_200b_set_cura_1.PNG)
+![image](.gitbook/assets/egg-counting-openmv/cr\_200b\_set\_cura\_1.PNG)
 
-![image](.gitbook/assets/egg-counting-openmv/cr_200b_set_cura_2.PNG)
+![image](.gitbook/assets/egg-counting-openmv/cr\_200b\_set\_cura\_2.PNG)
 
 ## Step 1.1: Assembling the case and making connections & adjustments
 
@@ -187,9 +185,9 @@ To power OpenMV Cam H7 and WizFi360-EVB-Pico via their voltage input pins (VIN a
 
 After completing breadboard connections and adjustments successfully, I made the breadboard connection points rigid by utilizing a hot glue gun.
 
-![image](.gitbook/assets/egg-counting-openmv/breadboard_1.jpg)
+![image](.gitbook/assets/egg-counting-openmv/breadboard\_1.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/breadboard_1.jpg)
+![image](.gitbook/assets/egg-counting-openmv/breadboard\_1.jpg)
 
 After printing all parts (models), I fastened all components except OpenMV Cam H7 to their corresponding slots on the main case via the hot glue gun.
 
@@ -197,41 +195,41 @@ Then, I attached OpenMV Cam H7 to the separate movable handle allowing capturing
 
 Finally, I placed the sliding front cover via its dents.
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_1.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_1.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_2.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_2.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_3.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_3.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_4.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_4.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_5.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_5.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_6.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_6.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_7.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_7.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_8.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_8.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_9.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_9.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_10.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_10.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_11.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_11.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_12.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_12.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_13.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_13.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/assembly_14.jpg)
+![image](.gitbook/assets/egg-counting-openmv/assembly\_14.jpg)
 
 After completing assembling, I placed my 3D-printed sand bath in the coop (cage) and hung the main case onto the wire cage via its hooks.
 
-![image](.gitbook/assets/egg-counting-openmv/sandbox_1.jpg)
+![image](.gitbook/assets/egg-counting-openmv/sandbox\_1.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/home_3.jpg)
+![image](.gitbook/assets/egg-counting-openmv/home\_3.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/home_4.jpg)
+![image](.gitbook/assets/egg-counting-openmv/home\_4.jpg)
 
 ## Step 2: Creating a Twilio account to send messages over WhatsApp
 
@@ -239,56 +237,54 @@ To get notification messages over WhatsApp, I utilized Twilio's API for WhatsApp
 
 :hash: First of all, sign up for [Twilio](https://www.twilio.com/try-twilio) and create a new free trial account (project).
 
-![image](.gitbook/assets/egg-counting-openmv/twilio_set_1.png)
+![image](.gitbook/assets/egg-counting-openmv/twilio\_set\_1.png)
 
-![image](.gitbook/assets/egg-counting-openmv/twilio_set_2.png)
+![image](.gitbook/assets/egg-counting-openmv/twilio\_set\_2.png)
 
 :hash: Then, verify a phone number for the account (project) and set the account settings for the WhatsApp API in PHP.
 
-![image](.gitbook/assets/egg-counting-openmv/twilio_set_3.png)
+![image](.gitbook/assets/egg-counting-openmv/twilio\_set\_3.png)
 
-![image](.gitbook/assets/egg-counting-openmv/twilio_set_4.png)
+![image](.gitbook/assets/egg-counting-openmv/twilio\_set\_4.png)
 
 :hash: Go to the Twilio Sandbox for WhatsApp to obtain the verification code for joining the verified phone number. Then, send the given verification code to the verified phone number from your phone to activate a WhatsApp session.
 
-![image](.gitbook/assets/egg-counting-openmv/twilio_set_5.png)
+![image](.gitbook/assets/egg-counting-openmv/twilio\_set\_5.png)
 
-![image](.gitbook/assets/egg-counting-openmv/whatsapp_message_1.jpg)
+![image](.gitbook/assets/egg-counting-openmv/whatsapp\_message\_1.jpg)
 
-:hash: Finally, download the [Twilio PHP Helper Library](https://github.com/twilio/twilio-php) and go to *Account ➡ API keys & tokens* to get the account SID and the auth token under *Live credentials* so as to send messages with the WhatsApp API.
+:hash: Finally, download the [Twilio PHP Helper Library](https://github.com/twilio/twilio-php) and go to _Account ➡ API keys & tokens_ to get the account SID and the auth token under _Live credentials_ so as to send messages with the WhatsApp API.
 
-![image](.gitbook/assets/egg-counting-openmv/twilio_set_6.png)
+![image](.gitbook/assets/egg-counting-openmv/twilio\_set\_6.png)
 
-![image](.gitbook/assets/egg-counting-openmv/twilio_set_7.png)
+![image](.gitbook/assets/egg-counting-openmv/twilio\_set\_7.png)
 
 ## Step 3: Developing a web application in PHP to log detection results
 
-To be able to log the detection results with the collected weather data transmitted by WizFi360-EVB-Pico and send WhatsApp messages via the Twilio PHP Helper Library to inform the user of the detection results, I decided to develop a web application in PHP named *poultry_feeder_and_egg_tracker*.
+To be able to log the detection results with the collected weather data transmitted by WizFi360-EVB-Pico and send WhatsApp messages via the Twilio PHP Helper Library to inform the user of the detection results, I decided to develop a web application in PHP named _poultry\_feeder\_and\_egg\_tracker_.
 
 As shown below, the web application consists of one folder and five files:
 
-
-- /assets
-  - class.php
-  - icon.png
-  - index.css
-- get_data.php
-- index.php
+* /assets
+  * class.php
+  * icon.png
+  * index.css
+* get\_data.php
+* index.php
 
 I also employed the web application to add a timestamp for each data record before appending them to the MySQL database table. Therefore, the application shows these data parameters for each data record:
 
-
-- Date
-- Temperature
-- Humidity
-- Egg Count
-- Feeder Status
+* Date
+* Temperature
+* Humidity
+* Egg Count
+* Feeder Status
 
 You can download and inspect the web application in the ZIP file format below.
 
-📁 *class.php*
+📁 _class.php_
 
-In the *class.php* file, in order to run all functions successfully, I created a class named *poultry_feeder*.
+In the _class.php_ file, in order to run all functions successfully, I created a class named _poultry\_feeder_.
 
 ⭐ Include the Twilio PHP Helper Library.
 
@@ -297,9 +293,9 @@ require_once '/twilio-php-main/src/Twilio/autoload.php';
 use Twilio\Rest\Client;
 ```
 
-⭐ Define the *poultry_feeder* class and its functions:
+⭐ Define the _poultry\_feeder_ class and its functions:
 
-⭐ In the *__init__* function, define the Twilio account information (account SID, auth token, verified and registered phone numbers), the Twilio client object, and the MySQL database server settings.
+⭐ In the _**init**_ function, define the Twilio account information (account SID, auth token, verified and registered phone numbers), the Twilio client object, and the MySQL database server settings.
 
 ```
 	public function __init__($conn, $table){
@@ -320,7 +316,7 @@ use Twilio\Rest\Client;
 	}
 ```
 
-⭐ In the *send_message* function, send a WhatsApp message from the verified phone to the registered phone via the Twilio PHP Helper Library.
+⭐ In the _send\_message_ function, send a WhatsApp message from the verified phone to the registered phone via the Twilio PHP Helper Library.
 
 ```
 	public function send_message($text){
@@ -336,7 +332,7 @@ use Twilio\Rest\Client;
 	}
 ```
 
-⭐ In the *insert_new_data* function, append the transferred detection results, the collected weather data, and the current date & time to the given database table.
+⭐ In the _insert\_new\_data_ function, append the transferred detection results, the collected weather data, and the current date & time to the given database table.
 
 ```
 	public function insert_new_data($d1, $d2, $d3, $d4, $d5){
@@ -346,7 +342,7 @@ use Twilio\Rest\Client;
 	}
 ```
 
-⭐ In the *database_create_table* function, create the required database table — *entries*.
+⭐ In the _database\_create\_table_ function, create the required database table — _entries_.
 
 ```
 	public function database_create_table(){
@@ -362,7 +358,7 @@ use Twilio\Rest\Client;
 		if(mysqli_query($this->conn, $sql_create)) echo("&lt;br>&lt;br>Database Table Created Successfully!");
 ```
 
-⭐ In the *obtain_results* function, get all registered data records (results) from the given database table and return them as an array.
+⭐ In the _obtain\_results_ function, get all registered data records (results) from the given database table and return them as an array.
 
 ```
 	public function obtain_results(){
@@ -403,11 +399,11 @@ $server = array(
 $conn = mysqli_connect($server["name"], $server["username"], $server["password"], $server["database"]);
 ```
 
-📁 *get_data.php*
+📁 _get\_data.php_
 
-⭐ Include the *class.php* file.
+⭐ Include the _class.php_ file.
 
-⭐ Define the *feeder* object of the *poultry_feeder* class with its required parameters.
+⭐ Define the _feeder_ object of the _poultry\_feeder_ class with its required parameters.
 
 ```
 include_once "assets/class.php";
@@ -419,7 +415,7 @@ $feeder->__init__($conn, $server["table"]);
 
 ⭐ Obtain the transferred detection results and weather data from WizFi360-EVB-Pico.
 
-⭐ Then, insert the received information with the current date & time into the given database table — *entries*.
+⭐ Then, insert the received information with the current date & time into the given database table — _entries_.
 
 ⭐ Finally, send the received information with the current date & time via WhatsApp to the registered phone number so as to inform the user of the detection results.
 
@@ -448,17 +444,17 @@ if(isset($_GET["temperature"]) && isset($_GET["humidity"]) && isset($_GET["egg_c
 }
 ```
 
-⭐ If requested, create the required database table — *entries*.
+⭐ If requested, create the required database table — _entries_.
 
 ```
 if(isset($_GET["create_table"]) && $_GET["create_table"] == "OK") $feeder->database_create_table();
 ```
 
-📁 *index.php*
+📁 _index.php_
 
-⭐ Include the *class.php* file.
+⭐ Include the _class.php_ file.
 
-⭐ Define the *feeder* object of the *poultry_feeder* class with its required parameters.
+⭐ Define the _feeder_ object of the _poultry\_feeder_ class with its required parameters.
 
 ```
 	include_once "assets/class.php";
@@ -492,15 +488,15 @@ if(isset($_GET["create_table"]) && $_GET["create_table"] == "OK") $feeder->datab
   }
 ```
 
-![image](.gitbook/assets/egg-counting-openmv/code_app_1.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_app\_1.png)
 
-![image](.gitbook/assets/egg-counting-openmv/code_app_2.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_app\_2.png)
 
-![image](.gitbook/assets/egg-counting-openmv/code_app_3.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_app\_3.png)
 
-![image](.gitbook/assets/egg-counting-openmv/code_app_4.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_app\_4.png)
 
-![image](.gitbook/assets/egg-counting-openmv/code_app_5.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_app\_5.png)
 
 ## Step 3.1: Setting and running the web application on LattePanda 3 Delta 864
 
@@ -510,54 +506,53 @@ LattePanda 3 Delta is a pocket-sized hackable computer that provides ultra perfo
 
 Plausibly, LattePanda 3 Delta can run the XAMPP application. So, it is effortless to create a server and a database with LattePanda 3 Delta.
 
-![image](.gitbook/assets/egg-counting-openmv/lattepanda_show.jpg)
+![image](.gitbook/assets/egg-counting-openmv/lattepanda\_show.jpg)
 
 :hash: First of all, install and set up [the XAMPP application](https://www.apachefriends.org/).
 
-:hash: Then, go to the *XAMPP Control Panel* and click the *MySQL Admin* button.
+:hash: Then, go to the _XAMPP Control Panel_ and click the _MySQL Admin_ button.
 
-:hash: Once the *phpMyAdmin* tool pops up, create a new database named *poultry_feeder*.
+:hash: Once the _phpMyAdmin_ tool pops up, create a new database named _poultry\_feeder_.
 
-![image](.gitbook/assets/egg-counting-openmv/app_server_set_1.png)
+![image](<.gitbook/assets/egg-counting-openmv/app\_server\_set\_1 (3).png>)
 
-![image](.gitbook/assets/egg-counting-openmv/app_server_set_2.png)
+![image](.gitbook/assets/egg-counting-openmv/app\_server\_set\_2.png)
 
-![image](.gitbook/assets/egg-counting-openmv/app_server_set_3.png)
+![image](.gitbook/assets/egg-counting-openmv/app\_server\_set\_3.png)
 
-After running the web application by uploading it to the *htdocs* folder:
+After running the web application by uploading it to the _htdocs_ folder:
 
-💻 On the *get_data.php* file:
+💻 On the _get\_data.php_ file:
 
-⭐ If the web application did not receive detection results and the collected weather data from WizFi360-EVB-Pico via an HTTP GET request, it prints: *Waiting Data...*
+⭐ If the web application did not receive detection results and the collected weather data from WizFi360-EVB-Pico via an HTTP GET request, it prints: _Waiting Data..._
 
 ⭐ Otherwise, the web application saves the received information to the given database table and sends a WhatsApp message to inform the user of the detection results.
 
-*localhost/poultry_feeder_and_egg_tracker/get_data.php*
+_localhost/poultry\_feeder\_and\_egg\_tracker/get\_data.php_
 
-![image](.gitbook/assets/egg-counting-openmv/app_1.png)
+![image](.gitbook/assets/egg-counting-openmv/app\_1.png)
 
-![image](.gitbook/assets/egg-counting-openmv/app_4.png)
+![image](.gitbook/assets/egg-counting-openmv/app\_4.png)
 
-⭐ If the *create_table* parameter is set as OK, the web application creates the required database table (entries) and prints: *Database Table Created Successfully!*
+⭐ If the _create\_table_ parameter is set as OK, the web application creates the required database table (entries) and prints: _Database Table Created Successfully!_
 
-![image](.gitbook/assets/egg-counting-openmv/app_2.png)
+![image](.gitbook/assets/egg-counting-openmv/app\_2.png)
 
-💻 On the *index.php* file:
+💻 On the _index.php_ file:
 
 ⭐ The application interface shows all registered data records in the given database table as a list consisting of these parameters:
 
+* Date
+* Temperature
+* Humidity
+* Egg Count
+* Feeder Status
 
-- Date
-- Temperature
-- Humidity
-- Egg Count
-- Feeder Status
+⭐ If there is no data record in the database table, the interface displays _'X'_ for each parameter.
 
-⭐ If there is no data record in the database table, the interface displays *'X'* for each parameter.
+![image](.gitbook/assets/egg-counting-openmv/app\_3.png)
 
-![image](.gitbook/assets/egg-counting-openmv/app_3.png)
-
-![image](.gitbook/assets/egg-counting-openmv/app_5.png)
+![image](.gitbook/assets/egg-counting-openmv/app\_5.png)
 
 ## Step 4: Capturing and storing images of the coop w/ OpenMV Cam H7
 
@@ -569,13 +564,12 @@ You can get more information regarding the specific OpenMV MicroPython libraries
 
 After setting up OpenMV Cam H7 on the OpenMV IDE, I programmed OpenMV Cam H7 to capture coop images showing the produced eggs and the poultry feeder in order to store them on the SD card and create appropriately labeled samples for the Edge Impulse object detection (FOMO) model.
 
-Since I needed to assign labels for each captured coop image to create a valid data set for the object detection model, I utilized the control buttons attached to OpenMV Cam H7 so as to choose among two different classes. After selecting a class, OpenMV Cam H7 captures a picture, appends the selected class name (Egg or Feeder) with the current date & time to the file name, and then saves the captured image to the SD card under the *samples* folder.
+Since I needed to assign labels for each captured coop image to create a valid data set for the object detection model, I utilized the control buttons attached to OpenMV Cam H7 so as to choose among two different classes. After selecting a class, OpenMV Cam H7 captures a picture, appends the selected class name (Egg or Feeder) with the current date & time to the file name, and then saves the captured image to the SD card under the _samples_ folder.
 
+* Control Button (A) ➡ Egg
+* Control Button (B) ➡ Feeder
 
-- Control Button (A) ➡ Egg
-- Control Button (B) ➡ Feeder
-
-You can download the *poultry_egg_tracker_data_collect.py* file to try and inspect the code for capturing images and storing them on the SD card via OpenMV Cam H7.
+You can download the _poultry\_egg\_tracker\_data\_collect.py_ file to try and inspect the code for capturing images and storing them on the SD card via OpenMV Cam H7.
 
 ⭐ Include the required modules.
 
@@ -605,7 +599,7 @@ rtc = RTC()
 rtc.datetime((2022, 8, 30, 2, 12, 25, 0, 0))
 ```
 
-⭐ In the *save_sample* function:
+⭐ In the _save\_sample_ function:
 
 ⭐ Get the current date and time.
 
@@ -650,7 +644,7 @@ def save_sample(name, color, leds):
     blue.off()
 ```
 
-⭐ In the *while* loop, display a real-time video stream on the ST7735 1.8" color TFT screen and save image samples of the selected class (Egg or Feeder).
+⭐ In the _while_ loop, display a real-time video stream on the ST7735 1.8" color TFT screen and save image samples of the selected class (Egg or Feeder).
 
 ```
 while(True):
@@ -665,9 +659,9 @@ while(True):
         save_sample("Feeder", (0,255,0), (0,1,0))
 ```
 
-![image](.gitbook/assets/egg-counting-openmv/code_collect_1.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_collect\_1.png)
 
-![image](.gitbook/assets/egg-counting-openmv/code_collect_2.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_collect\_2.png)
 
 ## Step 4.1: Saving the captured coop pictures to the SD card as samples
 
@@ -675,47 +669,47 @@ After uploading and running the code for capturing coop pictures and saving them
 
 🐤🥚 The device displays a real-time video stream on the ST7735 1.8" color TFT screen.
 
-![image](.gitbook/assets/egg-counting-openmv/collect_1.jpg)
+![image](.gitbook/assets/egg-counting-openmv/collect\_1.jpg)
 
 🐤🥚 If the control button (A) is pressed, the device pauses the video stream and captures a picture. If the device captures the picture successfully, it turns the built-in RGB LED to magenta, appends the selected class name (Egg) with the current date & time to the file name, and stores the recently captured image on the SD card.
 
-*Egg.2022_8_30_12-26-11.jpg*
+_Egg.2022\_8\_30\_12-26-11.jpg_
 
 🐤🥚 Then, the device displays the selected class name and the crosshair with the assigned color on the ST7735 1.8" TFT screen.
 
 🐤🥚 Finally, the device resumes the video stream and turns off the RGB LED.
 
-![image](.gitbook/assets/egg-counting-openmv/collect_2.jpg)
+![image](.gitbook/assets/egg-counting-openmv/collect\_2.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/collect_3.jpg)
+![image](.gitbook/assets/egg-counting-openmv/collect\_3.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/collect_4.jpg)
+![image](.gitbook/assets/egg-counting-openmv/collect\_4.jpg)
 
 🐤🥚 If the control button (B) is pressed, the device pauses the video stream and captures a picture. If the device captures the picture successfully, it turns the built-in RGB LED to green, appends the selected class name (Feeder) with the current date & time to the file name, and stores the recently captured image on the SD card.
 
-*Feeder.2022_8_30_12-28-46.jpg*
+_Feeder.2022\_8\_30\_12-28-46.jpg_
 
 🐤🥚 Then, the device displays the selected class name and the crosshair with the assigned color on the ST7735 1.8" TFT screen.
 
 🐤🥚 Finally, the device resumes the video stream and turns off the RGB LED.
 
-![image](.gitbook/assets/egg-counting-openmv/collect_5.jpg)
+![image](.gitbook/assets/egg-counting-openmv/collect\_5.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/collect_6.jpg)
+![image](.gitbook/assets/egg-counting-openmv/collect\_6.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/collect_7.jpg)
+![image](.gitbook/assets/egg-counting-openmv/collect\_7.jpg)
 
 🐤🥚 Also, the device prints notifications and the captured image data on the OpenMV IDE serial monitor for debugging.
 
-![image](.gitbook/assets/egg-counting-openmv/open_serial_collect_1.png)
+![image](.gitbook/assets/egg-counting-openmv/open\_serial\_collect\_1.png)
 
 As far as my experiments go, the device operates faultlessly while capturing coop images and saving them to the SD card :)
 
-![image](.gitbook/assets/egg-counting-openmv/gif_collect.gif)
+![image](.gitbook/assets/egg-counting-openmv/gif\_collect.gif)
 
 After capturing numerous coop images depicting the daily produced eggs and the filled poultry feeder, I elicited my data set, including training and testing samples for my object detection (FOMO) model.
 
-![image](.gitbook/assets/egg-counting-openmv/data_collect_1.png)
+![image](.gitbook/assets/egg-counting-openmv/data\_collect\_1.png)
 
 ## Step 5: Building an object detection (FOMO) model with Edge Impulse
 
@@ -727,15 +721,13 @@ Since Edge Impulse supports almost every microcontroller and development board d
 
 Even though Edge Impulse supports JPG or PNG files to upload as samples directly, each training or testing sample needs to be labeled manually. Therefore, I needed to follow the steps below to format my data set so as to train my object detection model accurately:
 
-
-- Data Scaling (Resizing)
-- Data Labeling
+* Data Scaling (Resizing)
+* Data Labeling
 
 Since I appended the assigned class names to the file names while capturing and storing coop images, I preprocessed my data set effortlessly to label each image sample on Edge Impulse:
 
-
-- Egg
-- Feeder
+* Egg
+* Feeder
 
 Plausibly, Edge Impulse allows building predictive models optimized in size and accuracy automatically and deploying the trained model as an OpenMV firmware. Therefore, after scaling (resizing) and preprocessing my data set to label samples, I was able to build an accurate object detection model to count the daily produced eggs and track the poultry feeder status, which runs on OpenMV Cam H7 without getting memory allocation errors.
 
@@ -749,147 +741,145 @@ Since I have a plastic ground poultry feeder in my quail cage, I decided to trai
 
 :hash: First of all, sign up for [Edge Impulse](https://www.edgeimpulse.com/) and create a new project.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_1.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_1.png)
 
-:hash: To be able to label image samples manually on Edge Impulse for object detection models, go to *Dashboard ➡ Project info ➡ Labeling method* and select *Bounding boxes (object detection)*.
+:hash: To be able to label image samples manually on Edge Impulse for object detection models, go to _Dashboard ➡ Project info ➡ Labeling method_ and select _Bounding boxes (object detection)_.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_2.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_2.png)
 
-:hash: Navigate to the *Data acquisition* page and click the *Upload existing data* button.
+:hash: Navigate to the _Data acquisition_ page and click the _Upload existing data_ button.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_3.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_3.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_4.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_4.png)
 
-:hash: Then, choose the data category (training or testing), select image files, and click the *Begin upload* button.
+:hash: Then, choose the data category (training or testing), select image files, and click the _Begin upload_ button.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_5.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_5.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_6.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_6.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_7.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_7.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_8.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_8.png)
 
-After uploading my data set successfully, I labeled the daily produced eggs and the filled feeding holes on each image sample manually with two classes — *egg* and *feeder*. In Edge Impulse, labeling an object is as easy as dragging a box around it and entering a label. Also, Edge Impulse runs a tracking algorithm in the background while labeling objects, so it moves bounding boxes automatically for the same objects in different images.
+After uploading my data set successfully, I labeled the daily produced eggs and the filled feeding holes on each image sample manually with two classes — _egg_ and _feeder_. In Edge Impulse, labeling an object is as easy as dragging a box around it and entering a label. Also, Edge Impulse runs a tracking algorithm in the background while labeling objects, so it moves bounding boxes automatically for the same objects in different images.
 
-:hash: Go to *Data acquisition ➡ Labeling queue (Object detection labeling)*. It shows all the unlabeled images (training and testing) remaining in the given data set.
+:hash: Go to _Data acquisition ➡ Labeling queue (Object detection labeling)_. It shows all the unlabeled images (training and testing) remaining in the given data set.
 
-:hash: Finally, select an unlabeled image, drag bounding boxes around objects, click the *Save labels* button, and repeat this process until the whole data set is labeled.
+:hash: Finally, select an unlabeled image, drag bounding boxes around objects, click the _Save labels_ button, and repeat this process until the whole data set is labeled.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_9.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_9.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_10.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_10.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_11.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_11.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_12.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_12.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_13.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_13.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_14.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_14.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_15.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_15.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_16.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_16.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_17.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_17.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_18.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_18.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_19.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_19.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_20.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_20.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_21.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_21.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_set_22.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_set\_22.png)
 
 ## Step 5.2: Training the FOMO model on quail eggs and poultry feeder status
 
-After labeling my training and testing samples successfully, I designed an impulse and trained it on detecting the two mentioned classes — *egg* and *feeder*.
+After labeling my training and testing samples successfully, I designed an impulse and trained it on detecting the two mentioned classes — _egg_ and _feeder_.
 
-An impulse is a custom neural network model in Edge Impulse. I created my impulse by employing the *Image* preprocessing block and the *Object Detection (Images)* learning block.
+An impulse is a custom neural network model in Edge Impulse. I created my impulse by employing the _Image_ preprocessing block and the _Object Detection (Images)_ learning block.
 
-The *Image* preprocessing block optionally turns the input image format to grayscale and generates a features array from the raw image.
+The _Image_ preprocessing block optionally turns the input image format to grayscale and generates a features array from the raw image.
 
-The *Object Detection (Images)* learning block represents a machine learning algorithm that detects objects on the given image, distinguished between model labels *(egg* and *feeder)*.
+The _Object Detection (Images)_ learning block represents a machine learning algorithm that detects objects on the given image, distinguished between model labels _(egg_ and _feeder)_.
 
-:hash: Go to the *Create impulse* page and set image width and height parameters to 160. Then, select the resize mode parameter as *Fit shortest axis* so as to scale (resize) given training and testing image samples.
+:hash: Go to the _Create impulse_ page and set image width and height parameters to 160. Then, select the resize mode parameter as _Fit shortest axis_ so as to scale (resize) given training and testing image samples.
 
-:hash: Select the *Image* preprocessing block and the *Object Detection (Images)* learning block. Finally, click *Save Impulse*.
+:hash: Select the _Image_ preprocessing block and the _Object Detection (Images)_ learning block. Finally, click _Save Impulse_.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_train_1.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_train\_1.png)
 
-:hash: Before generating features for the object detection model, go to the *Image* page and set the *Color depth* parameter as *Grayscale*. Then, click *Save parameters*.
+:hash: Before generating features for the object detection model, go to the _Image_ page and set the _Color depth_ parameter as _Grayscale_. Then, click _Save parameters_.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_train_2.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_train\_2.png)
 
-:hash: After saving parameters, click *Generate features* to apply the *Image* preprocessing block to training image samples.
+:hash: After saving parameters, click _Generate features_ to apply the _Image_ preprocessing block to training image samples.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_train_3.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_train\_3.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_train_4.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_train\_4.png)
 
-:hash: Finally, navigate to the *Object detection* page and click *Start training*.
+:hash: Finally, navigate to the _Object detection_ page and click _Start training_.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_train_5.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_train\_5.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_train_6.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_train\_6.png)
 
 According to my experiments with my object detection model, I modified the neural network settings and architecture to build an object detection model with high accuracy and validity:
 
 📌 Neural network settings:
 
-
-- Number of training cycles ➡ 100
-- Learning rate ➡ 0.020
-- Validation set size ➡ 10
+* Number of training cycles ➡ 100
+* Learning rate ➡ 0.020
+* Validation set size ➡ 10
 
 📌 Neural network architecture:
 
+* FOMO (Faster Objects, More Objects) MobileNetV2 0.35
 
-- FOMO (Faster Objects, More Objects) MobileNetV2 0.35
+After generating features and training my FOMO model with training samples, Edge Impulse evaluated the F1 score (accuracy) as _100%_.
 
-After generating features and training my FOMO model with training samples, Edge Impulse evaluated the F1 score (accuracy) as *100%*.
+The F1 score (accuracy) is approximately _100%_ due to the modest volume and variety of training samples showing the daily produced eggs and the poultry feeder status. In technical terms, the model trains on limited validation samples. Therefore, I am still collecting data to improve my training data set.
 
-The F1 score (accuracy) is approximately *100%* due to the modest volume and variety of training samples showing the daily produced eggs and the poultry feeder status. In technical terms, the model trains on limited validation samples. Therefore, I am still collecting data to improve my training data set.
+![image](.gitbook/assets/egg-counting-openmv/edge\_train\_7.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_train_7.png)
+If you encounter any memory allocation errors while uploading the model to OpenMV Cam H7 as an OpenMV firmware, try utilizing 80 x 80 or 48 x 48 image resolutions instead of 160 x 160 while creating your impulse. Even though smaller resolutions plummet the model accuracy, they also reduce the model size.
 
-If you encounter any memory allocation errors while uploading the model to OpenMV Cam H7 as an OpenMV firmware, try utilizing 80 x 80 or 48 x 48 image resolutions instead of 160 x 160 while creating your impulse. Even though smaller resolutions plummet the model accuracy,  they also reduce the model size.
+![image](.gitbook/assets/egg-counting-openmv/edge\_train\_8.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_train_8.png)
-
-![image](.gitbook/assets/egg-counting-openmv/edge_train_9.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_train\_9.png)
 
 ## Step 5.3: Evaluating the model accuracy and deploying the model
 
 After building and training my object detection model, I tested its accuracy and validity by utilizing testing image samples.
 
-The evaluated accuracy of the model is *100%*.
+The evaluated accuracy of the model is _100%_.
 
-:hash: To validate the trained model, go to the *Model testing* page and click *Classify all*.
+:hash: To validate the trained model, go to the _Model testing_ page and click _Classify all_.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_test_1.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_test\_1.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_test_2.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_test\_2.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_test_3.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_test\_3.png)
 
 After validating my object detection model, I deployed it as fully optimized OpenMV firmware. This is the preferred method since the deployed firmware contains merely the object detection model and what is necessary to run the impulse. So, it does not consume much memory space and cause running into memory allocation issues.
 
-:hash: To deploy the validated model as an OpenMV firmware, navigate to the *Deployment* page and select *OpenMV firmware*.
+:hash: To deploy the validated model as an OpenMV firmware, navigate to the _Deployment_ page and select _OpenMV firmware_.
 
-:hash: Then, choose the *Quantized (int8)* optimization option to get the best performance possible while running the deployed model.
+:hash: Then, choose the _Quantized (int8)_ optimization option to get the best performance possible while running the deployed model.
 
-:hash: Finally, click *Build* to download the model as an OpenMV firmware in [the generated ZIP folder](https://docs.edgeimpulse.com/docs/deployment/running-your-impulse-openmv#deploying-your-impulse-as-an-openmv-firmware).
+:hash: Finally, click _Build_ to download the model as an OpenMV firmware in [the generated ZIP folder](https://docs.edgeimpulse.com/docs/deployment/running-your-impulse-openmv#deploying-your-impulse-as-an-openmv-firmware).
 
-![image](.gitbook/assets/egg-counting-openmv/edge_deploy_1.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_deploy\_1.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_deploy_2.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_deploy\_2.png)
 
-![image](.gitbook/assets/egg-counting-openmv/edge_deploy_3.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_deploy\_3.png)
 
 ## Step 6: Setting up the Edge Impulse FOMO model on OpenMV Cam H7
 
@@ -897,31 +887,30 @@ After building, training, and deploying my object detection (FOMO) model as an O
 
 FOMO object detection models can count objects under the assigned classes and provide the detected object's location using centroids. Therefore, I was able to display all detected objects on the ST7735 color TFT screen with the assigned class colors.
 
-
-- Egg ➡ Magenta
-- Feeder ➡ Green
+* Egg ➡ Magenta
+* Feeder ➡ Green
 
 Since Edge Impulse optimizes and formats preprocessing, configuration, and learning blocks into BIN files for each OpenMV product while deploying models as OpenMV firmware, I was able to flash OpenMV Cam H7 effortlessly to run inferences.
 
 :hash: After downloading the generated OpenMV firmware in the ZIP file format, plug OpenMV Cam H7 into your computer and open the OpenMV IDE.
 
-:hash: Then, go to *Tools ➡ Run Bootloader (Load Firmware)*.
+:hash: Then, go to _Tools ➡ Run Bootloader (Load Firmware)_.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_deploy_4.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_deploy\_4.png)
 
 :hash: Choose the firmware file for OpenMV Cam H7 after extracting the generated ZIP folder.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_deploy_5.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_deploy\_5.png)
 
-:hash: Select *Erase internal file system* and click *Run* to flash OpenMV Cam H7.
+:hash: Select _Erase internal file system_ and click _Run_ to flash OpenMV Cam H7.
 
-![image](.gitbook/assets/egg-counting-openmv/edge_deploy_6.png)
+![image](.gitbook/assets/egg-counting-openmv/edge\_deploy\_6.png)
 
 After flashing the firmware successfully via the OpenMV IDE, I programmed OpenMV Cam H7 to run inferences so as to track (count) the daily produced eggs and detect the poultry feeder status.
 
 Also, after running inferences successfully, I employed OpenMV Cam H7 to transmit the detection results to WizFi360-EVB-Pico via serial communication every half an hour.
 
-You can download the *poultry_egg_tracker_run_model.py* file to try and inspect the code for running Edge Impulse neural network models on OpenMV Cam H7.
+You can download the _poultry\_egg\_tracker\_run\_model.py_ file to try and inspect the code for running Edge Impulse neural network models on OpenMV Cam H7.
 
 ⭐ Include the required modules.
 
@@ -985,20 +974,19 @@ rtc = RTC()
 rtc.datetime((2022, 8, 30, 2, 12, 29, 30, 0))
 ```
 
-⭐ In the *while* loop:
-⭐ Get the current date and time.
+⭐ In the _while_ loop: ⭐ Get the current date and time.
 
 ⭐ Take a picture with the given frame settings (QQVGA2).
 
 ⭐ Run inference to track (count) unhatched eggs in the coop and detect whether the poultry feeder needs to be refilled.
 
-⭐ Via the *detect* function, obtain all detected objects found in the recently captured image, split out per label (class).
+⭐ Via the _detect_ function, obtain all detected objects found in the recently captured image, split out per label (class).
 
 ⭐ Exclude the class index 0 since it is the background class.
 
 ⭐ If the Edge Impulse FOMO model detects objects successfully, clear the egg and feeder detection counters.
 
-⭐ Then, get the prediction (detection) results for each label — *egg* and *feeder*.
+⭐ Then, get the prediction (detection) results for each label — _egg_ and _feeder_.
 
 ⭐ According to the detected object, update the egg or the feeder detection counter.
 
@@ -1072,71 +1060,69 @@ while(True):
     lcd.display(img)
 ```
 
-![image](.gitbook/assets/egg-counting-openmv/code_run_1.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_run\_1.png)
 
-![image](.gitbook/assets/egg-counting-openmv/code_run_2.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_run\_2.png)
 
-![image](.gitbook/assets/egg-counting-openmv/code_run_3.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_run\_3.png)
 
 ## Step 7: Running the FOMO model on OpenMV Cam H7 to track unhatched eggs and the poultry feeder status
 
-My Edge Impulse object detection (FOMO) model scans a captured image and predicts possibilities of trained labels to recognize an object on the given captured image. The prediction result (score) represents the model's *"confidence"* that the detected object corresponds to each of the two different labels (classes) [0 - 1], as shown in Step 5:
+My Edge Impulse object detection (FOMO) model scans a captured image and predicts possibilities of trained labels to recognize an object on the given captured image. The prediction result (score) represents the model's _"confidence"_ that the detected object corresponds to each of the two different labels (classes) \[0 - 1], as shown in Step 5:
 
+* Egg
+* Feeder
 
-- Egg
-- Feeder
-
-To run the *poultry_egg_tracker_run_model.py* file on OpenMV Cam H7 when powered up automatically, save it as *main.py*.
+To run the _poultry\_egg\_tracker\_run\_model.py_ file on OpenMV Cam H7 when powered up automatically, save it as _main.py_.
 
 🐤🥚 The device displays a real-time video stream on the ST7735 1.8" color TFT screen.
 
-![image](.gitbook/assets/egg-counting-openmv/run_model_0.jpg)
+![image](.gitbook/assets/egg-counting-openmv/run\_model\_0.jpg)
 
 🐤🥚 The device captures a picture and runs an inference with the Edge Impulse object detection (FOMO) model.
 
 🐤🥚 Then, the device draws circles (centroids) on each recognized object with the detected label's assigned color.
 
+* Egg ➡ Magenta
+* Feeder ➡ Green
 
-- Egg ➡ Magenta
-- Feeder ➡ Green
+🐤🥚 For each detected _egg_ label, the device increments the unhatched egg counter by 1.
 
-🐤🥚 For each detected *egg* label, the device increments the unhatched egg counter by 1.
-
-🐤🥚 If there is no detected *feeder* label, the device declares the poultry feeder status as EMPTY: Which means that the poultry feeder needs to be refilled. Otherwise, it declares the poultry feeder status as OK.
+🐤🥚 If there is no detected _feeder_ label, the device declares the poultry feeder status as EMPTY: Which means that the poultry feeder needs to be refilled. Otherwise, it declares the poultry feeder status as OK.
 
 🐤🥚 Then, the device displays the unhatched egg counter and the evaluated poultry feeder status on the ST7735 1.8" color TFT screen.
 
-![image](.gitbook/assets/egg-counting-openmv/run_model_1.jpg)
+![image](.gitbook/assets/egg-counting-openmv/run\_model\_1.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/run_model_2.jpg)
+![image](.gitbook/assets/egg-counting-openmv/run\_model\_2.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/run_model_2.1.jpg)
+![image](.gitbook/assets/egg-counting-openmv/run\_model\_2.1.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/run_model_3.jpg)
+![image](.gitbook/assets/egg-counting-openmv/run\_model\_3.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/run_model_4.jpg)
+![image](.gitbook/assets/egg-counting-openmv/run\_model\_4.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/run_model_5.jpg)
+![image](.gitbook/assets/egg-counting-openmv/run\_model\_5.jpg)
 
 🐤🥚 Each half an hour, the device transmits the detection results to WizFi360-EVB-Pico via serial communication (UART) to inform the user of the detection results via WhatsApp. Then, the device blinks the built-in RGB LED as blue.
 
-*&egg_count=6&feeder_status=OK*
+_\&egg\_count=6\&feeder\_status=OK_
 
-*&egg_count=8&feeder_status=EMPTY*
+_\&egg\_count=8\&feeder\_status=EMPTY_
 
-![image](.gitbook/assets/egg-counting-openmv/run_model_6.jpg)
+![image](.gitbook/assets/egg-counting-openmv/run\_model\_6.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/run_model_7.jpg)
+![image](.gitbook/assets/egg-counting-openmv/run\_model\_7.jpg)
 
 🐤🥚 Also, the device prints notifications and the detection results on the OpenMV IDE serial monitor for debugging.
 
-![image](.gitbook/assets/egg-counting-openmv/open_serial_run_1.png)
+![image](.gitbook/assets/egg-counting-openmv/open\_serial\_run\_1.png)
 
-![image](.gitbook/assets/egg-counting-openmv/open_serial_run_2.png)
+![image](.gitbook/assets/egg-counting-openmv/open\_serial\_run\_2.png)
 
 As far as my experiments go, the device recognizes objects with different labels (classes) precisely, evaluates the poultry feeder status faultlessly, and shows accurate centroids around the detected objects :)
 
-![image](.gitbook/assets/egg-counting-openmv/gif_run.gif)
+![image](.gitbook/assets/egg-counting-openmv/gif\_run.gif)
 
 ## Step 8: Setting up WizFi360-EVB-Pico to collect weather data and communicate w/ OpenMV Cam H7
 
@@ -1146,27 +1132,27 @@ Also, I connected a DHT22 temperature and humidity sensor to WizFi360-EVB-Pico t
 
 Before proceeding with the following steps, I needed to set up WizFi360-EVB-Pico on the Arduino IDE and install the required libraries for this project.
 
-:hash: To add [the WizFi360-EVB-Pico board package](https://github.com/earlephilhower/arduino-pico/) to the Arduino IDE, navigate to *File ➡ Preferences* and paste the URL below under *Additional Boards Manager URLs*.
+:hash: To add [the WizFi360-EVB-Pico board package](https://github.com/earlephilhower/arduino-pico/) to the Arduino IDE, navigate to _File ➡ Preferences_ and paste the URL below under _Additional Boards Manager URLs_.
 
-*https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json*
+_https://github.com/earlephilhower/arduino-pico/releases/download/global/package\_rp2040\_index.json_
 
-![image](.gitbook/assets/egg-counting-openmv/set_wiz_pico_1.png)
+![image](.gitbook/assets/egg-counting-openmv/set\_wiz\_pico\_1.png)
 
-:hash: Then, to install the required core, navigate to *Tools ➡ Board ➡ Boards Manager* and search for *rp2040*.
+:hash: Then, to install the required core, navigate to _Tools ➡ Board ➡ Boards Manager_ and search for _rp2040_.
 
-![image](.gitbook/assets/egg-counting-openmv/set_wiz_pico_2.png)
+![image](.gitbook/assets/egg-counting-openmv/set\_wiz\_pico\_2.png)
 
-:hash: After installing the core, navigate to *Tools > Board > Raspberry Pi RP2040 Boards* and select *WIZnet WizFi360-EVB-Pico*.
+:hash: After installing the core, navigate to _Tools > Board > Raspberry Pi RP2040 Boards_ and select _WIZnet WizFi360-EVB-Pico_.
 
-![image](.gitbook/assets/egg-counting-openmv/set_wiz_pico_3.png)
+![image](.gitbook/assets/egg-counting-openmv/set\_wiz\_pico\_3.png)
 
-:hash:  Finally, download the required library for the DHT22 temperature and humidity sensor:
+:hash: Finally, download the required library for the DHT22 temperature and humidity sensor:
 
-DHT-sensor-library | [Download](https://github.com/adafruit/DHT-sensor-library) 
+DHT-sensor-library | [Download](https://github.com/adafruit/DHT-sensor-library)
 
 After setting up WizFi360-EVB-Pico and installing the required libraries, I programmed WizFi360-EVB-Pico to collect weather data and transmit the detection results with the collected weather data when OpenMV Cam H7 transfers the detection results via serial communication.
 
-You can download the *Poultry_Feeder_and_Unhatched_Egg_Tracker.ino* file to try and inspect the code on WizFi360-EVB-Pico.
+You can download the _Poultry\_Feeder\_and\_Unhatched\_Egg\_Tracker.ino_ file to try and inspect the code on WizFi360-EVB-Pico.
 
 ⭐ Include the required libraries.
 
@@ -1242,7 +1228,7 @@ DHT dht(DHTPIN, DHTTYPE);
   dht.begin();
 ```
 
-⭐ In the *get_detection_results* function, obtain the detection results transferred by OpenMV Cam H7 via serial communication.
+⭐ In the _get\_detection\_results_ function, obtain the detection results transferred by OpenMV Cam H7 via serial communication.
 
 ```
 void get_detection_results(){
@@ -1256,7 +1242,7 @@ void get_detection_results(){
 }
 ```
 
-⭐ In the *collect_weather_data* function, get the evaluated temperature and humidity measurements from the DHT22 sensor.
+⭐ In the _collect\_weather\_data_ function, get the evaluated temperature and humidity measurements from the DHT22 sensor.
 
 ```
 void collect_weather_data(){
@@ -1273,9 +1259,9 @@ void collect_weather_data(){
 }
 ```
 
-⭐ In the *make_a_get_request* function:
+⭐ In the _make\_a\_get\_request_ function:
 
-⭐ Connect to the web application named *poultry_feeder_and_egg_tracker*.
+⭐ Connect to the web application named _poultry\_feeder\_and\_egg\_tracker_.
 
 ⭐ Create the query string with the collected weather data and the received detection results from OpenMV Cam H7.
 
@@ -1321,17 +1307,17 @@ void make_a_get_request(String detection){
   }
 ```
 
-![image](.gitbook/assets/egg-counting-openmv/code_wiz_1.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_wiz\_1.png)
 
-![image](.gitbook/assets/egg-counting-openmv/code_wiz_2.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_wiz\_2.png)
 
-![image](.gitbook/assets/egg-counting-openmv/code_wiz_3.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_wiz\_3.png)
 
-![image](.gitbook/assets/egg-counting-openmv/code_wiz_4.png)
+![image](.gitbook/assets/egg-counting-openmv/code\_wiz\_4.png)
 
 ## Step 8.1: Logging the detection results and notifying the user over WhatsApp
 
-After running the *Poultry_Feeder_and_Unhatched_Egg_Tracker.ino* file on WizFi360-EVB-Pico:
+After running the _Poultry\_Feeder\_and\_Unhatched\_Egg\_Tracker.ino_ file on WizFi360-EVB-Pico:
 
 🐤🥚 The device transmits the detection results and the collected weather data to the PHP web application when WizFi360-EVB-Pico receives the detection results from OpenMV Cam H7 via serial communication every half an hour.
 
@@ -1339,19 +1325,19 @@ After running the *Poultry_Feeder_and_Unhatched_Egg_Tracker.ino* file on WizFi36
 
 🐤🥚 Then, the application shows all registered data records as a list on the home page.
 
-![image](.gitbook/assets/egg-counting-openmv/app_6.png)
+![image](.gitbook/assets/egg-counting-openmv/app\_6.png)
 
 🐤🥚 Also, the web application sends the detection results and the weather data with the current date & time over WhatsApp via Twilio's API in order to inform the user of the latest unhatched egg number and the poultry feeder status in the coop.
 
-![image](.gitbook/assets/egg-counting-openmv/whatsapp_message_2.jpg)
+![image](.gitbook/assets/egg-counting-openmv/whatsapp\_message\_2.jpg)
 
-![image](.gitbook/assets/egg-counting-openmv/whatsapp_message_3.jpg)
+![image](.gitbook/assets/egg-counting-openmv/whatsapp\_message\_3.jpg)
 
 🐤🥚 Finally, the device prints notifications and sensor measurements on the Arduino IDE serial monitor for debugging.
 
-![image](.gitbook/assets/egg-counting-openmv/wiznet_serial_1.png)
+![image](.gitbook/assets/egg-counting-openmv/wiznet\_serial\_1.png)
 
-![image](.gitbook/assets/egg-counting-openmv/wiznet_serial_2.png)
+![image](.gitbook/assets/egg-counting-openmv/wiznet\_serial\_2.png)
 
 ## Videos and Conclusion
 
@@ -1371,9 +1357,8 @@ By applying object detection models trained on captured coop images in tracking 
 
 🐤🥚 determine a potential contagious poultry disease or malnutrition.
 
-![image](.gitbook/assets/egg-counting-openmv/home_2.jpg)
+![image](.gitbook/assets/egg-counting-openmv/home\_2.jpg)
 
 ## References
 
-[^1] Soltanmoradi MG, Seidavi A, Dadashbeiki M, Laudadio V, Centoducati G, Tufarelli V., *Influence of Feeding Frequency and Timetable on Egg Parameters and Reproductive Performance in Broiler Breeder Hens*, Avian Biology Research, vol. 7, no. 3, Aug. 2014, pp. 153–159, *https://journals.sagepub.com/doi/10.3184/175815514X14025828753279*
-
+\[^1] Soltanmoradi MG, Seidavi A, Dadashbeiki M, Laudadio V, Centoducati G, Tufarelli V., _Influence of Feeding Frequency and Timetable on Egg Parameters and Reproductive Performance in Broiler Breeder Hens_, Avian Biology Research, vol. 7, no. 3, Aug. 2014, pp. 153–159, _https://journals.sagepub.com/doi/10.3184/175815514X14025828753279_

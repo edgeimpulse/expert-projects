@@ -1,38 +1,36 @@
 ---
-description: Using a DFRobot Firebeetle ESP32 to monitor and make predictions about air quality in an environment.
+description: >-
+  Using a DFRobot Firebeetle ESP32 to monitor and make predictions about air
+  quality in an environment.
 ---
 
 # AI-Assisted Air Quality Monitoring with a DFRobot Firebeetle ESP32
 
-Created By:
-Kutluhan Aktar
+Created By: Kutluhan Aktar
 
-Public Project Link:
-[https://studio.edgeimpulse.com/public/159184/latest](https://studio.edgeimpulse.com/public/159184/latest)
+Public Project Link: [https://studio.edgeimpulse.com/public/159184/latest](https://studio.edgeimpulse.com/public/159184/latest)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/finished_2.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/finished\_2.jpg)
 
 ## Description
 
 Due to the ever-growing industrialization, forest degradation, and pollution, the delicate balance of ambient gases shifted. Thus, hazardous air pollutants impinge on the human respiratory system detrimentally, in addition to engendering climate change and poisoning wildlife. Even though governments realized that it was incumbent on them to act in order to prevent destructive air contaminants from pervading the ecosystem, we are too far away from obviating human-made air pollutants during the following decades. Therefore, it is still crucial to detect air pollutants to inform people with prescient warnings.
 
-Since some air pollutants can react with each other and spread very rapidly, precedence must be given to detecting highly reactive gases (air contaminants), such as ozone (O3) and nitrogen compounds (NOx, NOy).  Thus, in this project, I decided to focus on ozone (O3) and nitrogen dioxide (NO2) concentrations, which denote dangerous air pollution.
+Since some air pollutants can react with each other and spread very rapidly, precedence must be given to detecting highly reactive gases (air contaminants), such as ozone (O3) and nitrogen compounds (NOx, NOy). Thus, in this project, I decided to focus on ozone (O3) and nitrogen dioxide (NO2) concentrations, which denote dangerous air pollution.
 
-In ambient air, nitrogen oxides can occur from diverse combinations of oxygen and nitrogen. The higher combustion temperatures cause more nitric oxide reactions. In ambient conditions, nitric oxide is rapidly oxidized in air to form nitrogen dioxide by available oxidants, for instance, oxygen, ozone, and VOCs (volatile organic compounds). Hence, nitrogen dioxide (NO2) is widely known as a primary air pollutant (contaminant). Since road traffic is considered the principal outdoor source of nitrogen dioxide[^1], densely populated areas are most susceptible to its detrimental effects. Nitrogen dioxide causes a range of harmful effects on the respiratory system, for example, increased inflammation of the airways, reduced lung function, increased asthma attacks, and cardiovascular harm[^2].
+In ambient air, nitrogen oxides can occur from diverse combinations of oxygen and nitrogen. The higher combustion temperatures cause more nitric oxide reactions. In ambient conditions, nitric oxide is rapidly oxidized in air to form nitrogen dioxide by available oxidants, for instance, oxygen, ozone, and VOCs (volatile organic compounds). Hence, nitrogen dioxide (NO2) is widely known as a primary air pollutant (contaminant). Since road traffic is considered the principal outdoor source of nitrogen dioxide\[^1], densely populated areas are most susceptible to its detrimental effects. Nitrogen dioxide causes a range of harmful effects on the respiratory system, for example, increased inflammation of the airways, reduced lung function, increased asthma attacks, and cardiovascular harm\[^2].
 
-Tropospheric, or ground-level ozone (O3), is formed by chemical reactions between oxides of nitrogen (NOx) and volatile organic compounds (VOCs). This chemical reaction is triggered by sunlight between the mentioned air pollutants emitted by cars, power plants, industrial boilers, refineries, and chemical plants[^3]. Depending on the level of exposure, ground-level ozone (O3) can have various effects on the respiratory system, for instance, coughing, sore throat, airway inflammation, increased frequency of asthma attacks, and increased lung infection risk. Some of these detrimental effects have been found even in healthy people, but symptoms can be more severe in people with lung diseases such as asthma[^4].
+Tropospheric, or ground-level ozone (O3), is formed by chemical reactions between oxides of nitrogen (NOx) and volatile organic compounds (VOCs). This chemical reaction is triggered by sunlight between the mentioned air pollutants emitted by cars, power plants, industrial boilers, refineries, and chemical plants\[^3]. Depending on the level of exposure, ground-level ozone (O3) can have various effects on the respiratory system, for instance, coughing, sore throat, airway inflammation, increased frequency of asthma attacks, and increased lung infection risk. Some of these detrimental effects have been found even in healthy people, but symptoms can be more severe in people with lung diseases such as asthma\[^4].
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/ozone_formation.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/ozone\_formation.jpg)
 
-Since nitrogen dioxide (NO2),  ozone (O3), and other photochemical oxidant reactions and transmission rates are inextricably related to air flow, heat, and ambient humidity, I decided to collect the following data parameters to create a meticulous data set:
+Since nitrogen dioxide (NO2), ozone (O3), and other photochemical oxidant reactions and transmission rates are inextricably related to air flow, heat, and ambient humidity, I decided to collect the following data parameters to create a meticulous data set:
 
-
-- Nitrogen dioxide concentration (PPM)
-- Ozone concentration (PPB)
-- Temperature (°C)
-- Humidity (%)
-- Wind speed
-
+* Nitrogen dioxide concentration (PPM)
+* Ozone concentration (PPB)
+* Temperature (°C)
+* Humidity (%)
+* Wind speed
 
 After perusing recent research papers on ambient air pollution, I noticed there are very few appliances focusing on collecting air quality data, detecting air pollution levels with machine learning, and providing surveillance footage for further examination. Therefore, I decided to build a budget-friendly and easy-to-use air station to forecast air pollution levels with machine learning and inform the user of the model detection results with surveillance footage consecutively, in the hope of forfending the plight of hazardous gases.
 
@@ -42,11 +40,9 @@ Since the FireBeetle media board supports reading and writing information from/t
 
 After completing my data set, I built my artificial neural network model (ANN) with Edge Impulse to make predictions on air pollution levels (classes). Since Edge Impulse is nearly compatible with all microcontrollers and development boards, I had not encountered any issues while uploading and running my model on FireBeetle ESP32. As labels, I utilized the empirically assigned air pollution levels in accordance with the Air Quality Index (AQI) estimations provided by IQAir:
 
-
-- Clean
-- Risky
-- Unhealthy
-
+* Clean
+* Risky
+* Unhealthy
 
 After training and testing my neural network model, I deployed and uploaded the model on FireBeetle ESP32 as an Arduino library. Therefore, the air station is capable of detecting air pollution levels by running the model independently without any additional procedures or latency.
 
@@ -64,7 +60,7 @@ In the following steps, you can find more detailed information on coding, captur
 
 ⭐ FireBeetle ESP32 | [Inspect](https://www.dfrobot.com/product-1590.html?tracking=60f546f8002be)
 
-⭐ FireBeetle Covers - Camera&Audio Media Board | [Inspect](https://www.dfrobot.com/product-1720.html?tracking=60f546f8002be)
+⭐ FireBeetle Covers - Camera\&Audio Media Board | [Inspect](https://www.dfrobot.com/product-1720.html?tracking=60f546f8002be)
 
 ⭐ Gravity: Electrochemical Nitrogen Dioxide Sensor | [Inspect](https://www.dfrobot.com/product-2515.html?tracking=60f546f8002be)
 
@@ -78,31 +74,31 @@ In the following steps, you can find more detailed information on coding, captur
 
 🎁🎨 Also, huge thanks to [Creality](https://store.creality.com/) for sending me a [Creality Sonic Pad](https://www.creality.com/products/creality-sonic-pad), a [Creality Sermoon V1 3D Printer](https://www.creality.com/products/creality-sermoon-v1-v1-pro-3d-printer), and a [Creality CR-200B 3D Printer](https://www.creality.com/products/cr-200b-3d-printer).
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/finished_2.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/finished\_2.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/completed_2.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/completed\_2.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect_2.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect\_2.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect_3.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect\_3.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect_4.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect\_4.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect_5.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect\_5.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/gif_collect.gif)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/gif\_collect.gif)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/run_2.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/run\_2.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/run_3.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/run\_3.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/gif_run.gif)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/gif\_run.gif)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_work_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_work\_2.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_work_3.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_work\_3.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_work_4.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_work\_4.png)
 
 ## Step 1: Designing and printing a metallic air station case
 
@@ -112,42 +108,40 @@ Since I needed to attach an anemometer to the case to collect wind speed data, I
 
 I designed the metallic air station case, its sliding front cover, and the mountable camera holder in Autodesk Fusion 360. You can download their STL files below.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model\_1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model\_2.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model_3.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model\_3.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model_4.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model\_4.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model_5.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model\_5.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model_6.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model\_6.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model_7.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model\_7.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model_8.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model\_8.png)
 
 Then, I sliced all 3D models (STL files) in Ultimaker Cura.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model_9.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model\_9.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model_10.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model\_10.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model_11.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/model\_11.png)
 
 Since I wanted to create a solid metallic structure for the air station case with the sliding front cover and apply a unique alloy combination complementing the metallic theme, I utilized these PLA filaments:
 
-
-- eSilk Copper
-- eSilk Bronze
-
+* eSilk Copper
+* eSilk Bronze
 
 Finally, I printed all parts (models) with my Creality Sermoon V1 3D Printer and Creality CR-200B 3D Printer in combination with the Creality Sonic Pad. You can find more detailed information regarding the Sonic Pad in Step 1.1.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/printed_1.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/printed\_1.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/printed_2.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/printed\_2.jpg)
 
 If you are a maker or hobbyist planning to print your 3D models to create more complex and detailed projects, I highly recommend the Sermoon V1. Since the Sermoon V1 is fully-enclosed, you can print high-resolution 3D models with PLA and ABS filaments. Also, it has a smart filament runout sensor and the resume printing option for power failures.
 
@@ -155,39 +149,39 @@ Furthermore, the Sermoon V1 provides a flexible metal magnetic suction platform 
 
 :hash: Before the first use, remove unnecessary cable ties and apply grease to the rails.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sermoon_1.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_1.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sermoon_2.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_2.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sermoon_3.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_3 (1).jpg>)
 
 :hash: Test the nozzle and hot bed temperatures.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sermoon_4.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_4.jpg)
 
-:hash: Go to *Print Setup ➡ Auto leveling* and adjust five predefined points automatically with the assisted leveling function.
+:hash: Go to _Print Setup ➡ Auto leveling_ and adjust five predefined points automatically with the assisted leveling function.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sermoon_5.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_5.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sermoon_6.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_6 (1).jpg>)
 
 :hash: Finally, place the filament into the integrated spool holder and feed the extruder with the filament.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sermoon_7.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_7 (1).jpg>)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sermoon_8.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_8.jpg)
 
-:hash: Since the Sermoon V1 is not officially supported by Cura, download the latest [Creality Slicer](https://www.creality.com/pages/download-sermoon-v1v1-pro) version and copy the official printer settings provided by Creality, including *Start G-code* and *End G-code*, to a custom printer profile on Cura.
+:hash: Since the Sermoon V1 is not officially supported by Cura, download the latest [Creality Slicer](https://www.creality.com/pages/download-sermoon-v1v1-pro) version and copy the official printer settings provided by Creality, including _Start G-code_ and _End G-code_, to a custom printer profile on Cura.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/sermoon_slicer_1.png)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_slicer\_1 (2).png>)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/sermoon_slicer_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_slicer\_2.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/sermoon_slicer_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_slicer\_3.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/sermoon_cura_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_cura\_1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/sermoon_cura_2.png)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_cura\_2 (1).png>)
 
 ## Step 1.1: Improving print quality and speed with the Creality Sonic Pad
 
@@ -195,35 +189,35 @@ Since I wanted to improve my print quality and speed with Klipper, I decided to 
 
 Creality Sonic Pad is a beginner-friendly device to control almost any FDM 3D printer on the market with the Klipper firmware. Since the Sonic Pad uses precision-oriented algorithms, it provides remarkable results with higher printing speeds. The built-in input shaper function mitigates oscillation during high-speed printing and smooths ringing to maintain high model quality. Also, it supports G-code model preview.
 
-Although the Sonic Pad is pre-configured for some Creality printers, it does not support the CR-200B officially yet. Therefore, I needed to add the CR-200B as a user-defined printer to the Sonic Pad. Since the Sonic Pad needs unsupported printers to be flashed with the self-compiled Klipper firmware before connection, I flashed my CR-200B with the required Klipper firmware settings via *FluiddPI* by following [this YouTube tutorial](https://www.youtube.com/watch?v=gfZ9Lbyh8qU).
+Although the Sonic Pad is pre-configured for some Creality printers, it does not support the CR-200B officially yet. Therefore, I needed to add the CR-200B as a user-defined printer to the Sonic Pad. Since the Sonic Pad needs unsupported printers to be flashed with the self-compiled Klipper firmware before connection, I flashed my CR-200B with the required Klipper firmware settings via _FluiddPI_ by following [this YouTube tutorial](https://www.youtube.com/watch?v=gfZ9Lbyh8qU).
 
 If you do not know how to write a printer configuration file for Klipper, you can download the stock CR-200B configuration file from [here](https://github.com/ChewyJetpack/CR-200B-Klipper-Config/).
 
-:hash: After flashing the CR-200B with the Klipper firmware, copy the configuration file *(printer.cfg)* to a USB drive and connect the drive to the Sonic Pad.
+:hash: After flashing the CR-200B with the Klipper firmware, copy the configuration file _(printer.cfg)_ to a USB drive and connect the drive to the Sonic Pad.
 
-:hash: After setting up the Sonic Pad, select *Other models*. Then, load the *printer.cfg* file.
+:hash: After setting up the Sonic Pad, select _Other models_. Then, load the _printer.cfg_ file.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sonic_pad_2.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_2 (1).jpg>)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sonic_pad_4.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_4.jpg)
 
 :hash: After connecting the Sonic Pad to the CR-200B successfully via a USB cable, the Sonic Pad starts the self-testing procedure, which allows the user to test printer functions and level the bed.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sonic_pad_5.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_5 (2).jpg>)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sonic_pad_6.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_6.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sonic_pad_7.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_7.jpg)
 
 :hash: After completing setting up the printer, the Sonic Pad lets the user control all functions provided by the Klipper firmware.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sonic_pad_8.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_8 (2).jpg>)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/set_sonic_pad_9.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_9.jpg)
 
-:hash: In Cura, export the sliced model in the *ufp* format. After uploading *.ufp* files to the Sonic Pad via the USB drive, it converts them to sliced G-code files automatically.
+:hash: In Cura, export the sliced model in the _ufp_ format. After uploading _.ufp_ files to the Sonic Pad via the USB drive, it converts them to sliced G-code files automatically.
 
-:hash: Also, the Sonic Pad can display model preview pictures generated by Cura with the *Create Thumbnail* script.
+:hash: Also, the Sonic Pad can display model preview pictures generated by Cura with the _Create Thumbnail_ script.
 
 ## Step 1.2: Assembling the case and making connections & adjustments
 
@@ -269,23 +263,23 @@ If you do not know how to write a printer configuration file for Klipper, you ca
 // D7   --------------------------- +
 ```
 
-First of all, I soldered female pin headers to [FireBeetle ESP32](https://wiki.dfrobot.com/FireBeetle_ESP32_IOT_Microcontroller(V3.0)__Supports_Wi-Fi_&_Bluetooth__SKU__DFR0478) and male pin headers to [the FireBeetle (Covers) media board](https://wiki.dfrobot.com/FireBeetle_Covers-Camera%26Audio_Media_Board_SKU_DFR0498) before attaching the OV7725 camera.
+First of all, I soldered female pin headers to [FireBeetle ESP32](https://wiki.dfrobot.com/FireBeetle\_ESP32\_IOT\_Microcontroller\(V3.0\)\_\_Supports\_Wi-Fi\_&\_Bluetooth\_\_SKU\_\_DFR0478) and male pin headers to [the FireBeetle (Covers) media board](https://wiki.dfrobot.com/FireBeetle\_Covers-Camera%26Audio\_Media\_Board\_SKU\_DFR0498) before attaching the OV7725 camera.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/board_set_1.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/board\_set\_1.jpg)
 
-Due to the Arduino library incompatibilities and the memory allocation issues, I  decided to connect the electrochemical NO2 sensor, the electrochemical ozone sensor, the anemometer kit, and the DHT22 sensor to Arduino Mega so as to collect the required air quality data.  Then, I utilized Arduino Mega to transmit the collected air quality data to FireBeetle ESP32 via serial communication.
+Due to the Arduino library incompatibilities and the memory allocation issues, I decided to connect the electrochemical NO2 sensor, the electrochemical ozone sensor, the anemometer kit, and the DHT22 sensor to Arduino Mega so as to collect the required air quality data. Then, I utilized Arduino Mega to transmit the collected air quality data to FireBeetle ESP32 via serial communication.
 
-:hash: When [the electrochemical NO2 sensor](https://wiki.dfrobot.com/SKU_SEN0465toSEN0476_Gravity_Gas_Sensor_Calibrated_I2C_UART) and [the electrochemical ozone sensor](https://wiki.dfrobot.com/Gravity_IIC_Ozone_Sensor_(0-10ppm)%20SKU_SEN0321) are powered up for the first time, both sensors require operating for about 24-48 hours to generate calibrated and stable gas concentrations. In my case, I was able to obtain stable results after 30 hours of warming up. Although the electrochemical sensors need to be calibrated once, they have a preheat (warm-up) time of about 5 minutes to evaluate gas concentrations accurately after being interrupted.
+:hash: When [the electrochemical NO2 sensor](https://wiki.dfrobot.com/SKU\_SEN0465toSEN0476\_Gravity\_Gas\_Sensor\_Calibrated\_I2C\_UART) and [the electrochemical ozone sensor](https://wiki.dfrobot.com/Gravity\_IIC\_Ozone\_Sensor\_\(0-10ppm\)%20SKU\_SEN0321) are powered up for the first time, both sensors require operating for about 24-48 hours to generate calibrated and stable gas concentrations. In my case, I was able to obtain stable results after 30 hours of warming up. Although the electrochemical sensors need to be calibrated once, they have a preheat (warm-up) time of about 5 minutes to evaluate gas concentrations accurately after being interrupted.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/breadboard_1.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/breadboard\_1.jpg)
 
-:hash: Since [the anemometer kit](https://wiki.dfrobot.com/Wind_Speed_Sensor_Voltage_Type_0-5V__SKU_SEN0170) requires a 9-24V supply voltage and generates a 0-5V output voltage (signal), I connected a USB buck-boost converter board to my Xiaomi power bank to elicit a stable 20V supply voltage to power the anemometer.
+:hash: Since [the anemometer kit](https://wiki.dfrobot.com/Wind\_Speed\_Sensor\_Voltage\_Type\_0-5V\_\_SKU\_SEN0170) requires a 9-24V supply voltage and generates a 0-5V output voltage (signal), I connected a USB buck-boost converter board to my Xiaomi power bank to elicit a stable 20V supply voltage to power the anemometer.
 
 Since Arduino Mega operates at 5V and FireBeetle ESP32 requires 3.3V logic level voltage, they cannot be connected with each other directly. Therefore, I utilized a bi-directional logic level converter to shift the voltage for the connections between FireBeetle ESP32 and Arduino Mega.
 
 To display the collected information and notifications, I utilized an SH1106 OLED screen. To assign air pollution levels empirically while saving the collected data to individual CSV files on the SD card, I used the built-in MicroSD card module on the media board and added three control buttons.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/breadboard_2.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/breadboard\_2.jpg)
 
 After printing all parts (models), I fastened all components except the OV7725 camera to their corresponding slots on the metallic air station case via a hot glue gun. I also utilized the anemometer's screw kit to attach it more tightly to its connection points on the top of the metallic case.
 
@@ -293,41 +287,41 @@ I placed the OV7725 camera in the mountable camera holder and attached the camer
 
 Then, I placed the sliding front cover via the dents on the metallic case.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_1.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_1.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_2.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_2.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_3.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_3.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_4.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_4.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_5.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_5.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_6.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_6.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_7.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_7.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_8.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_8.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_9.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_9.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_10.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_10.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_11.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_11.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_12.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_12.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_13.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_13.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_14.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_14.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_15.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_15.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly_16.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/assembly\_16.jpg)
 
 As mentioned earlier, the mountable camera holder can be utilized to adjust the OV7725 camera at four different angles via the snap-fit joints.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/completed_1.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/completed\_1.jpg)
 
 ## Step 2: Developing a web application displaying real-time database updates in PHP, JavaScript, CSS, and MySQL
 
@@ -335,32 +329,30 @@ To provide an exceptional user experience for this AIoT air station, I developed
 
 As shown below, the web application consists of three folders and seven code files:
 
+* /assets
+* \-- background.jpg
+* \-- class.php
+* \-- icon.png
+* \-- index.css
+* \-- index.js
+* /env\_notifications
+* \-- /images
+* \-- bmp\_converter.py
+* index.php
+* show\_records.php
+* update\_data.php
 
-- /assets
-- -- background.jpg
-- -- class.php
-- -- icon.png
-- -- index.css
-- -- index.js
-- /env_notifications
-- -- /images
-- -- bmp_converter.py
-- index.php
-- show_records.php
-- update_data.php
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_1.png)
 
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_2.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_3.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_2.png)
+📁 _class.php_
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_3.png)
+In the _class.php_ file, I created a class named _\_main_ to bundle the following functions under a specific structure.
 
-📁 *class.php*
-
-In the *class.php* file, I created a class named *_main* to bundle the following functions under a specific structure.
-
-⭐ Define the *_main* class and its functions.
+⭐ Define the _\_main_ class and its functions.
 
 ```
 	public $conn;
@@ -370,7 +362,7 @@ In the *class.php* file, I created a class named *_main* to bundle the following
 	}
 ```
 
-⭐ In the *insert_new_data* function, insert the given air quality data to the MySQL database table.
+⭐ In the _insert\_new\_data_ function, insert the given air quality data to the MySQL database table.
 
 ```
 	public function insert_new_data($date, $no2, $o3, $wind_speed, $temperature, $humidity, $img, $model_result){
@@ -381,7 +373,7 @@ In the *class.php* file, I created a class named *_main* to bundle the following
 	}
 ```
 
-⭐ In the *get_data_records* function, retrieve all stored air quality data from the database table in descending order and return all data parameters as separate lists.
+⭐ In the _get\_data\_records_ function, retrieve all stored air quality data from the database table in descending order and return all data parameters as separate lists.
 
 ```
 	public function get_data_records(){
@@ -420,11 +412,11 @@ $server = array(
 $conn = mysqli_connect($server["name"], $server["username"], $server["password"], $server["database"]);
 ```
 
-📁 *update_data.php*
+📁 _update\_data.php_
 
-⭐ Include the *class.php* file.
+⭐ Include the _class.php_ file.
 
-⭐ Define the *air* object of the *_main* class with its required parameters.
+⭐ Define the _air_ object of the _\_main_ class with its required parameters.
 
 ```
 include_once "assets/class.php";
@@ -455,7 +447,7 @@ if(isset($_GET["no2"]) && isset($_GET["o3"]) && isset($_GET["wind_speed"]) && is
 }
 ```
 
-⭐ If FireBeetle ESP32 transfers raw image data as surveillance footage via an HTTP POST request to update the server, save the received raw image data as a TXT file to the *env_notifications* folder.
+⭐ If FireBeetle ESP32 transfers raw image data as surveillance footage via an HTTP POST request to update the server, save the received raw image data as a TXT file to the _env\_notifications_ folder.
 
 ```
 if(!empty($_FILES["captured_image"]['name'])){
@@ -484,7 +476,7 @@ if(!empty($_FILES["captured_image"]['name'])){
 }
 ```
 
-⭐ Convert the recently saved raw image data (TXT file) to a JPG file by executing a Python script via the terminal through the web application — *bmp_converter.py*. 
+⭐ Convert the recently saved raw image data (TXT file) to a JPG file by executing a Python script via the terminal through the web application — _bmp\_converter.py_.
 
 You can get more information regarding converting raw image data in the following step.
 
@@ -498,11 +490,11 @@ print($convert);
 unlink("./env_notifications/".$img_file.".txt");
 ```
 
-📁 *show_records.php*
+📁 _show\_records.php_
 
-⭐ Include the *class.php* file.
+⭐ Include the _class.php_ file.
 
-⭐ Define the *air* object of the *_main* class with its required parameters.
+⭐ Define the _air_ object of the _\_main_ class with its required parameters.
 
 ```
 include_once "assets/class.php";
@@ -550,13 +542,13 @@ $res = json_encode($result);
 echo($res);
 ```
 
-📁 *index.php*
+📁 _index.php_
 
 ⭐ Create the web application interface, including the HTML table for displaying the stored air quality information with the model detection results in the MySQL database table and image frames for the latest and selected surveillance footage.
 
-You can inspect and download the *index.php* file below.
+You can inspect and download the _index.php_ file below.
 
-📁 *index.js (jQuery and AJAX)*
+📁 _index.js (jQuery and AJAX)_
 
 ⭐ Display the selected surveillance footage (image) on the web application interface via the HTML buttons added to each data record retrieved from the MySQL database table.
 
@@ -566,7 +558,7 @@ $(".data").on("click", "button", (event) => {
 });
 ```
 
-⭐ Every 5 seconds, make an HTTP GET request to the *show_records.php* file.
+⭐ Every 5 seconds, make an HTTP GET request to the _show\_records.php_ file.
 
 ⭐ Then, decode the retrieved JSON object to obtain the HTML table rows generated from the database table rows and the latest surveillance footage file name.
 
@@ -589,17 +581,17 @@ setInterval(function(){
 }, 5000);
 ```
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_web_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_web\_1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_web_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_web\_2.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_web_3.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_web\_3.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_web_4.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_web\_4.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_web_5.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_web\_5.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_web_6.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_web\_6.png)
 
 ## Step 2.1: Converting the raw images transferred by FireBeetle ESP32 via POST requests to JPG files
 
@@ -607,9 +599,9 @@ Since the FireBeetle media board can only generate raw image data due to its bui
 
 Even though PHP can handle converting raw image data to different image file formats, converting images in PHP causes bad request issues since the web application receives raw image data from FireBeetle ESP32 via HTTP POST requests. Hence, I decided to utilize Python to create JPG files from raw image data since Python provides built-in modules for image conversion in seconds.
 
-By employing the terminal on LattePanda 3 Delta, the web application executes the *bmp_converter.py* file directly to convert images.
+By employing the terminal on LattePanda 3 Delta, the web application executes the _bmp\_converter.py_ file directly to convert images.
 
-📁 *bmp_converter.py*
+📁 _bmp\_converter.py_
 
 ⭐ Include the required modules.
 
@@ -618,18 +610,18 @@ from PIL import Image
 from glob import glob
 ```
 
-⭐ Obtain all raw images transferred by FireBeetle ESP32 and saved as TXT files under the *env_notifications* folder.
+⭐ Obtain all raw images transferred by FireBeetle ESP32 and saved as TXT files under the _env\_notifications_ folder.
 
-Since the web application requires to access the absolute paths via the terminal to execute the Python script in order to convert images, provide the *env_notifications* folder's exact location.
+Since the web application requires to access the absolute paths via the terminal to execute the Python script in order to convert images, provide the _env\_notifications_ folder's exact location.
 
 ```
 path = "C:\\Users\\kutlu\\New E\\xampp\\htdocs\\weather_station_data_center\\env_notifications"
 images = glob(path + "/*.txt")
 ```
 
-⭐ Then, convert each retrieved TXT file (raw image) to a JPG file via the *frombuffer* function.
+⭐ Then, convert each retrieved TXT file (raw image) to a JPG file via the _frombuffer_ function.
 
-⭐ Finally, save the generated JPG files to the *images* folder.
+⭐ Finally, save the generated JPG files to the _images_ folder.
 
 ```
 for img in images:
@@ -641,9 +633,9 @@ for img in images:
     #print("Converted: " + loc)
 ```
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_web_convert_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_web\_convert\_1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_4.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_4.png)
 
 ## Step 2.2: Setting and running the web application on LattePanda 3 Delta 864
 
@@ -657,15 +649,15 @@ Plausibly, LattePanda 3 Delta can run the XAMPP application. So, it is effortles
 
 :hash: First of all, install and set up [the XAMPP application](https://www.apachefriends.org/).
 
-:hash: Then, go to the *XAMPP Control Panel* and click the *MySQL Admin* button.
+:hash: Then, go to the _XAMPP Control Panel_ and click the _MySQL Admin_ button.
 
-:hash: Once the *phpMyAdmin* tool pops up, create a new database named *air_quality_aiot*.
+:hash: Once the _phpMyAdmin_ tool pops up, create a new database named _air\_quality\_aiot_.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/app_server_set_1.png)
+![](<.gitbook/assets/egg-counting-openmv/app\_server\_set\_1 (2).png>)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/database_create_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/database\_create\_1.png)
 
-:hash: After adding the database successfully, go to the *SQL* section to create a MySQL database table named *entries* with the required data fields.
+:hash: After adding the database successfully, go to the _SQL_ section to create a MySQL database table named _entries_ with the required data fields.
 
 ```
 CREATE TABLE `entries`(		
@@ -681,95 +673,93 @@ CREATE TABLE `entries`(
 );
 ```
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/database_create_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/database\_create\_2.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/database_create_3.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/database\_create\_3.png)
 
-:hash: When FireBeetle ESP32 transmits the collected air quality data with the model detection result, the web application saves the received information to the MySQL database table — *entries*.
+:hash: When FireBeetle ESP32 transmits the collected air quality data with the model detection result, the web application saves the received information to the MySQL database table — _entries_.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/database_create_4.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/database\_create\_4.png)
 
 ## Step 2.3: Tracking real-time model detection results and displaying surveillance footage captured by FireBeetle ESP32
 
 After setting the web application on LattePanda 3 Delta 864:
 
-🎈⚠️📲 The web application *(update_data.php)* saves the information transferred by FireBeetle ESP32 via an HTTP POST request with URL query parameters to the given MySQL database table.
+🎈⚠️📲 The web application _(update\_data.php)_ saves the information transferred by FireBeetle ESP32 via an HTTP POST request with URL query parameters to the given MySQL database table.
 
-*/update_data.php?no2=0.15&o3=25&temperature=25.20&humidity=65.50&wind_speed=3&model_result=Clean*
+_/update\_data.php?no2=0.15\&o3=25\&temperature=25.20\&humidity=65.50\&wind\_speed=3\&model\_result=Clean_
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_work_0.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_work\_0.png)
 
-🎈⚠️📲 When FireBeetle ESP32 transmits raw image data via the HTTP POST request, the web application converts the received raw image data to a JPG file by executing the *bmp_converter.py* file via the terminal.
+🎈⚠️📲 When FireBeetle ESP32 transmits raw image data via the HTTP POST request, the web application converts the received raw image data to a JPG file by executing the _bmp\_converter.py_ file via the terminal.
 
-*python "C:\Users\kutlu\New E\xampp\htdocs\weather_station_data_center\env_notifications\bmp_converter.py"*
+_python "C:\Users\kutlu\New E\xampp\htdocs\weather\_station\_data\_center\env\_notifications\bmp\_converter.py"_
 
-🎈⚠️📲 On the web application interface *(index.php)*, the application displays the concurrent list of data records saved in the database table as an HTML table, including HTML buttons for each data record to select the pertaining surveillance footage.
+🎈⚠️📲 On the web application interface _(index.php)_, the application displays the concurrent list of data records saved in the database table as an HTML table, including HTML buttons for each data record to select the pertaining surveillance footage.
 
 🎈⚠️📲 The web application updates its interface every 5 seconds automatically via the jQuery script to display the latest received air quality data with the model detection result and surveillance footage.
 
 🎈⚠️📲 Until the user selects a surveillance image (footage), the web application shows the default surveillance icon in the latter image frame.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_work_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_work\_1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_work_1.1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_work\_1.1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_work_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_work\_2.png)
 
 🎈⚠️📲 When the user selects a surveillance image via the assigned HTML buttons, the web application shows the selected image on the screen for further inspection.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_work_3.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_work\_3.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_work_3.1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_work\_3.1.png)
 
 🎈⚠️📲 For each air pollution level (class), the web application changes the row color in the HTML table to clarify and emphasize the model detection results:
 
+* Clean ➜ Green
+* Risky ➜ Midnight Green
+* Unhealthy ➜ Red
 
-- Clean ➜ Green
-- Risky ➜ Midnight Green
-- Unhealthy ➜ Red
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_work\_4.png)
 
+🎈⚠️📲 When the user hovers the cursor over the image frames, the web application highlights the selected frame.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_work_4.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_work\_5.png)
 
-🎈⚠️📲 When the user hovers the cursor over the image frames, the web application highlights the selected frame. 
-
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_work_5.png)
-
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web_app_work_6.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/web\_app\_work\_6.png)
 
 ## Step 3: Setting up FireBeetle ESP32 on Arduino IDE
 
 Before proceeding with the following steps, I needed to set up FireBeetle ESP32 on the Arduino IDE and install the required libraries for this project.
 
-Although DFRobot provides a specific driver package and library for FireBeetle ESP32 and its media board, I encountered some issues while running different sensor libraries in combination with the provided media board library. Therefore, I decided to utilize [the latest release of the official Arduino-ESP32 package](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html) and modify its *esp_camera* library settings to make it compatible with the FireBeetle media board.
+Although DFRobot provides a specific driver package and library for FireBeetle ESP32 and its media board, I encountered some issues while running different sensor libraries in combination with the provided media board library. Therefore, I decided to utilize [the latest release of the official Arduino-ESP32 package](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html) and modify its _esp\_camera_ library settings to make it compatible with the FireBeetle media board.
 
-:hash: To add the Arduino-ESP32 board package to the Arduino IDE, navigate to *File ➡ Preferences* and paste the URL below under *Additional Boards Manager URLs*.
+:hash: To add the Arduino-ESP32 board package to the Arduino IDE, navigate to _File ➡ Preferences_ and paste the URL below under _Additional Boards Manager URLs_.
 
-*https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json*
+_https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package\_esp32\_index.json_
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/espC3_set_1.png)
+![](.gitbook/assets/food-irradiation/espC3\_set\_1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/espC3_set_2.png)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_xiao\_wifi\_1 (1).png>)
 
-:hash: Then, to install the required core, navigate to *Tools ➡ Board ➡ Boards Manager* and search for *esp32*.
+:hash: Then, to install the required core, navigate to _Tools ➡ Board ➡ Boards Manager_ and search for _esp32_.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/espC3_set_3.png)
+![](.gitbook/assets/food-irradiation/espC3\_set\_3.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/espC3_set_4.png)
+![](<.gitbook/assets/food-irradiation/espC3\_set\_4 (1).png>)
 
-:hash: After installing the core, navigate to *Tools ➡ Board ➡ ESP32 Arduino* and select *FireBeetle-ESP32*.
+:hash: After installing the core, navigate to _Tools ➡ Board ➡ ESP32 Arduino_ and select _FireBeetle-ESP32_.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/espC3_set_5.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/espC3\_set\_5.png)
 
-:hash: Finally, download the required libraries to utilize the sensors and the  SH1106 OLED screen with Arduino Mega:
+:hash: Finally, download the required libraries to utilize the sensors and the SH1106 OLED screen with Arduino Mega:
 
-DFRobot_MultiGasSensor | [Download](https://github.com/DFRobot/DFRobot_MultiGasSensor)
+DFRobot\_MultiGasSensor | [Download](https://github.com/DFRobot/DFRobot\_MultiGasSensor)
 
-DFRobot_OzoneSensor | [Download](https://github.com/DFRobot/DFRobot_OzoneSensor/)
+DFRobot\_OzoneSensor | [Download](https://github.com/DFRobot/DFRobot\_OzoneSensor/)
 
 DHT-sensor-library | [Download](https://github.com/adafruit/DHT-sensor-library)
 
-Adafruit_SH1106 | [Download](https://github.com/wonho-maker/Adafruit_SH1106)
+Adafruit\_SH1106 | [Download](https://github.com/wonho-maker/Adafruit\_SH1106)
 
 Adafruit-GFX-Library | [Download](https://github.com/adafruit/Adafruit-GFX-Library)
 
@@ -777,9 +767,9 @@ Adafruit-GFX-Library | [Download](https://github.com/adafruit/Adafruit-GFX-Libra
 
 To display images (black and white) on the SH1106 OLED screen successfully, I needed to create monochromatic bitmaps from PNG or JPG files and convert those bitmaps to data arrays.
 
-:hash: First of all, download the [LCD Assistant](http://en.radzio.dxp.pl/bitmap_converter/).
+:hash: First of all, download the [LCD Assistant](http://en.radzio.dxp.pl/bitmap\_converter/).
 
-:hash: Then, upload a monochromatic bitmap and select *Vertical* or *Horizontal* depending on the screen type.
+:hash: Then, upload a monochromatic bitmap and select _Vertical_ or _Horizontal_ depending on the screen type.
 
 :hash: Convert the image (bitmap) and save the output (data array).
 
@@ -809,31 +799,27 @@ display.drawBitmap((128 - 40) / 2, 0, _unhealthy, 40, 40, WHITE);
 display.display();
 ```
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/con_img_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/con\_img\_1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/con_img_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/con\_img\_2.png)
 
 ## Step 4: Collecting air quality data and communicating with FireBeetle ESP32 via serial communication w/ Arduino Mega
 
 After setting up FireBeetle ESP32 and installing the required libraries, I programmed Arduino Mega to collect air quality data and transmit the collected data to FireBeetle ESP32 via serial communication. As explained in the previous steps, I encountered Arduino library incompatibilities and memory allocation issues when I connected the sensors directly to FireBeetle ESP32.
 
-
-- Nitrogen dioxide concentration (PPM)
-- Ozone concentration (PPB)
-- Temperature (°C)
-- Humidity (%)
-- Wind speed
-
+* Nitrogen dioxide concentration (PPM)
+* Ozone concentration (PPB)
+* Temperature (°C)
+* Humidity (%)
+* Wind speed
 
 Since I needed to assign air pollution levels (classes) empirically as labels for each data record while collecting air quality data to create a valid data set for my neural network model, I utilized three control buttons connected to Arduino Mega so as to choose among classes and transfer data records via serial communication. After selecting an air pollution level (class) by pressing a control button, Arduino Mega sends the selected class and the recently collected data to FireBeetle ESP32.
 
+* Control Button (A) ➡ Clean
+* Control Button (B) ➡ Risky
+* Control Button (C) ➡ Unhealthy
 
-- Control Button (A) ➡ Clean
-- Control Button (B) ➡ Risky
-- Control Button (C) ➡ Unhealthy
-
-
-You can download the *AIoT_weather_station_sensor_readings.ino* file to try and inspect the code for collecting air quality data and transferring the collected data via serial communication.
+You can download the _AIoT\_weather\_station\_sensor\_readings.ino_ file to try and inspect the code for collecting air quality data and transferring the collected data via serial communication.
 
 ⭐ Include the required libraries.
 
@@ -934,7 +920,7 @@ Serial1.begin(115200);
   delay(1000);
 ```
 
-⭐ In the *err_msg* function, show the error message on the SH1106 OLED screen.
+⭐ In the _err\_msg_ function, show the error message on the SH1106 OLED screen.
 
 ```
 void err_msg(){
@@ -1022,7 +1008,7 @@ void err_msg(){
   heating = false;
 ```
 
-⭐ In the *collect_air_quality_data* function:
+⭐ In the _collect\_air\_quality\_data_ function:
 
 ⭐ Collect the nitrogen dioxide (NO2) concentration.
 
@@ -1030,7 +1016,7 @@ void err_msg(){
 
 ⭐ Get the temperature and humidity measurements generated by the DHT22 sensor.
 
-⭐ Calculate the wind speed (level) [1 - 30] according to the output voltage generated by the anemometer kit.
+⭐ Calculate the wind speed (level) \[1 - 30] according to the output voltage generated by the anemometer kit.
 
 ⭐ Combine all collected data items to create a data record.
 
@@ -1072,7 +1058,7 @@ void collect_air_quality_data(){
 }
 ```
 
-⭐ In the *home_screen* function, display the collected air quality data on the SH1106 OLED screen.
+⭐ In the _home\_screen_ function, display the collected air quality data on the SH1106 OLED screen.
 
 ```
 void home_screen(){
@@ -1091,7 +1077,7 @@ void home_screen(){
 }
 ```
 
-⭐ In the *data_screen* function, display the given class icon on the SH1106 OLED screen and turn the RGB LED to the given class' color code.
+⭐ In the _data\_screen_ function, display the given class icon on the SH1106 OLED screen and turn the RGB LED to the given class' color code.
 
 ```
 void data_screen(int i){
@@ -1120,7 +1106,7 @@ void data_screen(int i){
   if(!digitalRead(button_C)){ Serial1.print("Save&"+data_packet+"&Unhealthy"); data_screen(2); }
 ```
 
-⭐ In the *run_screen* function, inform the user when the collected data items are transferred to FireBeetle ESP32 via serial communication.
+⭐ In the _run\_screen_ function, inform the user when the collected data items are transferred to FireBeetle ESP32 via serial communication.
 
 ```
 void run_screen(){
@@ -1145,17 +1131,17 @@ void run_screen(){
   if(millis() - data_timer > 60000){ Serial1.print("Data,"+data_packet); run_screen(); data_timer = millis(); }
 ```
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_collect_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_collect\_1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_collect_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_collect\_2.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_collect_3.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_collect\_3.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_collect_4.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_collect\_4.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_collect_5.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_collect\_5.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_collect_6.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_collect\_6.png)
 
 ## Step 4.1: Logging the transmitted air quality data in a CSV file on the SD card w/ FireBeetle ESP32
 
@@ -1163,39 +1149,37 @@ After uploading and running the code for collecting air quality data and transfe
 
 🎈⚠️📲 If the electrochemical gas sensors work accurately, the air station turns the RGB LED to blue and waits until the electrochemical gas sensors heat (warm-up) for 3 minutes.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect_1.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect\_1.jpg)
 
 🎈⚠️📲 The air station generates a data record from the recently collected air quality data and shows the collected data parameters on the SH1106 OLED screen to inform the user.
 
+* Nitrogen dioxide concentration (PPM)
+* Ozone concentration (PPB)
+* Temperature (°C)
+* Humidity (%)
+* Wind speed
 
-- Nitrogen dioxide concentration (PPM)
-- Ozone concentration (PPB)
-- Temperature (°C)
-- Humidity (%)
-- Wind speed
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect\_2.jpg)
 
-
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect_2.jpg)
-
-🎈⚠️📲 If the control button (A) is pressed, Arduino Mega adds *Clean* as the selected air pollution level to the recently generated data record, transfers the modified data record to FireBeetle ESP32 via serial communication, and turns the RGB LED to green.
+🎈⚠️📲 If the control button (A) is pressed, Arduino Mega adds _Clean_ as the selected air pollution level to the recently generated data record, transfers the modified data record to FireBeetle ESP32 via serial communication, and turns the RGB LED to green.
 
 🎈⚠️📲 Then, it shows the unique monochrome icon of the selected air pollution level (class) on the SH1106 OLED screen.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect_3.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect\_3.jpg)
 
-🎈⚠️📲 If the control button (B) is pressed, Arduino Mega adds *Risky* as the selected air pollution level to the recently generated data record, transfers the modified data record to FireBeetle ESP32 via serial communication, and turns the RGB LED to yellow.
-
-🎈⚠️📲 Then, it shows the unique monochrome icon of the selected air pollution level (class) on the SH1106 OLED screen.
-
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect_4.jpg)
-
-🎈⚠️📲 If the control button (C) is pressed, Arduino Mega adds *Unhealthy* as the selected air pollution level to the recently generated data record, transfers the modified data record to FireBeetle ESP32 via serial communication, and turns the RGB LED to red.
+🎈⚠️📲 If the control button (B) is pressed, Arduino Mega adds _Risky_ as the selected air pollution level to the recently generated data record, transfers the modified data record to FireBeetle ESP32 via serial communication, and turns the RGB LED to yellow.
 
 🎈⚠️📲 Then, it shows the unique monochrome icon of the selected air pollution level (class) on the SH1106 OLED screen.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect_5.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect\_4.jpg)
 
-🎈⚠️📲 When FireBeetle ESP32 receives a data record, it creates a new CSV file under the *samples* folder on the SD card and combines the given air pollution level and the sample number as the file name. Then, FireBeetle ESP32 appends the received air quality data items with the given header to the created CSV file.
+🎈⚠️📲 If the control button (C) is pressed, Arduino Mega adds _Unhealthy_ as the selected air pollution level to the recently generated data record, transfers the modified data record to FireBeetle ESP32 via serial communication, and turns the RGB LED to red.
+
+🎈⚠️📲 Then, it shows the unique monochrome icon of the selected air pollution level (class) on the SH1106 OLED screen.
+
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/collect\_5.jpg)
+
+🎈⚠️📲 When FireBeetle ESP32 receives a data record, it creates a new CSV file under the _samples_ folder on the SD card and combines the given air pollution level and the sample number as the file name. Then, FireBeetle ESP32 appends the received air quality data items with the given header to the created CSV file.
 
 🎈⚠️📲 Also, FireBeetle ESP32 increments the sample number of the received air pollution level (class) by 1 to generate unique CSV files (samples).
 
@@ -1207,21 +1191,21 @@ You can get more detailed information on running an inference with the neural ne
 
 🎈⚠️📲 If Arduino Mega throws an error while operating, the air station shows the error message on the SH1106 OLED screen and prints the error details on the serial monitor.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/err_1.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/err\_1.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/err_2.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/err\_2.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/serial_collect_err.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/serial\_collect\_err.png)
 
 🎈⚠️📲 Also, the air station prints notifications and sensor measurements on the serial monitor for debugging.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/serial_collect_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/serial\_collect\_1.png)
 
 After collecting air quality data for nearly 2 months and creating separate CSV files for each data record on the SD card, I elicited my data set with eminent validity and veracity.
 
 You can get more detailed information regarding assigning air pollution levels depending on the Air Quality Index (AQI) estimations provided by IQAir in Step 5.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/gif_collect.gif)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/gif\_collect.gif)
 
 ## Step 5: Building a neural network model with Edge Impulse
 
@@ -1229,26 +1213,22 @@ In this project, I needed to utilize accurate air pollution levels for each data
 
 Before collecting and storing the air quality data, I checked IQAir for the AQI estimation of my region. Then, I derived an air pollution class (level) from the AQI estimation provided by IQAir in order to assign a label empirically to my samples (data records).
 
+* Clean
+* Risky
+* Unhealthy
 
-- Clean
-- Risky
-- Unhealthy
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/air\_quality\_1.png)
 
-
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/air_quality_1.png)
-
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/air_quality_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/air\_quality\_2.png)
 
 When I completed logging the collected data and assigning labels, I started to work on my artificial neural network model (ANN) to detect ambient air pollution levels so as to inform people with prescient warnings before air pollutants engender harmful effects on the respiratory system.
 
 Since Edge Impulse supports almost every microcontroller and development board due to its model deployment options, I decided to utilize Edge Impulse to build my artificial neural network model. Also, Edge Impulse makes scaling embedded ML applications easier and faster for edge devices such as FireBeetle ESP32.
 
-As of now, Edge Impulse supports CSV files to upload samples in different data structures thanks to its *CSV Wizard*. So, Edge Impulse lets the user upload all data records in a single file even if the data type is not time series. But, I usually needed to follow the steps below to format my data set saved in a single CSV file so as to train my model accurately:
+As of now, Edge Impulse supports CSV files to upload samples in different data structures thanks to its _CSV Wizard_. So, Edge Impulse lets the user upload all data records in a single file even if the data type is not time series. But, I usually needed to follow the steps below to format my data set saved in a single CSV file so as to train my model accurately:
 
-
-- Data Scaling (Normalizing)
-- Data Preprocessing
-
+* Data Scaling (Normalizing)
+* Data Preprocessing
 
 However, as explained in the previous steps, I employed FireBeetle ESP32 to save each data record to a separate CSV file on the SD card to create appropriately formatted samples (CSV files) for Edge Impulse. Therefore, I did not need to preprocess my data set before uploading samples.
 
@@ -1258,22 +1238,20 @@ You can inspect [my neural network model on Edge Impulse](https://studio.edgeimp
 
 ## Step 5.1: Preprocessing and scaling the data set to create formatted samples for Edge Impulse
 
-As long as the CSV file includes a header defining data fields, Edge Impulse can distinguish data records as individual samples in different data structures thanks to its *CSV Wizard* while adding existing data to an Edge Impulse project. Therefore, there is no need for preprocessing single CSV file data sets even if the data type is not time series.
+As long as the CSV file includes a header defining data fields, Edge Impulse can distinguish data records as individual samples in different data structures thanks to its _CSV Wizard_ while adding existing data to an Edge Impulse project. Therefore, there is no need for preprocessing single CSV file data sets even if the data type is not time series.
 
 Since Edge Impulse can infer the uploaded sample's label from its file name, I employed FireBeetle ESP32 to create a new CSV file for each data record and name the generated files by combining the given air pollution level and the sample number incremented by 1 for each class (label) automatically.
 
-
-- Clean.training.sample_1.csv
-- Clean.training.sample_2.csv
-- Risky.training.sample_1.csv
-- Risky.training.sample_2.csv
-- Unhealthy.training.sample_1.csv
-- Unhealthy.training.sample_2.csv
-
+* Clean.training.sample\_1.csv
+* Clean.training.sample\_2.csv
+* Risky.training.sample\_1.csv
+* Risky.training.sample\_2.csv
+* Unhealthy.training.sample\_1.csv
+* Unhealthy.training.sample\_2.csv
 
 After collecting air quality data and generating separate CSV files for nearly 2 months, I obtained my appropriately formatted samples on the SD card.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/data_collect_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/data\_collect\_1.png)
 
 ## Step 5.2: Uploading formatted samples to Edge Impulse
 
@@ -1281,15 +1259,15 @@ After generating training and testing samples successfully, I uploaded them to m
 
 :hash: First of all, sign up for [Edge Impulse](https://www.edgeimpulse.com/) and create a new project.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_1.png)
 
-:hash: Navigate to the *Data acquisition* page and click the *Upload existing data* button.
+:hash: Navigate to the _Data acquisition_ page and click the _Upload existing data_ button.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_2.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_3.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_3.png)
 
-:hash: Before uploading samples, go to the *CSV Wizard* to set the rules to process all uploaded CSV files.
+:hash: Before uploading samples, go to the _CSV Wizard_ to set the rules to process all uploaded CSV files.
 
 :hash: Upload a CSV file example to check data fields and items.
 
@@ -1297,116 +1275,112 @@ After generating training and testing samples successfully, I uploaded them to m
 
 :hash: Define a column to obtain labels for each data record if it is a single CSV file data set.
 
-:hash: Then, define the columns containing data items and click the *Finish wizard* button.
+:hash: Then, define the columns containing data items and click the _Finish wizard_ button.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_4.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_4.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_5.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_5.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_6.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_6.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_7.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_7.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_8.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_8.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_9.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_9.png)
 
-:hash: After setting the rules, choose the data category (training or testing) and select *Infer from filename* under *Label* to deduce labels from CSV file names automatically.
+:hash: After setting the rules, choose the data category (training or testing) and select _Infer from filename_ under _Label_ to deduce labels from CSV file names automatically.
 
-:hash: Finally, select CSV files and click the *Begin upload* button.
+:hash: Finally, select CSV files and click the _Begin upload_ button.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_10.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_10.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_11.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_11.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_12.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_12.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_13.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_13.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_14.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_14.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_set_15.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_set\_15.png)
 
 ## Step 5.3: Training the model on air pollution levels
 
 After uploading my training and testing samples successfully, I designed an impulse and trained it on air pollution levels (classes).
 
-An impulse is a custom neural network model in Edge Impulse. I created my impulse by employing the *Raw Data* processing block and the *Classification* learning block.
+An impulse is a custom neural network model in Edge Impulse. I created my impulse by employing the _Raw Data_ processing block and the _Classification_ learning block.
 
-The *Raw Data* processing block generate windows from data samples without any specific signal processing.
+The _Raw Data_ processing block generate windows from data samples without any specific signal processing.
 
-The *Classification* learning block represents a Keras neural network model. Also, it lets the user change the model settings, architecture, and layers.
+The _Classification_ learning block represents a Keras neural network model. Also, it lets the user change the model settings, architecture, and layers.
 
-:hash: Go to the *Create impulse* page. Then, select the *Raw Data* processing block and the *Classification* learning block. Finally, click *Save Impulse*.
+:hash: Go to the _Create impulse_ page. Then, select the _Raw Data_ processing block and the _Classification_ learning block. Finally, click _Save Impulse_.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_train_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_train\_1.png)
 
-:hash: Before generating features for the neural network model, go to the *Raw data* page and click *Save parameters*.
+:hash: Before generating features for the neural network model, go to the _Raw data_ page and click _Save parameters_.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_train_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_train\_2.png)
 
-:hash: After saving parameters, click *Generate features* to apply the *Raw data* processing block to training samples.
+:hash: After saving parameters, click _Generate features_ to apply the _Raw data_ processing block to training samples.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_train_3.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_train\_3.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_train_4.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_train\_4.png)
 
-:hash: Finally, navigate to the *Classifier* page and click *Start training*.
+:hash: Finally, navigate to the _Classifier_ page and click _Start training_.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_train_5.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_train\_5.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_train_6.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_train\_6.png)
 
-According to my experiments with my neural network model, I modified  the neural network settings and layers to build a neural network model with high accuracy and validity:
+According to my experiments with my neural network model, I modified the neural network settings and layers to build a neural network model with high accuracy and validity:
 
 📌 Neural network settings:
 
-
-- Number of training cycles ➡  50  
-- Learning rate ➡ 0.005
-- Validation set size ➡ 15
-
+* Number of training cycles ➡ 50
+* Learning rate ➡ 0.005
+* Validation set size ➡ 15
 
 📌 Extra layers:
 
+* Dense layer (20 neurons)
+* Dense layer (10 neurons)
 
-- Dense layer (20 neurons)
-- Dense layer (10 neurons)
+After generating features and training my model with training samples, Edge Impulse evaluated the precision score (accuracy) as _95.7%_.
 
+The precision score (accuracy) is approximately _96%_ due to the modest volume and variety of training samples since I only collected ambient air quality data near my home. In technical terms, the model trains on limited validation samples to cover various regions. Therefore, I highly recommend retraining the model with local air quality data before running inferences in a different region.
 
-After generating features and training my model with training samples, Edge Impulse evaluated the precision score (accuracy) as *95.7%*.
-
-The precision score (accuracy) is approximately *96%* due to the modest volume and variety of training samples since I only collected ambient air quality data near my home. In technical terms, the model trains on limited validation samples to cover various regions. Therefore, I highly recommend retraining the model with local air quality data before running inferences in a different region.
-
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_train_7.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_train\_7.png)
 
 ## Step 5.4: Evaluating the model accuracy and deploying the model
 
 After building and training my neural network model, I tested its accuracy and validity by utilizing testing samples.
 
-The evaluated accuracy of the model is *97.78%*.
+The evaluated accuracy of the model is _97.78%_.
 
-:hash: To validate the trained model, go to the *Model testing* page and click *Classify all*.
+:hash: To validate the trained model, go to the _Model testing_ page and click _Classify all_.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_test_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_test\_1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_test_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_test\_2.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_test_3.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_test\_3.png)
 
 After validating my neural network model, I deployed it as a fully optimized and customizable Arduino library.
 
-:hash: To deploy the validated model as an Arduino library, navigate to the *Deployment* page and select *Arduino library*.
+:hash: To deploy the validated model as an Arduino library, navigate to the _Deployment_ page and select _Arduino library_.
 
-:hash: Then, choose the *Quantized (int8)* optimization option to get the best performance possible while running the deployed model.
+:hash: Then, choose the _Quantized (int8)_ optimization option to get the best performance possible while running the deployed model.
 
-:hash: Finally, click *Build* to download the model as an Arduino library.
+:hash: Finally, click _Build_ to download the model as an Arduino library.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_deploy_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_deploy\_1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_deploy_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_deploy\_2.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge_deploy_3.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/edge\_deploy\_3.png)
 
 ## Step 6: Setting up the Edge Impulse model on FireBeetle ESP32
 
@@ -1414,9 +1388,9 @@ After building, training, and deploying my model as an Arduino library on Edge I
 
 Since Edge Impulse optimizes and formats signal processing, configuration, and learning blocks into a single package while deploying models as Arduino libraries, I was able to import my model effortlessly to run inferences.
 
-:hash: After downloading the model as an Arduino library in the ZIP file format, go to *Sketch ➡ Include Library ➡ Add .ZIP Library...*
+:hash: After downloading the model as an Arduino library in the ZIP file format, go to _Sketch ➡ Include Library ➡ Add .ZIP Library..._
 
-:hash: Then, include the *AI-assisted_Air_Quality_Monitor_inferencing.h* file to import the Edge Impulse neural network model.
+:hash: Then, include the _AI-assisted\_Air\_Quality\_Monitor\_inferencing.h_ file to import the Edge Impulse neural network model.
 
 ```
 #include &lt;AI-assisted_Air_Quality_Monitor_inferencing.h>
@@ -1424,13 +1398,11 @@ Since Edge Impulse optimizes and formats signal processing, configuration, and l
 
 After importing my model successfully to the Arduino IDE, I programmed FireBeetle ESP32 to run inferences to detect air pollution levels and capture surveillance footage for further examination every 5 minutes. If manual testing is required, FireBeetle ESP32 can also run inference and capture surveillance footage when the built-in button on the FireBeetle media board is pressed.
 
-
-- User Button (Built-in) ➡ Run Inference
-
+* User Button (Built-in) ➡ Run Inference
 
 Also, I employed FireBeetle ESP32 to transmit the collected air quality data, the model detection result, and the captured surveillance footage (raw image data) to the web application via an HTTP POST request after running inferences successfully.
 
-You can download the *AIoT_weather_station_run_model.ino* file to try and inspect the code for running Edge Impulse neural network models and transferring data to a web application via FireBeetle ESP32.
+You can download the _AIoT\_weather\_station\_run\_model.ino_ file to try and inspect the code for running Edge Impulse neural network models and transferring data to a web application via FireBeetle ESP32.
 
 ⭐ Include the required libraries.
 
@@ -1461,11 +1433,9 @@ size_t feature_ix = 0;
 
 ⭐ Define the air pollution level (class) names:
 
-
-- Clean
-- Risky
-- Unhealthy
-
+* Clean
+* Risky
+* Unhealthy
 
 ```
 float threshold = 0.60;
@@ -1490,7 +1460,7 @@ String application = "/weather_station_data_center/update_data.php";
 WiFiClient client; /* WiFiSSLClient client; */
 ```
 
-⭐ Define the FireBeetle media board pin out to modify the official *esp_camera* library for the built-in OV7725 camera.
+⭐ Define the FireBeetle media board pin out to modify the official _esp\_camera_ library for the built-in OV7725 camera.
 
 ⭐ Define the camera (image) buffer array.
 
@@ -1579,7 +1549,7 @@ Serial2.begin(115200, SERIAL_8N1, RXD, TXD); // (BaudRate, SerialMode, RX_pin, T
 
 ⭐ Define the pixel format and the frame size settings.
 
-*FRAMESIZE_QVGA* (320x240)
+_FRAMESIZE\_QVGA_ (320x240)
 
 ```
   config.xclk_freq_hz = 20000000;
@@ -1632,7 +1602,7 @@ Serial2.begin(115200, SERIAL_8N1, RXD, TXD); // (BaudRate, SerialMode, RX_pin, T
   }
 ```
 
-⭐ In the *save_data_to_CSV* function:
+⭐ In the _save\_data\_to\_CSV_ function:
 
 ⭐ Create a new CSV file on the SD card with the given file name.
 
@@ -1649,13 +1619,13 @@ void save_data_to_CSV(const char * file_path, const char * _data, String f_name)
 }
 ```
 
-⭐ If Arduino Mega sends the *Save* command with the recently collected air quality data and the selected air pollution level:
+⭐ If Arduino Mega sends the _Save_ command with the recently collected air quality data and the selected air pollution level:
 
 ⭐ Glean information as substrings from the transferred data packet by utilizing the ampersand (&) as the delimiter.
 
 ⭐ Increment the sample number of the given level (class) by 1 to create unique samples (CSV files).
 
-⭐ Create a new CSV file under the *samples* folder on the SD card and combine the given air pollution level and the sample number as the file name. Then, append the received air quality data items with the given header to the generated CSV file.
+⭐ Create a new CSV file under the _samples_ folder on the SD card and combine the given air pollution level and the sample number as the file name. Then, append the received air quality data items with the given header to the generated CSV file.
 
 ```
   if(data_packet != ""){
@@ -1677,7 +1647,7 @@ void save_data_to_CSV(const char * file_path, const char * _data, String f_name)
     }
 ```
 
-⭐ If Arduino Mega sends the *Data* command with the recently collected air quality data items:
+⭐ If Arduino Mega sends the _Data_ command with the recently collected air quality data items:
 
 ⭐ Glean information as substrings from the transferred data packet by utilizing the comma (,) as the delimiter.
 
@@ -1707,7 +1677,7 @@ void save_data_to_CSV(const char * file_path, const char * _data, String f_name)
   }
 ```
 
-⭐ In the *run_inference_to_make_predictions* function:
+⭐ In the _run\_inference\_to\_make\_predictions_ function:
 
 ⭐ Scale (normalize) the collected data depending on the given model and copy the scaled data items to the features array (buffer).
 
@@ -1786,7 +1756,7 @@ void run_inference_to_make_predictions(int multiply){
 }
 ```
 
-⭐ In the *take_picture* function:
+⭐ In the _take\_picture_ function:
 
 ⭐ Release the image buffer to avoid FireBeetle ESP32 from throwing memory allocation errors while capturing pictures sequentially.
 
@@ -1809,17 +1779,17 @@ void take_picture(bool _abort){
 }
 ```
 
-⭐ In the *make_a_post_request* function:
+⭐ In the _make\_a\_post\_request_ function:
 
-⭐ Connect to the web application named *weather_station_data_center*.
+⭐ Connect to the web application named _weather\_station\_data\_center_.
 
-⭐ Create the *query* string and add the latest received air quality data items with the model detection result to the string as URL query (GET) parameters.
+⭐ Create the _query_ string and add the latest received air quality data items with the model detection result to the string as URL query (GET) parameters.
 
-⭐ Define the boundary parameter named *EnvNotification* so as to send the captured raw image data as a TXT file to the web application.
+⭐ Define the boundary parameter named _EnvNotification_ so as to send the captured raw image data as a TXT file to the web application.
 
 ⭐ Get the total content length.
 
-⭐ Set the *Connection* HTTP header as *Keep-Alive*.
+⭐ Set the _Connection_ HTTP header as _Keep-Alive_.
 
 ⭐ Make an HTTP POST request with the created query string to the web application in order to transfer the captured raw image data as a TXT file.
 
@@ -1866,7 +1836,7 @@ void make_a_post_request(String request){
 
 ⭐ If the Edge Impulse model predicts an air quality level (class) successfully:
 
-⭐ Create the *request* string consisting of the latest received air quality data items and the detected air pollution class.
+⭐ Create the _request_ string consisting of the latest received air quality data items and the detected air pollution class.
 
 ⭐ Capture a picture with the built-in OV7725 camera on the media board.
 
@@ -1902,43 +1872,41 @@ void make_a_post_request(String request){
   }
 ```
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_run_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_run\_1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_run_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_run\_2.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_run_3.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_run\_3.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_run_4.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_run\_4.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_run_5.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_run\_5.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_run_6.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_run\_6.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_run_7.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_run\_7.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_run_8.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_run\_8.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code_run_9.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/code\_run\_9.png)
 
 ## Step 7: Running the model on FireBeetle ESP32 to forecast air pollution levels and transferring the model results w/ surveillance footage via POST requests
 
-My Edge Impulse neural network model predicts possibilities of labels (air pollution classes) for the given features buffer as an array of 3 numbers. They represent the model's *"confidence"* that the given features buffer corresponds to each of the three different air pollution levels (classes) [0 - 2], as shown in Step 5:
+My Edge Impulse neural network model predicts possibilities of labels (air pollution classes) for the given features buffer as an array of 3 numbers. They represent the model's _"confidence"_ that the given features buffer corresponds to each of the three different air pollution levels (classes) \[0 - 2], as shown in Step 5:
 
+* 0 — Clean
+* 1 — Risky
+* 2 — Unhealthy
 
-- 0 — Clean
-- 1 — Risky
-- 2 — Unhealthy
-
-
-After executing the *AIoT_weather_station_run_model.ino* file on FireBeetle ESP32:
+After executing the _AIoT\_weather\_station\_run\_model.ino_ file on FireBeetle ESP32:
 
 🎈⚠️📲 When FireBeetle ESP32 receives the latest collected air quality data parameters from Arduino Mega via serial communication, it stores them to run an inference with accurate data items.
 
 🎈⚠️📲 After Arduino Mega sends the air quality data parameters via serial communication successfully, the air station turns the RGB LED to magenta.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/run_1.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/run\_1.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/run_2.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/run\_2.jpg)
 
 🎈⚠️📲 Every 5 minutes, the air station runs an inference with the Edge Impulse neural network model by applying the stored air quality data parameters to predict the air pollution level and captures surveillance footage with the OV7725 camera.
 
@@ -1946,23 +1914,23 @@ After executing the *AIoT_weather_station_run_model.ino* file on FireBeetle ESP3
 
 🎈⚠️📲 If manual testing is required, the air station can also perform the mentioned sequence when the built-in button on the FireBeetle media board is pressed.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/run_3.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/run\_3.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/completed_3.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/completed\_3.jpg)
 
 🎈⚠️📲 Also, the air station prints notifications and model detection results on the serial monitor for debugging.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/serial_run_1.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/serial\_run\_1.png)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/serial_run_2.png)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/serial\_run\_2.png)
 
 As far as my experiments go, the air station detects air pollution levels precisely, captures real-time surveillance footage, and communicates with the web application faultlessly :)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/finished_1.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/finished\_1.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/finished_2.jpg)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/finished\_2.jpg)
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/gif_run.gif)
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/gif\_run.gif)
 
 ## Videos and Conclusion
 
@@ -1982,15 +1950,14 @@ By applying neural network models trained on air quality data in detecting air p
 
 🎈⚠️📲 provide prescient warnings regarding a surge in photochemical oxidant reactions and transmission rates.
 
-![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/completed_2.jpg)
-
+![](.gitbook/assets/air-quality-monitoring-firebeetle-esp32/completed\_2.jpg)
 
 ## References
 
-[^1] Jarvis DJ, Adamkiewicz G, Heroux ME, et al, *Nitrogen dioxide*, WHO Guidelines for Indoor Air Quality: Selected Pollutants, Geneva: World Health Organization, 2010. 5, *https://www.ncbi.nlm.nih.gov/books/NBK138707/*
+\[^1] Jarvis DJ, Adamkiewicz G, Heroux ME, et al, _Nitrogen dioxide_, WHO Guidelines for Indoor Air Quality: Selected Pollutants, Geneva: World Health Organization, 2010. 5, _https://www.ncbi.nlm.nih.gov/books/NBK138707/_
 
-[^2] *Nitrogen Dioxide*, The American Lung Association, *https://www.lung.org/clean-air/outdoors/what-makes-air-unhealthy/nitrogen-dioxide*
+\[^2] _Nitrogen Dioxide_, The American Lung Association, _https://www.lung.org/clean-air/outdoors/what-makes-air-unhealthy/nitrogen-dioxide_
 
-[^3] *Ground-level Ozone Basics*, United States Environmental Protection Agency (EPA), *https://www.epa.gov/ground-level-ozone-pollution/ground-level-ozone-basics*
+\[^3] _Ground-level Ozone Basics_, United States Environmental Protection Agency (EPA), _https://www.epa.gov/ground-level-ozone-pollution/ground-level-ozone-basics_
 
-[^4] *Health Effects of Ozone Pollution*, United States Environmental Protection Agency (EPA), *https://www.epa.gov/ground-level-ozone-pollution/health-effects-ozone-pollution*
+\[^4] _Health Effects of Ozone Pollution_, United States Environmental Protection Agency (EPA), _https://www.epa.gov/ground-level-ozone-pollution/health-effects-ozone-pollution_

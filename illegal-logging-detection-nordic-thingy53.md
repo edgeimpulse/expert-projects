@@ -1,11 +1,12 @@
 ---
-description: Use TinyML to listen for the sound of trucks amongst forest noise, using a Nordic Thingy:53.
+description: >-
+  Use TinyML to listen for the sound of trucks amongst forest noise, using a
+  Nordic Thingy:53.
 ---
 
-# Illegal Logging Detection in the Forest - Nordic Thingy:53
+# Illegal Logging Detection - Nordic Thingy:53
 
-Created By:
-[Zalmotek](https://zalmotek.com) 
+Created By: [Zalmotek](https://zalmotek.com)
 
 Public Project Link:
 
@@ -13,12 +14,11 @@ Public Project Link:
 
 ## Introduction
 
-Illegal logging is a major environmental issue worldwide. It has been estimated that it accounts for up to [30% of the global timber trade](https://preferredbynature.org/sourcinghub/info/illegal-logging-0#:~:text=They%20estimate%20that%20between%2020,%2430%20and%20US%24100%20billion.), and is responsible for the loss of billions of dollars worth of valuable timber each year. When timber is exploited illegally, governments lose much-needed money, particularly in developing countries. In addition to this, illegal logging severely impacts biodiversity and it can lead to soil erosion, decreased water quality, and habitat loss for wildlife. Furthermore, illegal logging is frequently associated with organized crime groups and can serve as a source of funding for rebel or terrorist groups.
+Illegal logging is a major environmental issue worldwide. It has been estimated that it accounts for up to [30% of the global timber trade](https://preferredbynature.org/sourcinghub/info/illegal-logging-0), and is responsible for the loss of billions of dollars worth of valuable timber each year. When timber is exploited illegally, governments lose much-needed money, particularly in developing countries. In addition to this, illegal logging severely impacts biodiversity and it can lead to soil erosion, decreased water quality, and habitat loss for wildlife. Furthermore, illegal logging is frequently associated with organized crime groups and can serve as a source of funding for rebel or terrorist groups.
 
 Due to the vastness of forested regions, it is difficult to identify unauthorised logging activities, which frequently occur in isolated and difficult-to-reach locations and traditional approaches, such as ground patrols, are frequently ineffective.
 
 One way to combat this problem is through the use of AI algorithms that can be deployed on battery-powered devices, such as sensors near the forest on roads frequented by the trucks transporting the wood. Machine learning algorithms are well suited for this task as they can be trained to recognize the characteristic sounds made by logging trucks. When deployed on the roads near forests, these sensors can provide a real-time alert when a logging activity is detected, allowing law enforcement to quickly respond.
-
 
 ## The Challenge
 
@@ -27,8 +27,8 @@ One challenge posed by this approach is that sensors must be able to distinguish
 ### Our Solution
 
 ![](.gitbook/assets/illegal-logging-detection-nordic-thingy53/1.png)
- 
-Our approach to this problem is to create an IoT system based on the Nordic Thingy:53 platform that will run a machine learning model trained using the Edge Impulse platform that can detect the sound of timber trucks. 
+
+Our approach to this problem is to create an IoT system based on the Nordic Thingy:53 platform that will run a machine learning model trained using the Edge Impulse platform that can detect the sound of timber trucks.
 
 The Nordic Thingy:53 is a versatile, low-power device that is well suited for this application. Its two Arm Cortex-M33 processors' computing capability and memory capacity allow it to execute embedded machine learning (ML) models directly on the device. It features a microphone for audio input in addition to several other integrated sensors, such as an accelerometer, gyroscope, and magnetometer, as well as sensors for temperature, humidity, air quality, and light level. The Thingy can be powered by a rechargeable Li-Po battery with a 1350 mAh capacity that can be charged via USB-C, making it ideal for use in remote locations.
 
@@ -36,14 +36,14 @@ The Nordic Thingy:53 is a versatile, low-power device that is well suited for th
 
 ### Hardware requirements
 
-- [Nordic Thingy:53](https://www.nordicsemi.com/Products/Development-hardware/Nordic-Thingy-53)
-- USB-C cable
+* [Nordic Thingy:53](https://www.nordicsemi.com/Products/Development-hardware/Nordic-Thingy-53)
+* USB-C cable
 
 ### Software requirements
 
-- Edge Impulse account
-- Edge Impulse CLI
-- Nordic nRF Edge Impulse App
+* Edge Impulse account
+* Edge Impulse CLI
+* Nordic nRF Edge Impulse App
 
 ## Hardware Setup
 
@@ -63,19 +63,19 @@ Let's start by creating an Edge Impulse project. Select **Developer** as your pr
 
 ### Connecting the Device
 
-New Thingy:53 devices will function with the Nordic nRF Edge Impulse [iPhone](https://apps.apple.com/us/app/nrf-edge-impulse/id1557234087) and [Android](https://play.google.com/store/apps/details?id=no.nordicsemi.android.nrfei&hl=en&gl=US) apps, as well as with the Edge Impulse Studio right out of the box.
+New Thingy:53 devices will function with the Nordic nRF Edge Impulse [iPhone](https://apps.apple.com/us/app/nrf-edge-impulse/id1557234087) and [Android](https://play.google.com/store/apps/details?id=no.nordicsemi.android.nrfei\&hl=en\&gl=US) apps, as well as with the Edge Impulse Studio right out of the box.
 
-Before connecting it to the Edge Impulse project, the firmware of the Thingy:53 must be updated. Download the **nRF Programmer** mobile application and launch it. You will be prompted with a number of available samples. 
+Before connecting it to the Edge Impulse project, the firmware of the Thingy:53 must be updated. Download the **nRF Programmer** mobile application and launch it. You will be prompted with a number of available samples.
 
-![](.gitbook/assets/illegal-logging-detection-nordic-thingy53/6.jpg)
+![](.gitbook/assets/glass-break-detection-thingy53/5.jpg)
 
-Then, go to **Devices -> Connect a new device** in your Edge Impulse project, choose **Use Your Computer**, and allow access to your microphone. 
+Then, go to **Devices -> Connect a new device** in your Edge Impulse project, choose **Use Your Computer**, and allow access to your microphone.
 
 Select the **Edge Impulse** application, select the version of the sample from the drop-down menu and tap **Download**.
 
 When that is done, tap **Install**. A list with the nearby devices will appear and you must select your development board from the list. Once that is done, the upload process will begin.
 
-![](.gitbook/assets/illegal-logging-detection-nordic-thingy53/7.jpg)
+![](.gitbook/assets/glass-break-detection-thingy53/6.jpg)
 
 With the firmware updated, connect the Thingy:53 board to a computer that has the edge-impulse-cli suite installed, turn it on, launch a terminal and run:
 
@@ -97,13 +97,13 @@ Once you select the project and the connection is successful, the board will sho
 
 ### Building the Dataset
 
-We will use a publicly available [truck noise dataset](https://freesound.org/search/?q=truck+sound) and a [forest sound dataset](https://www.youtube.com/watch?v=HAw37tUHcOo&t=455s&ab_channel=MichaelGhelfiStudios), as well as the Edge Impulse platform to train and deploy a model that can distinguish between the two types of sounds. In order to upload the sound dataset to Edge Impulse, we’ll have to split it into smaller samples (in our case the samples are 3 seconds long), and you can do so using the following command line instruction:
+We will use a publicly available [truck noise dataset](https://freesound.org/search/?q=truck+sound) and a [forest sound dataset](https://www.youtube.com/watch?v=HAw37tUHcOo\&t=455s\&ab\_channel=MichaelGhelfiStudios), as well as the Edge Impulse platform to train and deploy a model that can distinguish between the two types of sounds. In order to upload the sound dataset to Edge Impulse, we’ll have to split it into smaller samples (in our case the samples are 3 seconds long), and you can do so using the following command line instruction:
 
 ```
 ffmpeg -i DaytimeForest_NatureAmbience.wav -f segment -segment_time 3 -c copy output%09d.wav
 ```
 
-Make sure to replace **DaytimeForest_NatureAmbience.wav** with the name of your file.
+Make sure to replace **DaytimeForest\_NatureAmbience.wav** with the name of your file.
 
 Now go to Data acquisition > Upload data on Edge Impulse and upload your samples, making sure to label them accordingly. Our two labels are **EngineSounds** and **Background**. The difference between the two classes should be clearly observed in the sound waveform, as seen in the following pictures:
 
@@ -118,7 +118,7 @@ Now that the data is available, it’s time to create the Impulse. The functiona
 ![](.gitbook/assets/illegal-logging-detection-nordic-thingy53/11.png)
 
 The setup is rather straightforward for this use case. We will be using a 2000ms window size, with a window increase of 200ms at an acquisition frequency of 100Hz. For the processing block we will be using an **Audio (MFE)** block and for the Learning block, we will be employing a basic **Classification (Keras)** block.
- 
+
 ### Configuring the Audio Features Block
 
 The Audio MFE (Mel-filterbank energy) processing block extracts signal time and frequency information. A mel filter bank can be used to break down an audio signal into discrete frequency bands on the mel frequency scale, simulating the nonlinear human perception of sound. It works effectively with audio data, primarily for **non-voice recognition** applications when the sounds to be categorised may be recognized by the human ear. You can read more about how this block works [here](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks/audio-mfe).
@@ -168,8 +168,8 @@ edge-impulse-run-impulse
 Another way of deploying the model on the edge is using the **Nordic nRF Edge Impulse App** for iPhone or Android:
 
 1. Download and install the app for your Android/IoS device.
-1. Launch it and log in with your edgeimpulse.com credentials.
-1. Select your Illegal Logging Detection project from the list
+2. Launch it and log in with your edgeimpulse.com credentials.
+3. Select your Illegal Logging Detection project from the list
 
 Now deploy your device in an area that you want to monitor and receive the notifications of passing trucks on your phone. In our next section we will explore mesh network capabilities and connectivity options.
 

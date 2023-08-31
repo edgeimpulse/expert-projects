@@ -1,11 +1,12 @@
 ---
-description: Build a machine learning model and deploy it to a Nordic Semi Thingy:53 to detect the sound of breaking glass.
+description: >-
+  Build a machine learning model and deploy it to a Nordic Semi Thingy:53 to
+  detect the sound of breaking glass.
 ---
 
-# Glass Window Break Detection - Nordic Thingy:53 
+# Glass Window Break Detection - Nordic Thingy:53
 
-Created By:
-[Zalmotek](https://zalmotek.com) 
+Created By: [Zalmotek](https://zalmotek.com)
 
 Public Project Link:
 
@@ -18,8 +19,7 @@ Glass/window breaking detection systems are used in office buildings for safety 
 There are many different types of glass/window breaking detection systems available on the market but they fall in two broad categories:
 
 1. Systems that use vibration and audio sensors to detect the sound of breaking glass.
-
-1. Computer vision based systems used to detect signs of damage in the windows.
+2. Computer vision based systems used to detect signs of damage in the windows.
 
 ## The challenge
 
@@ -27,9 +27,9 @@ The biggest challenge with any detection system is to minimize false positives -
 
 There are many factors that can cause a false positive with these types of systems, such as:
 
-- **Background noise**: office buildings are typically full of ambient noise (e.g. people talking, computers humming, etc.) which can make it difficult for sensors to accurately identify the sound of breaking glass.
-- **Weather**: windy conditions can also create background noise that can interfere with sensor accuracy.
-- **Sound Volume**: if the sound of breaking glass is not loud enough, it may not be picked up by sensors.
+* **Background noise**: office buildings are typically full of ambient noise (e.g. people talking, computers humming, etc.) which can make it difficult for sensors to accurately identify the sound of breaking glass.
+* **Weather**: windy conditions can also create background noise that can interfere with sensor accuracy.
+* **Sound Volume**: if the sound of breaking glass is not loud enough, it may not be picked up by sensors.
 
 ## The Solution
 
@@ -43,15 +43,15 @@ Edge Impulse has many benefits, the most useful being that you don't need extens
 
 ### Hardware Requirements
 
-- [Nordic Thingy:53](https://www.nordicsemi.com/Products/Development-hardware/Nordic-Thingy-53)
-- Android/iOS device
+* [Nordic Thingy:53](https://www.nordicsemi.com/Products/Development-hardware/Nordic-Thingy-53)
+* Android/iOS device
 
 ### Software Requirements
 
-- nRF Programmer Android/IoS App
-- Edge Impulse account
-- [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation)
-- Git
+* nRF Programmer Android/IoS App
+* Edge Impulse account
+* [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation)
+* Git
 
 ## Hardware Setup
 
@@ -75,13 +75,13 @@ New Thingy:53 devices will function with the Nordic nRF Edge Impulse iPhone and 
 
 Before connecting it to the Edge Impulse project, the firmware of the Thingy:53 must be updated. Download the **nRF Programmer** mobile application for Android or iOS and launch it. You will be prompted with a number of available samples.
 
-<img src=".gitbook/assets/glass-break-detection-thingy53/5.jpg" align="center" height="50%">
+![](.gitbook/assets/compressor-predictive-maintenance-thingy53/4.jpg)
 
 Select the **Edge Impulse** application, select the version of the sample from the drop-down menu and tap **Download**.
 
 When that is done, tap **Install**. A list with the nearby devices will appear and you must select your development board from the list. Once that is done, the upload process will begin.
 
-<img src=".gitbook/assets/glass-break-detection-thingy53/6.jpg" align="center" height="50%">
+![](<.gitbook/assets/compressor-predictive-maintenance-thingy53/5 (1).jpg>)
 
 With the firmware updated, connect the Thingy:53 board to a computer that has the edge-impulse-cli suite installed, turn it on, launch a terminal and run:
 
@@ -109,7 +109,7 @@ We have gathered over 15 minutes of glass shattering sounds from various license
 
 ![](.gitbook/assets/glass-break-detection-thingy53/8.png)
 
-We also need audio for this application that doesn't contain the sound events that we want to identify. We must add sounds that belong to the "background sounds" category to the data pool, such as honks, people talking loudly, doors closing and other various background sounds that the system might be exposed to during normal use. The name of this class should be "BACKGROUND."  When populating your dataset, keep in mind that the most crucial component of machine learning is data, and the richer and more varied your data set is, the better your model will perform.
+We also need audio for this application that doesn't contain the sound events that we want to identify. We must add sounds that belong to the "background sounds" category to the data pool, such as honks, people talking loudly, doors closing and other various background sounds that the system might be exposed to during normal use. The name of this class should be "BACKGROUND." When populating your dataset, keep in mind that the most crucial component of machine learning is data, and the richer and more varied your data set is, the better your model will perform.
 
 ## Designing the Impulse
 
@@ -171,27 +171,26 @@ Another way of deploying the model on the edge is using the **Nordic nRF Edge Im
 2. Launch it and login with your edgeimpulse.com credentials.
 3. Select your project from the list
 
-<img src=".gitbook/assets/glass-break-detection-thingy53/16.jpg" align="center" height="50%">
+![](.gitbook/assets/glass-break-detection-thingy53/16.jpg)
 
 Navigate to the Devices tab and connect to the Thingy:53
 
-<img src=".gitbook/assets/glass-break-detection-thingy53/17.jpg" align="center" height="50%">
+![](.gitbook/assets/glass-break-detection-thingy53/17.jpg)
 
 Navigate to the **Data** tab and press **connect**. You will see the status on the button changing from Connect to Disconnect.
 
-<img src=".gitbook/assets/glass-break-detection-thingy53/18.jpg" align="center" height="50%">
+![](.gitbook/assets/glass-break-detection-thingy53/18.jpg)
 
 Navigate to the **deployment** tab and press **deploy**.
 
-<img src=".gitbook/assets/glass-break-detection-thingy53/19.jpg" align="center" height="50%">
+![](.gitbook/assets/glass-break-detection-thingy53/19.jpg)
 
 In the **inferencing** tab, you will see the results of the Edge Impulse model you have flashed on the device:
 
-<img src=".gitbook/assets/glass-break-detection-thingy53/20.jpg" align="center" height="50%">
+![](.gitbook/assets/glass-break-detection-thingy53/20.jpg)
 
 ## Conclusion
 
 In this article, we have described how to create a glass/window breaking detection system using the Nordic Thingy:53™ development board and Edge Impulse Machine Learning platform. This system can be used in office buildings or other commercial settings to help improve safety and security. We believe that this approach has several advantages over existing solutions, including its low cost, ease of use, and accuracy. With further development, this system could be expanded to include other types of sensors (e.g. cameras) to improve detection accuracy or be used in other applications such as door/window opening detection or intruder detection.
 
 ![](.gitbook/assets/glass-break-detection-thingy53/21.jpeg)
-

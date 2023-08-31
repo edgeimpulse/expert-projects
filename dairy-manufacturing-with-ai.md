@@ -1,30 +1,30 @@
 ---
-description: Using a XIAO ESP32C3 to monitor temperature, humidity, and pressure to help aid in dairy manufacturing processes.
+description: >-
+  Using a XIAO ESP32C3 to monitor temperature, humidity, and pressure to help
+  aid in dairy manufacturing processes.
 ---
 
 # AI-Assisted Monitoring of Dairy Manufacturing Conditions
 
-Created By:
-Kutluhan Aktar
+Created By: Kutluhan Aktar
 
-Public Project Link:
-[https://studio.edgeimpulse.com/public/159184/latest](https://studio.edgeimpulse.com/public/159184/latest)
+Public Project Link: [https://studio.edgeimpulse.com/public/159184/latest](https://studio.edgeimpulse.com/public/159184/latest)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_8.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_8.jpg)
 
 ## Description
 
-As many of us know, yogurt is produced by bacterial fermentation of milk, which can be of cow, goat, ewe, sheep, etc. The fermentation process thickens the milk and provides a characteristic tangy flavor to yogurt. Considering organisms contained in yogurt stimulate the gut's friendly bacteria and suppress harmful bacteria looming in the digestive system, it is not surprising that yogurt is consumed worldwide as a healthy and nutritious food[^1].
+As many of us know, yogurt is produced by bacterial fermentation of milk, which can be of cow, goat, ewe, sheep, etc. The fermentation process thickens the milk and provides a characteristic tangy flavor to yogurt. Considering organisms contained in yogurt stimulate the gut's friendly bacteria and suppress harmful bacteria looming in the digestive system, it is not surprising that yogurt is consumed worldwide as a healthy and nutritious food\[^1].
 
-The bacteria utilized to produce yogurt are known as yogurt cultures (or starters). Fermentation of sugars in the milk by yogurt cultures yields lactic acid, which decomposes and coagulates proteins in the milk to give yogurt its texture and characteristic tangy flavor. Also, this process improves the digestibility of proteins in the milk and enhances the nutritional value of proteins. After the fermentation of the milk, yogurt culture could help the human intestinal tract to absorb the amino acids more efficiently[^2].
+The bacteria utilized to produce yogurt are known as yogurt cultures (or starters). Fermentation of sugars in the milk by yogurt cultures yields lactic acid, which decomposes and coagulates proteins in the milk to give yogurt its texture and characteristic tangy flavor. Also, this process improves the digestibility of proteins in the milk and enhances the nutritional value of proteins. After the fermentation of the milk, yogurt culture could help the human intestinal tract to absorb the amino acids more efficiently\[^2].
 
 Even though yogurt production and manufacturing look like a simple task, achieving precise yogurt texture (consistency) can be arduous and strenuous since various factors affect the fermentation process while processing yogurt, such as:
 
-- Temperature
-- Humidity
-- Pressure
-- Milk Temperature
-- Yogurt Culture (Starter) Amount (Weight)
+* Temperature
+* Humidity
+* Pressure
+* Milk Temperature
+* Yogurt Culture (Starter) Amount (Weight)
 
 In this regard, most companies employ food (chemical) additives while mass-producing yogurt to maintain its freshness, taste, texture, and appearance. Depending on the production method, yogurt additives can include dilutents, water, artificial flavorings, rehashed starch, sugar, and gelatine.
 
@@ -40,9 +40,9 @@ Since the expansion board supports reading and writing information from/to files
 
 After completing my data set, I built my artificial neural network model (ANN) with Edge Impulse to make predictions on yogurt consistency levels (classes). Since Edge Impulse is nearly compatible with all microcontrollers and development boards, I had not encountered any issues while uploading and running my model on XIAO ESP32C3. As labels, I utilized the empirically assigned yogurt texture classes for each data record while collecting yogurt processing data:
 
-- Thinner
-- Optimum
-- Curdling (Lumpy)
+* Thinner
+* Optimum
+* Curdling (Lumpy)
 
 After training and testing my neural network model, I deployed and uploaded the model on XIAO ESP32C3. Therefore, the device is capable of detecting precise yogurt consistency levels (classes) by running the model independently.
 
@@ -68,21 +68,21 @@ In the following steps, you can find more detailed information on coding, loggin
 
 🎁🎨 Also, huge thanks to [Creality](https://store.creality.com/) for sending me a [Creality Sonic Pad](https://www.creality.com/products/creality-sonic-pad), a [Creality Sermoon V1 3D Printer](https://www.creality.com/products/creality-sermoon-v1-v1-pro-3d-printer), and a [Creality CR-200B 3D Printer](https://www.creality.com/products/cr-200b-3d-printer).
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/home_3.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/home\_3.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_8.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_8.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_3.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_3.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_5.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_5.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/gif_collect.gif)
+![](.gitbook/assets/dairy-manufacturing-with-ai/gif\_collect.gif)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/run_model_3.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/run\_model\_3.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/gif_run.gif)
+![](.gitbook/assets/dairy-manufacturing-with-ai/gif\_run.gif)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_run_6.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_run\_6.png)
 
 ## Step 1: Designing and printing a dairy-themed case
 
@@ -92,39 +92,38 @@ Since I needed to adjust the rubber tube length of the integrated pressure senso
 
 I designed the main case and its sliding front cover in Autodesk Fusion 360. You can download their STL files below.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/model_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/model\_1.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/model_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/model\_2.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/model_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/model\_3.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/model_4.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/model\_4.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/model_5.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/model\_5.png)
 
 For the cow figure (replica) affixed to the top of the cylinder part of the main case, I utilized this model from Thingiverse:
 
-
-- [Cow](https://www.thingiverse.com/thing:2619138)
+* [Cow](https://www.thingiverse.com/thing:2619138)
 
 Then, I sliced all 3D models (STL files) in Ultimaker Cura.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/model_6.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/model\_6.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/model_7.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/model\_7.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/model_8.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/model\_8.png)
 
 Since I wanted to create a solid structure for the main case with the sliding front cover representing dairy products, I utilized these PLA filaments:
 
-- Beige
-- ePLA-Matte Milky White
+* Beige
+* ePLA-Matte Milky White
 
 Finally, I printed all parts (models) with my Creality Sermoon V1 3D Printer and Creality CR-200B 3D Printer in combination with the Creality Sonic Pad. You can find more detailed information regarding the Sonic Pad in Step 1.1.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/model_finished_1.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/model\_finished\_1.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/model_finished_2.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/model\_finished\_2.jpg)
 
 If you are a maker or hobbyist planning to print your 3D models to create more complex and detailed projects, I highly recommend the Sermoon V1. Since the Sermoon V1 is fully-enclosed, you can print high-resolution 3D models with PLA and ABS filaments. Also, it has a smart filament runout sensor and the resume printing option for power failures.
 
@@ -132,39 +131,39 @@ Furthermore, the Sermoon V1 provides a flexible metal magnetic suction platform 
 
 :hash: Before the first use, remove unnecessary cable ties and apply grease to the rails.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sermoon_1.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_1 (2).jpg>)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sermoon_2.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_2 (1).jpg>)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sermoon_3.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_3 (2).jpg>)
 
 :hash: Test the nozzle and hot bed temperatures.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sermoon_4.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_4 (1).jpg>)
 
-:hash: Go to *Print Setup ➡ Auto leveling* and adjust five predefined points automatically with the assisted leveling function.
+:hash: Go to _Print Setup ➡ Auto leveling_ and adjust five predefined points automatically with the assisted leveling function.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sermoon_5.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_5 (1).jpg>)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sermoon_6.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_6.jpg)
 
 :hash: Finally, place the filament into the integrated spool holder and feed the extruder with the filament.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sermoon_7.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_7 (2).jpg>)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sermoon_8.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_8 (1).jpg>)
 
-:hash: Since the Sermoon V1 is not officially supported by Cura, download the latest [Creality Slicer](https://www.creality.com/pages/download-sermoon-v1v1-pro) version and copy the official printer settings provided by Creality, including *Start G-code* and *End G-code*, to a custom printer profile on Cura.
+:hash: Since the Sermoon V1 is not officially supported by Cura, download the latest [Creality Slicer](https://www.creality.com/pages/download-sermoon-v1v1-pro) version and copy the official printer settings provided by Creality, including _Start G-code_ and _End G-code_, to a custom printer profile on Cura.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/sermoon_slicer_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_slicer\_1.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/sermoon_slicer_2.png)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_slicer\_2 (2).png>)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/sermoon_slicer_3.png)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_slicer\_3 (2).png>)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/sermoon_cura_1.png)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_cura\_1 (1).png>)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/sermoon_cura_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_cura\_2.png)
 
 ## Step 1.1: Improving print quality and speed with the Creality Sonic Pad
 
@@ -172,35 +171,35 @@ Since I wanted to improve my print quality and speed with Klipper, I decided to 
 
 Creality Sonic Pad is a beginner-friendly device to control almost any FDM 3D printer on the market with the Klipper firmware. Since the Sonic Pad uses precision-oriented algorithms, it provides remarkable results with higher printing speeds. The built-in input shaper function mitigates oscillation during high-speed printing and smooths ringing to maintain high model quality. Also, it supports G-code model preview.
 
-Although the Sonic Pad is pre-configured for some Creality printers, it does not support the CR-200B officially yet. Therefore, I needed to add the CR-200B as a user-defined printer to the Sonic Pad. Since the Sonic Pad needs unsupported printers to be flashed with the self-compiled Klipper firmware before connection, I flashed my CR-200B with the required Klipper firmware settings via *FluiddPI* by following [this YouTube tutorial](https://www.youtube.com/watch?v=gfZ9Lbyh8qU).
+Although the Sonic Pad is pre-configured for some Creality printers, it does not support the CR-200B officially yet. Therefore, I needed to add the CR-200B as a user-defined printer to the Sonic Pad. Since the Sonic Pad needs unsupported printers to be flashed with the self-compiled Klipper firmware before connection, I flashed my CR-200B with the required Klipper firmware settings via _FluiddPI_ by following [this YouTube tutorial](https://www.youtube.com/watch?v=gfZ9Lbyh8qU).
 
 If you do not know how to write a printer configuration file for Klipper, you can download the stock CR-200B configuration file from [here](https://github.com/ChewyJetpack/CR-200B-Klipper-Config/).
 
-:hash: After flashing the CR-200B with the Klipper firmware, copy the configuration file *(printer.cfg)* to a USB drive and connect the drive to the Sonic Pad.
+:hash: After flashing the CR-200B with the Klipper firmware, copy the configuration file _(printer.cfg)_ to a USB drive and connect the drive to the Sonic Pad.
 
-:hash: After setting up the Sonic Pad, select *Other models*. Then, load the *printer.cfg* file.
+:hash: After setting up the Sonic Pad, select _Other models_. Then, load the _printer.cfg_ file.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sonic_pad_2.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_2 (2).jpg>)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sonic_pad_4.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_4 (2).jpg>)
 
 :hash: After connecting the Sonic Pad to the CR-200B successfully via a USB cable, the Sonic Pad starts the self-testing procedure, which allows the user to test printer functions and level the bed.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sonic_pad_5.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_5.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sonic_pad_6.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_6 (2).jpg>)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sonic_pad_7.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_7 (2).jpg>)
 
 :hash: After completing setting up the printer, the Sonic Pad lets the user control all functions provided by the Klipper firmware.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sonic_pad_8.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_8.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_sonic_pad_9.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_9 (1).jpg>)
 
-:hash: In Cura, export the sliced model in the *ufp* format. After uploading *.ufp* files to the Sonic Pad via the USB drive, it converts them to sliced G-code files automatically.
+:hash: In Cura, export the sliced model in the _ufp_ format. After uploading _.ufp_ files to the Sonic Pad via the USB drive, it converts them to sliced G-code files automatically.
 
-:hash: Also, the Sonic Pad can display model preview pictures generated by Cura with the *Create Thumbnail* script.
+:hash: Also, the Sonic Pad can display model preview pictures generated by Cura with the _Create Thumbnail_ script.
 
 ## Step 1.2: Assembling the case and making connections & adjustments
 
@@ -231,15 +230,15 @@ If you do not know how to write a printer configuration file for Klipper, you ca
 
 First of all, I attached XIAO ESP32C3 to [the XIAO expansion board](https://wiki.seeedstudio.com/Seeeduino-XIAO-Expansion-Board/). Then, I connected [the temperature & humidity sensor (Grove)](https://wiki.seeedstudio.com/Grove-SHT4x/) and [the integrated pressure sensor kit (Grove)](https://wiki.seeedstudio.com/Grove-Integrated-Pressure-Sensor-Kit/) to the expansion board via Grove connection cables.
 
-Since [the I2C weight sensor kit (Gravity)](https://wiki.dfrobot.com/HX711_Weight_Sensor_Kit_SKU_KIT0176) does not include a compatible connection cable for a Grove port, I connected the weight sensor to the expansion board via a 4-pin male jumper to Grove 4-pin conversion cable.
+Since [the I2C weight sensor kit (Gravity)](https://wiki.dfrobot.com/HX711\_Weight\_Sensor\_Kit\_SKU\_KIT0176) does not include a compatible connection cable for a Grove port, I connected the weight sensor to the expansion board via a 4-pin male jumper to Grove 4-pin conversion cable.
 
 As shown in the schematic below, before connecting the DS18B20 waterproof temperature sensor to the expansion board, I attached a 4.7K resistor as a pull-up from the DATA line to the VCC line of the sensor to generate accurate temperature measurements.
 
 To display the collected data, I utilized the built-in SSD1306 OLED screen on the expansion board. To assign yogurt consistency levels empirically while saving data records to a CSV file on the SD card, I used the built-in MicroSD card module and button on the expansion board.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/breadboard_1.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/breadboard\_1.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/breadboard_2.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/breadboard\_2.jpg)
 
 After printing all parts (models), I fastened all components except the expansion board to their corresponding slots on the main case via a hot glue gun.
 
@@ -247,29 +246,29 @@ I attached the expansion board to the main case by utilizing M3 screws with hex 
 
 Then, I placed the sliding front cover via the dents on the main case.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/assembly_1.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/assembly\_1.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/assembly_2.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/assembly\_2.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/assembly_3.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/assembly\_3.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/assembly_4.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/assembly\_4.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/assembly_5.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/assembly\_5.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/assembly_6.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/assembly\_6.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/assembly_7.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/assembly\_7.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/assembly_8.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/assembly\_8.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/assembly_9.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/assembly\_9.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/assembly_10.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/assembly\_10.jpg)
 
 Finally, I affixed the small cow figure to the top of the cylinder part of the main case via the hot glue gun.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/assembly_11.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/assembly\_11.jpg)
 
 ![](.gitbook/assets/dairy-manufacturing-with-ai/finished.jpg)
 
@@ -281,82 +280,81 @@ Since I focused on building an accessible device, I decided to create a compleme
 
 :hash: First of all, create an account on [Blynk](https://blynk.cloud/dashboard/login) and open Blynk.Console.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_1.png)
 
-:hash: Before designing the web application on Blynk.Console, install [the Blynk library](https://github.com/blynkkk/blynk-library/releases/tag/v1.1.0) on the Arduino IDE to send and receive data packets via the Blynk cloud: Go to *Sketch ➡ Include Library ➡ Manage Libraries…* and search for *Blynk*.
+:hash: Before designing the web application on Blynk.Console, install [the Blynk library](https://github.com/blynkkk/blynk-library/releases/tag/v1.1.0) on the Arduino IDE to send and receive data packets via the Blynk cloud: Go to _Sketch ➡ Include Library ➡ Manage Libraries…_ and search for _Blynk_.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_1.1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_1.1.png)
 
-:hash: Then, create a new device with the *Quickstart Template*, named XIAO ESP32C3. And, select the board type as *ESP32*.
+:hash: Then, create a new device with the _Quickstart Template_, named XIAO ESP32C3. And, select the board type as _ESP32_.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_2.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_3.png)
 
-:hash: After creating the device successfully, copy the *Template ID*, *Device Name*, and *Auth Token* variables required by the Blynk library.
+:hash: After creating the device successfully, copy the _Template ID_, _Device Name_, and _Auth Token_ variables required by the Blynk library.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_4.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_4.png)
 
-:hash: Open the *Web Dashboard* and click the *Edit* button to change the web application design.
+:hash: Open the _Web Dashboard_ and click the _Edit_ button to change the web application design.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_5.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_5.png)
 
-:hash: From the *Widget Box*, add the required widgets and assign each widget to a virtual pin as the datastream option.
+:hash: From the _Widget Box_, add the required widgets and assign each widget to a virtual pin as the datastream option.
 
 Since Blynk allows the user to adjust the unit, data range, and color scheme for each widget, I was able to create a unique web user interface for the device.
 
+* Temperature Gauge ➡ V4
+* Humidity Gauge ➡ V12
+* Pressure Gauge ➡ V6
+* Milk Temperature Gauge ➡ V7
+* Weight Gauge ➡ V8
+* Switch Button ➡ V9
+* Label ➡ V10
 
-- Temperature Gauge ➡ V4
-- Humidity Gauge ➡ V12
-- Pressure Gauge ➡ V6
-- Milk Temperature Gauge ➡ V7
-- Weight Gauge ➡ V8
-- Switch Button ➡  V9
-- Label ➡ V10
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_6.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_6.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_7.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_7.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_8.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_8.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_9.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_9.png)
-
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_10.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_10.png)
 
 After completing designing the web user interface, I tested the virtual pin connection of each widget with XIAO ESP32C3.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_11.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_11.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_set_12.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_set\_12.png)
 
 ## Step 3: Setting up XIAO ESP32C3 on the Arduino IDE
 
 Since the XIAO expansion board supports reading and writing information from/to files on an SD card, I decided to log the collected yogurt processing data in a CSV file on the SD card without applying any additional procedures. Also, I employed XIAO ESP32C3 to communicate with the Blynk application to run the neural network model remotely and transmit the collected data.
 
-However, before proceeding with the following steps, I needed to set up [XIAO ESP32C3](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/) on the Arduino IDE and install the required libraries for this project.
+However, before proceeding with the following steps, I needed to set up [XIAO ESP32C3](https://wiki.seeedstudio.com/XIAO\_ESP32C3\_Getting\_Started/) on the Arduino IDE and install the required libraries for this project.
 
-:hash: To add the XIAO ESP32C3 board package to the Arduino IDE, navigate to *File ➡ Preferences* and paste the URL below under *Additional Boards Manager URLs*.
+:hash: To add the XIAO ESP32C3 board package to the Arduino IDE, navigate to _File ➡ Preferences_ and paste the URL below under _Additional Boards Manager URLs_.
 
-*https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json*
+_https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package\_esp32\_dev\_index.json_
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_xiao_wifi_1.png)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_xiao\_wifi\_1 (2).png>)
 
-:hash: Then, to install the required core, navigate to *Tools ➡ Board ➡ Boards Manager* and search for *esp32*.
+:hash: Then, to install the required core, navigate to _Tools ➡ Board ➡ Boards Manager_ and search for _esp32_.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_xiao_wifi_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_xiao\_wifi\_2.png)
 
-:hash: After installing the core, navigate to *Tools ➡ Board ➡ ESP32 Arduino* and select *XIAO_ESP32C3*.
+:hash: After installing the core, navigate to _Tools ➡ Board ➡ ESP32 Arduino_ and select _XIAO\_ESP32C3_.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/set_xiao_wifi_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_xiao\_wifi\_3.png)
 
 Since the provided XIAO ESP32C3 core's assigned pin numbers are not compatible with the expansion board's MicroSD card module, it throws an error on the Arduino IDE while attempting to access the SD card.
 
-Therefore, I needed to change the assigned SS pin to 4 (GPIO4) in the *pins_arduino.h* file.
+Therefore, I needed to change the assigned SS pin to 4 (GPIO4) in the _pins\_arduino.h_ file.
 
-:hash: The *pins_arduino.h* file location: *\esp32\hardware\esp32\2.0.5\variants\XIAO_ESP32C3*.
+:hash: The _pins\_arduino.h_ file location: _\esp32\hardware\esp32\2.0.5\variants\XIAO\_ESP32C3_.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/update_SS_pin.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/update\_SS\_pin.png)
 
 :hash: Finally, download the required libraries for the temperature & humidity sensor, the I2C weight sensor, the DS18B20 temperature sensor, and the SSD1306 OLED display:
 
@@ -364,13 +362,13 @@ Sensirion arduino-core | [Download](https://github.com/Sensirion/arduino-core)
 
 arduino-i2c-sht4x | [Download](https://github.com/Sensirion/arduino-i2c-sht4x)
 
-DFRobot_HX711_I2C  | [Download](https://github.com/DFRobot/DFRobot_HX711_I2C)
+DFRobot\_HX711\_I2C | [Download](https://github.com/DFRobot/DFRobot\_HX711\_I2C)
 
 OneWire | [Download](https://github.com/PaulStoffregen/OneWire)
 
 DallasTemperature | [Download](https://github.com/milesburton/Arduino-Temperature-Control-Library)
 
-Adafruit_SSD1306 | [Download](https://github.com/adafruit/Adafruit_SSD1306)
+Adafruit\_SSD1306 | [Download](https://github.com/adafruit/Adafruit\_SSD1306)
 
 Adafruit-GFX-Library | [Download](https://github.com/adafruit/Adafruit-GFX-Library)
 
@@ -378,9 +376,9 @@ Adafruit-GFX-Library | [Download](https://github.com/adafruit/Adafruit-GFX-Libra
 
 To display images (black and white) on the SSD1306 OLED screen successfully, I needed to create monochromatic bitmaps from PNG or JPG files and convert those bitmaps to data arrays.
 
-:hash: First of all, download the [LCD Assistant](http://en.radzio.dxp.pl/bitmap_converter/).
+:hash: First of all, download the [LCD Assistant](http://en.radzio.dxp.pl/bitmap\_converter/).
 
-:hash: Then, upload a monochromatic bitmap and select *Vertical* or *Horizontal* depending on the screen type.
+:hash: Then, upload a monochromatic bitmap and select _Vertical_ or _Horizontal_ depending on the screen type.
 
 :hash: Convert the image (bitmap) and save the output (data array).
 
@@ -408,28 +406,26 @@ display.drawBitmap(48, 0, sd, 32, 44, SSD1306_WHITE);
 display.display();  
 ```
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/img_cv_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/img\_cv\_1.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/img_cv_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/img\_cv\_2.png)
 
 ## Step 4: Logging yogurt processing information in a CSV file on the SD card w/ XIAO ESP32C3
 
 After setting up XIAO ESP32C3 and installing the required libraries, I programmed XIAO ESP32C3 to collect environmental factor measurements and the culture (starter) amount in order to save them to the given CSV file on the SD card.
 
-
-- Temperature (°C)
-- Humidity (%)
-- Pressure (kPa)
-- Milk Temperature (°C)
-- Starter Weight  (g)
+* Temperature (°C)
+* Humidity (%)
+* Pressure (kPa)
+* Milk Temperature (°C)
+* Starter Weight (g)
 
 Since I needed to assign yogurt consistency levels (classes) empirically as labels for each data record while collecting yogurt processing data to create a valid data set for the neural network model, I utilized the built-in button on the XIAO expansion board in two different modes (long press and short press) so as to choose among classes and save data records. After selecting a yogurt consistency level (class) by short-pressing the button, XIAO ESP32C3 appends the selected class and the recently collected data to the given CSV file on the SD card as a new row if the button is long-pressed.
 
+* Button (short-pressed) ➡ Select a class (Thinner, Optimum, Curdling)
+* Button (long-pressed) ➡ Save data to the SD card
 
-- Button (short-pressed) ➡ Select a class (Thinner,  Optimum, Curdling)
-- Button (long-pressed) ➡ Save data to the SD card
-
-You can download the *AI_yogurt_processing_data_collect.ino* file to try and inspect the code for collecting yogurt processing data and for saving data records to the given CSV file on the SD card.
+You can download the _AI\_yogurt\_processing\_data\_collect.ino_ file to try and inspect the code for collecting yogurt processing data and for saving data records to the given CSV file on the SD card.
 
 ⭐ Include the required libraries.
 
@@ -445,7 +441,7 @@ You can download the *AI_yogurt_processing_data_collect.ino* file to try and ins
 #include &lt;DallasTemperature.h>
 ```
 
-⭐ Initialize the *File* class and define the CSV file name on the SD card.
+⭐ Initialize the _File_ class and define the CSV file name on the SD card.
 
 ```
 File myFile;
@@ -512,7 +508,7 @@ int button_state = 0;
   error = sht4x.serialNumber(serialNumber);
 ```
 
-⭐ In the *err_msg* function, display the error message on the SSD1306 OLED screen.
+⭐ In the _err\_msg_ function, display the error message on the SSD1306 OLED screen.
 
 ```
 void err_msg(){
@@ -576,7 +572,7 @@ void err_msg(){
   Serial.println("SD card is detected successfully!\n");
 ```
 
-⭐ In the *get_temperature_and_humidity* function, obtain the measurements generated by the temperature & humidity sensor.
+⭐ In the _get\_temperature\_and\_humidity_ function, obtain the measurements generated by the temperature & humidity sensor.
 
 ```
 void get_temperature_and_humidity(){
@@ -594,7 +590,7 @@ void get_temperature_and_humidity(){
 }
 ```
 
-⭐ In the *get_pressure* function, get the measurements generated by the integrated pressure sensor (Grove).
+⭐ In the _get\_pressure_ function, get the measurements generated by the integrated pressure sensor (Grove).
 
 ⭐ Then, convert the accumulation of raw data to accurate pressure estimation.
 
@@ -609,7 +605,7 @@ void get_pressure(){
 }
 ```
 
-⭐ In the *get_weight* function, obtain the weight measurement generated by the I2C weight sensor. 
+⭐ In the _get\_weight_ function, obtain the weight measurement generated by the I2C weight sensor.
 
 ⭐ Then, subtract the container weight from the total weight to get the net weight.
 
@@ -623,7 +619,7 @@ void get_weight(int calibration){
 }
 ```
 
-⭐ In the *get_milk_temperature* function, obtain the temperature measurement generated by the DS18B20 temperature sensor.
+⭐ In the _get\_milk\_temperature_ function, obtain the temperature measurement generated by the DS18B20 temperature sensor.
 
 ```
 void get_milk_temperature(){
@@ -634,7 +630,7 @@ void get_milk_temperature(){
 }
 ```
 
-⭐ In the *home_screen* function, display the collected data and the selected class on the SSD1306 OLED screen.
+⭐ In the _home\_screen_ function, display the collected data and the selected class on the SSD1306 OLED screen.
 
 ```
 void home_screen(){
@@ -654,15 +650,15 @@ void home_screen(){
 }
 ```
 
-⭐ In the *save_data_to_SD_Card* function:
+⭐ In the _save\_data\_to\_SD\_Card_ function:
 
-⭐ Open the given CSV file on the SD card in the *APPEND* file mode.
+⭐ Open the given CSV file on the SD card in the _APPEND_ file mode.
 
 ⭐ If the given CSV file is opened successfully, create a data record from the recently collected data, including the selected yogurt consistency level (class), to be inserted as a new row.
 
 ⭐ Then, append the recently created data record and close the CSV file.
 
-⭐ After appending the given data record successfully, notify the user by displaying this message on the SSD1306 OLED screen: *Data saved to the SD card!*
+⭐ After appending the given data record successfully, notify the user by displaying this message on the SSD1306 OLED screen: _Data saved to the SD card!_
 
 ```
 void save_data_to_SD_Card(fs::FS &fs, int consistency_level){
@@ -714,7 +710,7 @@ void save_data_to_SD_Card(fs::FS &fs, int consistency_level){
   }
 ```
 
-⭐ If the button is short-pressed, change the class number [0 - 2] to choose among yogurt consistency levels (classes).
+⭐ If the button is short-pressed, change the class number \[0 - 2] to choose among yogurt consistency levels (classes).
 
 ⭐ If the button is long-pressed, append the recently created data record to the given CSV file on the SD card.
 
@@ -730,82 +726,80 @@ void save_data_to_SD_Card(fs::FS &fs, int consistency_level){
   }
 ```
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_collect_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_collect\_1.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_collect_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_collect\_2.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_collect_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_collect\_3.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_collect_4.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_collect\_4.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_collect_5.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_collect\_5.png)
 
-## Step 4.1: Collecting samples while producing yogurt to create a data set 
+## Step 4.1: Collecting samples while producing yogurt to create a data set
 
 After uploading and running the code for collecting yogurt processing data and for saving information to the given CSV file on the SD card on XIAO ESP32C3:
 
 🐄🥛📲 The device shows the opening screen if the sensor and MicroSD card module connections with XIAO ESP32C3 are successful.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_1.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_1.jpg)
 
 🐄🥛📲 Then, the device displays the collected yogurt processing data and the selected class number on the SSD1306 OLED screen:
 
+* Temperature (°C)
+* Humidity (%)
+* Pressure (kPa)
+* Milk Temperature (°C)
+* Starter Weight (g)
+* Selected Class
 
-- Temperature (°C)
-- Humidity (%)
-- Pressure (kPa)
-- Milk Temperature (°C)
-- Starter Weight  (g)
-- Selected Class
-
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_2.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_2.jpg)
 
 🐄🥛📲 If the button (built-in) is short-pressed, the device increments the selected class number in the range of 0-2:
 
+* Thinner \[0]
+* Optimum \[1]
+* Curdling \[2]
 
-- Thinner [0]
-- Optimum [1]
-- Curdling [2]
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_3.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_3.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_4.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_4.jpg)
-
-🐄🥛📲 If the button (built-in) is long-pressed, the device appends the recently created data record from the collected data to the *yogurt_data.csv* file on the SD card, including the selected yogurt consistency class number under the *consistency_level* data field.
+🐄🥛📲 If the button (built-in) is long-pressed, the device appends the recently created data record from the collected data to the _yogurt\_data.csv_ file on the SD card, including the selected yogurt consistency class number under the _consistency\_level_ data field.
 
 🐄🥛📲 After successfully appending the data record, the device notifies the user via the SSD1306 OLED screen.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_5.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_5.jpg)
 
 🐄🥛📲 If XIAO ESP32C3 throws an error while operating, the device shows the error message on the SSD1306 OLED screen and prints the error details on the serial monitor.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_error.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_error.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/serial_error.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/serial\_error.png)
 
 🐄🥛📲 Also, the device prints notifications and sensor measurements on the serial monitor for debugging.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/serial_collect_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/serial\_collect\_1.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/serial_collect_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/serial\_collect\_2.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/serial_collect_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/serial\_collect\_3.png)
 
 To create a data set with eminent validity and veracity, I collected yogurt processing data from nearly 30 different batches. Since I focused on predicting yogurt texture precisely, I always used cow milk in my experiments but changed milk temperature, yogurt culture (starter) amount, and environmental factors while conducting my experiments.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_6.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_6.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_7.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_7.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_8.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_8.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/collect_9.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/collect\_9.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/gif_collect.gif)
+![](.gitbook/assets/dairy-manufacturing-with-ai/gif\_collect.gif)
 
-🐄🥛📲 After completing logging the collected data in the *yogurt_data.csv* file on the SD card, I elicited my data set.
+🐄🥛📲 After completing logging the collected data in the _yogurt\_data.csv_ file on the SD card, I elicited my data set.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/data_collection_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/data\_collection\_3.png)
 
 ## Step 5: Building a neural network model with Edge Impulse
 
@@ -815,18 +809,16 @@ Since Edge Impulse supports almost every microcontroller and development board d
 
 Even though Edge Impulse supports CSV files to upload samples, the data type should be time series to upload all data records in a single file. Therefore, I needed to follow the steps below to format my data set so as to train my model accurately:
 
-
-- Data Scaling (Normalizing)
-- Data Preprocessing
+* Data Scaling (Normalizing)
+* Data Preprocessing
 
 As explained in the previous steps, I assigned yogurt consistency classes empirically while logging yogurt processing data from various batches. Then, I developed a Python application to scale (normalize) and preprocess data records to create appropriately formatted samples (single CSV files) for Edge Impulse.
 
-Since the assigned classes are stored under the *consistency_level* data field in the *yogurt_data.csv* file, I preprocessed my data set effortlessly to create samples from data records under these labels:
+Since the assigned classes are stored under the _consistency\_level_ data field in the _yogurt\_data.csv_ file, I preprocessed my data set effortlessly to create samples from data records under these labels:
 
-
-- 0 — Thinner
-- 1 — Optimum
-- 2 — Curdling
+* 0 — Thinner
+* 1 — Optimum
+* 2 — Curdling
 
 Plausibly, Edge Impulse allows building predictive models optimized in size and accuracy automatically and deploying the trained model as an Arduino library. Therefore, after scaling (normalizing) and preprocessing my data set to create samples, I was able to build an accurate neural network model to predict yogurt consistency levels and run it on XIAO ESP32C3 effortlessly.
 
@@ -838,20 +830,18 @@ If the data type is not time series, Edge Impulse cannot distinguish data record
 
 To scale (normalize) and preprocess my data set so as to create individual CSV files as samples automatically, I developed a Python application consisting of one file:
 
+* process\_dataset.csv
 
-- process_dataset.csv
+Since Edge Impulse can infer the uploaded sample's label from its file name, the application reads the given CSV file (data set) and generates a separate CSV file for each data record, named according to its assigned yogurt consistency class number under the _consistency\_level_ data field. Also, the application adds a sample number incremented by 1 for generated CSV files sharing the same label:
 
-Since Edge Impulse can infer the uploaded sample's label from its file name, the application reads the given CSV file (data set) and generates a separate CSV file for each data record, named according to its assigned yogurt consistency class number under the *consistency_level* data field. Also, the application adds a sample number incremented by 1 for generated CSV files sharing the same label:
+* Thinner.sample\_1.csv
+* Thinner.sample\_2.csv
+* Optimum.sample\_1.csv
+* Optimum.sample\_2.csv
+* Curdling.sample\_1.csv
+* Curdling.sample\_2.csv
 
-
-- Thinner.sample_1.csv
-- Thinner.sample_2.csv
-- Optimum.sample_1.csv
-- Optimum.sample_2.csv
-- Curdling.sample_1.csv
-- Curdling.sample_2.csv
-
-First of all, I created a class named *process_dataset* in the *process_dataset.py* file to bundle the following functions under a specific structure.
+First of all, I created a class named _process\_dataset_ in the _process\_dataset.py_ file to bundle the following functions under a specific structure.
 
 ⭐ Include the required modules.
 
@@ -861,7 +851,7 @@ import pandas as pd
 from csv import writer
 ```
 
-⭐ In the *__init__* function, read the data set from the given CSV file and define the yogurt consistency class names.
+⭐ In the _**init**_ function, read the data set from the given CSV file and define the yogurt consistency class names.
 
 ```
     def __init__(self, csv_path):
@@ -871,7 +861,7 @@ from csv import writer
         self.class_names = ["Thinner", "Optimum", "Curdling"]
 ```
 
-⭐ In the *scale_data_elements* function, scale (normalize) data elements to define appropriately formatted data items in the range of 0-1.
+⭐ In the _scale\_data\_elements_ function, scale (normalize) data elements to define appropriately formatted data items in the range of 0-1.
 
 ```
     def scale_data_elements(self):
@@ -883,7 +873,7 @@ from csv import writer
         print("Data Elements Scaled Successfully!")
 ```
 
-⭐ In the *split_dataset_by_labels* function:
+⭐ In the _split\_dataset\_by\_labels_ function:
 
 ⭐ Split data records by the assigned yogurt consistency level (class).
 
@@ -893,16 +883,15 @@ from csv import writer
 
 ⭐ Then, generate CSV files (samples) from scaled data records, named with the assigned yogurt consistency level and the given sample number.
 
-⭐ Each sample includes five data items [shape=(5,)]:
+⭐ Each sample includes five data items \[shape=(5,)]:
 
-*[0.2304, 0.7387, 0.34587, 0.4251, 0.421] *
+\*\[0.2304, 0.7387, 0.34587, 0.4251, 0.421] \*
 
-
-- temperature
-- humidity
-- pressure
-- milk_temperature
-- starter_weight
+* temperature
+* humidity
+* pressure
+* milk\_temperature
+* starter\_weight
 
 ```
     def split_dataset_by_labels(self, class_number):
@@ -926,7 +915,7 @@ from csv import writer
                 print("CSV File Successfully Created: " + filename)
 ```
 
-⭐ Finally, create appropriately formatted samples as individual CSV files and save them in the *data* folder.
+⭐ Finally, create appropriately formatted samples as individual CSV files and save them in the _data_ folder.
 
 ```
 dataset.scale_data_elements()
@@ -934,19 +923,19 @@ for c in range(len(dataset.class_names)):
     dataset.split_dataset_by_labels(c)
 ```
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_data_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_data\_1.png)
 
-🐄🥛📲 After running the application, it creates samples, saves them under the *data* folder, and prints generated CSV file names on the shell for debugging.
+🐄🥛📲 After running the application, it creates samples, saves them under the _data_ folder, and prints generated CSV file names on the shell for debugging.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/data_collection_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/data\_collection\_2.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/data_collection_4.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/data\_collection\_4.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/data_collection_5.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/data\_collection\_5.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/data_collection_6.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/data\_collection\_6.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_data_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_data\_2.png)
 
 ## Step 5.2: Uploading formatted samples to Edge Impulse
 
@@ -954,118 +943,116 @@ After generating training and testing samples successfully, I uploaded them to m
 
 :hash: First of all, sign up for [Edge Impulse](https://www.edgeimpulse.com/) and create a new project.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_set_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_set\_1.png)
 
-:hash: Navigate to the *Data acquisition* page and click the *Upload existing data* button.
+:hash: Navigate to the _Data acquisition_ page and click the _Upload existing data_ button.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_set_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_set\_2.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_set_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_set\_3.png)
 
-:hash: Then, choose the data category (training or testing) and select *Infer from filename* under *Label* to deduce labels from CSV file names automatically.
+:hash: Then, choose the data category (training or testing) and select _Infer from filename_ under _Label_ to deduce labels from CSV file names automatically.
 
-:hash: Finally, select CSV files and click the *Begin upload* button.
+:hash: Finally, select CSV files and click the _Begin upload_ button.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_set_4.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_set\_4.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_set_5.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_set\_5.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_set_6.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_set\_6.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_set_7.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_set\_7.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_set_8.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_set\_8.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_set_9.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_set\_9.png)
 
 ## Step 5.3: Training the model on yogurt consistency levels
 
 After uploading my training and testing samples successfully, I designed an impulse and trained it on yogurt consistency levels (classes).
 
-An impulse is a custom neural network model in Edge Impulse. I created my impulse by employing the *Raw Data* processing block and the *Classification* learning block.
+An impulse is a custom neural network model in Edge Impulse. I created my impulse by employing the _Raw Data_ processing block and the _Classification_ learning block.
 
-The *Raw Data* processing block generate windows from data samples without any specific signal processing.
+The _Raw Data_ processing block generate windows from data samples without any specific signal processing.
 
-The *Classification* learning block represents a Keras neural network model. Also, it lets the user change the model settings, architecture, and layers.
+The _Classification_ learning block represents a Keras neural network model. Also, it lets the user change the model settings, architecture, and layers.
 
-:hash: Go to the *Create impulse* page. Then, select the *Raw Data* processing block and the *Classification* learning block. Finally, click *Save Impulse*.
+:hash: Go to the _Create impulse_ page. Then, select the _Raw Data_ processing block and the _Classification_ learning block. Finally, click _Save Impulse_.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_train_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_train\_1.png)
 
-:hash: Before generating features for the neural network model, go to the *Raw data* page and click *Save parameters*.
+:hash: Before generating features for the neural network model, go to the _Raw data_ page and click _Save parameters_.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_train_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_train\_2.png)
 
-:hash: After saving parameters, click *Generate features* to apply the *Raw data* processing block to training samples.
+:hash: After saving parameters, click _Generate features_ to apply the _Raw data_ processing block to training samples.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_train_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_train\_3.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_train_4.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_train\_4.png)
 
-:hash: Finally, navigate to the *NN Classifier* page and click *Start training*.
+:hash: Finally, navigate to the _NN Classifier_ page and click _Start training_.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_train_5.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_train\_5.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_train_6.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_train\_6.png)
 
-According to my experiments with my neural network model, I modified  the neural network settings and layers to build a neural network model with high accuracy and validity:
+According to my experiments with my neural network model, I modified the neural network settings and layers to build a neural network model with high accuracy and validity:
 
 📌 Neural network settings:
 
-
-- Number of training cycles ➡  50  
-- Learning level ➡ 0.005
-- Validation set size ➡ 20
+* Number of training cycles ➡ 50
+* Learning level ➡ 0.005
+* Validation set size ➡ 20
 
 📌 Extra layers:
 
+* Dense layer (20 neurons)
+* Dense layer (10 neurons)
 
-- Dense layer (20 neurons)
-- Dense layer (10 neurons)
+After generating features and training my model with training samples, Edge Impulse evaluated the precision score (accuracy) as _100%_.
 
-After generating features and training my model with training samples, Edge Impulse evaluated the precision score (accuracy) as *100%*.
+The precision score (accuracy) is approximately _100%_ due to the modest volume and variety of training samples from different batches. In technical terms, the model trains on limited validation samples. Therefore, I am still collecting data to improve my training data set.
 
-The precision score (accuracy) is approximately *100%* due to the modest volume and variety of training samples from different batches. In technical terms, the model trains on limited validation samples. Therefore, I am still collecting data to improve my training data set.
-
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_train_7.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_train\_7.png)
 
 ## Step 5.4: Evaluating the model accuracy and deploying the model
 
 After building and training my neural network model, I tested its accuracy and validity by utilizing testing samples.
 
-The evaluated accuracy of the model is *100%*.
+The evaluated accuracy of the model is _100%_.
 
-:hash: To validate the trained model, go to the *Model testing* page and click *Classify all*.
+:hash: To validate the trained model, go to the _Model testing_ page and click _Classify all_.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_test_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_test\_1.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_test_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_test\_2.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_test_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_test\_3.png)
 
 After validating my neural network model, I deployed it as a fully optimized and customizable Arduino library.
 
-:hash: To deploy the validated model as an Arduino library, navigate to the *Deployment* page and select *Arduino library*.
+:hash: To deploy the validated model as an Arduino library, navigate to the _Deployment_ page and select _Arduino library_.
 
-:hash: Then, choose the *Quantized (int8)* optimization option to get the best performance possible while running the deployed model.
+:hash: Then, choose the _Quantized (int8)_ optimization option to get the best performance possible while running the deployed model.
 
-:hash: Finally, click *Build* to download the model as an Arduino library.
+:hash: Finally, click _Build_ to download the model as an Arduino library.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_deploy_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_deploy\_1.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_deploy_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_deploy\_2.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/edge_deploy_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/edge\_deploy\_3.png)
 
-## Step 6: Setting up the Edge Impulse model on XIAO ESP32C3 
+## Step 6: Setting up the Edge Impulse model on XIAO ESP32C3
 
 After building, training, and deploying my model as an Arduino library on Edge Impulse, I needed to upload the generated Arduino library on XIAO ESP32C3 to run the model directly so as to create an easy-to-use and capable device operating with minimal latency, memory usage, and power consumption.
 
 Since Edge Impulse optimizes and formats signal processing, configuration, and learning blocks into a single package while deploying models as Arduino libraries, I was able to import my model effortlessly to run inferences.
 
-:hash: After downloading the model as an Arduino library in the ZIP file format, go to *Sketch ➡ Include Library ➡ Add .ZIP Library...*
+:hash: After downloading the model as an Arduino library in the ZIP file format, go to _Sketch ➡ Include Library ➡ Add .ZIP Library..._
 
-:hash: Then, include the *IoT_AI-driven_Yogurt_Processing_inferencing.h* file to import the Edge Impulse neural network model.
+:hash: Then, include the _IoT\_AI-driven\_Yogurt\_Processing\_inferencing.h_ file to import the Edge Impulse neural network model.
 
 ```
 #include &lt;IoT_AI-driven_Yogurt_Processing_inferencing.h>
@@ -1073,16 +1060,15 @@ Since Edge Impulse optimizes and formats signal processing, configuration, and l
 
 After importing my model successfully to the Arduino IDE, I programmed XIAO ESP32C3 to run inferences when the switch button on the Blynk web application is activated so as to detect yogurt consistency (texture) levels before fermentation.
 
-
-- Blynk Switch Button ➡ Run Inference
+* Blynk Switch Button ➡ Run Inference
 
 Also, I employed XIAO ESP32C3 to transmit the collected yogurt processing data to the Blynk application every 30 seconds and send the prediction (detection) result after running inferences successfully.
 
-You can download the *AI_yogurt_processing_run_model.ino* file to try and inspect the code for running Edge Impulse neural network models and communicating with a Blynk application on XIAO ESP32C3.
+You can download the _AI\_yogurt\_processing\_run\_model.ino_ file to try and inspect the code for running Edge Impulse neural network models and communicating with a Blynk application on XIAO ESP32C3.
 
 You can inspect the corresponding functions and settings in Step 4.
 
-⭐ Define the *Template ID*, *Device Name*, and *Auth Token* parameters provided by Blynk.Cloud.
+⭐ Define the _Template ID_, _Device Name_, and _Auth Token_ parameters provided by Blynk.Cloud.
 
 ```
 #define BLYNK_TEMPLATE_ID "&lt;_TEMPLATE_ID_>"
@@ -1135,10 +1121,9 @@ size_t feature_ix = 0;
 
 ⭐ Define the yogurt consistency level (class) names:
 
-
-- Thinner
-- Optimum
-- Curdling
+* Thinner
+* Optimum
+* Curdling
 
 ```
 float threshold = 0.60;
@@ -1155,7 +1140,7 @@ String classes[] = {"Thinner", "Optimum", "Curdling"};
 static const unsigned char PROGMEM *class_icons[] = {thinner, optimum, curdling};
 ```
 
-⭐ Create the Blynk object with the Wi-Fi network settings and the *Auth Token* parameter.
+⭐ Create the Blynk object with the Wi-Fi network settings and the _Auth Token_ parameter.
 
 ```
 Blynk.begin(auth, ssid, pass);
@@ -1167,7 +1152,7 @@ Blynk.begin(auth, ssid, pass);
   Blynk.run();
 ```
 
-⭐ In the *update_Blynk_parameters* function, transfer the collected yogurt processing data to the Blynk web application (dashboard).
+⭐ In the _update\_Blynk\_parameters_ function, transfer the collected yogurt processing data to the Blynk web application (dashboard).
 
 ```
 void update_Blynk_parameters(){
@@ -1192,7 +1177,7 @@ BLYNK_WRITE(BUTTON_WIDGET){
 }
 ```
 
-⭐ In the *run_inference_to_make_predictions* function:
+⭐ In the _run\_inference\_to\_make\_predictions_ function:
 
 ⭐ Scale (normalize) the collected data depending on the given model and copy the scaled data items to the features array (buffer).
 
@@ -1315,98 +1300,95 @@ if(model_running){ run_inference_to_make_predictions(1); model_running = false; 
   if(millis() - timer >= 30*1000){ update_Blynk_parameters(); Serial.println("\n\nBlynk Dashboard: Data Transferred Successfully!\n"); timer = millis(); }
 ```
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_run_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_run\_1.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_run_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_run\_2.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_run_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_run\_3.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_run_4.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_run\_4.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_run_5.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_run\_5.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/code_run_6.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/code\_run\_6.png)
 
 ## Step 7: Running the model on XIAO ESP32C3 to predict yogurt texture levels
 
-My Edge Impulse neural network model predicts possibilities of labels (yogurt consistency classes) for the given features buffer as an array of 3 numbers. They represent the model's *"confidence"* that the given features buffer corresponds to each of the three different yogurt consistency levels (classes) [0 - 2], as shown in Step 5:
+My Edge Impulse neural network model predicts possibilities of labels (yogurt consistency classes) for the given features buffer as an array of 3 numbers. They represent the model's _"confidence"_ that the given features buffer corresponds to each of the three different yogurt consistency levels (classes) \[0 - 2], as shown in Step 5:
 
+* 0 — Thinner
+* 1 — Optimum
+* 2 — Curdling
 
-- 0 — Thinner
-- 1 — Optimum
-- 2 — Curdling
-
-After executing the *AI_yogurt_processing_run_model.ino* file on XIAO ESP32C3:
+After executing the _AI\_yogurt\_processing\_run\_model.ino_ file on XIAO ESP32C3:
 
 🐄🥛📲 The device shows the opening screen if the sensor and MicroSD card module connections with XIAO ESP32C3 are successful.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/run_model_1.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/run\_model\_1.jpg)
 
 🐄🥛📲 Then, the device displays the collected environmental factor measurements and the culture (starter) amount on the SSD1306 OLED screen:
 
+* Temperature (°C)
+* Humidity (%)
+* Pressure (kPa)
+* Milk Temperature (°C)
+* Starter Weight (g)
 
-- Temperature (°C)
-- Humidity (%)
-- Pressure (kPa)
-- Milk Temperature (°C)
-- Starter Weight  (g)
+![](.gitbook/assets/dairy-manufacturing-with-ai/run\_model\_2.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/run_model_2.jpg)
-
-![](.gitbook/assets/dairy-manufacturing-with-ai/run_model_2.1.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/run\_model\_2.1.jpg)
 
 🐄🥛📲 Also, every 30 seconds, the device transmits the collected yogurt processing data to the Blynk web application so as to update the assigned widgets for each data element on the Blynk dashboard.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_run_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_run\_1.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_run_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_run\_2.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_run_3.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_run\_3.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_run_4.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_run\_4.png)
 
 🐄🥛📲 If the switch (button) widget is activated on the Blynk dashboard, the device runs an inference with the Edge Impulse model and displays the detection result, which represents the most accurate label (yogurt consistency class) predicted by the model.
 
 🐄🥛📲 Each yogurt consistency level (class) has a unique monochrome icon to be shown on the SSD1306 OLED screen when being predicted (detected) by the model:
 
+* Thinner
+* Optimum
+* Curdling (Lumpy)
 
-- Thinner
-- Optimum
-- Curdling (Lumpy)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_run\_5.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_run_5.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/run\_model\_3.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/run_model_3.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/run\_model\_4.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/run_model_4.jpg)
-
-![](.gitbook/assets/dairy-manufacturing-with-ai/run_model_5.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/run\_model\_5.jpg)
 
 🐄🥛📲 After running the inference successfully, the device also transfers the predicted label (class) to the Blynk web application (dashboard) to inform the user.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/blynk_run_6.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/blynk\_run\_6.png)
 
 🐄🥛📲 Also, the device prints notifications and sensor measurements on the serial monitor for debugging.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/serial_run_0.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/serial\_run\_0.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/serial_run_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/serial\_run\_1.png)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/serial_run_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/serial\_run\_2.png)
 
 As far as my experiments go, the device detects yogurt consistency (texture) levels precisely before fermentation :)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/run_model_6.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/run\_model\_6.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/run_model_7.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/run\_model\_7.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/run_model_8.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/run\_model\_8.jpg)
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/gif_run.gif)
+![](.gitbook/assets/dairy-manufacturing-with-ai/gif\_run.gif)
 
-After the fermentation process, I had yogurt batches with the exact consistency (texture) levels predicted by the Edge Impulse neural network model. 
+After the fermentation process, I had yogurt batches with the exact consistency (texture) levels predicted by the Edge Impulse neural network model.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/run_model_9.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/run\_model\_9.jpg)
 
 ## Videos and Conclusion
 
@@ -1424,11 +1406,10 @@ By applying neural network models trained on temperature, humidity, pressure, mi
 
 🐄🥛📲 incentivize small businesses to produce organic (natural) yogurt.
 
-![](.gitbook/assets/dairy-manufacturing-with-ai/home_3.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/home\_3.jpg)
 
 ## References
 
-[^1] Good Food team, *Yogurt*, BBC Good Food, *https://www.bbcgoodfood.com/glossary/yogurt-glossary*
+\[^1] Good Food team, _Yogurt_, BBC Good Food, _https://www.bbcgoodfood.com/glossary/yogurt-glossary_
 
-[^2] *Metabolism Characteristics of Lactic Acid Bacteria and the Expanding Applications in Food Industry*, Front. Bioeng. Biotechnol., 12 May 2021, Sec. Synthetic Biology, *https://doi.org/10.3389/fbioe.2021.612285*
-
+\[^2] _Metabolism Characteristics of Lactic Acid Bacteria and the Expanding Applications in Food Industry_, Front. Bioeng. Biotechnol., 12 May 2021, Sec. Synthetic Biology, _https://doi.org/10.3389/fbioe.2021.612285_

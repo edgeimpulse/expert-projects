@@ -1,16 +1,16 @@
 ---
-description: Keep track of the items in a shopping basket using computer vision and an OpenMV Cam H7.
+description: >-
+  Keep track of the items in a shopping basket using computer vision and an
+  OpenMV Cam H7.
 ---
 
-# Smart Grocery Cart Using Computer Vision 
+# Smart Grocery Cart Using Computer Vision
 
-Created By:
-Kutluhan Aktar
+Created By: Kutluhan Aktar
 
-Public Project Link:
-[https://studio.edgeimpulse.com/public/166688/latest](https://studio.edgeimpulse.com/public/166688/latest)
+Public Project Link: [https://studio.edgeimpulse.com/public/166688/latest](https://studio.edgeimpulse.com/public/166688/latest)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_3.0.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_3.0.jpg)
 
 ## Description
 
@@ -54,75 +54,75 @@ In the following steps, you can find more detailed information on coding, captur
 
 🎁🎨 Also, huge thanks to [Creality](https://store.creality.com/) for sending me a [Creality Sonic Pad](https://www.creality.com/products/creality-sonic-pad), a [Creality Sermoon V1 3D Printer](https://www.creality.com/products/creality-sermoon-v1-v1-pro-3d-printer), and a [Creality CR-200B 3D Printer](https://www.creality.com/products/cr-200b-3d-printer).
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/show_0.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/show\_0.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_3.0.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_3.0.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/completed_3.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/completed\_3.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect_2.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect\_2.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/gif_collect.gif)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/gif\_collect.gif)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_16.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_16.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_17.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_17.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_13.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_13.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_8.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_8.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_18.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_18.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/lattepanda_run_2.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/lattepanda\_run\_2.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/gif_run.gif)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/gif\_run.gif)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web_app_working.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web\_app\_working.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/email_working.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/email\_working.png)
 
 ## Step 1: Designing and soldering the Scrooge McDuck-inspired PCB
 
-Before prototyping my Scrooge McDuck-inspired PCB design, I tested all connections and wiring with  OpenMV Cam H7 and Beetle ESP32-C3. Then,  I checked the connection status between Beetle ESP32-C3 and the web application hosted on LattePanda 3 Delta.
+Before prototyping my Scrooge McDuck-inspired PCB design, I tested all connections and wiring with OpenMV Cam H7 and Beetle ESP32-C3. Then, I checked the connection status between Beetle ESP32-C3 and the web application hosted on LattePanda 3 Delta.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/breadboard_1.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/breadboard\_1.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/breadboard_2.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/breadboard\_2.jpg)
 
 Then, I designed my Scrooge McDuck-inspired PCB by utilizing KiCad. As mentioned earlier, I chose to design my PCB based on Scrooge McDuck since I loved the juxtaposition of shopping and his well-known stinginess :) I attached the Gerber file of the PCB below. Therefore, if you want, you can order this PCB from PCBWay to build this device giving smart grocery cart perks to any grocery cart.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB_1.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB\_1.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB_2.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB\_2.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB_3.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB\_3.jpg)
 
 First of all, by utilizing a soldering iron, I attached headers (female), a COM-09032 analog joystick, a buzzer, a 5mm common anode RGB LED, and a power jack to the PCB.
 
 📌 Component list on the PCB:
 
-*OpenMV_H7_1, OpenMV_H7_2 (Headers for OpenMV Cam H7)*
+_OpenMV\_H7\_1, OpenMV\_H7\_2 (Headers for OpenMV Cam H7)_
 
-*Beetle_C3_1, Beetle_C3_2 (Headers for Beetle ESP32-C3)*
+_Beetle\_C3\_1, Beetle\_C3\_2 (Headers for Beetle ESP32-C3)_
 
-*MFRC522 (Headers for MFRC522 RFID Reader)*
+_MFRC522 (Headers for MFRC522 RFID Reader)_
 
-*ST7735  (Headers for ST7735 1.8" Color TFT Display)*
+_ST7735 (Headers for ST7735 1.8" Color TFT Display)_
 
-*U1 (COM-09032 Analog Joystick)*
+_U1 (COM-09032 Analog Joystick)_
 
-*BZ1 (Buzzer)*
+_BZ1 (Buzzer)_
 
-*D1 (5mm Common Anode RGB LED)*
+_D1 (5mm Common Anode RGB LED)_
 
-*J1 (Power Jack)*
+_J1 (Power Jack)_
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB_4.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB\_4.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB_5.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB\_5.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB_6.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB\_6.jpg)
 
 ## Step 1.1: Making connections and adjustments
 
@@ -165,9 +165,9 @@ After completing soldering, I attached all remaining components to the Scrooge M
 
 I connected a color TFT screen (ST7735) to [OpenMV Cam H7](https://openmv.io/products/openmv-cam-h7) so as to display the real-time video stream, the detection results after running the object detection (FOMO) model, and the selection (options) menu. To save images under two categories and control the selection menu after a product is detected by the model, I connected an analog joystick (COM-09032) to OpenMV Cam H7.
 
-To be able to transfer commands to [Beetle ESP32-C3](https://wiki.dfrobot.com/SKU_DFR0868_Beetle_ESP32_C3) via serial communication, I connected the hardware serial port of OpenMV Cam H7 (UART 3) to the hardware serial port of Beetle ESP32-C3 (Serial1). To enable the device to determine when the customer finishes shopping and is ready to leave the store, I connected an MFRC522 RFID reader to Beetle ESP32-C3. Also, I connected a buzzer and an RGB LED to inform the customer of the device status, denoting web application connection and serial communication success.
+To be able to transfer commands to [Beetle ESP32-C3](https://wiki.dfrobot.com/SKU\_DFR0868\_Beetle\_ESP32\_C3) via serial communication, I connected the hardware serial port of OpenMV Cam H7 (UART 3) to the hardware serial port of Beetle ESP32-C3 (Serial1). To enable the device to determine when the customer finishes shopping and is ready to leave the store, I connected an MFRC522 RFID reader to Beetle ESP32-C3. Also, I connected a buzzer and an RGB LED to inform the customer of the device status, denoting web application connection and serial communication success.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB_7.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/PCB\_7.jpg)
 
 ## Step 2: Designing and printing a semi-transparent hinged case
 
@@ -177,42 +177,41 @@ Since I needed to connect the top and bottom parts of the hinged case seamlessly
 
 I designed the top and bottom parts of the hinged case, the pin, and the pin ends in Autodesk Fusion 360. You can download their STL files below.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_1.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_2.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_3.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_4.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_4.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_5.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_5.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_6.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_6.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_7.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_7.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_8.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_8.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_9.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_9.png)
 
 Then, I sliced all 3D models (STL files) in Ultimaker Cura.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_10.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_10.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_11.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_11.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_12.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_12.png)
 
 Since I wanted to create a semi-transparent solid structure for the hinged case representing product packaging, I utilized this PLA filament:
 
-
-- Natural
+* Natural
 
 Finally, I printed all parts (models) with my Creality Sermoon V1 3D Printer and Creality CR-200B 3D Printer in combination with the Creality Sonic Pad. You can find more detailed information regarding the Sonic Pad in Step 2.1.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_finished_1.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_finished\_1.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model_finished_2.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/model\_finished\_2.jpg)
 
 If you are a maker or hobbyist planning to print your 3D models to create more complex and detailed projects, I highly recommend the Sermoon V1. Since the Sermoon V1 is fully-enclosed, you can print high-resolution 3D models with PLA and ABS filaments. Also, it has a smart filament runout sensor and the resume printing option for power failures.
 
@@ -220,39 +219,39 @@ Furthermore, the Sermoon V1 provides a flexible metal magnetic suction platform 
 
 :hash: Before the first use, remove unnecessary cable ties and apply grease to the rails.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sermoon_1.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_1 (2).jpg>)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sermoon_2.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_2 (1).jpg>)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sermoon_3.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_3 (2).jpg>)
 
 :hash: Test the nozzle and hot bed temperatures.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sermoon_4.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_4 (1).jpg>)
 
-:hash: Go to *Print Setup ➡ Auto leveling* and adjust five predefined points automatically with the assisted leveling function.
+:hash: Go to _Print Setup ➡ Auto leveling_ and adjust five predefined points automatically with the assisted leveling function.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sermoon_5.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_5 (1).jpg>)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sermoon_6.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_6.jpg)
 
 :hash: Finally, place the filament into the integrated spool holder and feed the extruder with the filament.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sermoon_7.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_7 (2).jpg>)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sermoon_8.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sermoon\_8 (1).jpg>)
 
-:hash: Since the Sermoon V1 is not officially supported by Cura, download the latest [Creality Slicer](https://www.creality.com/pages/download-sermoon-v1v1-pro) version and copy the official printer settings provided by Creality, including *Start G-code* and *End G-code*, to a custom printer profile on Cura.
+:hash: Since the Sermoon V1 is not officially supported by Cura, download the latest [Creality Slicer](https://www.creality.com/pages/download-sermoon-v1v1-pro) version and copy the official printer settings provided by Creality, including _Start G-code_ and _End G-code_, to a custom printer profile on Cura.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/sermoon_slicer_1.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_slicer\_1.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/sermoon_slicer_2.png)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_slicer\_2 (2).png>)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/sermoon_slicer_3.png)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_slicer\_3 (2).png>)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/sermoon_cura_1.png)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_cura\_1 (1).png>)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/sermoon_cura_2.png)
+![](.gitbook/assets/dairy-manufacturing-with-ai/sermoon\_cura\_2.png)
 
 ## Step 2.1: Improving print quality and speed with the Creality Sonic Pad
 
@@ -260,35 +259,35 @@ Since I wanted to improve my print quality and speed with Klipper, I decided to 
 
 Creality Sonic Pad is a beginner-friendly device to control almost any FDM 3D printer on the market with the Klipper firmware. Since the Sonic Pad uses precision-oriented algorithms, it provides remarkable results with higher printing speeds. The built-in input shaper function mitigates oscillation during high-speed printing and smooths ringing to maintain high model quality. Also, it supports G-code model preview.
 
-Although the Sonic Pad is pre-configured for some Creality printers, it does not support the CR-200B officially yet. Therefore, I needed to add the CR-200B as a user-defined printer to the Sonic Pad. Since the Sonic Pad needs unsupported printers to be flashed with the self-compiled Klipper firmware before connection, I flashed my CR-200B with the required Klipper firmware settings via *FluiddPI* by following [this YouTube tutorial](https://www.youtube.com/watch?v=gfZ9Lbyh8qU).
+Although the Sonic Pad is pre-configured for some Creality printers, it does not support the CR-200B officially yet. Therefore, I needed to add the CR-200B as a user-defined printer to the Sonic Pad. Since the Sonic Pad needs unsupported printers to be flashed with the self-compiled Klipper firmware before connection, I flashed my CR-200B with the required Klipper firmware settings via _FluiddPI_ by following [this YouTube tutorial](https://www.youtube.com/watch?v=gfZ9Lbyh8qU).
 
 If you do not know how to write a printer configuration file for Klipper, you can download the stock CR-200B configuration file from [here](https://github.com/ChewyJetpack/CR-200B-Klipper-Config/).
 
-:hash: After flashing the CR-200B with the Klipper firmware, copy the configuration file *(printer.cfg)* to a USB drive and connect the drive to the Sonic Pad.
+:hash: After flashing the CR-200B with the Klipper firmware, copy the configuration file _(printer.cfg)_ to a USB drive and connect the drive to the Sonic Pad.
 
-:hash: After setting up the Sonic Pad, select *Other models*. Then, load the *printer.cfg* file.
+:hash: After setting up the Sonic Pad, select _Other models_. Then, load the _printer.cfg_ file.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sonic_pad_2.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_2 (2).jpg>)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sonic_pad_4.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_4 (2).jpg>)
 
 :hash: After connecting the Sonic Pad to the CR-200B successfully via a USB cable, the Sonic Pad starts the self-testing procedure, which allows the user to test printer functions and level the bed.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sonic_pad_5.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_5.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sonic_pad_6.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_6 (2).jpg>)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sonic_pad_7.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_7 (2).jpg>)
 
 :hash: After completing setting up the printer, the Sonic Pad lets the user control all functions provided by the Klipper firmware.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sonic_pad_8.jpg)
+![](.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_8.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/set_sonic_pad_9.jpg)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_sonic\_pad\_9 (1).jpg>)
 
-:hash: In Cura, export the sliced model in the *ufp* format. After uploading *.ufp* files to the Sonic Pad via the USB drive, it converts them to sliced G-code files automatically.
+:hash: In Cura, export the sliced model in the _ufp_ format. After uploading _.ufp_ files to the Sonic Pad via the USB drive, it converts them to sliced G-code files automatically.
 
-:hash: Also, the Sonic Pad can display model preview pictures generated by Cura with the *Create Thumbnail* script.
+:hash: Also, the Sonic Pad can display model preview pictures generated by Cura with the _Create Thumbnail_ script.
 
 ## Step 2.2: Assembling the semi-transparent hinged case
 
@@ -298,33 +297,33 @@ I affixed the Scrooge McDuck PCB to the bottom part of the hinged case via a hot
 
 Then, I attached the ST7735 TFT display to the hinged case via its slot on the bottom part to make customers see the screen even if the hinged case is closed via its built-in snap-fit joints.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly_1.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly\_1.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly_2.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly\_2.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly_3.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly\_3.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly_4.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly\_4.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly_5.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly\_5.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly_6.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly\_6.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly_7.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly\_7.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly_8.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly\_8.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly_9.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly\_9.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly_10.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly\_10.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly_11.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly\_11.jpg)
 
 Finally, I attached the assigned RFID key tag to the ring on the bottom part of the hinged case. Via the slot on the top part of the hinged case, the customer can approximate the key tag to the MFRC522 RFID reader even if the case is closed.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly_12.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/assembly\_12.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/completed_3.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/completed\_3.jpg)
 
 ## Step 3: Creating a Twilio SendGrid account to send emails from localhost
 
@@ -334,33 +333,33 @@ Since I wanted to provide a wholesome user experience with this device, I decide
 
 :hash: First of all, sign up for [SendGrid](https://signup.sendgrid.com/) and create a new free trial account.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send_grid_set_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send\_grid\_set\_1.png)
 
-:hash: Then, click the *Create a Single Sender* button and enter the required information to comply with the anti-spam laws. It is recommended to use a unique email service provider other than Gmail, Hotmail, etc.
+:hash: Then, click the _Create a Single Sender_ button and enter the required information to comply with the anti-spam laws. It is recommended to use a unique email service provider other than Gmail, Hotmail, etc.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send_grid_set_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send\_grid\_set\_2.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send_grid_set_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send\_grid\_set\_3.png)
 
 :hash: After verifying the entered email address, choose PHP as the integration API option for localhost.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send_grid_set_4.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send\_grid\_set\_4.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send_grid_set_5.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send\_grid\_set\_5.png)
 
-:hash: Click the *Create API Key* button to generate an API key with full feature access.
+:hash: Click the _Create API Key_ button to generate an API key with full feature access.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send_grid_set_6.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send\_grid\_set\_6.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send_grid_set_7.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send\_grid\_set\_7.png)
 
 :hash: After generating the API key, install the latest release of the SendGrid Email API PHP Library on localhost directly from [this GitHub repository](https://github.com/sendgrid/sendgrid-php/releases).
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send_grid_set_8.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send\_grid\_set\_8.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send_grid_set_9.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send\_grid\_set\_9.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send_grid_set_10.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/send\_grid\_set\_10.png)
 
 ## Step 4: Developing a web application with a user-friendly interface in PHP, JavaScript, CSS, and MySQL
 
@@ -368,26 +367,25 @@ To provide an exceptional online customer experience, I developed a full-fledged
 
 As shown below, the web application consists of one folder and 7 code files:
 
+* /assets
+* \-- /sendgrid-php
+* \-- background.jpg
+* \-- class.php
+* \-- icon.png
+* \-- index.css
+* \-- index.js
+* \-- update\_list.php
+* index.php
+* product\_list.php
+* shopping.php
 
-- /assets
-- -- /sendgrid-php
-- -- background.jpg
-- -- class.php
-- -- icon.png
-- -- index.css
-- -- index.js
-- -- update_list.php
-- index.php
-- product_list.php
-- shopping.php
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/app\_1.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/app_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/app\_2.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/app_2.png)
+📁 _class.php_
 
-📁 *class.php*
-
-In the *class.php* file, I created a class named *_main* to bundle the following functions under a specific structure.
+In the _class.php_ file, I created a class named _\_main_ to bundle the following functions under a specific structure.
 
 ⭐ Include the Twilio SendGrid Email API PHP Library.
 
@@ -395,7 +393,7 @@ In the *class.php* file, I created a class named *_main* to bundle the following
 require("sendgrid-php/sendgrid-php.php");
 ```
 
-⭐ Define the *_main* class and its functions.
+⭐ Define the _\_main_ class and its functions.
 
 ⭐ Define the API key and the sender email address required by SendGrid Email API.
 
@@ -410,9 +408,9 @@ require("sendgrid-php/sendgrid-php.php");
 	}
 ```
 
-⭐ In the *database_create_customer_table* function, create a database table on the MariaDB database and add the given customer information to the recently created database table.
+⭐ In the _database\_create\_customer\_table_ function, create a database table on the MariaDB database and add the given customer information to the recently created database table.
 
-⭐ If the customer information is added to the database table successfully, redirect the customer to the product list page — *product_list.php*.
+⭐ If the customer information is added to the database table successfully, redirect the customer to the product list page — _product\_list.php_.
 
 ⭐ Redirect the customer to the home page if there is a pertinent database error.
 
@@ -447,7 +445,7 @@ require("sendgrid-php/sendgrid-php.php");
 	}
 ```
 
-⭐ In the *insert_new_data* function, insert the given product information into the customer's database table.
+⭐ In the _insert\_new\_data_ function, insert the given product information into the customer's database table.
 
 ```
 	public function insert_new_data($table, $product_id, $product_name, $product_price){
@@ -459,7 +457,7 @@ require("sendgrid-php/sendgrid-php.php");
 	}
 ```
 
-⭐ In the *remove_data* function, delete the first row with the given product ID from the customer's database table.
+⭐ In the _remove\_data_ function, delete the first row with the given product ID from the customer's database table.
 
 ```
 	public function remove_data($table, $product_id){
@@ -468,7 +466,7 @@ require("sendgrid-php/sendgrid-php.php");
 	}
 ```
 
-⭐ In the *get_purchased_product_list* function, get all saved product information in the database table and return it as three lists — product names, product IDs, and product prices.
+⭐ In the _get\_purchased\_product\_list_ function, get all saved product information in the database table and return it as three lists — product names, product IDs, and product prices.
 
 ```
 	public function get_purchased_product_list($table){
@@ -489,13 +487,13 @@ require("sendgrid-php/sendgrid-php.php");
 	}
 ```
 
-⭐ In the *get_table_name* function, obtain the latest registered customer's (via the web application interface) assigned table name from the database.
+⭐ In the _get\_table\_name_ function, obtain the latest registered customer's (via the web application interface) assigned table name from the database.
 
-⭐ If the *return* value is true, return the obtained table name as a variable.
+⭐ If the _return_ value is true, return the obtained table name as a variable.
 
-⭐ If the *return* value is false, print the obtained table and its creation date.
+⭐ If the _return_ value is false, print the obtained table and its creation date.
 
-*%kutluhan%2022-12-16 23:49:39%*
+_%kutluhan%2022-12-16 23:49:39%_
 
 ```
 	public function get_table_name($return){
@@ -511,7 +509,7 @@ require("sendgrid-php/sendgrid-php.php");
 	}
 ```
 
-⭐ In the *get_email* function, obtain the email address of the given customer from the database.
+⭐ In the _get\_email_ function, obtain the email address of the given customer from the database.
 
 ```
     private function get_email($table){
@@ -525,9 +523,9 @@ require("sendgrid-php/sendgrid-php.php");
 	}
 ```
 
-⭐ In the *send_product_list_email* function, obtain (and assign) the three product information arrays generated by the *get_purchased_product_list* function and create HTML table rows by utilizing these arrays.
+⭐ In the _send\_product\_list\_email_ function, obtain (and assign) the three product information arrays generated by the _get\_purchased\_product\_list_ function and create HTML table rows by utilizing these arrays.
 
-Then, send an HTML email via SendGrid Email API to the customer's registered email address, including the list of the products added to the grocery cart and the link to the payment page — *product_list.php*.
+Then, send an HTML email via SendGrid Email API to the customer's registered email address, including the list of the products added to the grocery cart and the link to the payment page — _product\_list.php_.
 
 ```
 	public function send_product_list_email($table, $tag){
@@ -605,11 +603,11 @@ $server = array(
 $conn = mysqli_connect($server["name"], $server["username"], $server["password"], $server["database"]);
 ```
 
-📁 *shopping.php*
+📁 _shopping.php_
 
-⭐ Include the *class.php* file.
+⭐ Include the _class.php_ file.
 
-⭐ Define the *customer* object of the *_main* class with its required parameters.
+⭐ Define the _customer_ object of the _\_main_ class with its required parameters.
 
 ```
 include_once "assets/class.php";
@@ -619,7 +617,7 @@ $customer = new _main();
 $customer->__init__($conn);
 ```
 
-⭐ If the customer requests to create an account via the web application interface *(index.php)*, create a new database table for the customer and insert the given customer information as the first row.
+⭐ If the customer requests to create an account via the web application interface _(index.php)_, create a new database table for the customer and insert the given customer information as the first row.
 
 ```
 if(isset($_GET['table']) && isset($_GET['firstname']) && isset($_GET['lastname']) && isset($_GET['card_info']) && isset($_GET['email'])){
@@ -651,7 +649,7 @@ if(isset($_GET['remove']) && isset($_GET['table']) && isset($_GET['product_id'])
 }
 ```
 
-⭐ If requested by Beetle ESP32-C3, send an HTML email to the customer's registered email address via SendGrid Email API, including the list of the products added to the cart, the link to the payment page *(product_list.php)*, and the assigned RFID key tag UID.
+⭐ If requested by Beetle ESP32-C3, send an HTML email to the customer's registered email address via SendGrid Email API, including the list of the products added to the cart, the link to the payment page _(product\_list.php)_, and the assigned RFID key tag UID.
 
 ```
 if(isset($_GET['table']) && isset($_GET['send_email']) && isset($_GET['tag'])){
@@ -667,17 +665,17 @@ if(isset($_GET["deviceChangeTable"])){
 }
 ```
 
-📁 *index.php*
+📁 _index.php_
 
 ⭐ Create the web application interface, including the HTML form for creating a new account.
 
-You can inspect and download the *index.php* file below.
+You can inspect and download the _index.php_ file below.
 
-📁 *update_list.php*
+📁 _update\_list.php_
 
-⭐ Include the *class.php* file.
+⭐ Include the _class.php_ file.
 
-⭐ Define the *customer* object of the *_main* class with its required parameters.
+⭐ Define the _customer_ object of the _\_main_ class with its required parameters.
 
 ```
 include_once "class.php";
@@ -715,9 +713,9 @@ for($i=0; $i&lt;count($product_names); $i++){
 echo($list);
 ```
 
-📁 *index.js*
+📁 _index.js_
 
-⭐ In JavaScript (jQuery and AJAX), every 3 seconds, retrieve the list of the products added to the cart from the database table to inform the customer concurrently via the product list (payment) page — *product_list.php*.
+⭐ In JavaScript (jQuery and AJAX), every 3 seconds, retrieve the list of the products added to the cart from the database table to inform the customer concurrently via the product list (payment) page — _product\_list.php_.
 
 ```
 setInterval(function(){
@@ -731,31 +729,31 @@ setInterval(function(){
 }, 3000);
 ```
 
-📁 *product_list.php*
+📁 _product\_list.php_
 
-⭐ In the *product_list.php* file, create the concurrent HTML table showing the information of the products added to the grocery cart, which is updated every three seconds via the jQuery script.
+⭐ In the _product\_list.php_ file, create the concurrent HTML table showing the information of the products added to the grocery cart, which is updated every three seconds via the jQuery script.
 
-⭐ You can inspect and download the *product_list.php* file below.
+⭐ You can inspect and download the _product\_list.php_ file below.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_app_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_app\_1.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_app_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_app\_2.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_app_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_app\_3.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_app_4.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_app\_4.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_app_5.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_app\_5.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_app_6.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_app\_6.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_app_7.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_app\_7.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_app_8.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_app\_8.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_app_9.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_app\_9.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_app_10.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_app\_10.png)
 
 ## Step 4.1: Setting and running the web application on LattePanda 3 Delta 864
 
@@ -765,72 +763,71 @@ LattePanda 3 Delta is a pocket-sized hackable computer that provides ultra perfo
 
 Plausibly, LattePanda 3 Delta can run the XAMPP application. So, it is effortless to create a server with a MariaDB database on LattePanda 3 Delta.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/lattepanda_run_1.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/lattepanda\_run\_1.jpg)
 
 :hash: First of all, install and set up [the XAMPP application](https://www.apachefriends.org/).
 
-:hash: Then, go to the *XAMPP Control Panel* and click the *MySQL Admin* button.
+:hash: Then, go to the _XAMPP Control Panel_ and click the _MySQL Admin_ button.
 
-:hash: Once the *phpMyAdmin* tool pops up, create a new database named *smart_grocery_cart*.
+:hash: Once the _phpMyAdmin_ tool pops up, create a new database named _smart\_grocery\_cart_.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/app_server_set_1.png)
+![](.gitbook/assets/egg-counting-openmv/app\_server\_set\_1.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/database_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/database\_1.png)
 
 ## Step 4.2: Providing a wholesome retail customer experience via the web application
 
-After setting the web application on  LattePanda 3 Delta 864:
+After setting the web application on LattePanda 3 Delta 864:
 
-🛒🛍️📲 The web application interface *(index.php)* lets the customer create an account by filling out the form:
+🛒🛍️📲 The web application interface _(index.php)_ lets the customer create an account by filling out the form:
 
+* First name
+* Last name
+* Email
+* Account name
+* Card number
 
-- First name
-- Last name
-- Email
-- Account name
-- Card number
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web\_app\_1.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web_app_1.png)
-
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web_app_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web\_app\_2.png)
 
 🛒🛍️📲 The web application creates and names the customer's database table with the given account name. Then, it inserts the given customer information into the database table as the first row.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/database_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/database\_2.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/database_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/database\_3.png)
 
-🛒🛍️📲 The web application communicates with Beetle ESP32-C3 via HTTP GET requests on the *shopping.php* file:
+🛒🛍️📲 The web application communicates with Beetle ESP32-C3 via HTTP GET requests on the _shopping.php_ file:
 
-*?table=kutluhan&firstname=kutluhan&lastname=aktar&card_info=5236896598245668&email=info@theamplituhedron.com*
+_?table=kutluhan\&firstname=kutluhan\&lastname=aktar\&card\_info=5236896598245668\&email=info@theamplituhedron.com_
 
-*?add=OK&table=kutluhan&product_id=001&product_name=Barilla&product_price=$4.72*
+_?add=OK\&table=kutluhan\&product\_id=001\&product\_name=Barilla\&product\_price=$4.72_
 
-*?remove=OK&table=kutluhan&product_id=001*
+_?remove=OK\&table=kutluhan\&product\_id=001_
 
-*?table=kutluhan&tag=56_1B_0D_F8&send_email=OK*
+_?table=kutluhan\&tag=56\_1B\_0D\_F8\&send\_email=OK_
 
-*?deviceChangeTable*
+_?deviceChangeTable_
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web_app_6.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web\_app\_6.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web_app_7.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web\_app\_7.png)
 
 🛒🛍️📲 The web application saves the list of the products added to the grocery cart in the database.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/database_4.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/database\_4.png)
 
-🛒🛍️📲 On the *product_list.php* file, the web application displays the concurrent list of the products added to the cart as an HTML table, updated every three seconds via the jQuery script.
+🛒🛍️📲 On the _product\_list.php_ file, the web application displays the concurrent list of the products added to the cart as an HTML table, updated every three seconds via the jQuery script.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web_app_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web\_app\_3.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web_app_4.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web\_app\_4.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web_app_5.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web\_app\_5.png)
 
-🛒🛍️📲 Also, the web application sends an HTML email to the customer's registered email address via SendGrid Email API when the customer finishes shopping, including the list of the products added to the cart, the link to the payment page *(product_list.php)*, and the assigned RFID key tag UID.
+🛒🛍️📲 Also, the web application sends an HTML email to the customer's registered email address via SendGrid Email API when the customer finishes shopping, including the list of the products added to the cart, the link to the payment page _(product\_list.php)_, and the assigned RFID key tag UID.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web_app_8.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web\_app\_8.png)
 
 ## Step 5: Capturing and storing product images w/ OpenMV Cam H7
 
@@ -842,13 +839,12 @@ You can get more information regarding the specific OpenMV MicroPython libraries
 
 After setting up OpenMV Cam H7 on the OpenMV IDE, I programmed OpenMV Cam H7 to capture product images in order to store them on the SD card and create appropriately labeled samples for the Edge Impulse object detection (FOMO) model.
 
-Since I decided to distinguish foods and drinks with classes while creating a valid data set for the object detection model, I utilized the joystick attached to OpenMV Cam H7 so as to choose among two different classes. After selecting a class, OpenMV Cam H7 captures a picture, appends the selected class name (Food or Drink) with the current date & time to the file name, and then saves the captured image to the SD card under the *samples* folder.
+Since I decided to distinguish foods and drinks with classes while creating a valid data set for the object detection model, I utilized the joystick attached to OpenMV Cam H7 so as to choose among two different classes. After selecting a class, OpenMV Cam H7 captures a picture, appends the selected class name (Food or Drink) with the current date & time to the file name, and then saves the captured image to the SD card under the _samples_ folder.
 
+* Joystick (Up) ➡ Food
+* Joystick (Down) ➡ Drink
 
-- Joystick (Up) ➡ Food
-- Joystick (Down) ➡ Drink 
-
-You can download the *smart_grocery_cart_data_collect.py* file to try and inspect the code for capturing images and storing them on the SD card via OpenMV Cam H7.
+You can download the _smart\_grocery\_cart\_data\_collect.py_ file to try and inspect the code for capturing images and storing them on the SD card via OpenMV Cam H7.
 
 ⭐ Include the required modules.
 
@@ -890,7 +886,7 @@ J_VRX = ADC(Pin('P6'))
 J_SW = Pin("P9", Pin.IN, Pin.PULL_UP)
 ```
 
-⭐ In the *adjustColor* function, adjust the color of the built-in RGB LED on OpenMV Cam H7. 
+⭐ In the _adjustColor_ function, adjust the color of the built-in RGB LED on OpenMV Cam H7.
 
 ```
 def adjustColor(leds):
@@ -902,7 +898,7 @@ def adjustColor(leds):
     else: blue.off()
 ```
 
-⭐ In the *save_sample* function:
+⭐ In the _save\_sample_ function:
 
 ⭐ Get the current date and time.
 
@@ -943,7 +939,7 @@ def save_sample(name, color, leds):
     adjustColor((0,0,0))
 ```
 
-⭐ In the *readJoystick* function, get the joystick movements and switch button value.
+⭐ In the _readJoystick_ function, get the joystick movements and switch button value.
 
 ```
 def readJoystick():
@@ -953,7 +949,7 @@ def readJoystick():
     return (j_x, sw)
 ```
 
-⭐ In the *while* loop, display a real-time video stream on the ST7735 1.8" color TFT screen and save image samples named with the selected class (Food or Drink), depending on joystick movements.
+⭐ In the _while_ loop, display a real-time video stream on the ST7735 1.8" color TFT screen and save image samples named with the selected class (Food or Drink), depending on joystick movements.
 
 ```
 while(True):
@@ -972,9 +968,9 @@ while(True):
         save_sample("Drink", (0,255,255), (0,1,1))
 ```
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_collect_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_collect\_1.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_collect_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_collect\_2.png)
 
 ## Step 5.1: Saving the captured product images to the SD card as samples
 
@@ -982,60 +978,59 @@ After uploading and running the code for capturing product images and saving the
 
 🛒🛍️📲 The device shows a real-time video stream on the ST7735 color TFT display.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect_0.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect\_0.jpg)
 
-🛒🛍️📲 If the joystick is moved up, the device captures a picture of the given food retail product in the 160x160 frame size. If the device captures the picture successfully, it pauses the video stream, turns the built-in RGB LED to magenta, appends the selected class name (Food) with the current date & time to the file name, and stores the recently captured image on the SD card under the *samples* folder.
+🛒🛍️📲 If the joystick is moved up, the device captures a picture of the given food retail product in the 160x160 frame size. If the device captures the picture successfully, it pauses the video stream, turns the built-in RGB LED to magenta, appends the selected class name (Food) with the current date & time to the file name, and stores the recently captured image on the SD card under the _samples_ folder.
 
-*Food.2022_12_6_15-36-21.jpg*
+_Food.2022\_12\_6\_15-36-21.jpg_
 
 🛒🛍️📲 Then, the device displays the selected class name and the crosshair with the assigned class color (magenta) on the ST7735 TFT screen.
 
 🛒🛍️📲 Finally, the device resumes the video stream and turns off the built-in RGB LED.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect_1.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect\_1.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect_2.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect\_2.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect_3.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect\_3.jpg)
 
-🛒🛍️📲 If the joystick is moved down, the device captures a picture of the given food retail product in the 160x160 frame size. If the device captures the picture successfully, it pauses the video stream, turns the built-in RGB LED to cyan, appends the selected class name (Drink) with the current date & time to the file name, and stores the recently captured image on the SD card under the *samples* folder.
+🛒🛍️📲 If the joystick is moved down, the device captures a picture of the given food retail product in the 160x160 frame size. If the device captures the picture successfully, it pauses the video stream, turns the built-in RGB LED to cyan, appends the selected class name (Drink) with the current date & time to the file name, and stores the recently captured image on the SD card under the _samples_ folder.
 
-*Drink.2022_12_6_15-39-26.jpg*
+_Drink.2022\_12\_6\_15-39-26.jpg_
 
 🛒🛍️📲 Then, the device displays the selected class name and the crosshair with the assigned class color (cyan) on the ST7735 TFT screen.
 
 🛒🛍️📲 Finally, the device resumes the video stream and turns off the built-in RGB LED.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect_4.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect\_4.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect_5.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect\_5.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect_6.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/collect\_6.jpg)
 
 🛒🛍️📲 Also, the device prints notifications and the captured image data on the OpenMV IDE serial monitor for debugging.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial_collect_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial\_collect\_1.png)
 
 I decided to add two different classes (Food and Drink) to the file names while collecting product images in order to distinguish products under two main categories. Although I utilized the product brand names, such as Nutella and Snickers, to label my images, these classes helped me to label foods and drinks separately and saved the time of labeling on Edge Impulse.
 
 As far as my experiments go, the device operates impeccably while capturing food retail product images and saving them to the SD card :)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/gif_collect.gif)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/gif\_collect.gif)
 
-After capturing numerous images of different food retail products, I elicited my relatively modest data set under the *samples* folder on the SD card, including training and testing samples for my object detection (FOMO) model.
+After capturing numerous images of different food retail products, I elicited my relatively modest data set under the _samples_ folder on the SD card, including training and testing samples for my object detection (FOMO) model.
 
 Since OpenMV Cam H7 runs my object detection (FOMO) model, I decided to focus on a small group of products so as to avoid exceeding the memory limitations.
 
-
-- Barilla
-- Milk
-- Nutella
-- Pringles
-- Snickers
+* Barilla
+* Milk
+* Nutella
+* Pringles
+* Snickers
 
 ![](.gitbook/assets/smart-grocery-cart-with-computer-vision/products.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/data_collected.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/data\_collected.png)
 
 ## Step 6: Building an object detection (FOMO) model with Edge Impulse
 
@@ -1047,18 +1042,16 @@ Since Edge Impulse supports almost every microcontroller and development board d
 
 Even though Edge Impulse supports JPG or PNG files to upload as samples directly, each training or testing sample needs to be labeled manually. Therefore, I needed to follow the steps below to format my data set so as to train my object detection model accurately:
 
-
-- Data Scaling (Resizing)
-- Data Labeling
+* Data Scaling (Resizing)
+* Data Labeling
 
 Since I collected images of food retail products, I preprocessed my data set effortlessly to label each image sample on Edge Impulse by utilizing the product brand names:
 
-
-- Barilla
-- Milk
-- Nutella
-- Pringles
-- Snickers
+* Barilla
+* Milk
+* Nutella
+* Pringles
+* Snickers
 
 Plausibly, Edge Impulse allows building predictive models optimized in size and accuracy automatically and deploying the trained model as an OpenMV firmware. Therefore, after scaling (resizing) and preprocessing my data set to label samples, I was able to build an accurate object detection model to detect a small group of products, which runs on OpenMV Cam H7 without getting memory allocation errors.
 
@@ -1070,139 +1063,137 @@ After collecting training and testing image samples, I uploaded them to my proje
 
 :hash: First of all, sign up for [Edge Impulse](https://www.edgeimpulse.com/) and create a new project.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_1.png)
 
-:hash: To be able to label image samples manually on Edge Impulse for object detection models, go to *Dashboard ➡ Project info ➡ Labeling method* and select *Bounding boxes (object detection)*.
+:hash: To be able to label image samples manually on Edge Impulse for object detection models, go to _Dashboard ➡ Project info ➡ Labeling method_ and select _Bounding boxes (object detection)_.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_2.png)
 
-:hash: Navigate to the *Data acquisition* page and click the *Upload existing data* button.
+:hash: Navigate to the _Data acquisition_ page and click the _Upload existing data_ button.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_3.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_4.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_4.png)
 
-:hash: Then, choose the data category (training or testing), select image files, and click the *Begin upload* button.
+:hash: Then, choose the data category (training or testing), select image files, and click the _Begin upload_ button.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_5.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_5.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_6.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_6.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_7.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_7.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_8.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_8.png)
 
 After uploading my data set successfully, I labeled each sample by utilizing the product brand names. In Edge Impulse, labeling an object is as easy as dragging a box around it and entering a label. Also, Edge Impulse runs a tracking algorithm in the background while labeling objects, so it moves bounding boxes automatically for the same objects in different images.
 
-:hash: Go to *Data acquisition ➡ Labeling queue (Object detection labeling)*. It shows all the unlabeled images (training and testing) remaining in the given data set.
+:hash: Go to _Data acquisition ➡ Labeling queue (Object detection labeling)_. It shows all the unlabeled images (training and testing) remaining in the given data set.
 
-:hash: Finally, select an unlabeled image, drag bounding boxes around objects, click the *Save labels* button, and repeat this process until the whole data set is labeled.
+:hash: Finally, select an unlabeled image, drag bounding boxes around objects, click the _Save labels_ button, and repeat this process until the whole data set is labeled.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_9.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_9.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_10.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_10.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_11.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_11.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_12.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_12.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_13.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_13.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_14.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_14.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_15.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_15.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_16.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_16.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_17.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_17.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_18.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_18.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_19.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_19.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_set_20.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_set\_20.png)
 
 ## Step 6.2: Training the FOMO model on various food retail products
 
 After labeling my training and testing samples successfully, I designed an impulse and trained it on detecting a small group of food retail products.
 
-An impulse is a custom neural network model in Edge Impulse. I created my impulse by employing the *Image* preprocessing block and the *Object Detection (Images)* learning block.
+An impulse is a custom neural network model in Edge Impulse. I created my impulse by employing the _Image_ preprocessing block and the _Object Detection (Images)_ learning block.
 
-The *Image* preprocessing block optionally turns the input image format to grayscale and generates a features array from the raw image.
+The _Image_ preprocessing block optionally turns the input image format to grayscale and generates a features array from the raw image.
 
-The *Object Detection (Images)* learning block represents a machine learning algorithm that detects objects on the given image, distinguished between model labels.
+The _Object Detection (Images)_ learning block represents a machine learning algorithm that detects objects on the given image, distinguished between model labels.
 
-:hash: Go to the *Create impulse* page and set image width and height parameters to 160. Then, select the resize mode parameter as *Fit shortest axis* so as to scale (resize) given training and testing image samples.
+:hash: Go to the _Create impulse_ page and set image width and height parameters to 160. Then, select the resize mode parameter as _Fit shortest axis_ so as to scale (resize) given training and testing image samples.
 
-:hash: Select the *Image* preprocessing block and the *Object Detection (Images)* learning block. Finally, click *Save Impulse*.
+:hash: Select the _Image_ preprocessing block and the _Object Detection (Images)_ learning block. Finally, click _Save Impulse_.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_train_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_train\_1.png)
 
-:hash: Before generating features for the object detection model, go to the *Image* page and set the *Color depth* parameter as *Grayscale*. Then, click *Save parameters*.
+:hash: Before generating features for the object detection model, go to the _Image_ page and set the _Color depth_ parameter as _Grayscale_. Then, click _Save parameters_.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_train_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_train\_2.png)
 
-:hash: After saving parameters, click *Generate features* to apply the *Image* preprocessing block to training image samples.
+:hash: After saving parameters, click _Generate features_ to apply the _Image_ preprocessing block to training image samples.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_train_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_train\_3.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_train_4.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_train\_4.png)
 
-:hash: Finally, navigate to the *Object detection* page and click *Start training*.
+:hash: Finally, navigate to the _Object detection_ page and click _Start training_.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_train_5.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_train\_5.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_train_6.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_train\_6.png)
 
 According to my experiments with my object detection model, I modified the neural network settings and architecture to build an object detection model with high accuracy and validity:
 
 📌 Neural network settings:
 
-
-- Number of training cycles ➡ 100
-- Learning rate ➡ 0.005
-- Validation set size ➡ 5
+* Number of training cycles ➡ 100
+* Learning rate ➡ 0.005
+* Validation set size ➡ 5
 
 📌 Neural network architecture:
 
+* FOMO (Faster Objects, More Objects) MobileNetV2 0.35
 
-- FOMO (Faster Objects, More Objects) MobileNetV2 0.35
+After generating features and training my FOMO model with training samples, Edge Impulse evaluated the F1 score (accuracy) as _100%_.
 
-After generating features and training my FOMO model with training samples, Edge Impulse evaluated the F1 score (accuracy) as *100%*.
-
-The F1 score (accuracy) is approximately *100%* due to the modest volume and variety of training samples showing a small group of food retail products. In technical terms, the model trains on limited validation samples. Therefore, I am still collecting different product images to broaden the range of products in my data set.
+The F1 score (accuracy) is approximately _100%_ due to the modest volume and variety of training samples showing a small group of food retail products. In technical terms, the model trains on limited validation samples. Therefore, I am still collecting different product images to broaden the range of products in my data set.
 
 If you encounter any memory allocation errors while uploading the model to OpenMV Cam H7 as an OpenMV firmware, try utilizing 96 x 96 or 80 x 80 image resolutions instead of 160 x 160 while creating your impulse. Even though smaller resolutions plummet the model accuracy, they also reduce the model size.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_train_7.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_train\_7.png)
 
 ## Step 6.3: Evaluating the model accuracy and deploying the model
 
 After building and training my object detection model, I tested its accuracy and validity by utilizing testing image samples.
 
-The evaluated accuracy of the model is *90%*.
+The evaluated accuracy of the model is _90%_.
 
-:hash: To validate the trained model, go to the *Model testing* page and click *Classify all*.
+:hash: To validate the trained model, go to the _Model testing_ page and click _Classify all_.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_test_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_test\_1.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_test_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_test\_2.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_test_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_test\_3.png)
 
 After validating my object detection model, I deployed it as fully optimized OpenMV firmware. This is the preferred method since the deployed firmware contains merely the object detection model and what is necessary to run the impulse. So, it does not consume much memory space and cause running into memory allocation issues.
 
-:hash: To deploy the validated model as an OpenMV firmware, navigate to the *Deployment* page and select *OpenMV firmware*.
+:hash: To deploy the validated model as an OpenMV firmware, navigate to the _Deployment_ page and select _OpenMV firmware_.
 
-:hash: Then, choose the *Quantized (int8)* optimization option to get the best performance possible while running the deployed model.
+:hash: Then, choose the _Quantized (int8)_ optimization option to get the best performance possible while running the deployed model.
 
-:hash: Finally, click *Build* to download the model as an OpenMV firmware in [the generated ZIP folder](https://docs.edgeimpulse.com/docs/deployment/running-your-impulse-openmv#deploying-your-impulse-as-an-openmv-firmware).
+:hash: Finally, click _Build_ to download the model as an OpenMV firmware in [the generated ZIP folder](https://docs.edgeimpulse.com/docs/deployment/running-your-impulse-openmv#deploying-your-impulse-as-an-openmv-firmware).
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_deploy_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_deploy\_1.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_deploy_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_deploy\_2.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge_deploy_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/edge\_deploy\_3.png)
 
 ## Step 7: Setting up Beetle ESP32-C3 on the Arduino IDE
 
@@ -1210,27 +1201,27 @@ Before proceeding with the following steps, I needed to set up Beetle ESP32-C3 o
 
 If your computer cannot recognize Beetle ESP32-C3 when plugged in via a USB cable, connect Pin 9 to GND (pull-down) and try again.
 
-:hash: To add the ESP32-C3 board package to the Arduino IDE, navigate to *File ➡ Preferences* and paste the URL below under *Additional Boards Manager URLs*.
+:hash: To add the ESP32-C3 board package to the Arduino IDE, navigate to _File ➡ Preferences_ and paste the URL below under _Additional Boards Manager URLs_.
 
-*https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json*
+_https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package\_esp32\_index.json_
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/espC3_set_1.png)
+![](<.gitbook/assets/food-irradiation/espC3\_set\_1 (1).png>)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/espC3_set_2.png)
+![](<.gitbook/assets/dairy-manufacturing-with-ai/set\_xiao\_wifi\_1 (2).png>)
 
-:hash: Then, to install the required core, navigate to *Tools ➡ Board ➡ Boards Manager* and search for *esp32*.
+:hash: Then, to install the required core, navigate to _Tools ➡ Board ➡ Boards Manager_ and search for _esp32_.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/espC3_set_3.png)
+![](<.gitbook/assets/food-irradiation/espC3\_set\_3 (1).png>)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/espC3_set_4.png)
+![](.gitbook/assets/food-irradiation/espC3\_set\_4.png)
 
-:hash: After installing the core, navigate to *Tools ➡ Board ➡ ESP32 Arduino* and select *DFRobot Beetle ESP32-C3*.
+:hash: After installing the core, navigate to _Tools ➡ Board ➡ ESP32 Arduino_ and select _DFRobot Beetle ESP32-C3_.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/espC3_set_5.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/espC3\_set\_5.png)
 
-:hash: To print data on the serial monitor, enable *USB CDC On Boot* after setting Beetle ESP32-C3.
+:hash: To print data on the serial monitor, enable _USB CDC On Boot_ after setting Beetle ESP32-C3.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/espC3_set_6.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/espC3\_set\_6.png)
 
 :hash: Finally, download the required library for the MFRC522 RFID reader:
 
@@ -1242,7 +1233,7 @@ Since OpenMV Cam H7 does not provide Wi-Fi or cellular connectivity, I employed 
 
 Also, Beetle ESP32-C3 determines when the customer concludes shopping and is ready to leave the store if it detects the assigned RFID key tag UID of the grocery cart via the MFRC522 RFID reader.
 
-You can download the *smart_grocery_cart_app_connection.ino* file to try and inspect the code for obtaining commands from OpenMV Cam H7 via serial communication and communicating with the web application.
+You can download the _smart\_grocery\_cart\_app\_connection.ino_ file to try and inspect the code for obtaining commands from OpenMV Cam H7 via serial communication and communicating with the web application.
 
 ⭐ Include the required libraries.
 
@@ -1254,7 +1245,7 @@ You can download the *smart_grocery_cart_app_connection.ino* file to try and ins
 
 ⭐ Define the Wi-Fi network settings and the web application server settings on LattePanda 3 Delta 864.
 
-⭐ Then, initialize the *WiFiClient* object. 
+⭐ Then, initialize the _WiFiClient_ object.
 
 ```
 char ssid[] = "&lt;_SSID_>";        // your network SSID (name)
@@ -1322,7 +1313,7 @@ MFRC522::MIFARE_Key key;
   adjustColor(0,0,255);
 ```
 
-⭐ In the *adjustColor* function, adjust the color of the RGB LED via the PWM pins.
+⭐ In the _adjustColor_ function, adjust the color of the RGB LED via the PWM pins.
 
 ```
 void adjustColor(int r, int g, int b){
@@ -1335,9 +1326,9 @@ void adjustColor(int r, int g, int b){
 }
 ```
 
-⭐ In the *read_UID* function, get the new card or key tag UID if detected.
+⭐ In the _read\_UID_ function, get the new card or key tag UID if detected.
 
-⭐ Then, copy the detected UID to the *lastRead* string, process the *lastRead* string, and print it on the Arduino IDE serial monitor.
+⭐ Then, copy the detected UID to the _lastRead_ string, process the _lastRead_ string, and print it on the Arduino IDE serial monitor.
 
 ⭐ After detecting a UID successfully, turn the RGB LED to magenta.
 
@@ -1368,9 +1359,9 @@ int read_UID(){
 }
 ```
 
-⭐ In the *make_a_get_request* function:
+⭐ In the _make\_a\_get\_request_ function:
 
-⭐ Connect to the web application named *smart_grocery_cart*.
+⭐ Connect to the web application named _smart\_grocery\_cart_.
 
 ⭐ Create the query string depending on the given command.
 
@@ -1429,7 +1420,7 @@ void make_a_get_request(String request){
   }
 ```
 
-⭐ In the *get_data_from_OpenMV* function, obtain the transferred data packet from OpenMV Cam H7 via serial communication. After getting the data packet, notify the customer via the RGB LED and the buzzer.
+⭐ In the _get\_data\_from\_OpenMV_ function, obtain the transferred data packet from OpenMV Cam H7 via serial communication. After getting the data packet, notify the customer via the RGB LED and the buzzer.
 
 ```
 void get_data_from_OpenMV(){
@@ -1451,7 +1442,7 @@ void get_data_from_OpenMV(){
 
 ⭐ If OpenMV Cam H7 transfers a command (data packet) via serial communication:
 
-⭐ If the received command is *get_table*, make an HTTP GET request to obtain the latest registered table name in the MariaDB database. Then, elicit the latest registered table name from the web application's response as a substring by utilizing the percentage (%) sign as the delimiter.
+⭐ If the received command is _get\_table_, make an HTTP GET request to obtain the latest registered table name in the MariaDB database. Then, elicit the latest registered table name from the web application's response as a substring by utilizing the percentage (%) sign as the delimiter.
 
 ⭐ Otherwise, make an HTTP GET request directly to the web application by combining the stored table name and the received command (data packet).
 
@@ -1483,15 +1474,15 @@ void get_data_from_OpenMV(){
   }
 ```
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_web_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_web\_1.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_web_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_web\_2.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_web_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_web\_3.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_web_4.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_web\_4.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_web_5.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_web\_5.png)
 
 ## Step 8: Setting up the Edge Impulse FOMO model on OpenMV Cam H7
 
@@ -1503,36 +1494,34 @@ Since Edge Impulse optimizes and formats preprocessing, configuration, and learn
 
 :hash: After downloading the generated OpenMV firmware in the ZIP file format, plug OpenMV Cam H7 into your computer and open the OpenMV IDE.
 
-:hash: Then, go to *Tools ➡ Run Bootloader (Load Firmware)*.
+:hash: Then, go to _Tools ➡ Run Bootloader (Load Firmware)_.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/openmv_set_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/openmv\_set\_1.png)
 
 :hash: Choose the firmware file for OpenMV Cam H7 after extracting the generated ZIP folder.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/openmv_set_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/openmv\_set\_2.png)
 
-:hash: Select *Erase internal file system* and click *Run* to flash OpenMV Cam H7.
+:hash: Select _Erase internal file system_ and click _Run_ to flash OpenMV Cam H7.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/openmv_set_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/openmv\_set\_3.png)
 
 After flashing the firmware successfully via the OpenMV IDE, I programmed OpenMV Cam H7 to run inferences so as to detect food retail products.
 
 Also, I employed OpenMV Cam H7 to transmit commands to Beetle ESP32-C3 via serial communication by utilizing the joystick movements and switch button:
 
-
-- Joystick (Button) ➡ Get the latest registered table name in the database
+* Joystick (Button) ➡ Get the latest registered table name in the database
 
 After running an inference successfully:
 
+* Joystick (Up + Button) ➡ Add the detected product to the database table
+* Joystick (Down + Button) ➡ Remove the detected product from the database table
 
-- Joystick (Up + Button) ➡ Add the detected product to the database table
-- Joystick (Down + Button) ➡ Remove the detected product from the database table
-
-You can download the *smart_grocery_cart_run_model.py* file to try and inspect the code for running Edge Impulse neural network models on OpenMV Cam H7.
+You can download the _smart\_grocery\_cart\_run\_model.py_ file to try and inspect the code for running Edge Impulse neural network models on OpenMV Cam H7.
 
 You can inspect the corresponding functions and settings in Step 5.
 
-⭐ Import the required modules and the *product_list.py* file, including the product information for detected products — IDs, names, and prices.
+⭐ Import the required modules and the _product\_list.py_ file, including the product information for detected products — IDs, names, and prices.
 
 ```
 import sensor, image, math, lcd, tf
@@ -1590,23 +1579,23 @@ J_VRX = ADC(Pin('P6'))
 J_SW = Pin("P9", Pin.IN, Pin.PULL_UP)
 ```
 
-⭐ In the *while* loop:
+⭐ In the _while_ loop:
 
 ⭐ Display a real-time video stream on the ST7735 color TFT screen.
 
-⭐ If the joystick button is pressed, transfer the *get_table* command to Beetle ESP32-C3 via serial communication in order to obtain the latest registered customer's table name for subsequent requests to the web application.
+⭐ If the joystick button is pressed, transfer the _get\_table_ command to Beetle ESP32-C3 via serial communication in order to obtain the latest registered customer's table name for subsequent requests to the web application.
 
 ⭐ If transferred successfully, turn the built-in RGB LED to blue and notify the customer via the ST7735 color TFT screen.
 
 ⭐ Run an inference with the object detection (FOMO) model to detect food retail products.
 
-⭐ Via the *detect* function, obtain all detected objects found in the recently captured image, split out per label (product brand name).
+⭐ Via the _detect_ function, obtain all detected objects found in the recently captured image, split out per label (product brand name).
 
 ⭐ Exclude the class index 0 since it is the background class.
 
 ⭐ If the FOMO model detects an object successfully, activate the selection (options) menu for adding or removing the detected product to/from the database table.
 
-⭐ Obtain the detected product's label to retrieve its details saved in the given product list — *product_list.py*.
+⭐ Obtain the detected product's label to retrieve its details saved in the given product list — _product\_list.py_.
 
 ⭐ Get the prediction (detection) results for each label and print them on the serial terminal.
 
@@ -1668,13 +1657,12 @@ while(True):
 
 ⭐ Display the cart choice options on the ST7735 color TFT screen:
 
+* Add Cart
+* Remove
 
-- Add Cart
-- Remove
+⭐ If the joystick is moved up, change the cart choice option to _add_, inform the customer via the ST7735 TFT screen, and turn the built-in RGB LED to green.
 
-⭐ If the joystick is moved up, change the cart choice option to *add*, inform the customer via the ST7735 TFT screen, and turn the built-in RGB LED to green.
-
-⭐ If the joystick is moved down, change the cart choice option to *remove*, inform the customer via the ST7735 TFT screen, and turn the built-in RGB LED to red.
+⭐ If the joystick is moved down, change the cart choice option to _remove_, inform the customer via the ST7735 TFT screen, and turn the built-in RGB LED to red.
 
 ⭐ After selecting a cart choice option, if the joystick button is pressed, generate the query string with the selected cart choice and the given information of the detected product (ID, name, and price) and send it to Beetle ESP32-C3 via serial communication.
 
@@ -1735,148 +1723,146 @@ while(True):
                 cart_choice = "EMPTY"
 ```
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_product.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_product.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_run_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_run\_1.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_run_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_run\_2.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code_run_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/code\_run\_3.png)
 
 ## Step 9: Running the FOMO model on OpenMV Cam H7 to detect products and communicating with the web application via Beetle ESP32-C3
 
-My Edge Impulse object detection (FOMO) model scans a captured image and predicts possibilities of trained labels to recognize an object on the given captured image. The prediction result (score) represents the model's *"confidence"* that the detected object corresponds to each of the five different labels (classes) [0 - 4], as shown in Step 6:
+My Edge Impulse object detection (FOMO) model scans a captured image and predicts possibilities of trained labels to recognize an object on the given captured image. The prediction result (score) represents the model's _"confidence"_ that the detected object corresponds to each of the five different labels (classes) \[0 - 4], as shown in Step 6:
 
+* Barilla
+* Milk
+* Nutella
+* Pringles
+* Snickers
 
-- Barilla
-- Milk
-- Nutella
-- Pringles
-- Snickers
-
-To run the *smart_grocery_cart_run_model.py* file on OpenMV Cam H7 when powered up automatically, save it as *main.py* on the SD card.
+To run the _smart\_grocery\_cart\_run\_model.py_ file on OpenMV Cam H7 when powered up automatically, save it as _main.py_ on the SD card.
 
 🛒🛍️📲 When Beetle ESP32-C3 connects successfully to the given Wi-Fi network, the device turns the RGB LED to blue.
 
 🛒🛍️📲 Also, the device prints notifications and the received commands on the Arduino IDE serial monitor for debugging.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_1.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_1.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial_web_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial\_web\_1.png)
 
 🛒🛍️📲 The device shows a real-time video stream on the ST7735 color TFT display.
 
-🛒🛍️📲 If the joystick button is pressed, OpenMV Cam H7 transfers the *get_table* command to Beetle ESP32-C3 via serial communication. Then, Beetle ESP32-C3 makes an HTTP GET request to the web application to obtain the latest registered customer's table name from the database for subsequent requests to the web application.
+🛒🛍️📲 If the joystick button is pressed, OpenMV Cam H7 transfers the _get\_table_ command to Beetle ESP32-C3 via serial communication. Then, Beetle ESP32-C3 makes an HTTP GET request to the web application to obtain the latest registered customer's table name from the database for subsequent requests to the web application.
 
 🛒🛍️📲 After transferring the command, the device informs the customer via the ST7735 color TFT screen and turns the built-in RGB LED on OpenMV Cam H7 to blue.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_2.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_2.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial_web_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial\_web\_2.png)
 
 🛒🛍️📲 The device captures a picture and runs an inference with the Edge Impulse object detection (FOMO) model.
 
 🛒🛍️📲 When the object detection (FOMO) model detects a product, the device pauses the real-time video stream and displays the selection (options) menu on the ST7735 color TFT screen, including two cart choice options:
 
+* Add Cart
+* Remove
 
-- Add Cart
-- Remove
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_3.0.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_3.0.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_3.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_3.jpg)
+🛒🛍️📲 On the selection menu, if the joystick is moved up, the device changes the cart choice option to _add_, informs the customer via the ST7735 TFT screen, and turns the built-in RGB LED on OpenMV Cam H7 to green.
 
-🛒🛍️📲 On the selection menu, if the joystick is moved up, the device changes the cart choice option to *add*, informs the customer via the ST7735 TFT screen, and turns the built-in RGB LED on OpenMV Cam H7 to green.
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_4.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_4.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_5.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_5.jpg)
+🛒🛍️📲 On the selection menu, if the joystick is moved down, the device changes the cart choice option to _remove_, informs the customer via the ST7735 TFT screen, and turns the built-in RGB LED on OpenMV Cam H7 to red.
 
-🛒🛍️📲 On the selection menu, if the joystick is moved down, the device changes the cart choice option to *remove*, informs the customer via the ST7735 TFT screen, and turns the built-in RGB LED on OpenMV Cam H7 to red.
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_6.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_6.jpg)
-
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_7.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_7.jpg)
 
 🛒🛍️📲 After selecting a cart choice, if the joystick button is pressed, OpenMV Cam H7 transfers the generated query string with the selected cart choice and the detected product's given details (ID, name, and price) to Beetle ESP32-C3 via serial communication.
 
 🛒🛍️📲 If OpenMV Cam H7 transfers the query successfully, the device turns the built-in RGB LED to blue, notifies the customer via the ST7735 TFT screen, and closes the selection menu to resume the real-time video stream.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_8.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_8.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_9.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_9.jpg)
 
 🛒🛍️📲 If Beetle ESP32-C3 receives the transferred data packet from OpenMV Cam H7 via serial communication successfully, the device turns the RGB LED to dark green and notifies the customer via the buzzer.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_10.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_10.jpg)
 
 🛒🛍️📲 Depending on the received command, Beetle ESP32-C3 makes an HTTP GET request to the web application so as to add products to the database table, remove products from the database table, or obtain the latest registered customer's table name.
 
 🛒🛍️📲 If Beetle ESP32-C3 connects to the web application successfully, the device turns the RGB LED to yellow.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_11.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_11.jpg)
 
 🛒🛍️📲 If Beetle ESP32-C3 gets a response from the web application successfully, the device turns the RGB LED to green and prints the response on the Arduino IDE serial monitor.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_12.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_12.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial_web_3.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial\_web\_3.png)
 
-🛒🛍️📲 On each recognized object (product), the device draws circles (centroids)  with the assigned color — magenta.
+🛒🛍️📲 On each recognized object (product), the device draws circles (centroids) with the assigned color — magenta.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_13.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_13.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_14.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_14.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_15.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_15.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_16.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_16.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_17.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_17.jpg)
 
 🛒🛍️📲 The web application adds or removes products to/from the customer's database table according to the HTTP GET requests made by Beetle ESP32-C3.
 
-🛒🛍️📲 Then, the web application displays a concurrent shopping list of the products added to the grocery cart on the product list (payment) page — *product_list.php* — as explained in Step 4.
+🛒🛍️📲 Then, the web application displays a concurrent shopping list of the products added to the grocery cart on the product list (payment) page — _product\_list.php_ — as explained in Step 4.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/database_working.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/database\_working.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web_app_working.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/web\_app\_working.png)
 
 🛒🛍️📲 If Beetle ESP32-C3 detects the assigned RFID key tag of the grocery cart via the MFRC522 RFID reader, the device turns the RGB LED to magenta.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_18.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_18.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_19.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_19.jpg)
 
 🛒🛍️📲 In this regard, the device determines the customer concluded shopping and is ready to leave the store. Therefore, Beetle ESP32-C3 makes an HTTP GET request to the web application so as to send an HTML email to the customer's registered email address, including the generated shopping list and the payment link.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_20.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_20.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_21.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_21.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial_web_4.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial\_web\_4.png)
 
 🛒🛍️📲 Then, the web application sends the HTML email via SendGrid Email API to the customer's registered email address.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/email_working.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/email\_working.png)
 
 🛒🛍️📲 If Beetle ESP32-C3 throws an error, the device turns the RGB LED to red and prints the error details on the Arduino IDE serial monitor.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run_model_err.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/run\_model\_err.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial_web_err.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial\_web\_err.png)
 
 🛒🛍️📲 Furthermore, the device prints notifications and the generated query string on the OpenMV IDE serial monitor for debugging.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial_run_1.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial\_run\_1.png)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial_run_2.png)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/serial\_run\_2.png)
 
 As far as my experiments go, the device recognizes different food retail products precisely, communicates with the web application faultlessly, and shows accurate circles around the detected objects :)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/lattepanda_run_2.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/lattepanda\_run\_2.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/gif_run.gif)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/gif\_run.gif)
 
 ## Videos and Conclusion
 
@@ -1900,8 +1886,6 @@ By applying object detection models trained on numerous food retail product imag
 
 🛒🛍️📲 provide an exceptional online shopping experience.
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/completed_1.jpg)
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/completed\_1.jpg)
 
-![](.gitbook/assets/smart-grocery-cart-with-computer-vision/show_1.jpg)
-
-
+![](.gitbook/assets/smart-grocery-cart-with-computer-vision/show\_1.jpg)

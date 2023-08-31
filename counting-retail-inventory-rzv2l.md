@@ -1,30 +1,30 @@
 ---
-description: Using a Renesas RZ/V2L Evaluation Kit and computer vision to count the number of items on a shelf quickly and easily.
+description: >-
+  Using a Renesas RZ/V2L Evaluation Kit and computer vision to count the number
+  of items on a shelf quickly and easily.
 ---
 
-# Counting Retail Inventory with Computer Vision on the RZ/V2L 
+# Counting Retail Inventory with Computer Vision on the RZ/V2L
 
-Created By:
-Solomon Githu 
+Created By: Solomon Githu
 
-Public Project Link:
-[https://studio.edgeimpulse.com/public/165074/latest](https://studio.edgeimpulse.com/public/165074/latest)
+Public Project Link: [https://studio.edgeimpulse.com/public/165074/latest](https://studio.edgeimpulse.com/public/165074/latest)
 
 ## Introduction
 
 The primary method of inventory management in retail, warehouse, manufacturing, and logistics is simply counting parts or stock. This procedure ensures that the inventory on the sales floor, or in the warehouse meets requirements for production, sale, or spare capacity. In retail, this is done to ensure there are enough goods available for sale to consumers. Even with many technology advancements and improved production and capacity planning, physical inventory counting is still required in the modern world. This is a time consuming and tedious process, but machine learning and computer vision can help decrease the burden of physical inventory counting.
 
-To demonstrate the process of inventory counting, I trained a machine learning model that can identify a bottle and a box/carton drink on store shelves, and their counts are displayed in a Web application. 
+To demonstrate the process of inventory counting, I trained a machine learning model that can identify a bottle and a box/carton drink on store shelves, and their counts are displayed in a Web application.
 
 For the object detection component, I used [Edge Impulse](https://edgeimpulse.com/) to label my dataset, train a YOLOv5 model, and deploy it to the [Renesas RZ/V2L Evaluation Board Kit](https://www.edgeimpulse.com/blog/edge-impulse-launches-official-support-for-the-renesas-rzv2l-evaluation-board). You can find the public Edge Impulse project here: [Inventory Tracking in Retail with Renesas DRP-AI](https://studio.edgeimpulse.com/public/165074/latest).
 
 ## Dataset Preparation
 
-For the dataset, I used the [SKU110K](https://github.com/eg4000/SKU110K_CVPR19) image dataset. This dataset focuses on object detection in densely packed scenes where images contain many objects. 
+For the dataset, I used the [SKU110K](https://github.com/eg4000/SKU110K\_CVPR19) image dataset. This dataset focuses on object detection in densely packed scenes where images contain many objects.
 
 From the dataset, I chose to use a bottle and boxed/carton drinks. This is because these objects are not too similar, and they have not been as densely packed as some of other items in the dataset. This is a proof-of-concept using only two items, but the dataset includes much more that could also be used.
 
-In total, I had 145 images for training and 36 images for testing. Certainly not a huge amount, but enough to get going with. I simply called the two classes: **bottle** and **box_drink**.
+In total, I had 145 images for training and 36 images for testing. Certainly not a huge amount, but enough to get going with. I simply called the two classes: **bottle** and **box\_drink**.
 
 ![Training Dataset](.gitbook/assets/counting-retail-inventory-rzv2l/img1-training-data.png)
 
@@ -54,13 +54,13 @@ Currently, all Edge Impulse models can run on the RZ/V2L CPU which is a dedicate
 
 I used 200 training cycles with a learning rate of 0.001. It is however advised to train a YOLOv5 model using more than 1500 photos per class and more than 10,000 instances per class to produce a robust YOLOv5 model. Though as mentioned earlier, this is a proof-of-concept and we are using a limited quantity of data (though the SKU110K dataset is 11gb and has many more images to make use of!).
 
-After the training process, I got a precision score of 89%. Precision is the number of True Positives divided by the number of True Positives plus the number of False Positives. 
+After the training process, I got a precision score of 89%. Precision is the number of True Positives divided by the number of True Positives plus the number of False Positives.
 
 ![Training Performance](.gitbook/assets/counting-retail-inventory-rzv2l/img7-training-performance.png)
 
 ## Model Testing
 
-After training a model, we need to do a test with some unseen (test) data. When we uploaded our data earlier, the images that were set aside into the Test category were not used during the training cycle, and are unseen by the model. Now they will be used. In my case, the model had an accuracy of 91% on this Test data. This accuracy is a percent of all samples with a precision score above 90%. 
+After training a model, we need to do a test with some unseen (test) data. When we uploaded our data earlier, the images that were set aside into the Test category were not used during the training cycle, and are unseen by the model. Now they will be used. In my case, the model had an accuracy of 91% on this Test data. This accuracy is a percent of all samples with a precision score above 90%.
 
 ![Testing Performance](.gitbook/assets/counting-retail-inventory-rzv2l/img8-model-testing.png)
 
@@ -70,7 +70,7 @@ I felt this was an acceptable performance and proceeded to deploy the model to t
 
 The Renesas Evaluation Kit comes with the RZ/V2L board and a 5-megapixel Google Coral Camera. To setup the board, Edge Impulse has prepared a [guide](https://docs.edgeimpulse.com/renesas/development-platforms/officially-supported-cpu-gpu-targets/renesas-rz-v2l) that shows how to prepare the Linux Image, install the [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/edge-impulse-for-linux), and finally connect to the Edge Impulse Studio.
 
-![RZ/V2L with Camera](.gitbook/assets/counting-retail-inventory-rzv2l/img9-rz-v2l.jpg)
+![RZ/V2L with Camera](<.gitbook/assets/monitoring-checkout-lines-rzv2l/rzv2l\_with\_camera (3).jpg>)
 
 To run the model locally on the RZ/V2L we can run the command `edge-impulse-linux-runner` which lets us log in to our Edge Impulse account and select the project.
 
@@ -101,7 +101,7 @@ We can go to the provided URL and we will see the video feed being captured by t
 
 ![Camera Feed](.gitbook/assets/counting-retail-inventory-rzv2l/img10-inference-camera-feed.png)
 
-In my case I got a latency of 250ms which is around 4 FPS. There are a couple of factors that determine the performance of the model. First, a larger image means there are more features that are required to be processed. Next is hardware resource utilization. The YOLOv5 model has a image input size of 320x320px and takes 45.6 MBs of flash storage. 
+In my case I got a latency of 250ms which is around 4 FPS. There are a couple of factors that determine the performance of the model. First, a larger image means there are more features that are required to be processed. Next is hardware resource utilization. The YOLOv5 model has a image input size of 320x320px and takes 45.6 MBs of flash storage.
 
 The choice of the large image size is due to the fact that the images from a store shelf have various objects. Reducing the image input size would mean that meaningful data is distorted which can decrease the training and test performance of the model.
 
@@ -111,7 +111,7 @@ In a separate test, I deployed a [FOMO](https://docs.edgeimpulse.com/docs/edge-i
 
 ## A Smart Application to Count Shelf Items
 
-Using the `.eim` executable and the [Edge Impulse Python SDK](https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/edge-impulse-for-linux#sdks), I developed a Web application using [Flask](https://flask.palletsprojects.com/en/2.2.x/) that counts the number bottles and box drinks in a camera frame. The counts are then displayed on a webpage in real-time. 
+Using the `.eim` executable and the [Edge Impulse Python SDK](https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/edge-impulse-for-linux#sdks), I developed a Web application using [Flask](https://flask.palletsprojects.com/en/2.2.x/) that counts the number bottles and box drinks in a camera frame. The counts are then displayed on a webpage in real-time.
 
 ![Application Running](.gitbook/assets/counting-retail-inventory-rzv2l/img13-application.png)
 

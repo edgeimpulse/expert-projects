@@ -1,24 +1,24 @@
 ---
-description: Building a Food Irradiation detection device using a DFRobot ESP32, Geiger Counter, and Visible Light sensor.
+description: >-
+  Building a Food Irradiation detection device using a DFRobot ESP32, Geiger
+  Counter, and Visible Light sensor.
 ---
 
-# Food Irradiation Dose Detection with a DFRobot Beetle C3 
+# Food Irradiation Dose Detection
 
-Created By:
-Kutluhan Aktar
+Created By: Kutluhan Aktar
 
-Public Project Link:
-[https://studio.edgeimpulse.com/public/109647/latest](https://studio.edgeimpulse.com/public/109647/latest)
+Public Project Link: [https://studio.edgeimpulse.com/public/109647/latest](https://studio.edgeimpulse.com/public/109647/latest)
 
-![](.gitbook/assets/food-irradiation/collect_2.jpg)
+![](.gitbook/assets/food-irradiation/collect\_2.jpg)
 
 ## Description
 
 Even though food irradiation improves food hygiene, spoilage reduction, and extension of shelf-life, it should be regulated strictly to avoid any health risks and nutritional value drops. However, small businesses in the food industry lack a budget-friendly and simple way to detect food irradiation doses after treating food with ionizing energy, especially for animal (livestock) feed. Therefore, I decided to build an AI-driven IoT device predicting food irradiation doses based on weight, color (visible light), and emitted ionizing radiation.
 
-Ionizing radiation is a nonthermal process utilized to achieve the preservation of food. At a maximum commercial irradiation dose of 10 kGy, irradiation does not impart heat to the food, and the nutritional quality of the food is generally unaffected. The irradiation process can reduce the microbial contamination of food, resulting in improved microbial safety as well as the extended shelf-life of the food[^1]. Irradiation also benefits the consumer by reducing the risk of severe health issues caused by foodborne illnesses. Food irradiation has three categories: low-dose (radurization), medium-dose (radicidation), and high-dose (radappertization). Low dose irradiation (under 1 kGy) inhibits the sprouting of produce (onion, potato, and garlic); retards the ripening and fungi deterioration of fruits and vegetables (strawberry, tomato, etc.), and promotes insect disinfestations in cereals and vegetables. Medium dose irradiation (between 1 and 10 kGy) controls the presence of pathogenic organisms, especially in fruit juices; retards the deterioration of fish and fresh meat; and reduces Salmonella in poultry products, similar to pasteurization. High dose irradiation (over 10 kGy) is rather significant to the sterilization of health and personal hygiene products[^2].
+Ionizing radiation is a nonthermal process utilized to achieve the preservation of food. At a maximum commercial irradiation dose of 10 kGy, irradiation does not impart heat to the food, and the nutritional quality of the food is generally unaffected. The irradiation process can reduce the microbial contamination of food, resulting in improved microbial safety as well as the extended shelf-life of the food\[^1]. Irradiation also benefits the consumer by reducing the risk of severe health issues caused by foodborne illnesses. Food irradiation has three categories: low-dose (radurization), medium-dose (radicidation), and high-dose (radappertization). Low dose irradiation (under 1 kGy) inhibits the sprouting of produce (onion, potato, and garlic); retards the ripening and fungi deterioration of fruits and vegetables (strawberry, tomato, etc.), and promotes insect disinfestations in cereals and vegetables. Medium dose irradiation (between 1 and 10 kGy) controls the presence of pathogenic organisms, especially in fruit juices; retards the deterioration of fish and fresh meat; and reduces Salmonella in poultry products, similar to pasteurization. High dose irradiation (over 10 kGy) is rather significant to the sterilization of health and personal hygiene products\[^2].
 
-Since foods treated with ionizing radiation should be adequately labeled under the general labeling requirements, consumers can make their own free choice between irradiated and non-irradiated food. However, unfortunately, some countries do not apply strict regulations for irradiated foods, especially for animal feed. Therefore, detecting proper irradiation doses can be arduous for small businesses in the food industry due to governments not incentivizing strictly regulated food irradiation processes. Since irradiation can engender certain alterations that can modify the chemical composition and nutritive values of food, depending on the factors such as irradiation dose, food composition, packaging, and processing conditions such as temperature and atmospheric oxygen saturation[^2], unsupervised food irradiation portends health issues.
+Since foods treated with ionizing radiation should be adequately labeled under the general labeling requirements, consumers can make their own free choice between irradiated and non-irradiated food. However, unfortunately, some countries do not apply strict regulations for irradiated foods, especially for animal feed. Therefore, detecting proper irradiation doses can be arduous for small businesses in the food industry due to governments not incentivizing strictly regulated food irradiation processes. Since irradiation can engender certain alterations that can modify the chemical composition and nutritive values of food, depending on the factors such as irradiation dose, food composition, packaging, and processing conditions such as temperature and atmospheric oxygen saturation\[^2], unsupervised food irradiation portends health issues.
 
 After scrutinizing recent research papers on food irradiation, I decided to utilize ionizing radiation, weight, and visible light (color) measurements denoting the applied irradiation dose so as to create a budget-friendly and accessible device to predict food irradiation dose levels in the hope of assisting small businesses in checking compliance with existing regulations on food irradiation.
 
@@ -30,9 +30,9 @@ After collecting data successfully, I developed a PHP web application that obtai
 
 After completing my data set and creating samples, I built my artificial neural network model (ANN) with Edge Impulse to make predictions on food irradiation dose levels (classes) based on ionizing radiation, weight, and visible light (color) measurements. Since Edge Impulse is nearly compatible with all microcontrollers and development boards, I had not encountered any issues while uploading and running my model on Beetle ESP32-C3. As labels, I employed the theoretically assigned food irradiation dose classes for each data record while collecting and logging data:
 
-- Regulated
-- Unsafe
-- Hazardous
+* Regulated
+* Unsafe
+* Hazardous
 
 After training and testing my neural network model, I deployed and uploaded the model on Beetle ESP32-C3. Therefore, the device is capable of detecting precise food irradiation dose levels (classes) by running the model independently without any additional procedures.
 
@@ -58,19 +58,19 @@ In the following steps, you can find more detailed information on coding, loggin
 
 :gift::art: Also, huge thanks to [Creality](https://store.creality.com/) for sending me a [Creality CR-200B 3D Printer](https://www.creality.com/products/cr-200b-3d-printer).
 
-![image](.gitbook/assets/food-irradiation/home_1.jpg)
+![image](.gitbook/assets/food-irradiation/home\_1.jpg)
 
-![image](.gitbook/assets/food-irradiation/collect_2.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_2.jpg)
 
-![image](.gitbook/assets/food-irradiation/collect_4.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_4.jpg)
 
-![image](.gitbook/assets/food-irradiation/gif_data_collect.gif)
+![image](.gitbook/assets/food-irradiation/gif\_data\_collect.gif)
 
-![image](.gitbook/assets/food-irradiation/run_model_4.jpg)
+![image](.gitbook/assets/food-irradiation/run\_model\_4.jpg)
 
-![image](.gitbook/assets/food-irradiation/gif_run_model.gif)
+![image](.gitbook/assets/food-irradiation/gif\_run\_model.gif)
 
-![image](.gitbook/assets/food-irradiation/data_create_4.PNG)
+![image](.gitbook/assets/food-irradiation/data\_create\_4.PNG)
 
 ## Step 1: Designing and printing a Hulk-inspired structure
 
@@ -78,32 +78,32 @@ Since this project is for detecting irradiation doses of foods treated with ioni
 
 I designed the structure and its movable handle in Autodesk Fusion 360. You can download their STL files below.
 
-![image](.gitbook/assets/food-irradiation/model_1.PNG)
+![image](.gitbook/assets/food-irradiation/model\_1.PNG)
 
-![image](.gitbook/assets/food-irradiation/model_2.PNG)
+![image](.gitbook/assets/food-irradiation/model\_2.PNG)
 
-![image](.gitbook/assets/food-irradiation/model_3.PNG)
+![image](.gitbook/assets/food-irradiation/model\_3.PNG)
 
-![image](.gitbook/assets/food-irradiation/model_4.PNG)
+![image](.gitbook/assets/food-irradiation/model\_4.PNG)
 
-![image](.gitbook/assets/food-irradiation/model_5.PNG)
+![image](.gitbook/assets/food-irradiation/model\_5.PNG)
 
 For the Hulk replica affixed to the top of the structure, I utilized this model from Thingiverse:
 
-- [Hulk](https://www.thingiverse.com/thing:993933)
+* [Hulk](https://www.thingiverse.com/thing:993933)
 
 Then, I sliced all 3D models (STL files) in Ultimaker Cura.
 
-![image](.gitbook/assets/food-irradiation/model_6.PNG)
+![image](.gitbook/assets/food-irradiation/model\_6.PNG)
 
-![image](.gitbook/assets/food-irradiation/model_7.PNG)
+![image](.gitbook/assets/food-irradiation/model\_7.PNG)
 
-![image](.gitbook/assets/food-irradiation/model_8.PNG)
+![image](.gitbook/assets/food-irradiation/model\_8.PNG)
 
 Since I wanted to create a solid structure for this device with a movable handle and complement the Hulk theme gloriously, I utilized these PLA filaments:
 
-- eMarble Natural
-- Peak Green
+* eMarble Natural
+* Peak Green
 
 Finally, I printed all parts (models) with my Creality CR-200B 3D Printer. It is my first fully-enclosed FDM 3D printer, and I must say that I got excellent prints effortlessly with the CR-200B :)
 
@@ -113,33 +113,33 @@ According to my experience, there are only two downsides of the CR-200B: relativ
 
 :hash: Before the first use, remove unnecessary cable ties and apply grease to the rails.
 
-![image](.gitbook/assets/food-irradiation/cr_200b_set_1.jpg)
+![image](.gitbook/assets/food-irradiation/cr\_200b\_set\_1.jpg)
 
-![image](.gitbook/assets/food-irradiation/cr_200b_set_2.jpg)
+![image](.gitbook/assets/food-irradiation/cr\_200b\_set\_2.jpg)
 
 :hash: Test the nozzle and hot bed temperatures.
 
-![image](.gitbook/assets/food-irradiation/cr_200b_set_3.jpg)
+![image](.gitbook/assets/food-irradiation/cr\_200b\_set\_3.jpg)
 
-:hash: Go to *Settings ➡ Leveling* and adjust four predefined points by utilizing the leveling nuts.
+:hash: Go to _Settings ➡ Leveling_ and adjust four predefined points by utilizing the leveling nuts.
 
-![image](.gitbook/assets/food-irradiation/cr_200b_set_4.jpg)
+![image](.gitbook/assets/food-irradiation/cr\_200b\_set\_4.jpg)
 
-![image](.gitbook/assets/food-irradiation/cr_200b_set_5.jpg)
+![image](.gitbook/assets/food-irradiation/cr\_200b\_set\_5.jpg)
 
-![image](.gitbook/assets/food-irradiation/cr_200b_set_6.jpg)
+![image](.gitbook/assets/food-irradiation/cr\_200b\_set\_6.jpg)
 
-![image](.gitbook/assets/food-irradiation/cr_200b_set_7.jpg)
+![image](.gitbook/assets/food-irradiation/cr\_200b\_set\_7.jpg)
 
 :hash: Finally, attach the spool holder and feed the extruder with the filament.
 
-![image](.gitbook/assets/food-irradiation/cr_200b_set_8.jpg)
+![image](.gitbook/assets/food-irradiation/cr\_200b\_set\_8.jpg)
 
-:hash: Since the CR-200B is not officially supported by Cura, select the Ender-3 profile and change the build size to 200 x 200 x 200 mm. Also, to compensate for the nozzle placement, set the *Nozzle offset X* and *Y* values to -10 mm on the *Extruder 1* tab.
+:hash: Since the CR-200B is not officially supported by Cura, select the Ender-3 profile and change the build size to 200 x 200 x 200 mm. Also, to compensate for the nozzle placement, set the _Nozzle offset X_ and _Y_ values to -10 mm on the _Extruder 1_ tab.
 
-![image](.gitbook/assets/food-irradiation/cr_200b_set_cura_1.PNG)
+![image](.gitbook/assets/food-irradiation/cr\_200b\_set\_cura\_1.PNG)
 
-![image](.gitbook/assets/food-irradiation/cr_200b_set_cura_2.PNG)
+![image](.gitbook/assets/food-irradiation/cr\_200b\_set\_cura\_2.PNG)
 
 ## Step 1.1: Assembling the structure and making connections & adjustments
 
@@ -174,21 +174,21 @@ According to my experience, there are only two downsides of the CR-200B: relativ
 // D21  --------------------------- +
 ```
 
-First of all, I soldered male pin headers to [Beetle ESP32-C3](https://wiki.dfrobot.com/SKU_DFR0868_Beetle_ESP32_C3) and its expansion board.
+First of all, I soldered male pin headers to [Beetle ESP32-C3](https://wiki.dfrobot.com/SKU\_DFR0868\_Beetle\_ESP32\_C3) and its expansion board.
 
-![image](.gitbook/assets/food-irradiation/assembly_1.jpg)
+![image](.gitbook/assets/food-irradiation/assembly\_1.jpg)
 
-Then, to collect ionizing radiation, weight, and color (visible light) measurements, I connected a Geiger counter module (Gravity), an I2C HX711 weight sensor (Gravity), and an AS7341 11-channel visible light sensor (Gravity) to Beetle ESP32-C3. Since the expansion board provides the GDI display interface for DFRobot screens, I was able to connect [the SSD1309 OLED transparent screen (Fermion)](https://wiki.dfrobot.com/SKU_DFR0934_Fermion_1.51Inch_128%C3%9764_OLED_Transparent_Display_with_Converter_Breakout) to Beetle ESP32-C3 via the expansion board.
+Then, to collect ionizing radiation, weight, and color (visible light) measurements, I connected a Geiger counter module (Gravity), an I2C HX711 weight sensor (Gravity), and an AS7341 11-channel visible light sensor (Gravity) to Beetle ESP32-C3. Since the expansion board provides the GDI display interface for DFRobot screens, I was able to connect [the SSD1309 OLED transparent screen (Fermion)](https://wiki.dfrobot.com/SKU\_DFR0934\_Fermion\_1.51Inch\_128%C3%9764\_OLED\_Transparent\_Display\_with\_Converter\_Breakout) to Beetle ESP32-C3 via the expansion board.
 
-![image](.gitbook/assets/food-irradiation/assembly_2.jpg)
+![image](.gitbook/assets/food-irradiation/assembly\_2.jpg)
 
-After assembling [the weight sensor kit](https://wiki.dfrobot.com/HX711_Weight_Sensor_Kit_SKU_KIT0176), to calibrate the weight sensor in order to get accurate measurements, press the *cal* button on the adapter board. Then, wait for the indicator LED to turn on and place a 100 g (default value) object on the scale within 5 seconds. When the adapter board completes calibration, the indicator LED blinks three times.
+After assembling [the weight sensor kit](https://wiki.dfrobot.com/HX711\_Weight\_Sensor\_Kit\_SKU\_KIT0176), to calibrate the weight sensor in order to get accurate measurements, press the _cal_ button on the adapter board. Then, wait for the indicator LED to turn on and place a 100 g (default value) object on the scale within 5 seconds. When the adapter board completes calibration, the indicator LED blinks three times.
 
-![image](.gitbook/assets/food-irradiation/assembly_3.jpg)
+![image](.gitbook/assets/food-irradiation/assembly\_3.jpg)
 
-![image](.gitbook/assets/food-irradiation/assembly_4.jpg)
+![image](.gitbook/assets/food-irradiation/assembly\_4.jpg)
 
-Since Beetle ESP32-C3 cannot power [the Geiger counter module](https://wiki.dfrobot.com/SKU_SEN0463_Gravity_Geiger_Counter_Module) and the weight sensor simultaneously due to its working current, I connected a USB buck-boost converter board to my Xiaomi power bank to elicit stable 3.3V to supply the sensors.
+Since Beetle ESP32-C3 cannot power [the Geiger counter module](https://wiki.dfrobot.com/SKU\_SEN0463\_Gravity\_Geiger\_Counter\_Module) and the weight sensor simultaneously due to its working current, I connected a USB buck-boost converter board to my Xiaomi power bank to elicit stable 3.3V to supply the sensors.
 
 Since the Geiger counter library needs to use an external interrupt pin for counting, the Geiger counter module can only be connected to external interrupt pins. Plausibly, Beetle ESP32-C3 allows the user to define any pin as an external interrupt.
 
@@ -196,67 +196,70 @@ To assign labels while transmitting the collected data and run my neural network
 
 After completing sensor connections and adjustments on breadboards successfully, I made the breadboard connection points rigid by utilizing a hot glue gun.
 
-![image](.gitbook/assets/food-irradiation/assembly_5.jpg)
+![image](.gitbook/assets/food-irradiation/assembly\_5.jpg)
 
-![image](.gitbook/assets/food-irradiation/assembly_6.jpg)
+![image](.gitbook/assets/food-irradiation/assembly\_6.jpg)
 
 After printing all parts (models), I fastened all components except the visible light sensor to their corresponding slots on the structure via the hot glue gun.
 
 Then, I attached the visible light sensor to the movable handle and hung it via its slot in the structure.
 
-![image](.gitbook/assets/food-irradiation/connections_1.jpg)
+![image](.gitbook/assets/food-irradiation/connections\_1.jpg)
 
-![image](.gitbook/assets/food-irradiation/connections_2.jpg)
+![image](.gitbook/assets/food-irradiation/connections\_2.jpg)
 
-![image](.gitbook/assets/food-irradiation/connections_3.jpg)
+![image](.gitbook/assets/food-irradiation/connections\_3.jpg)
 
-![image](.gitbook/assets/food-irradiation/connections_4.jpg)
+![image](.gitbook/assets/food-irradiation/connections\_4.jpg)
 
-![image](.gitbook/assets/food-irradiation/connections_5.jpg)
+![image](.gitbook/assets/food-irradiation/connections\_5.jpg)
 
-![image](.gitbook/assets/food-irradiation/connections_6.jpg)
+![image](.gitbook/assets/food-irradiation/connections\_6.jpg)
 
-![image](.gitbook/assets/food-irradiation/connections_7.jpg)
+![image](.gitbook/assets/food-irradiation/connections\_7.jpg)
 
-![image](.gitbook/assets/food-irradiation/connections_8.jpg)
+![image](.gitbook/assets/food-irradiation/connections\_8.jpg)
 
 Finally, I affixed the Hulk replica to the top of the structure via the hot glue gun.
 
-![image](.gitbook/assets/food-irradiation/finished_1.jpg)
+![image](.gitbook/assets/food-irradiation/finished\_1.jpg)
 
-![image](.gitbook/assets/food-irradiation/finished_2.jpg)
+![image](.gitbook/assets/food-irradiation/finished\_2.jpg)
 
 ## Step 2: Developing a web application in PHP to collate data on food irradiation doses
 
-To be able to log and process data packets transmitted by Beetle ESP32-C3, I decided to develop a web application in PHP named *food_irradiation_data_logger*.
+To be able to log and process data packets transmitted by Beetle ESP32-C3, I decided to develop a web application in PHP named _food\_irradiation\_data\_logger_.
 
 As shown below, the web application consists of two folders and five files:
 
-- /assets
-- - class.php
-- - icon.png
-- - index.css
-- /data
-- get_data.php
-- index.php
+* /assets
+*
+  * class.php
+*
+  * icon.png
+*
+  * index.css
+* /data
+* get\_data.php
+* index.php
 
 I also employed the web application to scale (normalize) and preprocess my data set so as to create appropriately formatted samples for Edge Impulse.
 
-If the data type is not time series, Edge Impulse requires a CSV file with a header indicating data fields per sample to upload data with CSV files. Since Edge Impulse can infer the uploaded sample's label from its file name, the application reads the given data set in the MySQL database and generate a CSV file (sample) for each data record, named according to the assigned food irradiation dose class. Also, the application utilizes the unique row number under the *id* data field as the sample number to identify each generated CSV file:
+If the data type is not time series, Edge Impulse requires a CSV file with a header indicating data fields per sample to upload data with CSV files. Since Edge Impulse can infer the uploaded sample's label from its file name, the application reads the given data set in the MySQL database and generate a CSV file (sample) for each data record, named according to the assigned food irradiation dose class. Also, the application utilizes the unique row number under the _id_ data field as the sample number to identify each generated CSV file:
 
-- Regulated.training.sample_101.csv
-- Unsafe.training.sample_542.csv
-- Hazardous.training.sample_152.csv  
+* Regulated.training.sample\_101.csv
+* Unsafe.training.sample\_542.csv
+* Hazardous.training.sample\_152.csv
 
-You can download and inspect the web application in the ZIP file format below. 
+You can download and inspect the web application in the ZIP file format below.
 
-📁 *class.php*
+📁 _class.php_
 
-In the *class.php* file, in order to run all functions successfully, I created two classes named *_main* and *sample*: the latter inherits from the former.
+In the _class.php_ file, in order to run all functions successfully, I created two classes named _\_main_ and _sample_: the latter inherits from the former.
 
-:star: Define the *_main* class and its functions:
+:star: Define the _\_main_ class and its functions:
 
-:star: In the *__init__* function, define the required variables for the MySQL database.
+:star: In the _**init**_ function, define the required variables for the MySQL database.
 
 ```
 	public function __init__($conn, $table){
@@ -265,7 +268,7 @@ In the *class.php* file, in order to run all functions successfully, I created t
 	}
 ```
 
-:star: In the *insert_new_data* function, append the given measurements and food irradiation dose class to the given database table.
+:star: In the _insert\_new\_data_ function, append the given measurements and food irradiation dose class to the given database table.
 
 ```
 	public function insert_new_data($d1, $d2, $d3, $d4, $d5, $d6, $d7, $d8, $d9, $d10, $d11, $d12, $c){
@@ -274,7 +277,7 @@ In the *class.php* file, in order to run all functions successfully, I created t
 	}
 ```
 
-:star: In the *database_create_table* function, create the required database table.
+:star: In the _database\_create\_table_ function, create the required database table.
 
 ```
 	public function database_create_table(){
@@ -299,11 +302,11 @@ In the *class.php* file, in order to run all functions successfully, I created t
 	}
 ```
 
-:star: Define the *sample* class, extending the *_main* class, and its functions:
+:star: Define the _sample_ class, extending the _\_main_ class, and its functions:
 
 :star: Define the food irradiation dose class (label) names.
 
-:star: In the *count_samples* function, count the registered data records (samples) in the given database table.
+:star: In the _count\_samples_ function, count the registered data records (samples) in the given database table.
 
 ```
 	public $class_names = ["Regulated", "Unsafe", "Hazardous"];
@@ -320,7 +323,7 @@ In the *class.php* file, in order to run all functions successfully, I created t
 	}
 ```
 
-:star: In the *create_sample_files* function:
+:star: In the _create\_sample\_files_ function:
 
 :star: Obtain the registered data records from the given database table.
 
@@ -330,11 +333,11 @@ In the *class.php* file, in order to run all functions successfully, I created t
 
 :star: Create an array with the scaled data items.
 
-:star: For each data record, create a CSV file (sample) named with the assigned irradiation dose class and identified with the unique row number under the *id* data field. 
+:star: For each data record, create a CSV file (sample) named with the assigned irradiation dose class and identified with the unique row number under the _id_ data field.
 
-:star: Each sample includes twelve data items [shape=(12,)]:
+:star: Each sample includes twelve data items \[shape=(12,)]:
 
-*[15.877, 0.25, 0.76, 0.57, 0.8, 1.89, 2.85, 4.65, 3.63, 0.8, 5.31, 0.53]*
+_\[15.877, 0.25, 0.76, 0.57, 0.8, 1.89, 2.85, 4.65, 3.63, 0.8, 5.31, 0.53]_
 
 ```
 	public function create_sample_files($type){
@@ -375,7 +378,7 @@ In the *class.php* file, in order to run all functions successfully, I created t
 	}
 ```
 
-:star: In the *download_samples* function, download all generated CSV files (samples) in the ZIP file format.
+:star: In the _download\_samples_ function, download all generated CSV files (samples) in the ZIP file format.
 
 ```
 	public function download_samples($zipname){
@@ -413,11 +416,11 @@ $server = array(
 $conn = mysqli_connect($server["name"], $server["username"], $server["password"], $server["database"]);
 ```
 
-📁 *get_data.php*
+📁 _get\_data.php_
 
-:star: Include the *class.php* file.
+:star: Include the _class.php_ file.
 
-:star: Define the *food* object of the *_main* class with its required parameters.
+:star: Define the _food_ object of the _\_main_ class with its required parameters.
 
 ```
 include_once "assets/class.php";
@@ -443,17 +446,17 @@ if(isset($_GET["weight"]) && isset($_GET["F1"]) && isset($_GET["F2"]) && isset($
 }
 ```
 
-:star: If requested, create the required database table *(entries)*.
+:star: If requested, create the required database table _(entries)_.
 
 ```
 if(isset($_GET["create_table"]) && $_GET["create_table"] == "OK") $food->database_create_table();
 ```
 
-📁 *index.php*
+📁 _index.php_
 
-:star: Include the *class.php* file.
+:star: Include the _class.php_ file.
 
-:star: Define the *sample* object of the *sample* class with its required parameters.
+:star: Define the _sample_ object of the _sample_ class with its required parameters.
 
 ```
 	include_once "assets/class.php";
@@ -462,6 +465,7 @@ if(isset($_GET["create_table"]) && $_GET["create_table"] == "OK") $food->databas
 	$sample = new sample();
 	$sample->__init__($conn, $server["table"]);
 ```
+
 :star: Elicit the total number of data records (samples) for classes (labels) in the given database table.
 
 ```
@@ -476,7 +480,7 @@ $count = $sample->count_samples();
 	}
 ```
 
-:star: If the *Download* button is clicked, download all generated CSV files (samples) in the ZIP file format.
+:star: If the _Download_ button is clicked, download all generated CSV files (samples) in the ZIP file format.
 
 ```
     if(isset($_GET["download"])){
@@ -484,84 +488,84 @@ $count = $sample->count_samples();
 	}	
 ```
 
-![image](.gitbook/assets/food-irradiation/code_app_1.PNG)
+![image](.gitbook/assets/food-irradiation/code\_app\_1.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_app_2.PNG)
+![image](.gitbook/assets/food-irradiation/code\_app\_2.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_app_3.PNG)
+![image](.gitbook/assets/food-irradiation/code\_app\_3.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_app_4.PNG)
+![image](.gitbook/assets/food-irradiation/code\_app\_4.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_app_5.PNG)
+![image](.gitbook/assets/food-irradiation/code\_app\_5.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_app_6.PNG)
+![image](.gitbook/assets/food-irradiation/code\_app\_6.PNG)
 
 ## Step 3: Setting up a LAMP web server on Raspberry Pi
 
 Since I decided to host my web application on a Raspberry Pi 3, I needed to set up a LAMP web server.
 
-:hash: First of all, open a terminal window by selecting *Accessories ➡ Terminal* from the menu.
+:hash: First of all, open a terminal window by selecting _Accessories ➡ Terminal_ from the menu.
 
-:hash: Then, install the *apache2* package by typing the following command into the terminal and pressing Enter:
+:hash: Then, install the _apache2_ package by typing the following command into the terminal and pressing Enter:
 
-*sudo apt-get install apache2 -y*
+_sudo apt-get install apache2 -y_
 
 ![image](.gitbook/assets/food-irradiation/apache.png)
 
-:hash: After installing the *apache2* package successfully, open Chromium Web Browser and navigate to *localhost* so as to test the web server.
+:hash: After installing the _apache2_ package successfully, open Chromium Web Browser and navigate to _localhost_ so as to test the web server.
 
 :hash: Then, enter the command below to the terminal to obtain the Raspberry Pi's IP address:
 
-*hostname -I*
+_hostname -I_
 
 ![image](.gitbook/assets/food-irradiation/localhost.png)
 
 ![image](.gitbook/assets/food-irradiation/hostname.png)
 
-:hash: To install the latest package versions successfully, update the Pi. Then, download the *PHP* package by entering these commands below to the terminal:
+:hash: To install the latest package versions successfully, update the Pi. Then, download the _PHP_ package by entering these commands below to the terminal:
 
-*sudo apt-get update*
+_sudo apt-get update_
 
-*sudo apt-get install php -y*
+_sudo apt-get install php -y_
 
 ![image](.gitbook/assets/food-irradiation/php.png)
 
-:hash: To be able to create files in the ZIP file format with the web application, install the *php-zip* package:
+:hash: To be able to create files in the ZIP file format with the web application, install the _php-zip_ package:
 
-*sudo apt install php7.3-zip*
+_sudo apt install php7.3-zip_
 
-![image](.gitbook/assets/food-irradiation/rasp_zip_lib.png)
+![image](.gitbook/assets/food-irradiation/rasp\_zip\_lib.png)
 
-:hash: Since the web application creates a large ZIP file with the generated CSV files (samples), open the *php.ini* file in order to modify these configurations:
+:hash: Since the web application creates a large ZIP file with the generated CSV files (samples), open the _php.ini_ file in order to modify these configurations:
 
-- upload_max_filesize
-- max_file_uploads
+* upload\_max\_filesize
+* max\_file\_uploads
 
-:hash: Then, restart the *apache* server to activate the installed packages on the web server:
+:hash: Then, restart the _apache_ server to activate the installed packages on the web server:
 
-*sudo service apache2 restart*
+_sudo service apache2 restart_
 
-![image](.gitbook/assets/food-irradiation/rasp_php_ini.png)
+![image](.gitbook/assets/food-irradiation/rasp\_php\_ini.png)
 
 ## Step 3.1: Creating a MySQL database in MariaDB
 
 Since I needed to log measurements transmitted by Beetle ESP32-C3 so as to create appropriately formatted samples for Edge Impulse, I also set up a MariaDB server on Raspberry Pi 3.
 
-:hash: First of all, install the MariaDB (MySQL) server and *PHP-MySQL* packages by entering the following command into the terminal:
+:hash: First of all, install the MariaDB (MySQL) server and _PHP-MySQL_ packages by entering the following command into the terminal:
 
-*sudo apt-get install mariadb-server php-mysql -y*
+_sudo apt-get install mariadb-server php-mysql -y_
 
 ![image](.gitbook/assets/food-irradiation/mysql.png)
 
 :hash: To create a new user, run the MySQL secure installation command in the terminal window:
 
-*sudo mysql_secure_installation*
+_sudo mysql\_secure\_installation_
 
 :hash: When requested, type the current password for the root user (enter for none). Then, press Enter.
 
 :hash: Type in Y and press Enter to set the root password.
 
-:hash: Type in *bot* at the *New password:* prompt, and press Enter.
+:hash: Type in _bot_ at the _New password:_ prompt, and press Enter.
 
 :hash: Type in Y to remove anonymous users.
 
@@ -571,17 +575,17 @@ Since I needed to log measurements transmitted by Beetle ESP32-C3 so as to creat
 
 :hash: Type in Y to reload privilege tables.
 
-:hash: After successfully setting the MariaDB server, the terminal prints: *All done! Thanks for using MariaDB!*
+:hash: After successfully setting the MariaDB server, the terminal prints: _All done! Thanks for using MariaDB!_
 
-![image](.gitbook/assets/food-irradiation/database_settings.png)
+![image](.gitbook/assets/food-irradiation/database\_settings.png)
 
 :hash: Finally, to create a new database in the MariaDB server, run the MySQL interface in the terminal:
 
-*sudo mysql -uroot -p*
+_sudo mysql -uroot -p_
 
-:hash: Then, enter the recently changed root password - *bot*.
+:hash: Then, enter the recently changed root password - _bot_.
 
-:hash: When the terminal shows the *MariaDB [(none)]>* prompt, create the new database *(foodirradiation)* by utilizing these commands below:
+:hash: When the terminal shows the _MariaDB \[(none)]>_ prompt, create the new database _(foodirradiation)_ by utilizing these commands below:
 
 ```
 create database foodirradiation;
@@ -591,67 +595,67 @@ GRANT ALL PRIVILEGES ON foodirradiation.* TO 'root'@'localhost' IDENTIFIED BY 'b
 FLUSH PRIVILEGES;
 ```
 
-:hash: Press Ctrl + D to exit the *MariaDB [(none)]>* prompt.
+:hash: Press Ctrl + D to exit the _MariaDB \[(none)]>_ prompt.
 
-![image](.gitbook/assets/food-irradiation/rasp_database.png)
+![image](.gitbook/assets/food-irradiation/rasp\_database.png)
 
 ## Step 3.2: Setting and running the web application on Raspberry Pi
 
 As discussed above, I set up a LAMP web server on my Raspberry Pi 3 to run the web application, but you can run it on any server as long as it is a PHP server.
 
-:hash: First of all, install and extract the *food_irradiation_data_logger.zip* folder.
+:hash: First of all, install and extract the _food\_irradiation\_data\_logger.zip_ folder.
 
-![image](.gitbook/assets/food-irradiation/rasp_app_set_1.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_set\_1.png)
 
-:hash: Then, move the application folder *(food_irradiation_data_logger)* to the Apache server *(/var/www/html)* by using the terminal since the Apache server is a protected location.
+:hash: Then, move the application folder _(food\_irradiation\_data\_logger)_ to the Apache server _(/var/www/html)_ by using the terminal since the Apache server is a protected location.
 
-*sudo mv /home/pi/Downloads/food_irradiation_data_logger /var/www/html/*
+_sudo mv /home/pi/Downloads/food\_irradiation\_data\_logger /var/www/html/_
 
-![image](.gitbook/assets/food-irradiation/rasp_app_set_2.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_set\_2.png)
 
 :hash: Since the Apache server is a protected location, it throws an error while attempting to modify the files and folders in it. Therefore, before utilizing the web application to create CSV files (samples) and download them in the ZIP file format, change the web application's folder permission by using the terminal:
 
-*sudo chmod -R 777 /var/www/html/food_irradiation_data_logger*
+_sudo chmod -R 777 /var/www/html/food\_irradiation\_data\_logger_
 
-![image](.gitbook/assets/food-irradiation/rasp_app_set_3.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_set\_3.png)
 
-💻 On the *get_data.php* file:
+💻 On the _get\_data.php_ file:
 
-:star: If the web application did not receive measurements from Beetle ESP32-C3 via an HTTP GET request, it prints: *Waiting Data...*
+:star: If the web application did not receive measurements from Beetle ESP32-C3 via an HTTP GET request, it prints: _Waiting Data..._
 
-:star: Otherwise, the web application prints: *Data received and saved successfully!*
+:star: Otherwise, the web application prints: _Data received and saved successfully!_
 
-*localhost/food_irradiation_data_logger/get_data.php*
+_localhost/food\_irradiation\_data\_logger/get\_data.php_
 
-![image](.gitbook/assets/food-irradiation/rasp_app_work_1.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_work\_1.png)
 
-![image](.gitbook/assets/food-irradiation/rasp_app_work_2.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_work\_2.png)
 
-:star: If the *create_table* parameter is set as OK, the web application creates the requested database table *(entries)* and prints: *Database Table Created Successfully!*
+:star: If the _create\_table_ parameter is set as OK, the web application creates the requested database table _(entries)_ and prints: _Database Table Created Successfully!_
 
-![image](.gitbook/assets/food-irradiation/rasp_app_work_3.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_work\_3.png)
 
-💻 On the *index.php* file:
+💻 On the _index.php_ file:
 
 :star: The application interface shows created sample names and data record numbers for each class in the MySQL database.
 
-:star: If the user clicks the *Create Samples* submit button on the HTML form, the web application generates CSV files (samples) for Edge Impulse, depending on the selected data type (training or testing).
+:star: If the user clicks the _Create Samples_ submit button on the HTML form, the web application generates CSV files (samples) for Edge Impulse, depending on the selected data type (training or testing).
 
-![image](.gitbook/assets/food-irradiation/rasp_app_work_4.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_work\_4.png)
 
-![image](.gitbook/assets/food-irradiation/rasp_app_work_5.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_work\_5.png)
 
-![image](.gitbook/assets/food-irradiation/rasp_app_work_6.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_work\_6.png)
 
-![image](.gitbook/assets/food-irradiation/rasp_app_work_7.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_work\_7.png)
 
-![image](.gitbook/assets/food-irradiation/rasp_app_work_8.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_work\_8.png)
 
-:star: If the user clicks the *Download* button, the application downloads all generated CSV files (samples) in the ZIP file format *(data.zip)*.
+:star: If the user clicks the _Download_ button, the application downloads all generated CSV files (samples) in the ZIP file format _(data.zip)_.
 
-![image](.gitbook/assets/food-irradiation/rasp_app_work_9.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_work\_9.png)
 
-![image](.gitbook/assets/food-irradiation/rasp_app_work_10.png)
+![image](.gitbook/assets/food-irradiation/rasp\_app\_work\_10.png)
 
 ## Step 4: Setting up Beetle ESP32-C3 on the Arduino IDE
 
@@ -659,34 +663,31 @@ Before proceeding with the following steps, I needed to set up Beetle ESP32-C3 o
 
 If your computer cannot recognize Beetle ESP32-C3 when plugged in via a USB cable, connect Pin 9 to GND (pull-down) and try again.
 
-:hash: To add the ESP32-C3 board package to the Arduino IDE, navigate to *File ➡ Preferences* and paste the URL below under *Additional Boards Manager URLs*.
+:hash: To add the ESP32-C3 board package to the Arduino IDE, navigate to _File ➡ Preferences_ and paste the URL below under _Additional Boards Manager URLs_.
 
-*https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json*
+_https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package\_esp32\_index.json_
 
-![image](.gitbook/assets/food-irradiation/espC3_set_1.png)
+![image](<.gitbook/assets/food-irradiation/espC3\_set\_1 (2).png>)
 
-![image](.gitbook/assets/food-irradiation/espC3_set_2.png)
+![image](.gitbook/assets/food-irradiation/espC3\_set\_2.png)
 
-:hash: Then, to install the required core, navigate to *Tools ➡ Board ➡ Boards Manager* and search for *esp32*.
+:hash: Then, to install the required core, navigate to _Tools ➡ Board ➡ Boards Manager_ and search for _esp32_.
 
-![image](.gitbook/assets/food-irradiation/espC3_set_3.png)
+![image](<.gitbook/assets/food-irradiation/espC3\_set\_3 (2).png>)
 
-![image](.gitbook/assets/food-irradiation/espC3_set_4.png)
+![image](<.gitbook/assets/food-irradiation/espC3\_set\_4 (2).png>)
 
-:hash: After installing the core, navigate to *Tools > Board > ESP32 Arduino* and select *ESP32C3 Dev Module*.
+:hash: After installing the core, navigate to _Tools > Board > ESP32 Arduino_ and select _ESP32C3 Dev Module_.
 
-![image](.gitbook/assets/food-irradiation/espC3_set_5.png)
+![image](.gitbook/assets/food-irradiation/espC3\_set\_5.png)
 
-:hash: To print data on the serial monitor, enable *USB CDC On Boot* after setting Beetle ESP32-C3.
+:hash: To print data on the serial monitor, enable _USB CDC On Boot_ after setting Beetle ESP32-C3.
 
-![image](.gitbook/assets/food-irradiation/espC3_set_6.png)
+![image](.gitbook/assets/food-irradiation/espC3\_set\_6.png)
 
-:hash: Finally, download the required libraries for the Geiger counter module, the I2C HX711 weight sensor, the AS7341 visible light sensor, and the SSD1309 OLED transparent screen: 
+:hash: Finally, download the required libraries for the Geiger counter module, the I2C HX711 weight sensor, the AS7341 visible light sensor, and the SSD1309 OLED transparent screen:
 
-DFRobot_Geiger | [Download](https://github.com/cdjq/DFRobot_Geiger)
-DFRobot_HX711_I2C | [Download](https://github.com/DFRobot/DFRobot_HX711_I2C)
-DFRobot_AS7341 | [Download](https://github.com/DFRobot/DFRobot_AS7341)
-U8g2_Arduino | [Download](https://github.com/DFRobot/U8g2_Arduino)
+DFRobot\_Geiger | [Download](https://github.com/cdjq/DFRobot\_Geiger) DFRobot\_HX711\_I2C | [Download](https://github.com/DFRobot/DFRobot\_HX711\_I2C) DFRobot\_AS7341 | [Download](https://github.com/DFRobot/DFRobot\_AS7341) U8g2\_Arduino | [Download](https://github.com/DFRobot/U8g2\_Arduino)
 
 ## Step 4.1: Displaying images on the SSD1309 transparent OLED screen
 
@@ -694,19 +695,19 @@ To display images (monochrome) on the SSD1309 transparent OLED screen successful
 
 :hash: First of all, download [GIMP](https://www.gimp.org/).
 
-:hash: Then, upload an image (black and white) and go to *Image ➡ Scale Image...* to resize the uploaded image.
+:hash: Then, upload an image (black and white) and go to _Image ➡ Scale Image..._ to resize the uploaded image.
 
-![image](.gitbook/assets/food-irradiation/img_convert_1.png)
+![image](.gitbook/assets/food-irradiation/img\_convert\_1.png)
 
-:hash: Go to *Image ➡ Mode* and select *Grayscale*.
+:hash: Go to _Image ➡ Mode_ and select _Grayscale_.
 
-![image](.gitbook/assets/food-irradiation/img_convert_2.png)
+![image](.gitbook/assets/food-irradiation/img\_convert\_2.png)
 
 :hash: Finally, export the image as an XBM file.
 
-![image](.gitbook/assets/food-irradiation/img_convert_3.png)
+![image](.gitbook/assets/food-irradiation/img\_convert\_3.png)
 
-![image](.gitbook/assets/food-irradiation/img_convert_4.png)
+![image](.gitbook/assets/food-irradiation/img\_convert\_4.png)
 
 :hash: After exporting the image, add the generated data array to the code and print it on the screen.
 
@@ -718,34 +719,34 @@ To display images (monochrome) on the SSD1309 transparent OLED screen successful
     }while(u8g2.nextPage());
 ```
 
-![image](.gitbook/assets/food-irradiation/img_convert_5.png)
+![image](.gitbook/assets/food-irradiation/img\_convert\_5.png)
 
-![image](.gitbook/assets/food-irradiation/img_convert_6.png)
+![image](.gitbook/assets/food-irradiation/img\_convert\_6.png)
 
 ## Step 5: Collecting and storing food irradiation data w/ Beetle ESP32-C3
 
 After setting up Beetle ESP32-C3 and installing the required libraries, I programmed Beetle ESP32-C3 to collect ionizing radiation, weight, and visible light (color) measurements in order to store them on the MySQL database and create appropriately formatted samples for Edge Impulse.
 
-- CPM (Counts per Minute)
-- nSv/h (nanoSieverts per hour)
-- μSv/h (microSieverts per hour)
-- Weight (g)
-- F1 (405 - 425 nm)
-- F2 (435 - 455 nm)
-- F3 (470 - 490 nm)
-- F4 (505 - 525 nm)
-- F5 (545 - 565 nm)
-- F6 (580 - 600 nm)
-- F7 (620 - 640 nm)
-- F8 (670 - 690 nm)
+* CPM (Counts per Minute)
+* nSv/h (nanoSieverts per hour)
+* μSv/h (microSieverts per hour)
+* Weight (g)
+* F1 (405 - 425 nm)
+* F2 (435 - 455 nm)
+* F3 (470 - 490 nm)
+* F4 (505 - 525 nm)
+* F5 (545 - 565 nm)
+* F6 (580 - 600 nm)
+* F7 (620 - 640 nm)
+* F8 (670 - 690 nm)
 
 Since I needed to assign food irradiation dose levels (classes) theoretically as labels for each data record while collecting data from foods to create a valid data set, I utilized the control buttons attached to Beetle ESP32-C3 so as to choose among irradiation dose classes. After selecting an irradiation dose class, Beetle ESP32-C3 appends the selected class to the collected data and then transmits that data packet to the web application.
 
-- Control Button (A) ➡ Regulated
-- Control Button (B) ➡ Unsafe
-- Control Button (C) ➡ Hazardous
+* Control Button (A) ➡ Regulated
+* Control Button (B) ➡ Unsafe
+* Control Button (C) ➡ Hazardous
 
-You can download the *IoT_food_irradiation_data_collect.ino* file to try and inspect the code for collecting ionizing radiation, weight, and visible light (color) measurements and for transferring information to a given web application.
+You can download the _IoT\_food\_irradiation\_data\_collect.ino_ file to try and inspect the code for collecting ionizing radiation, weight, and visible light (color) measurements and for transferring information to a given web application.
 
 :star: Include the required libraries.
 
@@ -758,7 +759,7 @@ You can download the *IoT_food_irradiation_data_collect.ino* file to try and ins
 #include "DFRobot_AS7341.h"
 ```
 
-:star: Define the Wi-Fi network settings and use the *WiFiClient* class to create TCP connections.
+:star: Define the Wi-Fi network settings and use the _WiFiClient_ class to create TCP connections.
 
 ```
 char ssid[] = "&lt;_SSID_>";        // your network SSID (name)
@@ -773,6 +774,7 @@ String application = "/food_irradiation_data_logger/get_data.php";
 // Initialize the WiFi client library.
 WiFiClient client; /* WiFiSSLClient client; */
 ```
+
 :star: Define the Geiger counter module.
 
 :star: Define the I2C HX711 weight sensor.
@@ -801,15 +803,16 @@ DFRobot_AS7341::sModeTwoData_t data2;
 
 U8G2_SSD1309_128X64_NONAME2_1_4W_HW_SPI u8g2(/* rotation=*/U8G2_R0, /* cs=*/ OLED_CS, /* dc=*/ OLED_DC,/* reset=*/OLED_RST);
 ```
-:star: Define monochrome graphics.
-:star: Initialize the SSD1309 OLED transparent display.
+
+:star: Define monochrome graphics. :star: Initialize the SSD1309 OLED transparent display.
+
 ```
   u8g2.begin();
   u8g2.setFontPosTop();
   //u8g2.setDrawColor(0);
 ```
 
-:star: In the *err_msg* function, display the error message on the SSD1309 OLED transparent screen.
+:star: In the _err\_msg_ function, display the error message on the SSD1309 OLED transparent screen.
 
 ```
 void err_msg(){
@@ -887,7 +890,7 @@ void err_msg(){
   delay(2000);
 ```
 
-:star: In the *get_Weight* function, obtain the weight (g) measurement generated by the I2C HX711 weight sensor.
+:star: In the _get\_Weight_ function, obtain the weight (g) measurement generated by the I2C HX711 weight sensor.
 
 ```
 void get_Weight(){
@@ -898,10 +901,10 @@ void get_Weight(){
 }
 ```
 
-:star: In the *get_Visual_Light* function, start spectrum measurement with the AS7341 sensor and read the value of sensor data channel 0~5 under these channel mapping modes:
+:star: In the _get\_Visual\_Light_ function, start spectrum measurement with the AS7341 sensor and read the value of sensor data channel 0\~5 under these channel mapping modes:
 
-- eF1F4ClearNIR
-- eF5F8ClearNIR
+* eF1F4ClearNIR
+* eF5F8ClearNIR
 
 ```
 void get_Visual_Light(){
@@ -932,7 +935,7 @@ void get_Visual_Light(){
 }
 ```
 
-:star: In the *activate_Geiger_counter* function:
+:star: In the _activate\_Geiger\_counter_ function:
 
 :star: Initialize the Geiger counter module and enable the external interrupt.
 
@@ -961,7 +964,7 @@ void activate_Geiger_counter(){
 }
 ```
 
-:star: In the *drawNumber* function, convert numbers to char arrays with the *itoa* function so as to display them on the SSD1309 OLED transparent screen.
+:star: In the _drawNumber_ function, convert numbers to char arrays with the _itoa_ function so as to display them on the SSD1309 OLED transparent screen.
 
 ```
 void drawNumber(int x, int y, int __){
@@ -970,7 +973,7 @@ void drawNumber(int x, int y, int __){
 }
 ```
 
-:star: In the *home_screen* function, display the collected data on the SSD1309 OLED transparent screen.
+:star: In the _home\_screen_ function, display the collected data on the SSD1309 OLED transparent screen.
 
 ```
 void home_screen(int y, int x, int s){
@@ -988,9 +991,9 @@ void home_screen(int y, int x, int s){
 }
 ```
 
-:star: In the *make_a_get_request* function:
+:star: In the _make\_a\_get\_request_ function:
 
-:star: Connect to the web application named *food_irradiation_data_logger*.
+:star: Connect to the web application named _food\_irradiation\_data\_logger_.
 
 :star: Create the query string with the collected data.
 
@@ -998,7 +1001,7 @@ void home_screen(int y, int x, int s){
 
 :star: Wait until the client is available, then fetch the response from the web application.
 
-:star: If there is a response from the server and the web application appends the transferred data packet to the MySQL database successfully, print *Data registered successfully!* on the serial monitor and the SSD1309 screen.
+:star: If there is a response from the server and the web application appends the transferred data packet to the MySQL database successfully, print _Data registered successfully!_ on the serial monitor and the SSD1309 screen.
 
 ```
 void make_a_get_request(String _class){
@@ -1043,15 +1046,16 @@ void make_a_get_request(String _class){
   if(!digitalRead(button_B)) make_a_get_request("1");
   if(!digitalRead(button_C)) make_a_get_request("2");
 ```
-![image](.gitbook/assets/food-irradiation/code_collect_1.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_collect_2.PNG)
+![image](.gitbook/assets/food-irradiation/code\_collect\_1.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_collect_3.PNG)
+![image](.gitbook/assets/food-irradiation/code\_collect\_2.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_collect_4.PNG)
+![image](.gitbook/assets/food-irradiation/code\_collect\_3.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_collect_5.PNG)
+![image](.gitbook/assets/food-irradiation/code\_collect\_4.PNG)
+
+![image](.gitbook/assets/food-irradiation/code\_collect\_5.PNG)
 
 ## Step 5.1: Logging the collected data into the MySQL database
 
@@ -1059,47 +1063,47 @@ After uploading and running the code for collecting data and transmitting data p
 
 ☢:bento: The device waits for the Wi-Fi module to connect to the given Wi-Fi network.
 
-![image](.gitbook/assets/food-irradiation/collect_0.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_0.jpg)
 
 ☢:bento: Then, the device displays a modicum of the collected data on the SSD1309 OLED transparent screen.
 
-- WEIGHT (g)
-- F1 (405 - 425 nm)
-- CPM (Counts per Minute)
+* WEIGHT (g)
+* F1 (405 - 425 nm)
+* CPM (Counts per Minute)
 
 ☢:bento: The device allows the user to collect visible light (color) data at different angles with the movable handle.
 
-![image](.gitbook/assets/food-irradiation/collect_1.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_1.jpg)
 
-![image](.gitbook/assets/food-irradiation/collect_2.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_2.jpg)
 
-![image](.gitbook/assets/food-irradiation/collect_3.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_3.jpg)
 
 ☢:bento: If one of the control buttons (A, B, or C) is pressed, the device transmits the recently collected data by adding the selected food irradiation dose class to the given web application.
 
-- Control Button (A) ➡ Regulated [0]
-- Control Button (B) ➡ Unsafe [1]
-- Control Button (C) ➡ Hazardous [2]
+* Control Button (A) ➡ Regulated \[0]
+* Control Button (B) ➡ Unsafe \[1]
+* Control Button (C) ➡ Hazardous \[2]
 
-☢:bento: Then, if the web application appends the transferred data packet to the MySQL database successfully, the device shows this message on the SSD1309 OLED transparent screen: *Data registered successfully!*
+☢:bento: Then, if the web application appends the transferred data packet to the MySQL database successfully, the device shows this message on the SSD1309 OLED transparent screen: _Data registered successfully!_
 
-![image](.gitbook/assets/food-irradiation/collect_4.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_4.jpg)
 
 ☢:bento: If Beetle ESP32-C3 throws an error while operating, the device shows the error message on the SSD1309 OLED transparent screen and prints the error details on the serial monitor.
 
-![image](.gitbook/assets/food-irradiation/collect_12.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_12.jpg)
 
-![image](.gitbook/assets/food-irradiation/serial_error.PNG)
+![image](.gitbook/assets/food-irradiation/serial\_error.PNG)
 
 ☢:bento: Also, the device prints notifications and sensor measurements on the serial monitor for debugging.
 
-![image](.gitbook/assets/food-irradiation/serial_collect_1.PNG)
+![image](.gitbook/assets/food-irradiation/serial\_collect\_1.PNG)
 
-![image](.gitbook/assets/food-irradiation/serial_collect_2.PNG)
+![image](.gitbook/assets/food-irradiation/serial\_collect\_2.PNG)
 
 As far as my experiments go, the device operates impeccably while collecting measurements and transmitting data packets to a given web application :)
 
-![image](.gitbook/assets/food-irradiation/gif_data_collect.gif)
+![image](.gitbook/assets/food-irradiation/gif\_data\_collect.gif)
 
 ## Step 5.2: Creating samples from data records with the web application
 
@@ -1107,56 +1111,56 @@ After logging ionizing radiation, weight, and visible light (color) measurements
 
 📌Foods:
 
-- Pasta
-- Corn kernel
-- Herb
-- Apple
-- Wheat
-- Animal (livestock) feed
+* Pasta
+* Corn kernel
+* Herb
+* Apple
+* Wheat
+* Animal (livestock) feed
 
-![image](.gitbook/assets/food-irradiation/collect_5.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_5.jpg)
 
-![image](.gitbook/assets/food-irradiation/collect_6.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_6.jpg)
 
-![image](.gitbook/assets/food-irradiation/collect_7.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_7.jpg)
 
-![image](.gitbook/assets/food-irradiation/collect_8.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_8.jpg)
 
-![image](.gitbook/assets/food-irradiation/collect_9.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_9.jpg)
 
-![image](.gitbook/assets/food-irradiation/collect_10.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_10.jpg)
 
-![image](.gitbook/assets/food-irradiation/collect_11.jpg)
+![image](.gitbook/assets/food-irradiation/collect\_11.jpg)
 
 As explained in Step 2, I generated a CSV file (sample) for each data record in the MySQL database by utilizing the web application.
 
 ☢:bento: The web application shows the total number of data records for classes (labels) in the database.
 
-![image](.gitbook/assets/food-irradiation/data_create_1.PNG)
+![image](.gitbook/assets/food-irradiation/data\_create\_1.PNG)
 
-☢:bento: If the user clicks the *Create Samples* button, the web application scales data items and generates a CSV file (sample) for each data record, depending on the selected data type (training or testing).
+☢:bento: If the user clicks the _Create Samples_ button, the web application scales data items and generates a CSV file (sample) for each data record, depending on the selected data type (training or testing).
 
-![image](.gitbook/assets/food-irradiation/data_create_2.PNG)
+![image](.gitbook/assets/food-irradiation/data\_create\_2.PNG)
 
-![image](.gitbook/assets/food-irradiation/data_create_3.PNG)
+![image](.gitbook/assets/food-irradiation/data\_create\_3.PNG)
 
-![image](.gitbook/assets/food-irradiation/data_create_4.PNG)
+![image](.gitbook/assets/food-irradiation/data\_create\_4.PNG)
 
-![image](.gitbook/assets/food-irradiation/data_create_5.PNG)
+![image](.gitbook/assets/food-irradiation/data\_create\_5.PNG)
 
-☢:bento: If the user clicks the *Download* button, the web application downloads all generated CSV files (samples) in the ZIP file format.
+☢:bento: If the user clicks the _Download_ button, the web application downloads all generated CSV files (samples) in the ZIP file format.
 
 📌 Training samples:
 
-![image](.gitbook/assets/food-irradiation/dataset_1.PNG)
+![image](.gitbook/assets/food-irradiation/dataset\_1.PNG)
 
-![image](.gitbook/assets/food-irradiation/dataset_2.PNG)
+![image](.gitbook/assets/food-irradiation/dataset\_2.PNG)
 
 📌 Testing samples:
 
-![image](.gitbook/assets/food-irradiation/dataset_3.PNG)
+![image](.gitbook/assets/food-irradiation/dataset\_3.PNG)
 
-![image](.gitbook/assets/food-irradiation/dataset_4.PNG)
+![image](.gitbook/assets/food-irradiation/dataset\_4.PNG)
 
 ## Step 6: Building a neural network model with Edge Impulse
 
@@ -1166,16 +1170,16 @@ Since Edge Impulse supports almost every microcontroller and development board d
 
 Even though Edge Impulse supports CSV files to upload samples, the data type should be time series to upload all data records in a single file. Therefore, I needed to follow the steps below to format my data set so as to train my model accurately:
 
-- Data Scaling (Normalizing)
-- Data Preprocessing
+* Data Scaling (Normalizing)
+* Data Preprocessing
 
 As explained in the previous steps, I utilized the web application to scale (normalize) and preprocess data records to create CSV files (samples) for Edge Impulse.
 
-Since the assigned classes are stored under the *class* data field in the MySQL database, I preprocessed my data set effortlessly to obtain labels for each data record while generating samples:
+Since the assigned classes are stored under the _class_ data field in the MySQL database, I preprocessed my data set effortlessly to obtain labels for each data record while generating samples:
 
-- 0 — Regulated
-- 1 — Unsafe
-- 2 — Hazardous
+* 0 — Regulated
+* 1 — Unsafe
+* 2 — Hazardous
 
 Plausibly, Edge Impulse allows building predictive models optimized in size and accuracy automatically and deploying the trained model as an Arduino library. Therefore, after scaling (normalizing) and preprocessing my data set to create samples, I was able to build an accurate neural network model to forecast food irradiation dose levels and run it on Beetle ESP32-C3 effortlessly.
 
@@ -1187,108 +1191,108 @@ After generating training and testing samples successfully, I uploaded them to m
 
 :hash: First of all, sign up for [Edge Impulse](https://www.edgeimpulse.com/) and create a new project.
 
-![image](.gitbook/assets/food-irradiation/edge_set_1.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_set\_1.PNG)
 
-:hash: Navigate to the *Data acquisition* page and click the *Upload existing data* button.
+:hash: Navigate to the _Data acquisition_ page and click the _Upload existing data_ button.
 
-![image](.gitbook/assets/food-irradiation/edge_set_2.png)
+![image](.gitbook/assets/food-irradiation/edge\_set\_2.png)
 
-![image](.gitbook/assets/food-irradiation/edge_set_3.png)
+![image](.gitbook/assets/food-irradiation/edge\_set\_3.png)
 
-:hash: Then, choose the data category (training or testing) and select *Infer from filename* under *Label* to deduce labels from file names automatically.
+:hash: Then, choose the data category (training or testing) and select _Infer from filename_ under _Label_ to deduce labels from file names automatically.
 
-:hash: Finally, select files and click the *Begin upload* button.
+:hash: Finally, select files and click the _Begin upload_ button.
 
-![image](.gitbook/assets/food-irradiation/edge_set_4.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_set\_4.PNG)
 
-![image](.gitbook/assets/food-irradiation/edge_set_5.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_set\_5.PNG)
 
-![image](.gitbook/assets/food-irradiation/edge_set_6.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_set\_6.PNG)
 
-![image](.gitbook/assets/food-irradiation/edge_set_7.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_set\_7.PNG)
 
-![image](.gitbook/assets/food-irradiation/edge_set_8.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_set\_8.PNG)
 
-![image](.gitbook/assets/food-irradiation/edge_set_9.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_set\_9.PNG)
 
 ## Step 6.2: Training the model on food irradiation dose levels
 
 After uploading my training and testing samples successfully, I designed an impulse and trained it on food irradiation dose levels (classes).
 
-An impulse is a custom neural network model in Edge Impulse. I created my impulse by employing the *Raw Data* block and the *Classification* learning block.
+An impulse is a custom neural network model in Edge Impulse. I created my impulse by employing the _Raw Data_ block and the _Classification_ learning block.
 
-The *Raw Data* block generate windows from data samples without any specific signal processing.
+The _Raw Data_ block generate windows from data samples without any specific signal processing.
 
-The *Classification* learning block represents a Keras neural network model. Also, it lets the user change the model settings, architecture, and layers.
+The _Classification_ learning block represents a Keras neural network model. Also, it lets the user change the model settings, architecture, and layers.
 
-:hash: Go to the *Create impulse* page. Then, select the *Raw Data* block and the *Classification* learning block. Finally, click *Save Impulse*.
+:hash: Go to the _Create impulse_ page. Then, select the _Raw Data_ block and the _Classification_ learning block. Finally, click _Save Impulse_.
 
-![image](.gitbook/assets/food-irradiation/edge_train_1.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_train\_1.PNG)
 
-:hash: Before generating features for the model, go to the *Raw data* page and click *Save parameters*.
+:hash: Before generating features for the model, go to the _Raw data_ page and click _Save parameters_.
 
-![image](.gitbook/assets/food-irradiation/edge_train_2.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_train\_2.PNG)
 
-:hash: After saving parameters, click *Generate features* to apply the *Raw Data* block to training samples.
+:hash: After saving parameters, click _Generate features_ to apply the _Raw Data_ block to training samples.
 
-![image](.gitbook/assets/food-irradiation/edge_train_3.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_train\_3.PNG)
 
-![image](.gitbook/assets/food-irradiation/edge_train_4.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_train\_4.PNG)
 
-:hash: Finally, navigate to the *NN Classifier* page and click *Start training*.
+:hash: Finally, navigate to the _NN Classifier_ page and click _Start training_.
 
-![image](.gitbook/assets/food-irradiation/edge_train_5.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_train\_5.PNG)
 
-![image](.gitbook/assets/food-irradiation/edge_train_6.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_train\_6.PNG)
 
 According to my experiments with my neural network model, I modified classification model settings, architecture, and layers to build a neural network model with high accuracy and validity:
 
 📌 Neural network settings:
 
-- Number of training cycles ➡  50  
-- Learning level ➡ 0.0006
-- Validation set size ➡ 10
+* Number of training cycles ➡ 50
+* Learning level ➡ 0.0006
+* Validation set size ➡ 10
 
 📌 Extra layers:
 
-- Dense layer (64 neurons)
-- Dense layer (32 neurons)
+* Dense layer (64 neurons)
+* Dense layer (32 neurons)
 
-After generating features and training my model with training samples, Edge Impulse evaluated the precision score (accuracy) as *100%*.
+After generating features and training my model with training samples, Edge Impulse evaluated the precision score (accuracy) as _100%_.
 
-The precision score is approximately *100%* due to the volume and variety of training samples. In technical terms, the model overfits the training data set. Therefore, I am still collecting data to improve my training data set.
+The precision score is approximately _100%_ due to the volume and variety of training samples. In technical terms, the model overfits the training data set. Therefore, I am still collecting data to improve my training data set.
 
-![image](.gitbook/assets/food-irradiation/edge_train_7.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_train\_7.PNG)
 
-![image](.gitbook/assets/food-irradiation/edge_train_8.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_train\_8.PNG)
 
 ## Step 6.3: Evaluating the model accuracy and deploying the model
 
 After building and training my neural network model, I tested its accuracy and validity by utilizing testing samples.
 
-The evaluated accuracy of the model is *96.30%*.
+The evaluated accuracy of the model is _96.30%_.
 
-:hash: To validate the trained model, go to the *Model testing* page and click *Classify all*.
+:hash: To validate the trained model, go to the _Model testing_ page and click _Classify all_.
 
-![image](.gitbook/assets/food-irradiation/edge_test_1.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_test\_1.PNG)
 
-![image](.gitbook/assets/food-irradiation/edge_test_2.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_test\_2.PNG)
 
-![image](.gitbook/assets/food-irradiation/edge_test_3.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_test\_3.PNG)
 
 After validating my neural network model, I deployed it as a fully optimized and customizable Arduino library.
 
-:hash: To deploy the validated model as an Arduino library, navigate to the *Deployment* page and select *Arduino library*.
+:hash: To deploy the validated model as an Arduino library, navigate to the _Deployment_ page and select _Arduino library_.
 
-:hash: Then, choose the *Quantized (int8)* optimization option to get the best performance possible while running the deployed model.
+:hash: Then, choose the _Quantized (int8)_ optimization option to get the best performance possible while running the deployed model.
 
-:hash: Finally, click *Build* to download the model as an Arduino library.
+:hash: Finally, click _Build_ to download the model as an Arduino library.
 
-![image](.gitbook/assets/food-irradiation/edge_deploy_1.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_deploy\_1.PNG)
 
-![image](.gitbook/assets/food-irradiation/edge_deploy_2.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_deploy\_2.PNG)
 
-![image](.gitbook/assets/food-irradiation/edge_deploy_3.PNG)
+![image](.gitbook/assets/food-irradiation/edge\_deploy\_3.PNG)
 
 ## Step 7: Setting up the Edge Impulse model on Beetle ESP32-C3
 
@@ -1296,18 +1300,19 @@ After building, training, and deploying my model as an Arduino library on Edge I
 
 Since Edge Impulse optimizes and formats signal processing, configuration, and learning blocks into a single package while deploying models as Arduino libraries, I was able to import my model effortlessly to run inferences.
 
-:hash: After downloading the model as an Arduino library in the ZIP file format, go to *Sketch > Include Library > Add .ZIP Library...*
+:hash: After downloading the model as an Arduino library in the ZIP file format, go to _Sketch > Include Library > Add .ZIP Library..._
 
-:hash: Then, include the *IoT_AI-driven_Food_Irradiation_Classifier_inferencing.h* file to import the Edge Impulse neural network model.
+:hash: Then, include the _IoT\_AI-driven\_Food\_Irradiation\_Classifier\_inferencing.h_ file to import the Edge Impulse neural network model.
 
 ```
 #include &lt;IoT_AI-driven_Food_Irradiation_Classifier_inferencing.h>
 ```
+
 After importing my model successfully to the Arduino IDE, I employed the control button (B) attached to Beetle ESP32-C3 to run inferences so as to predict food irradiation dose levels:
 
-- Press ➡ Run Inference
+* Press ➡ Run Inference
 
-You can download the *IoT_food_irradiation_run_model.ino* file to try and inspect the code for running Edge Impulse neural network models on Beetle ESP32-C3.
+You can download the _IoT\_food\_irradiation\_run\_model.ino_ file to try and inspect the code for running Edge Impulse neural network models on Beetle ESP32-C3.
 
 You can inspect the corresponding functions and settings in Step 5.
 
@@ -1323,8 +1328,9 @@ You can inspect the corresponding functions and settings in Step 5.
 // Include the Edge Impulse model converted to an Arduino library:
 #include &lt;IoT_AI-driven_Food_Irradiation_Classifier_inferencing.h>
 ```
-:star: Define the required parameters to run an inference with the Edge Impulse model.
-:star: Define the features array (buffer) to classify one frame of data.
+
+:star: Define the required parameters to run an inference with the Edge Impulse model. :star: Define the features array (buffer) to classify one frame of data.
+
 ```
 #define FREQUENCY_HZ        EI_CLASSIFIER_FREQUENCY
 #define INTERVAL_MS         (1000 / (FREQUENCY_HZ + 1))
@@ -1333,13 +1339,14 @@ You can inspect the corresponding functions and settings in Step 5.
 float features[EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE];
 size_t feature_ix = 0;
 ```
+
 :star: Define the threshold value (0.60) for the model outputs (predictions).
 
 :star: Define the food irradiation dose class names:
 
-- Regulated
-- Unsafe
-- Hazardous
+* Regulated
+* Unsafe
+* Hazardous
 
 ```
 float threshold = 0.60;
@@ -1355,7 +1362,8 @@ String classes[] = {"Hazardous", "Regulated", "Unsafe"};
 ```
 static const unsigned char *class_icons[] U8X8_PROGMEM = {hazardous_bits, regulated_bits, unsafe_bits};
 ```
-:star: In the *run_inference_to_make_predictions* function:
+
+:star: In the _run\_inference\_to\_make\_predictions_ function:
 
 :star: Scale (normalize) the collected data depending on the given model and copy the scaled data items to the features array (buffer).
 
@@ -1499,76 +1507,77 @@ void run_inference_to_make_predictions(int multiply){
   }
 ```
 
-![image](.gitbook/assets/food-irradiation/code_run_1.PNG)
+![image](.gitbook/assets/food-irradiation/code\_run\_1.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_run_2.PNG)
+![image](.gitbook/assets/food-irradiation/code\_run\_2.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_run_3.PNG)
+![image](.gitbook/assets/food-irradiation/code\_run\_3.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_run_4.PNG)
+![image](.gitbook/assets/food-irradiation/code\_run\_4.PNG)
 
-![image](.gitbook/assets/food-irradiation/code_run_5.PNG)
+![image](.gitbook/assets/food-irradiation/code\_run\_5.PNG)
 
 ## Step 8: Running the model on Beetle ESP32-C3 to make predictions on food irradiation doses
 
-When the features array (buffer) is full with data items, my Edge Impulse neural network model predicts possibilities of labels (food irradiation dose classes) for the given features buffer as an array of 3 numbers. They represent the model's *"confidence"* that the given features buffer corresponds to each of the three different food irradiation dose levels (classes) based on ionizing radiation, weight, and visible light (color) measurements [0 - 2], as shown in Step 6:
+When the features array (buffer) is full with data items, my Edge Impulse neural network model predicts possibilities of labels (food irradiation dose classes) for the given features buffer as an array of 3 numbers. They represent the model's _"confidence"_ that the given features buffer corresponds to each of the three different food irradiation dose levels (classes) based on ionizing radiation, weight, and visible light (color) measurements \[0 - 2], as shown in Step 6:
 
-- 0 — Regulated
-- 1 — Unsafe
-- 2 — Hazardous
+* 0 — Regulated
+* 1 — Unsafe
+* 2 — Hazardous
 
-After executing the *IoT_food_irradiation_run_model.ino* file on Beetle ESP32-C3:
+After executing the _IoT\_food\_irradiation\_run\_model.ino_ file on Beetle ESP32-C3:
 
 ☢:bento: The device displays a modicum of the collected data on the SSD1309 OLED transparent screen.
 
-- WEIGHT (g)
-- F1 (405 - 425 nm)
-- CPM (Counts per Minute)
+* WEIGHT (g)
+* F1 (405 - 425 nm)
+* CPM (Counts per Minute)
 
-![image](.gitbook/assets/food-irradiation/run_model_1.jpg)
+![image](.gitbook/assets/food-irradiation/run\_model\_1.jpg)
 
-☢:bento: If the control button (B) is pressed, the device runs an inference with the Edge Impulse model by filling the features buffer with the recently collected ionizing radiation, weight, and visible light (color) measurements.    
+☢:bento: If the control button (B) is pressed, the device runs an inference with the Edge Impulse model by filling the features buffer with the recently collected ionizing radiation, weight, and visible light (color) measurements.
 
 ☢:bento: When the device starts filling the features buffer with data items, it shows:
 
-![image](.gitbook/assets/food-irradiation/run_model_2.jpg)
+![image](.gitbook/assets/food-irradiation/run\_model\_2.jpg)
 
-☢:bento: Then, the device displays the detection result, which represents the most accurate label (food irradiation dose class) predicted by the model. 
+☢:bento: Then, the device displays the detection result, which represents the most accurate label (food irradiation dose class) predicted by the model.
 
 ☢:bento: Each food irradiation dose level (class) has a unique monochrome icon to be shown on the SSD1309 OLED transparent screen when being predicted (detected) by the model:
 
-- Regulated
-- Unsafe
-- Hazardous
+* Regulated
+* Unsafe
+* Hazardous
 
-![image](.gitbook/assets/food-irradiation/run_model_3.jpg)
+![image](.gitbook/assets/food-irradiation/run\_model\_3.jpg)
 
-![image](.gitbook/assets/food-irradiation/run_model_4.jpg)
+![image](.gitbook/assets/food-irradiation/run\_model\_4.jpg)
 
-![image](.gitbook/assets/food-irradiation/run_model_5.jpg)
+![image](.gitbook/assets/food-irradiation/run\_model\_5.jpg)
 
 ☢:bento: Also, the device prints notifications and sensor measurements on the serial monitor for debugging.
 
-![image](.gitbook/assets/food-irradiation/serial_run_1.PNG)
+![image](.gitbook/assets/food-irradiation/serial\_run\_1.PNG)
 
-![image](.gitbook/assets/food-irradiation/serial_run_2.PNG)
+![image](.gitbook/assets/food-irradiation/serial\_run\_2.PNG)
 
 As far as my experiments go, the device predicts food irradiation dose levels (classes) accurately by employing the collected measurements :)
 
-![image](.gitbook/assets/food-irradiation/gif_run_model.gif)
+![image](.gitbook/assets/food-irradiation/gif\_run\_model.gif)
 
 ## Videos and Conclusion
+
 [Data Collection | IoT AI-driven Food Irradiation Dose Detector w/ Edge Impulse](https://www.youtube.com/embed/CEl3ukSI1EA)
 
 [Experimenting with the model | IoT AI-driven Food Irradiation Dose Detector w/ Edge Impulse](https://www.youtube.com/embed/LAanlabmYJA)
 
 After completing all steps above and experimenting, I have employed the device to predict and detect food irradiation dose levels of various foods and food packaging so as to check whether they conform to health and safety standards regarding food irradiation.
 
-![image](.gitbook/assets/food-irradiation/home_1.jpg)
+![image](.gitbook/assets/food-irradiation/home\_1.jpg)
 
 ## Further Discussions
 
-By applying neural network models trained on ionizing radiation, weight, and visible light (color) measurements in detecting food irradiation dose levels, we can achieve to[^3]:
+By applying neural network models trained on ionizing radiation, weight, and visible light (color) measurements in detecting food irradiation dose levels, we can achieve to\[^3]:
 
 ☢:bento: prevent changes to the packaging that might affect integrity as a barrier to microbial contamination,
 
@@ -1576,13 +1585,12 @@ By applying neural network models trained on ionizing radiation, weight, and vis
 
 ☢:bento: preclude inadvertent radiation effects on polymers in food packaging due to competing crosslinking or chain scission reactions.
 
-![image](.gitbook/assets/food-irradiation/home_2.jpg)
+![image](.gitbook/assets/food-irradiation/home\_2.jpg)
 
 ## References
 
-[^1] Vanee Komolprasert. "CHAPTER 6: PACKAGING FOR FOODS TREATED BY IONIZING RADIATION." *Packaging for Nonthermal Processing of Food*. Blackwell Publishing, First edition, 2007. 87 - 88.
+\[^1] Vanee Komolprasert. "CHAPTER 6: PACKAGING FOR FOODS TREATED BY IONIZING RADIATION." _Packaging for Nonthermal Processing of Food_. Blackwell Publishing, First edition, 2007. 87 - 88.
 
-[^2] Ana Paula Dionísio, Renata Takassugui Gomes, and Marília Oetterer. *Ionizing Radiation Effects on Food Vitamins – A Review*. Braz. Arch. Biol. Technol. v.52 n.5: pp. 1267-1278, Sept/Oct 2009
+\[^2] Ana Paula Dionísio, Renata Takassugui Gomes, and Marília Oetterer. _Ionizing Radiation Effects on Food Vitamins – A Review_. Braz. Arch. Biol. Technol. v.52 n.5: pp. 1267-1278, Sept/Oct 2009
 
-[^3] Kim M. Morehouse and Vanee Komolprasert. *Overview of Irradiation of Food and Packaging*. ACS Symposium Series 875, Irradiation of Food and Packaging, 2004, Chapter 1, Pages 1-11. *https://www.fda.gov/food/irradiation-food-packaging/overview-irradiation-food-and-packaging*.
-
+\[^3] Kim M. Morehouse and Vanee Komolprasert. _Overview of Irradiation of Food and Packaging_. ACS Symposium Series 875, Irradiation of Food and Packaging, 2004, Chapter 1, Pages 1-11. _https://www.fda.gov/food/irradiation-food-packaging/overview-irradiation-food-and-packaging_.

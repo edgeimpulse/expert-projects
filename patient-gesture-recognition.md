@@ -1,21 +1,20 @@
 ---
-description: A TinyML-based wearable device which can be fitted on a patient’s finger for communicating with caretakers.
-
+description: >-
+  A TinyML-based wearable device which can be fitted on a patient’s finger for
+  communicating with caretakers.
 ---
 
-# Patient Communication with Gesture Recognition 
+# Patient Communication with Gesture Recognition
 
-Created By:
-Manivannan Sivan 
+Created By: Manivannan Sivan
 
-Public Project Link:
-[https://studio.edgeimpulse.com/public/147925/latest](https://studio.edgeimpulse.com/public/147925/latest)
+Public Project Link: [https://studio.edgeimpulse.com/public/147925/latest](https://studio.edgeimpulse.com/public/147925/latest)
 
 ![](.gitbook/assets/patient-gesture-recognition/intro.jpg)
 
 ## Problem Statement
 
-Some hospital patients, elderly people, or patients require constant monitoring might need support at any time.  However, they may have difficulty communicating due to injuries, mental ability, energy level / effort, glucose level, or other reasons.  It can also be challenging for caretakers to tend to all patients.
+Some hospital patients, elderly people, or patients require constant monitoring might need support at any time. However, they may have difficulty communicating due to injuries, mental ability, energy level / effort, glucose level, or other reasons. It can also be challenging for caretakers to tend to all patients.
 
 ## TinyML Solution
 
@@ -29,21 +28,21 @@ I have trained a model with different tap actions and normal hand movements, so 
 
 The model will predict an action in any of these categories:
 
-- Help
-- Emergency
-- Water 
-- Idle
-- Random Movements 
+* Help
+* Emergency
+* Water
+* Idle
+* Random Movements
 
 Now let’s see how I trained the model and tested it on real hardware in detail.
 
 ## Data Acquisition
 
-Connect the Thunderboard Sense 2 board to your system and flash the firmware from this link: 
+Connect the Thunderboard Sense 2 board to your system and flash the firmware from this link:
 
 [https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/silabs-thunderboard-sense-2](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/silabs-thunderboard-sense-2)
 
-![](.gitbook/assets/patient-gesture-recognition/firmware-update.jpg)
+![](.gitbook/assets/worker-safety-posture-detection/firmware.jpg)
 
 Once it is flashed, run the below command:
 
@@ -57,8 +56,7 @@ Now your board is connected to your Edge Impulse account. I have used a cloth fi
 
 To get any support from caretakers, the patient can use this gesture.
 
-For gesture - "Help", I have just tapped my hand on the flat surface gently with 1 second delay.
-Let's say for each second, I have done one tap action. I have collected 2 minutes of "Help" data for training and 20 seconds of data for testing.
+For gesture - "Help", I have just tapped my hand on the flat surface gently with 1 second delay. Let's say for each second, I have done one tap action. I have collected 2 minutes of "Help" data for training and 20 seconds of data for testing.
 
 ![](.gitbook/assets/patient-gesture-recognition/help.gif)
 
@@ -66,7 +64,7 @@ Let's say for each second, I have done one tap action. I have collected 2 minute
 
 ### Emergency
 
-For "Emergency" action, I have continuously tapped the finger with a SiLabs board on a flat surface for five times without any delay.  I repeated this process for about 2 minutes to collect enough training data, and another 20 seconds for testing data.
+For "Emergency" action, I have continuously tapped the finger with a SiLabs board on a flat surface for five times without any delay. I repeated this process for about 2 minutes to collect enough training data, and another 20 seconds for testing data.
 
 ![](.gitbook/assets/patient-gesture-recognition/emergency.gif)
 
@@ -74,7 +72,7 @@ For "Emergency" action, I have continuously tapped the finger with a SiLabs boar
 
 ### Water
 
-For basic needs like water, food etc. the patient can use this gesture to communicate.  This helps caretakers understand the needs in advance and bring water to them.
+For basic needs like water, food etc. the patient can use this gesture to communicate. This helps caretakers understand the needs in advance and bring water to them.
 
 Lift the hand slightly from the surface, and move it sideways left and right a few times. Again, I have collected 2 minutes of data for model training, and 20 seconds data for testing.
 
@@ -130,11 +128,11 @@ The model achieved 96% in model testing data. This data was completely new and n
 
 ## Deployment
 
-Go to the Deployment section and select Firmware option - Thunderboard Sense 2.  This will download the firmware to your system.
+Go to the Deployment section and select Firmware option - Thunderboard Sense 2. This will download the firmware to your system.
 
 Once the Firmware file is downloaded, copy the `.bin` file and paste it in the `TB004` drive. This will flash the software onto the Thunderboard Sense 2 board. Once it is flashed, reset the board. Connect the 3v battery into it.
 
-![](.gitbook/assets/patient-gesture-recognition/deployment.jpg)
+![](.gitbook/assets/worker-safety-posture-detection/deployment.jpg)
 
 ## Testing the Device
 
@@ -144,9 +142,9 @@ Open the App and connect to the Edge Impulse service (Make sure board is powered
 
 Change a few settings in the app:
 
-- Subscribe to the 2A56 characteristic.
-- Decode the message as UTF8 (click on HEX in the top right corner in LightBlue to switch).
-- Connect the wearable to your finger and start performing the different gesture actions.
+* Subscribe to the 2A56 characteristic.
+* Decode the message as UTF8 (click on HEX in the top right corner in LightBlue to switch).
+* Connect the wearable to your finger and start performing the different gesture actions.
 
 Enable the "listening" option in the app, as well. You will be notified only when the previous prediction result differs from the current prediction result.
 

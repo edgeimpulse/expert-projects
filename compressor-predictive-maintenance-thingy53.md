@@ -1,11 +1,12 @@
 ---
-description: Using a Nordic Thingy:53 to monitor vibrations and perform predictive maintenance on an industrial compressor.
+description: >-
+  Using a Nordic Thingy:53 to monitor vibrations and perform predictive
+  maintenance on an industrial compressor.
 ---
 
-# Industrial Compressor Predictive Maintenance - Thingy:53 
+# Industrial Compressor Predictive Maintenance - Nordic Thingy:53
 
-Created By:
-[Zalmotek](https://zalmotek.com) 
+Created By: [Zalmotek](https://zalmotek.com)
 
 Public Project Link:
 
@@ -27,11 +28,11 @@ Vibration data is a great dimension to monitor in machinery that has moving part
 
 In industrial settings, compressors are used to provide air to power air tools, paint sprayers, and abrasive blast equipment, to phase shift refrigerants for air conditioning and refrigeration and to propel gas through pipelines.
 
-Fundamentally, an air compressor is a pump that pulls air from the atmosphere and pressurizes it into a reducing volume. The two most common types of compressors are piston compressors, in which a piston moves up and down in a cylinder, drawing air on the downstroke, and rotary screw compressors that employ a set of helical screws to draw air from the atmosphere. 
+Fundamentally, an air compressor is a pump that pulls air from the atmosphere and pressurizes it into a reducing volume. The two most common types of compressors are piston compressors, in which a piston moves up and down in a cylinder, drawing air on the downstroke, and rotary screw compressors that employ a set of helical screws to draw air from the atmosphere.
 
-In our application, the compressor is used in a laser cutting machine to eliminate all the debris and cool the material at the point of contact between the workpiece and the laser beam. Failure of doing this may lead to ruining the workpiece, as the material will warp near the laser beam and also pose a structural risk to the whole machinery as the debris might accumulate and ignite from the heat. 
+In our application, the compressor is used in a laser cutting machine to eliminate all the debris and cool the material at the point of contact between the workpiece and the laser beam. Failure of doing this may lead to ruining the workpiece, as the material will warp near the laser beam and also pose a structural risk to the whole machinery as the debris might accumulate and ignite from the heat.
 
-There are not many ways of preventing such accidents from happening, except doing routine preventive maintenance procedures on the compressor unit, like changing the oil, the gaskets and the tubing. 
+There are not many ways of preventing such accidents from happening, except doing routine preventive maintenance procedures on the compressor unit, like changing the oil, the gaskets and the tubing.
 
 ### Our Solution
 
@@ -41,14 +42,15 @@ To address this, we will be developing a predictive maintenance solution that ga
 
 ### Hardware Requirements
 
-- [Nordic Thingy:53](https://www.nordicsemi.com/Products/Development-hardware/Nordic-Thingy-53)
-- USB-C cable
+* [Nordic Thingy:53](https://www.nordicsemi.com/Products/Development-hardware/Nordic-Thingy-53)
+* USB-C cable
 
 ### Software requirements
-- nRF Programmer Android/IoS App
-- Edge Impulse account
-- [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation)
-- Git
+
+* nRF Programmer Android/IoS App
+* Edge Impulse account
+* [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation)
+* Git
 
 ## Hardware Setup
 
@@ -78,11 +80,11 @@ The Nordic nRF Edge Impulse iPhone and Android apps will work with new Thingy:53
 
 The firmware of Thingy:53 needs to be updated before it can be connected to the Edge Impulse project. Launch the **nRF Programmer mobile application** after downloading it from Apple Store or Google Play. You will be presented with several available firmware that can be uploaded on the board.
 
-<img src=".gitbook/assets/compressor-predictive-maintenance-thingy53/4.jpg" align="center" height="50%">
+![](<.gitbook/assets/compressor-predictive-maintenance-thingy53/4 (1).jpg>)
 
 Select the **Edge Impulse** application and tap **Download**. Afterward, hit **Install**. A list with all the nearby devices will show up and you must select the Thingy:53 board that you wish to program.
 
-<img src=".gitbook/assets/compressor-predictive-maintenance-thingy53/5.jpg" align="center" height="50%">
+![](.gitbook/assets/compressor-predictive-maintenance-thingy53/5.jpg)
 
 With the firmware updated, connect the Thingy:53 board to a computer that has the edge-impulse-cli suite installed, turn it on, launch a terminal and issue the following command:
 
@@ -110,13 +112,13 @@ After the board shows up in the Devices tab, navigate to the **Data acquisition*
 
 ![](.gitbook/assets/compressor-predictive-maintenance-thingy53/7.png)
 
-For this application, the Nordic Thingy:53 will be mounted directly on the compressor unit by using a strong adhesive and we will be recording data for 2 classes: “Unbalance_In_Rotating_Parts” and “Normal_Operation”. The “Normal_Operation” class is very important because neural networks can only "understand" the training data that was used to create them, and any new data that will be presented to them will have to end up in one of the defined categories.
+For this application, the Nordic Thingy:53 will be mounted directly on the compressor unit by using a strong adhesive and we will be recording data for 2 classes: “Unbalance\_In\_Rotating\_Parts” and “Normal\_Operation”. The “Normal\_Operation” class is very important because neural networks can only "understand" the training data that was used to create them, and any new data that will be presented to them will have to end up in one of the defined categories.
 
 For this model, aim for around 4 minutes of data for each class. Every time you record a new data entry, it will show up in the **Collected data** field, and the time-domain representation of the signal will be displayed in the **Raw Data** window.
 
 ![](.gitbook/assets/compressor-predictive-maintenance-thingy53/8.png)
 
-During normal operation, the compressor manifests a vibration with a low amplitude, with rhythmic increases in amplitude once every cycle, followed by a slow reduction back to normal levels. 
+During normal operation, the compressor manifests a vibration with a low amplitude, with rhythmic increases in amplitude once every cycle, followed by a slow reduction back to normal levels.
 
 ![](.gitbook/assets/compressor-predictive-maintenance-thingy53/9.png)
 
@@ -136,7 +138,7 @@ After the datapool is populated, it’s time to create the Impulse. An Impulse i
 
 For this application, we will be using an input block with a 2000ms window size, with a window increase of 200ms at an acquisition frequency of 100Hz, a **Spectral Analysis** block as our processing block and a combination of learning blocks, a **Classification(Keras)** and an **Anomaly Detection** block.
 
-The Anomaly Detection block is necessary for this application because not all failures that may occur during normal operation of the compressor can be simulated. 
+The Anomaly Detection block is necessary for this application because not all failures that may occur during normal operation of the compressor can be simulated.
 
 ### Configure the Spectral Analysis Block
 
@@ -162,12 +164,11 @@ Leave everything on default settings for the time being and click **Start traini
 
 ![](.gitbook/assets/compressor-predictive-maintenance-thingy53/16.png)
 
-After the training has been assigned to a cluster, the training performance tab will be displayed. Here, you can view in tabulated form the correct and incorrect predictions made by the model after being presented with the Validation data set. 
-When training a neural network, we aim for a high **Accuracy** (the percentage of predictions where the expected value matches the actual value of the data input) and a low **Loss** (the total sum of errors produced for all the samples in the validation data set).
+After the training has been assigned to a cluster, the training performance tab will be displayed. Here, you can view in tabulated form the correct and incorrect predictions made by the model after being presented with the Validation data set. When training a neural network, we aim for a high **Accuracy** (the percentage of predictions where the expected value matches the actual value of the data input) and a low **Loss** (the total sum of errors produced for all the samples in the validation data set).
 
 ![](.gitbook/assets/compressor-predictive-maintenance-thingy53/17.png)
 
-Underneath those performance indices, you can visually explore the data to find the outliers and the mislabeled data. You can see that in the right side of the graphic there is a small cluster of “Unbalance_In_Rotating_Parts” data points that were mislabeled, represented with red dots.
+Underneath those performance indices, you can visually explore the data to find the outliers and the mislabeled data. You can see that in the right side of the graphic there is a small cluster of “Unbalance\_In\_Rotating\_Parts” data points that were mislabeled, represented with red dots.
 
 ### Configure the Anomaly Detector
 
@@ -210,28 +211,22 @@ $edge-impulse-run-impulse
 An alternative and easy way of quickly deploying the model on the edge is using the **Nordic nRF Edge Impulse** app for iPhone or Android:
 
 1. Download and install the application from Google Play/Apple Store.
-1. Launch the application and login with your Edge Impulse credentials.
-1. Select your Predictive Maintenance project from the list:
+2. Launch the application and login with your Edge Impulse credentials.
+3.  Select your Predictive Maintenance project from the list:
 
-    <img src=".gitbook/assets/compressor-predictive-maintenance-thingy53/23.jpg" align="center" height="50%">
+    ![](.gitbook/assets/compressor-predictive-maintenance-thingy53/23.jpg)
+4.  Navigate to the Devices tab and connect to the Thingy:53:
 
-1. Navigate to the Devices tab and connect to the Thingy:53:
+    ![](.gitbook/assets/compressor-predictive-maintenance-thingy53/24.jpg)
+5.  Navigate to the Data tab and press **Connect**. You will see the status on the button changing from **Connect** to **Disconnect**.
 
-    <img src=".gitbook/assets/compressor-predictive-maintenance-thingy53/24.jpg" align="center" height="50%">
+    ![](.gitbook/assets/compressor-predictive-maintenance-thingy53/25.jpg)
+6.  Navigate to the deployment tab and press **Deploy**.
 
-1. Navigate to the Data tab and press **Connect**. You will see the status on the button changing from **Connect** to **Disconnect**.
+    ![](.gitbook/assets/compressor-predictive-maintenance-thingy53/26.jpg) ![](.gitbook/assets/compressor-predictive-maintenance-thingy53/27.jpg)
+7.  In the **Inferencing** tab, you will see the results of the Edge Impulse model you have flashed on the device:
 
-    <img src=".gitbook/assets/compressor-predictive-maintenance-thingy53/25.jpg" align="center" height="50%">
-
-1. Navigate to the deployment tab and press **Deploy**.
-
-    <img src=".gitbook/assets/compressor-predictive-maintenance-thingy53/26.jpg" align="center" height="50%">
-
-    <img src=".gitbook/assets/compressor-predictive-maintenance-thingy53/27.jpg" align="center" height="50%">
-
-1. In the **Inferencing** tab, you will see the results of the Edge Impulse model you have flashed on the device:
-
-    <img src=".gitbook/assets/compressor-predictive-maintenance-thingy53/28.jpg" align="center" height="50%">
+    ![](.gitbook/assets/compressor-predictive-maintenance-thingy53/28.jpg)
 
 ### EON Compiler and Resource Optimization
 
@@ -247,9 +242,8 @@ Usually, microcontroller targets have less than 128K of RAM and implicitly, have
 
 ## Conclusion
 
-<img src=".gitbook/assets/compressor-predictive-maintenance-thingy53/31.jpg" align="center" height="50%">
+![](.gitbook/assets/compressor-predictive-maintenance-thingy53/31.jpg)
 
-By employing IoT devices powered by machine learning algorithms running on the edge, predictive maintenance is closer to becoming a common practice in industrial environments, making it cheaper, more accessible and more powerful than ever. While simple in their principle of operation, predictive maintenance systems improve the Overall Equipment Effectiveness and positively impact the equipment Remaining Useful Life (RUL). 
+By employing IoT devices powered by machine learning algorithms running on the edge, predictive maintenance is closer to becoming a common practice in industrial environments, making it cheaper, more accessible and more powerful than ever. While simple in their principle of operation, predictive maintenance systems improve the Overall Equipment Effectiveness and positively impact the equipment Remaining Useful Life (RUL).
 
 If you need assistance in deploying your own solutions or more information about the tutorial above please reach out to us!
-

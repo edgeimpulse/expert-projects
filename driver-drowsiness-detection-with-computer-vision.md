@@ -1,14 +1,14 @@
 ---
-description: Use an Arduino Nicla Vision to determine and alert if a driver's eyes are closed for more than 2 seconds.
+description: >-
+  Use an Arduino Nicla Vision to determine and alert if a driver's eyes are
+  closed for more than 2 seconds.
 ---
 
-# Driver Drowsiness Detection With FOMO 
+# Driver Drowsiness Detection With FOMO
 
-Created By:
-Shebin Jose Jacob
+Created By: Shebin Jose Jacob
 
-Public Project Link:
-[https://studio.edgeimpulse.com/public/168098/latest](https://studio.edgeimpulse.com/public/168098/latest)
+Public Project Link: [https://studio.edgeimpulse.com/public/168098/latest](https://studio.edgeimpulse.com/public/168098/latest)
 
 GitHub Repository:
 
@@ -75,7 +75,7 @@ Now that the necessary software and hardware have been configured, we can procee
 
 ![](.gitbook/assets/driver-drowsiness-detection-with-computer-vision/labeling-queue.png)
 
-After the data has been uploaded to the Edge Impulse platform, it will be necessary to label the unlabeled images in the **Labeling queue**. In this case, there are two distinct classes that the model will be trained to recognize: *Closed Eye* and *Open Eye*. As such, there are two corresponding labels that will be applied to the images in the labeling queue. This process of labeling the data is an essential step in training the object detection model, as it allows the model to learn the characteristics and features of each class, enabling it to accurately classify images and recognize objects in the future. By carefully and accurately labeling the images in the labeling queue, we can ensure that the model is well-trained and capable of performing effectively.
+After the data has been uploaded to the Edge Impulse platform, it will be necessary to label the unlabeled images in the **Labeling queue**. In this case, there are two distinct classes that the model will be trained to recognize: _Closed Eye_ and _Open Eye_. As such, there are two corresponding labels that will be applied to the images in the labeling queue. This process of labeling the data is an essential step in training the object detection model, as it allows the model to learn the characteristics and features of each class, enabling it to accurately classify images and recognize objects in the future. By carefully and accurately labeling the images in the labeling queue, we can ensure that the model is well-trained and capable of performing effectively.
 
 ### 2. Impulse Design
 
@@ -93,7 +93,7 @@ In the next stage of our project, we will focus on generating features. To do th
 
 ![](.gitbook/assets/driver-drowsiness-detection-with-computer-vision/feature-generation.png)
 
-While it is not strictly essential that the generated features be well split, it is generally a good indication that the resulting model will perform well. A well-split set of features typically leads to a model that performs well, as it indicates that there is a clear distinction between the two classes being used. Once the features have been generated, we can move on to the training phase of our project. 
+While it is not strictly essential that the generated features be well split, it is generally a good indication that the resulting model will perform well. A well-split set of features typically leads to a model that performs well, as it indicates that there is a clear distinction between the two classes being used. Once the features have been generated, we can move on to the training phase of our project.
 
 ### 4. Model Training
 
@@ -131,21 +131,21 @@ In order to deploy our machine-learning model, we will need to create an Arduino
 
 ![](.gitbook/assets/driver-drowsiness-detection-with-computer-vision/deployment.png)
 
-To build the library, we will need to navigate to the **Deployment** tab and follow the steps outlined there. Once we have completed this process, we will have a fully functional library that is ready for use on the Arduino platform. One optional step that we can take is to enable optimizations using the EON Compiler. This compiler is designed to optimize the code in our library, making it faster and more efficient. 
+To build the library, we will need to navigate to the **Deployment** tab and follow the steps outlined there. Once we have completed this process, we will have a fully functional library that is ready for use on the Arduino platform. One optional step that we can take is to enable optimizations using the EON Compiler. This compiler is designed to optimize the code in our library, making it faster and more efficient.
 
 Once we have completed the build process, we will be provided with a `.zip` file that contains our model and a set of examples. To use this library on the Arduino platform, we will need to add it to the Arduino Integrated Development Environment (IDE).
 
-![](.gitbook/assets/driver-drowsiness-detection-with-computer-vision/arduino-ide.png)
+![](.gitbook/assets/clog-detection-with-ai/arduino-ide.jpg)
 
 To do this, we will need to open the Arduino IDE and navigate to **Sketch > Include Library > Add .ZIP library**. From here, we will be able to browse the zip file that we created earlier and add it to the IDE. Once we have added the library to the Arduino IDE, we will be able to use it to run our machine-learning model on the Arduino platform.
 
 ![](.gitbook/assets/driver-drowsiness-detection-with-computer-vision/code.png)
 
-Modify the code located at **File > Examples > Your Project Name > nicla_vision > nicla_vision_camera** incorporating your additions.
+Modify the code located at **File > Examples > Your Project Name > nicla\_vision > nicla\_vision\_camera** incorporating your additions.
 
 ## Final Product
 
-After deployment, we developed a device integrating a Nicla Vision, a buzzer, and an LED. The device is enclosed in a neat 3D-printed case which can be easily attached to your car's dashboard. 
+After deployment, we developed a device integrating a Nicla Vision, a buzzer, and an LED. The device is enclosed in a neat 3D-printed case which can be easily attached to your car's dashboard.
 
 ![](.gitbook/assets/driver-drowsiness-detection-with-computer-vision/case.jpg)
 

@@ -1,11 +1,12 @@
 ---
-description: Using a Nordic Semi Thingy:53 with Keyword Spotting to turn an ordinary device into a smart appliance.
+description: >-
+  Using a Nordic Semi Thingy:53 with Keyword Spotting to turn an ordinary device
+  into a smart appliance.
 ---
 
 # Smart Appliance Control Using Voice Commands - Nordic Thingy:53
 
-Created By:
-[Zalmotek](https://zalmotek.com) 
+Created By: [Zalmotek](https://zalmotek.com)
 
 Public Project Link:
 
@@ -51,9 +52,9 @@ For this use case, we will be using the Nordic Thingy:53 as an advertising perip
 * 220V to 5V power regulator
 * Plug-in plastic enclosure
 
-![](.gitbook/assets/smart-appliance-voice-commands/3.jpg)
+![](.gitbook/assets/illegal-logging-detection-nordic-thingy53/3.jpg)
 
-![](.gitbook/assets/smart-appliance-voice-commands/4.jpg)
+![](.gitbook/assets/illegal-logging-detection-nordic-thingy53/4.jpg)
 
 ### Software requirements
 
@@ -72,7 +73,7 @@ We chose to connect the [Adafruit Non-Latching Mini Relay FeatherWing](https://w
 
 You can use this circuit to control AC powered household devices, such as kettles, lights, or stove smoke extractors.
 
-We have chosen an enclosure that will safely protect users from the AC Mains and the rest of the electronics. We have soldered the circuit on a test board by using the following schematic that we tested first on a breadboard. We have kept the testboard neatly separated between low DC voltage that was routed in the top part and AC High voltage that was routed in the lower part of the testboard. 
+We have chosen an enclosure that will safely protect users from the AC Mains and the rest of the electronics. We have soldered the circuit on a test board by using the following schematic that we tested first on a breadboard. We have kept the testboard neatly separated between low DC voltage that was routed in the top part and AC High voltage that was routed in the lower part of the testboard.
 
 **Warning: Working with AC mains is dangerous if you have never done it before, please ask for an electronics senior or document yourself thoroughly before undergoing this schematic.**
 
@@ -96,9 +97,9 @@ The gateway can be placed anywhere in the house and does not need to be connecte
 
 ### Setup the Build Environment
 
-Building and flashing custom applications on the Nordic Thingy:53 board require a working Zephyr environment. To create it, follow the steps in the [Getting Started guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html) from the official Zephyr documentation. Afterwards, follow the steps presented in the [Developing with Thingy:53](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/ug_thingy53.html)  guide from the official Nordic Semiconductor documentation.  While this might not be mentioned in either of the documents, you must also install the [J-Link Software and Documentation Pack](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack) and the [nRF Command Line Tools(ver 10.15.4)](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download) to be able to flash the board.
+Building and flashing custom applications on the Nordic Thingy:53 board require a working Zephyr environment. To create it, follow the steps in the [Getting Started guide](https://docs.zephyrproject.org/latest/develop/getting\_started/index.html) from the official Zephyr documentation. Afterwards, follow the steps presented in the [Developing with Thingy:53](https://developer.nordicsemi.com/nRF\_Connect\_SDK/doc/latest/nrf/ug\_thingy53.html) guide from the official Nordic Semiconductor documentation. While this might not be mentioned in either of the documents, you must also install the [J-Link Software and Documentation Pack](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack) and the [nRF Command Line Tools(ver 10.15.4)](https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download) to be able to flash the board.
 
-After following the steps in the guides presented above, you should have a working Zephyr environment. Remember to always work in the virtual environment created during the [Getting Started guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html) when developing applications for this platform.
+After following the steps in the guides presented above, you should have a working Zephyr environment. Remember to always work in the virtual environment created during the [Getting Started guide](https://docs.zephyrproject.org/latest/develop/getting\_started/index.html) when developing applications for this platform.
 
 ### Creating an Edge Impulse Project
 
@@ -108,17 +109,17 @@ Let's start by creating an Edge Impulse project. Select **Developer** as your pr
 
 ### Connecting the Device
 
-Thingy:53 devices will work with the Nordic nRF Edge Impulse [iPhone](https://apps.apple.com/us/app/nrf-edge-impulse/id1557234087) and [Android](https://play.google.com/store/apps/details?id=no.nordicsemi.android.nrfei&hl=en&gl=US) apps or with the Edge Impulse Studio right away.
+Thingy:53 devices will work with the Nordic nRF Edge Impulse [iPhone](https://apps.apple.com/us/app/nrf-edge-impulse/id1557234087) and [Android](https://play.google.com/store/apps/details?id=no.nordicsemi.android.nrfei\&hl=en\&gl=US) apps or with the Edge Impulse Studio right away.
 
 First of all, the firmware of the Thingy:53 device must be updated. Download the **nRF Programmer** mobile application and launch it. You will be prompted with a number of available samples.
 
-![](.gitbook/assets/smart-appliance-voice-commands/11.jpg)
+![](.gitbook/assets/compressor-predictive-maintenance-thingy53/4.jpg)
 
 Select the **Edge Impulse** application, select the version of the sample from the drop-down menu and tap **Download**.
 
 Once that is done, tap **Install** and a list with nearby devices will appear. You have to select your development board from the list and the upload process will begin.
 
-![](.gitbook/assets/smart-appliance-voice-commands/12.jpg)
+![](<.gitbook/assets/compressor-predictive-maintenance-thingy53/5 (1).jpg>)
 
 With the firmware updated, connect the Thingy:53 board to a computer that has the **edge-impulse-cli** suite installed, turn it on, launch a terminal and run:
 
@@ -146,11 +147,11 @@ Go to **Data Acquisition** in your Edge Impulse project and you can start gather
 
 ![](.gitbook/assets/smart-appliance-voice-commands/14.png)
 
-For this particular use case, we will be using the "Light", "Kettle" and "Extractor" keywords to turn on different items in the kitchen. Now start recording 5-10 seconds segments of you saying "Light",  "Kettle" and "Extractor". You will notice that they appear in the **Collected data** tab. Click on the menu symbolized by three points and press **Split Sample**. Edge Impulse automatically splits the sample in 1 second windows but you can adjust those manually. When you are happy with the windows, press **Split**.
+For this particular use case, we will be using the "Light", "Kettle" and "Extractor" keywords to turn on different items in the kitchen. Now start recording 5-10 seconds segments of you saying "Light", "Kettle" and "Extractor". You will notice that they appear in the **Collected data** tab. Click on the menu symbolized by three points and press **Split Sample**. Edge Impulse automatically splits the sample in 1 second windows but you can adjust those manually. When you are happy with the windows, press **Split**.
 
 ![](.gitbook/assets/smart-appliance-voice-commands/15.png)
 
-We will also require audio that doesn't contain the  keywords we wish to detect. We must gather a data set with sounds like ambient noise, people speaking in the distance, or different sound from the kitchen all of which fall within the "background" category. This class is identified as "Background". Keep in mind that data is the most important part of machine learning and your model will perform better the more diverse and abundant your data set is. 
+We will also require audio that doesn't contain the keywords we wish to detect. We must gather a data set with sounds like ambient noise, people speaking in the distance, or different sound from the kitchen all of which fall within the "background" category. This class is identified as "Background". Keep in mind that data is the most important part of machine learning and your model will perform better the more diverse and abundant your data set is.
 
 From now on, because "Light", "Kettle" and "Extractor" are the classes we wish to detect, we will be referring to them as "positive classes" and to "Background" as a negative class. What we will be doing is use the [keywords dataset](https://cdn.edgeimpulse.com/datasets/keywords2.zip) from the Unknown and Noise samples for background noises.
 
@@ -198,26 +199,26 @@ One way of deploying the model on the edge is using the Nordic nRF Edge Impulse 
 
 ![](.gitbook/assets/smart-appliance-voice-commands/21.jpg)
 
-4. Navigate to the Devices tab and connect to the Thingy:53:
+1. Navigate to the Devices tab and connect to the Thingy:53:
 
 ![](.gitbook/assets/smart-appliance-voice-commands/22.jpg)
 
-5. Navigate to the **Data tab** and press **Connect**. You will see the status on the button changing from **Connect** to **Disconnect**.
+1. Navigate to the **Data tab** and press **Connect**. You will see the status on the button changing from **Connect** to **Disconnect**.
 
 ![](.gitbook/assets/smart-appliance-voice-commands/23.jpg)
 
-6. Navigate to the **Deployment** tab and press **Deploy**.
+1. Navigate to the **Deployment** tab and press **Deploy**.
 
 ![](.gitbook/assets/smart-appliance-voice-commands/24.jpg)
 
-7. In the **Inferencing** tab, you will see the results of the Edge Impulse model you have flashed on the device:
+1. In the **Inferencing** tab, you will see the results of the Edge Impulse model you have flashed on the device:
 
 ![](.gitbook/assets/smart-appliance-voice-commands/25.jpg)
 
 ## Creating a Custom Application
 
 To showcase the process of creating a custom application, we have decided to create a basic Bluetooth application. In this application, the Thingy:53 functions as a peripheral bluetooth device that advertises itself. The ESP32 functions as a bluetooth client that scans for available devices to connect to. When it detects the Thingy:53, it pairs with it and awaits a command.
- 
+
 After the devices are paired, when the central button of the Thingy:53 is pressed, it sends a message to the Esp32 which triggers a Relay.
 
 [Here you can find the source code](https://github.com/Zalmotek/edge-impulse-appliance-control-voice-nordic-thingy53) for the Thingy:53 and the Esp32.
@@ -235,7 +236,7 @@ Make sure you have the board powered on and connected via the J-Link mini Edu to
 &west flash
 ```
 
-To flash the esp32, follow the steps provided here to set-up the build environment and then, simply copy the code from the ESP32_Client.ino file in a new sketch and press upload.
+To flash the esp32, follow the steps provided here to set-up the build environment and then, simply copy the code from the ESP32\_Client.ino file in a new sketch and press upload.
 
 ## Future Development
 
@@ -245,7 +246,7 @@ For this project we have decided to deploy the machine learning algorithm on the
 
 Another great addition to this project would be the implementation of the [Matter protocol](https://csa-iot.org/all-solutions/matter/).
 
-Matter is a royalty free standard and was created to encourage interoperability between different devices and platforms. 
+Matter is a royalty free standard and was created to encourage interoperability between different devices and platforms.
 
 If the appliances already have an IoT layer, the Thingy:53 is fully compatible with the Matter and instead of using relays, it could be directly interfaced with the smart appliances.
 
@@ -262,5 +263,3 @@ The ability to quickly gather data, create, train and deploy machine learning al
 Ultimately, this system provides a convenient and cost-effective way to control multiple appliances in the home.
 
 We hope that this article will inspire you to try out Edge Impulse and Nordic Semi's Thingy:53 in your own smart appliance projects.
-
-
