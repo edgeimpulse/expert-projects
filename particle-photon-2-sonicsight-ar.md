@@ -24,7 +24,7 @@ In an attempt to address this problem, I have created SonicSight AR.  This devic
 
 SonicSight AR also solves some other unique problems often experienced by the hearing-impaired — it also detects footsteps and talking to prevent the wearer from being startled when someone approaches them unexpectedly.
 
-To acheive this, a [Particle Photon 2](https://store.particle.io/products/photon-2) is used for listening and running the machine learning model, and a [Brilliant Labs Monocle](https://brilliant.xyz/products/monocle) is used for the display.
+To achieve this, a [Particle Photon 2](https://store.particle.io/products/photon-2) is used for listening and running the machine learning model, and a [Brilliant Labs Monocle](https://brilliant.xyz/products/monocle) is used for the display.
 
 ![](.gitbook/assets/particle-photon-2-sonicsight-ar/monocle.jpg)
 
