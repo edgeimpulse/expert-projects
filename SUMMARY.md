@@ -50,7 +50,7 @@
 * [Food Irradiation Dose Detection](food-irradiation-detection.md)
 * [Arduin-Row, a TinyML Rowing Machine Coach](arduin-row-tinyml-rowing-machine-coach.md)
 * [Refrigerator Predictive Maintenance](refrigerator-predictive-maintenance.md)
-* [Acoustic Pipe Leak Detection](acoustic-pipe-leak-detection.md)
+* [Acoustic Pipe Leakage Detection - Arduino Portenta H7](acoustic-pipe-leak-detection-arduino-portenta-h7.md)
 * [Worker Safety Monitoring with Nvidia Jetson Nano](worker-safety-monitoring.md)
 * [Bhopal 84, Detect Harmful Gases](detect-harmful-gases.md)
 * [Bean Leaf Classification with Sony Spresense](bean-leaf-classification.md)
