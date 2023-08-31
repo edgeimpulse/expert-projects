@@ -27,6 +27,7 @@
 * [Traffic Monitoring using the Brainchip Akida Neuromorphic Processor](brainchip-akida-traffic-monitoring.md)
 * [MLOps with Edge Impulse and Azure IoT Edge](mlops-azure-iot-edge.md)
 * [Smart HVAC System with a Sony Spresense](sony-spresense-smart-hvac-system.md)
+* [Community Guide – Using Edge Impulse with Nvidia DeepStream](nvidia-deepstream-community-guide.md)
 
 ## Prototype and Concept Projects
 
