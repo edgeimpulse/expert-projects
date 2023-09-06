@@ -4,7 +4,7 @@ description: >-
   coughing, to improve medical outcomes.
 ---
 
-# Wearable Cough Sensor and Monitoring
+# Wearable Cough Sensor and Monitoring - Arduino Nano 33 BLE Sense
 
 Created By: Eivind Holt
 
@@ -32,7 +32,7 @@ Using cough frequency and intensity as and indicator of COPD condition has [prov
 
 Existing methods of analyzing audio recordings greatly invades privacy of the patient, caregivers and peers. This proof-of-concept does not store any audio for more than a fraction of a second. This audio buffer never leaves the device, it is constantly being overwritten as soon as the application has determined if the small fragment of audio contains a cough or not. In fact, the hardware used is not capable of streaming audio using the low-energy network in question.
 
-Further, the application is hard-coded to detect coughs or noise. To be able to detect new keywords, for instance "bomb", or "shopping", the device would have to be physically reprogrammed. Firmware Over-the-Air is not currently supported in this project. Each keyword consumes already constrained memory, limiting the practical amount of different keywords to a handfull.
+Further, the application is hard-coded to detect coughs or noise. To be able to detect new keywords, for instance "bomb", or "shopping", the device would have to be physically reprogrammed. Firmware Over-the-Air is not currently supported in this project. Each keyword consumes already constrained memory, limiting the practical amount of different keywords to a handful.
 
 Compared to commercial voice assistants, such as Google Nest, Amazon Alexa or Apple Siri on dedicated devices or on smartphone, this device works a bit differently. The aforementioned products are split into two modes: activation and interpretation. Activation runs continuously locally on the device and is limited to recognizing "Hey google" etc. This puts the device in the next mode, interpretation. In this mode an audio recording is made and transmitted to servers to be processed. This opens up for greatly improved speech recognition. It also opens up to secondary use, better know as targeted advertisement. The device in this project only works in the activation mode.
 

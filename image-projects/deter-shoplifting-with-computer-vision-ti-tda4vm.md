@@ -4,7 +4,7 @@ description: >-
   they should not be, using the TI TDA4VM Vision AI board.
 ---
 
-# Use Computer Vision on a TI TDA4VM to Deter Shoplifting
+# Deter Shoplifting with Computer Vision - Texas Instruments TDA4VM
 
 Created By: Roni Bandini
 
@@ -132,7 +132,7 @@ As an extra bit to get you started, I have also developed a Python script that c
 
 ## Conclusion
 
-In this tutorial, we have built a proof-of-concept project to help deter shoplifting and theft. We used a Texas Instruments TDA4VM Vision AI Starter Kit and Edge Impulse to train a computer vision machine learning model that can detect bags, deployed the model to the TDA4VM board, and then added an application that can send an alert if a bag is identified during inferencing. The hardware acceleration built-in to the TDA4VM board performed inferencing at approximately 1ms, or 100 frames per second in this test. Only one camera is being used in this demonstration, but the TDA4VM [can support up to 8 cameras simultaneously](deter-shoplifting-with-computer-vision.md).
+In this tutorial, we have built a proof-of-concept project to help deter shoplifting and theft. We used a Texas Instruments TDA4VM Vision AI Starter Kit and Edge Impulse to train a computer vision machine learning model that can detect bags, deployed the model to the TDA4VM board, and then added an application that can send an alert if a bag is identified during inferencing. The hardware acceleration built-in to the TDA4VM board performed inferencing at approximately 1ms, or 100 frames per second in this test. Only one camera is being used in this demonstration, but the TDA4VM [can support up to 8 cameras simultaneously](deter-shoplifting-with-computer-vision-ti-tda4vm.md).
 
 ## Sources
 
