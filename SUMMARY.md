@@ -80,14 +80,14 @@
 * [Location Identification using Sound - Syntiant TinyML](audio-projects/location-identification-using-sound-syntiant-tinyml.md)
 * [Environmental Noise Classification - Nordic Thingy:53](audio-projects/environmental-noise-classification-nordic-thingy53.md)
 * [Running Faucet Detection - Seeed XIAO Sense + Blues Cellular](audio-projects/running-faucet-detection-seeed-xiao-blues-wireless.md)
-* [Vandalism Detection via Audio Classification](audio-projects/vandalism-detection-audio-classification.md)
-* [Predictive Maintenance Using Audio Classification](audio-projects/predictive-maintenance-with-sound.md)
-* [Porting an Audio Project from the SiLabs Thunderboard Sense 2 to xG24](audio-projects/audio-recognition-on-silabs-xg24.md)
-* [Environmental Audio Monitoring Wearable with Syntiant TinyML Board](audio-projects/environmental-audio-monitoring-syntiant-tinyml.md)
-* [Environmental Audio Monitoring Wearable with Syntiant TinyML Board - Part 2](audio-projects/environmental-audio-monitoring-syntiant-tinyml-part-2.md)
-* [Keyword Spotting on the Nordic Thingy:53](audio-projects/keyword-spotting-on-nordic-thingy53.md)
-* [Detecting Worker Accidents with Audio Classification](audio-projects/detecting-worker-accidents-with-ai.md)
-* [Snoring Detection with Syntiant NDP120 Neural Decision Processor on Nicla Voice](audio-projects/arduino-nicla-voice-syntiant-snoring-detection.md)
+* [Vandalism Detection via Audio Classification - Arduino Nano 33 BLE Sense](audio-projects/vandalism-detection-audio-classification-arduino-nano-33.md)
+* [Predictive Maintenance Using Audio Classification - Arduino Nano 33 BLE Sense](audio-projects/predictive-maintenance-using-audio-classification-arduino-nano-33.md)
+* [Porting an Audio Project from the SiLabs Thunderboard Sense 2 to xG24](audio-projects/audio-classification-silabs-xg24.md)
+* [Environmental Audio Monitoring Wearable - Syntiant TinyML - Part 1](audio-projects/environmental-audio-monitoring-wearable-syntiant-tinyml-part-1.md)
+* [Environmental Audio Monitoring Wearable - Syntiant TinyML - Part 2](audio-projects/environmental-audio-monitoring-wearable-syntiant-tinyml-part-2.md)
+* [Keyword Spotting - Nordic Thingy:53](audio-projects/keyword-spotting-nordic-thingy53.md)
+* [Detecting Worker Accidents with Audio Classification - Syntiant TinyML](audio-projects/detecting-worker-accidents-syntiant-tinyml.md)
+* [Snoring Detection with Syntiant NDP120 Neural Decision Processor - Arduino Nicla Voice](audio-projects/arduino-nicla-voice-syntiant-snoring-detection.md)
 
 ## Predictive Maintenance & Fault Classification
 
