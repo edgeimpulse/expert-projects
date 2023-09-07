@@ -59,6 +59,7 @@
 * [SiLabs xG24 Plus Arducam - Sorting Objects with Computer Vision and Robotics - Part 1](image-projects/silabs-xg24-card-sorting-and-robotics-1.md)
 * [SiLabs xG24 Plus Arducam - Sorting Objects with Computer Vision and Robotics - Part 2](image-projects/silabs-xg24-card-sorting-and-robotics-2.md)
 * [Object Detection and Visualization - Seeed Grove Vision AI Module](image-projects/object-detection-ubidots-seeed-grove-ai.md)
+* [Bike Rearview Radar - Raspberry Pi](image-projects/bike-rearview-radar-raspberry-pi.md)
 * [Build a Self-Driving RC Vehicle - Arduino Portenta H7 and Computer Vision](image-projects/arduino-portenta-h7-self-driving-rc-car.md)
 * ["Bring Your Own Model" Image Classifier for Wound Identification](image-projects/arduino-portenta-h7-byom-wound-classification.md)
 * [Acute Lymphoblastic Leukemia Classifier - Nvidia Jetson Nano](image-projects/ai-leukemia-classifier-nvidia-jetson-nano.md)
@@ -137,22 +138,21 @@
 ## Novel Sensor Projects
 
 * [8x8 ToF Gesture Classification - Arduino RP2040 Connect](novel-sensor-projects/tof-gesture-classification-arduino-rp2040-connect.md)
-* [Food Irradiation Dose Detection](novel-sensor-projects/food-irradiation-detection.md)
-* [Bike Rearview Radar](novel-sensor-projects/bike-rearview-radar.md)
+* [Food Irradiation Dose Detection - DFRobot Beetle ESP32C3](novel-sensor-projects/food-irradiation-dose-detection-dfrobot-beetle-esp32c3.md)
 * [Applying EEG Data to Machine Learning, Part 1](novel-sensor-projects/eeg-data-machine-learning-part-1.md)
 * [Applying EEG Data to Machine Learning, Part 2](novel-sensor-projects/eeg-data-machine-learning-part-2.md)
 * [Applying EEG Data to Machine Learning, Part 3](novel-sensor-projects/eeg-data-machine-learning-part-3.md)
-* [Liquid Classification with TinyML](novel-sensor-projects/liquid-classification-tinyml.md)
-* [AI-Assisted Pipeline Diagnostics and Inspection with mmWave Radar](novel-sensor-projects/ai-pipeline-inspection-mmwave.md)
-* [Sensecap A1101 - Soil Quality Detection Using AI and LoRaWAN](novel-sensor-projects/sensecap-a1101-lorawan-soil-quality.md)
-* [Smart Diaper Prototype with an Arduino Nicla Sense ME](novel-sensor-projects/arduino-nicla-sense-smart-diaper.md)
+* [Liquid Classification with TinyML - Seeed Wio Terminal + TDS Sensor](novel-sensor-projects/liquid-classification-seeed-wio-terminal.md)
+* [AI-Assisted Pipeline Diagnostics and Inspection with mmWave Radar](novel-sensor-projects/ai-pipeline-inspection-mmwave-radar.md)
+* [Soil Quality Detection Using AI and LoRaWAN - Seeed Sensecap A1101](novel-sensor-projects/soil-quality-detection-lorawan-seeed-sensecap-a1101.md)
+* [Smart Diaper Prototype - Arduino Nicla Sense ME](novel-sensor-projects/smart-diaper-arduino-nicla-sense-me.md)
 
 ## Software Integration Demos
 
 * [Azure Machine Learning with Kubernetes Compute and Edge Impulse](software-integration-demos/azure-machine-learning-ei.md)
 * [ROS2 + Edge Impulse, Part 1: Pub/Sub Node in Python](software-integration-demos/ros2-part1-pubsub-node.md)
 * [ROS2 + Edge Impulse, Part 2: MicroROS](software-integration-demos/ros2-part2-microros.md)
-* [Using Hugging Face Datasets in Edge Impulse](software-integration-demos/using-huggingface-dataset-with-edge-impulse.md)
-* [How to Use a Hugging Face Image Classification Dataset with Edge Impulse](software-integration-demos/hugging-face-image-classification.md)
+* [Using Hugging Face Datasets in Edge Impulse](software-integration-demos/huggingface-dataset-with-edge-impulse.md)
+* [Using Hugging Face Image Classification Datasets with Edge Impulse](software-integration-demos/hugging-face-image-classification-dataset.md)
 * [Edge Impulse API Usage Sample Application - Jetson Nano Trainer](software-integration-demos/api-sample-application-jetson-nano.md)
 * [MLOps with Edge Impulse and Azure IoT Edge](software-integration-demos/mlops-azure-iot-edge.md)
