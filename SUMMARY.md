@@ -22,7 +22,7 @@
 * [Traffic Monitoring - Brainchip Akida Neuromorphic Processor](image-projects/brainchip-akida-traffic-monitoring.md)
 * [Container Counting - Arduino Nicla Vision](image-projects/container-counting-arduino-nicla-vision.md)
 * [Smart Smoke Alarm - Arduino Nano 33](image-projects/smart-smoke-alarm-arduino-nano-33.md)
-* [Shield Bot Autonomous Security Robot](image-projects/shieldbot.md)
+* [Shield Bot Autonomous Security Robot](image-projects/shieldbot-autonomous-security-robot.md)
 * [Cyclist Blind Spot Detection - Himax WE-I Plus](image-projects/cyclist-blind-spot-detection-himax-we-i-plus.md)
 * [IV Drip Fluid-Level Monitoring - Arduino Portenta H7](image-projects/iv-drip-fluid-level-monitoring-arduino-portenta-h7.md)
 * [Worker PPE Safety Monitoring - Nvidia Jetson Nano](image-projects/worker-safety-monitoring-nvidia-jetson-nano.md)
@@ -72,7 +72,7 @@
 * [Illegal Logging Detection - Nordic Thingy:53](audio-projects/illegal-logging-detection-nordic-thingy53.md)
 * [Illegal Logging Detection - Syntiant TinyML](audio-projects/illegal-logging-detection-syntiant-tinyml.md)
 * [Wearable Cough Sensor and Monitoring - Arduino Nano 33 BLE Sense](audio-projects/wearable-cough-sensor-arduino-nano-33.md)
-* [Collect Data for Keyword Spotting - Raspberry Pi Pico](audio-projects/collect-data-keyword-spotting-raspberrypi-pico.md)
+* [Collect Data for Keyword Spotting - Raspberry Pi Pico](audio-projects/collect-data-keyword-spotting-raspberry-pi-pico.md)
 * [Voice-Activated LED Strip - Raspberry Pi Pico](audio-projects/voice-activated-led-controller-raspberry-pi-pico.md)
 * [Snoring Detection on a Smart Phone](audio-projects/snoring-detection-on-smartphone.md)
 * [Gunshot Audio Classification - Arduino Nano 33 + Portenta H7](audio-projects/gunshot-audio-classification-arduino.md)
@@ -107,7 +107,7 @@
 * [Arduino x K-Way - Outdoor Activity Tracker](accelerometer-and-activity-projects/arduino-kway-outdoor-activity-tracker.md)
 * [Arduino x K-Way - Gesture Recognition for Hiking](accelerometer-and-activity-projects/arduino-kway-gesture-recognition-weather.md)
 * [Arduino x K-Way - TinyML Fall Detection](accelerometer-and-activity-projects/arduino-kway-fall-detection.md)
-* [Posture Detection for Worker Safety - SiLabs Thunderboard Sense 2](accelerometer-and-activity-projects/posture-detection-for-worker-safety-silabs-thunderboard.md)
+* [Posture Detection for Worker Safety - SiLabs Thunderboard Sense 2](accelerometer-and-activity-projects/posture-detection-for-worker-safety-silabs-thunderboard-sense-2.md)
 * [Hand Gesture Recognition - OpenMV Cam H7](accelerometer-and-activity-projects/hand-gesture-recognition-openmv-cam-h7.md)
 * [Arduin-Row, a TinyML Rowing Machine Coach - Arduino Nicla Sense ME](accelerometer-and-activity-projects/arduin-row-tinyml-rowing-machine-coach-arduino-nicla-sense.md)
 * [Fall Detection using a Transformer Model – Arduino Giga R1 WiFi](accelerometer-and-activity-projects/fall-detection-with-transformer-model-arduino-giga-r1.md)
@@ -149,7 +149,7 @@
 
 ## Software Integration Demos
 
-* [Azure Machine Learning with Kubernetes Compute and Edge Impulse](software-integration-demos/azure-machine-learning-ei.md)
+* [Azure Machine Learning with Kubernetes Compute and Edge Impulse](software-integration-demos/azure-machine-learning-kubernetes-compute-ei.md)
 * [ROS2 + Edge Impulse, Part 1: Pub/Sub Node in Python](software-integration-demos/ros2-part1-pubsub-node.md)
 * [ROS2 + Edge Impulse, Part 2: MicroROS](software-integration-demos/ros2-part2-microros.md)
 * [Using Hugging Face Datasets in Edge Impulse](software-integration-demos/huggingface-dataset-with-edge-impulse.md)
