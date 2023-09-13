@@ -9,7 +9,9 @@ Created By: Solomon Githu
 
 Public Project Link: [https://studio.edgeimpulse.com/public/279823/latest](https://studio.edgeimpulse.com/public/279823/latest)
 
-![](../.gitbook/assets/federated-learning/img1_cover-image.png)
+![](../.gitbook/assets/federated-learning/img1_cover-image.jpg)
+
+![](../../.gitbook/assets/federated-learning/img2_head-hardhat.png)
 
 ## Introduction
 
