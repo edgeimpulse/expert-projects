@@ -1,6 +1,6 @@
 ---
 description: >-
-  Build a machine learning model and deploy it to a Nordic Semi Thingy:53 to
+  Build a machine learning model and deploy it to a Nordic Thingy:53 to
   detect the sound of breaking glass.
 ---
 

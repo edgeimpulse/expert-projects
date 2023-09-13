@@ -1,6 +1,6 @@
 ---
 description: >-
-  An exploration into using Machine Learning to better monitor a patient
+  An exploration into using machine learning to better monitor a patient
   coughing, to improve medical outcomes.
 ---
 

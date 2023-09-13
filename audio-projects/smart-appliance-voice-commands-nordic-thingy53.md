@@ -1,6 +1,6 @@
 ---
 description: >-
-  Using a Nordic Semi Thingy:53 with Keyword Spotting to turn an ordinary device
+  Using a Nordic Thingy:53 with Keyword Spotting to turn an ordinary device
   into a smart appliance.
 ---
 

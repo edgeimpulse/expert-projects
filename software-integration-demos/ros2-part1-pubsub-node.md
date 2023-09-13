@@ -1,8 +1,6 @@
 ---
 description: >-
-  In this tutorial we’ll look at how to build an AI-driven ROS2 node using an
-  Edge Impulse model. This tutorial is “sensor agnostic”, but a 3-axis
-  accelerometer is used for demonstration.
+  Build an AI-driven ROS2 node for robotics using an Edge Impulse model and a 3-axis accelerometer.
 ---
 
 # ROS2 + Edge Impulse, Part 1: Pub/Sub Node in Python
@@ -11,9 +9,9 @@ Created By: Avi Brown
 
 Public Project Link: [https://studio.edgeimpulse.com/public/108508/latest](https://studio.edgeimpulse.com/public/108508/latest)
 
-{% embed url="https://www.youtube.com/watch?v=0SabLvJqSaM" %}
+GitHub Repository: [https://github.com/avielbr/edge-impulse/tree/main/ros2/ei\_ros2](https://github.com/avielbr/edge-impulse/tree/main/ros2/ei\_ros2)
 
-### Full code for this project can be [found here](https://github.com/avielbr/edge-impulse/tree/main/ros2/ei\_ros2)
+{% embed url="https://www.youtube.com/watch?v=0SabLvJqSaM" %}
 
 ### Background
 

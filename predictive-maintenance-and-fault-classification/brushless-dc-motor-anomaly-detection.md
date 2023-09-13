@@ -131,7 +131,7 @@ Now we're ready to apply the signal processing to our data. In the "**Generate f
 
 We're ready to move on to the next block where we create our machine learning model. We're almost done! Once we've generated the DSP features we can navigate to the next screen "Anomaly detection" from the menu on the left.
 
-On this screen we can set the number ofclusters, as well as select the axes according to which our data will be clustered. For this example all axes were selected, but if you know that certain axes are more / less important it's best to select them accordingly _(this can be determined by using samples where the motor is experiencing faulty behavior and using the_ _**Calculate feature importance**_ \_option in the Generate features section. More on this [here](https://www.edgeimpulse.com/blog/advanced-anomaly-detection-with-feature-importance).)
+On this screen we can set the number of clusters, as well as select the axes according to which our data will be clustered. For this example all axes were selected, but if you know that certain axes are more / less important it's best to select them accordingly _(this can be determined by using samples where the motor is experiencing faulty behavior and using the_ _**Calculate feature importance**_ \_option in the Generate features section. More on this [here](https://www.edgeimpulse.com/blog/advanced-anomaly-detection-with-feature-importance).)
 
 ![](https://hackster.imgix.net/uploads/attachments/1444526/image\_iPSTpWYYod.png?auto=compress,format\&w=740\&h=555\&fit=max)
 
