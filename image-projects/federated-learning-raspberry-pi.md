@@ -9,47 +9,45 @@ Created By: Solomon Githu
 
 Public Project Link: [https://studio.edgeimpulse.com/public/279823/latest](https://studio.edgeimpulse.com/public/279823/latest)
 
-![](../.gitbook/assets/federated-learning/img1_cover-image.jpg)
-
-![](../../.gitbook/assets/federated-learning/img2_head-hardhat.png)
+![](../.gitbook/assets/federated-learning/img1_cover-image.png)
 
 ## Introduction
 
-In Machine Learning (ML), we build a model that is trained to do a particular task like object detection, anomaly detection, or prediction. To develop a model, we normally collect some data onto one computer and then we train the model on the computer with the centralized data. However, in some situations, using a centralized machine learning model may not be effective. In some situations the data may be sensitive, not diverse and too large requiring a lot of internet data for it to be uploaded to the central computer.
+In Machine Learning (ML), we create a model that is trained to do a particular task like object detection, anomaly detection, or prediction. To develop a model, we normally collect data on one computer (possibly in the cloud) and then we train the model on the computer with the centralized data. However, in some situations, using a centralized machine learning model may not be effective or efficient. In some situations, the data may be sensitive, not diverse, or too large for the available internet bandwidth making it unable to be uploaded to the central computer.
 
-Federated Learning enables us to bring the model to the data. For example, voice recognition and face recognition by Siri and Google Assistant are Federated Learning based solutions. In these cases, we do not want to send our voices or pictures to the cloud for training the model. Federated Learning works by training models locally on the devices using the data on the device. Once a model has been trained, a device uploads the new model updates to a server that aggregates model parameters from various devices and generates a global updated model. This global updated model can then be deployed to the devices for better Machine Learning task performance and also continuous retraining of the model.
+Federated Learning enables us to bring the model, to the data. For example, voice recognition and face recognition by Siri and Google Assistant are Federated Learning based solutions. In these cases, we do not want to send our voices or pictures to the cloud for training the model. Federated Learning works by training models locally on the devices using the data on the device. Once a model has been trained, a device uploads the new model updates to a server that aggregates model parameters from various devices and generates a global updated model. This global updated model can then be deployed to the devices for better Machine Learning task performance, and also continuous retraining of the model.
 
 The approach of federated learning normally follows four major processes:
 - A central server initializes a global model and its parameters are transferred to clients in each iteration
 - Clients update their local model parameters by locally training a model
-- The server gets model parameters from clients, aggregates them and updates the global parameters
+- The server gets model parameters from clients, aggregates them, and updates the global parameters
 - The above steps are repeated until local and global parameters converge
 
 There are several Open-Source Federated Learning frameworks that we can use. However, there are some factors that should be considered before selecting a Federate Learning framework. Some of these factors include:
 - The supported Machine Learning frameworks
 - Aggregation Algorithms - the most widely supported Federated Learning algorithm is Federated averaging (FedAvg). However, the specific algorithms offered by each framework may vary.
-- The supported privacy methods like encryption
-- The supported devices and Operating Systems
+- The supported privacy methods, such as encryption
+- The supported devices and operating systems
 - Scalability - the complexity of adding your own model or aggregation algorithm
 
 ## Demonstration
 
-To demonstrate Federated Learning, I simulated a situation where we want to identify if workers at a construction site are wearing the safety hats. At each construction site, we have a surveillance camera that is monitoring the workers. The camera device will be taking an image of a person and determining if it sees a head or a hardhat. 
+To demonstrate Federated Learning, I simulated a situation where we want to identify if workers at a construction site are wearing safety equipment (hardhats). At each construction site, we have a surveillance camera that is monitoring the workers. The camera device will be taking an image of a person and determining if it sees a head or a hardhat.
 
 ![Head hardhat image](../.gitbook/assets/federated-learning/img2_head-hardhat.png)
 
 Some of the challenges in this use case are: 
-- how can we overcome sending sensitive photos of workers to the cloud
-- how can we overcome the need of sending a lot of image data to a central server for training a model
-- how to get diverse data
+- how can we overcome sending sensitive photos of workers to the cloud?
+- how can we overcome the need to send a lot of image data to a central server for training a model?
+- how to acquire diverse data?
 
-To solve the above challenges, I used [Flower framework](https://flower.dev/) to train a decentralized MobileNetV2 image classification model. Flower is easy to use, flexible and they have a wide range of quickstart examples to help you get started. I used a Raspberry Pi 4 (with 4GB RAM) and a personal computer as the client devices in the Federated Learning system. 
+To solve the above challenges, I used [Flower framework](https://flower.dev/) to train a decentralized MobileNetV2 image classification model. Flower is easy to use, flexible, and they have a wide range of quickstart examples to help you get started. I used a Raspberry Pi 4 (with 4GB RAM) and a personal computer as the client devices in the Federated Learning system. 
 
 ![Client devices](../.gitbook/assets/federated-learning/img3_client-devices.png)
 
-There are 6 Federated Learning iterations where both the Raspberry Pi and the personal computer individually train a MobileNetV2 model, send updates to the server, and the server aggregates the model parameters. During the client's training process, each clients uses a dataset, different from the other, to train the model. This helps us simulate a situation where we have different devices at different locations and therefore the data is different and more diverse.
+There are 6 Federated Learning iterations where both the Raspberry Pi and the personal computer individually train a MobileNetV2 model, send updates to the server, and the server aggregates the model parameters. During the client's training process, each client uses a dataset, different from the other, to train the model. This helps us simulate a situation where we have different devices at different locations and therefore the data is different and more diverse.
 
-For my demonstration, I chose MobileNetV2 architecture since it is a lightweight neural network architecture that is designed to be efficient and fast with less computation power requirements. In my previous tests, I trained an EfficientNetB0 model and it achieved almost the same performance as the MobileNetV2 model, but at the cost of a significantly longer training and classification time. 
+For my demonstration, I chose the MobileNetV2 architecture since it is a lightweight neural network architecture that is designed to be efficient and fast, with less computation power requirements. In my previous tests, I trained an EfficientNetB0 model and it achieved almost the same performance as the MobileNetV2 model, but at the cost of a significantly longer training and classification time. 
 
 When the Federated Learning is complete, the server uses the [Edge Impulse Python SDK](https://docs.edgeimpulse.com/docs/tools/edge-impulse-python-sdk) to profile the final global model for the Raspberry Pi. This profiling gives us an estimate of the RAM, ROM, and inference time of the model on a target hardware family like the Raspberry Pi. Finally, the new global model will also be uploaded to an Edge Impulse project and this enables us to deploy it to any device that can run it.
 
@@ -68,18 +66,18 @@ Hardware components:
 - Official Raspberry Pi 4 power adapter (recommended)
 - Raspberry Pi V2 camera module
 
-## Data collection process
+## Data Collection Process
 
-I first started by sourcing images with people's heads and people wearing safety hats. I obtained my dataset from this [Public Edge Impulse project](https://studio.edgeimpulse.com/public/34898/latest). The project trains a MobileNetV2 SSD FPN-Lite 320x320 object detection model to identify heads and safety hats on an image. This project is a good demonstration of the classic Machine Learning approach where we train a centralized model with all the data on one computer. To get a better understanding of the project, please feel free to read the [project's write-up](https://edgeimpulse.com/blog/enhancing-health-and-safety-in-industrial-environments-with-embedded-machine-learning).
+I first started by sourcing images with people's heads and people wearing safety hats. I obtained my dataset from this [Public Edge Impulse project](https://studio.edgeimpulse.com/public/34898/latest). The project trains a MobileNetV2 SSD FPN-Lite 320x320 object detection model to identify heads and safety hats on an image. This project is a good demonstration of the classic Machine Learning approach where we train a centralized model with all the data on one computer. To get a better understanding of the project, please feel free to read the [project's write-up here](https://edgeimpulse.com/blog/enhancing-health-and-safety-in-industrial-environments-with-embedded-machine-learning).
 
 The public project has a total of 583 images of people's heads and people wearing safety hats. I then split the images according to this:
 - two folders with training and test images for two client devices
 - one folder with test images for the server model testing during the Federated Learning
-- one folder with test images that we can give to the final global model after the Federated Learning
+- one folder with test images that we can give to the final global model *after* the Federated Learning
 
 ![Dataset folders](../.gitbook/assets/federated-learning/img5_screenshot-dataset-folders.png)
 
-## Training the model, the federated way
+## Training the Model, the Federated Way
 
 For the Federated Learning pipeline, I created this [GitHub repository](https://github.com/SolomonGithu/tensorflow_federated_learning_and_edge_impulse_model_deployment/tree/main) that has the dataset and Python scripts for the server and client devices. To follow along as I describe how to run the Federated Learning system, start by cloning the repository on the device that will run as the server. For the client devices, we only need to copy to them the ```datasets``` folder, ```requirements_client.txt``` and ```client.py```. You can also clone the repository on the client devices, but this will load unnecessary files on them.
 
