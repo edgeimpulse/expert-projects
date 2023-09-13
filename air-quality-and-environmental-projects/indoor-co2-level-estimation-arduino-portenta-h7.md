@@ -1,7 +1,6 @@
 ---
 description: >-
-  This project tries to estimate the CO2 level in an indoor environment by
-  counting the people in that environment using TinyML.
+  Estimate the CO2 level in an indoor environment by counting the people in the room using TinyML.
 ---
 
 # Indoor CO2 Level Estimation Using TinyML

@@ -1,7 +1,6 @@
 ---
 description: >-
-  This project demonstrates low cost detection of cyclists in a blind spot on
-  large vehicles.
+  Use computer vision and a Himax WE-I Plus to detect cyclists in a blind spot on large vehicles.
 ---
 
 # Cyclist Blind Spot Detection

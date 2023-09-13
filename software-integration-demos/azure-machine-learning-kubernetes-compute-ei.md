@@ -1,7 +1,7 @@
 ---
 description: >-
   Azure Machine Learning with Kubernetes Compute combined with Edge Impulse, for
-  a sample device-to-cloud ML application
+  a sample device-to-cloud ML application.
 ---
 
 # Azure Machine Learning with Kubernetes Compute and Edge Impulse
