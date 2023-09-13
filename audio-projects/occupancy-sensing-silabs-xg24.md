@@ -1,5 +1,5 @@
 ---
-description: Using the SiLabs xG24 to determine if a room is occupied or empty.
+description: Using captured audio and the SiLabs xG24 to determine if a room is occupied or empty.
 ---
 
 # Occupancy Sensing - SiLabs EFR32MG24
