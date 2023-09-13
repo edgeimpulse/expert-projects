@@ -80,6 +80,7 @@
 * [Keyword Spotting on the Nordic Thingy:53](keyword-spotting-on-nordic-thingy53.md)
 * [Detecting Worker Accidents with Audio Classification](detecting-worker-accidents-with-ai.md)
 * [Snoring Detection with Syntiant NDP120 Neural Decision Processor on Nicla Voice](arduino-nicla-voice-syntiant-snoring-detection.md)
+* [SonicSight AR - Sound Classification with Feedback on an Augmented Reality Display](particle-photon-2-sonicsight-ar.md)
 
 ## Predictive Maintenance & Fault Classification
 
@@ -110,6 +111,7 @@
 * [Hospital Bed Occupancy Detection with TinyML](hospital-bed-occupancy-detection.md)
 * [Fall Detection using a Transformer Model with Arduino Giga R1 WiFi](fall-detection-with-transformers-arduino-giga-r1.md)
 * [Porting a Posture Detection Project from the SiLabs Thunderboard Sense 2 to xG24](silabs-xg24-posture-detection.md)
+* [Porting a Gesture Recognition Project from the SiLabs Thunderboard Sense 2 to xG24](gesture-recognition-on-silabs-xg24.md)
 
 ## Air Quality & Environmental Projects
 
@@ -132,7 +134,6 @@
 * [Applying EEG Data to Machine Learning, Part 1](eeg-data-machine-learning-part-1.md)
 * [Applying EEG Data to Machine Learning, Part 2](eeg-data-machine-learning-part-2.md)
 * [Applying EEG Data to Machine Learning, Part 3](eeg-data-machine-learning-part-3.md)
-* [Porting a Gesture Recognition Project from the SiLabs Thunderboard Sense 2 to xG24](gesture-recognition-on-silabs-xg24.md)
 * [Fluid Leak Detection With a Flowmeter and AI](fluid-leak-detection-with-flowmeter-and-ai.md)
 * [Pipeline Clog Detection with a Flowmeter and TinyML](clog-detection-with-ai.md)
 * [Liquid Classification with TinyML](liquid-classification-tinyml.md)
