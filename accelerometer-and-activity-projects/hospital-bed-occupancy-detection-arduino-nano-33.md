@@ -4,7 +4,7 @@ description: >-
   hospitals or care facilities.
 ---
 
-# Hospital Bed Occupancy Detetction with TinyML
+# Hospital Bed Occupancy Detection with TinyML
 
 Created By: [Adam Milton-Barker](https://www.adammiltonbarker.com/)
 

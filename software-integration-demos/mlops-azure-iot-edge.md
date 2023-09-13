@@ -1,3 +1,8 @@
+---
+description: >-
+  Use Docker containers distributed via Azure IoT Edge to build and deploy machine leaning models in an MLOps loop.
+---
+
 # MLOps with Edge Impulse and Azure IoT Edge
 
 Created By: David Tischler

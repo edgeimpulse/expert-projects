@@ -1,7 +1,7 @@
 ---
 description: >-
   Learn how to generate photorealistic images in Nvidia Omniverse Replicator and
-  build an object detection model using Edge Impulse
+  build an object detection model using Edge Impulse.
 ---
 
 # Creating Synthetic Data with Nvidia Omniverse Replicator

@@ -1,7 +1,7 @@
 ---
 description: >-
   Use a Nicla Sense ME attached to the sleeve of a K-way jacket for gesture
-  recognition and bad weather prediction
+  recognition and bad weather prediction.
 ---
 
 # Arduino x K-Way - Gesture Recognition for Hiking
