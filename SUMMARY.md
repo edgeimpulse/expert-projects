@@ -63,6 +63,7 @@
 * [Build a Self-Driving RC Vehicle - Arduino Portenta H7 and Computer Vision](image-projects/arduino-portenta-h7-self-driving-rc-car.md)
 * ["Bring Your Own Model" Image Classifier for Wound Identification](image-projects/arduino-portenta-h7-byom-wound-classification.md)
 * [Acute Lymphoblastic Leukemia Classifier - Nvidia Jetson Nano](image-projects/ai-leukemia-classifier-nvidia-jetson-nano.md)
+* [A Federated Approach to Train and Deploy Machine Learning Models](image-projects/federated-learning-raspberry-pi.md)
 
 ## Audio Projects
 
