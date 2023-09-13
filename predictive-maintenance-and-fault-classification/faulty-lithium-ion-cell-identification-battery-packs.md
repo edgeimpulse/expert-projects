@@ -1,6 +1,6 @@
 ---
 description: >-
-  A TinyML model using Edge Impulse and the Wio Terminal to predict faulty
+  A TinyML model using Edge Impulse and the Wio Terminal with a thermal camera to predict faulty
   lithium ion cells in a BMS pack.
 ---
 

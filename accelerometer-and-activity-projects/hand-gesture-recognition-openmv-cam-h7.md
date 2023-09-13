@@ -1,7 +1,6 @@
 ---
 description: >-
-  This project demonstrates how to train an ML model that can perform gesture
-  recognition using computer vision on Edge Impulse.
+  Train an ML model that can perform gesture recognition using computer vision on the OpenMV Cam H7.
 ---
 
 # Hand Gesture Recognition using TinyML on OpenMV

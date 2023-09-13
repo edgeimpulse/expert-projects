@@ -1,6 +1,6 @@
 ---
 description: >-
-  An Acoustic Sensing project that uses audio classification on a Syntiant
+  An acoustic sensing project that uses audio classification on a Syntiant
   TinyML board to listen for keywords, and take action via GPIO.
 ---
 

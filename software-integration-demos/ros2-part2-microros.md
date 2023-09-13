@@ -1,5 +1,5 @@
 ---
-description: This tutorial involves invoking an Edge Impulse ML model from within a publisher node in MicroROS. An Arduino Portenta H7 is used for demonstration.
+description: Invoking an Edge Impulse ML model from within a publisher node in MicroROS, running on an Arduino Portenta H7.
 ---
 
 # ROS2 + Edge Impulse [Part 2]: MicroROS

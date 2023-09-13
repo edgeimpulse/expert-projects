@@ -1,6 +1,6 @@
 ---
 description: >-
-  A computer vision system that detects and localizes the surface cracks in
+  A computer vision system that detects and localizes surface cracks in
   concrete structures for predictive maintenance.
 ---
 
