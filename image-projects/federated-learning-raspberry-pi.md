@@ -11,6 +11,8 @@ Public Project Link: [https://studio.edgeimpulse.com/public/279823/latest](https
 
 ![](../.gitbook/assets/federated-learning/img1_cover-image.jpg)
 
+![](../../.gitbook/assets/federated-learning/img2_head-hardhat.png)
+
 ## Introduction
 
 In Machine Learning (ML), we build a model that is trained to do a particular task like object detection, anomaly detection, or prediction. To develop a model, we normally collect some data onto one computer and then we train the model on the computer with the centralized data. However, in some situations, using a centralized machine learning model may not be effective. In some situations the data may be sensitive, not diverse and too large requiring a lot of internet data for it to be uploaded to the central computer.
