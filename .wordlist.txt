@@ -1782,3 +1782,6 @@ AO
 scpcom
 SonicSight
 FedAvg
+EfficientNetB
+generalizable
+
