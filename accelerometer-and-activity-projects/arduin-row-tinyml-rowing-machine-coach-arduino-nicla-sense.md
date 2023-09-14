@@ -1,7 +1,7 @@
 ---
 description: >-
   Use an Arduino Nicla Sense ME and Edge Impulse model to determine your rowing
-  cadence and provide feedback via the IoT Remote app
+  cadence and provide feedback via the IoT Remote app.
 ---
 
 # Arduin-Row, a TinyML Rowing Machine Coach

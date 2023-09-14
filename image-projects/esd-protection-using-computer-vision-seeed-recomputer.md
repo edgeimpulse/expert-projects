@@ -1,10 +1,10 @@
 ---
 description: >-
   Use a Seeed Studio ReComputer and FOMO to detect if an operator has ESD risk
-  or protection when handling electronic components
+  or protection when handling electronic components.
 ---
 
-# ESD Protection using Computer Vision
+# ESD Protection Using Computer Vision
 
 Created By: Justin Lutz
 

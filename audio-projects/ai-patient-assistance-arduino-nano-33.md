@@ -1,7 +1,7 @@
 ---
 description: >-
-  Keyword Recognition and Notification for AI Patient Assistance With Edge
-  Impulse and the Arduino Nano 33 BLE Sense
+  Keyword recognition and notification for AI patient assistance With Edge
+  Impulse and the Arduino Nano 33 BLE Sense.
 ---
 
 # AI-Powered Patient Assistance

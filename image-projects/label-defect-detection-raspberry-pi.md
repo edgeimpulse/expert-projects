@@ -1,8 +1,8 @@
 ---
-description: Automatic FOMO-based objects counting using computer vision and a web app.
+description: Inspect printed labels for defects using computer vision and a Raspberry Pi.
 ---
 
-# Automated Label Inspection With FOMO
+# Automated Label Defect Detection With FOMO
 
 Created By: Shebin Jose Jacob
 

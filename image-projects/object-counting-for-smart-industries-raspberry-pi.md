@@ -1,5 +1,5 @@
 ---
-description: Automatic FOMO-based objects counting using computer vision and a web app.
+description: Automatic FOMO-based object counting using computer vision and a web app.
 ---
 
 # Adaptable Vision Counters for Smart Industries

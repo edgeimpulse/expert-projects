@@ -1,5 +1,5 @@
 ---
-description: Collect audio data for your machine learning model on Raspberry Pi Pico.
+description: Collect audio data for your machine learning model on a Raspberry Pi Pico.
 ---
 
 # Collect Data for Keyword Spotting with Raspberry Pi Pico and Edge Impulse

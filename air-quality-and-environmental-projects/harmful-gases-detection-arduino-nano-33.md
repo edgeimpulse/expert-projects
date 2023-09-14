@@ -1,5 +1,5 @@
 ---
-description: Detect harmful gases with Machine Learning and an Arduino Nano 33 BLE
+description: Detect harmful gases with machine learning and an Arduino Nano 33 BLE plus gas sensor.
 ---
 
 # Bhopal 84, Detect Harmful Gases

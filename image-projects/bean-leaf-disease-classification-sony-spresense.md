@@ -1,5 +1,5 @@
 ---
-description: A TinyML Approach for Bean Leaf Disease Classiﬁcation using a Sony Spresense.
+description: A TinyML approach for bean leaf disease classiﬁcation using a Sony Spresense.
 ---
 
 # Bean Leaf Disease Classification - Sony Spresense
