@@ -1,6 +1,6 @@
 ---
 description: >-
-  Build a voice-activated LED light strip controller on the cheap with Raspberry
+  Build a voice-activated LED light strip controller on the cheap with a Raspberry
   Pi Pico.
 ---
 

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Building a Food Irradiation detection device using a DFRobot ESP32, Geiger
-  Counter, and Visible Light sensor.
+  Building a food irradiation detection device using a DFRobot ESP32, Geiger
+  Counter, and visible light sensor.
 ---
 
 # Food Irradiation Dose Detection

@@ -1,5 +1,5 @@
 ---
-description: A machine learning model to detect a fault in a refrigerator immediately.
+description: A machine learning model to detect a fault in a refrigerator by monitoring temperature and humidity.
 ---
 
 # Refrigerator Predictive Maintenance
@@ -8,9 +8,7 @@ Created By: Swapnil Verma
 
 Public Project Link: [https://studio.edgeimpulse.com/public/115503/latest](https://studio.edgeimpulse.com/public/115503/latest)
 
-## GitHub Repo
-
-[https://github.com/sw4p/Refrigerator\_Predictive\_Maintenance](https://github.com/sw4p/Refrigerator\_Predictive\_Maintenance)
+GitHub Repo: [https://github.com/sw4p/Refrigerator\_Predictive\_Maintenance](https://github.com/sw4p/Refrigerator\_Predictive\_Maintenance)
 
 ![](../.gitbook/assets/refrigerator-predictive-maintenance/intro.jpg)
 

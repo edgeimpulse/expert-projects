@@ -1,7 +1,7 @@
 ---
 description: >-
-  A client/server device to detect and analyze worker falls with Machine
-  Learning
+  A client/server device to detect and analyze worker falls with machine
+  learning and an Arduino Nano 33 BLE Sense.
 ---
 
 # Bluetooth Fall Detection
@@ -26,7 +26,7 @@ Each worker has a small TinyML device in charge of detecting falls via the onboa
 
 ## Client Devices
 
-The electronics part of the client build is easy: just a battery, a TP4056 and the Arduino Nano BLE 33 Sense. The board has an onboard accelerometer, onboard RGB led, and enough processing power to run an Edge Impulse library for inferencing locally.
+The electronics part of the client build is easy: just a battery, a TP4056 and the Arduino Nano 33 BLE Sense. The board has an onboard accelerometer, onboard RGB led, and enough processing power to run an Edge Impulse library for inferencing locally.
 
 ![](../.gitbook/assets/bt-fall-detection/diagram.jpg)
 

@@ -1,7 +1,7 @@
 ---
 description: >-
   A proof-of-concept machine learning project for first responders, to detect
-  the sound of a gunshot
+  the sound of a gunshot.
 ---
 
 # Gunshot Audio Classification
