@@ -1,6 +1,6 @@
 ---
 description: >-
-  Build a machine learning model with a federated training process.
+  Build a machine learning model using a Federated Training framework to keep data on-device, train locally, and update a global model.
 ---
 
 # A Federated Approach to Train and Deploy Machine Learning Models
@@ -79,22 +79,24 @@ The public project has a total of 583 images of people's heads and people wearin
 
 ## Training the Model, the Federated Way
 
-For the Federated Learning pipeline, I created this [GitHub repository](https://github.com/SolomonGithu/tensorflow_federated_learning_and_edge_impulse_model_deployment/tree/main) that has the dataset and Python scripts for the server and client devices. To follow along as I describe how to run the Federated Learning system, start by cloning the repository on the device that will run as the server. For the client devices, we only need to copy to them the ```datasets``` folder, ```requirements_client.txt``` and ```client.py```. You can also clone the repository on the client devices, but this will load unnecessary files on them.
+For the Federated Learning pipeline, I created [this GitHub Repository](https://github.com/SolomonGithu/tensorflow_federated_learning_and_edge_impulse_model_deployment/tree/main) that has the dataset and Python scripts for the server and client devices. To follow along as I describe how to run the Federated Learning system, start by cloning the repository on the device that will run as the server. For the client devices, we only need to copy to them the ```datasets``` folder, ```requirements_client.txt``` and ```client.py```. You _could_clone the repository on the client devices, but this will load unnecessary files on them.
 
-First, we need computers for the server and clients but you can also use the same computer as both the server and clients, provided the computer has enough resources to do that. The minimum number of required clients is two for the Federated Learning to start. This minimum number can be modified in the ```server.py``` code but remember to also modify the ```client.py``` code to load dataset for the additional clients.
+First, we need computers for the server and clients.  You can also use the same computer as both a server and client, provided the computer has enough resources to do that. The minimum number of required clients is two for the Federated Learning to start. This minimum number can be modified in the ```server.py``` code, but remember to also modify the ```client.py``` code to load datasets for the additional clients.
 
 I decided to use my personal computer as the server and also as one client device. For the other client device, I decided to use a Raspberry Pi 4 with 4GB of RAM.
 
 ![A Raspberry Pi 4](../.gitbook/assets/federated-learning/img6_raspberrypi-4-and-v2-camera.jpg)
 
-In my test with Raspberry Pi 3s running as the client devices, they managed to train a model but failed at the model evaluation process. This can be related to the fact that the Raspberry Pi 3 is more resource constrained than the Raspberry Pi 4 with a less powerful CPU and smaller RAM. Using the ```top``` command on the Raspberry Pi 3s showed that the CPU and RAM usage were at the top during the training process. When it reached the evaluation process, the RAM usage increased to around 80%, CPU usage dropped to around 40% and then the Federated Learning framework disconnected the Raspberry Pi 3 client devices. The Raspberry Pi 3s also showed 92% CPU usage and 45% RAM usage when they were connecting as the client devices.
+> In my test with Raspberry Pi 3's running as the client devices, they managed to train a model but failed at the model evaluation process. This can be related to the fact that the Raspberry Pi 3 is more resource constrained than the Raspberry Pi 4, with a less powerful CPU and less RAM. Using the ```top``` command on the Raspberry Pi 3's showed that the CPU and RAM usage were at max capacity during the training process. When it reached the evaluation process, the RAM usage decreased to around 80%, CPU usage dropped to around 40%, but then the Federated Learning framework disconnected the Raspberry Pi 3 client devices. The Raspberry Pi 3's also showed 92% CPU usage and 45% RAM usage when they were connecting as the client devices.
 
-First, we need to install dependencies on the devices. The difference between the server and client dependencies is that the server computer uses Edge Impulse Python SDK for profiling and deploying the model. We can install dependencies on the server computer by running the command below on a terminal or a Command Prompt(CMD):
+Next, we need to install dependencies on the devices. The difference between the server and client dependencies is that the server computer uses the Edge Impulse Python SDK for profiling and deploying the model. We can install dependencies on the server computer by running the command below on a terminal or a Command Prompt (CMD):
+
 ```
 pip install -r requirements_server.txt
 ```
 
 To install the dependencies on the Raspberry Pi 4 running as a client device, we use the command below:
+
 ```
 pip install -r requirements_client.txt
 ```
@@ -105,37 +107,37 @@ Next, we need to update the ```server_address``` value in both ```server.py``` a
 
 ![Server_address variable](../.gitbook/assets/federated-learning/img8_screenshot-server-address-variable.png)
 
-Afterwards, we need to get an [API key for an Edge Impulse project](https://edgeimpulse.readme.io/reference/edge-impulse-api#api-key). To do this, we can create a new project on Edge Impulse Studio and then copy its API key. Afterwards, we need to paste the API key to the ```ei.API_KEY``` variable in ```server.py```.
+Afterwards, we need to get an [API key for an Edge Impulse project](https://edgeimpulse.readme.io/reference/edge-impulse-api#api-key). To do this, we can create a new project in the Edge Impulse Studio and then copy its API key. We need to paste the API key to the ```ei.API_KEY``` variable in ```server.py```.
 
 ![Edge Impulse API keys](../.gitbook/assets/federated-learning/img9_screenshot-ei-api-keys.png)
 
-Finally, we can now run the Federated Learning system. I first start the server on my personal computer by running ```python server.py```. The server will first load the test images, initialize the global model parameters, evaluate the initial model's parameters and then wait until at least two clients join before starting the Federated Learning.
+We can now run the Federated Learning system. I first start the server on my personal computer by running ```python server.py```. The server will load the test images, initialize the global model parameters, evaluate the initial model's parameters, and then wait until at least two clients join before starting the Federated Learning.
 
 ![Running server.py](../.gitbook/assets/federated-learning/img10_screenshot-server-started.png)
 
-Next, I start one client on my personal computer by running ```python client.py --client_number=1``` on a Command Prompt (CMD). When running the client scripts we use the argument ```client_number``` to enable the script load different datasets for each client using the two folders with the client's dataset.
+Next, I start one client on my personal computer by running ```python client.py --client_number=1``` in a Command Prompt (CMD). When running the client scripts we use the argument ```client_number``` to enable the script to load different datasets for each client using the two folders with the client's dataset.
 
 ![Running client 1](../.gitbook/assets/federated-learning/img11_screenshot-starting-client-1.png)
 
-Afterwards, I start the second client on the Raspberry Pi 4 by running the command ```python client.py --client_number=2```. 
+I then start the second client on the Raspberry Pi 4, by running the command ```python client.py --client_number=2```. 
 
 ![Running client 2](../.gitbook/assets/federated-learning/img12_screenshot-starting-client-2.png)
 
-Once the two clients have connected, the Federated Learning will start. Each client will load a MobileNetV2 model, train the model using the train data, evaluate the model using the test data, and then send model updates to the server. In each Federated Learning iteration, the clients train a model with 20 epochs and a batch size of 8. The sever then aggregates the models parameters from the updates sent by the clients and then updates the initial model with the new parameters. This process continues six times and the Federated Learning will be completed.
+Once the two clients have connected, the Federated Learning will start. Each client will load a MobileNetV2 model, train the model using the train data, evaluate the model using the test data, and then send model updates to the server. In each Federated Learning iteration, the clients train a model with 20 epochs and a batch size of 8. The sever then aggregates the model's parameters from the updates sent by the clients, and then updates the initial model with the new parameters. This process continues six times, and then the Federated Learning will be completed.
 
 ![Clients logs](../.gitbook/assets/federated-learning/img13_screenshot-fl-on-clients.png)
 
 ![Server FL logs](../.gitbook/assets/federated-learning/img14_screenshot-fl-on-server.png)
 
-Finally, when the Federated Learning is complete, I added some code on the server script to test the final global model with the test images that were not use during the Federated Learning. In the server's logs, we can see that the global model gives an accuracy of 1.0 in all the Federated Learning iterations. This, however, does not suggest that our model is perfect. Our dataset is still relatively small with only 415 images equally divided for the two client's training dataset. Also, since this is transfer learning, our head and hardhat images are not very complex objects and the pre-trained model may be requiring a few fine-tuning to make it learn the new task.
+Finally, when the Federated Learning is complete, I added some code on the server script to test the final global model with the test images that were not used during the Federated Learning. In the server's logs, we can see that the global model gives an accuracy of 1.0 in all the Federated Learning iterations. This, however, does not suggest that our model is perfect. Our dataset is still relatively small with only 415 images, equally divided for the two client's training dataset. Also, since this is transfer learning, our head and hardhat images are not very complex objects and the pre-trained model may require a bit of fine-tuning to make it learn the new task.
 
 ![Server testing model](../.gitbook/assets/federated-learning/img15_screenshot-server-testing-model.png)
 
-After testing the model, the server script then uses [Edge Impulse Python SDK](https://docs.edgeimpulse.com/docs/tools/edge-impulse-python-sdk) to profile the model for the Raspberry Pi. This profiling gives us an estimate of the RAM, ROM, and inference time of our model on the Raspberry Pi. We can see the performance estimates for the Raspberry Pi in the screenshot below. Also, during this profiling, the final global model will be sent to the Edge Impulse project.
+After testing the model, the server script then uses the [Edge Impulse Python SDK](https://docs.edgeimpulse.com/docs/tools/edge-impulse-python-sdk) to profile the model for the Raspberry Pi. This profiling gives us an estimate of the RAM, ROM, and inference time of our model on the Raspberry Pi. We can see the performance estimates for the Raspberry Pi in the screenshot below. Also, during this profiling, the final global model will be sent to the Edge Impulse project.
 
 ![Edge Impulse profiling](../.gitbook/assets/federated-learning/img16_screenshot-ei-profiling.png)
 
-## Testing the global model
+## Testing the Global Model
 
 When we go to the Edge Impulse project, we will see "Upload model" under "Impulse design". This is because our final global model was uploaded to the project during profiling.
 
@@ -147,37 +149,37 @@ We first need to configure some parameters on the Edge Impulse project. Click "U
 
 ![Save model successful](../.gitbook/assets/federated-learning/img19_screenshot-ei-studio-step-2-finished.png)
 
-Afterwards, we can upload a test image to see if the settings we made are correct. In this test image, we can see that as much as the person is occupying a relatively small area portion of the image, the model was able to correctly determine that this is a hardhat image.
+Afterwards, we can upload a test image to see if the selections we made are correct. In this test image, we can see that even though person is occupying a relatively small area portion of the image, the model was able to correctly determine that this is a hardhat image.
 
 ![Model testing](../.gitbook/assets/federated-learning/img20_screenshot-ei-studio-step-2-model-testing.png)
 
-Perfect! Now we have a federated learning model added to Edge Impulse. 
+Perfect! Now we have a Federated Learning model added to Edge Impulse. 
 
-We can use the [Model testing feature](https://docs.edgeimpulse.com/docs/edge-impulse-studio/model-testing) on Edge Impulse to further test our model. Remember we had a fourth dataset folder for test images that were not used during the Federated Learning system. First click "Data Acquisition" followed by clicking the "Upload data" icon.
+We can use the [Model testing feature](https://docs.edgeimpulse.com/docs/edge-impulse-studio/model-testing) on Edge Impulse to further test our model. Remember we had a fourth dataset folder for test images, that were not used during the Federated Learning system. First click "Data Acquisition", followed by clicking the "Upload data" icon.
 
 ![Upload data](../.gitbook/assets/federated-learning/img21_screenshot-data-acquisition-upload-data.png)
 
-A new interface will open. Here we can first choose "Select a folder" for the upload mode. Click "Choose files" and select the ```dataset_test``` directory on your computer from where you cloned the GitHub repository to. Next, select "Testing" for the upload category since we have already trained a model and therefore there is no need to have training data. Next, for Label we select "Leave data unlabeled". Finally, click "Upload data" and the images will be uploaded to the project. The uploaded images can be seen by going to "Test" in Data acquisition.
+A new interface will open. Here we can first choose "Select a folder" for the upload mode. Click "Choose files" and select the ```dataset_test``` directory on your computer from where you cloned the GitHub repository to. Next, select "Testing" for the upload category since we have already trained a model and therefore there is no need to have training data. Next, for **Label** we select "Leave data unlabeled". Finally, click "Upload data" and the images will be uploaded to the project. The uploaded images can be seen by going to "Test" in Data acquisition.
 
 ![Uploading images](../.gitbook/assets/federated-learning/img22_screenshot-data-acquisition-uploading-images.png)
 
 ![Test images](../.gitbook/assets/federated-learning/img23_screenshot-data-acquisition-test-images.png)
 
-The last thing to do is to label the images. This label information describes what each image is, head or hardhat. The label information will also be used during the model testing by comparing the models output to the correct class (label). To label the images, first click the kebab menu (three dots menu) that is at each item listed in the test data. Next, select "Edit label" and type the name of the class which the image belongs to: head or hardhat. Do this until all images have been labelled.
+The last thing to do is to label the images. This label information describes what each image is, head or hardhat. The label information will also be used during the model testing by comparing the models output to the correct class (label). To label the images, first click the kebab menu (three dots menu) next to each item listed in the test data. Next, select "Edit label" and type the name of the class which the image belongs to: head or hardhat. Do this until all images have been labelled.
 
 ![Kebab menu](../.gitbook/assets/federated-learning/img24_screenshot-kebab-menu.png)
 
 ![Labeling images](../.gitbook/assets/federated-learning/img25_screenshot-labeling-images.png)
 
-Finally, when all the images have been labeled, we can click "Model testing" and afterwards "Classify all". This will test the model on all the test images, determine the model's performance and also create a confusion matrix. From my test, the model achieved an accuracy of 93%. However, for a more robust model, we still need to train the model on more data and more times. For my demonstration, I chose this result as an acceptable performance.
+Finally, when all the images have been labeled, we can click "Model testing" and afterwards "Classify all". This will test the model on all the test images, determine the model's performance and also create a confusion matrix. From my test, the model achieved an accuracy of 93%. However, for a more robust model, we still need to train the model on more data, and more times. For my demonstration, I chose this result as an acceptable performance.
 
 ![Model testing performance](../.gitbook/assets/federated-learning/img26_screenshot-model-testing-performance.png)
 
 ## Result
 
-Finally, after training a decentralized model and uploading it to Edge Impulse, one incredible feature that we can benefit from is a seamless deployment of the model on hardwares ranging from MCUs, CPUs and custom AI accelerators. In this case, we can deploy our model to the Raspberry Pi as an [.eim executable](https://docs.edgeimpulse.com/docs/tools/edge-impulse-for-linux#.eim-models) that contains the signal processing and ML code, compiled with optimizations for a processor or GPU (e.g. NEON instructions on ARM cores) plus a very simple IPC layer (over a Unix socket).
+Finally, after training a decentralized model and uploading it to Edge Impulse, one incredible feature that we can benefit from is a seamless deployment of the model on hardware ranging from MCUs, CPUs, and custom AI accelerators. In this case, we can deploy our model to the Raspberry Pi as an [.eim executable](https://docs.edgeimpulse.com/docs/tools/edge-impulse-for-linux#.eim-models) that contains the signal processing and ML code, compiled with optimizations for a processor or GPU (e.g. NEON instructions on ARM cores) plus a very simple IPC layer (over a Unix socket).
 
-First, we need to attach the Raspberry Pi camera to the to the board.
+First, we need to attach the Raspberry Pi camera to the board.
 
 ![Raspberry Pi and camera](../.gitbook/assets/federated-learning/img27_raspberrypi-with-camera-connected.jpg)
 
@@ -190,20 +192,23 @@ sudo apt install -y gcc g++ make build-essential nodejs sox gstreamer1.0-tools g
 npm config set user root && sudo npm install edge-impulse-linux -g --unsafe-perm
 ```
 
-Afterwards, we need to activate the camera interface on the Raspberry Pi 4 for the camera module. We can run the command ```sudo raspi-config``` and use the cursor keys to select and open Interfacing Options, then select camera and follow the prompt to enable the camera. Finally, reboot the Raspberry Pi by running the command ```sudo reboot```.
+Afterwards, we need to activate the camera interface on the Raspberry Pi 4 for the camera module. We can run the command ```sudo raspi-config``` and use the cursor keys to select and open Interfacing Options, then select Camera, and follow the prompt to enable the camera. Finally, reboot the Raspberry Pi by running the command ```sudo reboot```.
 
-After setting up the Raspberry Pi, we can download the final global model from the Edge Impulse project by running the command below. You will be prompted to input your username and password for your Edge Impulse account, followed by a prompt to select the Edge Impulse project.
+Once rebooted, we can download the final global model from the Edge Impulse project by running the command below. You will be prompted to input your username and password for your Edge Impulse account, followed by a prompt to select the Edge Impulse project.
+
 ```
 edge-impulse-linux-runner --download modelfile.eim
 ```
 
 Finally, we can run the executable model locally on the Raspberry Pi by running the command below. This will capture an image using the camera, process the image, give the image to the model, get the model's prediction and present a live stream of the camera feed and inference results. Without having to write code for each step, [Edge Impulse for Linux](https://docs.edgeimpulse.com/docs/tools/edge-impulse-for-linux) bundles all these processes.
+
 ```
 edge-impulse-linux-runner --model-file modelfile.eim
 ```
-In the command, we pass the name of the downloaded .eim file ```modelfile```.
 
-We can go to the provided URL (Raspberry Pi's IP address at port 4912) and we will see the feed being captured by the camera as well as the models predictions. At this point I used a 3D printed support to hold the Raspberry Pi camera upright and then projected the test images to the camera.
+In the command, we pass the name of the downloaded .eim file, ```modelfile```.
+
+We can go to the provided URL (Raspberry Pi's IP address at port 4912) and we will see the feed being captured by the camera as well as the model's predictions. At this point I used a 3D printed support to hold the Raspberry Pi camera upright and then projected the test images to the camera.
 
 ![Raspberry Pi with camera](../.gitbook/assets/federated-learning/img28_raspberrypi-camera-supported.jpg)
 
@@ -217,6 +222,6 @@ Below is a demo video of live classification on the Raspberry Pi 4. We can see t
 
 You can access my public Edge Impulse project using this link: [Federated Learning - BYOM image classification model](https://studio.edgeimpulse.com/public/279823/latest).
 
-From the demonstration, we have seen that we can obtain more accurate and generalizable models through Federated Learning without requiring the data leave the client devices. Federated Learning has a lot of potential. It prevents sending sensitive information like healthcare records, financial records, etc. Since the training occurs from multiple data sources, we get a more diverse data enabling us to come up with more robust models that perform better at their tasks.
+From the demonstration, we have seen that we can obtain more accurate and generalizable models through Federated Learning, without requiring the data leave the client devices. Federated Learning has a lot of potential. It prevents sending sensitive information like healthcare records, financial records, or similar across the internet. Since the training occurs from multiple data sources, we can also get more diverse data enabling us to come up with more robust models, that perform better at their tasks.
 
 An excellent progression of this demonstration would be to implement the Federated Learning system with a different Machine Learning model framework, and adding more clients and data to the system. Additionally, we can also reinforce the system by implementing automated deployments, whereby a final global model is automatically deployed on edge devices from an Edge Impulse project.
