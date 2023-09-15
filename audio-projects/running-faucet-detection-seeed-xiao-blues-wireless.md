@@ -1,6 +1,6 @@
 ---
 description: >-
-  A smart device that detects running faucets using a machine learning model and
+  A smart device that detects running faucets using a machine learning model, and
   sends alert messages over a cellular network.
 ---
 

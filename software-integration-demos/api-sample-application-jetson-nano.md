@@ -1,7 +1,7 @@
 ---
 description: >-
   Use the Edge Impulse API to build and deploy a computer vision project
-  directly from an Edge AI device like a Jetson Nano
+  directly from an Edge AI device like an Nvidia Jetson Nano.
 ---
 
 # Edge Impulse API Usage Sample Application - Jetson Nano Trainer

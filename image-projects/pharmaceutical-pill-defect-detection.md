@@ -1,7 +1,7 @@
 ---
 description: >-
   A computer vision-assisted system that accurately detects defects in
-  pharmaceutical pills using Edge Impulse FOMO.
+  pharmaceutical pills using Edge Impulse.
 ---
 
 # Pharmaceutical Pill Quality Control and Defect Detection

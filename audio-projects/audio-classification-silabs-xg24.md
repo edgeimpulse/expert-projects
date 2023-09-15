@@ -1,6 +1,6 @@
 ---
 description: >-
-  Take an existing Edge Impulse model built for the Thunderboard Sense 2, and
+  Take an existing audio classification model built for the Thunderboard Sense 2, and
   prepare it for use on the SiLabs xG24 board.
 ---
 

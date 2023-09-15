@@ -1,7 +1,7 @@
 ---
 description: >-
   Using a TI TDA4VM, RTSP streaming, and an Edge Impulse model, monitor the
-  status on your factory equipment and take action when needed
+  status on your factory equipment and take action when needed.
 ---
 
 # Smart Factory Prototype with Texas Instruments TDA4VM

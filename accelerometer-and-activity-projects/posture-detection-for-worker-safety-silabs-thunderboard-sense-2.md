@@ -1,7 +1,7 @@
 ---
 description: >-
   A SiLabs Thunderboard Sense 2 TinyML-based wearable belt for manufacturing
-  workers to detect correct / incorrect posture.
+  workers, to detect correct / incorrect posture.
 ---
 
 # Posture Detection for Worker Safety
