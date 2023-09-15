@@ -157,3 +157,4 @@
 * [Using Hugging Face Image Classification Datasets with Edge Impulse](software-integration-demos/hugging-face-image-classification-dataset.md)
 * [Edge Impulse API Usage Sample Application - Jetson Nano Trainer](software-integration-demos/api-sample-application-jetson-nano.md)
 * [MLOps with Edge Impulse and Azure IoT Edge](software-integration-demos/mlops-azure-iot-edge.md)
+* [A Federated Approach to Train and Deploy Machine Learning Models](federated-learning.md)

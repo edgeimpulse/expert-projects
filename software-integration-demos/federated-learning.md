@@ -175,7 +175,7 @@ Finally, when all the images have been labeled, we can click "Model testing" and
 
 ## Result
 
-Finally, after training a decentralized model and uploading it to Edge Impulse, one incredible feature that we can benefit from is a seamless deployment of the model on hardwares ranging from MCUs, CPUs and custom AI accelerators. In this case, we can deploy our model to the Raspberry Pi as an [.eim executable](https://docs.edgeimpulse.com/docs/tools/edge-impulse-for-linux#.eim-models) that contains the signal processing and ML code, compiled with optimizations for a processor or GPU (e.g. NEON instructions on ARM cores) plus a very simple IPC layer (over a Unix socket).
+Finally, after training a decentralized model and uploading it to Edge Impulse, one incredible feature that we can benefit from is a seamless deployment of the model on hardware ranging from MCUs, CPUs and custom AI accelerators. In this case, we can deploy our model to the Raspberry Pi as an [.eim executable](https://docs.edgeimpulse.com/docs/tools/edge-impulse-for-linux#.eim-models) that contains the signal processing and ML code, compiled with optimizations for a processor or GPU (e.g. NEON instructions on ARM cores) plus a very simple IPC layer (over a Unix socket).
 
 First, we need to attach the Raspberry Pi camera to the to the board.
 

@@ -103,7 +103,7 @@ Audio classification, keyword spotting, wakeword detection, or other machine lea
 
 ### Predictive Maintenance & Fault Classification
 
-Projects devoted to the use of sensors, audio, or image data specfic to the predictive maintenance use-case.
+Projects devoted to the use of sensors, audio, or image data specific to the predictive maintenance use-case.
 
 * [Predictive Maintenance - Nordic Thingy:91](predictive-maintenance-and-fault-classification/predictive-maintenance-with-nordic-thingy91.md)
 * [Brushless DC Motor Anomaly Detection](predictive-maintenance-and-fault-classification/brushless-dc-motor-anomaly-detection.md)
@@ -173,3 +173,4 @@ Using machine learning to predict, understand, or identify information in the ai
 * [Using Hugging Face Image Classification Datasets with Edge Impulse](software-integration-demos/hugging-face-image-classification-dataset.md)
 * [Edge Impulse API Usage Sample Application - Jetson Nano Trainer](software-integration-demos/api-sample-application-jetson-nano.md)
 * [MLOps with Edge Impulse and Azure IoT Edge](software-integration-demos/mlops-azure-iot-edge.md)
+* [A Federated Approach to Train and Deploy Machine Learning Models](federated-learning.md)
