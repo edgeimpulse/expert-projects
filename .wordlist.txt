@@ -1784,4 +1784,5 @@ SonicSight
 FedAvg
 EfficientNetB
 generalizable
+wakeword
 
