@@ -1,7 +1,7 @@
 ---
 description: >-
   Use machine learning to read analog knobs, in a small Behringer audio console
-  to allow or abort a recording
+  to start or stop a recording.
 ---
 
 # Knob Eye: Monitor Analog Dials and Knobs with Computer Vision

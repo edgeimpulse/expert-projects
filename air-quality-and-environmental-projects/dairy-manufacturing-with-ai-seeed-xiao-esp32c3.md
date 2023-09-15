@@ -1,6 +1,6 @@
 ---
 description: >-
-  Using a XIAO ESP32C3 to monitor temperature, humidity, and pressure to help
+  Use a XIAO ESP32C3 to monitor temperature, humidity, and pressure to help
   aid in dairy manufacturing processes.
 ---
 

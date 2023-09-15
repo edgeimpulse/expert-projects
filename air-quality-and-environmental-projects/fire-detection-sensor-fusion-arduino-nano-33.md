@@ -6,8 +6,6 @@ description: >-
 
 # Fire Detection Using Sensor Fusion and TinyML
 
-## Fire Detection Using Sensor Fusion and TinyML
-
 Created By: Nekhil R.
 
 Public Project Link: [https://studio.edgeimpulse.com/public/160533/latest](https://studio.edgeimpulse.com/public/160533/latest)

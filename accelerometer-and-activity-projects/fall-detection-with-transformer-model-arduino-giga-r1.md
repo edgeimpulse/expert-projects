@@ -1,6 +1,6 @@
 ---
 description: >-
-  A primer on using a Transformer-based model at a low-powered,
+  A primer on using a Transformer-based model on a low-powered,
   resource-constrained microcontroller-based wearable that detects falls.
 ---
 

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Leveraging open-source Hugging Face Image Datasets for use in an Edge Impulse
+  Leveraging open-source Hugging Face image datasets for use in an Edge Impulse
   computer vision project.
 ---
 
