@@ -7,7 +7,7 @@ description: >-
 
 Created By: Jallson Suryo
 
-Rain Thunder Sound - [https://studio.edgeimpulse.com/public/270172/latest](https://studio.edgeimpulse.com/public/270172/latest)
+Rain and Thunder Sound - [https://studio.edgeimpulse.com/public/270172/latest](https://studio.edgeimpulse.com/public/270172/latest)
 
 Weather Conditions - [https://studio.edgeimpulse.com/public/274091/latest](https://studio.edgeimpulse.com/public/274091/latest)
 
@@ -142,7 +142,9 @@ flash_mac.command
 
 Technically you can just flash only the NDP120 since we are going to upload a new code to the MCU via Arduino IDE anyway:
 
-*flash_mac_model.command*
+```
+flash_mac_model.command
+```
 
 Now it is time to upload our specific program to the Arduino Nicla Voice via the Arduino IDE. You can find the `.ino` code here:  [https://github.com/Jallson/SensorFusion_SmartBuilding/blob/main/weathersoundfusion_niclavoice.ino](https://github.com/Jallson/SensorFusion_SmartBuilding/blob/main/weathersoundfusion_niclavoice.ino) 
 
