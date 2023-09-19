@@ -151,6 +151,7 @@ Using machine learning to predict, understand, or identify information in the ai
 * [AI-Assisted Air Quality Monitoring - DFRobot Firebeetle ESP32](air-quality-and-environmental-projects/air-quality-monitoring-firebeetle-esp32.md)
 * [Air Quality Monitoring with Sipeed Longan Nano - RISC-V Gigadevice](air-quality-and-environmental-projects/air-quality-monitoring-sipeed-longan-nano-riscv.md)
 * [Methane Monitoring in Mines - Silabs xG24 Dev Kit](air-quality-and-environmental-projects/methane-monitoring-silabs-xg24.md)
+* [Smart Building Ventilation with Environmental Sensor Fusion](smart-building-sensor-fusion.md)
 
 ### Novel Sensor Projects
 
