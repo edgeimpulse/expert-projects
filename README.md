@@ -73,7 +73,7 @@ Computer vision projects that make use of image classification, object detection
 * [Acute Lymphoblastic Leukemia Classifier - Nvidia Jetson Nano](image-projects/ai-leukemia-classifier-nvidia-jetson-nano.md)
 * [A Federated Approach to Train and Deploy Machine Learning Models](image-projects/federated-learning-raspberry-pi.md)
 
-## Audio Projects
+### Audio Projects
 
 Audio classification, keyword spotting, wakeword detection, or other machine learning tasks leveraging a microphone and audio data.
 
@@ -151,7 +151,7 @@ Using machine learning to predict, understand, or identify information in the ai
 * [AI-Assisted Air Quality Monitoring - DFRobot Firebeetle ESP32](air-quality-and-environmental-projects/air-quality-monitoring-firebeetle-esp32.md)
 * [Air Quality Monitoring with Sipeed Longan Nano - RISC-V Gigadevice](air-quality-and-environmental-projects/air-quality-monitoring-sipeed-longan-nano-riscv.md)
 * [Methane Monitoring in Mines - Silabs xG24 Dev Kit](air-quality-and-environmental-projects/methane-monitoring-silabs-xg24.md)
-* [Smart Building Ventilation with Environmental Sensor Fusion](smart-building-sensor-fusion.md)
+* [Smart Building Ventilation with Environmental Sensor Fusion](air-quality-and-environmental-projects/smart-building-sensor-fusion.md)
 
 ### Novel Sensor Projects
 
