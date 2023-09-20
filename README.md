@@ -152,6 +152,7 @@ Using machine learning to predict, understand, or identify information in the ai
 * [Air Quality Monitoring with Sipeed Longan Nano - RISC-V Gigadevice](air-quality-and-environmental-projects/air-quality-monitoring-sipeed-longan-nano-riscv.md)
 * [Methane Monitoring in Mines - Silabs xG24 Dev Kit](air-quality-and-environmental-projects/methane-monitoring-silabs-xg24.md)
 * [Smart Building Ventilation with Environmental Sensor Fusion](air-quality-and-environmental-projects/smart-building-sensor-fusion.md)
+* [Sensor Data Fusion with Spresense and CommonSense](air-quality-and-environmental-projects/environmental-sensor-fusion-commonsense.md)
 
 ### Novel Sensor Projects
 
