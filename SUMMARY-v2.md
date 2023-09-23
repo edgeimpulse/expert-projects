@@ -94,6 +94,7 @@
 * [Fluid Leak Detection With a Flowmeter and AI](fluid-leak-detection-with-flowmeter-and-ai.md)
 * [Pipeline Clog Detection with a Flowmeter and TinyML](clog-detection-with-ai.md)
 * [Refrigerator Predictive Maintenance](refrigerator-predictive-maintenance.md)
+* [Motor Pump Predictive Maintenance: CY8CKIT-062-WIFI-BT + cn0549](motor-pump-cypress-cn0549.md)
 
 ## Accelerometer & Activity Projects
 
