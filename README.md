@@ -71,7 +71,6 @@ Computer vision projects that make use of image classification, object detection
 * [Build a Self-Driving RC Vehicle - Arduino Portenta H7 and Computer Vision](image-projects/arduino-portenta-h7-self-driving-rc-car.md)
 * ["Bring Your Own Model" Image Classifier for Wound Identification](image-projects/arduino-portenta-h7-byom-wound-classification.md)
 * [Acute Lymphoblastic Leukemia Classifier - Nvidia Jetson Nano](image-projects/ai-leukemia-classifier-nvidia-jetson-nano.md)
-* [A Federated Approach to Train and Deploy Machine Learning Models](image-projects/federated-learning-raspberry-pi.md)
 
 ### Audio Projects
 
@@ -175,4 +174,4 @@ Using machine learning to predict, understand, or identify information in the ai
 * [Using Hugging Face Image Classification Datasets with Edge Impulse](software-integration-demos/hugging-face-image-classification-dataset.md)
 * [Edge Impulse API Usage Sample Application - Jetson Nano Trainer](software-integration-demos/api-sample-application-jetson-nano.md)
 * [MLOps with Edge Impulse and Azure IoT Edge](software-integration-demos/mlops-azure-iot-edge.md)
-* [A Federated Approach to Train and Deploy Machine Learning Models](federated-learning.md)
+* [A Federated Approach to Train and Deploy Machine Learning Models](software-integration-demos/federated-learning-raspberry-pi.md)
