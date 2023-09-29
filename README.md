@@ -113,6 +113,7 @@ Projects devoted to the use of sensors, audio, or image data specific to the pre
 * [Fluid Leak Detection With a Flowmeter and AI - Seeed Wio Terminal](predictive-maintenance-and-fault-classification/fluid-leak-detection-with-flowmeter-seeed-wio-terminal.md)
 * [Pipeline Clog Detection with a Flowmeter and AI - Seeed Wio Terminal](predictive-maintenance-and-fault-classification/pipeline-clog-detection-with-flowmeter-seeed-wio-terminal.md)
 * [Refrigerator Predictive Maintenance - Arduino Nano 33 BLE Sense](predictive-maintenance-and-fault-classification/refrigerator-predictive-maintenance-arduino-nano-33.md)
+* [Motor Pump Predictive Maintenance - Infineon PSoC 6 WiFi-BT Pioneer Kit + CN0549](predictive-maintenance-and-fault-classification/motor-pump-cypress-cn0549.md)
 
 ### Accelerometer & Activity Projects
 
