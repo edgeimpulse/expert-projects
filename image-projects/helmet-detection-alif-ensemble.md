@@ -1,6 +1,6 @@
 ---
-description: A concept machine learning model that can perform helmet and person detection using computer vision
-on the Alif Ensemble E7.
+description: >-
+  A concept machine learning model that can perform helmet and person detection using computer vision on the Alif Ensemble E7.
 ---
 
 # Helmet Detection in Industrial Settings - Alif Ensemble E7
