@@ -71,7 +71,7 @@ Computer vision projects that make use of image classification, object detection
 * [Build a Self-Driving RC Vehicle - Arduino Portenta H7 and Computer Vision](image-projects/arduino-portenta-h7-self-driving-rc-car.md)
 * ["Bring Your Own Model" Image Classifier for Wound Identification](image-projects/arduino-portenta-h7-byom-wound-classification.md)
 * [Acute Lymphoblastic Leukemia Classifier - Nvidia Jetson Nano](image-projects/ai-leukemia-classifier-nvidia-jetson-nano.md)
-* [Helmet Detection in Industrial Settings - Alif Ensemble E7](image-projects/helmet-detection-alif-ensemble.md)
+* [Hardhat Detection in Industrial Settings - Alif Ensemble E7](image-projects/helmet-detection-alif-ensemble.md)
 
 ### Audio Projects
 

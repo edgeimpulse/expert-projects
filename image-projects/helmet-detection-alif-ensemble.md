@@ -86,7 +86,7 @@ For the deployment of our proposed approach, we select Alif Ensemble E7 from the
 
 ## Results
 
-To test the model, images of a person wearing a helmet or not wearing a helmet are needed. The dataset was split earlier, with 20% being set aside for Testing, that can be used now. The Studio takes the input image as a parameter and predicts the class it belongs to. Before passing the image, we need to ensure that we are using the same dimensions that we used during the training phase; here it’s by default the same dimension. You can also test with a live image taken directly from the development board, if you have a camera attached. In this case, we have a low resolution camera with our kit, and lighting is not optimal, so the images are dark.  However, with a high resolution camera and proper lighting condition, better results can be acheived. But having another look at the Test dataset images, which are bright and high quality, we can see that the model is predicting results (helmets) effectively. 
+To test the model, images of a person wearing a helmet or not wearing a helmet are needed. The dataset was split earlier, with 20% being set aside for Testing, that can be used now. The Studio takes the input image as a parameter and predicts the class it belongs to. Before passing the image, we need to ensure that we are using the same dimensions that we used during the training phase; here it’s by default the same dimension. You can also test with a live image taken directly from the development board, if you have a camera attached. In this case, we have a low resolution camera with our kit, and lighting is not optimal, so the images are dark.  However, with a high resolution camera and proper lighting condition, better results can be acheived. But having another look at the Test dataset images, which are bright and high quality, we can see that the model is predicting results (hardhats) effectively. 
 
 ![](../.gitbook/assets/helmet-detection-alif-ensemble/testing-1.jpg)
 
@@ -98,7 +98,7 @@ To test the model, images of a person wearing a helmet or not wearing a helmet a
 
 ## Conclusion
 
-In conclusion, this project demonstrates a significant advancement in industrial safety measures through the integration of TinyML for helmet and person detection using computer vision. By harnessing the power of machine learning and computer vision algorithms, we have successfully developed an efficient and lightweight model that can be deployed on edge devices, enabling real-time monitoring and immediate alerting in case of non-compliance.
+In conclusion, this project demonstrates a significant advancement in industrial safety measures through the integration of TinyML for hardhat detection using computer vision. By harnessing the power of machine learning and computer vision algorithms, we have successfully developed an efficient and lightweight model that can be deployed on edge devices, enabling real-time monitoring and immediate alerting in case of non-compliance.
 
 Overall, this project exemplifies the potential of TinyML in revolutionizing safety practices in industrial settings. The combination of Edge Impulse’s platform, the Alif Ensemble E7, and our developed model showcases a powerful solution for ensuring compliance with safety regulations and safeguarding the well-being of workers in high-risk environments. This innovative approach sets a new standard for leveraging machine learning and computer vision in industrial safety applications.
 
