@@ -1,9 +1,9 @@
 ---
 description: >-
-  A concept machine learning model that can perform helmet and person detection using computer vision on the Alif Ensemble E7.
+  A concept machine learning model that can perform hardhat and person detection using computer vision on the Alif Ensemble E7.
 ---
 
-# Helmet Detection in Industrial Settings - Alif Ensemble E7
+# Hardhat Detection in Industrial Settings - Alif Ensemble E7
 
 Created By: Wamiq Raza, Varvara Fadeeva
 
@@ -13,7 +13,7 @@ Public Project Link: [https://studio.edgeimpulse.com/public/258261/latest](https
 
 Safety helmets as personal protective equipment are mandatory in a number of industries, including building construction and manufacturing, to avoid potential injuries of workers. Failure to wear safety helmets leads to a higher risk of accidents in industrial environments. In the past, supervisors were responsible for ensuring everyone wore a helmet. However, manual oversight of safety helmets usually results in higher cost and compromised precision due to human factors. Therefore, an application of machine learning using computer vision algorithms for helmet detection proves to be a promising and effective approach.
 
-In this project the objective is to enhance safety measures and mitigate potential risks by utilizing a TinyML approach of detecting the presence of helmets on workers’ heads and identifying individuals within a restricted areas. This project aims to leverage the Edge Impulse platform to build an efficient and lightweight model that can be deployed on edge devices, enabling real-time monitoring and immediate alerting in case of non-compliance, using the Alif Ensemble E7 development platform.
+In this project the objective is to enhance safety measures and mitigate potential risks by utilizing a TinyML approach of detecting the presence of hardhats on workers’ heads. This project aims to leverage the Edge Impulse platform to build an efficient and lightweight model that can be deployed on edge devices, enabling real-time monitoring and immediate alerting in case of non-compliance, using the Alif Ensemble E7 development platform.
 
 ## Alif Ensemble E7 Configuration with Edge Impulse
 
