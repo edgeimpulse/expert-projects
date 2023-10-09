@@ -132,7 +132,19 @@ pinMode(3, OUTPUT); // set pin 3 to control the Relay Module
 Then, inside the loop we will add this code to control the Relay. In this case, the label contains the keyword "muted" instead of "machine", as I was exploring audio output. If you are going to use another label, just change the word "muted" to the keyword contained in your own label.
 
 ```
- for (size_t ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++) {             if (strstr(result.classification[ix].label, "muted") && result.classification[ix].value > detectionLimit) {                 if (machineOn==1){                     ei_printf(" - Turning the machine off");                     digitalWrite(3, HIGH);                     machineOn=0;                 }                 else{                     ei_printf(" - Turning the machine on");                     digitalWrite(3, LOW);                     machineOn=1;                  }                                           } 
+ for (size_t ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++) {
+ 	if (strstr(result.classification[ix].label, "muted") && result.classification[ix].value > detectionLimit) {
+ 		if (machineOn==1){
+ 			ei_printf(" - Turning the machine off");
+ 			digitalWrite(3, HIGH);
+ 			machineOn=0;
+ 		}
+ 		else{
+ 			ei_printf(" - Turning the machine on");
+ 			digitalWrite(3, LOW);
+ 			machineOn=1;
+ 		}
+ 	} 
 ```
 
 > Note: you can also download the `main.cpp` file from [https://github.com/ronibandini/Photon2VoiceCommand](https://github.com/ronibandini/Photon2VoiceCommand) to make sure you have everything entered correctly.
@@ -177,8 +189,10 @@ Moreover, the compact form factor and cost-effectiveness of boards like the Part
 
 ## Contact
 
-[https://www.instagram.com/ronibandini](https://www.instagram.com/ronibandini)
+[https://www.instagram.com/ronibandini](https://www.instagram.com/ronibandini) 
+
 [https://twitter.com/RoniBandini](https://twitter.com/RoniBandini)
+
 [https://bandini.medium.com](https://bandini.medium.com)
 
 
