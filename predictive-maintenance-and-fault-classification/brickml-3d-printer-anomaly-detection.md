@@ -150,7 +150,7 @@ I tested the model in various conditions. The below screenshot shows the results
 
 ![](../.gitbook/assets/brickml-3d-printer-anomaly-detection/17-live-results.png)
 
-During live testing we can also check out the **Anomaly Detection** feature. For this a gave the printer a little shake. The result of this is that the Anomaly score skyrockets, indicating that some irregularity was detected:
+During live testing we can also check out the **Anomaly Detection** feature. For this I gave the printer a little shake. The result of this is that the Anomaly score skyrockets, indicating that some irregularity was detected:
 
 ![](../.gitbook/assets/brickml-3d-printer-anomaly-detection/18-live-anomaly.png)
 
@@ -175,7 +175,7 @@ The output is a `.zip` archive containing two files: a signed binary firmware im
 ![](../.gitbook/assets/brickml-3d-printer-anomaly-detection/23-build-content.png)
 
 
-The new firmware can be uploaded to the device using the provided `ei_uploader.py` script, by running the following command:
+The new firmware can be uploaded to the BrickML using the provided `ei_uploader.py` script, by running the following command:
 ```sh
 $ python3 ei_uploader.py -s /dev/ttyACM0 -f firmware-brickml.bin.signed
 ```
