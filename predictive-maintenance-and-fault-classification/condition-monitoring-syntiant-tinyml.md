@@ -7,7 +7,7 @@ description: >-
 
 Created By: Swapnil Verma
 
-Public Project Link: [https://studio.edgeimpulse.com/public//latest](https://studio.edgeimpulse.com/public//latest)
+Public Project Link: [https://studio.edgeimpulse.com/public/283457/latest](https://studio.edgeimpulse.com/public/283457/latest)
 
 ## Introduction
 
@@ -75,6 +75,8 @@ To demostrate my solution, I prepared a test setup which requires the following 
 
 I have used this hardware setup for data collection and testing the neural network model.
 
+> **Note: Look close at the picture of the fan blades, as there are some that are intentionally missing blades in order to trigger imbalances and rotational movements that are abnormal from a "regular" fan, to simulate fault conditions.**
+
 ## How It Works
 
 To build this prototype, the following steps are required:
@@ -118,63 +120,86 @@ After establishing a connection between the Syntiant TinyML board and Edge Impul
 [https://github.com/sw4p/condition_monitoring](https://github.com/sw4p/condition_monitoring)
 
 The Arduino takes the following commands via its serial connection:
-    - MOTORON: Turn the motor ON
-    - MOTOROFF: Turn the motor OFF
-    - MOTORSPEED <-100 to 100>: Change motor speed and direction based on the number provided.
+    - `MOTORON`: Turn the motor ON
+    - `MOTOROFF`: Turn the motor OFF
+    - `MOTORSPEED <-100 to 100>`: Change motor speed and direction based on the number provided.
 
-- After connecting a load to the motor, turn on the motor by sending `MOTORON` via serial command to the Arduino.
-- Now navigate to the **Data acquisition** tab in the Edge Impulse Studio. Here you will find the device we connected in the previous step, and the sensor list. Please select the _Accelerometer_ sensor and use the default parameters.
-- Add a **Label name** based on the load connected. If it is a balanced load then use *Normal_Motion* as a label, and for unbalanced loads use *Error* as a label. Labels are classes of your data.
-- Click **Start Sampling**, which will start the sample collection process. Once the sample is collected, it will be automatically uploaded to the Edge Impulse Studio.
+- After connecting a load to the motor, turn on the motor by sending `MOTORON` via serial to the Arduino.
+
+- Now navigate to the **Data acquisition** tab in the Edge Impulse Studio. Here you will find the device we connected in the previous step, and the sensor list. Select the _Accelerometer_ sensor and use the default parameters.
+
+- Add a **Label name** based on the load connected. If it is a balanced load then use *Normal_Motion* as a label, and for unbalanced loads (fans that are missing blades), use *Error* as a label. Labels are classes of your data.
+
+- Click **Start Sampling**, which will start the sample collection process. Once the sample is collected, it will be automatically uploaded to the Studio.
 
 ![Data Acquisition](../.gitbook/assets/condition-monitoring-syntiant-tinyml/data_acquisition.png)
 
-- Repeat this process for unbalanced loads and also for Motor off condition. Also make sure to collect proportional amount of data per class.
+- Repeat this process for unbalanced loads and also for the "Motor off" condition. Also make sure to collect a proportional amount of data per class.
 
-> The Syntiant NDP chips require a negative class on which no predictions will occur, in our example this is the Z_No_Motion (motor off condition) class. Make sure the class name is last in alphabetical order with the negative class at the end.
+> Note: The Syntiant NDP chip requires a negative class on which no predictions will occur, in our example this is the `Z_No_Motion` (motor off condition) class. Make sure the class name is last in alphabetical order with the negative class at the end.
 
 ![Data Proportion](../.gitbook/assets/condition-monitoring-syntiant-tinyml/data_proportion.png)
 
-- Once enough data is collected, split it into train and test set from the dashboard
+- Once enough data is collected, split it into Train and Test datasets from the Dashboard:
 
 ![Train and Test Split](../.gitbook/assets/condition-monitoring-syntiant-tinyml/train_test_split.png)
 
 ## Model Preparation
-After data collection, the next step is machine learning model preparation. To do so, please navigate to the Impulse design tab and add relevant preprocessing and learning blocks to the pipeline.
 
-- Edge Impulse Studio will automatically add an input block and it will recommend a suitable preprocessing and a learning block based on the data type. I have used the recommended ones in this project with the default arguments.
+After data collection, the next step will be machine learning model preparation. To do so, navigate to the **Impulse design** tab and add the relevant **Preprocessing** and **Learning** blocks to the pipeline.
+
+- The Edge Impulse Studio will automatically add an input block and it will recommend a suitable Preprocessing and Learning block based on the data type ((IMU and Classification, in this case). I have used the recommended ones in this project with the default arguments.
 
 ![Impulse Design](../.gitbook/assets/condition-monitoring-syntiant-tinyml/impulse_design.png)
   
-- After Impulse design is complete, save the design and navigate to the preprocessing tab (Spectral features in this case) for the feature generation.
+- After Impulse design is complete, save the design and navigate to the **Preprocessing** tab (_Spectral features_ in this case) for the feature generation.
 
 ![Preprocessing](../.gitbook/assets/condition-monitoring-syntiant-tinyml/preprocessing.png)
   
-- Click on the Save parameters button, then navigate to the Generate features tab and click Generate features button for data preprocessing.
+- Click on the **Save parameters** button, then navigate to the **Generate features** tab and click the **Generate features** button for data preprocessing.
 
 ![Generate Feature](../.gitbook/assets/condition-monitoring-syntiant-tinyml/generate_feature.png)
   
-- After feature generation, please navigate to the Learning Tab (Classifier in this case) to design the neural network architecture. I have used the default architecture and parameters recommended by the Edge Impulse Studio. After selecting a suitable training cycle and learning rate, click on the Start training button.
-  ![Model Training](../.gitbook/assets/condition-monitoring-syntiant-tinyml/model_training.png)
-- Once the training is complete, please navigate to the [Model testing](https://docs.edgeimpulse.com/docs/Edge) tab, and click Classify all button.
-  ![Model Testing](../.gitbook/assets/condition-monitoring-syntiant-tinyml/model_testing.png)
-  After testing is finished, the Edge Impulse Studio will show the model accuracy, and other parameters.
-    > Even though it is a simple example, the Edge Impulse Studio prepared an excellent machine learning model just by using the default recommended parameters, in just a couple of minutes.
+- After feature generation is complete (it could take a few minutes), please navigate to the **Learning** tab (_Classifier_ in this case) to design the neural network architecture. Here again, I have used the default architecture and parameters recommended by the Edge Impulse Studio. After selecting a suitable training cycle and learning rate, click on the **Start training** button.
+
+![Model Training](../.gitbook/assets/condition-monitoring-syntiant-tinyml/model_training.png)
+
+- Once the training is complete, navigate to the **Model testing** tab, and click the **Classify all** button.  This will begin the process of evaluating the built model against unseen data, which was the _Test_ bucket of data set aside early when we did the split.
+
+![Model Testing](../.gitbook/assets/condition-monitoring-syntiant-tinyml/model_testing.png)
+
+After testing is finished, the Edge Impulse Studio will show the model accuracy, and other parameters.
+
+> Even though it is a simple example, the Edge Impulse Studio prepared an excellent machine learning model just by using the default recommended parameters, in just a couple of minutes.
 
 ## Deployment
 
-Once the training and testing is complete, we can convert the machine learning model into a library or binary for the Syntiant TinyML board and deploy it for local inference.
+Once the training and testing is complete, we can convert the machine learning model into a library or binary for the Syntiant TinyML board and deploy it for local inference on the device.
 
 Because the Syntiant TinyML board is fully supported by the Edge Impulse, this task is as easy as the previous procedures.
-- Simply navigate to the Deployment tab and select the target device. Also specify the deployment type based on the options provided and click Build.
+
+- Simply navigate to the **Deployment** tab and select the target device. Also, specify the deployment type based on the options provided and click **Build**.
 
 ![Deployment Tab](../.gitbook/assets/condition-monitoring-syntiant-tinyml/deployment_tab.png)
 
-- After building the binary or library, the studio will automatically download the firmware to the computer and provide guidance on the next step. Usually it requires running the downloaded `flash_<operating_system>` script, which should flash the binary onto the Syntiant TinyML board.
+- After building the binary or library, the Studio will automatically download the firmware to the computer, and provide guidance on how to flash it to the selected board. Usually it requires running the downloaded `flash_<operating_system>` script, which should flash the binary onto the Syntiant TinyML board.
 
 ![Flash Instruction](../.gitbook/assets/condition-monitoring-syntiant-tinyml/flash_instruction.png)
 
-## Reference
+## Conclusion
+
+Once the firmware is loaded onto the board, you can run inference locally on the Syntiant TinyML board by using the Edge Impulse CLI to launch a runner application. With the TinyML board attached to your computer via USB, run the following command from a terminal to begin inferencing:
+
+```
+edge-impulse-run-impulse
+```
+
+This will output classification results in the terminal, and you can verify that your model is properly predicting the normal, unbalanced, and off states of the motor.
+
+At this point, you can iterate and build your own firmware, integrate the inferencing into your own application, and develop alerting capabilities to raise awareness of unexpected or out-of-bounds conditions.
+
+## References
+
 - <a href="https://www.flaticon.com/free-icons/classification" title="classification icons">Classification icons created by SBTS2018 - Flaticon</a>
 - <a href="https://www.flaticon.com/free-icons/performance" title="performance icons">Performance icons created by Design Circle - Flaticon</a>
 - <a href="https://www.flaticon.com/free-icons/automation" title="automation icons">Automation icons created by Becris - Flaticon</a>
