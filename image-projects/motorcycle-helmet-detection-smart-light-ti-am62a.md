@@ -3,7 +3,7 @@ description: >-
   A prototype smart traffic light that uses a TI AM62A Starter Kit to identify motorcycle riders not wearing a helmet, in order to increase public safety.
 ---
 
-# Motorcycle Helmet Identification and Traffic Light Control - Texas Instruments AM62A
+# Motorcycle Helmet Detection and Traffic Light Control - Texas Instruments AM62A
 
 Created By: Roni Bandini
 
