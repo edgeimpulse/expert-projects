@@ -78,7 +78,7 @@ After some trial and error, my recommendationed method for interacting with the 
  ![](../.gitbook/assets/motorcycle-helmet-detection-smart-light-ti-am62a/cli.jpg)
  
  - Run `sudo pip3 install requests` (this will be required later to publish the detection rate for the WiFi traffic light module)
- - Adjust the camera position to aim at your target, and then run the following:  `edge-impulse-linux-runner --force-engine tidl --force-target runner-linux-aarch64-am62a`.  The first time you run this, you will need to login to your Edge Impulse account and select the right project.  Once running, launch a web browser and navigate to your board's IP address, port 4912.  For example, `http://192.168.1.66:4912` in my case.
+ - Adjust the camera position to aim at your target, and then run the following:  `edge-impulse-linux-runner --force-engine tidl --force-target runner-linux-aarch64-am62a`. The first time you run this, you will need to login to your Edge Impulse account and select the right project. Once running, launch a web browser and navigate to your board's IP address, port 4912. For example, `http://192.168.1.66:4912` in my case.
  - Download the `am62a_traffic.py` file [from the GitHub repository](https://github.com/ronibandini/TIAM62AITrafficLight) and then upload the script to the AM62A board using SFTP. The credentials are the same as logging in directly:  You'll need your IP address, username is `root`, and there is no password.
 
 ## GPIO 
