@@ -65,6 +65,7 @@
 * [Acute Lymphoblastic Leukemia Classifier - Nvidia Jetson Nano](image-projects/ai-leukemia-classifier-nvidia-jetson-nano.md)
 * [Hardhat Detection in Industrial Settings - Alif Ensemble E7](image-projects/helmet-detection-alif-ensemble.md)
 * [Motorcycle Helmet Identification and Traffic Light Control - Texas Instruments AM62A](image-projects/motorcycle-helmet-detection-smart-light-ti-am62a.md)
+* [Import a Pretrained Model with "Bring Your Own Model" - Texas Instruments AM62A](image-projects/asl-byom-ti-am62a.md)
 
 ## Audio Projects
 
