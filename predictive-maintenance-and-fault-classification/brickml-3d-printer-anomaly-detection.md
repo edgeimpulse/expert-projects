@@ -70,7 +70,6 @@ The collected samples were split into smaller chunks, and then arranged into Tra
 
 ![](../.gitbook/assets/brickml-3d-printer-anomaly-detection/07-train-test.png)
 
-
 ## Designing an Impulse
 
 Now that we have some data, we can continue with the [**Impulse design**](https://studio.edgeimpulse.com/studio/283049/create-impulse) step. The [Impulse](https://docs.edgeimpulse.com/docs/edge-impulse-studio/impulse-design) represents our machine learning pipeline, which includes data collection, pre-processing and learning stages.
