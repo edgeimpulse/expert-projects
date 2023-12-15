@@ -14,6 +14,8 @@ GitHub Repo:
 
 Nvidia DeepStream is an audio, video, and image analytics toolkit based on GStreamer for AI and computer vision processing.  It can be used as a building block for creating applications and services that incorporate machine learning and computer vision components or capabilities, such as human-machine interfaces, self-driving and autonomous vehicles, security, and many other use-cases. Detailed information and documentation for DeepStream is located here: [https://developer.nvidia.com/deepstream-sdk](https://developer.nvidia.com/deepstream-sdk).
 
+> Be sure to check out the official blog post over on the Nvidia Developer blog, as well:  [https://developer.nvidia.com/blog/fast-track-computer-vision-deployments-with-nvidia-deepstream-and-edge-impulse/](https://developer.nvidia.com/blog/fast-track-computer-vision-deployments-with-nvidia-deepstream-and-edge-impulse/)
+
 ## Workflow Overview
 
 The following general workflow can be followed when using Edge Impulse with Nvidia DeepStream to produce the final ONNX model and Inference Plugin Configuration files for use with your preferred deployment option.
