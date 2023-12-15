@@ -6,6 +6,7 @@
 
 * [NVIDIA Omniverse - Synthetic Data Generation For Edge Impulse Projects](nvidia-omniverse-synthetic-data.md)
 * [Community Guide – Using Edge Impulse with Nvidia DeepStream](nvidia-deepstream-community-guide.md)
+* [Computer Vision Object Counting - Avnet RZBoard V2L](image-projects/avnet-rzboard-object-counting.md)
 
 ## Prototype and Concept Projects
 
