@@ -9,7 +9,7 @@ Created By: Naveen Kumar
 
 Public Project Link: [https://studio.edgeimpulse.com/public/298672/latest](https://studio.edgeimpulse.com/public/298672/latest)
 
-<img src="brainchip-akida-multi-camera-inference/cover.png" alt="cover" />
+<img src="../.gitbook/assets/brainchip-akida-multi-camera-inference/cover.png" alt="cover" />
 
 Real-time inferencing for multi-camera video streaming for road crossings is a challenging task that involves processing and analyzing multiple video sources simultaneously, such as from different cameras or sensors, to provide useful information and insights for traffic management, safety, and planning. Some of the possible goals and applications of this task could be:
 
@@ -20,17 +20,17 @@ Real-time inferencing for multi-camera video streaming for road crossings is a c
 
 In this project, we aim to build a pipeline that is both flexible and scalable for streaming and inference of multi-camera videos. We will utilize BrainChip’s [Akida Development Kit.](https://shop.brainchipinc.com/products/akida-enablement-platform-raspberry-pi) to optimize and accelerate the Edge Impulse FOMO model near the data sources to decrease the bandwidth and latency requirements for video streaming and analytics. The BrainChip's neuromorphic processor IP uses event-based technology for increased energy efficiency. It allows incremental learning and high-speed inference for various applications, including convolutional neural networks, with exceptional performance and low power consumption. The kit includes a PCIe board with an onboard AKD1000 Akida processor, a Raspberry Pi Compute Module 4 (Wi-Fi, 8 GB RAM), and a Raspberry Pi Compute Module 4 I/O (carrier) board. The kit is shown below in a disassembled state.
 
-![](brainchip-akida-multi-camera-inference/hardware_unassembled.jpeg)
+![](../.gitbook/assets/brainchip-akida-multi-camera-inference/hardware_unassembled.jpeg)
 
 The Akida PCIe board is connected to the Raspberry Pi Compute Module 4 IO Board through the PCIe Gen 2 x1 socket available onboard.
 
-![](brainchip-akida-multi-camera-inference/hardware_closeup.jpeg)
+![](../.gitbook/assets/brainchip-akida-multi-camera-inference/hardware_closeup.jpeg)
 
 ## Setting up the Development Environment
 
 The Brainchip Akida Kit comes with Ubuntu 20.04 LTS and Akida PCIe drivers preinstalled but we wanted to try the latest Raspberry Pi OS (Bookworm). We can use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install the Raspberry Pi OS (64-bit) on an SD card. The Raspberry Pi Imager also allows to setup user account, and Wi-Fi credentials and enables an SSH server which is useful since we will be using this kit as a headless edge device.
 
-![](brainchip-akida-multi-camera-inference/rpi_imager.png)
+![](../.gitbook/assets/brainchip-akida-multi-camera-inference/rpi_imager.png)
 
 After the installation is completed, we can insert the SD card back into the kit and power it on. Once it boots up, we can log in using the ssh. The first thing we need to check whether the Akida PCIe card is detected or not using the command below which should print some information about the device.
 
@@ -61,7 +61,7 @@ PCIe/NSoC_v2
 
 Shibuya Scramble Crossing is a popular pedestrian scramble crossing in Shibuya, Tokyo. There are several IP cameras installed at the crossing, and their live feeds are available on YouTube. We will be utilizing one of the streams for data collection. 
 
-![Shibuya Crossing](brainchip-akida-multi-camera-inference/shibuya_aerial.jpeg)
+![Shibuya Crossing](../.gitbook/assets/brainchip-akida-multi-camera-inference/shibuya_aerial.jpeg)
 
 To download the live video stream we need to install the youtube-dl python library.
 
@@ -112,7 +112,7 @@ if __name__ == '__main__':
 
 We will use the Edge Impulse Studio to build and train our model. This requires us to create an account and initiate a new project at [https://studio.edgeimpulse.com.](https://studio.edgeimpulse.com./)
 
-<img src="brainchip-akida-multi-camera-inference/new_project.png" alt="new_project" style="zoom:50%;" />
+<img src="../.gitbook/assets/brainchip-akida-multi-camera-inference/new_project.png" alt="new_project" style="zoom:50%;" />
 
 To upload the input images extracted from the video into the Edge Impulse project, we will use the Edge Impulse CLI Uploader. Follow the instructions at the link: https://docs.edgeimpulse.com/docs/cli-installation to install the Edge Impulse CLI on your host computer.
 
@@ -124,31 +124,31 @@ $ edge-impulse-uploader --category split images/*.jpg
 
 The command above will upload the demo input images to Edge Impulse Studio and split them into "Training" and "Testing" datasets. Once the upload completes, the input datasets are visible on the **Data Acquisition** page within Edge Impulse Studio.
 
-![Data Aquisition](brainchip-akida-multi-camera-inference/data_aquisition.png)
+![Data Aquisition](../.gitbook/assets/brainchip-akida-multi-camera-inference/data_aquisition.png)
 
 We can now assign labels to the data by using bounding boxes in the **Labeling queue** tab, as demonstrated in the GIF below. We have successfully labeled over 1800 objects, which was a tedious and time-consuming task, but it will greatly contribute to the creation of a diverse training dataset.
 
-![Labelling](brainchip-akida-multi-camera-inference/labelling.gif)
+![Labelling](../.gitbook/assets/brainchip-akida-multi-camera-inference/labelling.gif)
 
 ## Model Training
 
 Go to the **Impulse Design** > **Create Impulse** page, click **Add a processing block**, and then choose **Image**. This preprocesses and normalizes image data, and optionally allows you to choose the color depth. Also, on the same page, click **Add a learning block**, and choose **Object Detection (Images) - BrainChip Akida™** which fine-tunes a pre-trained object detection model specialized for the BrainChip AKD1000 PCIe board. This specialized model permits the use of a 224x224 image size, which is the size we are currently utilizing. Now click on the **Save Impulse** button.
 
-![Create Impulse](brainchip-akida-multi-camera-inference/create_impulse.png)
+![Create Impulse](../.gitbook/assets/brainchip-akida-multi-camera-inference/create_impulse.png)
 
 On the **Image** page, choose *RGB* color depth and click the **Save parameters** button. The page will be redirected to the **Generate Features** page.
 
-![Raw Features](brainchip-akida-multi-camera-inference/raw_features.png)
+![Raw Features](../.gitbook/assets/brainchip-akida-multi-camera-inference/raw_features.png)
 
 Now we can start feature generation by clicking on the **Generate features** button:
 
-![Generate Features](brainchip-akida-multi-camera-inference/generate_features.png)
+![Generate Features](../.gitbook/assets/brainchip-akida-multi-camera-inference/generate_features.png)
 
 After feature generation, go to the **Object Detection** page and select the **Akida FOMO** model. Since we will be doing the inferencing on multiple camera streams we need to tweak the model to make it faster. We need to open the editor by selecting **Switch to Keras (expert) mode** to change the model parameters.
 
-![Training 1](brainchip-akida-multi-camera-inference/training_1.png) 
+![Training 1](../.gitbook/assets/brainchip-akida-multi-camera-inference/training_1.png) 
 
-![Training 2](brainchip-akida-multi-camera-inference/training_2.png)
+![Training 2](../.gitbook/assets/brainchip-akida-multi-camera-inference/training_2.png)
 
 We changed the pre-trained model weights to the **akidanet_imagenet_224_alpha_25.h5** and the train function parameter **alpha** to 0.25. The alpha parameter controls the width of the network. This is known as the width multiplier in the MobileNet paper. If alpha < 1.0, proportionally decreases the number of filters in each layer.
 
@@ -183,13 +183,13 @@ Then click on the **Start training** button. It will take a few minutes to compl
 
 Once the training is completed we can see the confusion matrix for the quantized Akida model as shown below. 
 
-![confusion_matrix](brainchip-akida-multi-camera-inference/confusion_matrix.png)
+![confusion_matrix](../.gitbook/assets/brainchip-akida-multi-camera-inference/confusion_matrix.png)
 
 ## Model Testing
 
 On the **Model testing** page, click on the **Classify All** button which will initiate model testing with the trained model. The testing accuracy is **94.85%**.
 
-![Testing Results](brainchip-akida-multi-camera-inference/testing_results.png)
+![Testing Results](../.gitbook/assets/brainchip-akida-multi-camera-inference/testing_results.png)
 
 ## Deployment
 
