@@ -148,9 +148,9 @@ After feature generation, go to the **Object Detection** page and select the **A
 
 <img src="../.gitbook/assets/brainchip-akida-multi-camera-inference/training_1.png" style="zoom:50%;" alt="Training" /> 
 
-<img src="../.gitbook/assets/brainchip-akida-multi-camera-inference/training_2.png" style="zoom:50%;" alt="Training" />
+<img src="../.gitbook/assets/brainchip-akida-multi-camera-inference/training_2.png" style="zoom:50%;" alt="Training 2" />
 
-We changed the pre-trained model weights to the **akidanet_imagenet_224_alpha_25.h5** and the train function parameter **alpha** to 0.25. The alpha parameter controls the width of the network. This is known as the width multiplier in the MobileNet paper. If alpha < 1.0, proportionally decreases the number of filters in each layer.
+We changed the pre-trained model weights to the **akidanet_imagenet_224_alpha_25.h5** and the train function parameter **alpha** to 0.25. The alpha parameter controls the width of the network. This is known as the width multiplier in the MobileNet paper. If alpha < 1.0, the number of filters in each layer proportionally decreases.
 
 ```
 ...
@@ -193,7 +193,7 @@ On the **Model testing** page, click on the **Classify All** button which will i
 
 ## Deployment
 
-In order to achieve full hardware acceleration models must be converted from their original format to run on an Akida PCIe card. This can be done by selecting the **BrainChip MetaTF Model**  from the **Deployment** page. This will generate a .zip file with models that can be used in the application for the AKD1000. The build process uses the [CNN2SNN toolkit](https://doc.brainchipinc.com/user_guide/cnn2snn.html?highlight=cnn2snn#cnn2snn-toolkit) to convert quantized models to SNN models compatible for the AKD1000. 
+In order to achieve full hardware acceleration models must be converted from their original format to run on an Akida PCIe card. This can be done by selecting the **BrainChip MetaTF Model**  from the **Deployment** page. This will generate a .zip file with models that can be used in the application for the AKD1000. The build process uses the [CNN2SNN toolkit](https://doc.brainchipinc.com/user_guide/cnn2snn.html?highlight=cnn2snn#cnn2snn-toolkit) to convert quantized models to SNN models compatible with the AKD1000. 
 
 ![Deployment](../.gitbook/assets/brainchip-akida-multi-camera-inference/deployment.png)
 
@@ -208,7 +208,7 @@ $ git clone https://github.com/edgeimpulse/example-standalone-inferencing-linux.
 $ cd example-standalone-inferencing-linux && git submodule update --init --recursive
 ```
 
-We should extract the downloaded Brainchip MetaTF model zip file into the example-standalone-inferencing-linux directory.
+We should extract the downloaded Brainchip MetaTF model zip file into the `example-standalone-inferencing-linux` directory.
 
 ```
 $ unzip brainchip-akida-multicam-meta-tf-v12.zip
@@ -220,7 +220,7 @@ We will not be using the OpenCV bundled with the repository instead we will inst
 $ sudo apt install libopencv-dev
 ```
 
-Also, we need to build and install a MPEG streamer library which is used to stream the inferencing result at web browser.
+Also, we need to build and install an MPEG streamer library which is used to stream the inferencing result in a web browser.
 
 ```
 $ git clone https://github.com/nadjieb/cpp-mjpeg-streamer.git
@@ -344,14 +344,14 @@ int main(int argc, char *argv[])
 }
 ```
 
-We made the following changes in the Makefile to build it with OpenCV library.
+We made the following changes in the `Makefile` to build it with the OpenCV library.
 
 ```
 CXXFLAGS += -std=c++17 
 CFLAGS += -I/usr/include/opencv4
 ```
 
-Finally, execute the command below which should build an executable **camera** in the build/ directory.
+Finally, execute the command below which should build an executable **camera** in the `build/` directory.
 
 ```
 $ USE_AKIDA=1 APP_CAMERA=1 TARGET_LINUX_AARCH64=1 make -j3
@@ -365,7 +365,7 @@ To run the application we should provide two recorded video files downloaded fro
 $ ./build/camera video_1.mp4 video2.mp4 
 ```
 
-To view the inferencing results on a web page, we will save the following code in an index.html file.
+To view the inferencing results on a web page, we will save the following code in an `index.html` file.
 
 ```
 <!doctype html>
@@ -427,7 +427,7 @@ To view the inferencing results on a web page, we will save the following code i
 </html>
 ```
 
-We can spin up a webserver as follows and open a web browser at the port showing below.
+We can spin up a webserver as follows and open a web browser at the port shown below.
 
 ```
 $ python3 -m http.server
@@ -438,7 +438,7 @@ Serving HTTP on :: port 8000 (http://[::]:8000/) ...
 
 {% embed url="https://www.youtube.com/watch?v=Kh-q8yhamb0" %}
 
-We can see the real time stats for the inferencing rate and power consumption at the console.
+We can see the real time stats for the inferencing rate and power consumption in the console.
 
 ```
 Inferences per second: 73
@@ -454,6 +454,6 @@ Engine Info: Power Consumption: 20.94 mW
 
 ## Conclusion
 
-In this project, we have evaluated the Brainchip AKD1000 Akida processor and demonstrated its effectiveness and efficiency in terms of accuracy, latency, bandwidth, and power consumption. We also conclude that Edge Impulse FOMO model is highly suitable for contrained and low-power edge devices to achieve fast inferencing without loosing too much accuracy. The public version of the Edge Impulse Studio project can be found here: [https://studio.edgeimpulse.com/public/298672/latest](https://studio.edgeimpulse.com/public/298672/latest).
+In this project, we have evaluated the Brainchip AKD1000 Akida processor and demonstrated its effectiveness and efficiency in terms of accuracy, latency, bandwidth, and power consumption. We also conclude that Edge Impulse FOMO model is highly suitable for contrained and low-power edge devices to achieve fast inferencing without losing much accuracy. The public version of the Edge Impulse Studio project can be found here: [https://studio.edgeimpulse.com/public/298672/latest](https://studio.edgeimpulse.com/public/298672/latest).
 
 
