@@ -9,7 +9,7 @@ Created By: Naveen Kumar
 
 Public Project Link: [https://studio.edgeimpulse.com/public/298672/latest](https://studio.edgeimpulse.com/public/298672/latest)
 
-<img src="../.gitbook/assets/brainchip-akida-multi-camera-inference/cover.png" alt="cover" />
+![](../.gitbook/assets/brainchip-akida-multi-camera-inference/cover.png)
 
 Real-time inferencing for multi-camera video streaming for road crossings is a challenging task that involves processing and analyzing multiple video sources simultaneously, such as from different cameras or sensors, to provide useful information and insights for traffic management, safety, and planning. Some of the possible goals and applications of this task could be:
 
@@ -28,18 +28,18 @@ The Akida PCIe board is connected to the Raspberry Pi Compute Module 4 IO Board 
 
 ## Setting up the Development Environment
 
-The Brainchip Akida Kit comes with Ubuntu 20.04 LTS and Akida PCIe drivers preinstalled but we wanted to try the latest Raspberry Pi OS (Bookworm). We can use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install the Raspberry Pi OS (64-bit) on an SD card. The Raspberry Pi Imager also allows to setup user account, and Wi-Fi credentials and enables an SSH server which is useful since we will be using this kit as a headless edge device.
+The Brainchip Akida Kit comes with Ubuntu 20.04 LTS and Akida PCIe drivers preinstalled but we wanted to try the latest Raspberry Pi OS (Bookworm). We can use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install the Raspberry Pi OS (64-bit) on an SD card. The Raspberry Pi Imager also allows to setup a user account, Wi-Fi credentials, and enables an SSH server which is useful since we will be using this kit as a headless edge device.
 
 ![](../.gitbook/assets/brainchip-akida-multi-camera-inference/rpi_imager.png)
 
-After the installation is completed, we can insert the SD card back into the kit and power it on. Once it boots up, we can log in using the ssh. The first thing we need to check whether the Akida PCIe card is detected or not using the command below which should print some information about the device.
+After the installation is completed, we can insert the SD card back into the kit and power it on. Once it boots up, we can log in via ssh. The first thing we need to check, is whether the Akida PCIe card is detected or not using the command below which should print some information about the device.
 
 ```
 $ lspci | grep Co-processor
 Co-processor: Device 1e7c: bca1 (rev 01)
 ```
 
-To install the kernel driver and python bindings execute the following commands.
+To install the kernel driver and python bindings execute the following commands:
 
 ```
 $ sudo apt install build-essential linux-headers-$(uname -r) 
@@ -49,7 +49,7 @@ $ sudo ./install.sh
 $ python3 -mpip install akida==2.4.0
 ```
 
-Execute the command below to make sure everything is okay and we can start using the PCIe card.
+Execute the command below to make sure everything is okay and we can start using the PCIe card:
 
 ```
 $ akida devices
@@ -63,7 +63,7 @@ Shibuya Scramble Crossing is a popular pedestrian scramble crossing in Shibuya, 
 
 ![Shibuya Crossing](../.gitbook/assets/brainchip-akida-multi-camera-inference/shibuya_aerial.jpeg)
 
-To download the live video stream we need to install the youtube-dl python library.
+To download the live video stream we need to install the `youtube-dl` python library.
 
 ```
 $ python3 -mpip install youtube_dl
@@ -112,9 +112,9 @@ if __name__ == '__main__':
 
 We will use the Edge Impulse Studio to build and train our model. This requires us to create an account and initiate a new project at [https://studio.edgeimpulse.com.](https://studio.edgeimpulse.com./)
 
-<img src="../.gitbook/assets/brainchip-akida-multi-camera-inference/new_project.png" alt="new_project" style="zoom:50%;" />
+![](../.gitbook/assets/brainchip-akida-multi-camera-inference/new_project.png)
 
-To upload the input images extracted from the video into the Edge Impulse project, we will use the Edge Impulse CLI Uploader. Follow the instructions at the link: https://docs.edgeimpulse.com/docs/cli-installation to install the Edge Impulse CLI on your host computer.
+To upload the input images extracted from the video into the Edge Impulse project, we will use the Edge Impulse CLI Uploader. Follow the instructions at the link: [https://docs.edgeimpulse.com/docs/cli-installation](https://docs.edgeimpulse.com/docs/cli-installation) to install the Edge Impulse CLI on your host computer.
 
 Execute the command below to upload the dataset.
 
@@ -146,9 +146,9 @@ Now we can start feature generation by clicking on the **Generate features** but
 
 After feature generation, go to the **Object Detection** page and select the **Akida FOMO** model. Since we will be doing the inferencing on multiple camera streams we need to tweak the model to make it faster. We need to open the editor by selecting **Switch to Keras (expert) mode** to change the model parameters.
 
-![Training 1](../.gitbook/assets/brainchip-akida-multi-camera-inference/training_1.png) 
+<img src="../.gitbook/assets/brainchip-akida-multi-camera-inference/training_1.png" style="zoom:50%;" alt="Training" /> 
 
-![Training 2](../.gitbook/assets/brainchip-akida-multi-camera-inference/training_2.png)
+<img src="../.gitbook/assets/brainchip-akida-multi-camera-inference/training_2.png" style="zoom:50%;" alt="Training" />
 
 We changed the pre-trained model weights to the **akidanet_imagenet_224_alpha_25.h5** and the train function parameter **alpha** to 0.25. The alpha parameter controls the width of the network. This is known as the width multiplier in the MobileNet paper. If alpha < 1.0, proportionally decreases the number of filters in each layer.
 
