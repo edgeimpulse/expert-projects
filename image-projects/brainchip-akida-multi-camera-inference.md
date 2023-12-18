@@ -195,7 +195,7 @@ On the **Model testing** page, click on the **Classify All** button which will i
 
 In order to achieve full hardware acceleration models must be converted from their original format to run on an Akida PCIe card. This can be done by selecting the **BrainChip MetaTF Model**  from the **Deployment** page. This will generate a .zip file with models that can be used in the application for the AKD1000. The build process uses the [CNN2SNN toolkit](https://doc.brainchipinc.com/user_guide/cnn2snn.html?highlight=cnn2snn#cnn2snn-toolkit) to convert quantized models to SNN models compatible for the AKD1000. 
 
-![Deployment](brainchip-akida-multi-camera-inference/deployment.png)
+![Deployment](../.gitbook/assets/brainchip-akida-multi-camera-inference/deployment.png)
 
 ## Application
 
