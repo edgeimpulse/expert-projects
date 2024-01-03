@@ -22,7 +22,7 @@ This is why I thought "What if we could control the whole house with just gestur
 
 To develop this project we will use a __BrainChip Akida Development Kit__ and a __Logitech BRIO 4K Webcam__, together with an __Edge Impulse__ Machine Learning model for pose identification.
 
-![Hardware required for the project](../../.gitbook/assets/gesture-appliances-control-brainchip/hardware.png)
+![Hardware required for the project](../.gitbook/assets/gesture-appliances-control-brainchip/hardware.png)
 
 ### Akida Dev Kit
 
@@ -38,11 +38,11 @@ The whole system will be running independently identifying poses, if a desired p
 
 The system comes with the basic requirements installed to run machine learning models using Akida processor acceleration. Once the system is powered up and connected to the internet (I used an ethernet cable), you can access it by an SSH connection, you will need to know the device's local IP address, in my case, I got it from the list of connected devices of my router. 
 
-![Device IP Address](../../.gitbook/assets/gesture-appliances-control-brainchip/ip_show.png)
+![Device IP Address](../.gitbook/assets/gesture-appliances-control-brainchip/ip_show.png)
 
 To verify the device is working properly, you can try an included demo by navigating to **http://<your_kit_IP@>**, in my case to http://10.0.0.150 and try some of the examples:
 
-![Built-in demo running](../../.gitbook/assets/gesture-appliances-control-brainchip/demo.png)
+![Built-in demo running](../.gitbook/assets/gesture-appliances-control-brainchip/demo.png)
 
 To start setting up the device for a custom model deployment, let's verify we have installed all the packages we need.
 
