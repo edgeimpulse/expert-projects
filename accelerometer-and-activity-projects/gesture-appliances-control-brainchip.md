@@ -22,7 +22,7 @@ This is why I thought "What if we could control the whole house with just gestur
 
 To develop this project we will use a __BrainChip Akida Development Kit__ and a __Logitech BRIO 4K Webcam__, together with an __Edge Impulse__ Machine Learning model for pose identification.
 
-![Hardware required for the project](../../.gitbook/assets/gesture-appliances-control-brainchip/hardware.png)
+![Hardware required for the project](../.gitbook/assets/gesture-appliances-control-brainchip/hardware.png)
 
 ### Akida Dev Kit
 
@@ -36,13 +36,13 @@ The whole system will be running independently identifying poses, if a desired p
 
 ## Setting up the Development Environment
 
-The system comes with the basic requirements installed to run machine learning models using Akida processor acceleration. Once the system is powered up and connected to the internet (I used an ethernet cable), you can access it by an SSH connection, you will need to know the device's local IP address, in my case, I got it from the list of connected devices of my router. 
+The system comes with the basic requirements installed to run machine learning models using Akida processor acceleration. Once the system is powered up and connected to the internet (I used an ethernet cable), you can access it by an SSH connection: you will need to know the device's local IP address, in my case, I got it from the list of connected devices of my router. 
 
-![Device IP Address](../../.gitbook/assets/gesture-appliances-control-brainchip/ip_show.png)
+![Device IP Address](../.gitbook/assets/gesture-appliances-control-brainchip/ip_show.png)
 
-To verify the device is working properly, you can try an included demo by navigating to **http://<your_kit_IP@>**, in my case to http://10.0.0.150 and try some of the examples:
+To verify the device is working properly, you can try an included demo by navigating to **http://<your_kit_IP>**, in my case to http://10.0.0.150 and try some of the examples:
 
-![Built-in demo running](../../.gitbook/assets/gesture-appliances-control-brainchip/demo.png)
+![Built-in demo running](../.gitbook/assets/gesture-appliances-control-brainchip/demo.png)
 
 To start setting up the device for a custom model deployment, let's verify we have installed all the packages we need.
 
@@ -50,7 +50,7 @@ I am using Putty for the SSH connection. Log in using the Administrator credenti
 
 Once inside you will be able to install some required dependencies:
 
-Running the built-in demos ensures us that the system already counts with its Akida package and the PCIe drivers for the AKD1000 but we can verify it by running the following commands:
+Running the built-in demos ensures us that the system already recognizes the Akida package and the PCIe drivers for the AKD1000, but we can verify it by running the following commands:
 
 ```
 bash
@@ -79,7 +79,7 @@ sudo apt-get install libatlas-base-dev libportaudio0 libportaudio2 libportaudioc
 pip3 install edge_impulse_linux -i https://pypi.python.org/simple
 ```
 
-***As we are working with computer vision, we will need "opencv-python>=4.5.1.48, "PyAudio", "Psutil", and "Flask"***
+> **As we are working with computer vision, we will need "opencv-python>=4.5.1.48, "PyAudio", "Psutil", and "Flask"**
 
 ## Data Collection
 
@@ -95,7 +95,7 @@ The dataset consists of 3 classes in which we finger point each appliance and a 
 
 ![Raw image & PoseNet output](../.gitbook/assets/gesture-appliances-control-brainchip/classes.png)
 
-**Taking at least +50 pictures of each class will let you create a robust enough model**
+> **Taking at least +50 pictures of each class will let you create a robust enough model**
 
 ## Impulse Design
 
@@ -131,7 +131,7 @@ Finally, we save the **Impulse design**, it should end up looking like this:
 
 ## Model Training
 
-After having designed the impulse, it's time to set the processing and learning blocks. **Pose estimation** block doesn't have any configurable parameters, so we just need to click on **Save parameters** and then **Generate features**. 
+After having designed the impulse, it's time to set the processing and learning blocks. The **Pose estimation** block doesn't have any configurable parameters, so we just need to click on **Save parameters** and then **Generate features**. 
 
 In the _classifier block_ define the following settings:
 
@@ -140,7 +140,7 @@ In the _classifier block_ define the following settings:
 
 In the Neural network architecture, add 3 Dense layers with 35, 25 and 10 neurons respectively.
 
-Here is the architecture expert mode code (you can copy and paste it from here):
+Here is the architecture **"Expert mode"** code (you can copy and paste it from here):
 
 ```
 python
@@ -297,7 +297,7 @@ bash
 scp <model file>.fbz ubuntu@<Device IP>:~ # command format
 scp akida_model.fbz ubuntu@10.0.0.154:~ # actual command in my case
 ```
-_You will be asked for your Linux machine login password._
+> _You will be asked for your Linux machine login password._
 
 Now, the model is on the Akida Dev Kit local storage `(/home/ubuntu)` and you can verify it by listing the directory content using `ls`.
 
@@ -346,7 +346,7 @@ Finally, you will be able to see the camera preview alongside the inference resu
 
 For the actual appliance control, I used the __Google Assistant SDK__ integration for __Home Assistant__. Follow the [documentation](https://www.home-assistant.io/integrations/google_assistant_sdk) to configure it for your setup.
 
-***The Home Assistant is running on a separate Raspberry PI.***
+> **The Home Assistant is running on a separate Raspberry PI.**
 
 Once the integration is set, we can send `HTTP` requests to it with the following format:
 
@@ -374,4 +374,4 @@ Here I show you the whole project working and controlling appliances when they a
 
 ## Conclusion
 
-This project leverages the Brainchip Akida Neuromorphic Hardware Accelerator to propose an innovative solution to home automation. It can be optimized to work as a daily used gadget that may be at everyones house in the near future.
+This project leverages the Brainchip Akida Neuromorphic Hardware Accelerator to propose an innovative solution to home automation. It can be optimized to work as a daily used gadget that may be at everyone's house in the near future.
