@@ -11,7 +11,7 @@ Public Project Link: [https://studio.edgeimpulse.com/public/320746/latest](https
 
 GitHub Repo: [https://github.com/Jallson/PizzaQC_Conveyor_Belt](https://github.com/Jallson/PizzaQC_Conveyor_Belt)
 
-![](../.gitbook/assets/quality-control-jetson-nano/Photo01.jpg)
+![](../.gitbook/assets/quality-control-jetson-nano/Photo02.jpg)
 
 ## Problem Statement
 
@@ -25,7 +25,7 @@ A computer vision system for quality/quantity inspection of product manufacturin
 
 This project uses Edge Impulse's FOMO (Faster Objects, More Objects) algorithm, which can quickly detect objects and use them as a quality/quantity check for products on a running conveyor belt. FOMO's ability to know the number and position of coordinates of an object is the basis of this system. This project will explore the capability of the Nvidia Jetson Nano's GPU to handle color video (RGB) with a higher resolution (320x320) than some other TinyML projects, while still maintaining a high inference speed. The machine learning model (`model.eim`) will be deployed with the TensorRT library, which will be compiled with optimizations for the GPU and will be setup via the Linux C++ SDK. Once the model can identify different pizza toppings, an additional Python program will be added, to check each pizza for a standard quantity of pepperoni, mushrooms, and paprikas. This project is a proof-of-concept that can be widely applied in the product manufacturing and food production industries to perform quality checks based on a quantity requirement of part in a product.
 
-![](../.gitbook/assets/quality-control-jetson-nano/Photo02.jpg)
+![](../.gitbook/assets/quality-control-jetson-nano/Photo01.jpg)
 
 ### Hardware Components
 
