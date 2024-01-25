@@ -4,6 +4,8 @@
 
 ## Featured Machine Learning Projects
 
+* [Surgery Inventory Object Detection - Synthetic Data - Nvidia Omniverse Replicator](image-projects/surgery-inventory-synthetic-data.md)
+
 * [NVIDIA Omniverse - Synthetic Data Generation For Edge Impulse Projects](nvidia-omniverse-synthetic-data.md)
 * [Community Guide – Using Edge Impulse with Nvidia DeepStream](nvidia-deepstream-community-guide.md)
 * [Counting for Inspection and Quality Control - Nvidia Jetson Nano (TensorRT)](image-projects/quality-control-jetson-nano.md)
