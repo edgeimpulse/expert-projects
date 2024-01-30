@@ -17,15 +17,13 @@ GitHub Repo: [https://github.com/eivholt/surgery-inventory-synthetic-data](https
 
 This wearable device keeps track of instruments and materials used during surgery. This can be useful as an additional safeguard to prevent Retained Surgical Bodies.
 
-Demo of chrome objects detection running on an Arduino Nicla Vision:
+Extensive routines are in place pre-, during, and post-operation to make sure no unintentional items are left in the patient. In the small number of cases when items are left the consequences can be severe, in some cases fatal. This proof-of-concept explores the use of automated item counting as an extra layer of control.
+
+Here is a demo of chrome surgical instrument detection running on an Arduino Nicla Vision:
 
 {% embed url="https://www.youtube.com/watch?v=1k0pfPwzTw4" %}
 
-**Chrome objects detection demo**
-
-Extensive routines are in place pre-, during and post-operation to make sure no unintentional items are left in the patient. In the small number of cases when items are left the consequences can be severe, in some cases fatal. This proof-of-concept explores the use of automated item counting as an extra layer of control.
-
-In the following drawing we see how equipment and disposable materials are typically organized during surgery. Tools are pre-packaged in sets for the appropriate type of surgery and noted when organized on trays or tables. Swabs are packaged in numbers and contain tags that are noted and kept safe. When swabs are used they are displayed individually in transparent pockets on a stand so they can be counted and checked with the tags from the originating package. Extensive routines are in place to continuously count all equipment used, still errors occur [an estimated rate between 0.3 and 1 per 1000 abdominal operations](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5320916/#:~:text=The%20incidence%20of%20RSB%20is,the%20abdomen%2C%20retroperitoneum%20and%20pelvis.).
+In the following drawing we see how equipment and disposable materials are typically organized during surgery. Tools are pre-packaged in sets for the appropriate type of surgery and noted when organized on trays or tables. Swabs are packaged in numbers and contain tags that are noted and kept safe. When swabs are used they are displayed individually in transparent pockets on a stand so they can be counted and checked with the tags from the originating package. Extensive routines are in place to continuously count all equipment used; still errors occur [an estimated rate between 0.3 and 1 per 1000 abdominal operations](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5320916/#:~:text=The%20incidence%20of%20RSB%20is,the%20abdomen%2C%20retroperitoneum%20and%20pelvis.).
 
 ![Operation room, sketch Eivind Holt](../.gitbook/assets/surgery-inventory-synthetic-data/surgery_inventory_concept.jpg)
 
@@ -50,7 +48,7 @@ Existing solutions are mainly based on either x-ray or RFID. With x-ray, the pat
 
 ## Stationary vs. wearable object detection
 
-Many operating rooms (OR) are equiped with adjustable lights with a camera embedded. A video feed from such a camera could make an interesting source for the object detection model. This project aims to explore the technical viability of running inference on a small wearable. A fish-eye lens could further extend visual coverage. An important design consideration is to make the wearable operable without the need for touch, to avoid cross-contamination.. However, this article is scoped to the creation of the object detection model with synthetic data.
+Many operating rooms (OR) are equiped with adjustable lights with a camera embedded. A video feed from such a camera could make an interesting source for the object detection model. This project aims to explore the technical viability of running inference on a small wearable. A fish-eye lens could further extend visual coverage. An important design consideration is to make the wearable operable without the need for touch, to avoid cross-contamination. However, this article is scoped to the creation of an object detection model with synthetic data.
 
 ## Object detection using neural networks
 
@@ -65,6 +63,7 @@ As if detecting objects on highly constrained devices wasn't challenging enough,
 ![Optical illusion, photo acmedoge](../.gitbook/assets/surgery-inventory-synthetic-data/perspective-reflections-optical-illusions-11.jpg)
 
 ### Number of objects and classes
+
 Our neural network will be translated into code that will compile and execute on a highly constrained device. One of the limiting factors is the amount of RAM which will directly constrain a number of parameters. In addition to having to keep the images from the camera sensor to a mere 96x96 pixels, there is a limit on the number of classes we can identify. Also, there is a predefined limit of the number of items we can detect in a given frame, set to 10. There is room to experiment with expanding parameters, but it is better to embrace these limiting factors and try to think creatively. For instance, the goal of the device isn't to identify specific items or types of items, but rather to make the surgery team aware if item count doesn't add up. With this approach we can group items with similar shapes and surfaces. Having said that, RAM size on even the smallest devices will certainly increase in the near future. The number of images used for training the model does not affect memory usage.
 
 ## Edge Impulse Studio
@@ -103,11 +102,11 @@ A crucial part of any ML-solution is the data the model is trained, tested and v
 
 ### NVIDIA Omniverse Replicator
 
-One of the main goals of this project is to explore creating synthetic object images that come complete with labels. This is achieved by creating a 3D scene in NVIDIA Omniverse and using it's Replicator Synthetic Data Generation toolbox to create thousands of slightly varying images, a concept called domain randomization. With a NVIDIA RTX 3090 graphics card from 2020 it is possible to produce about 2 ray-traced images per second. 10 000 images would take about 5 hours.
+One of the main goals of this project is to explore creating synthetic object images that come complete with labels. This is achieved by creating a 3D scene in NVIDIA Omniverse and using it's Replicator Synthetic Data Generation toolbox to create thousands of slightly varying images, a concept called domain randomization. With a NVIDIA RTX 3090 graphics card from 2020 it is possible to produce about 2 ray-traced images per second. Thus, creating 10,000 images would take about 5 hours.
 
 ## Solution overview
 
-In short we will be walking through the following steps to create and run an object detection model on a microcontroller devkit. An updated Python environment with Visual Studio Code is recommended. A 3D geometry editor such as Blender is needed if object 3D models are not in USD-format (Universal Scene Description).
+We will be walking through the following steps to create and run an object detection model on a microcontroller devkit. An updated Python environment with Visual Studio Code is recommended. A 3D geometry editor such as Blender is needed if object 3D models are not in USD-format (Universal Scene Description).
 
 * Installing Omniverse Code, Replicator and setting up debugging with Visual Studio Code
 * Creating a 3D stage/scene in Omniverse
@@ -155,7 +154,7 @@ If you have a hefty heat producing GPU next to you, you might prefer to reduce t
 
 ## Working with 3D models in Blender
 
-The objects we want to be able to detect needs to be represented with a 3D model and a surface (material). Omniverse provides a library of ready-to-import assets, further models can be created using editors such as Blender or purchased on sites such as [Turbo Squid](https://www.turbosquid.com/).
+The objects we want to be able to detect need to be represented with a 3D model and a surface (material). Omniverse provides a library of ready-to-import assets, further models can be created using editors such as Blender or purchased on sites such as [Turbo Squid](https://www.turbosquid.com/).
 
 ![Exporting model in Blender, photo Eivind Holt](../.gitbook/assets/surgery-inventory-synthetic-data/blender.png)
 
@@ -175,7 +174,7 @@ The replicator toolbox has a function for scattering objects on a surface in it'
 
 ![Bounding box, photo Eivind Holt](../.gitbook/assets/surgery-inventory-synthetic-data/bounding_box.png)
 
-For the chrome surfaces a material from one of the models from the library provided through Omniverse was reused, look for http://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Metals/Chrome/ in Omniverse Asset Store. Remember to switch to RTX - Interactive rendering mode to see representative ray-tracing results, RTX - Real-Time is a simplified rendering pipeline.
+For the chrome surfaces a material from one of the models from the library provided through Omniverse was reused, look for [http://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Metals/Chrome/](http://omniverse-content-production.s3-us-west-2.amazonaws.com/Materials/Base/Metals/Chrome/) in the Omniverse Asset Store. Remember to switch to "RTX - Interactive" rendering mode to see representative ray-tracing results, "RTX - Real-Time" is a simplified rendering pipeline.
 
 ![Chrome material, photo Eivind Holt](../.gitbook/assets/surgery-inventory-synthetic-data/material_chrome.png)
 
@@ -220,7 +219,7 @@ lights = rep.get.light(semantics=[("class", "spotlight")])
 render_product = rep.create.render_product(camera, (128, 128))
 ```
 
-Due to the asynchronous nature of Replicator we need to define our randomization logic as call-back methods by first registering them in the followin fashion:
+Due to the asynchronous nature of Replicator we need to define our randomization logic as call-back methods by first registering them in the following fashion:
 
 ```
 python
@@ -239,7 +238,7 @@ with rep.trigger.on_frame(num_frames=10000, rt_subframes=20):
 		rep.randomizer.alternate_lights()
 ```
 
-num_frames defines how many renders we want. rt_subframes lets the render pipeline proceed a number of frames before capturing the result and passing it on to be written to disk. Setting this high will let advanced ray tracing effects such as reflections have time to propagate between surfaces, though at the cost of higher render time. Each randomization sub-routine will be called, with optional parameters.
+`num_frames` defines how many renders we want. `rt_subframes` lets the render pipeline proceed a number of frames before capturing the result and passing it on to be written to disk. Setting this high will let advanced ray tracing effects such as reflections have time to propagate between surfaces, though at the cost of higher render time. Each randomization sub-routine will be called, with optional parameters.
 
 To write each image and sematic information to disk we use a provided API. We could customize the writer but as of Replicator 1.9.8 on Windows this resulted in errors. We will use "BasicWriter" and rather make a separate script to produce a label format compatible with EI.
 
@@ -255,9 +254,9 @@ writer.attach([render_product])
 asyncio.ensure_future(rep.orchestrator.step_async())
 ```
 
-Here rgb tells the API that we want the images to be written to disk as png-files, bounding_box_2d_tight that we want files with labels (from previously defined semantics) and bounding boxes as rectangles. The script ends with running a single iteration of the process in Omniverse Code, so we can visualize the results.
+Here `rgb` tells the API that we want the images to be written to disk as png-files, `bounding_box_2d_tight` that we want files with labels (from previously defined semantics) and bounding boxes as rectangles. The script ends with running a single iteration of the process in Omniverse Code, so we can visualize the results.
 
-The bounding boxes can be visualized by clicking the sensor widget, checking BoundingBox2DTight and finally Show Window.
+The bounding boxes can be visualized by clicking the sensor widget, checking "BoundingBox2DTight" and finally "Show Window".
 
 ![Bounding Boxes, photo Eivind Holt](../.gitbook/assets/surgery-inventory-synthetic-data/omni_sensor.png)
 
@@ -289,7 +288,7 @@ def alternate_lights():
     return lights.node
 ```
 
-For `scatter_items` we get a reference to the area that will contain our items. Each item is then iterated so that we can add a random rotation (0-360 degrees on the surface plane) and use `scatter_2d` to randomize placement. For the latter, `surface_prims` takes an array of items to use as possible surfaces, check_for_collisions tries to avoid overlap. The order of operations is important to avoid overlapping items.
+For `scatter_items` we get a reference to the area that will contain our items. Each item is then iterated so that we can add a random rotation (0-360 degrees on the surface plane) and use `scatter_2d` to randomize placement. For the latter, `surface_prims` takes an array of items to use as possible surfaces, `check_for_collisions` tries to avoid overlap. The order of operations is important to avoid overlapping items.
 
 For the camera we simply randomize the position in all 3 axis and make sure it points to the center of the stage.
 
@@ -322,7 +321,7 @@ Provided is a simple Python program, [basic_writer_to_pascal_voc.py](https://git
 ``` 
 python basic_writer_to_pascal_voc.py <input_folder>
 ```
-or debug from Visual Studio Code by setting input folder in launch.json like this: 
+or debug from Visual Studio Code by setting input folder in `launch.json` like this: 
 
 ```
 "args": ["../out"]
@@ -332,11 +331,11 @@ This will create a file `bounding_boxes.labels` that contains all labels and bou
 
 ## Creating an object detection project in Edge Impulse Studio and uploading dataset
 
-Look at the [provided object detection Edge Impulse project](https://studio.edgeimpulse.com/public/322153/latest) or [follow a guide to create a new](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/object-detection/fomo-object-detection-for-constrained-devices#how-to-get-started).
+Look at the [provided object detection Edge Impulse project](https://studio.edgeimpulse.com/public/322153/latest) or [follow a guide to create a new object detection project](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/object-detection/fomo-object-detection-for-constrained-devices#how-to-get-started).
 
-For a project intended to detect objects with reflective surfaces a large number of images is needed for training, but the exact number depends on a lot of factors and some experimentation should be expected. It is advisable to start relatively small, say 1000 images of the objects to be detected. For this project over 30 000 images were generated, this is much more than needed. A number of images of random background items are also needed to produce results that will work in the real world. This project uses other surgery equipment for convenience, they do not need to be individually labeled. Still Edge Impulse Studio will create a labeling queue for each image for which it has not received labeling data. To avoid having to click through each image to confirm they contain no labels, the program described will produce a bounding_boxes.labels with empty labels for items tagged with semantic class "background". The factor between images of items to detect and background noise also relies on experimentation, but 1-2% background ratio seems to be a good starting point.
+For a project intended to detect objects with reflective surfaces a large number of images is needed for training, but the exact number depends on a lot of factors and some experimentation should be expected. It is advisable to start relatively small, say 1,000 images of the objects to be detected. For this project over **30,000** images were generated; this is much more than needed. A number of images of random background items are also needed to produce results that will work in the real world. This project uses other surgery equipment for convenience, they do not need to be individually labeled. Still Edge Impulse Studio will create a labeling queue for each image for which it has not received labeling data. To avoid having to click through each image to confirm they contain no labels, the program described will produce a bounding_boxes.labels with empty labels for items tagged with semantic class "background". The factor between images of items to detect and background noise also relies on experimentation, but 1-2% background ratio seems to be a good starting point.
 
-EI creates unique identifiers per image, so you can run multiple iterations to create and upload new datasets, even with the same file names. Just upload all the images from a batch together with the bounding_boxes.labels file.
+EI creates unique identifiers per image, so you can run multiple iterations to create and upload new datasets, even with the same file names. Just upload all the images from a batch together with the `bounding_boxes.labels` file.
 
 This way we can effortlessly produce thousands of labeled images and witness how performance on detecting reflective objects increases. Keep in mind to try to balance the number of labels for each class.
 
@@ -385,9 +384,9 @@ The domain of visual object detection is currently experiencing a thrilling phas
 
 Further reading: [How to Train an Object Detection Model for Visual Inspection with Synthetic Data](https://developer.nvidia.com/blog/how-to-train-an-object-detection-model-for-visual-inspection-with-synthetic-data/#)
 
-# Appendix
+## Appendix
 
-I highly recommend learning how to debug extension code. It requires a bit of work, but it will save a lot of blind trouble shooting as things get complex. Note: This procedure is for debugging extensions.
+I highly recommend learning how to debug Omniverse extension code. It requires a bit of work, but it will save a lot of blind troubleshooting as things get complex. Note: This procedure is for debugging extensions.
 
 * To enable Python debugging via Visual Studio Code, in Omniverse Code, go to Extensions.
 * Search for "debug" and enable "Kit debug vscode" and "A debugger for Python".
@@ -402,7 +401,7 @@ I highly recommend learning how to debug extension code. It requires a bit of wo
 
 ![Open in VSCode](../.gitbook/assets/surgery-inventory-synthetic-data/Code-open-VSCode.png)
 
-* In Visual Studio Code, make sure in .vscode\launch.json the two settings corresponds to what you see in the "VS Code Link" window, e.g. "host": "localhost", and "port": 3000. 
+* In Visual Studio Code, make sure in `.vscode\launch.json` the two settings corresponds to what you see in the "VS Code Link" window, e.g. "host": "localhost", and "port": 3000. 
 
 ![VSCode launch settings](../.gitbook/assets/surgery-inventory-synthetic-data/VSCode-launch.png)
 
@@ -414,7 +413,7 @@ I highly recommend learning how to debug extension code. It requires a bit of wo
 
 ![NVIDIA Omniverse Code Debugger Attached](../.gitbook/assets/surgery-inventory-synthetic-data/Code-debug-attached.png)
 
-* To test, in VSCode set a breakpoint in exts\eivholt\extension.py, e.g. inside the function "run_replicator". 
+* To test, in VSCode set a breakpoint in `exts\eivholt\extension.py`, e.g. inside the function "run_replicator". 
 
 ![VSCode Breakpoint 1](../.gitbook/assets/surgery-inventory-synthetic-data/VSCode-debug-extension1.png)
 
