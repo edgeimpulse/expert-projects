@@ -42,9 +42,9 @@ Traditional machine learning workflow is often model-centric, focusing more on t
 
 ## Requirements
 
-* Nvidia Omniverse Replicator
+* [Nvidia Omniverse Replicator](https://developer.nvidia.com/omniverse/replicator)
 * Edge Impulse Studio
-* Logitech Webcam HD Pro - C920
+* USB Webcam (Logitech C920 is used in this project, but any camera attached and detected by the Edge Impulse CLI will work)
 
 ### Hardware and Driver Setup
 
