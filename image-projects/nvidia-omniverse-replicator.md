@@ -190,7 +190,9 @@ This resulted in the following Generated Dataset:
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | ![](../.gitbook/assets/nvidia-omniverse-replicator/annotating\_image.png) | ![](../.gitbook/assets/nvidia-omniverse-replicator/image\_in\_queue.png) |
 
-We uploaded the generated images to Edge Impulse Studio, where we annotated the dataset into different classes. We carefully annotated each dataset version and trained using the **Yolov5** object detection model. We tried a couple of input sizes ranging from 320, 512 and 1024 pixels before settling on **320 pixels**. Edge Impulse provided an excellent version control system for models, which enabled us to track model performance across different dataset versions and hyperparameters.
+We manually uploaded the generated images to Edge Impulse Studio, where we annotated the dataset into different classes, but there is also an Omniverse plugin that can be installed to automate the upload process. Information about the plugin installation process and usage [can be found here](https://docs.edgeimpulse.com/docs/integrations/nvidia-omniverse). 
+
+We carefully annotated each dataset version and trained using the **Yolov5** object detection model. We tried a couple of input sizes ranging from 320, 512 and 1024 pixels before settling on **320 pixels**. Edge Impulse provided an excellent version control system for models, which enabled us to track model performance across different dataset versions and hyperparameters.
 
 | Create Impulse                                                          | Generate Feature                                                            |
 | ----------------------------------------------------------------------- | --------------------------------------------------------------------------- |
