@@ -26,6 +26,7 @@
 * [SonicSight AR - Sound Classification with Feedback on an Augmented Reality Display](image-projects/particle-photon-2-sonicsight-ar.md)
 * [Traffic Monitoring - Brainchip Akida Neuromorphic Processor](image-projects/brainchip-akida-traffic-monitoring.md)
 * [Multi-camera Video Stream Inference - Brainchip Akida Neuromorphic Processor](image-projects/brainchip-akida-multi-camera-inference.md)
+* [Industrial Inspection Line - Brainchip Akida Neuromorphic Processor](image-projects/brainchip-akida-industrial-inspection.md)
 * [Container Counting - Arduino Nicla Vision](image-projects/container-counting-arduino-nicla-vision.md)
 * [Smart Smoke Alarm - Arduino Nano 33](image-projects/smart-smoke-alarm-arduino-nano-33.md)
 * [Shield Bot Autonomous Security Robot](image-projects/shieldbot-autonomous-security-robot.md)
