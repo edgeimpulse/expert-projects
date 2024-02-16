@@ -1,15 +1,18 @@
 ---
 description: >-
-  A r.
+  An industrial inspection application that uses the Brainchip Akida Neuromorphic processor for fast and efficient quality control inferencing.
 ---
 
 # Industrial Inspection Line - Brainchip Akida Neuromorphic Processor
 
 Created By: Peter Ing
 
-Public Project Link: [https://studio.edgeimpulse.com/public/322153/latest](https://studio.edgeimpulse.com/public/322153/latest)
+Public Project Links: 
 
-GitHub Repo: [https://github.com/eivholt/surgery-inventory-synthetic-data](https://github.com/eivholt/surgery-inventory-synthetic-data)
+Object Detection - [https://studio.edgeimpulse.com/studio/349843](https://studio.edgeimpulse.com/studio/349843)
+Classification - [https://studio.edgeimpulse.com/studio/349858](https://studio.edgeimpulse.com/studio/349858)
+
+GitHub Repo: [https://github.com/peteing/brainchip_edgeimpulse_inspectionsystem.git](https://github.com/peteing/brainchip_edgeimpulse_inspectionsystem.git)
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/cover.jpg)
 
@@ -225,3 +228,17 @@ The app is shown running live below:
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/application-2.jpg)
 
 Note that the "Mode" buttons are used to turn on the model type and provide the class that will be used to fail the inspection. In the above example we are inspecting plastic gears, and the FOMO model has been trained to detect gears and extract them out of the image. The classifier runs immediately afterwards and classifies the gear as "good" or "damaged". If the classifier outputs "damaged", then the inspection fails.
+
+A typical use-case in a manufacturing facility is to install such inspection systems along a conveyor line, whereby products pass the camera. The output of the ML model can be further utilized to make decisions around handling of the product, sorting via additional conveyors, or passed to a human for further inspection.
+
+Finally, some stats are shown, giving you an indication of the number of objects detected thus far, as well as the power utilization of the AKD1000. 
+
+![](../.gitbook/assets/brainchip-akida-industrial-inspection/usage.jpg)
+
+The Edge Impulse projects used are available below, which you can clone and use with your own datasets.
+
+Object Detection - [https://studio.edgeimpulse.com/studio/349843](https://studio.edgeimpulse.com/studio/349843)
+Classification - [https://studio.edgeimpulse.com/studio/349858](https://studio.edgeimpulse.com/studio/349858)
+
+The final piece needed is the Python application, which as mentioned above can be cloned from [https://github.com/peteing/brainchip_edgeimpulse_inspectionsystem.git](https://github.com/peteing/brainchip_edgeimpulse_inspectionsystem.git)
+
