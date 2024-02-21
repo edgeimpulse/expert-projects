@@ -179,6 +179,7 @@ Using machine learning to predict, understand, or identify information in the ai
 * [AI-Assisted Pipeline Diagnostics and Inspection with mmWave Radar](novel-sensor-projects/ai-pipeline-inspection-mmwave-radar.md)
 * [Soil Quality Detection Using AI and LoRaWAN - Seeed Sensecap A1101](novel-sensor-projects/soil-quality-detection-lorawan-seeed-sensecap-a1101.md)
 * [Smart Diaper Prototype - Arduino Nicla Sense ME](novel-sensor-projects/smart-diaper-arduino-nicla-sense-me.md)
+* [DIY Smart Glove with Flex Sensors](novel-sensor-projects/flex-sensors-hci.md)
 
 ### Software Integration Demos
 
