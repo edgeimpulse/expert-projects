@@ -7,7 +7,9 @@ description: >-
 
 Created By: Simone Salerno
 
-Demo Video: ![](../.gitbook/assets/flex-sensors-hci/demo.mp4)
+Demo Video: 
+
+{% embed url="https://github.com/edgeimpulse/expert-projects/blob/main/.gitbook/assets/flex-sensors-hci/demo.mp4" %}
 
 ## Introduction
 
