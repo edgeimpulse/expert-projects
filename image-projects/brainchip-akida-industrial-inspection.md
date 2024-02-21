@@ -101,7 +101,7 @@ Once Tensorflow is running, the next step is to install the Akida Execution engi
 pip install akida
 ```
 
-After running this command successfully the MetaTF API can be used from within Python, however since no hardware driver is installed, when attempting to execute inference later on it will resort to a simulated Akida in the backend. This is helpful for testing models for compatibility, and can be useful for creating a portable development environment. To make use of the actual hardware the next step is to install the Akida PCIe card and the driver.
+After running this command the MetaTF API can be used from within Python, however since no hardware driver is installed, when attempting to execute inference later on it will resort to a simulated Akida in the backend. This is helpful for testing models for compatibility, and can be useful for creating a portable development environment. To make use of the actual hardware the next step is to install the Akida PCIe card and the driver.
 
 First ensure the unit is powered down and the Akida PCIe card is correctly seated inside the Raspberry Pi IO Board's PCIe slot, then power up again.  You can verify the card is correctly plugged in using the following command:
 
@@ -109,7 +109,7 @@ First ensure the unit is powered down and the Akida PCIe card is correctly seate
 lspci 
 ```
 
-If the card is working and detected you should see something similar to below where you can see the Brainchip Akida is detected as Co-processor.
+If the card is working and detected you should see something similar to below where you can see the Brainchip Akida is detected as "Co-processor".
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/coprocessor.jpg)
 
@@ -120,36 +120,36 @@ sudo apt install build-essential linux-headers-$(uname -r)
 git clone https://github.com/Brainchip-Inc/akida_dw_edma
 ```
 
-To install the driver and make it available on each boot and fully accessible to all users, first change directory into the repo and then run the install script as the superuser, this is achieved with running the following commands:
+To install the driver and make it available on each boot and fully accessible to all users, first change directory into the cloned repo and then run the install script as the superuser. This is achieved with running the following commands:
 
 ```
 cd akida_dw_edma
 sudo ./install.sh
 ```
 
-After a while the installation should complete without any issues. To verify that all is in order and the Akida Execution Engine can use the hardware directly instead of the virtual software backend, the `akida` command is used as follows:
+After a while the installation should complete without any issues. To verify that all is in order and the Akida Execution Engine can use the hardware directly, instead of the virtual software backend, the `akida` command is used as follows:
 
 ```
 akida devices 
 ```
 
-This will result in the below, where the hardware accessibility is verified by the PCIe/NSoC_v2/0 being shown as an available device. Note that the `akida` command is available through the installation of the akida package earlier.
+This will result in the below, where the hardware accessibility is verified by the PCIe/NSoC_v2/0 being shown as an available device. Note that the `akida` command is available as a result of the installation of the Akida package earlier.
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/akida-cli.jpg)
 
-From this point on the Brainchip Kit is setup and ready for use but has no applications loaded yet. You may choose to install the examples available from Brainchip and the QuantML and CNN2SNN toolkits from Brainchip to make direct use of MetaTF. This will however require a learning curve and time to be invested in understanding the platform as well as familiarity with Keras.
+From this point on the Brainchip Akida Developer Kit is setup and ready for use, but has no applications loaded yet. You may choose to install the examples available from Brainchip, and the QuantML and CNN2SNN toolkits to make direct use of MetaTF. This will however require a learning curve and time to be invested in understanding the platform, as well as familiarity with Keras.
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/conversion.jpg)
 
-The workflow for building a model with Akida contains some additional steps including needing to use QuantizeML and CNN2SNN which are part of MetaTF. Briefly, QuantizeML converts the model weights to fixed point integer format before the model is converted from a CNN to an Akida-compatible SNN. These steps need to be performed as post processing after model development using TensorFlow. The end result is a serialized model that is stored in a `.fbz` format that can be loaded or mapped directly onto the Akida NSoC at runtime.
+The workflow for building a model with Akida contains some additional steps, including needing to use QuantizeML and CNN2SNN which are part of MetaTF. Briefly, QuantizeML converts the model weights to fixed point integer format before the model is converted from a CNN to an Akida-compatible SNN. These steps need to be performed as post processing after model development using TensorFlow. The end result is a serialized model that is stored in a `.fbz` format that can be loaded or mapped directly onto the Akida NSoC at runtime.
 
 ## Edge Impulse and Brainchip
 
-For an industrial automation engineer, or anyone not familiar with deep learning, this can seem daunting and slows down the efficacy of deploying AI-based Inspection Systems. The fastest path to market has been expensive proprietary camera hardware and software solutions that abstract the process with complicated licensing and limited access to the underlying platform.  On the hardware side Brainchip Akida acts as a co-processor, freeing you up to use your existing x86 or Arm-based platform to allow you to have full freedom on your final application.
+For an industrial automation engineer, or anyone not familiar with deep learning, this can seem daunting and slows down the efficacy of deploying AI-based inspection systems. The fastest path to market in the past has been expensive proprietary camera hardware and software solutions that abstract the process with complicated licensing, and limited access to the underlying platform. However, the Brainchip Akida acts as a co-processor, enabling you to use your existing x86 or Arm-based platform to have full freedom on your final application.
 
-From the software perspective, Edge Impulse eliminates that complexity and cost and provides a solution that offers a flexible way to collect data using the Brainchip hardware, any other device with a camera, even your mobile phone. 
+From the software perspective, Edge Impulse eliminates that complexity and cost and provides a solution that offers a flexible way to collect data using the Brainchip hardware, or any other device with a camera, even your mobile phone. 
 
-The process of building the ML model is intuitive and straight-forward, and thanks to Edge Impulse's built in support for Akida AKD1000, Edge Impulse generates a model that is optimized and performs the Akida workflow for you automatically in the background, with the result being either a `.fbz` model or Edge Impulse's extremely useful `.eim` executable model format.
+The process of building the ML model is intuitive and straight-forward, and thanks to Edge Impulse's built in support for the Akida AKD1000, Edge Impulse generates a model that is optimized and performs the Akida workflow for you automatically in the background, with the result being either a `.fbz` model or Edge Impulse's extremely useful `.eim` executable model format.
 
 For the purposes of an inspection system, two distinct models need to be built:
 
@@ -157,7 +157,7 @@ For the purposes of an inspection system, two distinct models need to be built:
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/object-detection-block.jpg)
 
-**Transfer Learning** - The second model will be used for classification.  The Akida Transfer Learning block makes use of pretrained models from the Akida Model Zoo, where your dataset is used to fine-tune one of the existing models for your requirements, saving you time.
+**Transfer Learning** - The second model will be used for classification.  The Akida Transfer Learning block makes use of pretrained models from the Akida Model Zoo, then your dataset is used to fine-tune one of the existing models for your requirements, saving you time.
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/transfer-learning.jpg)
 
@@ -175,7 +175,7 @@ The auto labeller uses an instance segmentation model to automatically find diff
 
 The rest of the process used to train a model is exactly the same as per the standard Edge Impulse workflows. Edge Impulse's Deployment menu allows models to be deployed in a variety of scenarios.
 
-For the purposes of using the Inspection App presented in the next section, both the "FOMO" and "Transfer Learning" models need to be exported from the Deployment as a Brainchip MetaTF Model.
+For the purposes of using the inspection application presented in the next section, both the "FOMO" and "Transfer Learning" models need to be exported from the Deployment as a Brainchip MetaTF Model.
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/deployment.jpg)
 
@@ -192,7 +192,7 @@ sudo apt-get install python3-opencv
 pip install PyQt5
 ```
 
-Once installed, this repo needs to be cloned, which downloads the application:
+Once installed, the following repo needs to be cloned, which downloads the application:
 
 ```
 git clone  https://github.com/peteing/brainchip_edgeimpulse_inspectionsystem.git
@@ -208,29 +208,29 @@ When the application launches you are presented with the following UI:
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/application-1.jpg)
 
-The UI Layout consists of several areas, specifically a live view that shows the live feed from the camera and buttons that control the starting and stopping of the live inspection and model loading.
+The UI Layout consists of several areas, specifically a live view that shows the feed from the camera and buttons that control the starting and stopping of the live inspection and model loading.
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/layout.jpg)
 
-The application supports two models, an Object Detection Model which needs to be an Edge Impulse FOMO model as described earlier, and a Classification model which needs to be the Transfer Learning model also described earlier.  The Load Object Detection Model and Load Classification Model buttons allow you to browse the file system to select the respective `.fbz` files deployed from Edge Impulse Studio.
+The application supports two models, an Object Detection model which needs to be an Edge Impulse FOMO model as described earlier, and a Classification model which needs to be the Transfer Learning model also described earlier. The "Load Object Detection Model" and "Load Classification Model" buttons allow you to browse the file system to select the respective `.fbz` files deployed from the Edge Impulse Studio.
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/model-selection.jpg)
 
-To understand how Akida works with models is helpful in knowing what is happening behind the scenes. A model is loaded from a `.fbz` file by creating an instance of the Model class and passing the file name as a parameter.
+To understand how Akida works with models is helpful in knowing what is happening behind the scenes. A model is loaded from a `.fbz` file by creating an instance of the `model` class and passing the file name as a parameter.
 
 The Akida ADK1000 uses a process called mapping to load models into the NSoC. This is done by calling the "map member" function of the model class and specifying the device, which is essentially using the returned device shown earlier. What is useful is the ability to map models on the fly, and this is what is being done in the above application. 
 
 ## Application Functionality
 
-When the "Start Inspection" mode is selected, first the object detection model is loaded to detect and localize the part on the conveyor.  Next, the classifier model is loaded and run on the result of the localized area. The object detector and classifier run in a pipeline, which is a common machine learning design pattern.
+When the "Start Inspection" mode is selected, first the Object Detection model is loaded to detect and localize the part on the conveyor.  Next, the Classifier model is loaded and run on the result of the localized area. The Object Detector and Classifier run in a pipeline, which is a common machine learning design pattern.
 
 The app is shown running live below:
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/application-2.jpg)
 
-Note that the "Mode" buttons are used to turn on the model type and provide the class that will be used to fail the inspection. In the above example we are inspecting plastic gears, and the FOMO model has been trained to detect gears and extract them out of the image. The classifier runs immediately afterwards and classifies the gear as "good" or "damaged". If the classifier outputs "damaged", then the inspection fails.
+Note that the "Mode" buttons are used to turn on the model type and provide the class that will be used to fail the inspection. In the above example we are inspecting plastic gears, and the FOMO model has been trained to detect gears and extract them out of the image. The Classifier runs immediately afterwards, and classifies the gear as "good" or "damaged". If the classifier outputs "damaged", then the inspection fails.
 
-A typical use-case in a manufacturing facility is to install such inspection systems along a conveyor line, whereby products pass the camera. The output of the ML model can be further utilized to make decisions around handling of the product, sorting via additional conveyors, or passed to a human for further inspection.
+A typical use-case in a manufacturing facility is to install such inspection systems along a conveyor line, whereby products pass under the camera. The output of the ML model can be further utilized to make decisions around handling of the product, sorting via additional conveyors, or passed to a human for further inspection.
 
 Finally, some stats are shown, giving you an indication of the number of objects detected thus far, as well as the power utilization of the AKD1000. 
 
@@ -238,8 +238,8 @@ Finally, some stats are shown, giving you an indication of the number of objects
 
 The Edge Impulse projects used are available below, which you can clone and use with your own datasets.
 
-Object Detection - [https://studio.edgeimpulse.com/studio/349843](https://studio.edgeimpulse.com/studio/349843)
-Classification - [https://studio.edgeimpulse.com/studio/349858](https://studio.edgeimpulse.com/studio/349858)
+ - Object Detection - [https://studio.edgeimpulse.com/studio/349843](https://studio.edgeimpulse.com/studio/349843)
+ - Classification - [https://studio.edgeimpulse.com/studio/349858](https://studio.edgeimpulse.com/studio/349858)
 
-The final piece needed is the Python application, which as mentioned above can be cloned from [https://github.com/peteing/brainchip_edgeimpulse_inspectionsystem.git](https://github.com/peteing/brainchip_edgeimpulse_inspectionsystem.git)
+The final piece needed is the Python application, which as mentioned above can be cloned from this GitHub repository: [https://github.com/peteing/brainchip_edgeimpulse_inspectionsystem.git](https://github.com/peteing/brainchip_edgeimpulse_inspectionsystem.git)
 
