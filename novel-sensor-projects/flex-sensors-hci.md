@@ -9,7 +9,7 @@ Created By: Simone Salerno
 
 Demo Video: 
 
-{% embed url="https://github.com/edgeimpulse/expert-projects/blob/main/.gitbook/assets/flex-sensors-hci/demo.mp4" %}
+{% embed url="https://github.com/dtischler/expert-projects/raw/main/.gitbook/assets/flex-sensors-hci/demo.mp4" %}
 
 ## Introduction
 
