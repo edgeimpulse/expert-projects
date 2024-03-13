@@ -35,7 +35,7 @@ Computer vision projects that make use of image classification, object detection
 * [Traffic Monitoring - Brainchip Akida Neuromorphic Processor](image-projects/brainchip-akida-traffic-monitoring.md)
 * [Multi-camera Video Stream Inference - Brainchip Akida Neuromorphic Processor](image-projects/brainchip-akida-multi-camera-inference.md)
 * [Industrial Inspection Line - Brainchip Akida Neuromorphic Processor](image-projects/brainchip-akida-industrial-inspection.md)
-* [X-Ray Classification and Analysis - Brainchip Akida Neuromorphic Processor](brainchip-akida-xray-classification.md)
+* [X-Ray Classification and Analysis - Brainchip Akida Neuromorphic Processor](image-projects/brainchip-akida-xray-classification.md)
 * [Container Counting - Arduino Nicla Vision](image-projects/container-counting-arduino-nicla-vision.md)
 * [Smart Smoke Alarm - Arduino Nano 33](image-projects/smart-smoke-alarm-arduino-nano-33.md)
 * [Shield Bot Autonomous Security Robot](image-projects/shieldbot-autonomous-security-robot.md)
