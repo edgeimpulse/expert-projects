@@ -51,7 +51,7 @@ In the Impulse block detail page, you can likely change to Grayscale as x-rays a
 
 ![](../.gitbook/assets/brainchip-akida-xray-classification/features.png)
 
-On the Classifier settings page, I've made a few changes to increase accuracy of the model, bumping up the number of epochs run to 100, reducing the learning rate to 0.0005, and reduced my validation set size down to 10%.  To speed up the training process, I've used GPU training, which is available for Enterprise users.  You can request a [free 14-day trial here](https://studio.edgeimpulse.com/trial-signup) if you'd like to increase your model sizes and reduce your build times.
+On the Classifier settings page, I've made a few changes to increase accuracy of the model, bumping up the number of epochs run to 200, reducing the learning rate to 0.0005, and reduced my validation set size down to 5%.  To speed up the training process, I've used GPU training, which is available for Enterprise users.  You can request a [free 14-day trial here](https://studio.edgeimpulse.com/trial-signup) if you'd like to increase your model sizes and reduce your build times.
 
 Once the build is complete, you'll be presented with Validation accuracy and inference time information.
 
@@ -147,6 +147,6 @@ Inference times were only 100 to 150 milliseconds.  For a doctor evaluating a si
 
 Second, power consumption is measured in the _**milliwatts**_ of energy consumed.   Although the Akida Developer Kit is plugged in to a steady power supply and a Raspberry Pi is measured in watts, keep in mind as mentioned above that the Akida processor could rather easily be integrated in to a more compact, lower power, single PCB alongside an application processor, lowering power consumption significantly.  Even further, the Akida IP could be directly embedded into a processor, eliminating the need for the stand-alone co-processor completely, adding just that small uptick of those few milliwatts to a device's power consumption, while adding NPU acceleration for machine learning tasks. 
 
-With these factors in mind, it is entirely feasible to build x-ray classification in to new generations of smart medical devices that can do real-time analysis to aid doctors in their decision making.  It may even be possible to create small handheld, battery-powered classifiers, that simply accept a USB drive containing the images, which could be useful for remote clinics.
+With these factors in mind, it is entirely feasible to build x-ray classification capabilities directly into new generations of smart medical devices that can do real-time inference, to aid doctors in their decision making.  It may even be possible to create small handheld, battery-powered classifiers, that simply accept a USB drive containing the images, which could be useful for remote clinics.
 
 If you have ideas for other use-cases or product designs using the Brainchip Akida neuromorphic processor, [be sure to reach out to us](https://edgeimpulse.com/contact)!
