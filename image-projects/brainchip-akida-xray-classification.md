@@ -137,7 +137,7 @@ Then in a browser on the PC or laptop, open up that URL and you will see a view 
 
 However, as identified earlier, this method may not be as reliable for the x-ray classification use-case, due to lighting conditions of the room, brightness and contrast of the monitor, quality of the USB Webcam, resolution and size of the monitor, etc.  It is worth exploring though, as many vision projects are excellent candidates for live inferencing with a camera and the Akida NPU.
 
-![](../.gitbook/assets/brainchip-akida-xray-classification/webcam.jpg)
+![](../.gitbook/assets/brainchip-akida-xray-classification/webcam.png)
 
 ## Going Further
 
