@@ -96,11 +96,11 @@ On the left navigation, click on **Deployment**, and type “RaSynBoard” in th
 
 Next, click on **Build**, and the firmware will be generated and downloaded to your computer.  Once downloaded, unzip the file, and we’ll follow a similar method as earlier.
 
-Power down the RaSynBoard if it is still running, remove the SD Card from the board and insert the SD Card into your laptop or desktop, and copy the `config.ini`, mcu_fw_120.synpkg`, `dsp_firmware.synpkg`, and `ei_model.synpkg` files from the unzipped download to the SD Card.  Upon completion, eject the SD Card from your computer and return it to the RaSynBoard.
+Power down the RaSynBoard if it is still running, remove the SD Card from the board and insert the SD Card into your laptop or desktop, and copy the `config.ini`, `mcu_fw_120.synpkg`, `dsp_firmware.synpkg`, and `ei_model.synpkg` files from the unzipped download to the SD Card.  Upon completion, eject the SD Card from your computer and return it to the RaSynBoard.
 
 ## Inference Results
 
-We can now power the RaSynBoard back on, the board will boot up and automatically start running the model.  To see the results, we need to attach to a serial console and can view the output of any inference results.  Using a standard UART adapter, connect Ground, TX, and RX to pins 4,6, and 8 on the I/O Board, as shown here:
+We can now power the RaSynBoard back on, the board will boot up and automatically start running the model.  To see the results, we need to attach to a serial console and can view the output of any inference results.  Using a standard UART adapter, connect Ground, TX, and RX to pins 2,4, and 6 on the I/O Board, as shown here:
 
 ![](../.gitbook/assets/compressor-audio-classification-rasynboard/serial.png)
 
