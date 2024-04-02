@@ -106,7 +106,7 @@ We can now power the RaSynBoard back on, the board will boot up and automaticall
 
 Then in a terminal, you will see the output of the model running.  I have placed the RaSynBoard back on the pump, set the speed to low, and sure enough, the model is able to predict the pump is running at `low-speed`.  Increasing the compressor power to 85%, the RaSynBoard now recognizes that the pump is running at `high-speed`. 
 
-![](../.gitbook/assets/compressor-audio-classification-rasynboard/inference-high.png)
+![](../.gitbook/assets/compressor-audio-classification-rasynboard/inference-high-speed.png)
 
 ## Going Further
 
