@@ -112,6 +112,7 @@ Audio classification, keyword spotting, wakeword detection, or other machine lea
 * [Snoring Detection with Syntiant NDP120 Neural Decision Processor - Arduino Nicla Voice](audio-projects/arduino-nicla-voice-syntiant-snoring-detection.md)
 * [Recognize Voice Commands with the Particle Photon 2](audio-projects/voice-commands-particle-photon-2.md)
 * [Voice Controlled Power Plug with Syntiant NDP120 (Nicla Voice)](audio-projects/voice-controlled-power-plug-nicla-voice.md)
+* [Determining Compressor State with Audio Classification - Avnet RaSynBoard](audio-projects/compressor-audio-classification-rasynboard.md)
 
 ### Predictive Maintenance & Fault Classification
 
