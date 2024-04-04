@@ -137,6 +137,7 @@
 * [Hospital Bed Occupancy Detection - Arduino Nano 33 BLE Sense](accelerometer-and-activity-projects/hospital-bed-occupancy-detection-arduino-nano-33.md)
 * [Porting a Posture Detection Project from the SiLabs Thunderboard Sense 2 to xG24](accelerometer-and-activity-projects/silabs-xg24-posture-detection.md)
 * [Porting a Gesture Recognition Project from the SiLabs Thunderboard Sense 2 to xG24](accelerometer-and-activity-projects/silabs-xg24-gesture-recognition.md)
+* [Continuous Gait Monitor (Anomaly Detection) - Nordic Thingy:53](accelerometer-and-activity-projects/continuous-gait-monitor-nordic-thingy53.md)
 
 ## Air Quality & Environmental Projects
 
