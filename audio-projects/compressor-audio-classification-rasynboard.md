@@ -13,7 +13,7 @@ Public Project Link: [https://studio.edgeimpulse.com/public/343756/latest](https
 
 Most industrial settings such as pumping facilities, heating, ventilation, and air conditioning (HVAC) machinery, datacenter infrastructure rooms, manufacturing and heavy industry sites will have proprietary, expensive, critical machinery to maintain.  On-site workers with experience near the machinery or equipment, are generally quick to identify when a machine doesn't seem to "sound right", "feel right", or "look right".  Previous experience helps them to understand the "normal” state of the equipment, and this intuition and early warning can allow for scheduled repairs or proper planning for downtime.  However, facilities that don't have 24/7 staffing or on-site workers could be more prone to equipment failures, as there is no one to observe and take action on warning signs such as irregular sounds, movements, or visual indicators.
 
-![](../.gitbook/assets/compressor-audio-classification-rasynboard/heavy-machinery.jpg)
+![](../.gitbook/assets/compressor-audio-classification-rasynboard/heavy-machines.jpg)
 
 Predictive Maintenance using machine learning aims to solve for this problem, by identifying and acting upon anomalies in machinery health.
 
