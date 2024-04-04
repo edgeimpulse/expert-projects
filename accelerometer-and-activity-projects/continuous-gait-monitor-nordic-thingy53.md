@@ -25,7 +25,7 @@ This project aims to develop a wearable device for early gait disorder detection
 
 ![03-project](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/03-project.jpg)
 
-### Why the Nordic Thingy:53? (Platform Continuity)
+### Why the Nordic Thingy:53? Platform Continuity.
 
 The Nordic Thingy:53 leverages the nRF5340 Arm Cortex-M33 SoC, providing the computational resources necessary for on-device AI inference. It also includes a built-in accelerometer to capture detailed gait data and Bluetooth 5.4 for wireless communication. Importantly, the same nRF5340 chip powers the nRF5340 Development Kit, providing a consistent hardware platform throughout the project's development cycle. This means we can easily prototype on the Thingy:53, refine algorithms and sensor selections on the Development Kit, and ultimately transition to a custom wearable design for mass production – all using the same core chip. This approach ensures a smooth and efficient development process.
 
@@ -48,7 +48,7 @@ The Thingy:53 was used for collecting a dataset for training the AI model to est
 
 ![05-dataset-collection](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/05-dataset-collection.gif)
 
-A 3D printed shoe clip-on case modification is made for attaching the Thingy:53 to a shoe. Download the .stl files: https://www.thingiverse.com/thing:6558382
+A 3D printed shoe clip-on case modification is made for attaching the Thingy:53 to a shoe. You can download the .stl files here: [https://www.thingiverse.com/thing:6558382](https://www.thingiverse.com/thing:6558382)
 
 ![06-cad](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/06-cad.png)
 
@@ -56,7 +56,7 @@ A 3D printed shoe clip-on case modification is made for attaching the Thingy:53 
 
 ![08-shoe](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/08-shoe.jpeg)
 
-This project assumes basic familiarity with connecting the Thingy:53 to Edge Impulse via the nRF Connect app. If needed, refer to this guide for assistance: https://docs.edgeimpulse.com/docs/edge-ai-hardware/mcu/nordic-semi-thingy53
+This project assumes basic familiarity with connecting the Thingy:53 to Edge Impulse via the nRF Connect app. If needed, refer to this guide for assistance: [https://docs.edgeimpulse.com/docs/edge-ai-hardware/mcu/nordic-semi-thingy53](https://docs.edgeimpulse.com/docs/edge-ai-hardware/mcu/nordic-semi-thingy53)
 
 ![09-nrfconnect](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/09-nrfconnect.jpeg)
 
@@ -65,17 +65,17 @@ Collect data for each label **(standing, walking, running)** using the nRF Conne
 - Sample Length (ms): 20000
 - Frequency (Hz): 20
 
-For each label, we collected 13 repetitions of 20000 ms which equals to 260 seconds for each label. This seems to be plenty enough for our testing, however more data may be necessary if the gait patterns are performed under more variety of terrains.
+For each label, we collected 13 repetitions of 20000 ms which equals to 260 seconds for each label. This seems to be plenty enough for our testing, however more data may be necessary if the gait patterns are performed with a larger variety of terrains.
 
 ![10-collect-data](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/10-collect-data.jpeg)
 
-Split the 20000 ms sample into 4 sections of 5000 ms window.
+Split the 20000 ms sample into 4 sections of 5000 ms windows.
 
 ![11-split-sample](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/11-split-sample.png)
 
 ![12-complete-dataset](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/12-complete-dataset.png)
 
-Perform train and test split into approximately 80/20 ratio.
+Perform a train/test split if needed, or try to aim for approximately an 80/20 ratio.
 
 ![13-train-test-split](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/13-train-test-split.png)
 
@@ -99,7 +99,7 @@ As mentioned, these parameter settings are alread using optimized values from th
 
 ![17-tuned-testing](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/17-tuned-testing.png)
 
-These are our result before using EON Tuner (default parameter values and settings).
+These are our results before using the EON Tuner (default parameter values and settings).
 
 ![18-initial-results](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/18-initial-results.jpg)
 
@@ -127,7 +127,7 @@ Now the AI model is ready to be deployed to the Edge. Nordic Thingy:53 is select
 
 ![24-deployment](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/24-deployment.png)
 
-After building our model, we'll get the new firmware. Follow this guide to flash the firmware: https://docs.edgeimpulse.com/docs/edge-ai-hardware/mcu/nordic-semi-thingy53#updating-the-firmware
+After building our model, we'll get the new firmware. Follow this guide to flash the firmware: [https://docs.edgeimpulse.com/docs/edge-ai-hardware/mcu/nordic-semi-thingy53#updating-the-firmware](https://docs.edgeimpulse.com/docs/edge-ai-hardware/mcu/nordic-semi-thingy53#updating-the-firmware)
 
 ![25-write-firmware-nrfconnect](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/25-write-firmware-nrfconnect.png)
 
