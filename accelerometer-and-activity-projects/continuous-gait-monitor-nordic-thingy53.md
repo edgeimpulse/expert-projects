@@ -25,23 +25,25 @@ This project aims to develop a wearable device for early gait disorder detection
 
 ![03-project](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/03-project.jpg)
 
-
 ### Why the Nordic Thingy:53? (Platform Continuity)
+
 The Nordic Thingy:53 leverages the nRF5340 Arm Cortex-M33 SoC, providing the computational resources necessary for on-device AI inference. It also includes a built-in accelerometer to capture detailed gait data and Bluetooth 5.4 for wireless communication. Importantly, the same nRF5340 chip powers the nRF5340 Development Kit, providing a consistent hardware platform throughout the project's development cycle. This means we can easily prototype on the Thingy:53, refine algorithms and sensor selections on the Development Kit, and ultimately transition to a custom wearable design for mass production – all using the same core chip. This approach ensures a smooth and efficient development process.
 
 ![04-thingy](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/04-thingy.jpg)
 
 ## Hardware Requirements
+
 - Nordic Thingy:53
 - 3D printer
 
 ## Software Requirements
+
 - Edge Impulse CLI
 - nRF Programmer App (iPhone/Android)
 - nRF Connect Desktop
 
-
 ## Dataset Collection
+
 The Thingy:53 was used for collecting a dataset for training the AI model to establish a baseline of normal, healthy gait patterns. This dataset includes three types of movement: standing, walking, and running. To capture realistic data, the user wore the device while performing these activities. The dataset's variety helps the model accurately classify different gait patterns and detect potential abnormalities in various situations.
 
 ![05-dataset-collection](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/05-dataset-collection.gif)
@@ -78,16 +80,19 @@ Perform train and test split into approximately 80/20 ratio.
 ![13-train-test-split](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/13-train-test-split.png)
 
 ## Impulse Design
+
 After thorough testing, including using the EON Tuner, the optimal settings for our time series data were determined.  We employ both a classifier and K-means anomaly detection to enable both gait pattern classification and anomaly scoring.
 
 ![14-create-impulse](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/14-create-impulse.png)
 
 ### Spectral Features
+
 Spectral analysis transforms raw accelerometer data from the time domain into the frequency domain.  This reveals hidden patterns in gait data, such as stride frequency, step regularity, and harmonic components of movement patterns. These extracted spectral features can provide a richer representation of gait characteristics for the neural network, often leading to improved classification accuracy and a clearer understanding of potential gait abnormalities.
 
 ![15-spectral-features](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/15-spectral-features.png)
 
 ### Classifier
+
 As mentioned, these parameter settings are alread using optimized values from the EON Tuner.
 
 ![16-tuned-classifier](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/16-tuned-classifier.png)
@@ -105,6 +110,7 @@ The EON Tuner is a valuable tool for finding the best parameter settings and mod
 ![20-eon-tuner](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/20-eon-tuner.png)
 
 ### Anomaly Detection (K-means)
+
 K-means clustering is chosen for gait anomaly detection due to its computational efficiency and ability to robustly identify distinct clusters. While Gaussian Mixture Models (GMMs) can model more complex data distributions, in our testing K-means excels in identifying distinct clusters like normal walking, running, and standing.
 
 We chose L1 Root Mean Square (RMS) for anomaly detection with accelerometer data (accX, accY, accZ) due to its sensitivity to outliers and interpretability.  L1 RMS emphasizes large deviations, which helps identify significant gait abnormalities and provides insights into the specific directions of those anomalies. It's also more robust to noisy accelerometer data compared to L2 RMS.
@@ -116,6 +122,7 @@ We chose L1 Root Mean Square (RMS) for anomaly detection with accelerometer data
 ![23-anomaly-forward-sideways](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/23-anomaly-forward-sideways.jpg)
 
 ## Deployment
+
 Now the AI model is ready to be deployed to the Edge. Nordic Thingy:53 is selected for our deployment option. For this project we chose unoptimized (float32) to preserve accuracy since our hardware has enough performance and memory headroom.
 
 ![24-deployment](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/24-deployment.png)
@@ -125,17 +132,11 @@ After building our model, we'll get the new firmware. Follow this guide to flash
 ![25-write-firmware-nrfconnect](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/25-write-firmware-nrfconnect.png)
 
 ## Conclusion
+
 This project successfully demonstrates the potential for wearable AI solutions in early detection of gait disorders. By harnessing the Thingy:53's capabilities and Edge Impulse's streamlined workflow, we developed a device capable of identifying gait anomalies. This tool offers proactive health monitoring, with the potential to alert users to subtle changes that may foreshadow underlying medical conditions.  Future work could expand the dataset for greater robustness, explore additional sensor modalities, and conduct clinical trials to thoroughly validate the system for diagnostic use.
 
 See this project in action:
 
-{% embed url="https://youtu.be/l7yP2IttN4Q?si=tfCxNSJVK-xAtR36" %}
+{% embed url="https://youtu.be/l7yP2IttN4Q" %}
 
 
-
-
-{% embed url="https://youtu.be/xLTo_sYCn9Y" %}
-
-## Conclusion
-
-This project leverages the Brainchip Akida Neuromorphic Hardware Accelerator to propose an innovative solution to home automation. It can be optimized to work as a daily used gadget that may be at everyone's house in the near future.
