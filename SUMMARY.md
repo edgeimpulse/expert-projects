@@ -118,6 +118,7 @@
 * [Motor Pump Predictive Maintenance - Infineon PSoC 6 WiFi-BT Pioneer Kit + CN0549](predictive-maintenance-and-fault-classification/motor-pump-cypress-cn0549.md)
 * [BrickML Demo Project - 3D Printer Anomaly Detection](predictive-maintenance-and-fault-classification/brickml-3d-printer-anomaly-detection.md)
 * [Condition Monitoring - Syntiant TinyML Board](predictive-maintenance-and-fault-classification/condition-monitoring-syntiant-tinyml.md)
+* [Predictive Maintenance - Commercial Printer - Sony Spresense + CommonSense](predictive-maintenance-and-fault-classification/predictive-maintenance-sony-spresense-commonsense.md)
 
 ## Accelerometer & Activity Projects
 
