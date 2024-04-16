@@ -11,7 +11,9 @@ Public Project Link:
  - [https://studio.edgeimpulse.com/studio/139770](https://studio.edgeimpulse.com/studio/139770) - VoC
  - [https://studio.edgeimpulse.com/studio/140871](https://studio.edgeimpulse.com/studio/140871) - Vibration
  
-GitHub Repo: [https://github.com/Zalmotek/edge-impulse-predictive-maintenance-vibration-commonsense-sony-spresense](https://github.com/Zalmotek/edge-impulse-predictive-maintenance-vibration-commonsense-sony-spresense) 
+GitHub Repo:
+
+[https://github.com/Zalmotek/edge-impulse-predictive-maintenance-vibration-commonsense-sony-spresense](https://github.com/Zalmotek/edge-impulse-predictive-maintenance-vibration-commonsense-sony-spresense) 
 
 ## Introduction
 
@@ -41,12 +43,12 @@ The Sony Spresense development board is a processor developed by Sony for IoT an
 
 The CommonSense expansion board created by SensiEdge provides an array of very useful sensors that can be used with the Sony Spresense board to capture the data we are interested in, especially the vibration sensor and the air quality one.
 
-### Hardware requirements
+### Hardware Requirements
 - [Sony Spresense](https://developer.sony.com/develop/spresense/)
 - [CommonSense expansion board developed by SensiEdge](https://www.sensiedge.com/commonsense)
 - Enclosure with wall mount options
 
-### Software requirements
+### Software Requirements
 - Edge Impulse account
 - Arduino CLI
 - Edge Impulse CLI
@@ -82,7 +84,7 @@ The CommonSense can be plugged directly in the Sony Spresense since its pins are
 
 ## Software Setup
 
-### Setting up the build environment
+### Setting up the Build Environment
 
 #### Gnu Arm Embedded Toolchain
 
@@ -187,7 +189,7 @@ To build a machine learning model that is able to detect trends in Volatile Orga
 
 ![](../.gitbook/assets/predictive-maintenance-sony-spresense-commonsense/image12.png)
 
-## Connecting the device
+## Connecting the Device
 
 To connect the device to the edge impulse platform, you must first download the data forwarder firmware from here. Pick whatever firmware you wish, either the firmware used for measuring Volatile Organic Compounds level, or the one used to measure the vibration of the printer.
 
@@ -220,7 +222,7 @@ You will be prompted to fill in the username and password used to log in on the 
 
 ![](../.gitbook/assets/predictive-maintenance-sony-spresense-commonsense/image13.png)
 
-## Building the dataset
+## Building the Dataset
 
 ### VoC
  
