@@ -3,7 +3,7 @@ description: >-
   Rooftop ice buildup detection using Edge Impulse, with synthetic data created with NVIDIA Omniverse Replicator and sun studies.
 ---
 
-# Rooftop Ice Detection - Synthetic Data - Nvidia Omniverse Replicator
+# Rooftop Ice Detection with Things Network Visualization - Nvidia Omniverse Replicator
 
 Created By: Eivind Holt
 
