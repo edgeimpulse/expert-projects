@@ -53,11 +53,11 @@ First, connect the accelerometer to the Raspberry Pi header like so:
 
 ## Create an Edge Impulse project
 
-Please follow these [instructions](https://docs.edgeimpulse.com/docs/) for setup and creation of your Edge Impulse account. Once you have an empty project created you can set up your AkidaTM Development Kit and collect your accelerometer data. We will design the Impulse later in this guide.
+Please follow these [instructions](https://docs.edgeimpulse.com/docs/) for setup and creation of your Edge Impulse account. Once you have an empty project created you can set up your AkidaTM Development Kit and collect your accelerometer data. You will design the Impulse later in this guide.
 
 ## Set Up the Akida Development Kit
 
-To start setting up the device for a custom model deployment, let's verify we have installed all the packages we need. Ensure the development kit is powered on and connected to the network. Setup [Visual Studio Code for remote debugging](https://code.visualstudio.com/docs/remote/ssh) and open a terminal in VSCode once connected. Run these commands to install the needed components.
+To start setting up the device for a custom model deployment, let's verify you have installed all the packages you need. Ensure the development kit is powered on and connected to the network. Setup [Visual Studio Code for remote debugging](https://code.visualstudio.com/docs/remote/ssh) and open a terminal in VSCode once connected. Run these commands to install the needed components.
 
 ```
 pip show akida # will show the installed version.
@@ -84,7 +84,7 @@ pip3 install edge_impulse_linux -i https://pypi.python.org/simple
 
 ## Data Acquisition to create ML Dataset
 
-After getting the Akida Development Kit configured and having the accelerometer connected you will need to collect data from the accelerometer/fan setup. Since we are using custom devices we have developed code that you can use immediately.
+After getting the Akida Development Kit configured and having the accelerometer connected you will need to collect data from the accelerometer/fan setup. Since you are using custom devices we have developed code that you can use immediately.
 
 You can download with git using:
 
@@ -123,17 +123,17 @@ You may be prompted for username and password for Edge Impulse. After successful
 
 The Ubuntu operating system running on Raspberry Pi is not an RTOS and so it is impossible to get consistently spaced accelerometer samples. That is, the data acquisition is not hardware timed as the OS has to be interrupted to service the sampling and it can be delayed by other tasks. Therefore there is no guarantee that samples are acquired at a fixed delta-t.
 
-In order to get good performance we implement a hardware interrupt with the PWM and GPIO pins. Our testing showed that the maximum delay in servicing the interrupt went from approximately 8ms to 2ms. In the code we make an assumption that the delta-t is fixed at the sample frequency and no variance is recorded.
+In order to get good performance the code implements a hardware interrupt with the PWM and GPIO pins. Our testing showed that the maximum delay in servicing the interrupt went from approximately 8ms to 2ms. The codemake an assumption that the delta-t is fixed at the sample frequency and no variance is recorded.
 
 ![Example data of delta-t between samples over one second. Notice the sample frequency is close to, but not exactly, 50Hz in this example](../.gitbook/assets/vibration-classification-brainchip-akida/jitter.png)
 
-Lastly, it is important to get the data out of the accelerometer as fast as possible so that it is ready for the next sample. In the code we ensure that the fastest speed is enabled. The code is set up to take 100 samples of data for 1 second and transfer off the device as quickly as possible.
+Lastly, it is important to get the data out of the accelerometer as fast as possible so that it is ready for the next sample. In the code you ensure that the fastest speed is enabled. The code is set up to take 100 samples of data for 1 second and transfer off the device as quickly as possible.
 
 ## Less Code with Two Edge Impulse Projects
 
-Since we have not implemented custom C++ processing code for this custom processing block, we are not able to deploy an EIM compiled model from Edge Impulse Studio. That is, if we tried to build an EIM for “Linux (AARCH64 with AKD1000 MINI PCIe)” there would be a build error because of the lack of C++ code to run the DSP on the CPU.
+Since you have not implemented custom C++ processing code for this custom processing block, you are not able to deploy an EIM compiled model from Edge Impulse Studio. That is, if you tried to build an EIM for “Linux (AARCH64 with AKD1000 MINI PCIe)” there would be a build error because of the lack of C++ code to run the DSP on the CPU.
 
-We can work around this issue by creating two projects: One that does the custom feature generation (the customer DSP block) to which we select the FBZ file for Akida. Then, a second project that is used only for anomaly detection. This second project we will output the EIM for the anomaly detection to run on the CPU.
+You can work around this issue by creating two projects: One that does the custom feature generation (the customer DSP block) to which you select the FBZ file for Akida. Then, a second project that is used only for anomaly detection. This second project you will output the EIM for the anomaly detection to run on the CPU.
 
 The Python code that runs on the Enablement device will tie all the pieces together.
 
@@ -145,11 +145,11 @@ Once you have collected the data it is time to design the rest of the Edge Impul
 
 ## Timing Series Block
 
-Since we have taken accelerometer data at 100Hz for 1-second record lengths it is important to use those values in the Timing series data block.
+Since you have taken accelerometer data at 100Hz for 1-second record lengths it is important to use those values in the Timing series data block.
 
 ## Processing Block: Custom Spectral Features
 
-Akida dense network uses 4 bit uint8 inputs. This means that the range of input data allowed must be between 0 and 15\. The default classification blocks with Edge Impulse output signed float data. Therefore we must use custom spectral features code that makes the training and test dataset correct for the 4-bit, uint8 dense layer classifier. The code for the custom processing block is found [here](https://github.com/edgeimpulse/processing-blocks/tree/abs-spectral-features). You will need to follow the instructions of using [Custom Processing Blocks](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks/custom-blocks) to add to your Edge Impulse Studio project.
+Akida dense network uses 4 bit uint8 inputs. This means that the range of input data allowed must be between 0 and 15\. The default classification blocks with Edge Impulse output signed float data. Therefore you must use custom spectral features code that makes the training and test dataset correct for the 4-bit, uint8 dense layer classifier. The code for the custom processing block is found [here](https://github.com/edgeimpulse/processing-blocks/tree/abs-spectral-features). You will need to follow the instructions of using [Custom Processing Blocks](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks/custom-blocks) to add to your Edge Impulse Studio project.
 
 ## Learn Block: Classification - BrainChip Akida™
 
@@ -157,7 +157,7 @@ Select the Classification - BrainChip Akida™ as the learn block and ensure tha
 
 ## Feature Generation
 
-This process of generating features and determining the most important features of your data will further reduce the amount of signal analysis needed on the device with new and unseen data. An obstruction in the fan will create a much different waveform on all three accelerometer axes than a nominal sample; we can use the most important features to more quickly and accurately determine if a new incoming signal is an obstruction or a fan failure, etc.
+This process of generating features and determining the most important features of your data will further reduce the amount of signal analysis needed on the device with new and unseen data. An obstruction in the fan will create a much different waveform on all three accelerometer axes than a nominal sample; you can use the most important features to more quickly and accurately determine if a new incoming signal is an obstruction or a fan failure, etc.
 
 ## Training the Classifier
 
@@ -181,7 +181,7 @@ With the data uploaded you will need to create a new Impulse as shown below.
 
 ## Timing Series Block
 
-Since we have taken accelerometer data at 100Hz for 1 second record lengths it is important to use those values in the Timing series data block.
+Since you have taken accelerometer data at 100Hz for 1 second record lengths it is important to use those values in the Timing series data block.
 
 ## Processing Block: Spectral Analysis
 
@@ -189,15 +189,15 @@ The k-mean algorithm does not have the restriction of 4-bit, unsigned data and s
 
 ## Learn Block: Anomaly Detection (K-means)
 
-Anomaly detection can be used to detect irregular patterns in the collected sensor data. In Edge Impulse we can implement anomaly detection using one of the available [anomaly detection blocks](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/anomaly-detection). For this setup we will be using k-means as it is freely available to all Edge Impulse developers.
+Anomaly detection can be used to detect irregular patterns in the collected sensor data. In Edge Impulse you can implement anomaly detection using one of the available [anomaly detection blocks](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/anomaly-detection). For this setup you will be using k-means as it is freely available to all Edge Impulse developers.
 
-In the anomaly detection block, make sure to click the “Select Suggested Axes” to highlight the features of importance . Without selecting this button, the anomaly detection settings will default to your data’s Root-Mean-Square value (or RMS) for each of the axes. Prior to the release of the feature importance view in the DSP block, the anomaly detection block would prioritize the RMS values, and you would then have to make a decision by yourself if the RMS values were most meaningful for your anomaly detection use case. With feature importance, we take the guesswork out of this and get your model to production even faster!
+In the anomaly detection block, make sure to click the “Select Suggested Axes” to highlight the features of importance . Without selecting this button, the anomaly detection settings will default to your data’s Root-Mean-Square value (or RMS) for each of the axes. Prior to the release of the feature importance view in the DSP block, the anomaly detection block would prioritize the RMS values, and you would then have to make a decision by yourself if the RMS values were most meaningful for your anomaly detection use case. With feature importance, you take the guesswork out of this and get your model to production even faster!
 
 ![Example of Anomaly Explorer](../.gitbook/assets/vibration-classification-brainchip-akida/kmeans.png)
 
 ## Download of MetaTF FBZ File
 
-We are using custom code for this project and we will need the Akida compatible model file stored in FBZ format. Proceed to the dashboard of the first project (the classifier project) and select the **Classifier model - MetaTF** file. Once the file is presented download to your machine and then drag and drop into the _brainchip_acceleromenter_ folder in the open Visual Studio Code file viewer.
+You are using custom code for this project and you will need the Akida compatible model file stored in FBZ format. Proceed to the dashboard of the first project (the classifier project) and select the **Classifier model - MetaTF** file. Once the file is presented download to your machine and then drag and drop into the _brainchip_acceleromenter_ folder in the open Visual Studio Code file viewer.
 
 ![](../.gitbook/assets/vibration-classification-brainchip-akida/metatf-dashboard.png)
 
