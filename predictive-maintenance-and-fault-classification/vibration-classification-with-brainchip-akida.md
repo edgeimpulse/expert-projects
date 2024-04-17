@@ -57,7 +57,7 @@ Please follow these [instructions](https://docs.edgeimpulse.com/docs/) for setup
 
 ## Set Up the Akida Development Kit
 
-To start setting up the device for a custom model deployment, let&#039;s verify we have installed all the packages we need. Ensure the development kit is powered on and connected to the network. Setup [Visual Studio Code for remote debugging](https://code.visualstudio.com/docs/remote/ssh) and open a terminal in VSCode once connected. Run these commands to install the needed components.
+To start setting up the device for a custom model deployment, let's verify we have installed all the packages we need. Ensure the development kit is powered on and connected to the network. Setup [Visual Studio Code for remote debugging](https://code.visualstudio.com/docs/remote/ssh) and open a terminal in VSCode once connected. Run these commands to install the needed components.
 
 ```
 pip show akida # will show the installed version.
@@ -75,7 +75,7 @@ node -v
 
 The last command should return the node version, v14 or above.
 
-Finally, let&#039;s install the[Linux Python SDK](https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/linux-python-sdk), you just need to run these commands:
+Finally, let's install the[Linux Python SDK](https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/linux-python-sdk), you just need to run these commands:
 
 ```
 sudo apt-get install libatlas-base-dev libportaudio0 libportaudio2 libportaudiocpp0 portaudio19-dev
@@ -99,7 +99,7 @@ Inside the directory you will find **accel-hw-timed-fixed-dt.py**. This file has
 To run use this command
 
 ```
-python3 accel-hw-timed-fixed-dt.py --output_dir &lt;name of folder&gt; —number_of_files &lt;number of files&gt;
+python3 accel-hw-timed-fixed-dt.py --output_dir <name of folder> —number_of_files <number of files>
 ```
 
 This will start collecting data in the folder specified. For the project to have a good data we recommend taking at least 300 samples for each of the following conditions:
@@ -212,7 +212,7 @@ The anomaly scoring algorithm can be neatly packaged into an Edge Impulse .eim f
 Once all the files are in the correct directory you can run the inference demo with
 
 ```
-python3 class-hw-timed-anom.py --fbz_file &lt;name-of-fbz-file&gt; --anomaly_eim &lt;name-of-anomaly-eim-file&gt;
+python3 class-hw-timed-anom.py --fbz_file <name-of-fbz-file> --anomaly_eim <name-of-anomaly-eim-file>
 ```
 
 Below is a flow chart of how the code works.
@@ -223,28 +223,17 @@ And the results of the inference will be displayed below. For example, here is w
 
 ```
 ubuntu@ubuntu:~/brainchip-accelerometer$ python3 class-hw-timed-anom.py --fbz_file accel.fbz --anomaly_eim anom.eim
-
 [[[[ -2.256891 -24.837664 -0.38746595 -2.5941396 ]]]]
-
 center: 0.121976525
-
 edge: 1.9035794e-11
-
 off: 0.790965
-
 on: 0.08705848
-
 /home/ubuntu/brainchip-accelerometer
-
-Loaded runner for &quot;Brainchip / bc-pred-main-anom&quot;
-
+Loaded runner for "Brainchip / bc-pred-main-anom"
 classification:
-
-{&#039;anomaly&#039;: -0.4078322649002075}
-
+{'anomaly': -0.4078322649002075}
 timing:
-
-{&#039;anomaly&#039;: 0, &#039;classification&#039;: 0, &#039;dsp&#039;: 0, &#039;json&#039;: 0, &#039;stdin&#039;: 28}
+{'anomaly': 0, 'classification': 0, 'dsp': 0, 'json': 0, 'stdin': 28}
 ```
 
 {% embed url="https://www.youtube.com/watch?v=EU080CMj4UU" %}
