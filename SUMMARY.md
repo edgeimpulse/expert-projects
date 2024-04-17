@@ -119,6 +119,7 @@
 * [BrickML Demo Project - 3D Printer Anomaly Detection](predictive-maintenance-and-fault-classification/brickml-3d-printer-anomaly-detection.md)
 * [Condition Monitoring - Syntiant TinyML Board](predictive-maintenance-and-fault-classification/condition-monitoring-syntiant-tinyml.md)
 * [Predictive Maintenance - Commercial Printer - Sony Spresense + CommonSense](predictive-maintenance-and-fault-classification/predictive-maintenance-sony-spresense-commonsense.md)
+* [Vibration Classification with BrainChip's Akida](predictive-maintenance-and-fault-classification/vibration-classification-with-brainchip-akida.md)
 
 ## Accelerometer & Activity Projects
 
