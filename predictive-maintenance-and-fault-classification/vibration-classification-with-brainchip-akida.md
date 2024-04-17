@@ -44,9 +44,10 @@ Let’s look at how to assemble a solution that detects anomalous hardware vibra
 
 First, connect the accelerometer to the Raspberry Pi header like so:
 
-Hardware cchematic showing connection to accelerometer and PWM
+![Hardware schematic showing connection to accelerometer and PWM](../.gitbook/assets/vibration-classification-brainchip-akida/schematic.png)
 
-Fan connected to the Raspberry Pi headers
+
+![Fan connected to the Raspberry Pi headers](../.gitbook/assets/vibration-classification-brainchip-akida/test-setup.jpg)
 
 ## Software Setup
 
@@ -88,7 +89,7 @@ You can download with git using:git clone https://github.com/edgeimpulse/brainch
 
 Inside the directory you will find **accel-hw-timed-fixed-dt.py**. This file has the needed components to collect accelerometer data. Here is a flow chart of how it runs:
 
-Flow chart of data acquisition
+![Flow chart of data acquisition](../.gitbook/assets/vibration-classification-brainchip-akida/data-acq-flow-chart.png)
 
 To run use this command
 
@@ -115,7 +116,7 @@ The Ubuntu operating system running on Raspberry Pi is not an RTOS and so it is 
 
 In order to get good performance we implement a hardware interrupt with the PWM and GPIO pins. Our testing showed that the maximum delay in servicing the interrupt went from approximately 8ms to 2ms. In the code we make an assumption that the delta-t is fixed at the sample frequency and no variance is recorded.
 
-Example data of delta-t between samples over one second. Notice the sample frequency is close to, but not exactly, 50Hz in this example
+![Example data of delta-t between samples over one second. Notice the sample frequency is close to, but not exactly, 50Hz in this example](../.gitbook/assets/vibration-classification-brainchip-akida/jitter.png)
 
 Lastly, it is important to get the data out of the accelerometer as fast as possible so that it is ready for the next sample. In the code we ensure that the fastest speed is enabled. The code is set up to take 100 samples of data for 1 second and transfer off the device as quickly as possible.
 
@@ -131,7 +132,7 @@ The Python code that runs on the Enablement device will tie all the pieces toget
 
 Once you have collected the data it is time to design the rest of the Edge Impulse Studio project. This is what your Impulse design should eventually look like.
 
-Impulse Design for Classification Project
+![Impulse Design for Classification Project](../.gitbook/assets/vibration-classification-brainchip-akida/classify-project-impulse.png)
 
 ## Timing Series Block
 
@@ -155,6 +156,8 @@ When using the Akida blocks it is important to review the accuracy of the model.
 
 To view the model accuracy and Akida specific metrics be sure to select the “Quantized (akida)” as the model version.
 
+![](../.gitbook/assets/vibration-classification-brainchip-akida/model-version-akida.png)
+
 When this option is selected you will see the Confusion Matrix for the Validation Dataset and Akida Performance parameters.
 
 ## The Second Project: Impulse Setup for the Anomaly Project
@@ -165,7 +168,7 @@ From the first project (the classifier project) go into the **Dashboard** and se
 
 With the data uploaded you will need to create a new Impulse as shown below.
 
-Impulse Design for Second (Anomaly only) Project
+![Impulse Design for Second (Anomaly only) Project](../.gitbook/assets/vibration-classification-brainchip-akida/anomaly-project-impulse.png)
 
 ## Timing Series Block
 
@@ -181,15 +184,19 @@ Anomaly detection can be used to detect irregular patterns in the collected sens
 
 In the anomaly detection block, make sure to click the “Select Suggested Axes” to highlight the features of importance . Without selecting this button, the anomaly detection settings will default to your data’s Root-Mean-Square value (or RMS) for each of the axes. Prior to the release of the feature importance view in the DSP block, the anomaly detection block would prioritize the RMS values, and you would then have to make a decision by yourself if the RMS values were most meaningful for your anomaly detection use case. With feature importance, we take the guesswork out of this and get your model to production even faster!
 
-Example of Anomaly Explorer
+![Example of Anomaly Explorer](../.gitbook/assets/vibration-classification-brainchip-akida/kmeans.png)
 
 ## Download of MetaTF FBZ File
 
 We are using custom code for this project and we will need the Akida compatible model file stored in FBZ format. Proceed to the dashboard of the first project (the classifier project) and select the **Classifier model - MetaTF** file. Once the file is presented download to your machine and then drag and drop into the _brainchip_acceleromenter_ folder in the open Visual Studio Code file viewer.
 
+![](../.gitbook/assets/vibration-classification-brainchip-akida/metatf-dashboard.png)
+
 ## Download of Edge Impulse Anomaly Scoring model .eim
 
 The anomaly scoring algorithm can be neatly packaged into an Edge Impulse .eim file. To do so go to the Deployment tab of the second Edge Impulse project (the one with the k-mean anomaly scoring) and select **Linux (AARCH64)** from the drop down menu and click **Build**. Once the file is presented, download it to your machine and then drag and drop into the _brainchip_acceleromenter_ folder in the open Visual Studio Code file viewer.
+
+![](../.gitbook/assets/vibration-classification-brainchip-akida/aarch64-deploy-eim.png)
 
 ## On-Device Inferencing
 
@@ -199,7 +206,7 @@ python3 class-hw-timed-anom.py --fbz_file &lt;name-of-fbz-file&gt; --anomaly_eim
 
 Below is a flow chart of how the code works.
 
-Flow chart of inferencing code
+![Flow chart of inferencing code](../.gitbook/assets/vibration-classification-brainchip-akida/inference-flow-chart.png)
 
 And the results of the inference will be displayed below. For example, here is where there the center hub is rubbing:
 
@@ -228,8 +235,6 @@ timing:
 {&#039;anomaly&#039;: 0, &#039;classification&#039;: 0, &#039;dsp&#039;: 0, &#039;json&#039;: 0, &#039;stdin&#039;: 28}
 
 {% embed url="https://www.youtube.com/watch?v=EU080CMj4UU" %}
-
-
 
 ## Conclusion
 
