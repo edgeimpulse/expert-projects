@@ -59,33 +59,38 @@ Please follow these [instructions](https://docs.edgeimpulse.com/docs/) for setup
 
 To start setting up the device for a custom model deployment, let&#039;s verify we have installed all the packages we need. Ensure the development kit is powered on and connected to the network. Setup [Visual Studio Code for remote debugging](https://code.visualstudio.com/docs/remote/ssh) and open a terminal in VSCode once connected. Run these commands to install the needed components.
 
+```
 pip show akida # will show the installed version.
-
 lspci | grep Co-processor # will check if the PCIe card is plugged in correctly.
-
 python3 --version # will check the installed Python version (3.8 is required).
+```
 
 You will also need Node Js v14.x to be able to use the[Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation). Install it by running these commands:
 
+```
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-
 sudo apt-get install -y nodejs
-
 node -v
+```
 
 The last command should return the node version, v14 or above.
 
 Finally, let&#039;s install the[Linux Python SDK](https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/linux-python-sdk), you just need to run these commands:
 
+```
 sudo apt-get install libatlas-base-dev libportaudio0 libportaudio2 libportaudiocpp0 portaudio19-dev
-
 pip3 install edge_impulse_linux -i https://pypi.python.org/simple
+```
 
 ## Data Acquisition to create ML Dataset
 
 After getting the Akida Development Kit configured and having the accelerometer connected you will need to collect data from the accelerometer/fan setup. Since we are using custom devices we have developed code that you can use immediately.
 
-You can download with git using:git clone https://github.com/edgeimpulse/brainchip-accelerometer.git
+You can download with git using:
+
+```
+git clone https://github.com/edgeimpulse/brainchip-accelerometer.git
+```
 
 Inside the directory you will find **accel-hw-timed-fixed-dt.py**. This file has the needed components to collect accelerometer data. Here is a flow chart of how it runs:
 
@@ -104,9 +109,11 @@ This will start collecting data in the folder specified. For the project to have
 
 To upload the data to Edge Impulse use the [uploader](https://docs.edgeimpulse.com/docs/tools/edge-impulse-cli/cli-uploader) tool installed with the Edge Impulse CLI.
 
+```
 cd &lt;samples directory&gt;
 
 edge-impulse-uploader --category split --label off *.csv
+```
 
 You may be prompted for username and password for Edge Impulse. After successful connection you should select the empty project you had created earlier.
 
@@ -202,7 +209,9 @@ The anomaly scoring algorithm can be neatly packaged into an Edge Impulse .eim f
 
 Once all the files are in the correct directory you can run the inference demo with
 
+```
 python3 class-hw-timed-anom.py --fbz_file &lt;name-of-fbz-file&gt; --anomaly_eim &lt;name-of-anomaly-eim-file&gt;
+```
 
 Below is a flow chart of how the code works.
 
@@ -210,6 +219,7 @@ Below is a flow chart of how the code works.
 
 And the results of the inference will be displayed below. For example, here is where there the center hub is rubbing:
 
+```
 ubuntu@ubuntu:~/brainchip-accelerometer$ python3 class-hw-timed-anom.py --fbz_file accel.fbz --anomaly_eim anom.eim
 
 [[[[ -2.256891 -24.837664 -0.38746595 -2.5941396 ]]]]
@@ -233,6 +243,7 @@ classification:
 timing:
 
 {&#039;anomaly&#039;: 0, &#039;classification&#039;: 0, &#039;dsp&#039;: 0, &#039;json&#039;: 0, &#039;stdin&#039;: 28}
+```
 
 {% embed url="https://www.youtube.com/watch?v=EU080CMj4UU" %}
 
