@@ -98,7 +98,9 @@ Inside the directory you will find **accel-hw-timed-fixed-dt.py**. This file has
 
 To run use this command
 
+```
 python3 accel-hw-timed-fixed-dt.py --output_dir &lt;name of folder&gt; —number_of_files &lt;number of files&gt;
+```
 
 This will start collecting data in the folder specified. For the project to have a good data we recommend taking at least 300 samples for each of the following conditions:
 
@@ -110,7 +112,7 @@ This will start collecting data in the folder specified. For the project to have
 To upload the data to Edge Impulse use the [uploader](https://docs.edgeimpulse.com/docs/tools/edge-impulse-cli/cli-uploader) tool installed with the Edge Impulse CLI.
 
 ```
-cd &lt;samples directory&gt;
+cd <samples directory>
 
 edge-impulse-uploader --category split --label off *.csv
 ```
