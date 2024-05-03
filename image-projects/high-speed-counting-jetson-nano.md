@@ -144,7 +144,7 @@ Now the model is ready to run in a high-level language such as the Python progra
 edge-impulse-linux-runner --model-file <path to directory>/model.eim
 ```
 
-![Video stream from your browser](../.gitbook/assets/Video01.gif)
+![Video stream from your browser](../.gitbook/assets/high-speed-counting-jetson-nano/Video01.gif)
 
 The inferencing time is around 15ms, which is an incredibly fast detection speed.
 
