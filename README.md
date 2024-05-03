@@ -17,6 +17,7 @@ As you browse the projects, be sure to make note that many of them could be adap
 * [Counting for Inspection and Quality Control - Nvidia Jetson Nano (TensorRT)](image-projects/quality-control-jetson-nano.md)
 * [Computer Vision Object Counting - Avnet RZBoard V2L](image-projects/avnet-rzboard-object-counting.md)
 * [Gesture Appliances Control with Pose Detection - BrainChip AKD1000](accelerometer-and-activity-projects/gesture-appliances-control-brainchip.md)
+* [High-resolution, High-speed Object Counting - Nvidia Jetson Nano](image-projects/high-speed-counting-jetson-nano.md)
 
 ### Prototype and Concept Projects
 
