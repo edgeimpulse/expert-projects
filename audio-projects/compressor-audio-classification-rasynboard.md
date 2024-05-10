@@ -15,6 +15,8 @@ Most industrial settings such as pumping facilities, heating, ventilation, and a
 
 ![](../.gitbook/assets/compressor-audio-classification-rasynboard/heavy-machinery.jpg)
 
+*Image credit [hdbernd](https://unsplash.com/@hdbernd) on Unsplash.
+
 Predictive Maintenance using machine learning aims to solve for this problem, by identifying and acting upon anomalies in machinery health.
 
 ## Hardware 
