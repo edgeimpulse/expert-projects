@@ -9,6 +9,8 @@ Created By: Kutluhan Aktar
 
 Public Project Link: [https://studio.edgeimpulse.com/public/366673/latest](https://studio.edgeimpulse.com/public/366673/latest)
 
+{% embed url="https://www.youtube.com/watch?v=MFTXcNMNgSU" %}
+
 ## Description
 
 Even though most of us consider water contamination as a gradual occurrence, especially for thriving landscapes, impending pollution can pervade water bodies instantaneously. In the case of enclosed water bodies such as closed lakes, pernicious contaminants can arise in a week and threaten aquatic environments despite not manifesting any indications. These furtively spreading pollutants can even impinge on the health of terrestrial animals by not only poisoning precious water sources but also withering aquatic plants.
