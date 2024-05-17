@@ -1,4 +1,3 @@
-
 ---
 description: >-
   Use computer vision and a Texas Instruments TDA4VM to perform anomaly detection for quality assurance of parts.
@@ -12,11 +11,11 @@ Public Project Link: [https://studio.edgeimpulse.com/public/374008/latest](https
 
 GitHub Repo: [https://github.com/ronibandini/visualAnomaly/](https://github.com/ronibandini/visualAnomaly/)
 
-![](../.gitbook/assets/fomo-ad-ti-tda4vm/cover.jpg)
+![(Source: Bing Image Creator)](../.gitbook/assets/fomo-ad-ti-tda4vm/cover.jpg)
 
 ## Introduction
 
-Quality control is a critical aspect of any production line or manufacturing process. Many times quality control is performed by an trained or senior employee meticulously spotting faulty items as they roll off the assembly line. But what if that employee becomes distracted or tired? The consequences could be significant: increased shipping and handling costs via product returns, administrative expenses, and the need for refunds to customers due to missing or defective items.
+Quality control is a critical aspect of any production line or manufacturing process. Many times quality control is performed by a specially trained or senior employee meticulously spotting faulty items as they roll off the assembly line. But what if that employee becomes distracted or tired? The consequences could be significant: increased shipping and handling costs via product returns, administrative expenses, or the need for refunds to customers due to missing or defective items.
 
 Artificial intelligence and specifically a Machine Learning algorithm named FOMO-AD (Faster Objects, More Objects - Anomaly Detection) by Edge Impulse could be instrumental in addressing this challenge.
 
@@ -28,7 +27,7 @@ Detecting anomalies visually can be a challenging task. While we understand what
 
 Imagine having to collect samples for every conceivable anomaly that might occur. This is called dataset asymmetry: you end up with a huge dataset of valid items and a tiny dataset of faulty items. 
 
-The solution are unsupervised learning techniques. These methods allow us to build models without relying on labeled data, specifically marked as faulty. Instead, they learn from the overall distribution of data points, identifying patterns and deviations.
+One solution is to make use of unsupervised learning techniques. These methods allow us to build models without relying on labeled data, that has been specifically identified and labeled as faulty. Instead, they learn from the overall distribution of data points, identifying patterns and deviations.
 
 Once we've trained our anomaly detection model, we can deploy it to small devices with limited hardware resources. These lightweight models consume minimal power, and can even operate without an internet connection.
 
@@ -46,9 +45,9 @@ One interesting thing about FOMO-AD is that it detects not only the presence of 
 
 FOMO-AD requires an Enterprise version of Edge Impulse.  To explore the capability, you can sign up for a free Enterprise Trial at [https://studio.edgeimpulse.com/trial-signup](https://studio.edgeimpulse.com/trial-signup), then create a new project named _Visual Anomaly_.
 
-Download the Python parser script at [https://github.com/ronibandini/visualAnomaly](https://github.com/ronibandini/visualAnomaly), or git clone the full repo. 
+Download the Python parser script at [https://github.com/ronibandini/visualAnomaly](https://github.com/ronibandini/visualAnomaly), or `git clone` the full repo. 
 
-I am using the Texas Instruments TDA4VM development board in this project, so I will download the OS image from [https://www.ti.com/tool/download/PROCESSOR-SDK-LINUX-SK-TDA4VM/08.06.00.11](https://www.ti.com/tool/download/PROCESSOR-SDK-LINUX-SK-TDA4VM/08.06.00.11). The TI AM62A and AM68A could also be used in a similar fashion as described in this project. 
+I am using the [Texas Instruments TDA4VM development board](https://docs.edgeimpulse.com/docs/edge-ai-hardware/cpu-+-ai-accelerators/sk-tda4vm) in this project, so I will download the OS image from [https://www.ti.com/tool/download/PROCESSOR-SDK-LINUX-SK-TDA4VM/08.06.00.11](https://www.ti.com/tool/download/PROCESSOR-SDK-LINUX-SK-TDA4VM/08.06.00.11). The TI AM62A and AM68A Development Kits could also be used in a similar fashion as described in this project. 
 
 > Note: Download version 8 (08.06.00.11 as indicated by the URL), as the latest version of the image doesn't seem to detect the USB camera while executing the Edge Impulse Linux Runner later.
  
@@ -56,14 +55,14 @@ Extract and flash the image with Etcher or any other similar application.
 
 ![](../.gitbook/assets/fomo-ad-ti-tda4vm/flash-sd.jpg)
 
-Place the microSD into the TDA4VM. Connect a USB-C power supply with at least 3A, and an Ethernet Cable to the router. Connect a Logitech C270, C920 or C922 compatible webcam, as well.
+Place the microSD card into the TDA4VM. Connect a USB-C power supply with at least 3A, and an ethernet cable to your router. Connect a Logitech C270, C920 or C922 compatible webcam, as well.
 
 ![](../.gitbook/assets/fomo-ad-ti-tda4vm/connection.jpg)
 
 Determine the IP address that your router assigned to the board, and then connect to the TDA4VM using SSH with the following credentials:
 
-User: root 
-Password: (empty)
+- User: root 
+- Password: (empty)
 
 ![](../.gitbook/assets/fomo-ad-ti-tda4vm/ssh.jpg)
 
