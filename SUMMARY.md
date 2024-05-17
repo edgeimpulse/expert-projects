@@ -62,6 +62,7 @@
 * [Deter Shoplifting with Computer Vision - Texas Instruments TDA4VM](image-projects/deter-shoplifting-with-computer-vision-ti-tda4vm.md)
 * [Smart Factory Prototype - Texas Instruments TDA4VM](image-projects/smart-factory-prototype-ti-tda4vm.md)
 * [Correct Posture Detection and Enforcement - Texas Instruments TDA4VM](image-projects/ti-tda4vm-posture-detection.md)
+* [Visual Anomaly Detection with FOMO-AD - Texas Instruments TDA4VM](image-projects/fomo-ad-ti-tda4vm.md)
 * [Surface Crack Detection and Localization - Texas Instruments TDA4VM](image-projects/surface-crack-detection-ti-tda4vm.md)
 * [Surface Crack Detection - Seeed reTerminal](image-projects/surface-crack-detection-seeed-reterminal.md)
 * [Retail Image Classification - Nvidia Jetson Nano](image-projects/retail-image-classification-nvidia-jetson-nano.md)
