@@ -10,6 +10,7 @@ As you browse the projects, be sure to make note that many of them could be adap
 
 ### Featured Machine Learning Projects
 
+* [Optimize a cloud-based Visual Anomaly Detection Model for Edge Deployments](image-projects/fomo-ad-in-aws.md)
 * [Rooftop Ice Detection with Things Network Visualization - Nvidia Omniverse Replicator](nvidia-projects/rooftop-ice-synthetic-data-omniverse.md)
 * [Surgery Inventory Object Detection - Synthetic Data - Nvidia Omniverse Replicator](image-projects/surgery-inventory-synthetic-data.md)
 * [NVIDIA Omniverse - Synthetic Data Generation For Edge Impulse Projects](nvidia-omniverse-synthetic-data.md)
