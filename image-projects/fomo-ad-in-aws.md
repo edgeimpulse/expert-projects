@@ -1,6 +1,6 @@
 ---
 description: >-
-  Use computer vision and AWS to identify anomalies and ensure the quality of packaged food.
+  Advanced ML workflow with available Jupyter Notebook using computer vision, AWS SageMaker and MLFlow to benchmark industry visual anomaly models
 ---
 
 # Optimize a cloud-based Visual Anomaly Detection Model for Edge Deployments
@@ -8,6 +8,7 @@ description: >-
 Created By: Mathieu Lescaudron
 
 Public Project Link: [https://studio.edgeimpulse.com/public/376268/latest](https://studio.edgeimpulse.com/public/376268/latest)
+
 GitHub Repo: [https://github.com/emergy-official/anomaly.parf.ai](https://github.com/emergy-official/anomaly.parf.ai)
 
 ![](../.gitbook/assets/fomo-ad-in-aws/cover1.png)
@@ -18,7 +19,7 @@ GitHub Repo: [https://github.com/emergy-official/anomaly.parf.ai](https://github
 
 ## Introduction
 
-Let's explore the development and optimization of a cloud-based visual anomaly detection model designed for edge deployments, featuring real-time and serverless inference.
+Let's explore the development and optimization of a cloud-based visual anomaly detection model designed for edge deployments, featuring real-time and serverless inference.  In this example scenario, we will 
 
 We will cover the following topics:
 
@@ -74,7 +75,7 @@ We take around five pictures of each cookie, making slight rotations each time. 
 
 ![](../.gitbook/assets/fomo-ad-in-aws/dataset2.png)
 
-Each picture, taken from a mobile phone in a `1:1` ratio with an original size of 2992 x 2992 pixels, is resized to 1024 x 1024 pixels using [morgify](https://imagemagick.org/script/mogrify.php) command from ImageMagick. It saves computing resources for both the training process and the inference endpoint:
+Each picture, taken from a mobile phone in a `1:1` ratio with an original size of 2992 x 2992 pixels, is resized to 1024 x 1024 pixels using [mogrify](https://imagemagick.org/script/mogrify.php) command from ImageMagick. It saves computing resources for both the training process and the inference endpoint:
 
 ```
 mogrify -resize 1024x1024 *.jpg
