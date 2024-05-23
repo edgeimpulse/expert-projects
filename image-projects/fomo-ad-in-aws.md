@@ -1,9 +1,9 @@
 ---
 description: >-
-  Advanced ML workflow with available Jupyter Notebook using computer vision, AWS SageMaker and MLFlow to benchmark industry visual anomaly models
+  Advanced ML workflow with available Jupyter Notebook using computer vision, AWS SageMaker and MLFlow to benchmark industry visual anomaly models.
 ---
 
-# Optimize a cloud-based Visual Anomaly Detection Model for Edge Deployments
+# Optimize a Cloud-based Visual Anomaly Detection Model for Edge Deployments
 
 Created By: Mathieu Lescaudron
 
@@ -19,7 +19,7 @@ GitHub Repo: [https://github.com/emergy-official/anomaly.parf.ai](https://github
 
 ## Introduction
 
-Let's explore the development and optimization of a cloud-based visual anomaly detection model designed for edge deployments, featuring real-time and serverless inference.  In this example scenario, we will 
+Let's explore the development and optimization of a cloud-based visual anomaly detection model designed for edge deployments, featuring real-time and serverless inference.
 
 We will cover the following topics:
 
@@ -47,9 +47,11 @@ This is a demo project. All code is provided for you to implement any or all par
 
 ## Context
 
-Imagine we are an industrial company that produces cookies. Our goal is to sort cookies to identify those with and without anomalies.
+Imagine we are a commercial baking company that produces cookies. Our goal is to sort cookies to identify those with and without defects (anomalies), so that any broken cookies do not get packaged and sent to retailers.
 
-We are developing a cloud-based proof of concept to attract investment before deploying it on edge devices.
+We are developing a cloud-based proof-of-concept to understand the feasibility of this technique, before deploying it on edge devices.
+
+Although this is only a hypothetical example and demonstration, this quality inspection process and computer vision workflow could absolutely be leveraged by large-scale food service providers, commercial kitches that make packaged retail food items, or any many other mass-produced retail products even beyond the food industry. 
 
 ## Step 1: Create the Datasets
 
@@ -260,7 +262,7 @@ We primarily use MLFlow to track experiments and store artifacts, although it of
 
 You can find the full setup instructions for MLFlow for this demo [here](https://github.com/emergy-official/anomaly.parf.ai/blob/main/ai/AWS_ML_FLOW.md).
 
-#### Training on the cloud 
+#### Training in the cloud 
 
 Let's train our models in the cloud using our [notebook](https://github.com/emergy-official/anomaly.parf.ai/blob/main/ai/notebooks/2_efficientad.ipynb). We are using a Jupyter notebook, you could also use a Python script.
 
