@@ -55,7 +55,7 @@ Although this is only a hypothetical example and demonstration, this quality ins
 
 ## Step 1: Create the Datasets
 
-We assume we don't have access to [Onmiverse Replicator](https://docs.omniverse.nvidia.com/extensions/latest/index.html) to create a synthetic dataset. Instead, We manually create our own. The first step is to carefully review which cookies to ~~eat~~ use.
+We assume we don't have access to [Onmiverse Replicator](https://docs.omniverse.nvidia.com/extensions/latest/index.html) to create a synthetic dataset. Instead, we manually create our own. The first step is to carefully review which cookies to ~~eat~~ use.
 
 ![](../.gitbook/assets/fomo-ad-in-aws/dataset1.png)
 
@@ -103,8 +103,9 @@ You can download the datasets [here](https://drive.google.com/file/d/19VM3RtzVFy
 
 The first model we will develop will be our baseline, serving as our starting point.
 
-It consist of a categorical image classification using a pre-trained MobileNet.
-Categorical (rather than binary) classification to allow for the addition of more categories of anomalies in the future.
+It consists of a categorical image classification using a pre-trained MobileNet.
+
+This is Categorical (rather than binary) classification to allow for the addition of more categories of anomalies in the future.
 
 Have a look at the training in [this notebook](https://github.com/emergy-official/anomaly.parf.ai/blob/main/ai/notebooks/1_baseline.ipynb)
 
@@ -135,7 +136,8 @@ Here's how the images are distributed for this model:
 - Validation: 16 images (8%)
 - Test: 40 images (20%)
 
-Both anomalies & no anomalies images are used during training.
+Both "anomaly" and "no anomaly" images are used during training.
+
 The model is trained on a Mac using the CPU, running through 50 epochs.
 
 You can find the results in the [Step 3: Benchmarking](#step-3-benchmarking) section.
@@ -144,7 +146,7 @@ You can find the results in the [Step 3: Benchmarking](#step-3-benchmarking) sec
 
 With Edge Impulse's [Bring Your Own Model](https://docs.edgeimpulse.com/docs/edge-impulse-studio/bring-your-own-model-byom) feature, you can easily upload your own model and use all their features.
 
-In our case, let's use a jupyter notebook that convert the Baseline model to a MacOS version using the Edge Impulse API. (You can do it for a specific edge device, linux, web assembly, ...). It can save you quite some time compared to doing it yourself.
+In our case, let's use a Jupyter notebook that converts the Baseline model to a MacOS version using the Edge Impulse API. (You can do it for a specific edge device, linux, web assembly, etc). It can save you quite some time compared to doing it yourself.
 
 You can find detailed steps in [this notebook](https://github.com/emergy-official/anomaly.parf.ai/blob/main/ai/notebooks/1_baseline.ipynb) (scroll down to the section titled `Edge Impulse conversion`)
 
@@ -224,7 +226,7 @@ We will test different parameters to build a model that performs well. In the st
 
 We will experiment different numbers of steps, enabling or disabling the pretrained weights and using the small or medium size of the patch description network (the medium size includes another layer and twice as many features). Each test is called an experiment, and we will use [MLFlow](https://mlflow.org/) to log the parameters and store their results, including the scores and the models.
 
-To run a MLFlow server, either locally or on a remotely, use the following command:
+To run a MLFlow server, either locally or remotely, use the following command:
 
 ```sh
 # pip install mlflow
@@ -264,9 +266,9 @@ You can find the full setup instructions for MLFlow for this demo [here](https:/
 
 #### Training in the cloud 
 
-Let's train our models in the cloud using our [notebook](https://github.com/emergy-official/anomaly.parf.ai/blob/main/ai/notebooks/2_efficientad.ipynb). We are using a Jupyter notebook, you could also use a Python script.
+Let's train our models in the cloud using our [notebook](https://github.com/emergy-official/anomaly.parf.ai/blob/main/ai/notebooks/2_efficientad.ipynb). We are using a Jupyter notebook, or you could also use a Python script.
 
-There are many different cloud providers that allow you to train a model. We will use an AWS instance that includes a [Nvidia Tesla 4 GPU](https://www.nvidia.com/en-us/data-center/tesla-t4/).
+There are many different cloud providers that allow you to train a model. We will use an AWS instance that includes an [Nvidia Tesla 4 GPU](https://www.nvidia.com/en-us/data-center/tesla-t4/).
 
 The specific instance type we use is  `g4dn.xlarge`. To get access to this instance, you need to create a support ticket requesting access to the type G instance type in your region. It will cost us 0.526 USD per hour and we plan to use it for approximately 3h.
 
@@ -342,7 +344,7 @@ Here's an example of the inference results with EfficientAD. It localizes the an
 
 Once you're finished, terminate the remote instance. You can find the results in the [Step 3: Benchmarking](#step-3-benchmarking) section.
 
-### FOMO AD model (automated)
+### FOMO-AD model (automated)
 
 The last model we will build is called FOMO-AD, a visual anomaly detection learning block developed by Edge Impulse. It's based on the FOMO architecture, specifically designed for constrained devices.
 
@@ -367,7 +369,7 @@ We separate our dataset as follows:
     - No Anomaly: 20 images (10%)
     - Anomaly: 100 images (50%)
 
-The best part of the notebook is that it includes a pre-built pipeline in Edge Impulse that `Find the best Visual AD Model` using our dataset. All you need to do is provide the dataset and run the pipeline.  After that, you'll have the optimal model set up in your project, and you can find the best threshold to use in the logs (Refer to the `Option 2` section in the notebook for more details).
+The best part of the notebook is that it includes a pre-built pipeline in Edge Impulse that will `Find the best Visual AD Model` using our dataset. All you need to do is provide the dataset and run the pipeline.  After that, you'll have the optimal model set up in your project, and you can find the best threshold to use in the logs (Refer to the `Option 2` section in the notebook for more details).
 
 ![](../.gitbook/assets/fomo-ad-in-aws/edgeimpulse2.png)
 
@@ -397,17 +399,17 @@ Now that we've trained all the models, it's time to evaluate how well they perfo
 
 Take a look at [this notebook](https://github.com/emergy-official/anomaly.parf.ai/blob/main/ai/notebooks/model_comparaison.ipynb) where all the benchmarking is done.
 
-Since each model was trained on different sets of data, we will use the test dataset from Efficient AD model for comparison.
+Since each model was trained on different sets of data, we will use the test dataset from EfficientAD model for comparison.
 
 Here are the results, tested on a Macbook:
 
 ![](../.gitbook/assets/fomo-ad-in-aws/benchmark1.png)
 
-FOMO AD performs the best in most datasets. Although Efficient AD could be improved to score higher, it would require more time.
+FOMO-AD performs the best in most datasets. Although EfficientAD could be improved to score higher, it would require more time.
 
 For additional details on performance, including difficulty, time, and RAM usage, check out [this notebook](https://github.com/emergy-official/anomaly.parf.ai/blob/main/ai/notebooks/model_comparaison.ipynb). Usually, the inference time of Efficient AD is 300ms, whereas FOMO AD is 35ms.
 
-Efficient AD model should to be used by modern GPUs, where the inference time is about 3ms.
+The EfficientAD model should be used by modern GPUs, where the inference time is about 3ms.
 
 ## Step 4: API & Web App
 
@@ -417,7 +419,7 @@ We'll include two features:
 
 - A serverless endpoint using [SageMaker Serverless Inference](https://docs.aws.amazon.com/sagemaker/latest/dg/serverless-endpoints.html) with EfficientAD,
 
-- A real-time inference using a compact version of the Edge Impulse [mobile client](https://github.com/edgeimpulse/mobile-client/tree/master/client) with FOMO AD.
+- A real-time inference using a compact version of the Edge Impulse [mobile client](https://github.com/edgeimpulse/mobile-client/tree/master/client) with FOMO-AD.
 
 In the public repository, you will find:
 
@@ -434,11 +436,11 @@ This is the infrastructure of our serverless inference endpoint:
 When a user uploads an image to get the anomaly result, it will go through:
 
 - Cloudfront (which is also used by the front end. Users are redirected to the API Gateway when the request path matches `/api*`),
-- An API Gateway (to communicate with the Lambda and allows for future API expansions),
+- An API Gateway (to communicate with Lambda and allows for future API expansions),
 - A Lambda that communicate to the SageMaker endpoint securely,
 - A Serverless SageMaker endpoint (executes the inference using a Docker container).
 
-The SageMaker endpoint operates using a Docker image. You can build your docker like this:
+The SageMaker endpoint operates using a Docker image. You can build your dockerfile like this:
 
 ```Dockerfile
 FROM python:3.11.7  
@@ -488,7 +490,7 @@ FLASK_APP=app.py flask run --port=8080
 python local.py
 ```
 
-Check out the [terraform code](https://github.com/emergy-official/anomaly.parf.ai/blob/main/infrastructure/sdlc/staticWebsiteModule/sagemaker.tf) to configure the SageMaker endpoint or you can do it manually in the AWS Console.
+Check out the [terraform code](https://github.com/emergy-official/anomaly.parf.ai/blob/main/infrastructure/sdlc/staticWebsiteModule/sagemaker.tf) to configure the SageMaker endpoint, or you can do it manually in the AWS Console.
 
 The serverless inference is quite slow (12 sec per inference), you can speed this up this by increasing the RAM usage, switching to a provisionned endpoint, or using a real-time endpoint within AWS. However, these options will increase the cost. The actual setup cost $ 0.20 per 1,000 inferences, an affordable way for creating demos without impacting your wallet.
 
@@ -498,10 +500,11 @@ If you've previously played with Edge Impulse, you might be familiar with the `L
 
 ![](../.gitbook/assets/fomo-ad-in-aws/edgeimpulse4.png)
 
-Wouldn't it be great to include this feature directly in our web app ?  
+Wouldn't it be great to include this feature directly in our web app?
+
 Thanks to Edge Impulse, this feature is [open source](https://github.com/edgeimpulse/mobile-client)!
 
-The way it work is that the client is downloading a **web assembly** zip file of the model using the Edge Impulse API from your project's API KEY. Then, it unzips the export and loads the model along with multiple scripts to enable real-time inference.
+The way it work is that the client is downloading a **web assembly** .zip file of the model using the Edge Impulse API from your project's API KEY. Then, it unzips the export and loads the model along with multiple scripts to enable real-time inference.
 
 We're going to modify this a bit.
 
@@ -514,15 +517,15 @@ This is what we obtain:
 
 ![](../.gitbook/assets/fomo-ad-in-aws/site2.png)
 
-All the modification are detailed [here](https://github.com/emergy-official/anomaly.parf.ai/tree/main/website#mobile-client-compressed-version-detail) at the `Mobile Client compressed version detail` section.
+All the modifications are detailed [here](https://github.com/emergy-official/anomaly.parf.ai/tree/main/website#mobile-client-compressed-version-detail) in the `Mobile Client compressed version detail` section.
 
 ### Website
 
 For the website, we're using [Astro](https://astro.build/) with React based on the [AstroWind](https://astrowind.vercel.app/) template. 
 
-To automatically deploy the website, we use [this github action](https://github.com/emergy-official/anomaly.parf.ai/blob/main/.github/workflows/staticWebsite.yml)  It triggers a deployment whenever the commit message includes `deploy:website`.
+To automatically deploy the website, we use [this github action](https://github.com/emergy-official/anomaly.parf.ai/blob/main/.github/workflows/staticWebsite.yml).  It triggers a deployment whenever the commit message includes `deploy:website`.
 
-The website is hosted on AWS within a S3 bucket and is behind a Cloudfront distribution.
+The website is hosted on AWS within an S3 bucket and is behind a Cloudfront distribution.
 
 ![](../.gitbook/assets/fomo-ad-in-aws/site4.png)
 
