@@ -189,6 +189,7 @@ Using machine learning to predict, understand, or identify information in the ai
 * [Soil Quality Detection Using AI and LoRaWAN - Seeed Sensecap A1101](novel-sensor-projects/soil-quality-detection-lorawan-seeed-sensecap-a1101.md)
 * [Smart Diaper Prototype - Arduino Nicla Sense ME](novel-sensor-projects/smart-diaper-arduino-nicla-sense-me.md)
 * [DIY Smart Glove with Flex Sensors](novel-sensor-projects/flex-sensors-hci.md)
+* [EdgeML Energy Monitoring - Particle Photon 2](novel-sensor-projects/energy-monitoring-particle-photon-2.md)
 
 ### Software Integration Demos
 
