@@ -55,30 +55,40 @@ To fully assemble the project:
 
 ![Hardware Setup Final Result]()
 
+## Raspberry Pi 5 Setup
+
+With the Raspberry Pi Imager, flash a micro-SD card with the Raspberry Pi OS Lite (64-bit), enter the OS Customisation menu by typing `Ctrl + Shift + X` and add your login credentials, enable the wireless LAN by adding your WiFi credentials and verify that the __SSH__ connection is enabled in the __Services__ settings.
+
+![Raspberry Pi image settings](../.gitbook/assets/fomo-stock-tracker-brainchip/pi5-image.png)
+
+Once the micro-SD card is flashed and verified, eject it and install it on your Raspberry Pi 5 slot.
+
 ## Setting up the Development Environment
 
-The system comes with the basic requirements installed to run machine learning models using Akida processor acceleration. Once the system is powered up and connected to the internet (I used an ethernet cable), you can access it by an SSH connection: you will need to know the device's local IP address, in my case, I got it from the list of connected devices of my router. 
+Once the system is powered up and connected to the internet (I used WiFi), you can access it by an SSH connection: you will need to know the device's local IP address, in my case, I got it from the list of connected devices of my router. 
 
-![Device IP Address](../.gitbook/assets/gesture-appliances-control-brainchip/ip_show.png)
-
-To verify the device is working properly, you can try an included demo by navigating to **http://<your_kit_IP>**, in my case to http://10.0.0.150 and try some of the examples:
-
-![Built-in demo running](../.gitbook/assets/gesture-appliances-control-brainchip/demo.png)
+![Device IP Address](../.gitbook/assets/fomo-stock-tracker-brainchip/raspberry-ip.png)
 
 To start setting up the device for a custom model deployment, let's verify we have installed all the packages we need.
 
-I am using Putty for the SSH connection. Log in using the Administrator credentials, in this case, the username is **ubuntu** and the password is **brainchip**.
+I am using Putty for the SSH connection. Log in using the set credentials, in this case, the username is **raspberrypi** and the password is **raspberrypi**.
 
-Once inside you will be able to install some required dependencies:
+![SSH Connection through Putty](../.gitbook/assets/fomo-stock-tracker-brainchip/putty.png)
 
-Running the built-in demos ensures us that the system already recognizes the Akida package and the PCIe drivers for the AKD1000, but we can verify it by running the following commands:
+Once in, verify that the Akida PCIe board is detected:
 
-```
-bash
-pip show akida # will show the installed version.
+```bash
 lspci | grep Co-processor # will check if the PCIe card is plugged in correctly.
-python3 --version # will check the installed Python version (3.8 is required).
 ```
+
+Create a __virtual environment__:
+
+```bash
+python3 -m venv .venv --system-site-packages #create virtual env
+source .venv/bin/activate  #enter virtual env
+```
+
+Install the Akida driver:
 
 ![Verifying packages](../.gitbook/assets/gesture-appliances-control-brainchip/verifications.png)
 
