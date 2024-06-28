@@ -90,6 +90,28 @@ source .venv/bin/activate  #enter virtual env
 
 Install the Akida driver:
 
+```bash
+apt-get install -y git # install git to be able to clone the driver repository
+git clone https://github.com/Brainchip-Inc/akida_dw_edma # clone the repository
+sudo apt install build-essential linux-headers-$(uname -r) # install system dependencies
+cd akida_dw_edma # enter the repository
+sudo ./install.sh # run the driver installation script
+apt-get install python3-pip -y # install the pip tool
+```
+
+With the driver modules already mounted and the tools ready, install the Akida driver:
+
+```bash
+python3 -m pip install akida
+```
+Once installed, verify it is installed correctly and if it detects the mounted AKD1000 PCIe card.
+
+```bash
+pip show akida # prints out the driver version
+akida devices # search for compatible Akida devices
+```
+![Akida driver verification](../.gitbook/assets/fomo-stock-tracker-brainchip/akida-driver.png)
+
 ![Verifying packages](../.gitbook/assets/gesture-appliances-control-brainchip/verifications.png)
 
 You will also need Node Js v14.x to be able to use the [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation). Install it by running these commands:
