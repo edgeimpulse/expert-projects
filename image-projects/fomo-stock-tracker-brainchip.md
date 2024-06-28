@@ -112,43 +112,37 @@ akida devices # search for compatible Akida devices
 ```
 ![Akida driver verification](../.gitbook/assets/fomo-stock-tracker-brainchip/akida-driver.png)
 
-![Verifying packages](../.gitbook/assets/gesture-appliances-control-brainchip/verifications.png)
+Install some specific project dependencies:
 
-You will also need Node Js v14.x to be able to use the [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation). Install it by running these commands:
-
-```
-bash
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt-get install -y nodejs
-node -v
-```
-The last command should return the node version, v14 or above.
-
-Finally, let's install the [Linux Python SDK](https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/linux-python-sdk), you just need to run these commands:
-
-```
-bash
-sudo apt-get install libatlas-base-dev libportaudio0 libportaudio2 libportaudiocpp0 portaudio19-dev 
-pip3 install edge_impulse_linux -i https://pypi.python.org/simple
+```bash
+python3 -m pip install scipy
+python3 -m pip install --upgrade pip setuptools wheel
+pip install h5py --only-binary h5py
+python3 -m pip install tensorflow
+python3 -m pip install matplotlib
+python3 -m pip install imageio
+python3 -m pip install IPython
+python3 -m pip install opencv-python
+python3 -m pip install Flask
 ```
 
-> **As we are working with computer vision, we will need "opencv-python>=4.5.1.48, "PyAudio", "Psutil", and "Flask"**
+> **You can clone the public Edge Impulse project if you will from this [link](https://studio.edgeimpulse.com/public/425288/live).**
 
 ## Data Collection
 
 First, we need to create an [Edge Impulse Studio](https://studio.edgeimpulse.com) account if we haven't yet, and create a new project:
 
-![New project creation](../.gitbook/assets/gesture-appliances-control-brainchip/new_project.png)
+![New project creation](../.gitbook/assets/fomo-stock-tracker-brainchip/new-project.png)
 
-For the creation of the dataset of our model, we have two options, uploading the images from the BrainChip Development Kit or using our computer or phone. In this case, I chose to take them from the computer using the same webcam that we are finally going to use in the project.
+For the creation of the dataset of our model, we have several options, uploading the images from the Raspberry Pi with a USB camera or using our computer or phone. In this case, I chose to take them from the phone using its camera.
 
-![Dataset creating source](../.gitbook/assets/gesture-appliances-control-brainchip/pc_upload.png)
+![Dataset creating source](../.gitbook/assets/fomo-stock-tracker-brainchip/pc_upload.png)
 
-The dataset consists of 3 classes in which we finger point each appliance and a last one of unknown cases.
+The dataset consists of 1 class in which we capture the "piece", a terminal block in this case, from several angles and perspectives. Use the __Labeling queue__ to easily label all the pieces in one frame.
 
-![Raw image & PoseNet output](../.gitbook/assets/gesture-appliances-control-brainchip/classes.png)
+![Raw image and labeled image](../.gitbook/assets/fomo-stock-tracker-brainchip/dataset-creation.png)
 
-> **Taking at least +50 pictures of each class will let you create a robust enough model**
+> **Taking at least +95 pictures of the piece class will let you create a robust enough model**
 
 ## Impulse Design
 
@@ -158,188 +152,90 @@ In the left side menu, we navigate to **Impulse design** > **Create impulse** an
 
 ### Input block (Image data):
 
-- Image width: 192
-- Image height: 192
-- Resize mode: Fit longest
+- Image width: 224
+- Image height: 224
+- Resize mode: Fit shortest axis
 
-### Processing block (PoseNet):
+### Processing block (Image):
 
-Use this block to turn raw images into pose vectors, then pair it with an ML block to detect what a person is doing.
-
-PoseNet processing block is just enabled for Enterprise projects, if we want to use it on a Developer one, we need to locally run the block, for this, you must clone the [PoseNet block repository](https://github.com/edgeimpulse/pose-estimation-processing-block) and follow the __README__ steps.
-
-You will end up with an URL similar to "https://abe7-2001-1308-a2ca-4f00-e65f-1ff-fe27-d3aa.ngrok-free.app" hosting the processing block, click on **Add a processing block** > **Add custom block**, then paste the [**ngrok**](https://ngrok.com/) generated URL, and click on **Add block**.
-
-![Adding a Custom Block](../.gitbook/assets/gesture-appliances-control-brainchip/custom_block.png)
+Add an __Image__ processing block since this project will work with images as inputs.
 
 ### Learning block (BrainChip Akida)
 
-To classify the features extracted from the different poses, we'll use a classification learn block specifically designed for the hardware we're using.
-
-![Adding a Custom Block](../.gitbook/assets/gesture-appliances-control-brainchip/learning.png)
+We are going to use an __Object Detection__ learning block developed for Brainchip Akida hardware.
 
 Finally, we save the **Impulse design**, it should end up looking like this:
 
-![Adding a Custom Block](../.gitbook/assets/gesture-appliances-control-brainchip/impulse_design_2.png)
+![Final impulse design](../.gitbook/assets/fomo-stock-tracker-brainchip/impulse-design.png)
 
 ## Model Training
 
-After having designed the impulse, it's time to set the processing and learning blocks. The **Pose estimation** block doesn't have any configurable parameters, so we just need to click on **Save parameters** and then **Generate features**. 
+After having designed the impulse, it's time to set the processing and learning blocks. 
 
-In the _classifier block_ define the following settings:
+In the **Image** processing block, we set the "Color depth" parameter to **RGB**, click on **Save parameters** and then **Generate features**. 
 
-- Number of training cycles: 100
-- Learning rate: 0.001 
+In the **Object Detection** learning block, define the following settings:
 
-In the Neural network architecture, add 3 Dense layers with 35, 25 and 10 neurons respectively.
+- Number of training cycles: 60
+- Learning rate: 0.0005 
 
-Here is the architecture **"Expert mode"** code (you can copy and paste it from here):
-
-```
-python
-import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, InputLayer, Dropout, Conv1D, Conv2D, Flatten, Reshape, MaxPooling1D, MaxPooling2D, AveragePooling2D, Rescaling, BatchNormalization, Permute, ReLU, Softmax
-from tensorflow.keras.optimizers.legacy import Adam
-EPOCHS = args.epochs or 100
-LEARNING_RATE = args.learning_rate or 0.001
-# this controls the batch size, or you can manipulate the tf.data.Dataset objects yourself
-BATCH_SIZE = 32
-train_dataset = train_dataset.batch(BATCH_SIZE, drop_remainder=False)
-validation_dataset = validation_dataset.batch(BATCH_SIZE, drop_remainder=False)
-
-# model architecture
-model = Sequential()
-#model.add(Rescaling(7.5, 0))
-model.add(Dense(35,
-    activity_regularizer=tf.keras.regularizers.l1(0.00001)))
-model.add(ReLU())
-model.add(Dense(25,
-    activity_regularizer=tf.keras.regularizers.l1(0.00001)))
-model.add(ReLU())
-model.add(Dense(10,
-    activity_regularizer=tf.keras.regularizers.l1(0.00001)))
-model.add(ReLU())
-model.add(Dense(classes, name='y_pred'))
-model.add(Softmax())
-
-# this controls the learning rate
-opt = Adam(learning_rate=LEARNING_RATE, beta_1=0.9, beta_2=0.999)
-callbacks.append(BatchLoggerCallback(BATCH_SIZE, train_sample_count, epochs=EPOCHS))
-
-# train the neural network
-model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
-model.fit(train_dataset, epochs=EPOCHS, validation_data=validation_dataset, verbose=2, callbacks=callbacks)
-
-import tensorflow as tf
-
-
-def akida_quantize_model(
-    keras_model,
-    weight_quantization: int = 4,
-    activ_quantization: int = 4,
-    input_weight_quantization: int = 4,
-):
-    import cnn2snn
-
-    print("Performing post-training quantization...")
-    akida_model = cnn2snn.quantize(
-        keras_model,
-        weight_quantization=weight_quantization,
-        activ_quantization=activ_quantization,
-        input_weight_quantization=input_weight_quantization,
-    )
-    print("Performing post-training quantization OK")
-    print("")
-
-    return akida_model
-
-
-def akida_perform_qat(
-    akida_model,
-    train_dataset: tf.data.Dataset,
-    validation_dataset: tf.data.Dataset,
-    optimizer: str,
-    fine_tune_loss: str,
-    fine_tune_metrics: "list[str]",
-    callbacks,
-    stopping_metric: str = "val_accuracy",
-    fit_verbose: int = 2,
-    qat_epochs: int = 200,
-):
-    early_stopping = tf.keras.callbacks.EarlyStopping(
-        monitor=stopping_metric,
-        mode="max",
-        verbose=1,
-        min_delta=0,
-        patience=10,
-        restore_best_weights=True,
-    )
-    callbacks.append(early_stopping)
-
-    print("Running quantization-aware training...")
-    akida_model.compile(
-        optimizer=optimizer, loss=fine_tune_loss, metrics=fine_tune_metrics
-    )
-
-    akida_model.fit(
-        train_dataset,
-        epochs=qat_epochs,
-        verbose=fit_verbose,
-        validation_data=validation_dataset,
-        callbacks=callbacks,
-    )
-
-    print("Running quantization-aware training OK")
-    print("")
-
-    return akida_model
-
-
-akida_model = akida_quantize_model(model)
-akida_model = akida_perform_qat(
-    akida_model,
-    train_dataset=train_dataset,
-    validation_dataset=validation_dataset,
-    optimizer=opt,
-    fine_tune_loss='categorical_crossentropy',
-    fine_tune_metrics=['accuracy'],
-    callbacks=callbacks)
-```
+In the Neural network architecture, select the **Akida FOMO AkidaNet(alpha=0.5 @224x224x3)**.
 
 Click on the __Start training__ button and wait for the model to be trained and the confusion matrix to show up.
 
 ### Confusion Matrix 
 
-![Confusion matrix results](../.gitbook/assets/gesture-appliances-control-brainchip/confusion.png)
+![Confusion matrix results](../.gitbook/assets/fomo-stock-tracker-brainchip/confusion.png)
 
-The results of the confusion matrix can be improved by adding more samples to the dataset.
+The results of the confusion matrix can be improved by adding more samples to the dataset. After some try and error testing different models I was able to get one stable and robust enough for the application.
 
 ## Project Setup
 
-To be able to run the project, we need to go back to our SSH connection with the device and clone the project from the [Github repository](https://github.com/edgeimpulse/pose-akida-classification), for this, use the following command:
+To be able to run the project, we need to go back to our SSH connection with the device and clone the project from the [Github repository](https://github.com/mcmchris/brainchip-inventory-check.git), for this, use the following command:
 
-```
-bash
-git clone https://github.com/edgeimpulse/pose-akida-classification.git
-```
-Install all the project requirements with the following command, and wait for the process to be done.
-
-```
-bash
-pip install -r requirements.txt
+```bash
+git clone https://github.com/mcmchris/brainchip-inventory-check.git
 ```
 
-Install these other required packages with:
+Enter the repository directory:
 
+```bash
+cd brainchip-inventory-check
 ```
-bash
-apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+We are going through the content in detail later.
+
+> **It is recommended that you install Edge Impulse for Linux following this [link](https://docs.edgeimpulse.com/docs/edge-ai-hardware/cpu/raspberry-pi-5#id-2.-installing-dependencies) or the steps below:**
+
+```bash
+sudo apt update
+curl -sL https://deb.nodesource.com/setup_20.x | sudo bash -
+sudo apt install -y gcc g++ make build-essential nodejs sox gstreamer1.0-tools gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-plugins-base-apps
+sudo npm install edge-impulse-linux -g --unsafe-perm
 ```
+Then to update npm packages:
+
+```bash
+sudo npm install -g npm@10.8.1
+```
+```bash
+edge-impulse-linux --version
+```
+It should show you the installed version (1.8.0 at writing time)
+
+To activate the MIPI camera support run the following command:
+
+```bash
+sudo raspi-config
+```
+
+Use the cursor keys to select and open Interfacing Options, then select Camera, and follow the prompt to enable the camera. Reboot the Raspberry Pi.
+
 
 ## Deployment
 
-Once the project is cloned locally in the Akida Development Kit, you can download the project model from Edge Impulse Studio by navigating to the **Dashboard** section and downloading the **MetaTF** `.fbz` file.
+> **If you want to test the model as it is without any modification, jump to [Run Inferencing](#run-inferencing) section.**
+
+Once the project is cloned locally in the Raspberry Pi, you can download the project model from Edge Impulse Studio by navigating to the **Dashboard** section and downloading the **MetaTF** `.fbz` file.
 
 ![Downloading the project model](../.gitbook/assets/gesture-appliances-control-brainchip/model-down.png)
 
