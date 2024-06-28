@@ -233,85 +233,69 @@ Use the cursor keys to select and open Interfacing Options, then select Camera, 
 
 ## Deployment
 
-> **If you want to test the model as it is without any modification, jump to [Run Inferencing](#run-inferencing) section.**
+> **If you want to test the model as it is without any modification, jump to the [Run Inferencing](#run-inferencing) section.**
 
 Once the project is cloned locally in the Raspberry Pi, you can download the project model from Edge Impulse Studio by navigating to the **Dashboard** section and downloading the **MetaTF** `.fbz` file.
 
-![Downloading the project model](../.gitbook/assets/gesture-appliances-control-brainchip/model-down.png)
+![Downloading the project model](../.gitbook/assets/fomo-stock-tracker-brainchip/model-download.png)
 
-Once downloaded, from the model path, open a new terminal and copy the model to the Dev Kit using `scp` command as follows:
+Once downloaded, from the model download directory, open a new terminal and copy the model to the Raspberry Pi using `scp` command as follows:
 
-```
-bash
-scp <model file>.fbz ubuntu@<Device IP>:~ # command format
-scp akida_model.fbz ubuntu@10.0.0.154:~ # actual command in my case
+```bash
+scp <model file>.fbz raspberrypi@<Device IP>:~ # command format
+scp akida_model_2.fbz raspberrypi@10.0.0.207:~ # actual command in my case
 ```
 > _You will be asked for your Linux machine login password._
 
-Now, the model is on the Akida Dev Kit local storage `(/home/ubuntu)` and you can verify it by listing the directory content using `ls`.
+![Copying the model to the Raspberry Pi](../.gitbook/assets/fomo-stock-tracker-brainchip/model-copy.png)
 
-Move the model to the project directory with the following command:
+Now, the model is on the Raspberry Pi local storage `(/home/raspberrypi)` and you can verify it by listing the directory content using `ls`.
 
-```
-bash
-mv akida_model.fbz ./pose-akida-classification/
+Move the model to the project directory with the following command `(from /home/raspberrypi)`:
+
+```bash
+mv akida_model_2.fbz /root/brainchip-inventory-check/model
 ```
 
 Here we have the model on the project directory, so now everything is ready to be run.
 
-![Project directory](../.gitbook/assets/gesture-appliances-control-brainchip/model-copy.png)
+![Project directory](../.gitbook/assets/fomo-stock-tracker-brainchip/model-located.png)
 
 ## Run Inferencing
 
+In the project directory, there are several script options with the following characteristics:
+
+- `inventory.py`: is the original program, it uses a MIPI camera feed to run the inference. 
+- `stock.py`: is an optimized version of the original program, also uses a MIPI camera but the object markers are bigger.
+- `low-power.py`: is a lower program but with half of energy consumption, and also uses a MIPI camera.
+- `usb-inference.py`: is a version that uses a USB camera instead of a MIPI camera (no Matrix control).
+
+There are other auxiliary scripts for testing purposes:
+
+- `mipi_inference.py`: this program runs the FOMO model without controlling the LED Matrix.
+- `matrix_test.py`: this program tests the LED matrix displaying colors and patterns.
+
 To run the project, type the following command:
 
-```
-bash
-python3 class-pose.py akida_model.fbz 0
+```bash
+python3 <your prefered program>
+# to run the original program:
+python3 inventory.py
 ```
 
-- The first parameter `class-pose.py` is the project's main script to be run.
-- `akida_model.fbz` is the Meta TF model name we downloaded from our Edge Impulse project.
-- `0` force the script to use the first camera available.
+> **The .fbz model is hard coded in the script, so if you want to use the custom one you downloaded, update the "model_file" variable in the python script**.
 
-The project will start running and printing the inference results continuously in the terminal.
+The project will start running and streaming a live view of the camera feed plus showing you in the LED matrix the location of detected objects.
 
 ![Project running and printing the results](../.gitbook/assets/gesture-appliances-control-brainchip/running.png)
 
-To watch a preview of the camera feed, you can do it by opening a new `ssh` session and running the `make-page.py` script from the project directory:
+To watch a preview of the camera feed open your favorite browser and enter:
 
-```
-bash
-python3 make-page.py
-```
+`<Raspberry IP>:8080`
 
-![Preview Web Page script command](../.gitbook/assets/gesture-appliances-control-brainchip/preview-web.png)
-
-Finally, you will be able to see the camera preview alongside the inference results organized in the following order: `AC`, `Light`, `Other` and `TV`.
+Finally, you will be able to see the camera preview alongside the FOMO inference results, object count, frames per second and energy consumption.
 
 ![Project running | Inference results](../.gitbook/assets/gesture-appliances-control-brainchip/results-preview.png)
-
-## Google Assistant Setup
-
-For the actual appliance control, I used the __Google Assistant SDK__ integration for __Home Assistant__. Follow the [documentation](https://www.home-assistant.io/integrations/google_assistant_sdk) to configure it for your setup.
-
-> **The Home Assistant is running on a separate Raspberry PI.**
-
-Once the integration is set, we can send `HTTP` requests to it with the following format:
-
-- URL: `http://<Raspberry Pi IP>:8123/api/services/google_assistant_sdk/send_text_command`
-- Headers:
-    - Authorization: "Bearer <authentication key>"
-    - Content-Type: "application/json"
-- Body: {"command":"turn on the light"}
-
-You must edit the `url` and `auth` variables in the code with the respective ones of your setup.
-
-```
-python
-url = 'http://<Raspberry Pi IP>:8123/api/services/google_assistant_sdk/send_text_command'
-auth = 'Bearer ******************************************************************************'
-```
 
 ## Demo
 
