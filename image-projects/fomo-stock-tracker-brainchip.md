@@ -13,7 +13,7 @@ Christopher Mendez
 
 Industries, stores, workshops and many other professional environments have to manage an inventory, whether of products or tools, this need is normally addressed with a limited digital or manual solution. This project aims to contribute to the cited need with a smart approach that will let you know the products/tools quantity and their exact location in the rack, box or drawer.
 
-[Project Thumbnail]()
+[Project overview](../.gitbook/assets/fomo-stock-tracker-brainchip/thumbnail.png)
 
 The system will be constantly tracking the terminal blocks on a tray, counting them and streaming a live view in a web server, in addition, you will have real-time location feedback on an LED matrix.
 
@@ -53,7 +53,7 @@ To fully assemble the project:
 - Connect the Grove cable from the LED Matrix to an I2C connector on the Grove Base Hat.
 - Screw the cooling fan holder in the PCIe Slot Extension Adapter Board and connect it to +5V and GND on the 40 pins header (Optional).
 
-![Hardware Setup Final Result]()
+![Hardware Setup Final Result](../.gitbook/assets/fomo-stock-tracker-brainchip/hardware.png)
 
 ## Raspberry Pi 5 Setup
 
@@ -285,17 +285,9 @@ python3 inventory.py
 
 > **The .fbz model is hard coded in the script, so if you want to use the custom one you downloaded, update the "model_file" variable in the python script**.
 
-The project will start running and streaming a live view of the camera feed plus showing you in the LED matrix the location of detected objects.
+The project will start running and streaming a live view of the camera feed plus showing you in the LED matrix the location of detected objects alongside the FOMO inference results, object count, frames per second and energy consumption. To watch a preview of the camera feed open your favorite browser and enter `<Raspberry IP>:8080`.
 
-![Project running and printing the results](../.gitbook/assets/gesture-appliances-control-brainchip/running.png)
-
-To watch a preview of the camera feed open your favorite browser and enter:
-
-`<Raspberry IP>:8080`
-
-Finally, you will be able to see the camera preview alongside the FOMO inference results, object count, frames per second and energy consumption.
-
-![Project running | Inference results](../.gitbook/assets/gesture-appliances-control-brainchip/results-preview.png)
+![Project running | Inference results](../.gitbook/assets/fomo-stock-tracker-brainchip/preview.png)
 
 ## Demo
 
