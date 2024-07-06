@@ -27,7 +27,7 @@ To develop this project we will use the following hardware:
 - [Camera Module 3 - IMX708](https://www.raspberrypi.com/products/camera-module-3/)
 - [RGB LED Matrix](https://wiki.seeedstudio.com/Grove-RGB_LED_Matrix_w-Driver/)
 - [Grove Base Hat for Raspberry Pi (Optional)](https://www.seeedstudio.com/Grove-Base-Hat-for-Raspberry-Pi.html)
-- [Custom 3D parts]()
+- [Custom 3D parts](https://github.com/mcmchris/brainchip-inventory-check/tree/main/3D_files)
 
 ![Hardware required for the project](../.gitbook/assets/fomo-stock-tracker-brainchip/materials.png)
 
