@@ -291,12 +291,10 @@ The project will start running and streaming a live view of the camera feed plus
 
 ## Demo
 
-![Final project deployment](../.gitbook/assets/gesture-appliances-control-brainchip/setup-on.png)
+Here I show you the whole project working and running.
 
-Here I show you the whole project working and controlling appliances when they are pointed.
-
-{% embed url="https://youtu.be/xLTo_sYCn9Y" %}
+{% embed url="https://youtu.be/lefxCvfzw4s" %}
 
 ## Conclusion
 
-This project leverages the Brainchip Akida Neuromorphic Hardware Accelerator to propose an innovative solution to home automation. It can be optimized to work as a daily used gadget that may be at everyone's house in the near future.
+This project leverages the Brainchip Akida Neuromorphic Hardware Accelerator to propose an innovative solution to inventory stock tracking. It showed a very good performance running at +56 FPS, less than 100 mW of power consumption and tracking a lot of pieces at a time.
