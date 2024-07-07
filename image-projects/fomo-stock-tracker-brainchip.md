@@ -2,7 +2,7 @@
 description: Manage the availability and location of your products in the warehouse using the Brainchip AKD1000 for fast and seamless detection using Machine Vision.
 ---
 
-# Gesture Appliances Control with Pose Detection - BrainChip AKD1000 
+# Inventory Stock Tracker - FOMO - BrainChip ADK1000 
 
 Created By:
 Christopher Mendez
