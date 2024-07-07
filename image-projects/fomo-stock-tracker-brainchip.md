@@ -13,7 +13,7 @@ Christopher Mendez
 
 Industries, stores, workshops and many other professional environments have to manage an inventory, whether of products or tools, this need is normally addressed with a limited digital or manual solution. This project aims to contribute to the cited need with a smart approach that will let you know the products/tools quantity and their exact location in the rack, box or drawer.
 
-[Project overview](../.gitbook/assets/fomo-stock-tracker-brainchip/thumbnail.png)
+![Project overview](../.gitbook/assets/fomo-stock-tracker-brainchip/thumbnail.png)
 
 The system will be constantly tracking the terminal blocks on a tray, counting them and streaming a live view in a web server, in addition, you will have real-time location feedback on an LED matrix.
 
