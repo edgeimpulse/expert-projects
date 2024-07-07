@@ -7,7 +7,7 @@ description: Manage the availability and location of your products in the wareho
 Created By:
 Christopher Mendez
 
-[Edge Impulse Studio Public Project](https://studio.edgeimpulse.com/public/425288/live)
+[Edge Impulse Studio public project](https://studio.edgeimpulse.com/public/425288/live)
 
 ## Introduction
 
