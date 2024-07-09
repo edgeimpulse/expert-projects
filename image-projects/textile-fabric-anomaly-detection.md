@@ -1,6 +1,6 @@
 ---
 description: >-
-  Use a Raspberry Pi 5 to look for anomolies in fabric or other textiles with FOMO-AD for defect detection.
+  Use a Raspberry Pi 5 to spot anomolies in fabric or other textiles with Edge Impulse FOMO-AD.
 ---
 
 # Visual Anomaly Detection in Fabric using FOMO-AD
