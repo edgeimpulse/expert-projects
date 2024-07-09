@@ -122,6 +122,6 @@ Check our demo test video for an example of how it works:
 
 {% embed url="https://youtu.be/nLFFdjzscZY" %}
 
-## Conclusion:
+## Conclusion
 
 We have successfully created a Product Inspection with Visual Anomaly Detection project by training a machine learning model with only one class label, "No Anomaly." The model has successfully detected anomalies along with their locations, making it easier for us to identify which part or section has an issue. By using FOMO-AD, the machine learning model can be deployed to a microcontroller. This enables a cost-effective and energy-efficient solution for the manufacturing industry, especially in sorting systems and visual inspection lines.
