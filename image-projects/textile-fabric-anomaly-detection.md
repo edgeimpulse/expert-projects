@@ -1,6 +1,6 @@
 ---
 description: >-
-  Use a Raspberry Pi 5 to look for anomolies in fabric or other textiles with FOMO-AD for defect detection.
+  Use a Raspberry Pi 5 to spot anomolies in fabric or other textiles with Edge Impulse FOMO-AD.
 ---
 
 # Visual Anomaly Detection in Fabric using FOMO-AD
@@ -13,13 +13,13 @@ Public Project Link: [https://studio.edgeimpulse.com/studio/384963](https://stud
 
 ## Introduction
 
-The current practice of anomaly detection in the textile industry predominantly relies on visual inspection by skilled workers, which, while effective, is subject to human error due to the vision fatigue and inattention. The industry has been exploring alternative methods such as spectrum-based, statistics-based, and combined approaches to enhance efficiency and accuracy. However, these methods often come with stringent sample requirements and may not be suitable for all types of textiles. Despite the progress, the industry continues to face challenges in generalizing these systems across the vast range of fabric types and colors, and in integrating them seamlessly into the existing production lines without disrupting the workflow.
+The current practice of anomaly detection in the textile industry predominantly relies on visual inspection by skilled workers, which, while effective, is subject to human error due to vision fatigue and inattention. The industry has been exploring alternative methods such as spectrum-based, statistics-based, and combined approaches to enhance efficiency and accuracy. However, these methods often come with stringent sample requirements and may not be suitable for all types of textiles. Despite the progress, the industry continues to face challenges in generalizing these systems across the vast range of fabric types and colors, and in integrating them seamlessly into the existing production lines without disrupting the workflow.
 
 In the pursuit of excellence in textile manufacturing, the detection of visual anomalies is crucial. This project is dedicated to developing a machine learning-based visual anomaly detection system to identify defects in fabrics, which can range from subtle pattern inconsistencies to noticeable flaws. The system is trained to learn from **good** samples to detect **anomalies**, offering a promising solution to the challenges of manual inspection and the limitations of other automated methods.
 
 ## Hardware Setup
 
-For this project, we will use the latest **Raspberry Pi 5** and the **Raspberry High-Quality Camera** with a **6mm 3MP Wide Angle Lens**. Fabrics can have a wide range of anomalies, from tiny pinholes to subtle variations in texture or color. High-resolution cameras provide detailed images that can improve the accuracy of defect detection algorithms, reducing false positives and negatives. 
+For this project, we will use the latest **Raspberry Pi 5** and the **Raspberry Pi High-Quality Camera** with a **6mm 3MP Wide Angle Lens**. Fabrics can have a wide range of anomalies, from tiny pinholes to subtle variations in texture or color. High-resolution cameras provide detailed images that can improve the accuracy of defect detection algorithms, reducing false positives and negatives. 
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/raspberry_pi5.png)
 
@@ -29,7 +29,7 @@ Although this system will be a proof of concept, we will use an **M5Stack 6060-P
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/6060push.png)
 
-The 6060-PUSH Linear Motion Control is based on a stepper motion controlled over RS485 communication protocol. We will use an **M5Stack Atom Lite** (ESP32) with an **ATOMIC RS485 Base** to control its movement. Also, we will use the **M5Stack Flashlight Unit** as an overhead lighting system to ensure the fabric is evenly lit, providing consistent lighting conditions. It prevents shadows or highlights that could be mistaken for defects.  The flashlight is connected to the Atom Lite using a Grove connector. 
+The 6060-PUSH Linear Motion Control is based on a stepper motion controlled over the RS485 communication protocol. We will use an **M5Stack Atom Lite** (ESP32) with an **ATOMIC RS485 Base** to control its movement. Also, we will use the **M5Stack Flashlight Unit** as an overhead lighting system to ensure the fabric is evenly lit, providing consistent lighting conditions. It prevents shadows or highlights that could be mistaken for defects.  The flashlight is connected to the Atom Lite using a Grove connector. 
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/atom_lite_485_flash.jpg)
 
@@ -37,7 +37,7 @@ We have designed and 3D-printed a base plate with a Lego connector for the Flash
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/flash_mount_3d_model.png)
 
-The flashlight unit with the camera looks as it is shown below.
+The flashlight unit with the camera looks as is shown below.
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/camera_with_flash.jpeg)
 
@@ -55,9 +55,9 @@ We are using a set of dust cloths as the fabric.
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/fabric.jpeg)
 
-We will be using a Python script for the data collection. The code below is used for streaming the images over the network and can be displayed on a web page. It will be imported by the data collection and inferencing scripts. 
+We will be using a Python script for the data collection phase. The code below is used for streaming the images over the network and can be displayed on a web page. It will be imported by the data collection and inferencing scripts. 
 
-File: *Stream.py*
+File: *stream.py*
 
 ```
 import io
@@ -202,7 +202,7 @@ if __name__ == "__main__":
         logging.info("Capture stopped")
 ```
 
-The Arduino sketch below should be uploaded to the M5 Atom Lite (ESP32) to control the flashlight and send a message to Raspberry Pi 5 to trigger the camera.
+The Arduino sketch below should be uploaded to the M5 Atom Lite (ESP32) to control the flashlight and send a message to the Raspberry Pi 5 to trigger the camera.
 
 File: *data_collection.ino*
 
@@ -269,7 +269,7 @@ Now execute the command below to start the data collection process.
 $ python3 capture_image.py
 ```
 
-We have collected a total of 93 images of the fabric mostly with the label **No Anomaly**. The images without any anomalies are required by the **FOMO-AD** learning block that we will be using for the training.  A few images with fabricated anomalies are taken for testing the model.  A few example images are shown below.
+We have collected a total of 93 images of the fabric mostly with the label **No Anomaly**. The images without any anomalies are required by the **FOMO-AD** learning block that we will be using for the training.  A few images with fabricated anomalies are taken for testing the model, later.  A few example images are shown below.
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/dataset.png)
 
@@ -283,20 +283,20 @@ We need to create a new project to upload data to Edge Impulse Studio.
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/new_project.png)
 
-The data is uploaded using the Edge Impulse CLI. Please follow the instructions to install the CLI here: https://docs.edgeimpulse.com/docs/cli-installation. Please remember to execute the following command to upload the **No Anomaly** images only for the training. 
+The data is uploaded using the Edge Impulse CLI. You can install the CLI by following the instuctions here: [https://docs.edgeimpulse.com/docs/cli-installation](https://docs.edgeimpulse.com/docs/cli-installation). Please remember to execute the following command to upload the **No Anomaly** images only for the Training. 
 
 ```
 $ edge-impulse-uploader --category training  --label "No Anomaly" no_anomaly.*.jpg
 ```
 
-We can add a few Anomaly/No Anomaly images to the testing set using the following commands.
+We can add a few Anomaly/No Anomaly images to the Testing dataset using the following commands.
 
 ```
 $ edge-impulse-uploader --category testing  --label "No Anomaly" no_anomaly.*.jpg
 $ edge-impulse-uploader --category testing  --label "No Anomaly" anomaly.*.jpg
 ```
 
-We can see the uploaded datasets on the Edge Impulse Studio's **Data Acquisition** page.
+We can see the uploaded datasets in the Edge Impulse Studio **Data Acquisition** page.
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/data_aquisition.png)
 
@@ -324,7 +324,7 @@ Now go to the **Impulse Design** > **FOMO-AD** page and choose the Neural Networ
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/anomaly_detection_settings.png)
 
-Now click the **Start Training** button and wait until the training is completed. By definition, there should be as few as possible anomalies in the training dataset, and thus accuracy is not calculated during training. Later we will run the Model testing to learn more about the model performance. On completion, It displays the estimated On-device performance of the Raspberry Pi for the EON Compiler engine.
+Now click the **Start Training** button and wait until the training is completed. By definition, there should be as few as possible anomalies in the training dataset, and thus accuracy is not calculated during training. Later we will run the **Model testing** to learn more about the model performance. On completion, it displays the estimated On-device performance of the Raspberry Pi for the EON Compiler engine.
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/on_device_perf.png)
 
@@ -334,7 +334,7 @@ Now click the **Start Training** button and wait until the training is completed
 
 ## Model Deployment
 
-Please ensure to visit the **Deployment** page, select **Linux (AARCH64)** as the deployment target, and click on **Build** at the bottom of the page. An **eim** model (an Edge Impulse packaged model) will be downloaded to the computer.
+Next, navigate to the **Deployment** page, select **Linux (AARCH64)** as the deployment target, and click on **Build** at the bottom of the page. An **eim** model (an Edge Impulse packaged model) will be downloaded to the computer.
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/deployment.png)
 
@@ -440,17 +440,21 @@ finally:
 
 
 
-Please execute the script as follows.
+Execute the script as follows:
 
 ```
 $ python3 classify-camera.py
+```
 
+You should see the following on the console:
+
+```
 01:30:50: Configuration successful!
 01:30:50: Camera started
 01:30:50: Server started at 0.0.0.0:8000
 ```
 
-Also, we need to upload the following  Arduino Sketch to M5 Atom which controls the Linear Motion Control and the flashlight automatically on button press.
+Also, we need to upload the following  Arduino Sketch to the M5 Atom, which controls the Linear Motion Control and the flashlight automatically on button press.
 
 ```
 #include "M5Atom.h"
@@ -559,5 +563,5 @@ The following video demonstrates the operation of the systems. Any anomalies fou
 
 ## Conclusion
 
-This project aims to revolutionize the field of textile quality control through the application of machine learning for visual anomaly detection. By utilizing cutting-edge technology, such as the Edge Impulse **FOMO-AD,** we can significantly elevate the standards of fabric inspection and maintain the integrity of the textile industry.
+This project aims to revolutionize the field of textile quality control through the application of machine learning for visual anomaly detection. By utilizing cutting-edge technology, such as Edge Impulse **FOMO-AD,** we can significantly elevate the standards of fabric inspection and quality control in the textile industry.
 
