@@ -2,20 +2,19 @@
 description: Manage the availability and location of your products in the warehouse using the Brainchip AKD1000 for fast and seamless detection using Machine Vision.
 ---
 
-# Inventory Stock Tracker - FOMO - BrainChip ADK1000 
+# Inventory Stock Tracker - FOMO - BrainChip Akida 
 
-Created By:
-Christopher Mendez
+Created By: Christopher Mendez
 
-[Edge Impulse Studio public project](https://studio.edgeimpulse.com/public/425288/live)
+Public Project Link: [https://studio.edgeimpulse.com/public/425288/live](https://studio.edgeimpulse.com/public/425288/live)
 
 ## Introduction
 
-Industries, stores, workshops and many other professional environments have to manage an inventory, whether of products or tools, this need is normally addressed with a limited digital or manual solution. This project aims to contribute to the cited need with a smart approach that will let you know the products/tools quantity and their exact location in the rack, box or drawer.
+Industries, stores, workshops and many other professional environments have to manage an inventory. Whether of products or tools, this need is normally addressed with a limited digital or manual solution. This project aims to contribute to the cited need with a smart approach that will let you know the products/tools quantity and their exact location in the rack, box or drawer.
 
 ![Project overview](../.gitbook/assets/fomo-stock-tracker-brainchip/thumbnail.png)
 
-The system will be constantly tracking the terminal blocks on a tray, counting them and streaming a live view in a web server, in addition, you will have real-time location feedback on an LED matrix.
+The system will be constantly tracking the terminal blocks on a tray, counting them and streaming a live view in a web server. In addition, you will have real-time location feedback on an LED matrix.
 
 ## Hardware and Software Requirements
 
@@ -35,9 +34,10 @@ To develop this project we will use the following hardware:
 
 It should be noted that the **AKD1000 Neuromorphic Hardware Accelerator** is the main component of this project thanks to some interesting characteristics that make it ideal for this use case. 
 
-Considering that our project will end up being deployed in industrial and commercial environments, it's crucial that it can do its job efficiently and with very low energy consumption. This is where BrainChip's technology makes sense. Akida™ neuromorphic processor mimics the human brain to analyze only essential sensor inputs at the point of acquisition—processing data with unparalleled performance, precision, and economy of energy.
+Considering that our project will end up being deployed in industrial and commercial environments, it's crucial that it can do its job efficiently and with very low energy consumption. This is where BrainChip's technology makes sense. Akida™ neuromorphic processor mimics the human brain to analyze only essential sensor inputs at the point of acquisition - processing data with unparalleled performance, precision, and economy of energy.
 
 ### Software
+
 To develop the project model we are going to use:
 
 - [Edge Impulse Studio](https://studio.edgeimpulse.com/)
@@ -61,7 +61,7 @@ With the Raspberry Pi Imager, flash a micro-SD card with the Raspberry Pi OS Lit
 
 ![Raspberry Pi image settings](../.gitbook/assets/fomo-stock-tracker-brainchip/pi5-image.png)
 
-Once the micro-SD card is flashed and verified, eject it and install it on your Raspberry Pi 5 slot.
+Once the micro-SD card is flashed and verified, eject it and install it in your Raspberry Pi 5.
 
 ## Setting up the Development Environment
 
@@ -126,7 +126,7 @@ python3 -m pip install opencv-python
 python3 -m pip install Flask
 ```
 
-> **You can clone the public Edge Impulse project if you will from this [link](https://studio.edgeimpulse.com/public/425288/live).**
+> **You can clone the public Edge Impulse project if you'd like, from [this link](https://studio.edgeimpulse.com/public/425288/live).**
 
 ## Data Collection
 
@@ -187,7 +187,7 @@ Click on the __Start training__ button and wait for the model to be trained and 
 
 ![Confusion matrix results](../.gitbook/assets/fomo-stock-tracker-brainchip/confusion.png)
 
-The results of the confusion matrix can be improved by adding more samples to the dataset. After some try and error testing different models I was able to get one stable and robust enough for the application.
+The results of the confusion matrix can be improved by adding more samples to the dataset. After some trial and error testing different models I was able to get one stable and robust enough for the application.
 
 ## Project Setup
 
@@ -230,12 +230,11 @@ sudo raspi-config
 
 Use the cursor keys to select and open Interfacing Options, then select Camera, and follow the prompt to enable the camera. Reboot the Raspberry Pi.
 
-
 ## Deployment
 
 > **If you want to test the model as it is without any modification, jump to the [Run Inferencing](#run-inferencing) section.**
 
-Once the project is cloned locally in the Raspberry Pi, you can download the project model from Edge Impulse Studio by navigating to the **Dashboard** section and downloading the **MetaTF** `.fbz` file.
+Once the project is cloned locally on the Raspberry Pi, you can download the project model from Edge Impulse Studio by navigating to the **Dashboard** section and downloading the **MetaTF** `.fbz` file.
 
 ![Downloading the project model](../.gitbook/assets/fomo-stock-tracker-brainchip/model-download.png)
 
@@ -245,11 +244,11 @@ Once downloaded, from the model download directory, open a new terminal and copy
 scp <model file>.fbz raspberrypi@<Device IP>:~ # command format
 scp akida_model_2.fbz raspberrypi@10.0.0.207:~ # actual command in my case
 ```
-> _You will be asked for your Linux machine login password._
+> _You will be asked for your Raspberry Pi login password._
 
 ![Copying the model to the Raspberry Pi](../.gitbook/assets/fomo-stock-tracker-brainchip/model-copy.png)
 
-Now, the model is on the Raspberry Pi local storage `(/home/raspberrypi)` and you can verify it by listing the directory content using `ls`.
+Now, the model is on the Raspberry Pi's local storage `(/home/raspberrypi)`, and you can verify it by listing the directory content using `ls`.
 
 Move the model to the project directory with the following command `(from /home/raspberrypi)`:
 
@@ -267,7 +266,7 @@ In the project directory, there are several script options with the following ch
 
 - `inventory.py`: is the original program, it uses a MIPI camera feed to run the inference. 
 - `stock.py`: is an optimized version of the original program, also uses a MIPI camera but the object markers are bigger.
-- `low-power.py`: is a lower program but with half of energy consumption, and also uses a MIPI camera.
+- `low-power.py`: is a lower-power program with half of energy consumption, and also uses a MIPI camera.
 - `usb-inference.py`: is a version that uses a USB camera instead of a MIPI camera (no Matrix control).
 
 There are other auxiliary scripts for testing purposes:
@@ -285,7 +284,7 @@ python3 inventory.py
 
 > **The .fbz model is hard coded in the script, so if you want to use the custom one you downloaded, update the "model_file" variable in the python script**.
 
-The project will start running and streaming a live view of the camera feed plus showing you in the LED matrix the location of detected objects alongside the FOMO inference results, object count, frames per second and energy consumption. To watch a preview of the camera feed open your favorite browser and enter `<Raspberry IP>:8080`.
+The project will start running and streaming a live view of the camera feed plus showing you in the LED matrix the location of detected objects alongside the FOMO inference results, object count, frames per second and energy consumption. To watch a preview of the camera feed, open your favorite browser and enter `http://<Raspberry Pi IP>:8080`.
 
 ![Project running | Inference results](../.gitbook/assets/fomo-stock-tracker-brainchip/preview.png)
 
@@ -297,4 +296,4 @@ Here I show you the whole project working and running.
 
 ## Conclusion
 
-This project leverages the Brainchip Akida Neuromorphic Hardware Accelerator to propose an innovative solution to inventory stock tracking. It showed a very good performance running at +56 FPS, less than 100 mW of power consumption and tracking a lot of pieces at a time.
+This project leverages the Brainchip Akida Neuromorphic Hardware Accelerator to propose an innovative solution to inventory stock tracking. It showed a very good performance running at 56 FPS, with less than 100 mW of power consumption and tracking a lot of pieces at a time.
