@@ -87,6 +87,7 @@ Computer vision projects that make use of image classification, object detection
 * [Motorcycle Helmet Identification and Traffic Light Control - Texas Instruments AM62A](image-projects/motorcycle-helmet-detection-smart-light-ti-am62a.md)
 * [Import a Pretrained Model with "Bring Your Own Model" - Texas Instruments AM62A](image-projects/asl-byom-ti-am62a.md)
 * [Product Inspection with Visual Anomaly Detection - FOMO-AD - Sony Spresense](image-projects/fomo-ad-product-inspection-spresense.md)
+* [Visual Anomaly Detection in Fabric using FOMO-AD - Raspberry Pi 5](image-projects/textile-fabric-anomaly-detection.md)
 
 ### Audio Projects
 
