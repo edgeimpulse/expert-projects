@@ -135,7 +135,7 @@ On the **Model testing** page, click on the "Classify All" button which will ini
 
 We need to convert the model to a Hailo Executable Format (HEF) to run inferencing.  First download the ONNX model (highlighted by a rectangular in the image below) from the Edge Impulse Studio **Dashboard**. After downloading, copy the the ONNX model (`ei-car-yolov5s.onnx` in this example) to an x86 Linux machine, which is required for the model conversion toolkit provided by Hailo.
 
-![Block Output](../.gitbook/assets/vehicle-detection-raspberry-pi-ai-kitblock_output.png)
+![Block Output](../.gitbook/assets/vehicle-detection-raspberry-pi-ai-kit/block_output.png)
 
 Now, sign up for a free account at the Hailo Developer Zone: [https://hailo.ai/developer-zone](https://hailo.ai/developer-zone). Navigate to the "Software Downloads" section and get the **Dataflow Compiler** version 3.27.0.
 
