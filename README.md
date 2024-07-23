@@ -88,6 +88,7 @@ Computer vision projects that make use of image classification, object detection
 * [Import a Pretrained Model with "Bring Your Own Model" - Texas Instruments AM62A](image-projects/asl-byom-ti-am62a.md)
 * [Product Inspection with Visual Anomaly Detection - FOMO-AD - Sony Spresense](image-projects/fomo-ad-product-inspection-spresense.md)
 * [Visual Anomaly Detection in Fabric using FOMO-AD - Raspberry Pi 5](image-projects/textile-fabric-anomaly-detection.md)
+* [Car Detection and Tracking System for Toll Plazas - Raspberry Pi AI Kit](image-projects/vehicle-detection-raspberry-pi-ai-kit.md)
 
 ### Audio Projects
 
