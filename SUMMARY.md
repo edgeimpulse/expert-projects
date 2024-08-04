@@ -164,6 +164,7 @@
 * [Smart Building Ventilation with Environmental Sensor Fusion](air-quality-and-environmental-projects/smart-building-sensor-fusion.md)
 * [Sensor Data Fusion with Spresense and CommonSense](air-quality-and-environmental-projects/environmental-sensor-fusion-commonsense.md)
 * [Water Pollution Detection - Arduino Nano ESP32 + Ultrasonic Scan](air-quality-and-environmental-projects/water-pollution-detection-arduino-nano-esp32.md)
+* [Fire Detection Using Sensor Fusion - Arduino Nano 33 BLE Sense](air-quality-and-environmental-projects/fire-detection-sensor-fusion-arduino-nano.md)
 
 ## Novel Sensor Projects
 
