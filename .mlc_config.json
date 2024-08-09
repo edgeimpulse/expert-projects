@@ -27,7 +27,7 @@
   ],
   "ignorePatterns": [
     {
-      "pattern": "/https://www.st.com/en/ecosystems/x-nucleo-iks02a1.html/"
+      "pattern": "^https://www.st.com/"
     },
     {
       "pattern": "/https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK/Download#infotabs/"
@@ -72,6 +72,9 @@
       "pattern": "http://localhost:8082"
     },
     {
+      "pattern": "http://localhost:1337"
+    },
+    {
       "pattern": "^https://www.arducam.com/"
     },
     {
@@ -81,7 +84,7 @@
       "pattern": "^https://www2.mouser.com"
     },
     {
-      "pattern": "https://www.edgeimpulse.com/blog/collect-sensor-data-straight-from-your-web-browser"
+      "pattern": "https://edgeimpulse.com/blog/collect-sensor-data-straight-from-your-web-browser"
     },
     {
       "pattern": "https://arxiv.org/abs/1801.04381"
@@ -106,6 +109,126 @@
     },
     {
       "pattern": "https://apps.apple.com/us/app/nrf-edge-impulse/id1557234087"
-    }
+    },
+    {
+      "pattern": "https://alifsemi.com/download/AUGD0002"
+    },
+    {
+      "pattern": "https://admin.sclbl.net/register"
+    },
+    {
+      "pattern": "https://dev.ti.com/tirex/explore/node?devtools=LAUNCHXL-CC1352P-2&node=A__ALFrE12-kDG3RNeAG6i7iA__cc13xx_devtools__FUz-xrs__LATEST"
+    },
+    {
+      "pattern": "https://dev.ti.com/tirex/explore/content/simplelink_audio_plugin_3_30_00_06/docs/Quick_Start_Guide.html#hardware-setup"
+    },
+    {
+      "pattern": "https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/rzboard-v2l/"
+    },
+    {
+      "pattern": "https://www.ti.com/tool/SK-AM68A"
+    },
+    {
+      "pattern": "https://dev.bouffalolab.com/download"
+    },
+    {
+      "pattern": "^https://dev.ti.com"
+    },
+    {
+      "pattern": "^https://e2e.ti.com"
+    },
+    {
+      "pattern": "^https://keras.io"
+    },
+    {
+      "pattern": "^https://mou.sr"
+    },
+    {
+      "pattern": "^https://www.eetimes.com/ai-and-vision-at-the-edge/#"
+    },
+    {
+      "pattern": "^https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/rasynboard/"
+    },
+    {
+      "pattern": "http://192.168.1.10/your-ota-firmware.bin"
+    },
+    {
+      "pattern": "^https://platform.openai.com/docs/"
+    },
+    {
+      "pattern": "^https://www.infineon.com/"
+    },
+    {
+      "pattern": "^https://www.raspberrypi.org/"
+    },
+    {
+      "pattern": "^https://www.advantech.com/"
+    },
+    {
+      "pattern": "^https://www.raspberrypi.com/"
+    },
+    {
+      "pattern": "^https://www.infineon.com/"
+    },
+    {
+      "pattern": "^https://softwaretools.infineon.com/"
+    },
+    {
+      "pattern": "^https://softwaretools.infineon.com/tools/com.ifx.tb.tool.cypressprogrammer"
+    },
+    {
+      "pattern": "^https://www.baslerweb.com/"
+    },
+    {
+      "pattern": "^https://docs.baslerweb.com/"
+    },
+    {
+      "pattern": "^https://www.kaggle.com/models/"
+    },
+    {
+      "pattern": "^https://docs.scailable.net/"
+    },
+    {
+      "pattern": "^https://www.mtl.mit.edu/seminars/"
+    },
+    {
+      "pattern": "^https://alifsemi.com/"
+    },
+    {
+      "pattern": "^https://www.gartner.com/en/newsroom/press-releases/2023-08-01-gartner-identifies-top-trends-shaping-future-of-data-science-and-machine-learning"
+    },
+    {
+      "pattern": "^https://www.gartner.com/en/documents/4848131"
+    },
+    {
+      "pattern": "^https://www.ericsson.com/en/reports-and-papers/mobility-report/mobility-visualizer*"
+    },
+    {
+      "pattern": "^http://yann.lecun.com/exdb/mnist/"
+    },
+    {
+      "pattern": "^https://www.cs.cmu.edu/~coke/history_long.txt"
+    },
+    {
+      "pattern": "^https://www2.keil.com/mdk5/editions/community"
+    },
+    {
+      "pattern": "^https://sparkfun.com/"
+    },
+    {
+      "pattern": "https://apps.apple.com/pl/app/efr-connect-ble-mobile-app/id1030932759"
+    },
+    {
+      "pattern": "https://forum.seeedstudio.com"
+    },
+    {
+      "pattern": "^https://apps.apple.com/"
+    },
+    {
+      "pattern": "https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/models/pretrained_object_detection"
+    },
+    {
+      "pattern": "https://wiki.seeedstudio.com/Cloud_Chain/SenseCAP_Mate_APP/SenseCAP_APP/#docusaurus_skipToContent_fallback"
+    }   
   ]
 }
