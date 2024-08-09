@@ -1,6 +1,6 @@
 ---
 description: >-
-  xxxxxxxxxx.
+  Getting Started with image classification on the OpenMV RT1062 Camera and Edge Impulse.
 ---
 
 # Getting Started with the OpenMV RT1062
