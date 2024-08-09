@@ -18,6 +18,7 @@
 
 * [Renesas CK-RA6M5 Cloud Kit - Getting Started with Machine Learning](renesas-ra6m5-getting-started.md)
 * [TI CC1352P Launchpad - Getting Started with Machine Learning](ti-cc1352p-getting-started.md)
+* [OpenMV Cam RT1062 - Getting Started with Machine Learning](image-projects/getting-started-openmv-rt1062.md)
 
 ## Image Projects
 
