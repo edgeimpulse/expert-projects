@@ -593,7 +593,7 @@ We should launch the ROS 2 nodes on separate terminals on the Raspberry Pi 5 by 
 
 ## Live Demo
 
-![Demo](https://img.youtube.com/vi/MWHespcoVn0/maxresdefault.jpg)
+{% embed url="https://youtu.be/MWHespcoVn0" %}
 
 ## Conclusion
 
