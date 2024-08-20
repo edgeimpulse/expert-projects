@@ -10,6 +10,7 @@ As you browse the projects, be sure to make note that many of them could be adap
 
 ### Featured Machine Learning Projects
 
+* [ROS 2 Pick and Place System - Arduino Braccio++ Robotic Arm and Luxonis OAK-D](image-projects/robotic-arm-sorting-arduino-braccio.md)
 * [Optimize a cloud-based Visual Anomaly Detection Model for Edge Deployments](image-projects/fomo-ad-in-aws.md)
 * [Rooftop Ice Detection with Things Network Visualization - Nvidia Omniverse Replicator](nvidia-projects/rooftop-ice-synthetic-data-omniverse.md)
 * [Surgery Inventory Object Detection - Synthetic Data - Nvidia Omniverse Replicator](image-projects/surgery-inventory-synthetic-data.md)
@@ -24,7 +25,7 @@ As you browse the projects, be sure to make note that many of them could be adap
 
 * [Renesas CK-RA6M5 Cloud Kit - Getting Started with Machine Learning](renesas-ra6m5-getting-started.md)
 * [TI CC1352P Launchpad - Getting Started with Machine Learning](ti-cc1352p-getting-started.md)
-* [OpenMV Cam RT1062 - Getting Started with Machine Learning](image-projects/getting-started-openmv-rt1062.md)
+* [OpenMV Cam RT1062 - Getting Started with Machine Learning](getting-started-openmv-rt1062.md)
 
 ### Image Projects
 
