@@ -9,6 +9,8 @@ Created By: Naveen Kumar
 
 Public Project Link: [https://studio.edgeimpulse.com/public/178900/live](https://studio.edgeimpulse.com/public/178900/live)
 
+GitHub Repository: [https://github.com/metanav/EI_Pick_n_Place/tree/main/pnp_ws/src/braccio_description/urdf](https://github.com/metanav/EI_Pick_n_Place/tree/main/pnp_ws/src/braccio_description/urdf)
+
 ![](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/cover.gif)
 
 ## Introduction
@@ -28,17 +30,17 @@ We are using [Arduino Braccio ++](https://www.arduino.cc/education/braccio/) for
 
 ![braccio_plus](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/braccio_plus.png)
 
-For a depth camera, we will be utilizing [Luxonis OAK-D](https://docs.luxonis.com/projects/hardware/en/latest/pages/BW1098OAK/) which will be doing object recognition and localization. An object detection model trained using the Edge Impulse Studio will be deployed directly on the OAK-D camera.
+For a depth camera, we will be utilizing the [Luxonis OAK-D](https://docs.luxonis.com/projects/hardware/en/latest/pages/BW1098OAK/), which will be doing object recognition and localization. An object detection model trained using the Edge Impulse Studio will be deployed directly on the OAK-D camera.
 
 ![oakd](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/oakd.png)
 
-A Raspberry Pi 5 will be used as a main controller to host ROS 2 nodes and an interface between the robotic arm and the depth camera.
+A Raspberry Pi 5 will be used as a main controller, to host ROS 2 nodes and an interface between the robotic arm and the depth camera.
 
 ![rpi5](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/rpi5.png)
 
 Instead of sticking with the same old boring color cubes 🧊 that you see everywhere online for a pick-and-place demo, we’re going to have some fun sorting through these colorful plastic toys,  **Penguins** 🐧 and **Pigs** 🐷!
 
-<img src="images/toys.jpeg" alt="Toys" style="zoom:50%;" />
+<img src="../.gitbook/assets/robotic-arm-sorting-arduino-braccio/toys.jpeg" alt="Toys" style="zoom:50%;" />
 
 ## Setting up the Development Environment
 
@@ -46,13 +48,11 @@ We can use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to i
 
 ![rpi_imager](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/rpi_imager.png)
 
-  
-
 After the installation is completed, we can insert the SD card back into the kit and power it on. Once it boots up, we can log in via ssh. 
 
 ## Installing ROS 2 Humble
 
-The Robot Operating System (ROS) is a set of software libraries and tools for building robot applications. We will use ROS 2 Humble for this project since it is stable on the Raspberry Pi OS. The ROS 2 binary packages are not available for Raspberry Pi OS so we need to build it from the source. Please follow the steps below to install it.
+The Robot Operating System (ROS) is a set of software libraries and tools for building robot applications. We will use ROS 2 Humble for this project since it is stable on the Raspberry Pi OS. The ROS 2 binary packages are not available for Raspberry Pi OS, so we need to build it from the source. Please follow the steps below to install it.
 
 ### Set locale
 
@@ -178,13 +178,13 @@ $ MAKEFLAGS="-j1 -l1" colcon build
 
 ## micro-ROS
 
-The **micro-ROS** stack integrates microcontrollers seamlessly with standard ROS 2 and brings all major ROS concepts such as nodes, publishers, subscriptions, parameters, and lifecycle onto embedded systems.  We will use the micro-ROS on the **Arduino Nano RP2040 Connect** mounted on the **Braccio Carrier** board. The Arduino Nano RP2040 will publish the joint states and subscribe to the arm manipulation commands. It will communicate to ROS 2 on the Raspberry Pi 5 over serial port transports.
+The **micro-ROS** stack integrates microcontrollers seamlessly with standard ROS 2 and brings all major ROS concepts such as nodes, publishers, subscriptions, parameters, and lifecycle onto embedded systems.  We will use micro-ROS on the **Arduino Nano RP2040 Connect** mounted on the **Braccio Carrier** board. The Arduino Nano RP2040 will publish the joint states and subscribe to the arm manipulation commands. It will communicate to ROS 2 on the Raspberry Pi 5 over serial port transports.
 
 ![braccio_carrier](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/braccio_carrier.jpeg)
 
 ### micro-ROS Agent Installation
 
-The **micro-ROS agent** is a ROS 2 node that receives and sends messages from micro-ROS nodes and keeps track of the micro-ROS nodes exposing them to the ROS 2 network. Execute the following command to install the micro-ROS agent on the Raspberry Pi 5.
+The **micro-ROS agent** is a ROS 2 node that receives and sends messages from micro-ROS nodes and keeps track of the micro-ROS nodes, exposing them to the ROS 2 network. Execute the following command to install the micro-ROS agent on the Raspberry Pi 5.
 
 ```
 $ mkdir ~/microros_ws && cd microros_ws
@@ -198,7 +198,6 @@ $ ros2 run micro_ros_setup create_agent_ws.sh
 $ ros2 run micro_ros_setup build_agent.sh
 ```
 
-
 ## Data Collection
 
 We captured 101 images of the pigs and penguins using the OAK-D camera and uploaded them to Edge Impulse Studio.
@@ -209,13 +208,9 @@ We can see the uploaded images on the **Data Acquisition** page.
 
 ![datasets](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/datasets.png)
 
-
-
 We can now label the data using bounding boxes in the **Labeling Queue** tab, as demonstrated in the GIF below.
 
 ![labelling](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/labelling.gif)
-
-
 
 ## Model Training
 
@@ -228,36 +223,27 @@ To create an Impulse, follow these steps:
 
 ![create_impulse](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/create_impulse.png)
 
-#### 
-
 On the **Image** page, choose *RGB* as color depth and click on the **Save parameters** button. The page will be redirected to the **Generate Features** page.
 
 ![raw_features](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/raw_features.png)
-
 
 Now we can initiate feature generation by clicking on the **Generate features** button. Once the feature generation is completed, the data visualization will be visible in the **Feature Explorer** panel.
 
 ![generate_features](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/generate_features.png)
 
-#### 
-
 Go to the **Object Detection** page, then click "Choose a different model" and select the **YOLOv5** model. There are 4 variations of the model size available, and we selected the **Nano** version with 1.9 million parameters. Afterward, click the "Start training" button. The training process will take a few minutes to complete.
 
-![training_settings](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/training_settings.png)
-
-
+<img src="../.gitbook/assets/robotic-arm-sorting-arduino-braccio/training_settings.png" alt="Toys" style="zoom:50%;" />
 
 Once the training is completed we can see the precision score and metrics as shown below.
 
-![training_accuracy](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/training_accuracy.png)
+<img src="../.gitbook/assets/robotic-arm-sorting-arduino-braccio/training_accuracy.png" alt="Toys" style="zoom:50%;" />
 
 ## Model Testing
 
 On the **Model testing** page, click on the "Classify All" button which will initiate model testing with the trained float32 model. The testing accuracy is **100%**.
 
-![testing_results](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/testing_results.png)
-
-
+![model_testing](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/testing_results.png)
 
 ## Model Deployment
 
@@ -307,8 +293,6 @@ We can see the inferencing output on the web browser.  Also, we can monitor the 
 
 ![inferencing](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/inferencing.gif)
 
-
-
 To allow DepthAI to use our custom-trained model, we need to convert them into a MyriadX blob file format so that they are optimized for the Movidius Myriad X processor on the OAK-D.
 
 ![model_compile](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/model_compile.png)
@@ -316,8 +300,6 @@ To allow DepthAI to use our custom-trained model, we need to convert them into a
 The Edge Impulse Studio helps us save a step by providing the ONNX format for the trained YOLOv5 model that we can download from the project's **Dashboard** page.
 
 ![download_block_output](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/download_block_output.png)
-
-
 
 We will utilize the **OpenVINO** model optimizer for conversion on an x86 Linux machine. OpenVINO is an open-source software toolkit for optimizing and deploying deep learning models. Execute the following commands to install all prerequisites for the conversion process.
 
@@ -411,7 +393,7 @@ blob_path = blobconverter.from_openvino(
 shutil.move(str(blob_path), blob_dir)
 ```
 
-This will create the *ei-pnp_yolov5n_320_openvino_2022.1_6shave.blob* file in the IR directory. We should copy this blob file to the ~/EI_Pick_n_Place/pnp_ws/src/ei_yolov5_detections/resources on the Raspberry Pi 5. We can test the generated model using the depthai-python library. 
+This will create the *ei-pnp_yolov5n_320_openvino_2022.1_6shave.blob* file in the IR directory. We should copy this blob file to the `~/EI_Pick_n_Place/pnp_ws/src/ei_yolov5_detections/resources` folder on the Raspberry Pi 5. We can test the generated model using the depthai-python library: 
 
 ```
 $ pip3 install -U pip
@@ -437,7 +419,7 @@ First, we need to define a visual model of the Arduino Braccio ++ using the URDF
 
 ![stl](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/stl.gif)
 
-We created a ROS 2 package `moveit_resources_braccio_description` to keep all STL files and  URDF for reusability. The robot model URDF can be found in the GitHub repository for this project:  
+We created a ROS 2 package `moveit_resources_braccio_description` to keep all STL files and  URDF for reusability. The robot model URDF can be found in the GitHub repository for this project:
 
 https://github.com/metanav/EI_Pick_n_Place/tree/main/pnp_ws/src/braccio_description/urdf
 
@@ -459,13 +441,9 @@ $ colcon build --packages-select moveit_resources_braccio_description
 $ ros2 launch moveit_resources_braccio_description display.launch.py
 ```
 
-
-
 By adjusting the sliders for the joints, we can observe the corresponding changes in the robot model.
 
 ![robot_urdf_rviz](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/robot_urdf_rviz.gif)
-
-
 
 ### Generate configuration using the MoveIt Setup Assistant 2.0
 
@@ -487,8 +465,6 @@ To generate the collision matrix, select the **Self-Collisions** pane on the lef
 
 ![moveit2_assistant_2](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/moveit2_assistant_2.png)
 
-
-
 We will define a `fixed` virtual joint that attaches the `base_link` of the arm to the `world` frame. This virtual joint signifies that the base of the arm remains stationary in the world frame.
 
 ![moveit2_assistant_3](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/moveit2_assistant_3.png)
@@ -509,13 +485,13 @@ Now we can designate the  `braccio_gripper`  group as an end effector. The end e
 
 ![moveit2_assistant_6](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/moveit2_assistant_6.png)
 
-## Arduino Braccio++ controller firmware
+## Arduino Braccio++ Controller Firmware
 
 Please follow the instructions [here](https://www.arduino.cc/en/software) to download and install the Arduino IDE. After installation, open the Arduino IDE and install the board package for the **Arduino Mbed OS Nano Boards** by going to **Tools** > **Board** > **Boards Manager**. Search the board package as shown below and install it.
 
 ![board_manager](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/board_manager.png)
 
-After completing the board package installation, choose the **Arduino Nano RP2040 Connect** from **Tools** > **Board** > **Arduino Mbed OS Nano boards** menu. We must install [Arduino_Braccio_plusplus](https://github.com/arduino-libraries/Arduino_Braccio_plusplus) (1.3.2) and [micro_ros_arduino]([micro_ros_arduino](https://github.com/micro-ROS/micro_ros_arduino)) (humble) libraries. The firmware sketch can be found in the GitHub repository:
+After completing the board package installation, choose the **Arduino Nano RP2040 Connect** from **Tools** > **Board** > **Arduino Mbed OS Nano boards** menu. We must install **[Arduino_Braccio_plusplus](https://github.com/arduino-libraries/Arduino_Braccio_plusplus) (1.3.2)** and **[micro_ros_arduino]([micro_ros_arduino](https://github.com/micro-ROS/micro_ros_arduino)) (humble)** libraries. The firmware sketch can be found in the GitHub repository:
 
 https://github.com/metanav/EI_Pick_n_Place/blob/main/Arduino/braccio_plus_plus_controller_final_v3.1/braccio_plus_plus_controller_final_v3.1.ino.
 
@@ -523,11 +499,11 @@ Now we should build and upload the firmware to the Arduino Nano RP2040 connect. 
 
 ## Launch ROS 2 Nodes
 
-We should launch the ROS 2 nodes on separate terminals on the Raspberry Pi 5 by executing the following commands step-by-step.  
+We should launch the ROS 2 nodes on separate terminals on the Raspberry Pi 5 by executing the following commands step-by-step.
 
 1. ##### Launch micro-ROS agent
 
-   The micro-ROS agent exposes the publishers and action server running on the Braccio ++ MCU to the ROS 2.
+   The micro-ROS agent exposes the publishers and action server running on the Braccio ++ MCU to ROS 2.
 
    ```
    $ source ~/ros2_humble/install/setup.sh 
@@ -543,7 +519,7 @@ We should launch the ROS 2 nodes on separate terminals on the Raspberry Pi 5 by 
    $ source ~/ros2_humble/install/setup.sh 
    $ source ~/dai_ws/install/setup.sh 
    $ source ~/pnp_ws/install/setup.sh 
-   $ ros2  launch ei_yolov5_detections ei_yolov5_publisher.launch.py
+   $ ros2 launch ei_yolov5_detections ei_yolov5_publisher.launch.py
    ```
 
    We can check the spatial detection message as follows.
@@ -583,9 +559,7 @@ We should launch the ROS 2 nodes on separate terminals on the Raspberry Pi 5 by 
 
    The `pick_n_place` node plans a pick and place operation using [MoveIt Task Constructor](https://github.com/ros-planning/moveit_task_constructor/tree/ros2/). MoveIt Task Constructor provides a way to plan for tasks that consist of multiple different subtasks (known as stages as shown in the image below). 
 
-   
-
-   ![moveit2_task_stages](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/moveit2_task_stages.png)
+![moveit2_task_stages](../.gitbook/assets/robotic-arm-sorting-arduino-braccio/moveit2_task_stages.png)
 
    This node subscribes to the `/ei_yolov5/spatial_detections` topic and plans the pick and place operation. While bringing up this node, we need to provide command line parameters for the exact (X, Y, Z) position of the camera in meters from the base of the robot. 
 
@@ -624,7 +598,4 @@ We should launch the ROS 2 nodes on separate terminals on the Raspberry Pi 5 by 
 ## Conclusion
 
 This project successfully demonstrates the design and implementation of a sophisticated pick-and-place system using a robot arm equipped with a 3D depth camera. The system's ability to recognize and locate objects in a cluttered and dynamic environment, coupled with its precise grasping and placing actions, showcases its potential for various industrial and domestic applications. This project underscores the complexity and importance of sorting tasks in various sectors, from manufacturing to logistics, and demonstrates how advanced robotic systems can meet these challenges with high efficiency and accuracy.
-
-Edge Impulse Studio Project Link: https://studio.edgeimpulse.com/public/178900/live
-
 
