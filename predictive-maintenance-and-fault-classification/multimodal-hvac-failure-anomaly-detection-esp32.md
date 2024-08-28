@@ -11,7 +11,7 @@ Public Project Link: [https://studio.edgeimpulse.com/public/418121/latest](https
 
 GitHub Repository: [https://github.com/KutluhanAktar/AI-driven-Sound-Thermal-Image-based-HVAC-Fault-Diagnosis/](https://github.com/KutluhanAktar/AI-driven-Sound-Thermal-Image-based-HVAC-Fault-Diagnosis/)
 
-![](../.gitbook/assets/multimodal-hvac-failure-anomaly-detection-esp32/gif_run_models.gif)
+![](../.gitbook/assets/multimodal-hvac-failure-anomaly-detection-esp32/all_system_assembly_15.jpg)
 
 ## Description
 
