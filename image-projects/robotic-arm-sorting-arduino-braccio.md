@@ -493,7 +493,7 @@ Please follow the instructions [here](https://www.arduino.cc/en/software) to dow
 
 After completing the board package installation, choose the **Arduino Nano RP2040 Connect** from **Tools** > **Board** > **Arduino Mbed OS Nano boards** menu. We must install **[Arduino_Braccio_plusplus](https://github.com/arduino-libraries/Arduino_Braccio_plusplus) (1.3.2)** and **[micro_ros_arduino]([micro_ros_arduino](https://github.com/micro-ROS/micro_ros_arduino)) (humble)** libraries. The firmware sketch can be found in the GitHub repository:
 
-https://github.com/metanav/EI_Pick_n_Place/blob/main/Arduino/braccio_plus_plus_controller_final_v3.1/braccio_plus_plus_controller_final_v3.1.ino.
+[https://github.com/metanav/EI_Pick_n_Place/blob/main/Arduino/braccio_plus_plus_controller_final_v3.1/braccio_plus_plus_controller_final_v3.1.ino](https://github.com/metanav/EI_Pick_n_Place/blob/main/Arduino/braccio_plus_plus_controller_final_v3.1/braccio_plus_plus_controller_final_v3.1.ino).
 
 Now we should build and upload the firmware to the Arduino Nano RP2040 connect. During startup, the application attempts to connect to the micro-ROS agent on the Raspberry Pi 5 over serial port transports. It then initiates a node that publishes real-time states of the robotic arm joints to the `/joint_states` topic and subscribes to the `/gripper/gripper_cmd` and `/arm/follow_joint_trajectory` topics.
 

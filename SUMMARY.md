@@ -129,6 +129,7 @@
 * [Condition Monitoring - Syntiant TinyML Board](predictive-maintenance-and-fault-classification/condition-monitoring-syntiant-tinyml.md)
 * [Predictive Maintenance - Commercial Printer - Sony Spresense + CommonSense](predictive-maintenance-and-fault-classification/predictive-maintenance-sony-spresense-commonsense.md)
 * [Vibration Classification with BrainChip's Akida](predictive-maintenance-and-fault-classification/vibration-classification-with-brainchip-akida.md)
+* [AI-driven Audio and Thermal HVAC Monitoring - SeeedStudio XIAO ESP32](predictive-maintenance-and-fault-classification/multimodal-hvac-failure-anomaly-detection-esp32.md)
 
 ## Accelerometer & Activity Projects
 
