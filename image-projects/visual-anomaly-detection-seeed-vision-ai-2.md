@@ -155,9 +155,12 @@ Besides using this firmware method, you can also deploy the Edge Impulse model a
 
 ## Links
 
-Project: [https://studio.edgeimpulse.com/public/513864/live](https://studio.edgeimpulse.com/public/513864/live)
-Source Code: [https://github.com/ronibandini/visualAnomalyGroveV2](https://github.com/ronibandini/visualAnomalyGroveV2)
-Demo video: [https://www.youtube.com/shorts/7K1I_vcLQKY](https://www.youtube.com/shorts/7K1I_vcLQKY)
+- Project: [https://studio.edgeimpulse.com/public/513864/live](https://studio.edgeimpulse.com/public/513864/live)
+- Source Code: [https://github.com/ronibandini/visualAnomalyGroveV2](https://github.com/ronibandini/visualAnomalyGroveV2)
+
+Demo video:
+
+{% embed url="https://www.youtube.com/shorts/7K1I_vcLQKY" %}
 
 ## References
 
