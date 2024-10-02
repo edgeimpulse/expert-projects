@@ -15,7 +15,7 @@ GitHub Repository: [https://github.com/ronibandini/visualAnomalyGroveV2](https:/
 
 ## Introduction
 
-In the 1970s, a Russian engineer named Bikov trained pigeons for visual anomaly detection. According to Bikov, pigeons have better sight and concentration than humans. Fortunately, today we have better options than becoming bird experts or paying people not to blink in front of an inspection line. With the right tools, we can easily train a Machine Learning model and set up a system to spot visual anomalies, to automatically remove faulty pieces from the manufacturing production line.
+In the 1970s, a Russian engineer named Bikov trained pigeons for visual anomaly detection. According to Bikov, pigeons have better sight and concentration than humans (Máquinas del siglo XX, Muslin, E., 1974). Fortunately, today we have better options than becoming bird experts or paying people not to blink in front of an inspection line. With the right tools, we can easily train a Machine Learning model and set up a system to spot visual anomalies, to automatically remove faulty pieces from the manufacturing production line.
 
 ## Parts Required
 
