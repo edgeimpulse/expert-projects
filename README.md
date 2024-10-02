@@ -91,6 +91,7 @@ Computer vision projects that make use of image classification, object detection
 * [Product Inspection with Visual Anomaly Detection - FOMO-AD - Sony Spresense](image-projects/fomo-ad-product-inspection-spresense.md)
 * [Visual Anomaly Detection in Fabric using FOMO-AD - Raspberry Pi 5](image-projects/textile-fabric-anomaly-detection.md)
 * [Car Detection and Tracking System for Toll Plazas - Raspberry Pi AI Kit](image-projects/vehicle-detection-raspberry-pi-ai-kit.md)
+* [Visual Anomaly Detection - Seeed Grove Vision AI Module V2](image-projects/visual-anomaly-detection-seeed-vision-ai-2.md)
 
 ### Audio Projects
 
