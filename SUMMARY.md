@@ -4,6 +4,7 @@
 
 ## Featured Machine Learning Projects
 
+* [Smart City Traffic Analysis - NVIDIA TAO + Jetson Orin Nano](image-projects/traffic-analysis-tao-jetson-orin.md)
 * [ROS 2 Pick and Place System - Arduino Braccio++ Robotic Arm and Luxonis OAK-D](image-projects/robotic-arm-sorting-arduino-braccio.md)
 * [Optimize a cloud-based Visual Anomaly Detection Model for Edge Deployments](image-projects/fomo-ad-in-aws.md)
 * [Rooftop Ice Detection with Things Network Visualization - Nvidia Omniverse Replicator](nvidia-projects/rooftop-ice-synthetic-data-omniverse.md)
