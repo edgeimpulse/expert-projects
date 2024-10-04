@@ -23,7 +23,7 @@ An object detection model from Edge Impulse is one way of addressing this proble
 
 ![](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo02.png)
 
-### Hardware Requirements:
+### Hardware Requirements
 
 - NVIDIA Jetson Orin Nano Developer Kit (8GB)
 - USB Camera/webcam (eg. Logitech C270/ C920)
@@ -35,7 +35,7 @@ An object detection model from Edge Impulse is one way of addressing this proble
 
 ![Hardware](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo03.png)
 
-### Software & Online Services:
+### Software & Online Services
 
 - NVIDIA Jetpack (5.1.2)
 - Edge Impulse Studio
