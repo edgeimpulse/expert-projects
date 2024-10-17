@@ -116,6 +116,7 @@
 * [Recognize Voice Commands with the Particle Photon 2](audio-projects/voice-commands-particle-photon-2.md)
 * [Voice Controlled Power Plug with Syntiant NDP120 (Nicla Voice)](audio-projects/voice-controlled-power-plug-nicla-voice.md)
 * [Determining Compressor State with Audio Classification - Avnet RaSynBoard](audio-projects/compressor-audio-classification-rasynboard.md)
+* [Developing a Voice-Activated Product with Edge Impulse's Synthetic Data Pipeline](audio-projects/keyword-spotting-product-guide.md)
 
 ## Predictive Maintenance & Fault Classification
 
