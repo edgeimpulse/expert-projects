@@ -11,7 +11,7 @@ Public Project Link: [https://studio.edgeimpulse.com/public/379737/live](https:/
 
 Github Project Link: [https://github.com/SamuelAlexander/KWS-lumovoice-edge-impulse/tree/main](https://github.com/SamuelAlexander/KWS-lumovoice-edge-impulse/tree/main)
 
-![](.gitbook/assets/keyword-spotting-product-guide/cover.png)
+![](../.gitbook/assets/keyword-spotting-product-guide/cover.png)
 
 ## Introduction
 
@@ -23,7 +23,7 @@ Traditional methods of training KWS models often rely on extensive datasets of h
 
 This approach opens up numerous possibilities for product development. For instance, a smart LED light can be designed to turn on or off in response to specific voice commands, enhancing convenience and accessibility. A camera can be programmed to start recording or take a group photo when a designated keyword is spoken, making it easier to capture moments without physical interaction. Similarly, an alarm system can be configured to snooze with a simple voice command, streamlining the user experience. By utilizing synthetic data, developers can create robust and versatile KWS models that power these innovative applications, ultimately leading to more intuitive and responsive smart devices.
 
-![](.gitbook/assets/keyword-spotting-product-guide/diagram.jpg)
+![](../.gitbook/assets/keyword-spotting-product-guide/diagram.jpg)
 
 ## Project Overview
 
@@ -31,13 +31,13 @@ This project outlines the creation of a keyword spotting (KWS) product using Edg
 
 After training, the model is deployed onto the Arduino Nicla Voice hardware. A custom PCB and casing are designed to incorporate LED lights and power circuitry, ensuring portability and ease of use. This guide serves as a practical resource for developers looking to implement KWS functionality in voice-activated devices, demonstrating the efficiency of synthetic data in creating responsive and versatile products.
 
-![](.gitbook/assets/keyword-spotting-product-guide/small-kws.gif)
+![](../.gitbook/assets/keyword-spotting-product-guide/small-kws.gif)
 
 ### Hardware selection: Arduino Nicla Voice
 
 The Arduino Nicla Voice is an ideal choice for this project due to its use of the Syntiant NDP120, which offers great power efficiency for always-on listening. This efficiency allows the NDP120 to continuously monitor for keywords while consuming minimal power, making it perfect for battery-powered applications. Upon detecting a keyword, the NDP120 can notify the secondary microcontroller, Nordic Semiconductor nRF52832, which can then be programmed to control the lighting system. The compact size of the Nicla Voice also makes it easy to integrate into a small case with a battery. Furthermore, the Nicla Voice's standardized footprint simplifies the prototyping process, allowing for the easy creation of a custom PCB module with LED circuitry that can be easily connected.
 
-![](.gitbook/assets/keyword-spotting-product-guide/nicla.webp)
+![](../.gitbook/assets/keyword-spotting-product-guide/nicla.webp)
 
 ## Hardware Requirements
 
@@ -58,7 +58,7 @@ To create an OpenAI API secret key, start by visiting the [OpenAI website](https
 
 You can now use this API key in your applications to authenticate and access OpenAI services, for this project we will use the API key for generating synthetic voice data via Edge Impulse's transformation blocks. Ensure you keep your API key secret and do not expose it in client-side code or public repositories. You can manage your keys (regenerate, delete, or rename) in the API section of your OpenAI account. For more detailed instructions or troubleshooting, refer to the [OpenAI API documentation](https://beta.openai.com/docs/) or the help section on the OpenAI website.
 
-![](.gitbook/assets/keyword-spotting-product-guide/openai-api.png)
+![](../.gitbook/assets/keyword-spotting-product-guide/openai-api.png)
 
 Once you have your secret key, you can navigate to your Edge Impulse organization page and enter your API key. Please also note that this Text to Speech Data Generation feature is only available for Edge Impulse Enterprise accounts only.
 
@@ -68,7 +68,7 @@ Now that we have the environment configured out, our OpenAI API configured into 
 
 On your project's page select Data acquisition --> Data sources --> + Add new data source -->  Transformation block --> Whisper Synthetic Voice Generator --> Fill out the details as follow:
 
-![](.gitbook/assets/keyword-spotting-product-guide/generate-tts.JPG)
+![](../.gitbook/assets/keyword-spotting-product-guide/generate-tts.JPG)
 
 **Phrase: illuminate**
 
@@ -98,12 +98,12 @@ Now you can run the action, if successful the tts voice generation should begin 
 
 Once satisfied with all the data generated, perform train and test split into approximately 80/20 ratio.
 
-![](.gitbook/assets/keyword-spotting-product-guide/data-sources.png)
+![](../.gitbook/assets/keyword-spotting-product-guide/data-sources.png)
 
 
 ## Impulse Design
 
-![](.gitbook/assets/keyword-spotting-product-guide/impulse-design.png)
+![](../.gitbook/assets/keyword-spotting-product-guide/impulse-design.png)
 
 The impulse design values are chosen for optimal keyword spotting performance. The 968 ms window size captures enough audio for accurate detection, while the 500 ms window increase balances responsiveness and efficiency. The 16000 Hz frequency is standard for capturing human voice, ensuring quality without excessive data. Using Audio (Syntiant) leverages the NDP120's capabilities for efficient digital signal processing. The Classification block distinguishes between commands, with output classes "extinguish," "illuminate," and "z_openset" allowing for control of the lighting system and handling unknown inputs.
 
@@ -114,18 +114,18 @@ The impulse design values are chosen for optimal keyword spotting performance. T
 - Classification
 - Output: extinguish, illuminate, z_openset
 
-![](.gitbook/assets/keyword-spotting-product-guide/processing-feature.png)
+![](../.gitbook/assets/keyword-spotting-product-guide/processing-feature.png)
 
 Under classifier, set the learning rate to 0.0005 and change the architecture preset to use **Dense Network**.
 
-![](.gitbook/assets/keyword-spotting-product-guide/classifier.png)
+![](../.gitbook/assets/keyword-spotting-product-guide/classifier.png)
 Our audio classifier gives in accuracy of 93.8% which is satisfactory. We can continue tuning the hyperparameters and try using some data augmentation, but for the purpose of this demonstration we are satisfied with the current result and can move to the deployment phase.
 
 ## Deployment
 
 Now the AI model is ready to be deployed to the Arduino Nicla Voice. Let's select the Arduino Nicla Voice deployment.
 
-![](.gitbook/assets/keyword-spotting-product-guide/deployment.png)
+![](../.gitbook/assets/keyword-spotting-product-guide/deployment.png)
 
 After building our model, we'll get the new firmware. Follow this guide for more detail on how to flash the audio firmware: https://docs.edgeimpulse.com/docs/edge-ai-hardware/mcu-+-ai-accelerators/arduino-nicla-voice
 
@@ -143,9 +143,9 @@ The schematic and PCB is designed using KiCAD. A single sided aluminum PCB is se
 
 The schematic, pcb, and gerber (manufacturing) files are accessible in the project's github page.
 
-![](.gitbook/assets/keyword-spotting-product-guide/schematic.png)
-![](.gitbook/assets/keyword-spotting-product-guide/pcb.png)
-![](.gitbook/assets/keyword-spotting-product-guide/pcb-order.png)
+![](../.gitbook/assets/keyword-spotting-product-guide/schematic.png)
+![](../.gitbook/assets/keyword-spotting-product-guide/pcb.png)
+![](../.gitbook/assets/keyword-spotting-product-guide/pcb-order.png)
 
 | LCSC Part Number   | Manufacture Part Number                                   | Manufacturer                               | Package   | Description                                                                                                        | Order Qty. | Unit Price($) | Order Price($) |
 |--------------------|----------------------------------------------------------|--------------------------------------------|-----------|--------------------------------------------------------------------------------------------------------------------|------------|---------------|----------------|
@@ -155,7 +155,7 @@ The schematic, pcb, and gerber (manufacturing) files are accessible in the proje
 | C5440143           | CS3225X7R476K160NRL                                       | Samwha Capacitor                           | 1210      | 16V 47uF X7R ą10% 1210 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS                                           | 5          | 0.0765        | 0.38           |
 | C153338            | FCR1206J100RP05Z                                          | Ever Ohms Tech                             | 1206      | 250mW Safety Resistor 200V ą5% 100? 1206 Chip Resistor - Surface Mount ROHS                                        | 10         | 0.0541        | 0.54           |
 
-![](.gitbook/assets/keyword-spotting-product-guide/3d-pcb.png)
+![](../.gitbook/assets/keyword-spotting-product-guide/3d-pcb.png)
 
 ## Conclusion
 
