@@ -12,7 +12,7 @@
 * [NVIDIA Omniverse - Synthetic Data Generation For Edge Impulse Projects](nvidia-omniverse-synthetic-data.md)
 * [Community Guide – Using Edge Impulse with Nvidia DeepStream](nvidia-deepstream-community-guide.md)
 * [Computer Vision Object Counting - Avnet RZBoard V2L](image-projects/avnet-rzboard-object-counting.md)
-* [Gesture Appliances Control with Pose Detection - BrainChip AKD1000](accelerometer-and-activity-projects/gesture-appliances-control-brainchip.md)
+* [Gesture Appliances Control with Pose Detection - BrainChip Akida](accelerometer-and-activity-projects/gesture-appliances-control-brainchip.md)
 * [Counting for Inspection and Quality Control - Nvidia Jetson Nano (TensorRT)](image-projects/quality-control-jetson-nano.md)
 * [High-resolution, High-speed Object Counting - Nvidia Jetson Nano (TensorRT)](image-projects/high-speed-counting-jetson-nano.md)
 

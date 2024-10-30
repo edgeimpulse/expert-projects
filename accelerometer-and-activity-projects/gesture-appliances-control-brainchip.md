@@ -1,8 +1,8 @@
 ---
-description: Control your TV, Air Conditioner or Lightbulb by just pointing your finger at them, using the BrainChip AKD1000 achieving great accuracy and low power consumption.
+description: Control your TV, Air Conditioner or Lightbulb by just pointing your finger at them, using BrainChip's Akida achieving great accuracy and low power consumption.
 ---
 
-# Gesture Appliances Control with Pose Detection - BrainChip AKD1000 
+# Gesture Appliances Control with Pose Detection - BrainChip Akida 
 
 Created By:
 Christopher Mendez
