@@ -1,6 +1,6 @@
 ---
 description: >-
-  Build a machine learning model with a federated training process using a Raspberry Pi 4.
+  An easy do-it-yourself approach to updating an ML model running on a microcontroller.
 ---
 
 # DIY Model Weight Update for Continuous AI Deployments
