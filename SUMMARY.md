@@ -198,3 +198,4 @@
 * [Edge Impulse API Usage Sample Application - Jetson Nano Trainer](software-integration-demos/api-sample-application-jetson-nano.md)
 * [MLOps with Edge Impulse and Azure IoT Edge](software-integration-demos/mlops-azure-iot-edge.md)
 * [A Federated Approach to Train and Deploy Machine Learning Models](software-integration-demos/federated-learning-raspberry-pi.md)
+* [DIY Model Weight Update for Continuous AI Deployments](software-integration-demos/diy-model-ota.md)
