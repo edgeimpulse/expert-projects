@@ -127,6 +127,7 @@ Audio classification, keyword spotting, wakeword detection, or other machine lea
 * [Voice Controlled Power Plug with Syntiant NDP120 (Nicla Voice)](audio-projects/voice-controlled-power-plug-nicla-voice.md)
 * [Determining Compressor State with Audio Classification - Avnet RaSynBoard](audio-projects/compressor-audio-classification-rasynboard.md)
 * [Developing a Voice-Activated Product with Edge Impulse's Synthetic Data Pipeline](audio-projects/synthetic-data-pipeline-keyword-spotting.md)
+* [Enhancing Worker Safety using Synthetic Audio to Create a Dog Bark Classifier](audio-projects/synthetic-data-dog-bark-classifier.md)
 
 ### Predictive Maintenance & Fault Classification
 
