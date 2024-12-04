@@ -4,6 +4,7 @@
 
 ## Featured Machine Learning Projects
 
+* [Getting Started with the Edge Impulse Nvidia TAO Pipeline - Renesas EK-RA8D1](image-projects/getting-started-nvidia-tao-renesas-ekra8d1.md)
 * [Smart City Traffic Analysis - NVIDIA TAO + Jetson Orin Nano](image-projects/traffic-analysis-tao-jetson-orin.md)
 * [ROS 2 Pick and Place System - Arduino Braccio++ Robotic Arm and Luxonis OAK-D](image-projects/robotic-arm-sorting-arduino-braccio.md)
 * [Optimize a cloud-based Visual Anomaly Detection Model for Edge Deployments](image-projects/fomo-ad-in-aws.md)
