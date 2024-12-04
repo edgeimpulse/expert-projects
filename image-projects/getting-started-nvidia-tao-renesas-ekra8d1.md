@@ -11,11 +11,11 @@ Public Project Link: [https://studio.edgeimpulse.com/public/568291/latest](https
 
 ## Introduction
 
-The Renesas RA8 series is the first to implement the Arm Cortex-M85, a high-performance MCU core tailored for advanced AI and machine learning at the edge. Featuring Arm Helium technology and enhanced ML instructions, it delivers up to 4x the ML performance of earlier M-series cores. With high clock speeds, energy efficiency, and TrustZone security, it's ideal for tasks like speech recognition, anomaly detection, and image classification on embedded devices. 
+The Renesas RA8 series is the first product to implement the Arm Cortex-M85, a high-performance MCU core tailored for advanced AI and machine learning at the edge. Featuring Arm Helium technology and enhanced ML instructions, it delivers up to 4x the ML performance of earlier M-series cores. With high clock speeds, energy efficiency, and TrustZone security, it's ideal for tasks like speech recognition, anomaly detection, and image classification on embedded devices. 
 
 Edge Impulse includes support for Nvidia TAO transfer learning and deployment of Nvidia Model Zoo models to the Renesas RA8D1.
 
-This project provides a walkthrough of how to use the Renesas EK-RA8D1 Development kit with Edge Impulse using an Nvidia TAO enabled backend to train Nvidia Model Zoo models for deployment onto the EK-RA8D1. By integrating the EK-RA8D1 with Edge Impulse’s Nvidia TAO training pipeline, you can explore advanced machine learning applications and leverage the latest features in model experimentation and deployment.
+This project provides a walkthrough of how to use the Renesas EK-RA8D1 Development kit with Edge Impulse using an Nvidia TAO-enabled backend to train Nvidia Model Zoo models for deployment onto the EK-RA8D1. By integrating the EK-RA8D1 with Edge Impulse's Nvidia TAO training pipeline, you can explore advanced machine learning applications and leverage the latest features in model experimentation and deployment.
 
 ## Hardware 
 
@@ -37,15 +37,15 @@ Edge Implulse Firmware for EK-RA8D1 [Download](https://cdn.edgeimpulse.com/firmw
 
 Renesas supports developers building on the RA8 with various kits, including the EK-RA8D1, a comprehensive evaluation board that simplifies prototyping. 
 
-As part of the Renesas Advanced (RA) series of MCU evaluation kits, the EK-RA8D1  features the RA8 Cortex-M85 MCU which is the latest highend MCU from Arm superseding the Cortex M7.  The Cortex M85 is a high-performance MCU core designed for advanced embedded and edge AI applications. It offers up to 4x the ML performance of earlier Cortex-M cores, powered by Arm Helium technology for accelerated DSP and ML tasks.
+As part of the Renesas Advanced (RA) series of MCU evaluation kits, the EK-RA8D1 features the RA8 Cortex-M85 MCU which is the latest high-end MCU from Arm, superseding the Cortex M7.  The Cortex M85 is a high-performance MCU core designed for advanced embedded and edge AI applications. It offers up to 4x the ML performance of earlier Cortex-M cores, powered by Arm Helium technology for accelerated DSP and ML tasks.
 
 ![](../.gitbook/assets/getting-started-nvidia-tao-renesas-ekra8d1/ekra8d1.jpg)
 
-The Renesas EK-RA8D1 evaluation kit is a versatile platform designed for embedded and AI application development. It features USB Full-Speed Host & Device support with 5V input via USB or external power supply, along with onboard debugging through Segger J-Link® and support for ETM, SWD, and JTAG interfaces. Developers can utilize 3 user LEDs, 2 buttons, and multiple connectivity options, including SeeedGrove® (I3C & analog), Digilent Pmod™ (SPI & UART), Arduino™ Uno R3 headers, MikroElektronika™ mikroBUS, and SparkFun® Qwiic® (I2C). An MCU boot configuration jumper further enhances flexibility, making the EK-RA8D1 ideal for rapid prototyping and testing. 
+The Renesas EK-RA8D1 evaluation kit is a versatile platform designed for embedded and AI application development. It features USB Full-Speed host and device support with 5V input via USB or external power supply, along with onboard debugging through Segger J-Link® and support for ETM, SWD, and JTAG interfaces. Developers can utilize 3 user LEDs, 2 buttons, and multiple connectivity options, including Seeed Grove® (I2C & analog), Digilent Pmod™ (SPI & UART), Arduino™ Uno R3 headers, MikroElektronika™ mikroBUS, and SparkFun® Qwiic® (I2C). An MCU boot configuration jumper further enhances flexibility, making the EK-RA8D1 ideal for rapid prototyping and testing. 
 
-The kit also features aa camera and full color LCD display making it ideal for the development and deployment of edge AI solutions allowing on device inference results to be rendered to the onboard LCD.
+The kit also features a camera and full color LCD display, making it ideal for the development and deployment of edge AI solutions allowing on-device inference results to be rendered to the onboard LCD.
 
-The EK-RA8D1 is an officially supported target in Edge Impulse that means it can be used to collect data directly into Edge Impulse. Follow [this guide](https://docs.edgeimpulse.com/docs/edge-ai-hardware/mcu/renesas-ek-ra8d1) to enable the EK-RA8D1 to connect.
+The EK-RA8D1 is an officially supported target in Edge Impulse, which means it can be used to collect data directly into Edge Impulse. Follow [this guide](https://docs.edgeimpulse.com/docs/edge-ai-hardware/mcu/renesas-ek-ra8d1) to enable the EK-RA8D1 to connect to a project.
 
 ## Edge Impulse & Nvidia TAO
 
@@ -100,9 +100,9 @@ Set the image width and height to 224 x 224 to match the pretrained backbone dim
 
 ![](../.gitbook/assets/getting-started-nvidia-tao-renesas-ekra8d1/impulse-1.jpg)
 
-## Feature Generation
+### Feature Generation
 
-Object Detection requires an Image processing block this is added by clicking Add a processing block and then selecting Image from the options presented
+Classification requires an Image processing block this is added by clicking Add a processing block and then selecting Image from the options presented
 
 ![](../.gitbook/assets/getting-started-nvidia-tao-renesas-ekra8d1/impulse-2.jpg)
 
