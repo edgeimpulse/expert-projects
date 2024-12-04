@@ -9,7 +9,7 @@ Created By: David Tischler
 
 Public Project Link: [https://studio.edgeimpulse.com/public/315846/latest](https://studio.edgeimpulse.com/public/315846/latest)
 
-![](../.gitbook/assets/avnet-rzboard-object-counting/cover.jpg)
+![Image source: https://unsplash.com/photos/black-glass-bottles-on-stainless-steel-table-hgrFoK4bjao](../.gitbook/assets/avnet-rzboard-object-counting/cover.jpg)
 
 ## Introduction
 
