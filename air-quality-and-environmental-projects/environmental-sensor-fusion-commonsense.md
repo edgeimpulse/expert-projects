@@ -15,7 +15,7 @@ GitHub Repo: [https://github.com/Mjrovai/Sony-Spresense](https://github.com/Mjro
 
 ## Introduction
 
-This tutorial will develop a model based on the data captured with the [Sony Spresense](https://www.sony-semicon.com/en/products/spresense/index.html) sensor extention board, [SensiEDGE's CommonSense](https://www.sensiedge.com/commonsense). 
+This tutorial will develop a model based on the data captured with the [Sony Spresense](https://www.sony-semicon.com/en/products/spresense/index.html) sensor extension board, [SensiEDGE's CommonSense](https://www.sensiedge.com/commonsense). 
 
 The general idea is to explore sensor fusion techniques, capturing environmental data such as temperature, humidity, and pressure, adding light and VOC (Volatile Organic Compounds) data to estimate what room the device is located within.
 
@@ -146,17 +146,17 @@ The package of the Spresense board has 4 spacers to attach the Spresense main bo
 
 ![](../.gitbook/assets/environmental-sensor-fusion-commonsense/image-12.png)
 
-Insert them on the Extention board and connect the main board as below:
+Insert them on the Extension board and connect the main board as below:
 
 ![](../.gitbook/assets/environmental-sensor-fusion-commonsense/image-13.png)
 
-Once the Main Board is attached to the Extension Board, insert an SD card (Formated as FAT32).
+Once the Main Board is attached to the Extension Board, insert an SD card (Formatted as FAT32).
 
 ### Testing the SD Card Reader
 
 Run: Examples → File → read_write.ino under Espressif.
 
-You should see the messages on the Serial Monitor showing that "testando…" was written on the SD card. Remove the SD card and check it on your computer. Note that I gave my card the name DATASET. Usually, for new cards, you will see, for example, NO NAME.
+You should see the messages on the Serial Monitor showing that "testing…" was written on the SD card. Remove the SD card and check it on your computer. Note that I gave my card the name DATASET. Usually, for new cards, you will see, for example, NO NAME.
 
 ![](../.gitbook/assets/environmental-sensor-fusion-commonsense/image-14.png)
 
@@ -250,7 +250,7 @@ Download the Arduino Library and install it (as .zip): [https://www.artekit.eu/r
 Install the STM32duino HTS221 directly on the IDE Library Manager
 
 3. SGP40 Gas Sensor
-Install the Sensrion I2C SGP40
+Install the Sensirion I2C SGP40
 
 4. LPS22HH Pressure Sensor
 Install the STM32duino LPS22HH
