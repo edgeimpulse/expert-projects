@@ -1,9 +1,10 @@
 ---
 description: >-
-  Advanced ML workflow with available Jupyter Notebook using computer vision, AWS SageMaker and MLFlow to benchmark industry visual anomaly models.
+  Advanced ML workflow with available Jupyter Notebook using computer vision,
+  AWS SageMaker and MLFlow to benchmark industry visual anomaly models.
 ---
 
-# Optimize a Cloud-based Visual Anomaly Detection Model for Edge Deployments
+# Optimize a cloud-based Visual Anomaly Detection Model for Edge Deployments
 
 Created By: Mathieu Lescaudron
 
@@ -11,11 +12,11 @@ Public Project Link: [https://studio.edgeimpulse.com/public/376268/latest](https
 
 GitHub Repo: [https://github.com/emergy-official/anomaly.parf.ai](https://github.com/emergy-official/anomaly.parf.ai)
 
-![](../.gitbook/assets/fomo-ad-in-aws/cover1.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/cover1.png)
 
-![](../.gitbook/assets/fomo-ad-in-aws/cover2.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/cover2.png)
 
-![](../.gitbook/assets/fomo-ad-in-aws/cover3.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/cover3.png)
 
 ## Introduction
 
@@ -23,27 +24,27 @@ Let's explore the development and optimization of a cloud-based visual anomaly d
 
 We will cover the following topics:
 
-- **Datasets**: Creation of our own datasets.
-- **Models**: Development of three different models:
-    - A baseline model + usage of BYOM (Bring Your Own Model on Edge Impulse),
-    - Efficient AD model,
-    - FOMO AD model by Edge Impulse (automated).
-- **Web App**: 
-    - Setting up a real-time and serverless inference endpoint,
-    - Dataset explorer,
-    - Automating deployments with GitHub Actions and Terraform on AWS.
+* **Datasets**: Creation of our own datasets.
+* **Models**: Development of three different models:
+  * A baseline model + usage of BYOM (Bring Your Own Model on Edge Impulse),
+  * Efficient AD model,
+  * FOMO AD model by Edge Impulse (automated).
+* **Web App**:
+  * Setting up a real-time and serverless inference endpoint,
+  * Dataset explorer,
+  * Automating deployments with GitHub Actions and Terraform on AWS.
 
 This is a demo project. All code is provided for you to implement any or all parts yourself.
 
 ## Software used
 
-- [Edge Impulse Studio](https://studio.edgeimpulse.com/studio)
-- [Edge Impulse Mobile client](https://github.com/edgeimpulse/mobile-client)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Amazon Web Services](https://aws.amazon.com/)
-- [Terraform](https://www.terraform.io/)
-- [MLFlow](https://mlflow.org/)
-- [Astro](https://astro.build/)
+* [Edge Impulse Studio](https://studio.edgeimpulse.com/studio)
+* [Edge Impulse Mobile client](https://github.com/edgeimpulse/mobile-client)
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Amazon Web Services](https://aws.amazon.com/)
+* [Terraform](https://www.terraform.io/)
+* [MLFlow](https://mlflow.org/)
+* [Astro](https://astro.build/)
 
 ## Context
 
@@ -51,31 +52,31 @@ Imagine we are a commercial baking company that produces cookies. Our goal is to
 
 We are developing a cloud-based proof-of-concept to understand the feasibility of this technique, before deploying it on edge devices.
 
-Although this is only a hypothetical example and demonstration, this quality inspection process and computer vision workflow could absolutely be leveraged by large-scale food service providers, commercial kitches that make packaged retail food items, or any many other mass-produced retail products even beyond the food industry. 
+Although this is only a hypothetical example and demonstration, this quality inspection process and computer vision workflow could absolutely be leveraged by large-scale food service providers, commercial kitches that make packaged retail food items, or any many other mass-produced retail products even beyond the food industry.
 
 ## Step 1: Create the Datasets
 
 We assume we don't have access to [Onmiverse Replicator](https://docs.omniverse.nvidia.com/extensions/latest/index.html) to create a synthetic dataset. Instead, we manually create our own. The first step is to carefully review which cookies to ~~eat~~ use.
 
-![](../.gitbook/assets/fomo-ad-in-aws/dataset1.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/dataset1.png)
 
 We'll create three datasets using three different types of cookies:
 
-- One with texture,
-- One thicker cookie,
-- One plain cookie.
+* One with texture,
+* One thicker cookie,
+* One plain cookie.
 
 Each dataset will consist of 200 images, totaling 600 images:
 
-- 100 without any anomalies
-- 100 with anomalies
-  - 50 easy to recognize with a clear, strong separation down the middle,
-  - 25 medium difficulty with a separation that has no gap,
-  - 25 hard to detect, with small defects and knife marks.
+* 100 without any anomalies
+* 100 with anomalies
+  * 50 easy to recognize with a clear, strong separation down the middle,
+  * 25 medium difficulty with a separation that has no gap,
+  * 25 hard to detect, with small defects and knife marks.
 
 We take around five pictures of each cookie, making slight rotations each time. Here's the result:
 
-![](../.gitbook/assets/fomo-ad-in-aws/dataset2.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/dataset2.png)
 
 Each picture, taken from a mobile phone in a `1:1` ratio with an original size of 2992 x 2992 pixels, is resized to 1024 x 1024 pixels using [mogrify](https://imagemagick.org/script/mogrify.php) command from ImageMagick. It saves computing resources for both the training process and the inference endpoint:
 
@@ -132,15 +133,15 @@ model.compile(
 
 Here's how the images are distributed for this model:
 
-- Training: 144 images (72%)
-- Validation: 16 images (8%)
-- Test: 40 images (20%)
+* Training: 144 images (72%)
+* Validation: 16 images (8%)
+* Test: 40 images (20%)
 
 Both "anomaly" and "no anomaly" images are used during training.
 
 The model is trained on a Mac using the CPU, running through 50 epochs.
 
-You can find the results in the [Step 3: Benchmarking](#step-3-benchmarking) section.
+You can find the results in the [Step 3: Benchmarking](fomo-ad-in-aws.md#step-3-benchmarking) section.
 
 ### Convert Baseline with BYOM
 
@@ -181,8 +182,7 @@ if deploy_bytes_mac_os:
         f.write(deploy_bytes.getvalue())
 ```
 
-You'll need to make it executable by using the command `chmod +x baseline.eim`.
-And you're all set! Create an inference function to use it with this model:
+You'll need to make it executable by using the command `chmod +x baseline.eim`. And you're all set! Create an inference function to use it with this model:
 
 ```python
 def ei_inference(img_path):
@@ -206,13 +206,13 @@ def ei_inference(img_path):
 
 Let's use another method called **EfficientAD** ([detailed in a study from arXiv.org](https://arxiv.org/abs/2303.14535)).
 
-EfficientAD employs an autoencoder paired with a student-teacher approach  to quickly and effectively identify anomalies in images.
+EfficientAD employs an autoencoder paired with a student-teacher approach to quickly and effectively identify anomalies in images.
 
 Take a look at their [video presentation](https://www.youtube.com/watch?v=yhpkHOdpyPU) for a brief overview.
 
 The network, named PDN (Patch Description Network), includes a design with 4 convolutional layers and 2 pooling layers. It examines each segment of the 33 x 33 pixel image and produces a feature vector of 384 values.
 
-![](../.gitbook/assets/fomo-ad-in-aws/efficientad1.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/efficientad1.png)
 
 Two models, `student` and `teacher` are trained on the same data. The teacher model guides the student model by providing a loss function which helps the student to improve their performance in detecting anomalies.
 
@@ -238,7 +238,7 @@ mlflow server \
     --gunicorn-opts --keep-alive=300
 ```
 
-Here, we're using the  `--artifacts-destination` argument  to specify where to store our models. You can omit this argument if you're not using a S3 bucket on AWS, and it will default to storing the models on the disk.
+Here, we're using the `--artifacts-destination` argument to specify where to store our models. You can omit this argument if you're not using a S3 bucket on AWS, and it will default to storing the models on the disk.
 
 In your code, you define an experiment like this:
 
@@ -264,17 +264,17 @@ We primarily use MLFlow to track experiments and store artifacts, although it of
 
 You can find the full setup instructions for MLFlow for this demo [here](https://github.com/emergy-official/anomaly.parf.ai/blob/main/ai/AWS_ML_FLOW.md).
 
-#### Training in the cloud 
+#### Training in the cloud
 
 Let's train our models in the cloud using our [notebook](https://github.com/emergy-official/anomaly.parf.ai/blob/main/ai/notebooks/2_efficientad.ipynb). We are using a Jupyter notebook, or you could also use a Python script.
 
 There are many different cloud providers that allow you to train a model. We will use an AWS instance that includes an [Nvidia Tesla 4 GPU](https://www.nvidia.com/en-us/data-center/tesla-t4/).
 
-The specific instance type we use is  `g4dn.xlarge`. To get access to this instance, you need to create a support ticket requesting access to the type G instance type in your region. It will cost us 0.526 USD per hour and we plan to use it for approximately 3h.
+The specific instance type we use is `g4dn.xlarge`. To get access to this instance, you need to create a support ticket requesting access to the type G instance type in your region. It will cost us 0.526 USD per hour and we plan to use it for approximately 3h.
 
 For our setup, we'll use a pre-configured AMI with PyTorch named `Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.2.0`.
 
-![](../.gitbook/assets/fomo-ad-in-aws/aws1.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/aws1.png)
 
 Here is the CLI:
 
@@ -311,71 +311,73 @@ Make sure you've enabled port forwarding so you can connect to the remote Jupyte
 ```sh
 ssh -N -f -L 8888:localhost:8888 ubuntu@44.200.180.25 # Change using your instance IP
 ```
+
 You can now access Jupyter Notebook on the remote instance from your local computer.
 
-![](../.gitbook/assets/fomo-ad-in-aws/aws2.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/aws2.png)
 
 For the training, we will only use the images without anomalies. Here's how the data is distributed:
 
-- Training
-    - No anomaly: 72 images (36%)
-- Validation
-    - No Anomaly: 8 images (4%)
-    - Anomaly: 20 images (10%)
-- Testing
-    - No Anomaly: 20 images (10%)
-    - Anomaly: 80 images (40%)
+* Training
+  * No anomaly: 72 images (36%)
+* Validation
+  * No Anomaly: 8 images (4%)
+  * Anomaly: 20 images (10%)
+* Testing
+  * No Anomaly: 20 images (10%)
+  * Anomaly: 80 images (40%)
 
 Once it is trained, you can see the different results in MLFlow:
 
-![](../.gitbook/assets/fomo-ad-in-aws/mlflow1.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/mlflow1.png)
 
 And you can create graphics to build reports:
 
-![](../.gitbook/assets/fomo-ad-in-aws/mlflow2.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/mlflow2.png)
 
-For the cookies dataset three, the best model used 3,200 steps, pretrained weights, and the small network. In the study, they used 70,000 steps. We added `early stopping`  based on the F1 score from the evaluation dataset. Modify this for your needs.
+For the cookies dataset three, the best model used 3,200 steps, pretrained weights, and the small network. In the study, they used 70,000 steps. We added `early stopping` based on the F1 score from the evaluation dataset. Modify this for your needs.
 
 We use the same config for training datasets one and two.
 
 Here's an example of the inference results with EfficientAD. It localizes the anomaly within the image through a heatmap.
 
-![](../.gitbook/assets/fomo-ad-in-aws/dataset3.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/dataset3.png)
 
-Once you're finished, terminate the remote instance. You can find the results in the [Step 3: Benchmarking](#step-3-benchmarking) section.
+Once you're finished, terminate the remote instance. You can find the results in the [Step 3: Benchmarking](fomo-ad-in-aws.md#step-3-benchmarking) section.
 
 ### FOMO-AD model (automated)
 
 The last model we will build is called FOMO-AD, a visual anomaly detection learning block developed by Edge Impulse. It's based on the FOMO architecture, specifically designed for constrained devices.
 
-![](../.gitbook/assets/fomo-ad-in-aws/edgeimpulse1.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/edgeimpulse1.png)
 
 Check the [FOMO-AD documentation](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/visual-anomaly-detection) for more information.
 
 Let's automate the entire process using the Edge Impulse API:
-- Import the dataset,
-- Create an impulse,
-- Generate features,
-- Train the model,
-- Export the model.
+
+* Import the dataset,
+* Create an impulse,
+* Generate features,
+* Train the model,
+* Export the model.
 
 There's too much code to detail here, if you want to replicate it yourself **step by step**, check out [this notebook](https://github.com/emergy-official/anomaly.parf.ai/blob/main/ai/notebooks/3_fomoad.ipynb)
 
 We separate our dataset as follows:
 
-- Training set
-    - No Anomaly: 80 images (40%)
-- Testing set
-    - No Anomaly: 20 images (10%)
-    - Anomaly: 100 images (50%)
+* Training set
+  * No Anomaly: 80 images (40%)
+* Testing set
+  * No Anomaly: 20 images (10%)
+  * Anomaly: 100 images (50%)
 
-The best part of the notebook is that it includes a pre-built pipeline in Edge Impulse that will `Find the best Visual AD Model` using our dataset. All you need to do is provide the dataset and run the pipeline.  After that, you'll have the optimal model set up in your project, and you can find the best threshold to use in the logs (Refer to the `Option 2` section in the notebook for more details).
+The best part of the notebook is that it includes a pre-built pipeline in Edge Impulse that will `Find the best Visual AD Model` using our dataset. All you need to do is provide the dataset and run the pipeline. After that, you'll have the optimal model set up in your project, and you can find the best threshold to use in the logs (Refer to the `Option 2` section in the notebook for more details).
 
-![](../.gitbook/assets/fomo-ad-in-aws/edgeimpulse2.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/edgeimpulse2.png)
 
 Edge Impulse lets you classify your entire dataset or just one image at a time:
 
-![](../.gitbook/assets/fomo-ad-in-aws/edgeimpulse3.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/edgeimpulse3.png)
 
 Once the model is exported, you can create an inference function in Python to run it locally:
 
@@ -403,7 +405,7 @@ Since each model was trained on different sets of data, we will use the test dat
 
 Here are the results, tested on a Macbook:
 
-![](../.gitbook/assets/fomo-ad-in-aws/benchmark1.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/benchmark1.png)
 
 FOMO-AD performs the best in most datasets. Although EfficientAD could be improved to score higher, it would require more time.
 
@@ -417,28 +419,27 @@ The models are trained and ready to be used, so let's build an app to showcase o
 
 We'll include two features:
 
-- A serverless endpoint using [SageMaker Serverless Inference](https://docs.aws.amazon.com/sagemaker/latest/dg/serverless-endpoints.html) with EfficientAD,
-
-- A real-time inference using a compact version of the Edge Impulse [mobile client](https://github.com/edgeimpulse/mobile-client/tree/master/client) with FOMO-AD.
+* A serverless endpoint using [SageMaker Serverless Inference](https://docs.aws.amazon.com/sagemaker/latest/dg/serverless-endpoints.html) with EfficientAD,
+* A real-time inference using a compact version of the Edge Impulse [mobile client](https://github.com/edgeimpulse/mobile-client/tree/master/client) with FOMO-AD.
 
 In the public repository, you will find:
 
-- The [API Code](https://github.com/emergy-official/anomaly.parf.ai/tree/main/api), 
-- The [Automated Infrastructure Code (using Terraform)](https://github.com/emergy-official/anomaly.parf.ai/tree/main/infrastructure), 
-- The [Website Code](https://github.com/emergy-official/anomaly.parf.ai/tree/main/website).
+* The [API Code](https://github.com/emergy-official/anomaly.parf.ai/tree/main/api),
+* The [Automated Infrastructure Code (using Terraform)](https://github.com/emergy-official/anomaly.parf.ai/tree/main/infrastructure),
+* The [Website Code](https://github.com/emergy-official/anomaly.parf.ai/tree/main/website).
 
 ### SageMaker Serverless Inference
 
 This is the infrastructure of our serverless inference endpoint:
 
-![](../.gitbook/assets/fomo-ad-in-aws/aws3.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/aws3.png)
 
 When a user uploads an image to get the anomaly result, it will go through:
 
-- Cloudfront (which is also used by the front end. Users are redirected to the API Gateway when the request path matches `/api*`),
-- An API Gateway (to communicate with Lambda and allows for future API expansions),
-- A Lambda that communicate to the SageMaker endpoint securely,
-- A Serverless SageMaker endpoint (executes the inference using a Docker container).
+* Cloudfront (which is also used by the front end. Users are redirected to the API Gateway when the request path matches `/api*`),
+* An API Gateway (to communicate with Lambda and allows for future API expansions),
+* A Lambda that communicate to the SageMaker endpoint securely,
+* A Serverless SageMaker endpoint (executes the inference using a Docker container).
 
 The SageMaker endpoint operates using a Docker image. You can build your dockerfile like this:
 
@@ -498,7 +499,7 @@ The serverless inference is quite slow (12 sec per inference), you can speed thi
 
 If you've previously played with Edge Impulse, you might be familiar with the `Launch in browser` feature that lets you test your model in real-time.
 
-![](../.gitbook/assets/fomo-ad-in-aws/edgeimpulse4.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/edgeimpulse4.png)
 
 Wouldn't it be great to include this feature directly in our web app?
 
@@ -508,30 +509,30 @@ The way it work is that the client is downloading a **web assembly** .zip file o
 
 We're going to modify this a bit.
 
-- We’ll no longer use the API KEY.
-- We’ll include the web assembly zip file directly in the website’s assets. _(you can download this file manually from Edge Impulse, or it can be downloaded automatically using the API when building the website assets)_,
-- We'll keep only the essential code and update what's needed to make it work the new way,
-- We'll add a colormap function for fun to show the model's confidence.
+* We’ll no longer use the API KEY.
+* We’ll include the web assembly zip file directly in the website’s assets. _(you can download this file manually from Edge Impulse, or it can be downloaded automatically using the API when building the website assets)_,
+* We'll keep only the essential code and update what's needed to make it work the new way,
+* We'll add a colormap function for fun to show the model's confidence.
 
 This is what we obtain:
 
-![](../.gitbook/assets/fomo-ad-in-aws/site2.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/site2.png)
 
 All the modifications are detailed [here](https://github.com/emergy-official/anomaly.parf.ai/tree/main/website#mobile-client-compressed-version-detail) in the `Mobile Client compressed version detail` section.
 
 ### Website
 
-For the website, we're using [Astro](https://astro.build/) with React based on the [AstroWind](https://astrowind.vercel.app/) template. 
+For the website, we're using [Astro](https://astro.build/) with React based on the [AstroWind](https://astrowind.vercel.app/) template.
 
-To automatically deploy the website, we use [this github action](https://github.com/emergy-official/anomaly.parf.ai/blob/main/.github/workflows/staticWebsite.yml).  It triggers a deployment whenever the commit message includes `deploy:website`.
+To automatically deploy the website, we use [this github action](https://github.com/emergy-official/anomaly.parf.ai/blob/main/.github/workflows/staticWebsite.yml). It triggers a deployment whenever the commit message includes `deploy:website`.
 
 The website is hosted on AWS within an S3 bucket and is behind a Cloudfront distribution.
 
-![](../.gitbook/assets/fomo-ad-in-aws/site4.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/site4.png)
 
 It also features a dataset explorer that showcases the data used for benchmarking:
 
-![](../.gitbook/assets/fomo-ad-in-aws/site3.png)
+![](../../.gitbook/assets/fomo-ad-in-aws/site3.png)
 
 It includes all the images, scores, predictions, and timings for all the models and cookies.
 
@@ -540,4 +541,3 @@ It includes all the images, scores, predictions, and timings for all the models 
 One key improvement could be enhancing the dataset. We used a mobile phone with a combination of natural and artificial lighting. The model's performance might improve if you create a synthetic dataset using [Onmiverse Replicator](https://docs.omniverse.nvidia.com/extensions/latest/index.html) featuring different lighting conditions, backgrounds, and more.
 
 It will eliminate manual processing, and you won't need to run 10 km to burn off all the cookies you've eaten.
-

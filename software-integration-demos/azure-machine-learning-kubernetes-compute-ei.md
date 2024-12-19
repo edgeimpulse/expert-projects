@@ -41,9 +41,9 @@ In this section I will show how to implement a voice-to-text translation endpoin
 The machine learning model we will use for voice-to-text transformation is the [**Wav2vec 2.0**](https://ai.facebook.com/blog/wav2vec-20-learning-the-structure-of-speech-from-raw-audio/) NLP framework, more specifically a pre-trained version of it. Wav2vec 2.0 is the second version of a speech recognition model developed by Facebook / Meta researchers:
 
 > _**Wav2vec 2.0: Learning the structure of speech from raw audio**_\
-> _https://ai.facebook.com/blog/wav2vec-20-learning-the-structure-of-speech-from-raw-audio/_
+> &#xNAN;_&#x68;ttps://ai.facebook.com/blog/wav2vec-20-learning-the-structure-of-speech-from-raw-audio/_
 
-A [pre-trained version](https://huggingface.co/docs/transformers/model\_doc/wav2vec2) of Wav2vec 2.0 is available through the [🤗 Transformers](https://huggingface.co/docs/transformers/index) library. The pre-trained model supports both PyTorch and TensorFlow libraries. We will use it with PyTorch.
+A [pre-trained version](https://huggingface.co/docs/transformers/model_doc/wav2vec2) of Wav2vec 2.0 is available through the [🤗 Transformers](https://huggingface.co/docs/transformers/index) library. The pre-trained model supports both PyTorch and TensorFlow libraries. We will use it with PyTorch.
 
 ### Getting Started with Azure ML
 
@@ -254,7 +254,7 @@ Using a `kubectl` CLI tool we can also see what resource Azure ML deployed in ou
 Additionally, Azure ML also has a **CLI**, and **Python SDK** for direct interaction from a console and code:
 
 > _What is Azure Machine Learning CLI & Python SDK v2?_\
-> _https://docs.microsoft.com/en-us/azure/machine-learning/concept-v2_
+> &#xNAN;_&#x68;ttps://docs.microsoft.com/en-us/azure/machine-learning/concept-v2_
 
 The Azure ML CLI and Python SDK enable engineers the use [**MLOps**](https://en.wikipedia.org/wiki/MLOps) techniques. Similar to DevOps, MLOps is a set of practices that allows the reliable and efficient management of AI / ML application lifecycle. It enables processes like:
 
@@ -280,7 +280,7 @@ The **Raspberry Pi 4** is a relatively low power single board computer, popular 
 The **Raspberry Pi 4** can be set up the standard way. The Raspberry Pi OS is flashed to an SD Card, then we set up network connectivity / Wifi and SSH access. The official documentation describes in great details how to do this:
 
 > _**Setting up your Raspberry Pi**_\
-> _https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/0_
+> &#xNAN;_&#x68;ttps://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/0_
 
 Next, there are couple steps to be done in order to connect the device to EdgeImpulse. The goal is to install the `edge-impulse-linux` utility, which can be done as follows:
 
@@ -380,7 +380,7 @@ At this point our dataset is complete, and we can start building and training an
 
 ![](../.gitbook/assets/azure-machine-learning-EI/3-10-edgimpl-impulse.png)
 
-The [**MFCC **_**(Mel Frequency Cepstral Coefficients)**_](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks/audio-mfcc) block extracts coefficients from an audio signal. For keyword spotting, training it with the default parameters usually works:
+The [**MFCC \_(Mel Frequency Cepstral Coefficients)**\_](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks/audio-mfcc) block extracts coefficients from an audio signal. For keyword spotting, training it with the default parameters usually works:
 
 ![](../.gitbook/assets/azure-machine-learning-EI/3-11-edgimpl-mfcc.png)
 

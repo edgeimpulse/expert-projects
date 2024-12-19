@@ -1,6 +1,7 @@
 ---
 description: >-
-  Perform traffic analysis for smart city and vehicle detection projects with an NVIDIA TAO model and a Jetson Orin Nano.
+  Perform traffic analysis for smart city and vehicle detection projects with an
+  NVIDIA TAO model and a Jetson Orin Nano.
 ---
 
 # Smart City Traffic Analysis - NVIDIA TAO + Jetson Orin Nano
@@ -9,9 +10,9 @@ Created By: Jallson Suryo
 
 Public Project Link: [https://studio.edgeimpulse.com/public/310628/live](https://studio.edgeimpulse.com/public/310628/live)
 
-GitHub Repo: [https://github.com/Jallson/Traffic_Analysis_Orin_Nano/](https://github.com/Jallson/Traffic_Analysis_Orin_Nano)
+GitHub Repo: [https://github.com/Jallson/Traffic\_Analysis\_Orin\_Nano/](https://github.com/Jallson/Traffic_Analysis_Orin_Nano)
 
-![](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo01.png)
+![](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo01.png)
 
 ## Problem Statement
 
@@ -21,26 +22,26 @@ In a smart-city system, analyzing vehicle and traffic flow patterns is crucial f
 
 An object detection model from Edge Impulse is one way of addressing this problem, as model inference output will contains data labels, object coordinates, and timestamps. From this data, we will derive the object's speed and direction, as well as count objects entering or exiting. To simplify the process, we will use an NVIDIA TAO - YOLOv4 pre-trained neural network to build our model, then deploy on to an NVIDIA Jetson Orin Nano. This method grants access to a wide range of pre-trained models, enabling you to leverage existing neural network architectures and weights for your specific tasks. Therefore, the amount of data we need to collect is less than what's typically required when training and building an object detection model from scratch. The Edge Impulse model, combined with NVIDIA TAO, are optimized for efficient performance, achieving faster inference speeds through the Tensor RT library embedded in Orin Nano, which is essential for real-time applications. Overall, this approach can greatly accelerate the development cycle, enhance model performance, and streamline the process for Edge AI applications.
 
-![](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo02.png)
+![](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo02.png)
 
 ### Hardware Requirements
 
-- NVIDIA Jetson Orin Nano Developer Kit (8GB)
-- USB Camera/webcam (eg. Logitech C270/ C920)
-- DisplayPort to HDMI cable
-- Display/monitor
-- Tripod
-- Keyboard, mouse or PC/Laptop via ssh
-- Orin Nano case ( 3D print file available at [https://www.thingiverse.com/thing:6068997](https://www.thingiverse.com/thing:6068997) )
+* NVIDIA Jetson Orin Nano Developer Kit (8GB)
+* USB Camera/webcam (eg. Logitech C270/ C920)
+* DisplayPort to HDMI cable
+* Display/monitor
+* Tripod
+* Keyboard, mouse or PC/Laptop via ssh
+* Orin Nano case ( 3D print file available at [https://www.thingiverse.com/thing:6068997](https://www.thingiverse.com/thing:6068997) )
 
-![Hardware](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo03.png)
+![Hardware](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo03.png)
 
 ### Software & Online Services
 
-- NVIDIA Jetpack (5.1.2)
-- Edge Impulse Studio
-- Edge Impulse Linux CLI & Python SDK
-- Terminal
+* NVIDIA Jetpack (5.1.2)
+* Edge Impulse Studio
+* Edge Impulse Linux CLI & Python SDK
+* Terminal
 
 ## Steps
 
@@ -50,11 +51,11 @@ In the initial stage of building a model in Edge Impulse Studio, we need to prep
 
 > Note: When collecting data samples, it's important to remember that the images of vehicles (trucks or cars) to be labeled should not be too small, as the model we're building can only recognize objects with a minimum size of 32x32 pixels.
 
-![Collect_data](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo04.png)
+![Collect\_data](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo04.png)
 
-![Upload_COCO-json](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo05.png)
+![Upload\_COCO-json](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo05.png)
 
-![Upload_video](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo06.png)
+![Upload\_video](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo06.png)
 
 ### 2. Labeling
 
@@ -64,11 +65,11 @@ Once the images are ready, you'll see a labeling queue, and you can begin the pr
 
 After labeling, it's recommended to split the data into Training and Testing sets, using around an 80/20 ratio. If you haven't done this yet, you can go back to the Dashboard, and click on _Train / Test Split_ and proceed. As shown here, I only used 150 images, as we'll be training the model with the help of pre-trained NVIDIA TAO-YOLO based models.
 
-![Split_into_image](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo07.png)
+![Split\_into\_image](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo07.png)
 
-![Labeling_with_Yolo](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo08.png)
+![Labeling\_with\_Yolo](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo08.png)
 
-![Train_and_Test](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo09.png)
+![Train\_and\_Test](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo09.png)
 
 ### 3. Train and Build Model
 
@@ -78,17 +79,17 @@ Now, move to the _Object Detection_ navigation on the left, and configure the tr
 
 If everything goes well and the precision result is around 80%, proceed to the next step. Go to the _Model Testing_ section, click _Classify all_, and if the result is around 90%, you can move on to the final step — Deployment.
 
-![Learning_blocks](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo10.png)
+![Learning\_blocks](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo10.png)
 
-![Save_parameters](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo11.png)
+![Save\_parameters](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo11.png)
 
-![Generate_features](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo12.png)
+![Generate\_features](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo12.png)
 
-![NN_setting_and_result](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo13.png)
+![NN\_setting\_and\_result](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo13.png)
 
-![Live_classification](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo13a.png)
+![Live\_classification](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo13a.png)
 
-![Model_test](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo14.png)
+![Model\_test](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo14.png)
 
 ### 4. Deploy Model Targeting Jetson Orin Nano GPU
 
@@ -96,7 +97,7 @@ Click on the _Deployment_ tab, then search for **TensorRT**, select _(Unoptimize
 
 Alternatively, there's an easier method: simply ensure that the model has been built in Edge Impulse Studio. From there, you can test, download the model, and run everything directly from the Orin Nano.
 
-![TensorRT_build_library](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo15.png)
+![TensorRT\_build\_library](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo15.png)
 
 On the Orin Nano side, there are several things that need to be done. Make sure the unit uses JetPack — we use Jetpack v5.1.2 — which is usually pre-installed on the SD card. Then open a Terminal on the Orin Nano, or ssh to the Orin via your PC/laptop and setup Edge Impulse tooling in the terminal.
 
@@ -136,11 +137,11 @@ Open a terminal on the Orin Nano or ssh from your PC/laptop then run `edge-impul
 
 For convenience, you can copy this file to the same directory as the Python program you'll be creating in the next steps. For instance, you can use the following command to copy it to the home directory: `cp -v model.eim /home/orin`
 
-![Check_progress](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo16.png)
+![Check\_progress](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo16.png)
 
 Now the model is ready to run in a high-level language such as the Python program used in the next step. To ensure this model works, we can run the Edge Impulse Linux Runner with a camera attached to the Orin Nano. You can see a view from the camera via your browser (the IP address location is provided when the Edge Impulse Linux Runner is started). Run this command to start it now: `edge-impulse-linux-runner --model-file <path to directory>/model.eim`
 
-![Live_stream](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Video01.gif)
+![Live\_stream](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Video01.gif)
 
 The inferencing time is around 6ms, which is incredibly fast for object detection projects.
 
@@ -164,13 +165,13 @@ python3 traffic2.py <path to modelfile>/model.eim <path to videofile>/video.mp4
 
 > Note: For video/camera capture display, you cannot use the headless method from a PC/laptop. Instead, connect a monitor directly to the Orin Nano to view the visuals, including the lines, labeled bounding boxes, IN and OUT counts, and vehicle speeds.
 
-![Python_code](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo17.png)
+![Python\_code](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo17.png)
 
-![Camera_feed](../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo18.png)
+![Camera\_feed](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo18.png)
 
-The Python code and the tracking library is avaialable and can be accessed at [https://github.com/Jallson/Traffic_Analysis_Orin_Nano](https://github.com/Jallson/Traffic_Analysis_Orin_Nano)
+The Python code and the tracking library is avaialable and can be accessed at [https://github.com/Jallson/Traffic\_Analysis\_Orin\_Nano](https://github.com/Jallson/Traffic_Analysis_Orin_Nano)
 
-Here are two demo videos, showing the results: 
+Here are two demo videos, showing the results:
 
 {% embed url="https://youtu.be/rRZKyNIsXXA" %}
 

@@ -1,6 +1,8 @@
 ---
 description: >-
-  Tracking Rooftop ice buildup detection using Edge Impulse and The Things Network, with synthetic data created in NVIDIA Omniverse Replicator and Sun Studies.
+  Tracking Rooftop ice buildup detection using Edge Impulse and The Things
+  Network, with synthetic data created in NVIDIA Omniverse Replicator and Sun
+  Studies.
 ---
 
 # Rooftop Ice Detection with Things Network Visualization - Nvidia Omniverse Replicator
@@ -11,13 +13,13 @@ Public Project Link: [https://studio.edgeimpulse.com/public/332581/live](https:/
 
 GitHub Repo: [https://github.com/eivholt/icicle-monitor](https://github.com/eivholt/icicle-monitor)
 
-![](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/cover1.png)
+![](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/cover1.png)
 
 ## Introduction
 
 The portable device created in this project monitors buildings and warns the responsible parties when potentially hazardous icicles are formed. In ideal conditions, icicles can form at a rate of [more than 1 cm (0.39 in) per minute](https://en.wikipedia.org/wiki/Icicle). In cold climates, many people are injured and killed each year by these solid projectiles, leading responsible building owners to often close sidewalks in the spring to minimize risk. This project demonstrates how an extra set of digital eyes can notify property owners icicles are forming and need to be removed before they can cause harm.
 
-![Downtown, photo: Avisa Nordland](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/IMG_8710.jpg)
+![Downtown, photo: Avisa Nordland](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/IMG_8710.jpg)
 
 ## Hardware used
 
@@ -54,7 +56,7 @@ The main challenge of detecting forming icicles is the translucent nature of ice
 
 A powerful platform combined with a high resolution camera with fish-eye lens would increase the ability to detect icicles. However, by deploying the object detection model to a small, power-efficient, but highly constrained device, options for device installation increase. Properly protected against moisture this device can be mounted outdoors on walls or poles facing the roofs in question. LoRaWAN communication enables low battery consumption and long transmission range.
 
-![Arduino Portenta H7](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/20240413_215105_.jpg)
+![Arduino Portenta H7](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/20240413_215105_.jpg)
 
 ## Object detection using a neural network
 
@@ -72,41 +74,42 @@ NVIDIA Omniverse Code is an IDE that allows us to compose 3D scenes and to write
 
 It's possible to create an empty scene in Omniverse and add content programmatically. However, composing initial objects by hand serves as a practical starting point. In this project [a royalty free 3D model of a house](https://www.cgtrader.com/free-3d-models/exterior/house/house-model-3d-dom-2) was used as a basis.
 
-![3D house model](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/house.png)
+![3D house model](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/house.png)
 
 ### Icicle models
 
-To represent the icicle, a high quality model pack was purchased at [Turbo Squid](https://www.turbosquid.com/3d-models/). 
+To represent the icicle, a high quality model pack was purchased at [Turbo Squid](https://www.turbosquid.com/3d-models/).
 
-![3D icicle models purchased at Turbo Squid](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/turbo-squid-icicle.png)
+![3D icicle models purchased at Turbo Squid](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/turbo-squid-icicle.png)
 
 To be able to import the models into Omniverse and Isaac Sim, all models have to be converted to [OpenUSD-format](https://developer.nvidia.com/usd). While USD is a great emerging standard for describing, composing, simulating, and collaborting within 3D worlds, it is not yet commonly supported in asset marketplaces. [This article](https://docs.edgeimpulse.com/experts/featured-machine-learning-projects/surgery-inventory-synthetic-data) outlines considerations when performing conversion using Blender to USD. Note that it is advisable to export each individual model and to choose a suitable origin/pivot point.
 
 Blender change origin cheat sheet:
-+ Select vertex on model (Edit Mode), Shift+S-> Cursor to selected
-+ (Object Mode) Select Hierarchy, Object>Set Origin\Origin to 3D Cursor
-+ (Object Mode) Shift+S\Cursor to World Origin
+
+* Select vertex on model (Edit Mode), Shift+S-> Cursor to selected
+* (Object Mode) Select Hierarchy, Object>Set Origin\Origin to 3D Cursor
+* (Object Mode) Shift+S\Cursor to World Origin
 
 Tip for export:
-+ Selection only
-+ Convert Orientation:
-    + Forward Axis: X
-    + Up Axis: Y
 
-![3D icicle models exported from Blender](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Blender_select_vertex.png)
+* Selection only
+* Convert Orientation:
+  * Forward Axis: X
+  * Up Axis: Y
+
+![3D icicle models exported from Blender](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Blender_select_vertex.png)
 
 ### Setting semantic metadata on objects
 
 To be able to produce images for training and include labels, we can use a feature of Replicator toolbox found under menu Replicator > Semantics Schema Editor.
 
-![Semantics Schema Editor](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/semantic-editor.png)
+![Semantics Schema Editor](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/semantic-editor.png)
 
 Here we can select each top node representing an item for object detection and add a key-value pair. Choosing "class" as Semantic Type and "ice" as Semantic Data enables us to export this string as a label later.
 
 ### Creating a program for domain randomization
 
-With a basic 3D stage created and objects of interest labeled, we can continue creating a program that will make sure we produce images with slight variations. Our program can be named anything, ending in `.py` and preferably placed close to the stage USD-file. Here is a sample of such a program: [replicator_init.py](https://github.com/eivholt/icicle-monitor/blob/main/omniverse-replicator/replicator_init.py):
-
+With a basic 3D stage created and objects of interest labeled, we can continue creating a program that will make sure we produce images with slight variations. Our program can be named anything, ending in `.py` and preferably placed close to the stage USD-file. Here is a sample of such a program: [replicator\_init.py](https://github.com/eivholt/icicle-monitor/blob/main/omniverse-replicator/replicator_init.py):
 
 To keep the items generated in our script separate from the manually created content, we start by creating a new layer in the 3D stage:
 
@@ -141,7 +144,7 @@ with rep.trigger.on_frame(num_frames=10000, rt_subframes=50):
     rep.randomizer.randomize_camera(icicles)
 ```
 
-The parameter *num_frames* specifies the desired number of renders. The *rt_subframes* parameter allows the rendering process to advance a set number of frames before the result is captured and saved to disk. A higher setting enhances complex ray tracing effects like reflections and translucency by giving them more time to interact across surfaces, though it increases rendering time. Each randomization routine is invoked with the option to include specific parameters.
+The parameter _num\_frames_ specifies the desired number of renders. The _rt\_subframes_ parameter allows the rendering process to advance a set number of frames before the result is captured and saved to disk. A higher setting enhances complex ray tracing effects like reflections and translucency by giving them more time to interact across surfaces, though it increases rendering time. Each randomization routine is invoked with the option to include specific parameters.
 
 To save each image and its corresponding semantic data, we utilize a designated API. While customizing the writer was considered, attempts to do so using Replicator version 1.9.8 on Windows led to errors. Therefore, we are employing the "BasicWriter" and will develop an independent script to generate a label format that is compatible with Edge Impulse.
 
@@ -156,11 +159,11 @@ writer.attach([render_product])
 asyncio.ensure_future(rep.orchestrator.step_async())
 ```
 
-*rgb* indicates that we want to save images to disk as `.png` files. Note that labels are created setting *bounding_box_2d_loose*. This is used in this case instead of *bounding_box_2d_tight* as the latter in some cases would not include the tip of the icicles in the resulting bounding box. It also creates labels from the previously defined semantics. The code ends with running a single iteration of the process in Omniverse Code, so we can preview the results.
+_rgb_ indicates that we want to save images to disk as `.png` files. Note that labels are created setting _bounding\_box\_2d\_loose_. This is used in this case instead of _bounding\_box\_2d\_tight_ as the latter in some cases would not include the tip of the icicles in the resulting bounding box. It also creates labels from the previously defined semantics. The code ends with running a single iteration of the process in Omniverse Code, so we can preview the results.
 
 The bounding boxes can be visualized by clicking the sensor widget, checking "BoundingBox2DLoose" and finally "Show Window".
 
-![Omniverse bounding box](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/omniverse-bb.png)
+![Omniverse bounding box](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/omniverse-bb.png)
 
 Now we can implement the randomization logic. First we'll use a method that flips and scatters the icicles on a defined plane.
 
@@ -190,13 +193,13 @@ with camera:
 return camera.node
 ```
 
-We can define the methods in any order we like, but in *rep.trigger.on_frame* it is crucial that the icicles are placed before pointing the camera.
+We can define the methods in any order we like, but in _rep.trigger.on\_frame_ it is crucial that the icicles are placed before pointing the camera.
 
 ### Running domain randomization
 
 With a basic randomization program in place, we could run it from the embedded script editor (Window > Script Editor), but more robust Python language support can be achieved by developing in Visual Studio Code instead. To connect VS Code with Omniverse we can use the Visual Studio Code extension [Embedded VS Code for NVIDIA Omniverse](https://marketplace.visualstudio.com/items?itemName=Toni-SM.embedded-vscode-for-nvidia-omniverse). See the [extension repo](https://github.com/Toni-SM/semu.misc.vscode) for setup. When ready to run go to Replicator > Start and check progress in the defined output folder.
 
-![Produced images](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/output1.png)
+![Produced images](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/output1.png)
 
 ### Randomizing colors
 
@@ -229,9 +232,9 @@ with rep.trigger.on_frame(num_frames=2000, rt_subframes=50):  # rt_subframes=50
     rep.randomizer.randomize_screen(screen)
 ```
 
-![Random background color](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/random_color.png)
+![Random background color](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/random_color.png)
 
-![Random background color](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/output2.png)
+![Random background color](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/output2.png)
 
 Now each image will have a background with random (deterministic, same starting seed) RGB color. Replicator takes care of creating a material with a shader for us. As you might remember, in an effort to reduce RAM usage our neural network reduces RGB color channels to grayscale. In this project we could simplify the color randomization to only pick grayscale colors. The example has been included as it would benefit in projects where color information is not reduced. To only randomize in grayscale, we could change the code in the randomization function to use the same value for R, G and B as follows:
 
@@ -245,7 +248,7 @@ def randomize_screen(screen):
     return screen.node
 ```
 
-![Random background grayscale](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/random_grayscale.png)
+![Random background grayscale](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/random_grayscale.png)
 
 ### Randomizing textures
 
@@ -274,11 +277,11 @@ with rep.trigger.on_frame(num_frames=2000, rt_subframes=50):
     rep.randomizer.randomize_screen(screen, texture_files)
 ```
 
-![Random background texture](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/random_texture.png)
+![Random background texture](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/random_texture.png)
 
-![Random background texture, camera perspective](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/random_texture_viewport.png)
+![Random background texture, camera perspective](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/random_texture_viewport.png)
 
-![Random background texture](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/output3.png)
+![Random background texture](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/output3.png)
 
 We could instead generate textures with random shapes and colors. Either way, the resulting renders will look weird, but help the model training process weight features that are relevant for the icicles, not the background.
 
@@ -286,7 +289,7 @@ These are rather unsophisticated approaches. More realistic results would be ach
 
 ### Creating realistic outdoor lighting conditions using Sun Study
 
-In contrast to a controlled indoor environment, creating a robust object detection model intended for outdoor use needs training images with a wide range of realistic natural light. When generating synthetic images we can utilize an [extension that approximates real world sunlight](https://docs.omniverse.nvidia.com/extensions/latest/ext_sun-study.html) based on sun studies. 
+In contrast to a controlled indoor environment, creating a robust object detection model intended for outdoor use needs training images with a wide range of realistic natural light. When generating synthetic images we can utilize an [extension that approximates real world sunlight](https://docs.omniverse.nvidia.com/extensions/latest/ext_sun-study.html) based on sun studies.
 
 {% embed url="https://youtu.be/MRD-oAxaV8w" %}
 
@@ -294,23 +297,23 @@ The extension let's us set world location, date and time. We can also mix this w
 
 {% embed url="https://youtu.be/qvDXRqBxECo" %}
 
-![Sun Study](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/output5.png)
+![Sun Study](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/output5.png)
 
-![Sun Study](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/output4.png)
+![Sun Study](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/output4.png)
 
-![Sun Study](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/output6.png)
+![Sun Study](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/output6.png)
 
 ### Creating label file for Edge Impulse Studio
 
-Edge Impulse Studio supports a wide range of image labeling formats for object detection. The output from Replicator's BasicWriter needs to be transformed so it can be uploaded either through the web interface or via  [the Ingestion API](https://docs.edgeimpulse.com/reference/ingestion-api#ingestion-api).
+Edge Impulse Studio supports a wide range of image labeling formats for object detection. The output from Replicator's BasicWriter needs to be transformed so it can be uploaded either through the web interface or via [the Ingestion API](https://docs.edgeimpulse.com/reference/ingestion-api#ingestion-api).
 
-Provided is a simple Python program, [basic_writer_to_pascal_voc.py](https://github.com/eivholt/icicle-monitor/blob/main/scripts/basic_writer_to_pascal_voc.py) to help get started. Documentation on the supported Edge Impulse [label formats is located here](https://docs.edgeimpulse.com/docs/edge-impulse-studio/data-acquisition/uploader#understanding-image-dataset-annotation-formats). Run the program from a terminal with:
+Provided is a simple Python program, [basic\_writer\_to\_pascal\_voc.py](https://github.com/eivholt/icicle-monitor/blob/main/scripts/basic_writer_to_pascal_voc.py) to help get started. Documentation on the supported Edge Impulse [label formats is located here](https://docs.edgeimpulse.com/docs/edge-impulse-studio/data-acquisition/uploader#understanding-image-dataset-annotation-formats). Run the program from a terminal with:
 
-``` 
+```
 python basic_writer_to_pascal_voc.py <input_folder>
 ```
 
-or debug from Visual Studio Code by setting input folder in `launch.json` like this: 
+or debug from Visual Studio Code by setting input folder in `launch.json` like this:
 
 ```
 "args": ["../out"]
@@ -344,25 +347,25 @@ Since our synthetic training images are based on both individual and two differe
 
 2,000 images:
 
-![2000 images](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/2000-images.png)
+![2000 images](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/2000-images.png)
 
 6,000 images:
 
-![6000 images](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/6000-images-120cycles.png)
+![6000 images](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/6000-images-120cycles.png)
 
 14,000 images:
 
-![14000 images](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/14000-images-120cycles_no-opt.png)
+![14000 images](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/14000-images-120cycles_no-opt.png)
 
 26,000 images:
 
-![26000 images](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/26000-images-light-5000coco-120cycles_no-opt.png)
+![26000 images](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/26000-images-light-5000coco-120cycles_no-opt.png)
 
 Note that the final results include 5000 images from the [COCO 2017 dataset](https://cocodataset.org/#download). Adding this reduces F1 score a bit, but results in a model with significantly less overfitting, that shows almost no false positives when classifying random background scenes.
 
 If we look at results from model testing in Edge Impulse Studio, at first glance the numbers are less than impressive.
 
-![Model testing](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/model-testing1.png)
+![Model testing](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/model-testing1.png)
 
 However if we investigate individual samples where F1 score is less than 100%, we see that the model indeed has detected the icicles, but clustered differently than how the image was originally labeled. What we should look out for are samples that contain visible icicles where none were detected.
 
@@ -372,77 +375,77 @@ In the end virtual and real-life testing tells us how well the model really perf
 
 We can get useful information about model performance with minimal effort by testing it in a virtual environment. Install [NVIDIA Isaac Sim](https://developer.nvidia.com/isaac-sim) and the [Edge Impulse extension](https://github.com/edgeimpulse/edge-impulse-omniverse-ext).
 
-![Edge Impulse extension](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/EI-ext-enable.png)
+![Edge Impulse extension](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/EI-ext-enable.png)
 
 Install the Sun Study extension in Isaac Sim to be able to vary light conditions while testing.
 
-![Sun Study in Isaac Sim](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Isaac-sunstudy.png)
+![Sun Study in Isaac Sim](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Isaac-sunstudy.png)
 
 Paste your API key found in the Edge Impulse Studio > Dashboard > Keys > Add new API key into Omniverse Extension:
 
-![Edge Impulse extension API key](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/EI-ext-api-key.png)
+![Edge Impulse extension API key](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/EI-ext-api-key.png)
 
 To be able to classify any virtual camera capture we first need to build a version of the model that can run in a JavaScript environment. In Edge Impulse Studio, go to **Deployment**, find "WebAssembly" in the search box and click **Build**. We don't need to keep the resulting .zip package, the extension will find and download it by itself in a moment.
 
-![Edge Impulse WebAssembly](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/EI-webasm.png)
+![Edge Impulse WebAssembly](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/EI-webasm.png)
 
 Back in the Edge Impulse extension in Isaac Sim, when we expand the "Classification" group, a message will tell us everything is ready: "Your model is ready! You can now run inference on the current scene".
 
 Before we test it we will make some accommodations in the viewport.
 
-Switch to "RTX - Interactive" to make sure the scene is rendered realistically. 
+Switch to "RTX - Interactive" to make sure the scene is rendered realistically.
 
 Set viewport resolution to square 1:1 with either the same resolution as our intended device inference (120x120 pixels), or (512x512 pixels).
 
-![Isaac Sim viewport resolution](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Isaac-resolution.png)
+![Isaac Sim viewport resolution](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Isaac-resolution.png)
 
 Display Isaac bounding boxes by selecting "BoundingBox2DLoose" under the icon that resembles a robotic sensor, then click "Show Window". Now we can compare the ground truth with model prediction.
 
-![Isaac Sim sensors](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Isaac-sensor.png)
+![Isaac Sim sensors](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Isaac-sensor.png)
 
-![Isaac Sim model testing](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Isaac-EI-1.png)
+![Isaac Sim model testing](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Isaac-EI-1.png)
 
-![Isaac Sim model testing](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Isaac-EI-2.png)
+![Isaac Sim model testing](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Isaac-EI-2.png)
 
-![Isaac Sim model testing](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Isaac-EI-3.png)
+![Isaac Sim model testing](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Isaac-EI-3.png)
 
 ## Deployment to device and LoRaWAN
 
 ### Testing model on device using OpenMV
 
-To get visual verification our model works as intended we can go to Deployment in Edge Impulse Studio, select **OpenMV Firmware** as target and build. 
+To get visual verification our model works as intended we can go to Deployment in Edge Impulse Studio, select **OpenMV Firmware** as target and build.
 
-![Edge Impulse Studio Deployment OpenMV Firmware](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/OpenMV_deployment.png)
+![Edge Impulse Studio Deployment OpenMV Firmware](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/OpenMV_deployment.png)
 
 Follow [the documentation](https://docs.edgeimpulse.com/docs/run-inference/running-your-impulse-openmv) on how to flash the device and to modify the `ei_object_detection.py` code. Remember to change: `sensor.set_pixformat(sensor.GRAYSCALE)`. The file `edge_impulse_firmware_arduino_portenta.bin` is our firmware for the Arduino Portenta H7 with Vision shield.
 
-![Testing model on device with OpenMV](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/OpenMV-testing.png)
+![Testing model on device with OpenMV](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/OpenMV-testing.png)
 
 ### Deploy model as Arduino compatible library and send inference results to The Things Network with LoRaWAN
 
 Start by selecting **Arduino library** as a Deployment target.
 
-![Deploy model as Arduino compatible library](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/EI-arduino-library.png)
+![Deploy model as Arduino compatible library](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/EI-arduino-library.png)
 
-Once built and downloaded, open Arduino IDE, go to **Sketch > Include Library > Add .zip Library ...** and locate the downloaded library. Next go to **File > Examples > [name of project]_inferencing > portenta_h7 > portenta_h7_camera** to open a generic sketch template using our model. To test the model continuously and print the results to console this sketch is ready to go. The code might appear daunting, but we really only need to focus on the `loop()` function.
+Once built and downloaded, open Arduino IDE, go to **Sketch > Include Library > Add .zip Library ...** and locate the downloaded library. Next go to **File > Examples > \[name of project]\_inferencing > portenta\_h7 > portenta\_h7\_camera** to open a generic sketch template using our model. To test the model continuously and print the results to console this sketch is ready to go. The code might appear daunting, but we really only need to focus on the `loop()` function.
 
-![Arduino compatible library example sketch](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/EI-arduino-library-example.png)
+![Arduino compatible library example sketch](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/EI-arduino-library-example.png)
 
 ### Transmit results to The Things Stack sandbox using LoRaWAN
 
 Using The Things Stack sandbox (formerly known as The Things Network) we can create a low-power sensor network that allows transmitting device data with minimal energy consumption, long range, and no network fees. Your area may already be covered by a crowd funded network, or you can [create your own](https://www.thethingsnetwork.org/community/) gateway. [Getting started with LoRaWAN](https://www.thethingsindustries.com/docs/getting-started/) is really fun!
 
-![The Things Network](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/ttn-map.png)
+![The Things Network](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/ttn-map.png)
 
 Following the [Arduino guide](https://docs.arduino.cc/tutorials/portenta-vision-shield/connecting-to-ttn/) on the topic, we create an application in The Things Stack sandbox and register our first device.
 
-![The Things Stack application](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/ttn-app.png)
+![The Things Stack application](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/ttn-app.png)
 
-![The Things Stack device](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/ttn-device.png)
+![The Things Stack device](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/ttn-device.png)
 
 Next we will simplify things by merging an example Arduino sketch for transmitting a LoRaWAN message, with the Edge Impulse generated object detection model code. Open the example sketch called `LoraSendAndReceive` included with the MKRWAN(v2) library mentioned in the [Arduino guide](https://docs.arduino.cc/tutorials/portenta-vision-shield/connecting-to-ttn/). There is an example of this for you in the [project code repository](https://github.com/eivholt/icicle-monitor/tree/main/portenta-h7/portenta_h7_camera_lora), where you can find an Arduino sketch with the merged code.
 
-![Arduino transmitting inference results over LoRaWAN](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/arduino-lora.png)
+![Arduino transmitting inference results over LoRaWAN](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/arduino-lora.png)
 
 In short, we perform inference every 10 seconds. If any icicles are detected we simply transmit a binary `1` to the The Things Stack application. It is probably obvious that the binary payload is redundant, the presence of a message is enough, but this could be extended to transmit other data, for example the prediction confidence, number of clusters, battery level, temperature or light level.
 
@@ -456,28 +459,28 @@ if(bb_found) {
 }
 ```
 
-There are a few things to consider in the implementation:  The device should enter deep sleep mode and disable/put to sleep all periferals between object detection runs. Default operation of the Portenta H7 with the Vision shield consumes a lot of energy and will drain a battery quickly. To find out how much energy is consumed we can use a device such as the [Otii Arc from Qoitech](https://www.qoitech.com/otii-arc-pro/). Hook up the positive power supply to **VIN**, negative to **GND**. Since VIN bypasses the Portenta power regulator we should provide 5V, however in my setup the Otii Arc is limited to 4.55V. Luckily it seems to be sufficient and we can take some measurements. By connecting the Otii Arc pin RX to the Portenta pin D14/PA9/UART1 TX, in code we can write debug messages to _Serial1_. This is incredibly helpful in determining what power consumption is associated with what part of the code.
+There are a few things to consider in the implementation: The device should enter deep sleep mode and disable/put to sleep all periferals between object detection runs. Default operation of the Portenta H7 with the Vision shield consumes a lot of energy and will drain a battery quickly. To find out how much energy is consumed we can use a device such as the [Otii Arc from Qoitech](https://www.qoitech.com/otii-arc-pro/). Hook up the positive power supply to **VIN**, negative to **GND**. Since VIN bypasses the Portenta power regulator we should provide 5V, however in my setup the Otii Arc is limited to 4.55V. Luckily it seems to be sufficient and we can take some measurements. By connecting the Otii Arc pin RX to the Portenta pin D14/PA9/UART1 TX, in code we can write debug messages to _Serial1_. This is incredibly helpful in determining what power consumption is associated with what part of the code.
 
-![Arduino Portenta H7 power specs](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/portenta_h7_power.png)
+![Arduino Portenta H7 power specs](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/portenta_h7_power.png)
 
-![Arduino Portenta H7 pin-out](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/portenta_h7_pinout.png)
+![Arduino Portenta H7 pin-out](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/portenta_h7_pinout.png)
 
-![Otii Arc hook-up](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/otii-arc-portenta.png)
+![Otii Arc hook-up](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/otii-arc-portenta.png)
 
-![Otii Arc power profile](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/otii-icicle-profile.png)
+![Otii Arc power profile](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/otii-icicle-profile.png)
 
 As we can see the highlighted section should be optimized for minimal power consumption. This is a complicated subject, especially on a [complex board such as the Arduino Portenta H7](https://github.com/arduino/ArduinoCore-mbed/issues/619) but there are some examples for general guidance:
 
- - [Snow monitor](https://www.hackster.io/eivholt/low-power-snow-depth-sensor-using-lora-e5-b8e7b8#toc-power-profiling-16)
- - [Mail box sensor](https://community.element14.com/challenges-projects/project14/rf/b/blog/posts/got-mail-lorawan-mail-box-sensor).
+* [Snow monitor](https://www.hackster.io/eivholt/low-power-snow-depth-sensor-using-lora-e5-b8e7b8#toc-power-profiling-16)
+* [Mail box sensor](https://community.element14.com/challenges-projects/project14/rf/b/blog/posts/got-mail-lorawan-mail-box-sensor).
 
 The project code presented here runs inference on an image every 10 seconds. However, this is for demonstration purposes and in a deployment should be much less frequent, like once per hour during daylight. Have a look at this project for an example of how to [remotely control inference interval](https://www.hackster.io/eivholt/low-power-snow-depth-sensor-using-lora-e5-b8e7b8#toc-lora-application-14) via LoRaWAN downlink message. This could be further controlled automatically via an application that has access to an [API for daylight data](https://developer.yr.no/doc/GettingStarted/).
 
-![YR weather API](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/yr-sun.png)
+![YR weather API](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/yr-sun.png)
 
 Next, in the The Things Stack application we need to define a function that will be used to decode the byte into a JSON structure that is easier to interpet when we pass the message further up the chain of services. The function can be found in the [project code repository](https://github.com/eivholt/icicle-monitor/blob/main/TheThingsStack/decoder.js).
 
-![The Things Stack decoder](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/ttn-decoder.png)
+![The Things Stack decoder](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/ttn-decoder.png)
 
 ```javascript
 function Decoder(bytes, port) {
@@ -498,7 +501,7 @@ function Decoder(bytes, port) {
 
 Now we can observe messages being received and decoded in **Live data** in the TTS console.
 
-![The Things Stack live data](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/ttn-data.png)
+![The Things Stack live data](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/ttn-data.png)
 
 An integral part of The Things Stack is an MQTT message broker. At this point we can use [any MQTT client to subscribe to topics](https://www.thethingsindustries.com/docs/integrations/mqtt/mqtt-clients/) and create any suitable notification system for the end user. The following is an MQTT client written in Python to demonstrate the principle. Note that the library `paho-mqtt` has been used in a way so that it will block the program execution until two messages have been received. Then it will print the topic and payloads. In a real implementation, it would be better to register a callback and perform some action for each message received.
 
@@ -522,7 +525,7 @@ v3/icicle-monitor@ttn/devices/portenta-h7-icicle-00/up
 {"end_device_ids":{"device_id":"portenta-h7-icicle-00","application_ids":{"application_id":"icicle-monitor"},"dev_eui":"3036363266398F0D","join_eui":"0000000000000000"},"correlation_ids":["as:up:01HSKMTN7F60CC3BQXE06B3Q4X","rpc:/ttn.lorawan.v3.AppAs/SimulateUplink:17b97b44-a5cd-45f0-9439-2de42e187300"],"received_at":"2024-03-22T17:55:05.070404295Z","uplink_message":{"f_port":1,"frm_payload":"AQ==","decoded_payload":{"detected":true},"rx_metadata":[{"gateway_ids":{"gateway_id":"test"},"rssi":42,"channel_rssi":42,"snr":4.2}],"settings":{"data_rate":{"lora":{"bandwidth":125000,"spreading_factor":7}},"frequency":"868000000"},"locations":{"user":{"latitude":67.2951772015745,"longitude":14.43232297897339,"altitude":13,"source":"SOURCE_REGISTRY"}}},"simulated":true}'
 ```
 
-Observe the difference in the real uplink (first) and simulated uplink (second). In both we find "decoded_payload":{"detected":true}.
+Observe the difference in the real uplink (first) and simulated uplink (second). In both we find "decoded\_payload":{"detected":true}.
 
 TTS has a range of [integration options](https://www.thethingsindustries.com/docs/integrations/) for specific platforms, or you could set up a [custom webhook using a standard HTTP/REST](https://www.thethingsindustries.com/docs/integrations/webhooks/) mechanism.
 
@@ -536,29 +539,29 @@ For permanent outdoor installation the device requires a properly sealed enclosu
 
 The project has no safe-guard against false negatives. The device will not report if it's view is blocked. This could be resolved by placing static markers on both sides of an area to monitor and included in synthetic training data. Absence of at least one marker could trigger a notification that the view is obscured.
 
-![Markers to avoid false negatives](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/marker.png)
+![Markers to avoid false negatives](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/marker.png)
 
 ### Object scale
 
 Due to optimization techniques in Faster Objects - More Objects (FoMo) determining relative sizes of the icicles is not feasible. As even icicles with small mass can be harmful at moderate elevation this is not a crucial feature.
 
-![Object scale](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/object-scale.png)
+![Object scale](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/object-scale.png)
 
 ### Exact number of icicles
 
 The object detection model has not been trained to give an exact number of icicles in view. This has no practical implication other than the model verification results appearing worse than practical performance.
 
-![Icicle grouping](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/grouping.png)
+![Icicle grouping](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/grouping.png)
 
 ### Non-vertical icicles and snow
 
 Icicles can appear bent or angled either due to wind or more commonly due to ice and snow masses slowly dropping over roof edges. The dataset generated in this project does not cover this, but it would not take a lot of effort to extend the domain randomization to rotate or warp the icicles.
 
-![AULSSON_EBBA](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/AULSSON_EBBA.png)
+![AULSSON\_EBBA](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/AULSSON_EBBA.png)
 
-![Martin Cathrae](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Martin-Cathrae.png)
+![Martin Cathrae](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/Martin-Cathrae.png)
 
-The training images could benefit from simulating snow with particle effects in Omniverse. The project could also be extended to detect build-up of snow on roofs. For inspiration check out this demo of simulated snow dynamic made in 2014 by Walt Disney Animation Studios for the movie Frozen: 
+The training images could benefit from simulating snow with particle effects in Omniverse. The project could also be extended to detect build-up of snow on roofs. For inspiration check out this demo of simulated snow dynamic made in 2014 by Walt Disney Animation Studios for the movie Frozen:
 
 {% embed url="https://youtu.be/9H1gRQ6S7gg" %}
 
@@ -566,9 +569,8 @@ The training images could benefit from simulating snow with particle effects in 
 
 To be able to compile a representation of our neural network and have it run on the severely limited amount of RAM available on the Arduino Portenta H7, pixel representation has been limited to a single channel - grayscale. Colors are not needed to detect icicles so this does not affect the results.
 
-![Grayscale](../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/grayscale1.png)
+![Grayscale](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/grayscale1.png)
 
 ## Further reading
 
 Insights into [how icicles are formed](https://www.insidescience.org/news/riddles-rippled-icicle).
-

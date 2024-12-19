@@ -1,6 +1,8 @@
 ---
 description: >-
-    End-to-end synthetic data pipeline for the creation of a portable LED product equipped with keyword spotting capabilities. The project serves as a comprehensive guide for development of any KWS product, emphasizing the utilization of synthetic data for model training.
+  End-to-end synthetic data pipeline for the creation of a portable LED product
+  equipped with keyword spotting capabilities. The project serves as a
+  comprehensive guide for development of any KWS produc
 ---
 
 # Developing a Voice-Activated Product with Edge Impulse's Synthetic Data Pipeline
@@ -41,14 +43,14 @@ The Arduino Nicla Voice is an ideal choice for this project due to its use of th
 
 ## Hardware Requirements
 
-- Arduino Nicla Voice (or other Edge Impulse supported MCU with mic)
-- PCB and SMD components (parts breakdown explained later)
+* Arduino Nicla Voice (or other Edge Impulse supported MCU with mic)
+* PCB and SMD components (parts breakdown explained later)
 
 ## Software Requirements
 
-- Edge Impulse CLI
-- Arduino IDE
-- OpenAI API account
+* Edge Impulse CLI
+* Arduino IDE
+* OpenAI API account
 
 ## Dataset Collection
 
@@ -64,9 +66,9 @@ Once you have your secret key, you can navigate to your Edge Impulse organizatio
 
 ### Generating TTS Synthetic Data
 
-Now that we have the environment configured, and our OpenAI API saved in the Edge Impulse Studio, we are ready to start a new project and begin generating some synthetic voice data. 
+Now that we have the environment configured, and our OpenAI API saved in the Edge Impulse Studio, we are ready to start a new project and begin generating some synthetic voice data.
 
-On your project's page select Data acquisition --> Data sources --> + Add new data source -->  Transformation block --> Whisper Synthetic Voice Generator --> Fill out the details as follow:
+On your project's page select Data acquisition --> Data sources --> + Add new data source --> Transformation block --> Whisper Synthetic Voice Generator --> Fill out the details as follow:
 
 ![](../.gitbook/assets/synthetic-data-pipeline-keyword-spotting/generate-tts.jpg)
 
@@ -104,14 +106,14 @@ Once satisfied with all the data generated, perform a Train / Test split into ap
 
 ![](../.gitbook/assets/synthetic-data-pipeline-keyword-spotting/impulse-design.png)
 
-The Impulse design values are chosen for optimal keyword spotting performance. The 968 ms window size captures enough audio for accurate detection, while the 500 ms window increase balances responsiveness and efficiency. The 16000 Hz frequency is standard for capturing human voice, ensuring quality without excessive data. Using the Audio (Syntiant) block leverages the NDP120's capabilities for efficient digital signal processing. The Classification block distinguishes between commands, with output classes "extinguish," "illuminate," and "z_openset" allowing for control of the lighting system and handling unknown inputs.
+The Impulse design values are chosen for optimal keyword spotting performance. The 968 ms window size captures enough audio for accurate detection, while the 500 ms window increase balances responsiveness and efficiency. The 16000 Hz frequency is standard for capturing human voice, ensuring quality without excessive data. Using the Audio (Syntiant) block leverages the NDP120's capabilities for efficient digital signal processing. The Classification block distinguishes between commands, with output classes "extinguish," "illuminate," and "z\_openset" allowing for control of the lighting system and handling unknown inputs.
 
-- Window size: 968 ms
-- Window increase: 500 ms
-- Frequency: 16000 Hz
-- Audio (Syntiant)
-- Classification
-- Output: extinguish, illuminate, z_openset
+* Window size: 968 ms
+* Window increase: 500 ms
+* Frequency: 16000 Hz
+* Audio (Syntiant)
+* Classification
+* Output: extinguish, illuminate, z\_openset
 
 ![](../.gitbook/assets/synthetic-data-pipeline-keyword-spotting/processing-feature.png)
 
@@ -149,13 +151,13 @@ The schematic, pcb, and gerber (manufacturing) files are accessible in the proje
 
 ![](../.gitbook/assets/synthetic-data-pipeline-keyword-spotting/pcb-order.png)
 
-| LCSC Part Number   | Manufacture Part Number                                   | Manufacturer                               | Package   | Description                                                                                                        | Order Qty. | Unit Price($) | Order Price($) |
-|--------------------|----------------------------------------------------------|--------------------------------------------|-----------|--------------------------------------------------------------------------------------------------------------------|------------|---------------|----------------|
-| C176224            | QR1206F5R10P05Z                                           | Ever Ohms Tech                             | 1206      | 250mW Thick Film Resistors 200V ą1% ą400ppm/? 5.1? 1206 Chip Resistor - Surface Mount ROHS                         | 50         | 0.0156        | 0.78           |
-| C516126            | HL-AM-2835H421W-S1-08-HR5(R9) (2800K-3100K)(SDCM<6,R9>50) | HONGLITRONIC(Hongli Zhihui (HONGLITRONIC)) | SMD2835   | 60mA 3000K Foggy yellow lens -40?~+85? Positive Stick White 120° 306mW 3.4V SMD2835 LED Indication - Discrete ROHS | 50         | 0.0144        | 0.72           |
-| C2589              | IRLML2502TRPBF                                            | Infineon Technologies                      | SOT-23    | 20V 4.2A 1.25W 45m?@4.5V,4.2A 1.2V@250uA 1 N-Channel SOT-23 MOSFETs ROHS                                           | 5          | 0.1838        | 0.92           |
-| C5440143           | CS3225X7R476K160NRL                                       | Samwha Capacitor                           | 1210      | 16V 47uF X7R ą10% 1210 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS                                           | 5          | 0.0765        | 0.38           |
-| C153338            | FCR1206J100RP05Z                                          | Ever Ohms Tech                             | 1206      | 250mW Safety Resistor 200V ą5% 100? 1206 Chip Resistor - Surface Mount ROHS                                        | 10         | 0.0541        | 0.54           |
+| LCSC Part Number | Manufacture Part Number                                   | Manufacturer                               | Package | Description                                                                                                         | Order Qty. | Unit Price($) | Order Price($) |
+| ---------------- | --------------------------------------------------------- | ------------------------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------- | ---------- | ------------- | -------------- |
+| C176224          | QR1206F5R10P05Z                                           | Ever Ohms Tech                             | 1206    | 250mW Thick Film Resistors 200V ą1% ą400ppm/? 5.1? 1206 Chip Resistor - Surface Mount ROHS                          | 50         | 0.0156        | 0.78           |
+| C516126          | HL-AM-2835H421W-S1-08-HR5(R9) (2800K-3100K)(SDCM<6,R9>50) | HONGLITRONIC(Hongli Zhihui (HONGLITRONIC)) | SMD2835 | 60mA 3000K Foggy yellow lens -40?\~+85? Positive Stick White 120° 306mW 3.4V SMD2835 LED Indication - Discrete ROHS | 50         | 0.0144        | 0.72           |
+| C2589            | IRLML2502TRPBF                                            | Infineon Technologies                      | SOT-23  | 20V 4.2A 1.25W 45m?@4.5V,4.2A 1.2V@250uA 1 N-Channel SOT-23 MOSFETs ROHS                                            | 5          | 0.1838        | 0.92           |
+| C5440143         | CS3225X7R476K160NRL                                       | Samwha Capacitor                           | 1210    | 16V 47uF X7R ą10% 1210 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS                                            | 5          | 0.0765        | 0.38           |
+| C153338          | FCR1206J100RP05Z                                          | Ever Ohms Tech                             | 1206    | 250mW Safety Resistor 200V ą5% 100? 1206 Chip Resistor - Surface Mount ROHS                                         | 10         | 0.0541        | 0.54           |
 
 ![](../.gitbook/assets/synthetic-data-pipeline-keyword-spotting/3d-pcb.png)
 

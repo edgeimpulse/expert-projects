@@ -1,14 +1,15 @@
 ---
-description: Control your TV, Air Conditioner or Lightbulb by just pointing your finger at them, using the BrainChip AKD1000 achieving great accuracy and low power consumption.
+description: >-
+  Control your TV, Air Conditioner or Lightbulb by just pointing your finger at
+  them, using the BrainChip AKD1000 achieving great accuracy and low power
+  consumption.
 ---
 
-# Gesture Appliances Control with Pose Detection - BrainChip AKD1000 
+# Gesture Appliances Control with Pose Detection - BrainChip AKD1000
 
-Created By:
-Christopher Mendez
+Created By: Christopher Mendez
 
-Public Project Link:
-[https://studio.edgeimpulse.com/public/319871/latest](https://studio.edgeimpulse.com/public/319871/latest)
+Public Project Link: [https://studio.edgeimpulse.com/public/319871/latest](https://studio.edgeimpulse.com/public/319871/latest)
 
 ## Introduction
 
@@ -20,29 +21,29 @@ This is why I thought "What if we could control the whole house with just gestur
 
 ## Hardware and Software Requirements
 
-To develop this project we will use a __BrainChip Akida Development Kit__ and a __Logitech BRIO 4K Webcam__, together with an __Edge Impulse__ Machine Learning model for pose identification.
+To develop this project we will use a **BrainChip Akida Development Kit** and a **Logitech BRIO 4K Webcam**, together with an **Edge Impulse** Machine Learning model for pose identification.
 
-![Hardware required for the project](../.gitbook/assets/gesture-appliances-control-brainchip/hardware.png)
+![Hardware required for the project](../../.gitbook/assets/gesture-appliances-control-brainchip/hardware.png)
 
 ### Akida Dev Kit
 
-It should be noted that this kit is the main component of this project thanks to some interesting characteristics that make it ideal for this use case. This kit consists of a Raspberry Pi Compute Module 4 with Wi-Fi and 8 GB RAM, also its IO Board, which includes a PCIe interface to carry an **Akida PCIe board** with the **AKD1000 Neuromorphic Hardware Accelerator**. 
+It should be noted that this kit is the main component of this project thanks to some interesting characteristics that make it ideal for this use case. This kit consists of a Raspberry Pi Compute Module 4 with Wi-Fi and 8 GB RAM, also its IO Board, which includes a PCIe interface to carry an **Akida PCIe board** with the **AKD1000 Neuromorphic Hardware Accelerator**.
 
 Considering that our project will end up being one more smart device that we will have at home, it's crucial that it can do its job efficiently and with very low energy consumption. This is where BrainChip's technology makes sense. Akida™ neuromorphic processor mimics the human brain to analyze only essential sensor inputs at the point of acquisition—processing data with unparalleled performance, precision, and economy of energy.
 
 ### Software
 
-The whole system will be running independently identifying poses, if a desired pose is detected it will send an HTTP request to the Google Assistant SDK being hosted by a Raspberry Pi with Home Assistant OS. 
+The whole system will be running independently identifying poses, if a desired pose is detected it will send an HTTP request to the Google Assistant SDK being hosted by a Raspberry Pi with Home Assistant OS.
 
 ## Setting up the Development Environment
 
-The system comes with the basic requirements installed to run machine learning models using Akida processor acceleration. Once the system is powered up and connected to the internet (I used an ethernet cable), you can access it by an SSH connection: you will need to know the device's local IP address, in my case, I got it from the list of connected devices of my router. 
+The system comes with the basic requirements installed to run machine learning models using Akida processor acceleration. Once the system is powered up and connected to the internet (I used an ethernet cable), you can access it by an SSH connection: you will need to know the device's local IP address, in my case, I got it from the list of connected devices of my router.
 
-![Device IP Address](../.gitbook/assets/gesture-appliances-control-brainchip/ip_show.png)
+![Device IP Address](../../.gitbook/assets/gesture-appliances-control-brainchip/ip_show.png)
 
-To verify the device is working properly, you can try an included demo by navigating to **http://<your_kit_IP>**, in my case to http://10.0.0.150 and try some of the examples:
+To verify the device is working properly, you can try an included demo by navigating to **http://\<your\_kit\_IP>**, in my case to http://10.0.0.150 and try some of the examples:
 
-![Built-in demo running](../.gitbook/assets/gesture-appliances-control-brainchip/demo.png)
+![Built-in demo running](../../.gitbook/assets/gesture-appliances-control-brainchip/demo.png)
 
 To start setting up the device for a custom model deployment, let's verify we have installed all the packages we need.
 
@@ -59,7 +60,7 @@ lspci | grep Co-processor # will check if the PCIe card is plugged in correctly.
 python3 --version # will check the installed Python version (3.8 is required).
 ```
 
-![Verifying packages](../.gitbook/assets/gesture-appliances-control-brainchip/verifications.png)
+![Verifying packages](../../.gitbook/assets/gesture-appliances-control-brainchip/verifications.png)
 
 You will also need Node Js v14.x to be able to use the [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation). Install it by running these commands:
 
@@ -69,6 +70,7 @@ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 node -v
 ```
+
 The last command should return the node version, v14 or above.
 
 Finally, let's install the [Linux Python SDK](https://docs.edgeimpulse.com/docs/edge-impulse-for-linux/linux-python-sdk), you just need to run these commands:
@@ -85,15 +87,15 @@ pip3 install edge_impulse_linux -i https://pypi.python.org/simple
 
 First, we need to create an [Edge Impulse Studio](https://studio.edgeimpulse.com) account if we haven't yet, and create a new project:
 
-![New project creation](../.gitbook/assets/gesture-appliances-control-brainchip/new_project.png)
+![New project creation](../../.gitbook/assets/gesture-appliances-control-brainchip/new_project.png)
 
 For the creation of the dataset of our model, we have two options, uploading the images from the BrainChip Development Kit or using our computer or phone. In this case, I chose to take them from the computer using the same webcam that we are finally going to use in the project.
 
-![Dataset creating source](../.gitbook/assets/gesture-appliances-control-brainchip/pc_upload.png)
+![Dataset creating source](../../.gitbook/assets/gesture-appliances-control-brainchip/pc_upload.png)
 
 The dataset consists of 3 classes in which we finger point each appliance and a last one of unknown cases.
 
-![Raw image & PoseNet output](../.gitbook/assets/gesture-appliances-control-brainchip/classes.png)
+![Raw image & PoseNet output](../../.gitbook/assets/gesture-appliances-control-brainchip/classes.png)
 
 > **Taking at least +50 pictures of each class will let you create a robust enough model**
 
@@ -105,38 +107,38 @@ In the left side menu, we navigate to **Impulse design** > **Create impulse** an
 
 ### Input block (Image data):
 
-- Image width: 192
-- Image height: 192
-- Resize mode: Fit longest
+* Image width: 192
+* Image height: 192
+* Resize mode: Fit longest
 
 ### Processing block (PoseNet):
 
 Use this block to turn raw images into pose vectors, then pair it with an ML block to detect what a person is doing.
 
-PoseNet processing block is just enabled for Enterprise projects, if we want to use it on a Developer one, we need to locally run the block, for this, you must clone the [PoseNet block repository](https://github.com/edgeimpulse/pose-estimation-processing-block) and follow the __README__ steps.
+PoseNet processing block is just enabled for Enterprise projects, if we want to use it on a Developer one, we need to locally run the block, for this, you must clone the [PoseNet block repository](https://github.com/edgeimpulse/pose-estimation-processing-block) and follow the **README** steps.
 
 You will end up with an URL similar to "https://abe7-2001-1308-a2ca-4f00-e65f-1ff-fe27-d3aa.ngrok-free.app" hosting the processing block, click on **Add a processing block** > **Add custom block**, then paste the [**ngrok**](https://ngrok.com/) generated URL, and click on **Add block**.
 
-![Adding a Custom Block](../.gitbook/assets/gesture-appliances-control-brainchip/custom_block.png)
+![Adding a Custom Block](../../.gitbook/assets/gesture-appliances-control-brainchip/custom_block.png)
 
 ### Learning block (BrainChip Akida)
 
 To classify the features extracted from the different poses, we'll use a classification learn block specifically designed for the hardware we're using.
 
-![Adding a Custom Block](../.gitbook/assets/gesture-appliances-control-brainchip/learning.png)
+![Adding a Custom Block](../../.gitbook/assets/gesture-appliances-control-brainchip/learning.png)
 
 Finally, we save the **Impulse design**, it should end up looking like this:
 
-![Adding a Custom Block](../.gitbook/assets/gesture-appliances-control-brainchip/impulse_design_2.png)
+![Adding a Custom Block](../../.gitbook/assets/gesture-appliances-control-brainchip/impulse_design_2.png)
 
 ## Model Training
 
-After having designed the impulse, it's time to set the processing and learning blocks. The **Pose estimation** block doesn't have any configurable parameters, so we just need to click on **Save parameters** and then **Generate features**. 
+After having designed the impulse, it's time to set the processing and learning blocks. The **Pose estimation** block doesn't have any configurable parameters, so we just need to click on **Save parameters** and then **Generate features**.
 
 In the _classifier block_ define the following settings:
 
-- Number of training cycles: 100
-- Learning rate: 0.001 
+* Number of training cycles: 100
+* Learning rate: 0.001
 
 In the Neural network architecture, add 3 Dense layers with 35, 25 and 10 neurons respectively.
 
@@ -254,11 +256,11 @@ akida_model = akida_perform_qat(
     callbacks=callbacks)
 ```
 
-Click on the __Start training__ button and wait for the model to be trained and the confusion matrix to show up.
+Click on the **Start training** button and wait for the model to be trained and the confusion matrix to show up.
 
-### Confusion Matrix 
+### Confusion Matrix
 
-![Confusion matrix results](../.gitbook/assets/gesture-appliances-control-brainchip/confusion.png)
+![Confusion matrix results](../../.gitbook/assets/gesture-appliances-control-brainchip/confusion.png)
 
 The results of the confusion matrix can be improved by adding more samples to the dataset.
 
@@ -270,6 +272,7 @@ To be able to run the project, we need to go back to our SSH connection with the
 bash
 git clone https://github.com/edgeimpulse/pose-akida-classification.git
 ```
+
 Install all the project requirements with the following command, and wait for the process to be done.
 
 ```
@@ -288,7 +291,7 @@ apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
 Once the project is cloned locally in the Akida Development Kit, you can download the project model from Edge Impulse Studio by navigating to the **Dashboard** section and downloading the **MetaTF** `.fbz` file.
 
-![Downloading the project model](../.gitbook/assets/gesture-appliances-control-brainchip/model-down.png)
+![Downloading the project model](../../.gitbook/assets/gesture-appliances-control-brainchip/model-down.png)
 
 Once downloaded, from the model path, open a new terminal and copy the model to the Dev Kit using `scp` command as follows:
 
@@ -297,6 +300,7 @@ bash
 scp <model file>.fbz ubuntu@<Device IP>:~ # command format
 scp akida_model.fbz ubuntu@10.0.0.154:~ # actual command in my case
 ```
+
 > _You will be asked for your Linux machine login password._
 
 Now, the model is on the Akida Dev Kit local storage `(/home/ubuntu)` and you can verify it by listing the directory content using `ls`.
@@ -310,7 +314,7 @@ mv akida_model.fbz ./pose-akida-classification/
 
 Here we have the model on the project directory, so now everything is ready to be run.
 
-![Project directory](../.gitbook/assets/gesture-appliances-control-brainchip/model-copy.png)
+![Project directory](../../.gitbook/assets/gesture-appliances-control-brainchip/model-copy.png)
 
 ## Run Inferencing
 
@@ -321,13 +325,13 @@ bash
 python3 class-pose.py akida_model.fbz 0
 ```
 
-- The first parameter `class-pose.py` is the project's main script to be run.
-- `akida_model.fbz` is the Meta TF model name we downloaded from our Edge Impulse project.
-- `0` force the script to use the first camera available.
+* The first parameter `class-pose.py` is the project's main script to be run.
+* `akida_model.fbz` is the Meta TF model name we downloaded from our Edge Impulse project.
+* `0` force the script to use the first camera available.
 
 The project will start running and printing the inference results continuously in the terminal.
 
-![Project running and printing the results](../.gitbook/assets/gesture-appliances-control-brainchip/running.png)
+![Project running and printing the results](../../.gitbook/assets/gesture-appliances-control-brainchip/running.png)
 
 To watch a preview of the camera feed, you can do it by opening a new `ssh` session and running the `make-page.py` script from the project directory:
 
@@ -336,25 +340,25 @@ bash
 python3 make-page.py
 ```
 
-![Preview Web Page script command](../.gitbook/assets/gesture-appliances-control-brainchip/preview-web.png)
+![Preview Web Page script command](../../.gitbook/assets/gesture-appliances-control-brainchip/preview-web.png)
 
 Finally, you will be able to see the camera preview alongside the inference results organized in the following order: `AC`, `Light`, `Other` and `TV`.
 
-![Project running | Inference results](../.gitbook/assets/gesture-appliances-control-brainchip/results-preview.png)
+![Project running | Inference results](../../.gitbook/assets/gesture-appliances-control-brainchip/results-preview.png)
 
 ## Google Assistant Setup
 
-For the actual appliance control, I used the __Google Assistant SDK__ integration for __Home Assistant__. Follow the [documentation](https://www.home-assistant.io/integrations/google_assistant_sdk) to configure it for your setup.
+For the actual appliance control, I used the **Google Assistant SDK** integration for **Home Assistant**. Follow the [documentation](https://www.home-assistant.io/integrations/google_assistant_sdk) to configure it for your setup.
 
 > **The Home Assistant is running on a separate Raspberry PI.**
 
 Once the integration is set, we can send `HTTP` requests to it with the following format:
 
-- URL: `http://<Raspberry Pi IP>:8123/api/services/google_assistant_sdk/send_text_command`
-- Headers:
-    - Authorization: "Bearer <authentication key>"
-    - Content-Type: "application/json"
-- Body: {"command":"turn on the light"}
+* URL: `http://<Raspberry Pi IP>:8123/api/services/google_assistant_sdk/send_text_command`
+* Headers:
+  * Authorization: "Bearer "
+  * Content-Type: "application/json"
+* Body: {"command":"turn on the light"}
 
 You must edit the `url` and `auth` variables in the code with the respective ones of your setup.
 
@@ -366,7 +370,7 @@ auth = 'Bearer *****************************************************************
 
 ## Demo
 
-![Final project deployment](../.gitbook/assets/gesture-appliances-control-brainchip/setup-on.png)
+![Final project deployment](../../.gitbook/assets/gesture-appliances-control-brainchip/setup-on.png)
 
 Here I show you the whole project working and controlling appliances when they are pointed.
 

@@ -1,6 +1,8 @@
 ---
 description: >-
-  Use the "Bring Your Own Model" feature to upload an existing pre-trained TensorFlow Lite Sign Language model into Edge Impulse, then deploy it to the TI AM62A Development Kit.
+  Use the "Bring Your Own Model" feature to upload an existing pre-trained
+  TensorFlow Lite Sign Language model into Edge Impulse, then deploy it to the
+  TI AM62A Development Kit.
 ---
 
 # Import a Pretrained Model with "Bring Your Own Model" - Texas Instruments AM62A
@@ -25,13 +27,13 @@ I decided to try out this feature by importing an American Sign Language model a
 
 ![](../.gitbook/assets/asl-byom-ti-am62a/asl.jpg)
 
-One thing I learned from this project is that sign language is not the same everywhere. In the US and most of Canada, they use American Sign Language, but in Argentina where I am located, they use a different version. Both versions have some signs that are static, and some that have movement, like the letter Z. For the moving signs, I only used the final position of the movement to train and recognize the letter, since I was using images and not videos.  For motion activity, video classification would be needed.
+One thing I learned from this project is that sign language is not the same everywhere. In the US and most of Canada, they use American Sign Language, but in Argentina where I am located, they use a different version. Both versions have some signs that are static, and some that have movement, like the letter Z. For the moving signs, I only used the final position of the movement to train and recognize the letter, since I was using images and not videos. For motion activity, video classification would be needed.
 
 Another thing to keep in mind is that some signs, like **A, M, N, S and T**, can look very similar from a distance. This makes data collection and model training more challenging.
 
 ## Model Import
 
-From the original idea to the point where I actually started the project, the [ASL Hugging Face model]((https://huggingface.co/spaces/datasciencedojo/AmericanSignLanguage-Detection)) I wanted to use was no longer available.
+From the original idea to the point where I actually started the project, the [ASL Hugging Face model](../image-projects/\(https:/huggingface.co/spaces/datasciencedojo/AmericanSignLanguage-Detection\)/) I wanted to use was no longer available.
 
 So at this point I decided to train a simple ASL model outside Edge Impulse, export the model as a TensorFlow Lite file, import to Edge Impulse, deploy the model to the Texas Instruments AM62A board, and develop a simple Python training game.
 
@@ -51,7 +53,7 @@ Before importing to Edge Impulse, I tested the model with a live feed from the c
 
 For the exporting step in _Teachable Machine_, I used TensorFlow Lite, Floating Point. That generates a `.zip` file download, which I then unzipped. Inside, I found 2 files: the model with the `.tflite` extension, and a label .txt file. This label file has 2 columns: **order** and **label name**. To prepare everything for Edge Impulse BYOM, I removed the **order** column and compiled everything in one row, comma separated.
 
-Example: 
+Example:
 
 ```
 A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
@@ -91,16 +93,16 @@ The deployment procedure varies from board to board. In this case, the deploymen
 
 ## Texas Instruments AM62A Setup and Deployment
 
- - Download this operating system image version: [https://www.ti.com/tool/download/PROCESSOR-SDK-LINUX-AM62A/08.06.00.45](https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-D37Ls3JjkT/08.06.00.45/tisdk-edgeai-image-am62axx-evm.wic.xz)
- - Flash the image to a 16gb or larger microSD card with Balena Etcher or any other similar software
- - Connect the Power Supply, HDMI, USB Camera, and Ethernet Cable
- - Check the board IP on the HDMI screen when board boots up and the default application loads
- - Login to that IP using Putty or any other SSH client, using `root` as the user, and no password
- - Run `npm config set user root && sudo npm install edge-impulse-linux -g --unsafe-perm`
- - Run `pip3 install art` (a library to display bigger letters)
- - Run `edge-impulse-linux-runner`. The first time you run this, you will need to login to your Edge Impulse account and select the BYOM project.  Once running, launch a web browser and navigate to your board's IP address, port 4912. For example, `http://192.168.1.66:4912` in my case.
- - Download the `am62a_signlanguage.py` file [from the GitHub repository](https://github.com/ronibandini/ASLTrainer) and upload the script to the AM62A board using SFTP. The credentials are the same as logging in directly:  You'll need your IP address, username is `root`, and there is no password.
- - Run `python3 am62a_signlanguage.py`
+* Download this operating system image version: [https://www.ti.com/tool/download/PROCESSOR-SDK-LINUX-AM62A/08.06.00.45](https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-D37Ls3JjkT/08.06.00.45/tisdk-edgeai-image-am62axx-evm.wic.xz)
+* Flash the image to a 16gb or larger microSD card with Balena Etcher or any other similar software
+* Connect the Power Supply, HDMI, USB Camera, and Ethernet Cable
+* Check the board IP on the HDMI screen when board boots up and the default application loads
+* Login to that IP using Putty or any other SSH client, using `root` as the user, and no password
+* Run `npm config set user root && sudo npm install edge-impulse-linux -g --unsafe-perm`
+* Run `pip3 install art` (a library to display bigger letters)
+* Run `edge-impulse-linux-runner`. The first time you run this, you will need to login to your Edge Impulse account and select the BYOM project. Once running, launch a web browser and navigate to your board's IP address, port 4912. For example, `http://192.168.1.66:4912` in my case.
+* Download the `am62a_signlanguage.py` file [from the GitHub repository](https://github.com/ronibandini/ASLTrainer) and upload the script to the AM62A board using SFTP. The credentials are the same as logging in directly: You'll need your IP address, username is `root`, and there is no password.
+* Run `python3 am62a_signlanguage.py`
 
 ## Training Game
 
@@ -130,9 +132,9 @@ It is important to note that Edge Impulse's visualizations and tuning for extern
 
 ### Files
 
-- Source Code:  [https://github.com/ronibandini/ASLTrainer](https://github.com/ronibandini/ASLTrainer)
-- Edge Impulse Public Project:  [https://studio.edgeimpulse.com/public/270046/latest](https://studio.edgeimpulse.com/public/270046/latest)
-- [https://huggingface.co/ronibandini/AmericanSignLanguage](https://huggingface.co/ronibandini/AmericanSignLanguage) (this model has all the letters)
+* Source Code: [https://github.com/ronibandini/ASLTrainer](https://github.com/ronibandini/ASLTrainer)
+* Edge Impulse Public Project: [https://studio.edgeimpulse.com/public/270046/latest](https://studio.edgeimpulse.com/public/270046/latest)
+* [https://huggingface.co/ronibandini/AmericanSignLanguage](https://huggingface.co/ronibandini/AmericanSignLanguage) (this model has all the letters)
 
 ### References
 
@@ -140,11 +142,12 @@ It is important to note that Edge Impulse's visualizations and tuning for extern
 
 ### Contact
 
-If you are interested in other Artificial Intelligence and Machine Learning projects: [https://www.youtube.com/playlist?list=PLIw_UcVWFyBVYAQXp8S2pfe2frzGcyxlP](https://www.youtube.com/playlist?list=PLIw_UcVWFyBVYAQXp8S2pfe2frzGcyxlP) 
+If you are interested in other Artificial Intelligence and Machine Learning projects: [https://www.youtube.com/playlist?list=PLIw\_UcVWFyBVYAQXp8S2pfe2frzGcyxlP](https://www.youtube.com/playlist?list=PLIw_UcVWFyBVYAQXp8S2pfe2frzGcyxlP)
 
 #### Social Media
-[https://twitter.com/RoniBandini](https://twitter.com/RoniBandini)
-[https://www.instagram.com/ronibandini](https://www.instagram.com/ronibandini)
 
-#### Web 
+[https://twitter.com/RoniBandini](https://twitter.com/RoniBandini) [https://www.instagram.com/ronibandini](https://www.instagram.com/ronibandini)
+
+#### Web
+
 [https://bandini.medium.com/](https://bandini.medium.com/)
