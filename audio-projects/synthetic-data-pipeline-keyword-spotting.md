@@ -2,7 +2,7 @@
 description: >-
   End-to-end synthetic data pipeline for the creation of a portable LED product
   equipped with keyword spotting capabilities. The project serves as a
-  comprehensive guide for development of any KWS produc
+  comprehensive guide for development of any KWS product
 ---
 
 # Developing a Voice-Activated Product with Edge Impulse's Synthetic Data Pipeline

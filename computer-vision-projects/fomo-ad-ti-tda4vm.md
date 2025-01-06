@@ -93,7 +93,7 @@ Now you can check your camera focus by opening the stream at http://your-ip-addr
 For this sample project the idea is to spot and alert about faulty electricity components in a production line. The dataset to be used is composed of hundreds of pictures of properly assembled, high quality items.
 
 * Upload around 100 pictures of correct, quality products to Edge Impulse using **No Anomaly** as the label
-* In Impusle Design, Select Image Data, 96x96 pixels, and **Squash** as the resize mode.
+* In Impulse Design, Select Image Data, 96x96 pixels, and **Squash** as the resize mode.
 * Select an Image processing block, and choose **FOMO-AD**.
 
 ![](../.gitbook/assets/fomo-ad-ti-tda4vm/impulse.jpg)
@@ -120,7 +120,7 @@ Choose **Model Testing** from the navigation, and you can click **Classify All**
 
 ![](../.gitbook/assets/fomo-ad-ti-tda4vm/anomaly-result.jpg)
 
-All cells are assigned a cell background color based on the anomaly score, going from blue to red, with an increasing opaqueness. The cells with white borders are the ones that exceed the defined confidence threshold, signifiying an anomoly.
+All cells are assigned a cell background color based on the anomaly score, going from blue to red, with an increasing opaqueness. The cells with white borders are the ones that exceed the defined confidence threshold, signifying an anomaly.
 
 If you hover over a cell, you will see the specific score.
 

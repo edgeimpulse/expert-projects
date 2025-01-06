@@ -79,7 +79,7 @@ Then I went to Step 2.
 
 ![](../.gitbook/assets/asl-byom-ti-am62a/byom-2.jpg)
 
-In Step 2, I have selected _RGB Images_ (you can also import other data type models like audio), not normalized pixels, and _Classification_ as the model output, and copied the label row that I prepared ealrier.
+In Step 2, I have selected _RGB Images_ (you can also import other data type models like audio), not normalized pixels, and _Classification_ as the model output, and copied the label row that I prepared earlier.
 
 After importing the model you can use **On Device Performance** and select the target device, to estimate memory and processing time. I chose the TI AM62A, and obtained: 2ms processing time, 4.7M RAM usage and 2.0M flash needed.
 

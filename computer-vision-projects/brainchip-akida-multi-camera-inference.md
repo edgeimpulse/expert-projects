@@ -124,7 +124,7 @@ $ edge-impulse-uploader --category split images/*.jpg
 
 The command above will upload the demo input images to Edge Impulse Studio and split them into "Training" and "Testing" datasets. Once the upload completes, the input datasets are visible on the **Data Acquisition** page within Edge Impulse Studio.
 
-![Data Aquisition](../.gitbook/assets/brainchip-akida-multi-camera-inference/data_aquisition.png)
+![Data Acquisition](../.gitbook/assets/brainchip-akida-multi-camera-inference/data_aquisition.png)
 
 We can now assign labels to the data by using bounding boxes in the **Labeling queue** tab, as demonstrated in the GIF below. We have successfully labeled over 1800 objects, which was a tedious and time-consuming task, but it will greatly contribute to the creation of a diverse training dataset.
 
@@ -454,6 +454,6 @@ Engine Info: Power Consumption: 20.94 mW
 
 ## Conclusion
 
-In this project, we have evaluated the Brainchip AKD1000 Akida processor and demonstrated its effectiveness and efficiency in terms of accuracy, latency, bandwidth, and power consumption. We also conclude that Edge Impulse FOMO model is highly suitable for contrained and low-power edge devices to achieve fast inferencing without losing much accuracy. The public version of the Edge Impulse Studio project can be found here: [https://studio.edgeimpulse.com/public/298672/latest](https://studio.edgeimpulse.com/public/298672/latest).
+In this project, we have evaluated the Brainchip AKD1000 Akida processor and demonstrated its effectiveness and efficiency in terms of accuracy, latency, bandwidth, and power consumption. We also conclude that Edge Impulse FOMO model is highly suitable for constrained and low-power edge devices to achieve fast inferencing without losing much accuracy. The public version of the Edge Impulse Studio project can be found here: [https://studio.edgeimpulse.com/public/298672/latest](https://studio.edgeimpulse.com/public/298672/latest).
 
 

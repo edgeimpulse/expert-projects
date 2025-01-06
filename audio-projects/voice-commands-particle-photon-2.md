@@ -56,7 +56,7 @@ cables.
 
 ## Data Acquisition and Model Training
 
-We will create an account at [Edge Impulse](https://edgeimpulse.com/), then login and reate a new project.
+We will create an account at [Edge Impulse](https://edgeimpulse.com/), then login and create a new project.
 
 ![](../.gitbook/assets/voice-commands-particle-photon-2/project.jpg)
 

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Use a Raspberry Pi 5 to spot anomolies in fabric or other textiles with Edge Impulse FOMO-AD.
+  Use a Raspberry Pi 5 to spot anomalies in fabric or other textiles with Edge Impulse FOMO-AD.
 ---
 
 # Visual Anomaly Detection in Fabric using FOMO-AD - Raspberry Pi 5
@@ -283,7 +283,7 @@ We need to create a new project to upload data to Edge Impulse Studio.
 
 ![](../.gitbook/assets/textile-fabric-anomaly-detection/new_project.png)
 
-The data is uploaded using the Edge Impulse CLI. You can install the CLI by following the instuctions here: [https://docs.edgeimpulse.com/docs/cli-installation](https://docs.edgeimpulse.com/docs/cli-installation). Please remember to execute the following command to upload the **No Anomaly** images only for the Training. 
+The data is uploaded using the Edge Impulse CLI. You can install the CLI by following the instructions here: [https://docs.edgeimpulse.com/docs/cli-installation](https://docs.edgeimpulse.com/docs/cli-installation). Please remember to execute the following command to upload the **No Anomaly** images only for the Training. 
 
 ```
 $ edge-impulse-uploader --category training  --label "No Anomaly" no_anomaly.*.jpg

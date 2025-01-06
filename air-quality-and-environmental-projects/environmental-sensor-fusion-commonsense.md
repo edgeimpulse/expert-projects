@@ -658,7 +658,7 @@ static const float features[] = {
 };
 ```
 
-Connect the Spresesce Board to your computer, select the appropriate port, and upload the Sketch. On the Serial Monitor, you should see the Classification result showing **serv** with the right score. 
+Connect the Spresense Board to your computer, select the appropriate port, and upload the Sketch. On the Serial Monitor, you should see the Classification result showing **serv** with the right score. 
 
 ![](../.gitbook/assets/environmental-sensor-fusion-commonsense/image-51.png)
 
