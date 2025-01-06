@@ -372,7 +372,7 @@ $ mo --model_name ei-pnp_yolov5n_320 \
 --input_model ei-pnp_yolov5n_320_batch32_epoch100_prune.onnx
 ```
 
-After converting the model to OpenVINO’s IR format, run the following script to compile it into a `.blob` file, which can be deployed to the OAK-D device.
+After converting the model to OpenVINO's IR format, run the following script to compile it into a `.blob` file, which can be deployed to the OAK-D device.
 
 ```
 import blobconverter
@@ -474,7 +474,7 @@ Planning groups in MoveIt 2 semantically describe different parts of the robot, 
 
 ![moveit2\_assistant\_4](../../.gitbook/assets/robotic-arm-sorting-arduino-braccio/moveit2_assistant_4.png)
 
-The Setup Assistant allows us to add predefined poses to the robot’s configuration, which can be useful for defining specific initial or ready poses. Later, the robot can be commanded to move to these poses using the MoveIt API. Click on the **Add Pose** and choose a name for the pose.
+The Setup Assistant allows us to add predefined poses to the robot's configuration, which can be useful for defining specific initial or ready poses. Later, the robot can be commanded to move to these poses using the MoveIt API. Click on the **Add Pose** and choose a name for the pose.
 
 ![moveit2\_assistant\_5](../../.gitbook/assets/robotic-arm-sorting-arduino-braccio/moveit2_assistant_5.png)
 
