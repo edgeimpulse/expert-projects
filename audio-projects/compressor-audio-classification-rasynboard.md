@@ -112,7 +112,7 @@ Then in a terminal, you will see the output of the model running.  I have placed
 
 ## Going Further
 
-Using machine learning and an embedded development kit, we were able to successfully identify and classify pump behavior by listening to the sound of the compressor.  This demonstration validated the approach as feasible, and when wrapped into a larger application and alerting system, an audio classification model could be used for remote infrastructure facilities, factory equipment, or building HVAC equipment that is not continually monitored by workers or other human presence.  The Renesas RA6 MCU combined with the Syntaint NDP120 neural decision processor in the Avnet RaSynBoard create a low-power, cost-effective solution for predictive maintenance or intervention as needed, prior to a failure or accident occurring.
+Using machine learning and an embedded development kit, we were able to successfully identify and classify pump behavior by listening to the sound of the compressor.  This demonstration validated the approach as feasible, and when wrapped into a larger application and alerting system, an audio classification model could be used for remote infrastructure facilities, factory equipment, or building HVAC equipment that is not continually monitored by workers or other human presence.  The Renesas RA6 MCU combined with the Syntiant NDP120 neural decision processor in the Avnet RaSynBoard create a low-power, cost-effective solution for predictive maintenance or intervention as needed, prior to a failure or accident occurring.
 
  
 

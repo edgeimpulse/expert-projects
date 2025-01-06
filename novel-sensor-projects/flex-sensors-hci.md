@@ -58,7 +58,7 @@ The value of `N` depends on 2 factors:
 
 The faster you sample, the more granularity your data will have, but the larger the input vector (and the Edge Impulse model) will be! A good starting point is taking 100 samples/second. You can increase this value later if the model is not performing well.
 
-How long should the longest gesture be? I recommend to start with short gestures of ~1 second. Once you have good results, you can try to increase the gesture complexity and duration. Also, start with repeating patterns (a.k.a. continous motion), not "one-shot" gestures (they're harder to recognize). 
+How long should the longest gesture be? I recommend to start with short gestures of ~1 second. Once you have good results, you can try to increase the gesture complexity and duration. Also, start with repeating patterns (a.k.a. continuous motion), not "one-shot" gestures (they're harder to recognize). 
 
 ## Data Collection
 

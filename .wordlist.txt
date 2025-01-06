@@ -2193,4 +2193,8 @@ HailoTracker
 Roboflow’s
 Lescaudron
 ECR
+xNAN
+LX
+Xtensa
+segmenter
 

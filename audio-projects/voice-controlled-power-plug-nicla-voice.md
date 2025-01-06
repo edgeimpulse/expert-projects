@@ -28,7 +28,7 @@ A power-plug which can be controlled using voice commands, with no connection to
 
 This project takes advantage of Edge Impulse's Syntiant audio processing block that extracts time and frequency features from a signal, specific to the Syntiant NDP120 accelerator included in the Nicla Voice. The NDP120 is ideal for always-on, low-power speech recognition applications with the “find posterior parameters” feature that will only react to the specified keywords.
 
-Devices with an embedded ML model will accept voice commands, but won't need a WIFI or Bluetooth connection. All processing is done locally on the device, so you can directly tell a lamp, air conitioner, or TV to turn on or off without Alexa or Siri, or any digital assistant speaker/hub.
+Devices with an embedded ML model will accept voice commands, but won't need a WIFI or Bluetooth connection. All processing is done locally on the device, so you can directly tell a lamp, air conditioner, or TV to turn on or off without Alexa or Siri, or any digital assistant speaker/hub.
 
 This project will use relays and a power strip connected to various appliances such as a lamp, fan, TV, etc. An Arduino Nicla Voice with embedded ML model has been trained to recognize various keywords like: `one`, `two`, `three`, `four`, `on`, and `off` is the center of the decision process. From the Nicla Voice we use the I2C protocol which is connected to an Arduino Pro Micro to carry out voice commands from the Nicla Voice, and forwarded to the relays which control power sockets.
 
@@ -104,7 +104,7 @@ For a Syntiant NDP device like the Nicla Voice, we can configure the [Posterior 
 
 ### 5. Upload the Arduino Code
 
-Because there are two MCU's in this solution, two seperate applications are needed:
+Because there are two MCU's in this solution, two separate applications are needed:
 
 #### Nicla Voice
 

@@ -19,7 +19,7 @@ GitHub Repo:
 
 This tutorial shows how you can use the FOMO object detection algorithm and Edge Impulse with the OpenMV Cam RT1062 to count different sizes of nuts on a moving conveyor belt. The solution automates the process of detecting and counting objects on a conveyor belt, improving efficiency and reducing manual labor. A real-time visualization application provides immediate feedback, allowing you to monitor and control the process accurately.
 
-The hardware used in this project is the aforementioned OpenMV Cam RT1062, together with a Dobot conveyor belt. The OpenMV was chosen because it is a very powerful camera based on the NXP RT1062 microcontroller, and being fully supported by Edge Impulse, is very easy to get started with. The main steps in this tutorial are collecting data with the camera, training and deploying from Edge Empulse, and finally testing on the moving conveyor belt.
+The hardware used in this project is the aforementioned OpenMV Cam RT1062, together with a Dobot conveyor belt. The OpenMV was chosen because it is a very powerful camera based on the NXP RT1062 microcontroller, and being fully supported by Edge Impulse, is very easy to get started with. The main steps in this tutorial are collecting data with the camera, training and deploying from Edge Impulse, and finally testing on the moving conveyor belt.
 
 A demonstration video provides an overview of the project:
 
@@ -119,7 +119,7 @@ Now it's time to test the model in real life!
 
 - When just testing, and with smaller models like mine, it's ok to use the library option, but for real production usage it's better to build a firmware version.
 - After the build process is completed, instructions are shown for how to deploy the model to the OpenMV camera. With the library option, you just extract the files from the generated .zip file to the camera's memory, while you with the firmware option need to flash the compiled firmware to the camera with help of the OpenMV IDE.
-- When the camera is powered, it automatically runs ```main.py``` from its memory. Ensure this progam has the proper image conversions you used in the capturing phase! 
+- When the camera is powered, it automatically runs ```main.py``` from its memory. Ensure this program has the proper image conversions you used in the capturing phase! 
 - Run the [Python program](../.gitbook/assets/object-counting-fomo-openmv-rt1062/Dobot%20conveyor%20-%20object%20counting.py) or your own version to receive inferencing data from the OpenMV camera. 
     - Remember that if you want a live video feed, you need to connect a separate camera to your computer
 

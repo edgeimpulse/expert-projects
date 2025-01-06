@@ -47,7 +47,7 @@ Deep learning solves this approach by making use of learning algorithms to simpl
 
 The Object Detector functions as the Region of Interest segmenter, while the Classifier then determines if a product is defective or damaged, or passes the quality check. We will proceed to implement such a pipeline together with a custom GUI based app.
 
-Akida Neuralmorphic technology is unrivaled in terms of power usage at a given performance level. Neuromorphic also provides unique features not found in other technologies, such as on-device edge learning made possible by the Spiking Neural Network architecture.
+Akida Neuramorphic technology is unrivaled in terms of power usage at a given performance level. Neuromorphic also provides unique features not found in other technologies, such as on-device edge learning made possible by the Spiking Neural Network architecture.
 
 ## Setting up the Brainchip Akida Developer Kit
 
@@ -95,7 +95,7 @@ python3 -c "import tensorflow as tf;
 print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
 ```
 
-Once Tensorflow is running, the next step is to install the Akida Execution engine. Tis done via `pip` as well, as it is offered as a Python package:
+Once Tensorflow is running, the next step is to install the Akida Execution engine. This is done via `pip` as well, as it is offered as a Python package:
 
 ```
 pip install akida
@@ -169,7 +169,7 @@ Users with an Enterprise Account can make use of the "Auto Labeler" feature, whi
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/labeling.jpg)
 
-The auto labeller uses an instance segmentation model to automatically find differing objects and extract them for you, and then once you choose a label a bounding box is automatically applied as seen in the following example.
+The auto labeler uses an instance segmentation model to automatically find differing objects and extract them for you, and then once you choose a label a bounding box is automatically applied as seen in the following example.
 
 ![](../.gitbook/assets/brainchip-akida-industrial-inspection/object-detection.jpg)
 

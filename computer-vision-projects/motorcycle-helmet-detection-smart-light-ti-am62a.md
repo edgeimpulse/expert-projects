@@ -35,7 +35,7 @@ Detection/segmentation is one of the functional algorithms in machine learning. 
 
 To take pictures you can use the TI board with an attached USB camera, but I have decided instead to use an Android App named [Open Camera](https://play.google.com/store/apps/details?id=net.sourceforge.opencamera&hl=en&gl=US) that includes a continuous shutter feature. 
 
-I have taken around 30 pictures for each desired label, `helmet` and `nohelmet`. I uploaded the pictures to Edge Impulse using the **Data aquisition** tab, then I went to the **Labeling queue**. 
+I have taken around 30 pictures for each desired label, `helmet` and `nohelmet`. I uploaded the pictures to Edge Impulse using the **Data acquisition** tab, then I went to the **Labeling queue**. 
 
 ![](../.gitbook/assets/motorcycle-helmet-detection-smart-light-ti-am62a/label.jpg)
 
@@ -63,7 +63,7 @@ The Texas Instruments AM62A SK-AM62A-LP is a "low-power Starter Kit for Edge AI 
 
 There are several differences in working with this board compared to a Raspberry Pi for example. You cannot just connect a keyboard, mouse, and monitor to login; the OS is an Arago Linux version with limited tools installed by default (though you could also build your own operating systems if necessary).
 
-After some trial and error, my recommendationed method for interacting with the board is:
+After some trial and error, my recommended method for interacting with the board is:
 
  - Download this operating system image version: [https://www.ti.com/tool/download/PROCESSOR-SDK-LINUX-AM62A/08.06.00.45](https://dr-download.ti.com/software-development/software-development-kit-sdk/MD-D37Ls3JjkT/08.06.00.45/tisdk-edgeai-image-am62axx-evm.wic.xz)
  - Flash the image to a 16gb or larger microSD card with Balena Etcher or any other similar software
@@ -112,7 +112,7 @@ I created and uploaded files named `updateHelmet.php` and `helmet.ini` (which ar
 
 To begin, connect a USB-C cable to the Unihiker, open a web browser to `http://10.1.2.3`, enter your WiFi SSID and password, and obtain the new IP address of the Unihiker.
 
-Now with that Unihiker on the same network, you can connect via SFTP to the Unihikey using the user `root` and password `dfrobot`, and upload the `unihiker_trafficLight.py` file (again, obtained from the GitHub repo) and the three traffic light images to the `/images` folder.
+Now with that Unihiker on the same network, you can connect via SFTP to the Unihiker using the user `root` and password `dfrobot`, and upload the `unihiker_trafficLight.py` file (again, obtained from the GitHub repo) and the three traffic light images to the `/images` folder.
 
 ## Run the System
 
@@ -127,7 +127,7 @@ Now that the camera was placed, the inference module was ready, the intermediate
 
 ## Conclusions
 
-The applications and the machine learning model work as expected, succesfully identifying helmets (or lack of) on the Lego figures.  However, the ethical and practical implications of this project are debatable (helmeted riders are penalized by the system too, and traffic congestion may increase if non-helmeted riders trigger a red-light, with no ability to acquire a helmet thus creating an indefinite red light). But, it is worthwhile to explore and develop machine learning for human and public health scenarios.
+The applications and the machine learning model work as expected, successfully identifying helmets (or lack of) on the Lego figures.  However, the ethical and practical implications of this project are debatable (helmeted riders are penalized by the system too, and traffic congestion may increase if non-helmeted riders trigger a red-light, with no ability to acquire a helmet thus creating an indefinite red light). But, it is worthwhile to explore and develop machine learning for human and public health scenarios.
 
 This project was trained with Lego figures, but the same principles can be scaled up and applied to real-world situations. In fact, it may be easier to detect patterns with larger figures considering the camera quality and resolution.
 
@@ -153,7 +153,7 @@ def telegramAlert(message):
 		print(e)
 ```
 
-Or, as riders likely could not be identified with precision, what about using a secondary camera with otical character recognition (OCR) to capture the license plate of the motorcycle and issuing the rider an automatic ticket? The TI AM62A is able to utilize several cameras concurrently, in fact there are 2 CSI ports on the board ready for Raspberry Pi Cameras. You can use them to take a picture from behind the vehicle, send the picture to an OCR application, obtain the license plate and automatically make the ticket.
+Or, as riders likely could not be identified with precision, what about using a secondary camera with optical character recognition (OCR) to capture the license plate of the motorcycle and issuing the rider an automatic ticket? The TI AM62A is able to utilize several cameras concurrently, in fact there are 2 CSI ports on the board ready for Raspberry Pi Cameras. You can use them to take a picture from behind the vehicle, send the picture to an OCR application, obtain the license plate and automatically make the ticket.
 
 For OCR, a good Python library is located here [https://pypi.org/project/pytesseract/](https://pypi.org/project/pytesseract/)
 

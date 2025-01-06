@@ -365,7 +365,7 @@ Save the following configuration as **yolov5.json** in the `hailo-rpi5-example/r
 
 ```
 
-Also, we should copy the HEF model to the `hailo-rpi5-example/resources` directory. We will use the `detection.py` example script from the `hailo-rpi5-examples/basic_pipelines` directory as a starting point for the application. We modified the Gstreamer pipeline to include the HailoTracker element for tracking cars after detection. We are using Roboflow’s Supervision library to count the number of cars entering and exiting. The complete modified code is provided below.
+Also, we should copy the HEF model to the `hailo-rpi5-example/resources` directory. We will use the `detection.py` example script from the `hailo-rpi5-examples/basic_pipelines` directory as a starting point for the application. We modified the Gstreamer pipeline to include the HailoTracker element for tracking cars after detection. We are using Roboflow's Supervision library to count the number of cars entering and exiting. The complete modified code is provided below.
 
 ```
 import gi

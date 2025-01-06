@@ -74,7 +74,7 @@ Once your dataset is ready, go to **Create Impulse** and set the image width and
 
 Next, go to the **Image** parameter section, select **Grayscale** for the color depth, and **Save Parameters**, then click on **Generate features**. In the Anomaly Detection settings, set the training processor to _CPU_ with a capacity of _High_. Choose **MobileNet V2 0.35** for the neural network architecture with a 1-class output layer. Start training the model by pressing **Start Training** and monitor the progress.
 
-If everything is functioning correctly, once complete proceed to the **Live Classification** with a connected camera or test the model by going to the **Model Testing** section and clicking **Classify all**. After these steps, you can adjust the confidence thresholds to set the minimum score required before tagging as an anomaly and clcik **Classify all** again. If your model's test result is above 80%, you can proceed to the next step: _Deployment_.
+If everything is functioning correctly, once complete proceed to the **Live Classification** with a connected camera or test the model by going to the **Model Testing** section and clicking **Classify all**. After these steps, you can adjust the confidence thresholds to set the minimum score required before tagging as an anomaly and click **Classify all** again. If your model's test result is above 80%, you can proceed to the next step: _Deployment_.
 
 ![Learning_blocks](../.gitbook/assets/fomo-ad-product-inspection-spresense/photo06.png)
 
