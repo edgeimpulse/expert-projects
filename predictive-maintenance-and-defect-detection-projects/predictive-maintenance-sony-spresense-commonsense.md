@@ -21,7 +21,7 @@ Predictive maintenance can help you avoid costly downtime and repairs, by predic
 
 ## The Challenge
 
-The machineries present in a print shop include printers, copiers, and scanners. These machines are used to print, copy, and scan documents. Additionally, there are often other machines present in a print shop such as shredders and laminators.
+The machinery present in a print shop include printers, copiers, and scanners. These machines are used to print, copy, and scan documents. Additionally, there are often other machines present in a print shop such as shredders and laminators.
 
 ![](../.gitbook/assets/predictive-maintenance-sony-spresense-commonsense/image01.jpg)
 
@@ -64,7 +64,7 @@ From the CommonSense expansion board we are interested in LSM6DS3: inertial modu
 
 The LSM6DS3 is a system-in-package featuring a 3D digital accelerometer and a 3D digital gyroscope. Enabling always-on low-power features for an optimal motion experience.
 
-The SGP40 is a digital gas sensor designed for easy integration into air purifiers or demand controlled ventilation systems. Sensirion’s CMOSens ® technology offers a complete , easy to use sensor system on a single chip featuring a digital I2C interface and a temperature controlled micro hotplate, providing a humidity compensated VOC based indoor air quality signal . The output signal can be directly processed by Sensirion’s powerful VOC Algorithm to translate the raw signal into a VOC Index as a robust measure for indoor air quality. The VOC Algorithm automatically adapts to the environment the sensor is exposed to.
+The SGP40 is a digital gas sensor designed for easy integration into air purifiers or demand controlled ventilation systems. Sensirion's CMOSens ® technology offers a complete , easy to use sensor system on a single chip featuring a digital I2C interface and a temperature controlled micro hotplate, providing a humidity compensated VOC based indoor air quality signal . The output signal can be directly processed by Sensirion's powerful VOC Algorithm to translate the raw signal into a VOC Index as a robust measure for indoor air quality. The VOC Algorithm automatically adapts to the environment the sensor is exposed to.
 
 ![](../.gitbook/assets/predictive-maintenance-sony-spresense-commonsense/image05.png)
 
@@ -308,7 +308,7 @@ At the end of this process, the Classification Neural Network will be tested on 
 
 **Accuracy** represents the percentage of predictions in which the result coincides with the correct value and **Loss** represents the sum of all errors made for all the samples in the validation set.
 
-Underneath those performance indexes, the Confusion matrix presents in a tabulated form the percent of samples that were miscategorised. In our case, 31.3% of Ink_Leakage data points were mislabeled as Normal. This comes with a low rate of false positives as an advantage, but also with a low sensitivity to the phenomena it’s trying to detect. 
+Underneath those performance indexes, the Confusion matrix presents in a tabulated form the percent of samples that were miscategorized. In our case, 31.3% of Ink_Leakage data points were mislabeled as Normal. This comes with a low rate of false positives as an advantage, but also with a low sensitivity to the phenomena it’s trying to detect. 
 
 Finally, the Feature explorer displays all the data from the Training dataset on a 2-axis graph and allows users to quickly determine what data points are outliers and trace back to their source by clicking on them and finding out why a misclassification might occur.
 

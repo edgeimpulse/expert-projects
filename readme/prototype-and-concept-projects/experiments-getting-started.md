@@ -114,7 +114,7 @@ Now it is time to create your Impulse. Head over to the `Create Impulse` tab and
 
 ![Edge Impulse Project Create Spectral Analysis Impulse](../../.gitbook/assets/experiments-getting-started/edge-impulse-create-impulse-spectral.jpg)
 
-First we will use the `Spectral Analysis` Processing block. Spectral Analysis is ideal for examining repetitive movements, particularly using accelerometer data. Tthis tool breaks down signals to reveal their frequency and power patterns over time.
+First we will use the `Spectral Analysis` Processing block. Spectral Analysis is ideal for examining repetitive movements, particularly using accelerometer data. This tool breaks down signals to reveal their frequency and power patterns over time.
 
 Click `Add` to add the Spectral Analysis Processing block to your Impulse.
 

@@ -47,7 +47,7 @@ Deep learning solves this approach by making use of learning algorithms to simpl
 
 The Object Detector functions as the Region of Interest segmenter, while the Classifier then determines if a product is defective or damaged, or passes the quality check. We will proceed to implement such a pipeline together with a custom GUI based app.
 
-Akida Neuramorphic technology is unrivaled in terms of power usage at a given performance level. Neuromorphic also provides unique features not found in other technologies, such as on-device edge learning made possible by the Spiking Neural Network architecture.
+Akida Neuromorphic technology is unrivaled in terms of power usage at a given performance level. Neuromorphic also provides unique features not found in other technologies, such as on-device edge learning made possible by the Spiking Neural Network architecture.
 
 ## Setting up the Brainchip Akida Developer Kit
 

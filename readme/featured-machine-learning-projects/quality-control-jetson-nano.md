@@ -32,7 +32,7 @@ This project uses Edge Impulse's FOMO (Faster Objects, More Objects) algorithm, 
 
 * Nvidia Jetson Nano with dedicated power adapter
 * USB camera/webcam (eg. Logitech C270)
-* Mini conveyer belt system (10cm x 50cm or larger)
+* Mini conveyor belt system (10cm x 50cm or larger)
 * Camera stand/holder
 * Objects: For this example, mini pizza with toppings (dough or printed paper)
 * Ethernet cable
@@ -168,7 +168,7 @@ The program I made (`topping.py`) is a modification of Edge Impulse's `classify.
 
 ![](../../.gitbook/assets/quality-control-jetson-nano/Photo16.png)
 
-My program will change the moving object detection input from the model file (`model.eim`), for example: `0 0 2 3 3 1 0 1 3 3 3 2 0 0 0 2 3 3 2 0 0 2 5 5 1 0 0 2 3 3 1 0 0 1 2 2 0 0` will record **0** as the sequence separator and record the peak value in each sequence. As an example, if the correct number of toppings on a pizza (per quality control standards) is **3**, and we know that a 0 is a seperator, and anything other than 3 is bad...then `0 3 0 3 0 3 0 5 0 3 0 2 0` is: `OK OK OK BAD OK BAD`
+My program will change the moving object detection input from the model file (`model.eim`), for example: `0 0 2 3 3 1 0 1 3 3 3 2 0 0 0 2 3 3 2 0 0 2 5 5 1 0 0 2 3 3 1 0 0 1 2 2 0 0` will record **0** as the sequence separator and record the peak value in each sequence. As an example, if the correct number of toppings on a pizza (per quality control standards) is **3**, and we know that a 0 is a separator, and anything other than 3 is bad...then `0 3 0 3 0 3 0 5 0 3 0 2 0` is: `OK OK OK BAD OK BAD`
 
 My Python program (`topping.py`) can be downloaded at this link: [https://github.com/Jallson/PizzaQC\_Conveyor\_Belt/blob/main/topping.py](https://github.com/Jallson/PizzaQC_Conveyor_Belt/blob/main/topping.py)
 
@@ -178,7 +178,7 @@ To run the program, use the command along with the path where `model.eim` file i
 python3 topping.py ~/build/model.eim
 ```
 
-To see the process in action, have a look at the demo video availaCheck our demo video:
+To see the process in action, have a look at the demo video here:
 
 {% embed url="https://youtu.be/8hvMst3ykvY" %}
 

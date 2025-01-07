@@ -191,19 +191,19 @@ The k-mean algorithm does not have the restriction of 4-bit, unsigned data and s
 
 Anomaly detection can be used to detect irregular patterns in the collected sensor data. In Edge Impulse you can implement anomaly detection using one of the available [anomaly detection blocks](https://docs.edgeimpulse.com/docs/edge-impulse-studio/learning-blocks/anomaly-detection). For this setup you will be using k-means as it is freely available to all Edge Impulse developers.
 
-In the anomaly detection block, make sure to click the “Select Suggested Axes” to highlight the features of importance . Without selecting this button, the anomaly detection settings will default to your data’s Root-Mean-Square value (or RMS) for each of the axes. Prior to the release of the feature importance view in the DSP block, the anomaly detection block would prioritize the RMS values, and you would then have to make a decision by yourself if the RMS values were most meaningful for your anomaly detection use case. With feature importance, you take the guesswork out of this and get your model to production even faster!
+In the anomaly detection block, make sure to click the “Select Suggested Axes” to highlight the features of importance . Without selecting this button, the anomaly detection settings will default to your data's Root-Mean-Square value (or RMS) for each of the axes. Prior to the release of the feature importance view in the DSP block, the anomaly detection block would prioritize the RMS values, and you would then have to make a decision by yourself if the RMS values were most meaningful for your anomaly detection use case. With feature importance, you take the guesswork out of this and get your model to production even faster!
 
 ![Example of Anomaly Explorer](../.gitbook/assets/vibration-classification-brainchip-akida/kmeans.png)
 
 ## Download of MetaTF FBZ File
 
-You are using custom code for this project and you will need the Akida compatible model file stored in FBZ format. Proceed to the dashboard of the first project (the classifier project) and select the **Classifier model - MetaTF** file. Once the file is presented download to your machine and then drag and drop into the _brainchip_acceleromenter_ folder in the open Visual Studio Code file viewer.
+You are using custom code for this project and you will need the Akida compatible model file stored in FBZ format. Proceed to the dashboard of the first project (the classifier project) and select the **Classifier model - MetaTF** file. Once the file is presented download to your machine and then drag and drop into the _brainchip_accelerometer_ folder in the open Visual Studio Code file viewer.
 
 ![](../.gitbook/assets/vibration-classification-brainchip-akida/metatf-dashboard.png)
 
 ## Download of Edge Impulse Anomaly Scoring model .eim
 
-The anomaly scoring algorithm can be neatly packaged into an Edge Impulse .eim file. To do so go to the Deployment tab of the second Edge Impulse project (the one with the k-mean anomaly scoring) and select **Linux (AARCH64)** from the drop down menu and click **Build**. Once the file is presented, download it to your machine and then drag and drop into the _brainchip_acceleromenter_ folder in the open Visual Studio Code file viewer.
+The anomaly scoring algorithm can be neatly packaged into an Edge Impulse .eim file. To do so go to the Deployment tab of the second Edge Impulse project (the one with the k-mean anomaly scoring) and select **Linux (AARCH64)** from the drop down menu and click **Build**. Once the file is presented, download it to your machine and then drag and drop into the _brainchip_accelerometer_ folder in the open Visual Studio Code file viewer.
 
 ![](../.gitbook/assets/vibration-classification-brainchip-akida/aarch64-deploy-eim.png)
 

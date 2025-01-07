@@ -85,7 +85,7 @@ In order to get the model (and eventually our counting application) onto the RZB
 
 ![](../../.gitbook/assets/avnet-rzboard-object-counting/sharepoint.png)
 
-The name of the file you need to download is `avnet-core-image-rzboard-20230124105646.rootfs.wic`. (If you enter the folder at the top-most driectory, navigate into the "images" folder to find it there). Download that file, and flash it directly to an SD Card. Now, on the RZBoard, you'll need to flip a small DIP-switch that tells the board to boot from SD Card instead of the eMMC storage. Look for two tiny switches near the headphone jack, and make sure they are both flipped _away_ from the headphone jack, facing the silkscreened `1` and `2` markings on the switch. Here is an example of how mine looks:
+The name of the file you need to download is `avnet-core-image-rzboard-20230124105646.rootfs.wic`. (If you enter the folder at the top-most directory, navigate into the "images" folder to find it there). Download that file, and flash it directly to an SD Card. Now, on the RZBoard, you'll need to flip a small DIP-switch that tells the board to boot from SD Card instead of the eMMC storage. Look for two tiny switches near the headphone jack, and make sure they are both flipped _away_ from the headphone jack, facing the silkscreened `1` and `2` markings on the switch. Here is an example of how mine looks:
 
 ![](../../.gitbook/assets/avnet-rzboard-object-counting/boot-switch.jpg)
 
@@ -477,10 +477,10 @@ python3 total_count.py /path/to/model/file/goes/here
 
 In my case, this means I entered `python3 total_count.py /root/.ei-linux-runner/models/315846/v15/model.eim`
 
-It will take a moment for the camera view to appear on screen, and it should be noted that once again the framerate here is not optimized, as we are running non-threaded single core python, and compiled code is much faster. But for purposes of demonstating how to acheive the counting, this will work. I once again turned on the conveyor belt, and as M5 hex nuts travel past the camera, the count increases by one in the rendered camera view window. My model could probably benefit from some extra images added to my dataset, as I did have a few sneak by undetected, so perhaps 60 images was not quite enough in the training dataset, but we have proven the concept works!
+It will take a moment for the camera view to appear on screen, and it should be noted that once again the framerate here is not optimized, as we are running non-threaded single core python, and compiled code is much faster. But for purposes of demonstrating how to achieve the counting, this will work. I once again turned on the conveyor belt, and as M5 hex nuts travel past the camera, the count increases by one in the rendered camera view window. My model could probably benefit from some extra images added to my dataset, as I did have a few sneak by undetected, so perhaps 60 images was not quite enough in the training dataset, but we have proven the concept works!
 
 ![](../../.gitbook/assets/avnet-rzboard-object-counting/counting.gif)
 
 ## Conclusion
 
-The Avnet RZBoard with it's Renesas RZ/V2L SoC and DRP-AI Accelerator made prototpying our computer vision counting applications quick and easy, and demonstrated excellent performance with inference times in the 9ms range!
+The Avnet RZBoard with it's Renesas RZ/V2L SoC and DRP-AI Accelerator made prototyping our computer vision counting applications quick and easy, and demonstrated excellent performance with inference times in the 9ms range!

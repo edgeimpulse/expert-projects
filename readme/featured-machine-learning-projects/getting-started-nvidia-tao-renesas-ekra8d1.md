@@ -28,7 +28,7 @@ Edge Impulse [Visit](https://edgeimpulse.com)
 
 ## Software
 
-Edge Impulse CLI [Download](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation) JLink Flashing Tools [Download](https://www.segger.com/downloads/jlink) Edge Implulse Firmware for EK-RA8D1 [Download](https://cdn.edgeimpulse.com/firmware/renesas-ek-ra8d1.zip)
+Edge Impulse CLI [Download](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation) JLink Flashing Tools [Download](https://www.segger.com/downloads/jlink) Edge Impulse Firmware for EK-RA8D1 [Download](https://cdn.edgeimpulse.com/firmware/renesas-ek-ra8d1.zip)
 
 ## Getting Started
 
@@ -164,7 +164,7 @@ Once training is completed, the results are shown:
 
 ![](../../.gitbook/assets/getting-started-nvidia-tao-renesas-ekra8d1/training-9.jpg)
 
-The accuracy and confusion matrix, latency and memory usage are shown for both Unoptmized (float32) and Quantized (int8) models, which can be used with the EK-RA8AD1. Take note of the **PEAK RAM USAGE** and **FLASH USAGE** statistics at the bottom. These indicate if the model will fit within RAM and ROM on the target.
+The accuracy and confusion matrix, latency and memory usage are shown for both Unoptimized (float32) and Quantized (int8) models, which can be used with the EK-RA8AD1. Take note of the **PEAK RAM USAGE** and **FLASH USAGE** statistics at the bottom. These indicate if the model will fit within RAM and ROM on the target.
 
 ### Model Testing
 
