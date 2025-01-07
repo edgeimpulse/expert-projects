@@ -169,7 +169,7 @@ python3 traffic2.py <path to modelfile>/model.eim <path to videofile>/video.mp4
 
 ![Camera\_feed](../../.gitbook/assets/traffic-analysis-tao-jetson-orin/Photo18.png)
 
-The Python code and the tracking library is avaialable and can be accessed at [https://github.com/Jallson/Traffic\_Analysis\_Orin\_Nano](https://github.com/Jallson/Traffic_Analysis_Orin_Nano)
+The Python code and the tracking library is available and can be accessed at [https://github.com/Jallson/Traffic\_Analysis\_Orin\_Nano](https://github.com/Jallson/Traffic_Analysis_Orin_Nano)
 
 Here are two demo videos, showing the results:
 

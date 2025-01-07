@@ -57,12 +57,12 @@ The whole principle of operation of a motor pump is based on moving parts. The p
 
 For this application, we will use a condition-based prototyping platform developed by Analog Devices (CN0549) and PSOC 6 Wifi-BT Pioneer Kit by Infineon.
 
-The CN0549 is a condition-based monitoring platform based around the integrated electronic piezoelectric (IEPE) standard, a popular signaling interface standard for high-end microelectronic mechanical systems (MEMS) and piezo sensors that are prevalent in industry today. The kit comes with a mechanical mount optmized for vibration fidelity. For setting up the board with the sensor and to learn more about the hardware, please refer to the links below:
+The CN0549 is a condition-based monitoring platform based around the integrated electronic piezoelectric (IEPE) standard, a popular signaling interface standard for high-end microelectronic mechanical systems (MEMS) and piezo sensors that are prevalent in industry today. The kit comes with a mechanical mount optimized for vibration fidelity. For setting up the board with the sensor and to learn more about the hardware, please refer to the links below:
 
 * [Putting together CN0549](https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0549#:~:text=Card%20using%20Linux-,Putting%20together%20the%20CN0549,-Take%20out%20the)
 * [Understanding the circuit](https://www.analog.com/en/design-center/reference-designs/circuits-from-the-lab/cn0549.html#rd-functionbenefits)
 
-The anchor of this solution is Infineon's PSOC 6 Wifi-BT Pioneer Kit. The application processor is performance-optimized and runs at  150 MHz, and the co-processor is an Arm M0 core, which can run at 100 MHz. Both cores are power-efficient. It has a floating-point unit (FPU), an 8 KB 2-way associative cache, 1 MB Flash, and 288 KB RAM. The board also has a capacitive sensing block and the capability of programable digital and analog blocks known as PSOC. It is an excellent pick for developing edge ML applications requiring a direct sensor interface. Moreover, board Wi-Fi support and a USB host device can be helpful for high-speed data logging. 
+The anchor of this solution is Infineon's PSOC 6 Wifi-BT Pioneer Kit. The application processor is performance-optimized and runs at  150 MHz, and the co-processor is an Arm M0 core, which can run at 100 MHz. Both cores are power-efficient. It has a floating-point unit (FPU), an 8 KB 2-way associative cache, 1 MB Flash, and 288 KB RAM. The board also has a capacitive sensing block and the capability of programmable digital and analog blocks known as PSOC. It is an excellent pick for developing edge ML applications requiring a direct sensor interface. Moreover, board Wi-Fi support and a USB host device can be helpful for high-speed data logging. 
 
 Here are some pictures of the hardware before and after the assembly. Refer to the CN0549 reference guide for sensor-specific modifications, such as selecting coaxial wire and jumper settings. Switch the `SW7` to position **one** on the MCU board side, ensuring that the sensor board is powered from kitprog2 stable VDD supply. Also, ensure the board is in **daplink** mode for easy debugging in the software section. 
 
@@ -173,7 +173,7 @@ After building the data set, it's time to create the Impulse. An Impulse is a sy
 
 ![](../.gitbook/assets/motor-pump-cypress-cn0549/14.jpg)
 
-For this application, we will be using an input block with a 160ms window size, with a window increase of 80ms at an acquisition frequency of 32000Hz. A **Spectrogram** block is used as our Processing block, and a **Classification** block for our Learning Block, which is good for audio and vibrational data.
+For this application, we will be using an input block with a 160ms window size, with a window increase of 80ms at an acquisition frequency of 32000Hz. A **Spectrogram** block is used as our Processing block, and a **Classification** block for our Learning Block, which is good for audio and vibration data.
 
 If you need help determining which blocks to select, you can always try out the [Edge Impulse EON Tuner](https://docs.edgeimpulse.com/docs/edge-impulse-studio/eon-tuner), which can validate different Impulse architectures and give insights on the suitable ones for your specific application.
 
@@ -237,7 +237,7 @@ To view the inference results, you must rebuild the code with the inference macr
 
 Run the Jupyter notebook with all the instructions as we did during data logging, except just one step: running the last cell, modified explicitly for data inferencing.
 
-If everything goes well, Hurray!, you should see the streaming data along with classification in your Jupyter notebook. 
+If everything goes well, Hooray!, you should see the streaming data along with classification in your Jupyter notebook. 
 
 ![](../.gitbook/assets/motor-pump-cypress-cn0549/21.png)
 
@@ -245,7 +245,7 @@ If everything goes well, Hurray!, you should see the streaming data along with c
 
 ![](../.gitbook/assets/motor-pump-cypress-cn0549/22.jpg)
 
-Employing machine learning-based models for predictive maintenance can help us efficiently operate equipment, plan for downtimes, and increase longevity. 
+Employing machine learning-based models for predictive maintenance can help us efficiently operate equipment, plan for downtime, and increase longevity. 
 
 Baking intelligence into the edge and moving computing closer to where data is a paradigm shift from traditional computing, and Edge Impulse is at the forefront. 
 

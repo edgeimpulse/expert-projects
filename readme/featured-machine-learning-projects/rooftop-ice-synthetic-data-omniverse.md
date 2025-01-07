@@ -82,7 +82,7 @@ To represent the icicle, a high quality model pack was purchased at [Turbo Squid
 
 ![3D icicle models purchased at Turbo Squid](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/turbo-squid-icicle.png)
 
-To be able to import the models into Omniverse and Isaac Sim, all models have to be converted to [OpenUSD-format](https://developer.nvidia.com/usd). While USD is a great emerging standard for describing, composing, simulating, and collaborting within 3D worlds, it is not yet commonly supported in asset marketplaces. [This article](https://docs.edgeimpulse.com/experts/featured-machine-learning-projects/surgery-inventory-synthetic-data) outlines considerations when performing conversion using Blender to USD. Note that it is advisable to export each individual model and to choose a suitable origin/pivot point.
+To be able to import the models into Omniverse and Isaac Sim, all models have to be converted to [OpenUSD-format](https://developer.nvidia.com/usd). While USD is a great emerging standard for describing, composing, simulating, and collaborating within 3D worlds, it is not yet commonly supported in asset marketplaces. [This article](https://docs.edgeimpulse.com/experts/featured-machine-learning-projects/surgery-inventory-synthetic-data) outlines considerations when performing conversion using Blender to USD. Note that it is advisable to export each individual model and to choose a suitable origin/pivot point.
 
 Blender change origin cheat sheet:
 
@@ -252,7 +252,7 @@ def randomize_screen(screen):
 
 ### Randomizing textures
 
-To further steer training of the object detection model in capturing features of the desired class, the icicles, and not features that appear due to short commings in the domain randomization, we can create images with the icicles in front of a large variety of background images. A simple way of achieving this is to use a large dataset of random images and randomly assigning one of them to a background plane for each image generated.
+To further steer training of the object detection model in capturing features of the desired class, the icicles, and not features that appear due to short comings in the domain randomization, we can create images with the icicles in front of a large variety of background images. A simple way of achieving this is to use a large dataset of random images and randomly assigning one of them to a background plane for each image generated.
 
 ```python
 import os
@@ -459,7 +459,7 @@ if(bb_found) {
 }
 ```
 
-There are a few things to consider in the implementation: The device should enter deep sleep mode and disable/put to sleep all periferals between object detection runs. Default operation of the Portenta H7 with the Vision shield consumes a lot of energy and will drain a battery quickly. To find out how much energy is consumed we can use a device such as the [Otii Arc from Qoitech](https://www.qoitech.com/otii-arc-pro/). Hook up the positive power supply to **VIN**, negative to **GND**. Since VIN bypasses the Portenta power regulator we should provide 5V, however in my setup the Otii Arc is limited to 4.55V. Luckily it seems to be sufficient and we can take some measurements. By connecting the Otii Arc pin RX to the Portenta pin D14/PA9/UART1 TX, in code we can write debug messages to _Serial1_. This is incredibly helpful in determining what power consumption is associated with what part of the code.
+There are a few things to consider in the implementation: The device should enter deep sleep mode and disable/put to sleep all peripherals between object detection runs. Default operation of the Portenta H7 with the Vision shield consumes a lot of energy and will drain a battery quickly. To find out how much energy is consumed we can use a device such as the [Otii Arc from Qoitech](https://www.qoitech.com/otii-arc-pro/). Hook up the positive power supply to **VIN**, negative to **GND**. Since VIN bypasses the Portenta power regulator we should provide 5V, however in my setup the Otii Arc is limited to 4.55V. Luckily it seems to be sufficient and we can take some measurements. By connecting the Otii Arc pin RX to the Portenta pin D14/PA9/UART1 TX, in code we can write debug messages to _Serial1_. This is incredibly helpful in determining what power consumption is associated with what part of the code.
 
 ![Arduino Portenta H7 power specs](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/portenta_h7_power.png)
 
@@ -478,7 +478,7 @@ The project code presented here runs inference on an image every 10 seconds. How
 
 ![YR weather API](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/yr-sun.png)
 
-Next, in the The Things Stack application we need to define a function that will be used to decode the byte into a JSON structure that is easier to interpet when we pass the message further up the chain of services. The function can be found in the [project code repository](https://github.com/eivholt/icicle-monitor/blob/main/TheThingsStack/decoder.js).
+Next, in the The Things Stack application we need to define a function that will be used to decode the byte into a JSON structure that is easier to interpret when we pass the message further up the chain of services. The function can be found in the [project code repository](https://github.com/eivholt/icicle-monitor/blob/main/TheThingsStack/decoder.js).
 
 ![The Things Stack decoder](../../.gitbook/assets/rooftop-ice-synthetic-data-omniverse/ttn-decoder.png)
 

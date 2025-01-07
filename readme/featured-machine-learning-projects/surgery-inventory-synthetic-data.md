@@ -49,7 +49,7 @@ Existing solutions are mainly based on either x-ray or RFID. With x-ray, the pat
 
 ## Stationary vs. wearable object detection
 
-Many operating rooms (OR) are equiped with adjustable lights with a camera embedded. A video feed from such a camera could make an interesting source for the object detection model. This project aims to explore the technical viability of running inference on a small wearable. A fish-eye lens could further extend visual coverage. An important design consideration is to make the wearable operable without the need for touch, to avoid cross-contamination. However, this article is scoped to the creation of an object detection model with synthetic data.
+Many operating rooms (OR) are equipped with adjustable lights with a camera embedded. A video feed from such a camera could make an interesting source for the object detection model. This project aims to explore the technical viability of running inference on a small wearable. A fish-eye lens could further extend visual coverage. An important design consideration is to make the wearable operable without the need for touch, to avoid cross-contamination. However, this article is scoped to the creation of an object detection model with synthetic data.
 
 ## Object detection using neural networks
 
@@ -149,7 +149,7 @@ NVIDIA Omniverse
 
 ![Create stage, photo Eivind Holt](../../.gitbook/assets/surgery-inventory-synthetic-data/omniverse_stage.png)
 
-If you have a hefty heat producing GPU next to you, you might prefer to reduce the FPS limit in the viewports of Code. It may default to 120 FPS, generating a lot of heat when the viewport is in the highest quality rendering modes. Set "UI FPS Limit" and "Present thread FPS Limit" to 60. This setting unfortunately does not persist between sessions, so we have to repeat this everytime projects open.
+If you have a hefty heat producing GPU next to you, you might prefer to reduce the FPS limit in the viewports of Code. It may default to 120 FPS, generating a lot of heat when the viewport is in the highest quality rendering modes. Set "UI FPS Limit" and "Present thread FPS Limit" to 60. This setting unfortunately does not persist between sessions, so we have to repeat this every time projects open.
 
 ![FPS Limit](../../.gitbook/assets/surgery-inventory-synthetic-data/Code-fps-limit.png)
 
@@ -241,7 +241,7 @@ with rep.trigger.on_frame(num_frames=10000, rt_subframes=20):
 
 `num_frames` defines how many renders we want. `rt_subframes` lets the render pipeline proceed a number of frames before capturing the result and passing it on to be written to disk. Setting this high will let advanced ray tracing effects such as reflections have time to propagate between surfaces, though at the cost of higher render time. Each randomization sub-routine will be called, with optional parameters.
 
-To write each image and sematic information to disk we use a provided API. We could customize the writer but as of Replicator 1.9.8 on Windows this resulted in errors. We will use "BasicWriter" and rather make a separate script to produce a label format compatible with EI.
+To write each image and semantic information to disk we use a provided API. We could customize the writer but as of Replicator 1.9.8 on Windows this resulted in errors. We will use "BasicWriter" and rather make a separate script to produce a label format compatible with EI.
 
 ```
 python

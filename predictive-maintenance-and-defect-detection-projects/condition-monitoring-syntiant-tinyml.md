@@ -13,7 +13,7 @@ Public Project Link: [https://studio.edgeimpulse.com/public/283457/latest](https
 
 Nearly all machines require routine maintenance to maintain proper functionality. If not provided, they can break down abruptly. Sometimes, even between routine maintenance being performed, parts of a machine may fail. A failure of a mission-critical or high availability system can be disastrous for an organisation. To avoid such a scenario, a condition monitoring system is recommended for predictive maintenance, to help detect a potential failure in advance to possible reduce downtime.
 
-Most condition monitoring systems are architected similar to the below image:
+Most condition monitoring systems have an architecture similar to the below image:
 
 ![Conventional Architecture](../.gitbook/assets/condition-monitoring-syntiant-tinyml/conventional_architecture.png)
 
@@ -27,7 +27,7 @@ This generally works, but it has few potential problems:
 
 A solution I am proposing focuses on the machine learning part of the conventional condition monitoring architecture. Instead of using cloud services for inferencing of the classification algorithm, we can use a microcontroller and TinyML.
 
-Microcontrollers like the one found on the [Syntiant TinyML board](https://www.syntiant.com/tinyml) are powerful enough to run machine learning models with 3 dense layers, and 256 neurons in each layer. Further, this is acconplished with ultra low power consumption. We can utilise this board to capture data and perform classification locally with the help of Edge Impulse.
+Microcontrollers like the one found on the [Syntiant TinyML board](https://www.syntiant.com/tinyml) are powerful enough to run machine learning models with 3 dense layers, and 256 neurons in each layer. Further, this is accomplished with ultra low power consumption. We can utilise this board to capture data and perform classification locally with the help of Edge Impulse.
 
 Other parts of the architecture (e.g. database, dashboard, data ingestion model etc.) can also be replaced with in-house developed solutions, if desired.
 
@@ -35,7 +35,7 @@ Other parts of the architecture (e.g. database, dashboard, data ingestion model 
 
 ## Hardware
 
-To demostrate my solution, I prepared a test setup which requires the following components:
+To demonstrate my solution, I prepared a test setup which requires the following components:
 
 - Syntiant TinyML board
 - A microSD card - Syntiant TinyML board requires this for IMU data collection.
@@ -99,7 +99,7 @@ Edge impulse has simplified the machine learning pipeline extensively for TinyML
 
 - To proceed with the IMU data collection using the Syntiant TinyML board and the Edge Impulse, you must flash the [IMU firmware](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/syntiant-tinyml-board#connecting-to-edge-impulse) provided in [this documentation](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/syntiant-tinyml-board). If it is your first time using the Syntiant TinyML board with the Edge Impulse, then I would recommend following [this documentation](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/syntiant-tinyml-board) from the beginning.
 
-> Note: Plese make sure to download and flash the **IMU firmware** and NOT the Audio firmware.
+> Note: Please make sure to download and flash the **IMU firmware** and NOT the Audio firmware.
 
 - After flashing the firmware run the below command:
 
@@ -109,7 +109,7 @@ edge-impulse-daemon
 
 This will start a wizard, and ask you to login and choose an Edge Impulse project. This is a good time to prepare a project in Edge Impulse if you have not already done so.
 
-- The above step should establish a communication between the Syntiant TinyML board and your Edge Impulse project. To verify that,  navigate to the **Devices** tab of the project. You should see the Syntiant TinyML board listed, and the *Remote managment* column should have a green dot in it.
+- The above step should establish a communication between the Syntiant TinyML board and your Edge Impulse project. To verify that,  navigate to the **Devices** tab of the project. You should see the Syntiant TinyML board listed, and the *Remote management* column should have a green dot in it.
 
 ![Devices](../.gitbook/assets/condition-monitoring-syntiant-tinyml/devices_connected.png)
 

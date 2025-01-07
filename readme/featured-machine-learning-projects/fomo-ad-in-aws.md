@@ -52,7 +52,7 @@ Imagine we are a commercial baking company that produces cookies. Our goal is to
 
 We are developing a cloud-based proof-of-concept to understand the feasibility of this technique, before deploying it on edge devices.
 
-Although this is only a hypothetical example and demonstration, this quality inspection process and computer vision workflow could absolutely be leveraged by large-scale food service providers, commercial kitches that make packaged retail food items, or any many other mass-produced retail products even beyond the food industry.
+Although this is only a hypothetical example and demonstration, this quality inspection process and computer vision workflow could absolutely be leveraged by large-scale food service providers, commercial kitchens that make packaged retail food items, or any many other mass-produced retail products even beyond the food industry.
 
 ## Step 1: Create the Datasets
 
@@ -493,7 +493,7 @@ python local.py
 
 Check out the [terraform code](https://github.com/emergy-official/anomaly.parf.ai/blob/main/infrastructure/sdlc/staticWebsiteModule/sagemaker.tf) to configure the SageMaker endpoint, or you can do it manually in the AWS Console.
 
-The serverless inference is quite slow (12 sec per inference), you can speed this up this by increasing the RAM usage, switching to a provisionned endpoint, or using a real-time endpoint within AWS. However, these options will increase the cost. The actual setup cost $ 0.20 per 1,000 inferences, an affordable way for creating demos without impacting your wallet.
+The serverless inference is quite slow (12 sec per inference), you can speed this up this by increasing the RAM usage, switching to a provisioned endpoint, or using a real-time endpoint within AWS. However, these options will increase the cost. The actual setup cost $ 0.20 per 1,000 inferences, an affordable way for creating demos without impacting your wallet.
 
 ### Real-time inference
 

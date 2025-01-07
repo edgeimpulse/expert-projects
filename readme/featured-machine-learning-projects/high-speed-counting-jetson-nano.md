@@ -36,7 +36,7 @@ The machine learning model (named `model.eim`) will be deployed using the Tensor
 
 * NVIDIA Jetson Nano Developer Kit
 * USB Camera (eg. Logitech C922)
-* Mini conveyer belt system with camera stand
+* Mini conveyor belt system with camera stand
 * Objects: eg. bolt
 * Ethernet cable
 * PC/Laptop to access Jetson Nano via SSH
