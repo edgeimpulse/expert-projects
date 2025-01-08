@@ -93,7 +93,7 @@ Spectral analysis transforms raw accelerometer data from the time domain into th
 
 ### Classifier
 
-As mentioned, these parameter settings are alread using optimized values from the EON Tuner.
+As mentioned, these parameter settings are already using optimized values from the EON Tuner.
 
 ![16-tuned-classifier](../.gitbook/assets/continuous-gait-monitor-nordic-thingy53/16-tuned-classifier.png)
 
