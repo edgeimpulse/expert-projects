@@ -96,6 +96,7 @@ Computer vision projects that make use of image classification, object detection
 * [Car Detection and Tracking System for Toll Plazas - Raspberry Pi AI Kit](computer-vision-projects/vehicle-detection-raspberry-pi-ai-kit.md)
 * [Visual Anomaly Detection - Seeed Grove Vision AI Module V2](computer-vision-projects/visual-anomaly-detection-seeed-vision-ai-2.md)
 * [Object Counting with FOMO - OpenMV Cam RT1062](computer-vision-projects/object-counting-fomo-openmv-rt1062.md)
+* [Visitor Heatmap with FOMO Object Detection - Jetson Orin Nano](computer-vision-projects/visitor-heatmap-jetson-orin-nano.md)
 
 ### Audio Projects
 
