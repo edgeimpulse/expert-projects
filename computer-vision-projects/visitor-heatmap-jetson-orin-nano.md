@@ -9,7 +9,7 @@ Created By: Jallson Suryo
 
 Public Project Link: [https://studio.edgeimpulse.com/public/544247/latest](https://studio.edgeimpulse.com/public/544247/latest)
 
-## Problem Statement:
+## Problem Statement
 
 In data mapping, humans find it easier to understand information through visual representations, especially with clear color groupings, such as in a "Heatmap". Heatmaps are used because their presentation is simple to comprehend, and can represent density and clustering. In contrast, the output from object detection cameras, which usually includes data like the number of bounding boxes, locations, and timestamps, is numerical and difficult to interpret, especially for understanding visitor behavior, flow, or favorite spots.
 
@@ -41,7 +41,7 @@ This project will explore Edge Impulse FOMO (Faster Objects, More Objects) objec
 - Edge Impulse's Linux & Python SDK
 - Terminal
 
-## Steps:
+## Steps
 
 ### 1. Collecting Data
 
@@ -133,7 +133,7 @@ Check our demo test video:
 
 {% embed url="https://youtube.com/shorts/rNhiWecLUKE" %}
 
-## Conclusion:
+## Conclusion
 
 After testing FOMO for visitor object detection and implementing the heatmap program, we have successfully identified visitor flow patterns, how long they stay, and which areas are their favorites. Although this project input used miniature figures and created with stop-motion video, it effectively simulates typical conditions in a café or restaurant.
 
