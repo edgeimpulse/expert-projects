@@ -221,3 +221,4 @@ Using machine learning to predict, understand, or identify information in the ai
 * [A Federated Approach to Train and Deploy Machine Learning Models](software-integration-demos/federated-learning-raspberry-pi.md)
 * [DIY Model Weight Update for Continuous AI Deployments](software-integration-demos/diy-model-ota.md)
 * [Automate the CI/CD Pipeline of your Models with Edge Impulse and GitHub Actions](software-integration-demos/cicd-with-github-actions-edge-impulse.md)
+* [Deploying Edge Impulse Models on ZEDEDA Cloud Devices](software-integration-demos/zededa-model-monitoring.md)
