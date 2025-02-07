@@ -62,9 +62,9 @@ The ECG signal can also be combined with data from an accelerometer for enhanced
 
 The pads should be connected as follow:
 
-Yellow pad to the left
-Red pad to the right
-Green pad below the red pad
+- Yellow pad to the left.
+- Red pad to the right.
+- Green pad below the red pad.
 
 > Note: Remember to disconnect the AC from the laptop before sampling. 
 
@@ -80,7 +80,7 @@ Close the Serial Monitor and run `edge-impulse-data-forwarder`.
 
 Select the Edge Impulse project and check that the frequency shows `[SER] Detected data frequency: 50Hz`.
 
-Go to https://studio.edgeimpulse.com/studio/<Your-Project-ID>/acquisition/training
+Go to [https://studio.edgeimpulse.com/studio/Your-Project-ID/acquisition/training](https://studio.edgeimpulse.com/studio/Your-Project-ID/acquisition/training)
 
 Select **Length 120.000 ms** and take around 10 to 20 samples for each category to classify. For example, regular working versus stressed. Set aside 10% of the samples for testing. 
 
@@ -101,8 +101,6 @@ Time-domain features are: IBI Slope, HR Mean, HR Slope, RMSSD Slope, RMSSD, AVNN
 Frequency-domain features are: Raw VLF Energy, Raw LF Energy, Raw HF Energy, Raw Total Energy, Relative VLF Energy, Relative LF Energy, Relative HF Energy, LF/HF Ratio, Peak VLF Energy, Peak LF Energy, Peak HF Energy
 
 I have used ECG, filter preset 1, window size 40 and no HRV features.
-
-![](../.gitbook/assets/ecg-hrv-block-arduino-portenta/wearable-1.jpg)
 
 ## Model Training
 
@@ -129,6 +127,8 @@ Now you will be able to use the model library with your own code. A sample ECG m
 ![](../.gitbook/assets/ecg-hrv-block-arduino-portenta/serial-2.jpg)
 
 > Note: If Arduino Portenta shows `Exit status 74`, double click "Reset", and select the correct port.
+
+![](../.gitbook/assets/ecg-hrv-block-arduino-portenta/wearable-1.jpg)
 
 ## Final Notes
 
