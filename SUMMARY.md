@@ -176,6 +176,7 @@
   * [Smart Diaper Prototype - Arduino Nicla Sense ME](novel-sensor-projects/smart-diaper-arduino-nicla-sense-me.md)
   * [DIY Smart Glove with Flex Sensors](novel-sensor-projects/flex-sensors-hci.md)
   * [EdgeML Energy Monitoring - Particle Photon 2](novel-sensor-projects/energy-monitoring-particle-photon-2.md)
+  * [Wearable for Monitoring Worker Stress using HR/HRV DSP Block - Arduino Portenta](novel-sensor-projects/ecg-hrv-block-arduino-portenta.md)
 * [Software Integration Demos](software-integration-demos/README.md)
   * [Azure Machine Learning with Kubernetes Compute and Edge Impulse](software-integration-demos/azure-machine-learning-kubernetes-compute-ei.md)
   * [ROS2 + Edge Impulse, Part 1: Pub/Sub Node in Python](software-integration-demos/ros2-part1-pubsub-node.md)
