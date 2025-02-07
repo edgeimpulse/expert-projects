@@ -208,6 +208,7 @@ Using machine learning to predict, understand, or identify information in the ai
 * [Smart Diaper Prototype - Arduino Nicla Sense ME](novel-sensor-projects/smart-diaper-arduino-nicla-sense-me.md)
 * [DIY Smart Glove with Flex Sensors](novel-sensor-projects/flex-sensors-hci.md)
 * [EdgeML Energy Monitoring - Particle Photon 2](novel-sensor-projects/energy-monitoring-particle-photon-2.md)
+* [Wearable for Monitoring Worker Stress using HR/HRV DSP Block - Arduino Portenta](novel-sensor-projects/ecg-hrv-block-arduino-portenta.md)
 
 ### Software Integration Demos
 
