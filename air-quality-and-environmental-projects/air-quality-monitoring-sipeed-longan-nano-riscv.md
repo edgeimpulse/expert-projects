@@ -160,9 +160,39 @@ Click on Files, Open folder, select [LonganAnalogRead](https://github.com/Zalmot
 
 To program the Longan Nano, we have used an [Arduino Framework](https://github.com/scpcom/Longduino) branched off from the official Sipeed documentation, developed and maintained by **scpcom**, available on GitHub.
 
+{% code lineNumbers="true" %}
+```arduino
+#include <Arduino.h>
+
+int MiCs = PA6; 
+int MQ5 = PA7; 
+int MQ7 = PB0; 
+int MQ3 = PB1; 
+
+int valMiCs = 0; 
+int valMQ5 = 0;
+int valMQ7 = 0; 
+int valMQ3 = 0; 
+
+void setup() {
+  Serial.begin(115200);          
+}
+
+void loop() {
+  valMiCs = analogRead(MiCs);  
+  valMQ5 = analogRead(MQ5);
+  valMQ7 = analogRead(MQ7); 
+  valMQ3 = analogRead(MQ3); 
+  Serial.print(valMiCs);
+  Serial.print(",");
+  Serial.print(valMQ5);
+  Serial.print(","); 
+  Serial.print(valMQ7);
+  Serial.print(",");  
+  Serial.println(valMQ3);          
+}
 ```
-#include <Arduino.h>int MiCs = PA6; int MQ5 = PA7; int MQ7 = PB0; int MQ3 = PB1; int valMiCs = 0; int valMQ5 = 0;int valMQ7 = 0; int valMQ3 = 0; void setup() {  Serial.begin(115200);          }void loop() {  valMiCs = analogRead(MiCs);    valMQ5 = analogRead(MQ5);  valMQ7 = analogRead(MQ7);   valMQ3 = analogRead(MQ3);   Serial.print(valMiCs);  Serial.print(",");  Serial.print(valMQ5);  Serial.print(",");   Serial.print(valMQ7);  Serial.print(",");    Serial.println(valMQ3);          }
-```
+{% endcode %}
 
 Fundamentally, what this firmware does is read the gas sensors wired up to analog pins PA6, PA7, PB0, and PB1 and prints them on a 115200 baud rate serial, separated by comma.
 
