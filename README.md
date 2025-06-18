@@ -10,7 +10,6 @@ As you browse the projects, be sure to make note that many of them could be adap
 
 ### Featured Machine Learning Projects
 
-* [Smart City Traffic Analysis - NVIDIA TAO + Jetson Orin Nano](readme/featured-machine-learning-projects/traffic-analysis-tao-jetson-orin.md)
 * [ROS 2 Pick and Place System - Arduino Braccio++ Robotic Arm and Luxonis OAK-D](readme/featured-machine-learning-projects/robotic-arm-sorting-arduino-braccio.md)
 * [Optimize a cloud-based Visual Anomaly Detection Model for Edge Deployments](readme/featured-machine-learning-projects/fomo-ad-in-aws.md)
 * [Rooftop Ice Detection with Things Network Visualization - Nvidia Omniverse Replicator](readme/featured-machine-learning-projects/rooftop-ice-synthetic-data-omniverse.md)
@@ -98,6 +97,7 @@ Computer vision projects that make use of image classification, object detection
 * [Visitor Heatmap with FOMO Object Detection - Jetson Orin Nano](computer-vision-projects/visitor-heatmap-jetson-orin-nano.md)
 * [Vehicle Security Camera - Arduino Portenta H7](computer-vision-projects/vehicle-security-camera-arduino-portenta-h7.md)
 * [Getting Started with the Edge Impulse Nvidia TAO Pipeline - Renesas EK-RA8D1](readme/featured-machine-learning-projects/getting-started-nvidia-tao-renesas-ekra8d1.md)
+* [Smart City Traffic Analysis - NVIDIA TAO + Jetson Orin Nano](readme/featured-machine-learning-projects/traffic-analysis-tao-jetson-orin.md)
 
 ### Audio Projects
 
