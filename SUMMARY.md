@@ -2,7 +2,6 @@
 
 * [Welcome](README.md)
   * [Featured Machine Learning Projects](readme/featured-machine-learning-projects/README.md)
-    * [Smart City Traffic Analysis - NVIDIA TAO + Jetson Orin Nano](readme/featured-machine-learning-projects/traffic-analysis-tao-jetson-orin.md)
     * [ROS 2 Pick and Place System - Arduino Braccio++ Robotic Arm and Luxonis OAK-D](readme/featured-machine-learning-projects/robotic-arm-sorting-arduino-braccio.md)
     * [Optimize a cloud-based Visual Anomaly Detection Model for Edge Deployments](readme/featured-machine-learning-projects/fomo-ad-in-aws.md)
     * [Rooftop Ice Detection with Things Network Visualization - Nvidia Omniverse Replicator](readme/featured-machine-learning-projects/rooftop-ice-synthetic-data-omniverse.md)
@@ -84,6 +83,7 @@
   * [Visitor Heatmap with FOMO Object Detection - Jetson Orin Nano](computer-vision-projects/visitor-heatmap-jetson-orin-nano.md)
   * [Vehicle Security Camera - Arduino Portenta H7](computer-vision-projects/vehicle-security-camera-arduino-portenta-h7.md)
   * [Getting Started with the Edge Impulse Nvidia TAO Pipeline - Renesas EK-RA8D1](readme/featured-machine-learning-projects/getting-started-nvidia-tao-renesas-ekra8d1.md)
+  * [Smart City Traffic Analysis - NVIDIA TAO + Jetson Orin Nano](readme/featured-machine-learning-projects/traffic-analysis-tao-jetson-orin.md)
 * [Audio Projects](audio-projects/README.md)
   * [Occupancy Sensing - SiLabs xG24](audio-projects/occupancy-sensing-silabs-xg24.md)
   * [Smart Appliance Control Using Voice Commands - Nordic Thingy:53](audio-projects/smart-appliance-voice-commands-nordic-thingy53.md)
