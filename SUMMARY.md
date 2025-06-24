@@ -189,3 +189,4 @@
   * [DIY Model Weight Update for Continuous AI Deployments](software-integration-demos/diy-model-ota.md)
   * [Automate the CI/CD Pipeline of your Models with Edge Impulse and GitHub Actions](software-integration-demos/cicd-with-github-actions-edge-impulse.md)
   * [Deploying Edge Impulse Models on ZEDEDA Cloud Devices](software-integration-demos/zededa-model-monitoring.md)
+  * [Building a Voice-Activated Assistant on Your Smartphone: A Step-by-Step Guide](software-integration-demos/android-keyword-spotting.md)
