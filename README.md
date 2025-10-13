@@ -10,6 +10,7 @@ As you browse the projects, be sure to make note that many of them could be adap
 
 ### Featured Machine Learning Projects
 
+* [Video2World - Synthetic Data - Nvidia Cosmos Transfer](readme/featured-machine-learning-projects/nvidia-cosmos-transfer-synthetic-data.md)
 * [Text2Video - Synthetic Data - Nvidia Cosmos Predict](readme/featured-machine-learning-projects/nvidia-cosmos-predict2-synthetic-data.md)
 * [ROS 2 Pick and Place System - Arduino Braccio++ Robotic Arm and Luxonis OAK-D](readme/featured-machine-learning-projects/robotic-arm-sorting-arduino-braccio.md)
 * [Optimize a cloud-based Visual Anomaly Detection Model for Edge Deployments](readme/featured-machine-learning-projects/fomo-ad-in-aws.md)
